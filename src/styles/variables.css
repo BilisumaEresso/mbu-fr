@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Design tokens — Meki Batu Union
+   System: Agri-Heritage Editorial
+   Corporate Modernism + Editorial Minimalism. Flat colors, zero shadows,
+   tonal layering, asymmetric grid. See DESIGN.md for full rationale.
+   ========================================================================== */
+
+:root {
+  /* ---- Color: Material-style tonal system from DESIGN.md ---- */
+  --surface: #fcf9f8;
+  --surface-dim: #dcd9d9;
+  --surface-bright: #fcf9f8;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f6f3f2;
+  --surface-container: #f0eded;
+  --surface-container-high: #eae7e7;
+  --surface-container-highest: #e5e2e1;
+
+  --on-surface: #1c1b1b;
+  --on-surface-variant: #424844;
+
+  --inverse-surface: #313030;
+  --inverse-on-surface: #f3f0ef;
+
+  --outline: #727973;
+  --outline-variant: #c2c8c2;
+
+  --primary: #173124;
+  --on-primary: #ffffff;
+  --primary-container: #2d4739;
+  --on-primary-container: #98b5a3;
+  --inverse-primary: #b0cdbb;
+
+  --secondary: #9d4320;
+  --on-secondary: #ffffff;
+  --secondary-container: #fd8c63;
+  --on-secondary-container: #742503;
+
+  --tertiary: #2b2c2a;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #414240;
+  --on-tertiary-container: #aeaeac;
+
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+
+  --background: #fcf9f8;
+  --on-background: #1c1b1b;
+  --surface-variant: #e5e2e1;
+
+  /* ---- Semantic aliases used throughout components ---- */
+  --color-bg: var(--background);
+  --color-bg-alt: var(--surface-container-low);
+  --color-surface: var(--surface-container-lowest);
+  --color-text: var(--on-surface);
+  --color-text-muted: var(--on-surface-variant);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary);
+  --color-accent: var(--secondary);
+  --color-border: var(--outline-variant);
+
+  /* ---- Typography ---- */
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --fs-h1: 48px;
+  --fs-h1-mobile: 28px;
+  --fs-h2: 32px;
+  --fs-h3: 24px;
+  --fs-body-lg: 18px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-eyebrow: 12px;
+
+  /* ---- Spacing: 8px base unit ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-6: 32px;
+  --space-8: 48px;
+  --space-12: 64px;
+  --space-16: 80px;
+  --space-24: 120px;
+
+  --max-width: 1280px;
+  --gutter: 24px;
+  --margin-mobile: 16px;
+  --margin-desktop: 64px;
+
+  /* ---- Shape: Soft, Level 1 — never bubbly ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+  --border-width: 1px;
+
+  /* ---- Motion ---- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}

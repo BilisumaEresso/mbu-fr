@@ -1,0 +1,138 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-16) 0;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+.hero__inner {
+  padding: 0;
+  max-width: none;
+}
+
+.hero__desc {
+  font-size: 1.0625rem;
+  max-width: 460px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.hero__image {
+  height: 360px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.audience-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition: border-color var(--transition-fast);
+}
+
+.audience-card:hover {
+  border-color: var(--color-primary);
+}
+
+.audience-card__title {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.audience-card__link {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: var(--fs-small);
+}
+
+.cert-strip__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.cert-strip__badge {
+  width: 120px;
+  height: 80px;
+  flex-shrink: 0;
+  font-size: 0.7rem;
+}
+
+.cert-strip p {
+  margin: 0;
+  font-size: 1.0625rem;
+  color: var(--color-text);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.news-card__image {
+  height: 140px;
+  margin-bottom: var(--space-3);
+  font-size: 0.75rem;
+}
+
+.news-card__date {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-1);
+}
+
+.news-card__title {
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .stats-grid,
+  .product-grid,
+  .audience-grid,
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 861px) and (max-width: 1080px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-grid, .news-grid { grid-template-columns: repeat(2, 1fr); }
+}

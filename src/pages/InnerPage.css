@@ -1,0 +1,263 @@
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+
+.objectives-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3) var(--space-8);
+}
+
+.objectives-list li {
+  position: relative;
+  padding-left: var(--space-6);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.objectives-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.team-card__photo {
+  height: 160px;
+  margin-bottom: var(--space-3);
+  font-size: 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+.team-card__name {
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.team-card__title {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.0;
+  color: var(--color-text-muted);
+  margin: var(--space-1) 0 0;
+}
+
+.cert-block {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.cert-block__badge {
+  width: 140px;
+  height: 90px;
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  border-radius: var(--radius-sm);
+}
+
+.partner-text {
+  max-width: 640px;
+  font-size: var(--fs-body-lg);
+  line-height: 1.8;
+}
+
+/* Generic service/feature list used on Farmers & Buyers pages */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.feature-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.feature-card__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+/* Simple form styling shared by Contact & Buyers RFQ form */
+.form {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.form label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.0;
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  padding: var(--space-3);
+  border: 1px solid var(--color-outline);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  transition: border-color var(--transition-fast);
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  border-width: 2px;
+  padding: calc(var(--space-3) - 1px);
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.outlet-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+
+.outlet-card {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-outline-variant);
+  border-radius: 0;
+  padding: var(--space-5) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.outlet-card:first-child {
+  border-top: 1px solid var(--color-outline-variant);
+}
+
+.outlet-card__name {
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.outlet-card__meta {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.0;
+  color: var(--color-text-muted);
+}
+
+.stat-block-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.category-tabs {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.category-tab {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-outline-variant);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.0;
+  color: var(--color-text);
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.category-tab:hover {
+  border-color: var(--color-primary);
+}
+
+.category-tab--active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+@media (max-width: 860px) {
+  .two-col,
+  .objectives-list,
+  .team-grid,
+  .feature-grid,
+  .form-row,
+  .stat-block-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .outlet-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 861px) and (max-width: 1080px) {
+  .team-grid,
+  .feature-grid,
+  .stat-block-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

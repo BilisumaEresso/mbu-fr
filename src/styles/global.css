@@ -1,0 +1,202 @@
+/* ==========================================================================
+   Global base styles — Agri-Heritage Editorial
+   Flat colors, zero shadows, tonal layering, generous whitespace.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-text);
+  margin: 0 0 var(--space-3);
+}
+
+h1 {
+  font-size: var(--fs-h1-mobile);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+@media (min-width: 640px) {
+  h1 { font-size: 28px; letter-spacing: -0.01em; }
+}
+
+@media (min-width: 900px) {
+  h1 { font-size: var(--fs-h1); letter-spacing: -0.02em; }
+  h2 { font-size: var(--fs-h2); }
+}
+
+p {
+  margin: 0 0 var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--fs-body);
+  line-height: 1.8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul, ol {
+  padding-left: 1.25rem;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* No outer glows — a flat 2px primary border on focus, per DESIGN.md */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ---- Layout ---- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--margin-mobile);
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding: 0 var(--margin-desktop);
+  }
+}
+
+/* Asymmetric editorial grid: main content columns 3–10 of 12 on desktop */
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gutter);
+}
+
+.editorial-grid__main {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 900px) {
+  .editorial-grid__main {
+    grid-column: 3 / 11;
+  }
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-main {
+  flex: 1;
+}
+
+.section {
+  padding: var(--space-12) 0;
+}
+
+@media (min-width: 900px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+}
+
+.section--alt {
+  background: var(--color-bg-alt);
+}
+
+.section--dark {
+  background: var(--inverse-surface);
+  color: var(--inverse-on-surface);
+}
+
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark p {
+  color: var(--inverse-on-surface);
+}
+
+/* label-caps typography — mono, tracked out, used for eyebrows & metadata */
+.eyebrow,
+.label-caps {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-bottom: var(--space-6);
+}
+
+/* Flat, bordered image placeholder — "physical photograph" feel, sharp or 8px radius */
+.img-placeholder {
+  background: var(--surface-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--outline-variant);
+  padding: var(--space-3);
+}
+
+hr, .divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-6) 0;
+}
