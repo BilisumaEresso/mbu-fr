@@ -1,0 +1,58 @@
+/* ==========================================================================
+   PageHero Component Styles
+   ========================================================================== */
+
+.page-hero {
+  background-color: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-16) 0;
+}
+
+@media (min-width: 768px) {
+  .page-hero {
+    padding: var(--space-24) 0;
+  }
+}
+
+.page-hero__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--margin-mobile);
+  padding-right: var(--margin-mobile);
+}
+
+@media (min-width: 768px) {
+  .page-hero__container {
+    padding-left: var(--margin-desktop);
+    padding-right: var(--margin-desktop);
+  }
+}
+
+.page-hero__eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.page-hero__description {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 672px;
+  margin: 0;
+}

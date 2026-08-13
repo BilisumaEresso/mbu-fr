@@ -1,45 +1,20 @@
-import aboutHeroImg from '../assets/images/about_hero_farm.png'
-import teamMember1 from '../assets/images/team_member_1.png'
-import teamMember2 from '../assets/images/team_member_2.png'
-import teamMember3 from '../assets/images/team_member_3.png'
+import aboutHeroImg from '../assets/images/about_hero_farm.webp'
+import teamMember1 from '../assets/images/team_member_1.webp'
+import teamMember2 from '../assets/images/team_member_2.webp'
+import teamMember3 from '../assets/images/team_member_3.webp'
 import './About.css'
-
-const TIMELINE = [
-  {
-    left: { date: 'May 11, 2002', heading: 'Inception in Meki' },
-    right: { text: 'Established in Meki town, our union began with a small group of visionary farmers dedicated to improving their livelihoods through shared resources and collective bargaining power.' },
-    dotColor: 'accent',
-  },
-  {
-    left: { text: 'Over the years, we expanded our reach, bringing more cooperatives under our umbrella, providing essential training, and modernizing agricultural techniques.' },
-    right: { date: 'Growth Phase', heading: 'Expanding the Network' },
-    dotColor: 'dark',
-  },
-  {
-    left: { date: 'Present Day', heading: '140+ Cooperatives Strong' },
-    right: { text: 'Today, we proudly represent over 140 cooperatives, forming a robust network that ensures quality, sustainability, and economic stability for thousands of farming families.' },
-    dotColor: 'dark',
-  },
-]
 
 const OBJECTIVES = [
   'To empower member farmers through fair market access and equitable trade practices.',
-  'To provide and strengthen our value chain, creating lasting economic stability through agricultural best practices.',
-  'To provide continuous education and support to build the next generation of farmers.',
-  'To market farm products nationally and internationally through established export links.',
-]
-
-const CERT_DETAILS = [
-  'Traceability & food safety',
-  'IPM (Integrated Pest Management)',
-  'Environmental Protection',
-  'Worker Health, Safety & Welfare',
+  'To promote and implement sustainable, environmentally conscious agricultural methods.',
+  'To provide continuous education and capacity building for rural farming communities.',
+  'To maintain the highest standards of produce quality for international export.',
 ]
 
 const TEAM = [
   { name: 'Ato Name Surname', title: 'General Manager', photo: teamMember1 },
-  { name: 'Who Name Surname', title: 'Head of Operations', photo: teamMember2 },
-  { name: 'Ato Name Surname', title: 'Agricultural Lead', photo: teamMember3 },
+  { name: 'W/ro Name Surname', title: 'Head of Operations', photo: teamMember2 },
+  { name: 'Ato Name Surname', title: 'Chief Agronomist', photo: teamMember3 },
 ]
 
 const PARTNERS = ['Self Help Africa', 'Oromia Coop Bank', 'Agri-Invest']
@@ -47,140 +22,168 @@ const PARTNERS = ['Self Help Africa', 'Oromia Coop Bank', 'Agri-Invest']
 function About() {
   return (
     <>
-      {/* ---- Hero ---- */}
+      {/* ---- Hero Section ---- */}
       <section className="about-hero">
         <div className="container">
-          <span className="about-hero__eyebrow">Since 2002</span>
-          <h1 className="about-hero__title">
-            Cultivating Progress Through Cooperative Strength
-          </h1>
-          <p className="about-hero__desc">
-            Meki Batu Union was founded as a testament to the power of collective farming — bridging a few
-            communities to ensure fair trade, sustainable produce, and premium-quality products for
-            the global market.
-          </p>
-        </div>
-        <div className="about-hero__image-wrap">
-          <img
-            src={aboutHeroImg}
-            alt="Panoramic view of Meki Batu farmlands"
-            className="about-hero__image"
-          />
+          <div className="about-hero__grid">
+            <div className="about-hero__sidebar desktop-only">
+              <span className="label-caps label-caps--muted">Since 2002</span>
+            </div>
+            <div className="about-hero__main">
+              <h1 className="about-hero__title">
+                Cultivating Progress Through Cooperative Strength
+              </h1>
+              <p className="about-hero__desc">
+                Meki Batu Union stands as a testament to the power of collective farming in Ethiopia. We unite farmers to ensure fair trade, sustainable practices, and premium quality produce for the global market.
+              </p>
+            </div>
+          </div>
+          <div className="about-hero__media">
+            <img
+              src={aboutHeroImg}
+              alt="Fertile Ethiopian agricultural land during golden hour"
+              className="about-hero__img"
+            />
+          </div>
         </div>
       </section>
 
-      {/* ---- Our Foundation ---- */}
-      <section className="about-foundation">
+      {/* ---- History Timeline (Our Foundation) ---- */}
+      <section className="about-foundation section section--alt">
         <div className="container">
           <div className="about-foundation__header">
-            <div className="about-foundation__icon">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /></svg>
-            </div>
+            <span className="material-symbols-outlined about-foundation__icon">history</span>
             <h2 className="about-foundation__title">Our Foundation</h2>
           </div>
 
           <div className="about-timeline">
-            {TIMELINE.map((row, i) => (
-              <div key={i} className="about-timeline__row">
-                <div className="about-timeline__left">
-                  {row.left.date && <p className="about-timeline__date">{row.left.date}</p>}
-                  {row.left.heading && <h3 className="about-timeline__heading">{row.left.heading}</h3>}
-                  {row.left.text && <p className="about-timeline__text">{row.left.text}</p>}
-                </div>
-                <div className="about-timeline__center">
-                  <span className={`about-timeline__dot about-timeline__dot--${row.dotColor}`} />
-                </div>
-                <div className="about-timeline__right">
-                  {row.right.date && <p className="about-timeline__date">{row.right.date}</p>}
-                  {row.right.heading && <h3 className="about-timeline__heading">{row.right.heading}</h3>}
-                  {row.right.text && <p className="about-timeline__text">{row.right.text}</p>}
-                </div>
+            <div className="about-timeline__line desktop-only" />
+
+            {/* Timeline Item 1 */}
+            <div className="about-timeline__item">
+              <div className="about-timeline__node desktop-only about-timeline__node--secondary" />
+              <div className="about-timeline__left">
+                <span className="label-caps label-caps--secondary block mb-1">May 11, 2002</span>
+                <h3 className="about-timeline__heading">Inception in Meki</h3>
               </div>
-            ))}
+              <div className="about-timeline__right">
+                <p className="about-timeline__text">
+                  Established in Meki town, our union began with a small group of visionary farmers dedicated to improving their livelihoods through shared resources and collective bargaining power.
+                </p>
+              </div>
+            </div>
+
+            {/* Timeline Item 2 */}
+            <div className="about-timeline__item about-timeline__item--reverse">
+              <div className="about-timeline__node desktop-only about-timeline__node--tint" />
+              <div className="about-timeline__left">
+                <span className="label-caps label-caps--tint block mb-1">Growth Phase</span>
+                <h3 className="about-timeline__heading">Expanding the Network</h3>
+              </div>
+              <div className="about-timeline__right">
+                <p className="about-timeline__text">
+                  Over the years, we expanded our reach, bringing more cooperatives under our umbrella, providing essential training, and modernizing agricultural techniques.
+                </p>
+              </div>
+            </div>
+
+            {/* Timeline Item 3 */}
+            <div className="about-timeline__item">
+              <div className="about-timeline__node desktop-only about-timeline__node--primary" />
+              <div className="about-timeline__left">
+                <span className="label-caps label-caps--primary block mb-1">Present Day</span>
+                <h3 className="about-timeline__heading">140+ Cooperatives Strong</h3>
+              </div>
+              <div className="about-timeline__right">
+                <p className="about-timeline__text">
+                  Today, we proudly represent over 140 cooperatives, forming a robust network that ensures quality, sustainability, and economic stability for thousands of farming families.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ---- Mission & Certification ---- */}
-      <section className="about-mission-cert">
+      <section className="about-mission-cert section">
         <div className="container">
           <div className="about-mission-cert__grid">
-            {/* Left — Mission */}
-            <div>
+            {/* Left: Mission */}
+            <div className="about-mission-card">
               <h2 className="about-mission__title">Mission &amp; Objectives</h2>
               <ul className="about-mission__list">
-                {OBJECTIVES.map((o, i) => (
-                  <li key={i}>
-                    <span className="mission-icon">
-                      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
-                    </span>
-                    {o}
+                {OBJECTIVES.map((obj, i) => (
+                  <li key={i} className="about-mission__item">
+                    <span className="material-symbols-outlined about-mission__check">check_circle</span>
+                    <span className="about-mission__text">{obj}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Right — GlobalG.A.P */}
+            {/* Right: Certification */}
             <div className="about-cert-card">
-              <div className="about-cert-card__header">
-                <div className="about-cert-card__badge">
-                  <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+              <div>
+                <div className="about-cert-card__header">
+                  <span className="material-symbols-outlined about-cert-card__icon">verified</span>
+                  <h2 className="about-cert-card__title">GlobalG.A.P Certified</h2>
                 </div>
-                <h3 className="about-cert-card__title">GlobalG.A.P Certified</h3>
+                <p className="about-cert-card__desc">
+                  Our commitment to excellence is validated by our strict adherence to GlobalG.A.P standards. This internationally recognized certification ensures that our agricultural practices are safe, sustainable, and responsible.
+                </p>
+                <ul className="about-cert-card__highlights">
+                  <li>Traceability &amp; Food Safety</li>
+                  <li>Environmental Conservation</li>
+                  <li>Worker Health &amp; Welfare</li>
+                </ul>
               </div>
-              <p className="about-cert-card__text">
-                Our certification validates our dedication to globally recognized
-                standards of food safety. This covers all areas of our operations to
-                ensure that our agricultural products are safe, sustainable, and ethical.
-              </p>
-              <ul className="about-cert-card__details">
-                {CERT_DETAILS.map((d, i) => (
-                  <li key={i}>{d}</li>
-                ))}
-              </ul>
               <div className="about-cert-card__footer">
-                <span className="about-cert-card__footer-badge" />
-                <p className="about-cert-card__footer-text">Active certification</p>
+                <span className="label-caps label-caps--muted text-xs opacity-70">Export Quality Assured</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ---- Governance ---- */}
-      <section className="about-governance">
+      {/* ---- Governance / Leadership ---- */}
+      <section className="about-governance section section--alt">
         <div className="container">
-          <h2 className="about-governance__title">Governance</h2>
-          <p className="about-governance__desc">
-            Led by an experienced and dedicated team,
-            committed to cooperative principles.
-          </p>
+          <div className="about-governance__header">
+            <h2 className="about-governance__title">Governance</h2>
+            <p className="about-governance__desc">
+              Guided by experienced leadership committed to cooperative principles.
+            </p>
+          </div>
 
           <div className="about-governance__grid">
             {TEAM.map((member) => (
               <div key={member.title} className="about-governance__card">
-                <img
-                  src={member.photo}
-                  alt={member.name}
-                  className="about-governance__photo"
-                />
-                <div className="about-governance__info">
-                  <p className="about-governance__name">{member.name}</p>
-                  <p className="about-governance__role">{member.title}</p>
+                <div className="about-governance__photo-wrap">
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="about-governance__photo"
+                  />
                 </div>
+                <h3 className="about-governance__name">{member.name}</h3>
+                <p className="label-caps label-caps--secondary text-xs mt-1">{member.title}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ---- Partners strip ---- */}
-      <section className="about-partners">
+      {/* ---- Collaboration Partners ---- */}
+      <section className="about-partners section">
         <div className="container">
-          <p className="about-partners__label">In collaboration with</p>
+          <div className="text-center mb-8">
+            <span className="label-caps label-caps--muted">In Collaboration With</span>
+          </div>
           <div className="about-partners__logos">
             {PARTNERS.map((p) => (
-              <span key={p} className="about-partners__logo">{p}</span>
+              <div key={p} className="about-partners__name">
+                {p}
+              </div>
             ))}
           </div>
         </div>

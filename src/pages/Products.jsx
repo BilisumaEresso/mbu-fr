@@ -1,62 +1,291 @@
 import { useState } from 'react'
-import PageHero from '../components/common/PageHero.jsx'
-import Button from '../components/common/Button.jsx'
-import ProductCard from '../components/common/ProductCard.jsx'
-import { products, categories } from '../data/products.js'
+import { Link } from 'react-router-dom'
 import './InnerPage.css'
-import './Home.css' // reuses .product-grid
+
+const CATEGORIES = ['All', 'Vegetables', 'Fruits', 'Seeds']
+
+const PRODUCTS_DATA = [
+  {
+    id: 'tomatoes',
+    name: 'Rift Valley Tomatoes',
+    category: 'Vegetables',
+    desc: 'High-yield, disease-resistant varieties suited for both local consumption and export markets. Known for robust flavor and long shelf life.',
+    season: 'All Year',
+    featured: true,
+    origin: 'Meki & Ziway Lowlands',
+    shelfLife: '14-21 Days (Cold-chain 8-10°C)',
+    packaging: '5kg / 10kg Corrugated Export Cartons',
+    brix: '4.8° - 5.5° Brix',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAdggR_aJ5c0oACcdBm_z3WZ4EP5pkda1i5jEF5eH16704v2I4wFCRWaOYkWQaOoaIZtOsYBZpZRIoe3n0D_XFdpbs17I3qjTB-f6PLKUWYQ7dr_ialhn6t5IX-_S-bEbpmhDo0SdyCsSjpT-rZhVfKWDH9uEEq9-6quYm9CAssatAG0tqjHsbYIPaneWHx-TPSJfQm7AEf2qXha21rJSlp3jybstC2wWv_WBN3oP7SHAZPDe4d1O1a',
+  },
+  {
+    id: 'onions',
+    name: 'Red Onion',
+    category: 'Vegetables',
+    desc: 'Pungent, dense bulbs with excellent storage capacity, cultivated in ideal dry conditions.',
+    season: 'Main: Sep - Dec',
+    featured: false,
+    origin: 'East Shewa Farms',
+    shelfLife: '3-5 Months (Dry storage)',
+    packaging: '25kg / 50kg Mesh Bags',
+    brix: 'N/A (Pungency index high)',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAHeKqc2FJB_KCHXDnSumRwsg59y4SXlJPrDvAAdXI_nA1PjqbId6gLhbszouO0XuVVlYCpFEQjm_qD0N_ujRnKM7V7_9zD99P7E2Lvyjcnw9SCSDMmwmoLRM-x49pYfx5uXHorEfhIpj2Si9r7UyOBF_bnakgVd-8_85e8zFhXRlG-g1GUyN_AsSvVZx0gy1hukN5R2sFfBMAem6gPFplwziI7jpus1CnmHRlfJ8sHf5yH5aFfdZPu',
+  },
+  {
+    id: 'peppers',
+    name: 'Green Pepper',
+    category: 'Vegetables',
+    desc: 'Crisp, thick-walled bell peppers favored by domestic retailers and processing units.',
+    season: 'All Year',
+    featured: false,
+    origin: 'Batu Irrigation Schemes',
+    shelfLife: '12-16 Days (Cold-chain 7°C)',
+    packaging: '6kg Plastic Crates / Export Boxes',
+    brix: 'Crisp & Sweet Grade A',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC8Y8BvBB6MFm2ZwpGXg4s3FN1cgYiENMzAcf51G0WYmQ7zbEJM_K3CVI2DDVh5TJgc-3vC0Ss9FRQPrDKNxSWy_M5U339kCnF0Ep38YUvAdkC4oHzqr9NddZq7k0G4-F4DcmLbN1KVCm9yH07XAw7SoIkUS_rlQ-RmWfYMtX_9Vd8yRZwQJ95B3Uq9_5sw_cOkMBdnXq9qQUQWwkcGv9H9Saz9JNP82BbRqHZQUZ3aMUyEXjDNF1nC',
+  },
+  {
+    id: 'potato',
+    name: 'Highland Potato',
+    category: 'Vegetables',
+    desc: 'Nutrient-dense varieties grown in higher altitudes, ensuring firm texture and versatility.',
+    season: 'Jun - Sep',
+    featured: false,
+    origin: 'Highland Outgrower Zones',
+    shelfLife: '2-4 Months (Cool dry environment)',
+    packaging: '50kg Jute Sacks',
+    brix: 'High dry matter content',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUVd37W2XzABDNlNWZmL5s6ZVc9cJ2czIZhDAJ0yv-0FW87cGCV48OBYBsVtJVCeEK_sEjivii8EHA61A7LRJ_Ggw1HLcu2zWLJ3cpicR88SNd551KIVxmbhFveh5uDYwYJuHfnzUOCDJQeINjKPfPLoAXZ4NWBmt4FpG6X14a_khC0Vsd1PmyQfAFi0_DgFNWhTuOT5_oRsHMfWf7AojD1L45XZM82bnxvRTWmAdPDip-p7DXtg-D',
+  },
+  {
+    id: 'papaya',
+    name: 'Fresh Papaya',
+    category: 'Fruits',
+    desc: 'Sweet, export-grade solo papayas cultivated under strict GlobalG.A.P standards.',
+    season: 'All Year',
+    featured: false,
+    origin: 'Rift Valley Orchards',
+    shelfLife: '10-14 Days (12°C)',
+    packaging: '4.5kg Single Layer Cartons',
+    brix: '11° - 13° Brix',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCiFXx7lHckMWoHE9LmIO0g0B2-vNRbq-nJOzItsusiGRy1GsEOoi4VUH36rA8MXcsd6bsOeeTkiVRSSyavg4ACXtj-vWIwpXARGFYrtExRGvZnVZmkiMad-3Uzw6I3l6QpdzMS0HJtKDJGA9jP_bks90WxyZ68w5qEiXGdhVD4FNTFzEqXBVzBcx9oDvO-NDBEqsDV_FQMfPhchElV4ZfPa7LESOlLt_izdvlbpXrYACWCldk8jTm9',
+  },
+  {
+    id: 'seeds',
+    name: 'Certified Hybrid Seeds',
+    category: 'Seeds',
+    desc: 'High-germination hybrid and open-pollinated seed varieties processed for member distribution.',
+    season: 'Jan - Mar',
+    featured: false,
+    origin: 'Meki Seed Processing Plant',
+    shelfLife: '12-24 Months (Sealed Packets)',
+    packaging: '100g / 500g Moisture-proof Foil Packs',
+    brix: '98%+ Germination Rate',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAC6-LnBnxoec0RzspHWkNKcW-DLU1c_pGnxJkQwjanGYvAeVGHpEodLsFhm_zOMXeOe_0c-MpBfMlt6e6qK6Kzmyt9bkLenffQ33XzB5YylZO2OmvCKRKcOeVFpBfXawZjQ-U34HA9-BZtYpXtq6rCmeNGeEvfRJW86sqXv1i74wrNlDzbdmlsjqUf0fZ7lMQtE0SL-xqpedsDAVoPQC1mvxAjQKr-wQXO-r4-IudvbuSX0rugBoUA',
+  },
+]
+
+const HARVEST_CALENDAR = [
+  { commodity: 'Rift Valley Tomato', category: 'Vegetable', window: 'Year-round (Peak: Oct-Feb)', availability: 'High' },
+  { commodity: 'Red Onion', category: 'Vegetable', window: 'September - December', availability: 'High' },
+  { commodity: 'Fresh Papaya', category: 'Fruit', window: 'Year-round', availability: 'Medium' },
+  { commodity: 'Certified Seed', category: 'Seed', window: 'January - March (Processing)', availability: 'Seasonal' },
+]
 
 function Products() {
   const [activeCategory, setActiveCategory] = useState('All')
+  const [selectedProduct, setSelectedProduct] = useState(null)
 
   const filtered =
     activeCategory === 'All'
-      ? products
-      : products.filter((p) => p.category === activeCategory)
+      ? PRODUCTS_DATA
+      : PRODUCTS_DATA.filter((p) => p.category === activeCategory)
 
   return (
     <>
-      <PageHero
-        eyebrow="Our products"
-        title="What our 140+ member cooperatives grow"
-        description="Fruits, vegetables, and certified seeds, produced to GlobalG.A.P standards across Dugda woreda and Adami Tulu Jido Kombolcha."
-      />
+      {/* ---- Hero Section ---- */}
+      <section className="products-hero section">
+        <div className="container products-hero__grid">
+          <div className="products-hero__content">
+            <h1 className="products-hero__title">
+              Cultivated with precision. Exported globally.
+            </h1>
+            <p className="products-hero__desc">
+              Discover our range of premium, certified organic crops and seeds. Grown in the nutrient-rich soils of the Great Rift Valley by our network of cooperative farmers.
+            </p>
+            <div className="products-hero__actions">
+              <a href="#catalog" className="btn btn--primary">
+                View Catalog
+              </a>
+            </div>
+          </div>
+          <div className="products-hero__media">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbY9MX4ZIkStrPPPVH8k9omtxj6ISM4FS2Od-MSW_uw-UMgsXpWOco6rndgemeJIGAcrjZvhkD7cTzNO216l876hf2mV3Ja-axuX_2BIT79laT_Z3KFOlt0dZdSlVwzSp2LrtBfbU3EVG3eUrTb8aWkKc2vh-dNPr6Yezqeg2plDKWNCPyeOap5yzwQohAZKzCkRLTbpf_Sqawe_Ah84Jpf19vwSFiwC5JIHNiYvlzqVVbWfgjgaBG"
+              alt="Fresh harvest of red tomatoes in wooden crate on dark Ethiopian soil"
+              className="products-hero__img"
+            />
+          </div>
+        </div>
+      </section>
 
-      <section className="section">
+      {/* ---- Product Catalog Section ---- */}
+      <section className="products-catalog section section--alt" id="catalog">
         <div className="container">
-          <div className="category-tabs">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                className={`category-tab ${activeCategory === cat ? 'category-tab--active' : ''}`}
-                onClick={() => setActiveCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
+          <div className="products-catalog__header">
+            <h2 className="products-catalog__title">Product Catalog</h2>
+            <div className="category-tabs">
+              {CATEGORIES.map((cat) => (
+                <button
+                  key={cat}
+                  type="button"
+                  className={`category-tab ${activeCategory === cat ? 'category-tab--active' : ''}`}
+                  onClick={() => setActiveCategory(cat)}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="product-grid">
-            {filtered.map((p) => (
-              <ProductCard
-                key={p.id}
-                name={p.name}
-                tag={p.tag}
-                imageLabel={`REPLACE WITH REAL PHOTO — ${p.name}`}
-              />
+          <div className="products-grid">
+            {filtered.map((item) => (
+              <div
+                key={item.id}
+                className={`product-item-card ${item.featured && activeCategory === 'All' ? 'product-item-card--featured' : ''}`}
+                onClick={() => setSelectedProduct(item)}
+              >
+                <div className="product-item-card__media">
+                  <img src={item.img} alt={item.name} className="product-item-card__img" />
+                </div>
+                <div className="product-item-card__body">
+                  <div className="product-item-card__header">
+                    <h3 className="product-item-card__title">{item.name}</h3>
+                    <span className="product-item-card__badge">{item.category}</span>
+                  </div>
+                  <p className="product-item-card__desc">{item.desc}</p>
+                  <div className="product-item-card__footer">
+                    <span className="label-caps label-caps--muted text-xs">Season: {item.season}</span>
+                    <Link
+                      to={`/buyers?product=${item.id}`}
+                      className="product-quote-link"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Request Quote <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section section--alt">
-        <div className="container" style={{ textAlign: 'center' }}>
-          <h2>Interested in sourcing from us?</h2>
-          <p style={{ maxWidth: 480, margin: '0 auto var(--space-6)' }}>
-            Get in touch with volumes, destination, and timelines and our team will follow up.
-          </p>
-          <Button to="/buyers" variant="primary">Request a quote</Button>
+      {/* ---- Product Detail Modal ---- */}
+      {selectedProduct && (
+        <div className="product-modal-backdrop" onClick={() => setSelectedProduct(null)}>
+          <div className="product-modal-card" onClick={(e) => e.stopPropagation()}>
+            <button className="product-modal-close" onClick={() => setSelectedProduct(null)}>
+              <span className="material-symbols-outlined">close</span>
+            </button>
+            <div className="product-modal-grid">
+              <div className="product-modal-media">
+                <img src={selectedProduct.img} alt={selectedProduct.name} className="product-modal-img" />
+              </div>
+              <div className="product-modal-content">
+                <span className="product-modal-badge">{selectedProduct.category}</span>
+                <h2 className="product-modal-title">{selectedProduct.name}</h2>
+                <p className="product-modal-desc">{selectedProduct.desc}</p>
+
+                <div className="product-specs-list">
+                  <div className="product-spec-item">
+                    <span className="product-spec-label">Origin</span>
+                    <span className="product-spec-value">{selectedProduct.origin}</span>
+                  </div>
+                  <div className="product-spec-item">
+                    <span className="product-spec-label">Harvest Season</span>
+                    <span className="product-spec-value">{selectedProduct.season}</span>
+                  </div>
+                  <div className="product-spec-item">
+                    <span className="product-spec-label">Packaging</span>
+                    <span className="product-spec-value">{selectedProduct.packaging}</span>
+                  </div>
+                  <div className="product-spec-item">
+                    <span className="product-spec-label">Shelf Life</span>
+                    <span className="product-spec-value">{selectedProduct.shelfLife}</span>
+                  </div>
+                  <div className="product-spec-item">
+                    <span className="product-spec-label">Quality Metric</span>
+                    <span className="product-spec-value">{selectedProduct.brix}</span>
+                  </div>
+                </div>
+
+                <div className="product-modal-actions">
+                  <Link
+                    to={`/buyers?product=${selectedProduct.id}`}
+                    className="btn btn--primary"
+                    onClick={() => setSelectedProduct(null)}
+                  >
+                    Request Export Quote for {selectedProduct.name}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ---- Harvest Calendar Table Section ---- */}
+      <section className="products-calendar section">
+        <div className="container">
+          <div className="products-calendar__header">
+            <h2 className="products-calendar__title">Harvest Calendar</h2>
+            <p className="products-calendar__desc">
+              Strategic planting cycles allow us to maintain a consistent supply of core commodities throughout the year. Data below reflects primary harvest windows.
+            </p>
+          </div>
+
+          <div className="table-responsive">
+            <table className="products-table">
+              <thead>
+                <tr>
+                  <th>Commodity</th>
+                  <th>Category</th>
+                  <th>Main Harvest Window</th>
+                  <th>Export Availability</th>
+                </tr>
+              </thead>
+              <tbody>
+                {HARVEST_CALENDAR.map((row) => (
+                  <tr key={row.commodity}>
+                    <td className="font-medium">{row.commodity}</td>
+                    <td className="text-muted">{row.category}</td>
+                    <td>{row.window}</td>
+                    <td>
+                      <span className="availability-dot" /> {row.availability}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- Partner CTA Banner ---- */}
+      <section className="products-cta section section--alt">
+        <div className="container">
+          <div className="products-cta__card">
+            <div className="products-cta__info">
+              <h2 className="products-cta__title">Partner with Meki Batu</h2>
+              <p className="products-cta__desc">
+                We supply reliable, high-volume agricultural products to exporters, processing facilities, and regional markets. Contact our sales team for pricing and logistics.
+              </p>
+            </div>
+            <Link to="/buyers" className="btn btn--primary">
+              Inquire for Buying
+            </Link>
+          </div>
         </div>
       </section>
     </>

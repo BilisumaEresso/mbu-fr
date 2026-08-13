@@ -1,88 +1,194 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
+import logoImg from '../../assets/images/MBU_logo_new.webp'
+import './Header.css'
 
-const NAV_LINKS = [
-  { to: '/about', label: 'About' },
-  { to: '/products', label: 'Products' },
-  { to: '/farmers', label: 'Farmers' },
-  { to: '/buyers', label: 'Buyers' },
-  { to: '/news', label: 'News' },
-  { to: '/contact', label: 'Contact' },
+const NAV_GROUPS = [
+  {
+    key: 'about',
+    label: 'About Us',
+    items: [
+      { to: '/about', label: 'About Us', desc: 'Our heritage, mission & leadership' },
+      { to: '/impact', label: 'Impact & Reports', desc: 'Certifications & annual reviews' },
+    ],
+  },
+  {
+    key: 'products',
+    label: 'Products',
+    items: [
+      { to: '/products', label: 'Our Products', desc: 'Fresh produce & seed catalog' },
+      { to: '/retail-outlets', label: 'Retail Outlets', desc: '5 Addis Ababa storefronts' },
+    ],
+  },
+  {
+    key: 'farmers',
+    to: '/farmers',
+    label: 'For Farmers',
+  },
+  {
+    key: 'buyers',
+    to: '/buyers',
+    label: 'For Buyers',
+  },
+  {
+    key: 'news',
+    to: '/news',
+    label: 'News',
+  },
+  {
+    key: 'contact',
+    to: '/contact',
+    label: 'Contact',
+  },
 ]
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState(null)
+  const location = useLocation()
+
+  function handleDropdownToggle(key) {
+    setActiveDropdown((prev) => (prev === key ? null : key))
+  }
+
+  function closeAll() {
+    setMenuOpen(false)
+    setActiveDropdown(null)
+  }
 
   return (
-    <header className="bg-background dark:bg-surface-container-low w-full top-0 sticky border-b border-outline-variant dark:border-outline z-50">
-      <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-        {/* Image logo available at src/assets/images/MBU_logo_new.png — swap in when brand guidelines are finalized */}
-        <NavLink
-          to="/"
-          className="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim"
-          onClick={() => setMenuOpen(false)}
-        >
-          Meki Batu Union
+    <header className="header">
+      <div className="header__container">
+        {/* Brand Logo & Title */}
+        <NavLink to="/" className="header__brand" onClick={closeAll}>
+          <img src={logoImg} alt="Meki Batu Union Logo" className="header__logo-img" />
+          <span className="header__brand-text">Meki Batu Union</span>
         </NavLink>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-gutter">
-          {NAV_LINKS.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) =>
-                `font-body-md text-body-md py-2 transition-colors duration-200 ${
-                  isActive
-                    ? 'text-primary'
-                    : 'text-on-surface-variant dark:text-on-surface hover:text-primary'
-                }`
-              }
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </NavLink>
-          ))}
+        <nav className="header__nav">
+          {NAV_GROUPS.map((group) => {
+            if (group.to) {
+              return (
+                <NavLink
+                  key={group.key}
+                  to={group.to}
+                  className={({ isActive }) =>
+                    `header__link ${isActive ? 'header__link--active' : ''}`
+                  }
+                  onClick={closeAll}
+                >
+                  {group.label}
+                </NavLink>
+              )
+            }
+
+            const isGroupActive = group.items.some((item) => item.to === location.pathname)
+
+            return (
+              <div
+                key={group.key}
+                className="header__dropdown-wrap"
+                onMouseEnter={() => setActiveDropdown(group.key)}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <button
+                  type="button"
+                  className={`header__dropdown-trigger ${
+                    isGroupActive ? 'header__link--active' : ''
+                  }`}
+                  onClick={() => handleDropdownToggle(group.key)}
+                >
+                  {group.label}
+                  <span className="material-symbols-outlined header__dropdown-icon">
+                    expand_more
+                  </span>
+                </button>
+
+                {activeDropdown === group.key && (
+                  <div className="header__dropdown-menu">
+                    {group.items.map((sub) => (
+                      <NavLink
+                        key={sub.to}
+                        to={sub.to}
+                        className={({ isActive }) =>
+                          `header__dropdown-item ${
+                            isActive ? 'header__dropdown-item--active' : ''
+                          }`
+                        }
+                        onClick={closeAll}
+                      >
+                        <span className="header__dropdown-title">{sub.label}</span>
+                        <span className="header__dropdown-desc">{sub.desc}</span>
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </nav>
 
-        <div className="hidden md:block">
-          <button className="bg-primary text-on-primary font-body-md text-body-md px-6 py-2 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200">
+        <div className="header__actions">
+          <button className="header__login-btn" type="button">
             Member Login
           </button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-primary p-2"
+          className="header__mobile-toggle"
           type="button"
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((open) => !open)}
         >
-          <span className="material-symbols-outlined">menu</span>
+          <span className="material-symbols-outlined">{menuOpen ? 'close' : 'menu'}</span>
         </button>
       </div>
 
-      {/* Mobile Nav Dropdown */}
+      {/* Mobile Nav Accordion */}
       {menuOpen && (
-        <nav className="md:hidden bg-background border-t border-outline-variant px-margin-mobile py-4 space-y-2">
-          {NAV_LINKS.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) =>
-                `block font-body-md text-body-md py-2 transition-colors duration-200 ${
-                  isActive
-                    ? 'text-primary'
-                    : 'text-on-surface-variant hover:text-primary'
-                }`
-              }
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </NavLink>
-          ))}
-          <button className="bg-primary text-on-primary font-body-md text-body-md px-6 py-2 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 mt-2 w-full">
+        <nav className="header__mobile-nav">
+          {NAV_GROUPS.map((group) => {
+            if (group.to) {
+              return (
+                <NavLink
+                  key={group.key}
+                  to={group.to}
+                  className={({ isActive }) =>
+                    `header__mobile-link ${isActive ? 'header__mobile-link--active' : ''}`
+                  }
+                  onClick={closeAll}
+                >
+                  {group.label}
+                </NavLink>
+              )
+            }
+
+            return (
+              <div key={group.key} className="header__mobile-group">
+                <div className="header__mobile-group-title">{group.label}</div>
+                <div className="header__mobile-sublinks">
+                  {group.items.map((sub) => (
+                    <NavLink
+                      key={sub.to}
+                      to={sub.to}
+                      className={({ isActive }) =>
+                        `header__mobile-sublink ${
+                          isActive ? 'header__mobile-sublink--active' : ''
+                        }`
+                      }
+                      onClick={closeAll}
+                    >
+                      {sub.label}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+          <button className="header__login-btn header__login-btn--mobile" type="button">
             Member Login
           </button>
         </nav>

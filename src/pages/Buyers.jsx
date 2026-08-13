@@ -1,88 +1,182 @@
-import { useState } from 'react'
-import PageHero from '../components/common/PageHero.jsx'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import './InnerPage.css'
 
-const REASONS = [
-  { title: 'GlobalG.A.P certified', desc: 'Every shipment is backed by internationally recognized food safety standards.' },
-  { title: '20+ years of experience', desc: 'Operating since 2002, with deep relationships across 140+ primary cooperatives.' },
-  { title: '50,000+ tonnes a year', desc: 'Consistent, scalable supply across a wide range of fruits and vegetables.' },
+const VALUE_PROPS = [
+  {
+    icon: 'verified',
+    title: 'Certified Quality',
+    desc: 'Adhering to strict international standards including GlobalG.A.P and Organic certifications, ensuring every shipment meets premium market requirements.',
+    tags: ['GAP', 'ORG'],
+    iconColor: 'primary',
+  },
+  {
+    icon: 'inventory_2',
+    title: 'Consistent Volume',
+    desc: 'With over 140 cooperatives in our network, we provide reliable, large-scale supply capacities throughout the harvest seasons to meet your operational demands.',
+    iconColor: 'secondary',
+  },
+  {
+    icon: 'language',
+    title: 'Export Experience',
+    desc: 'Decades of experience navigating international logistics, customs, and global market expectations, ensuring smooth end-to-end delivery.',
+    iconColor: 'primary',
+  },
 ]
 
 function Buyers() {
+  const [searchParams] = useSearchParams()
+  const [selectedProduct, setSelectedProduct] = useState('')
   const [submitted, setSubmitted] = useState(false)
+
+  useEffect(() => {
+    const productParam = searchParams.get('product')
+    if (productParam) {
+      setSelectedProduct(productParam)
+      // Smooth scroll to quote section
+      const quoteElement = document.getElementById('quote')
+      if (quoteElement) {
+        quoteElement.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }, [searchParams])
 
   function handleSubmit(e) {
     e.preventDefault()
-    // Phase 1: wire this up to a transactional email service (e.g. Resend/SendGrid).
-    // Phase 2: POST to the Express API so it lands in a buyer-inquiries collection/dashboard.
     setSubmitted(true)
   }
 
   return (
     <>
-      <PageHero
-        eyebrow="For buyers & exporters"
-        title="Source certified produce directly from Ethiopia"
-        description="Meki Batu Union supplies fruits, vegetables, and seeds to domestic retail and export markets in Europe."
-      />
-
-      <section className="section">
-        <div className="container feature-grid">
-          {REASONS.map((r) => (
-            <div key={r.title} className="feature-card">
-              <p className="feature-card__title">{r.title}</p>
-              <p>{r.desc}</p>
+      {/* ---- Hero Section ---- */}
+      <section className="buyers-hero section">
+        <div className="container buyers-hero__grid">
+          <div className="buyers-hero__content">
+            <h1 className="buyers-hero__title">Reliable Global Export Partner</h1>
+            <p className="buyers-hero__desc">
+              Meki Batu Union offers certified, high-volume agricultural products directly from our extensive network of Ethiopian cooperatives. Experience transparent sourcing and uncompromising quality control.
+            </p>
+            <div className="buyers-hero__actions">
+              <a href="#quote" className="btn btn--primary">
+                Request a Quote
+              </a>
             </div>
-          ))}
+          </div>
+          <div className="buyers-hero__media">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGhY3EMKJ0X1CLmJiabB1IaKdZpkG0oKsWPoHDfG-APgcG4iDxC2OEyLAlrAt0IDo6BV7P-toir6j2_lU5dzOVR0Ao7JfXEyTCxRwXqNyd6Cn9-7Yi-EwwPQhts6JF4OrmZYUdI5ntOzJ7R8hn0Ct7pw7nGdIhtIsz0GI6wSwAR8Z95japkiu8E2hguPOT5VVPsA6muwzkjzOJ9ltAgwarQ065EZlvP_3iPu0Lprlb1jWX3b81e7u9"
+              alt="Fresh produce being inspected and packed in an export packhouse"
+              className="buyers-hero__img"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="section section--alt">
+      {/* ---- Value Props (Why Source From Us) ---- */}
+      <section className="buyers-props section section--alt">
         <div className="container">
-          <div className="section-heading">
-            <span className="eyebrow">Request a quote</span>
-            <h2>Tell us what you need</h2>
+          <h2 className="buyers-props__heading">Why Source From Us</h2>
+          <div className="buyers-props__grid">
+            {VALUE_PROPS.map((p) => (
+              <div key={p.title} className="buyers-prop-card">
+                <span className={`material-symbols-outlined buyers-prop-card__icon buyers-prop-card__icon--${p.iconColor}`}>
+                  {p.icon}
+                </span>
+                <h3 className="buyers-prop-card__title">{p.title}</h3>
+                <p className="buyers-prop-card__desc">{p.desc}</p>
+                {p.tags && (
+                  <div className="buyers-prop-card__tags">
+                    {p.tags.map((tag) => (
+                      <span key={tag} className="buyers-tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          {submitted ? (
-            <p style={{ fontWeight: 600, color: 'var(--color-primary-dark)' }}>
-              Thanks — your request has been received. Our team will follow up shortly.
-            </p>
-          ) : (
-            <form className="form" onSubmit={handleSubmit}>
-              <div className="form-row">
-                <div>
-                  <label htmlFor="name">Full name</label>
-                  <input id="name" name="name" type="text" required />
-                </div>
-                <div>
-                  <label htmlFor="company">Company</label>
-                  <input id="company" name="company" type="text" required />
-                </div>
+      {/* ---- Quote Form Section ---- */}
+      <section className="buyers-quote section" id="quote">
+        <div className="container">
+          <div className="buyers-quote__card">
+            <div className="buyers-quote__header">
+              <h2 className="buyers-quote__title">Request a Quote</h2>
+              <p className="buyers-quote__subtitle">
+                Provide your details below and our export team will contact you within 24 hours.
+              </p>
+            </div>
+
+            {submitted ? (
+              <div className="buyers-quote__success">
+                <span className="material-symbols-outlined buyers-quote__success-icon">check_circle</span>
+                <h3>Thank you for your request!</h3>
+                <p>Our export logistics team will follow up with your customized quote within 24 hours.</p>
               </div>
-              <div className="form-row">
-                <div>
-                  <label htmlFor="country">Country</label>
-                  <input id="country" name="country" type="text" required />
+            ) : (
+              <form className="form buyers-form" onSubmit={handleSubmit}>
+                <div className="form-row">
+                  <div>
+                    <label htmlFor="name">Full Name</label>
+                    <input id="name" name="name" type="text" required placeholder="Enter full name" />
+                  </div>
+                  <div>
+                    <label htmlFor="company">Company</label>
+                    <input id="company" name="company" type="text" required placeholder="Company name" />
+                  </div>
                 </div>
-                <div>
-                  <label htmlFor="product">Product(s) of interest</label>
-                  <input id="product" name="product" type="text" placeholder="e.g. Tomato, onion" required />
+
+                <div className="form-row">
+                  <div>
+                    <label htmlFor="country">Country of Destination</label>
+                    <input id="country" name="country" type="text" required placeholder="e.g. Netherlands, UK, Germany" />
+                  </div>
+                  <div>
+                    <label htmlFor="product">Product of Interest</label>
+                    <select
+                      id="product"
+                      name="product"
+                      required
+                      value={selectedProduct}
+                      onChange={(e) => setSelectedProduct(e.target.value)}
+                    >
+                      <option value="" disabled>Select a product...</option>
+                      <option value="tomatoes">Rift Valley Tomatoes</option>
+                      <option value="onions">Red Onions</option>
+                      <option value="peppers">Green Peppers</option>
+                      <option value="potato">Highland Potatoes</option>
+                      <option value="papaya">Fresh Papaya</option>
+                      <option value="seeds">Certified Hybrid Seeds</option>
+                      <option value="vegetables">General Fresh Vegetables</option>
+                      <option value="coffee">Coffee Beans</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <label htmlFor="volume">Estimated volume</label>
-                <input id="volume" name="volume" type="text" placeholder="e.g. 10 tonnes / month" />
-              </div>
-              <div>
-                <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell us about your timeline and requirements" />
-              </div>
-              <button type="submit" className="btn btn--primary" style={{ alignSelf: 'flex-start' }}>
-                Submit request
-              </button>
-            </form>
-          )}
+
+                <div>
+                  <label htmlFor="volume">Estimated Volume (Tonnes)</label>
+                  <input id="volume" name="volume" type="number" required placeholder="e.g. 20" />
+                </div>
+
+                <div>
+                  <label htmlFor="message">Additional Requirements</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    placeholder="Specify shipping terms, packaging specs, or delivery timelines..."
+                  />
+                </div>
+
+                <div className="buyers-form__submit-wrap">
+                  <button type="submit" className="btn btn--primary">
+                    Submit Request
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
         </div>
       </section>
     </>

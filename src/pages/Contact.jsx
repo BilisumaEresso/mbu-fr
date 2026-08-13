@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import PageHero from '../components/common/PageHero.jsx'
 import './InnerPage.css'
 
 function Contact() {
@@ -7,53 +6,128 @@ function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    // Phase 1: wire this up to a transactional email service (e.g. Resend/SendGrid).
     setSubmitted(true)
   }
 
   return (
     <>
-      <PageHero eyebrow="Contact" title="Get in touch" />
+      {/* ---- Hero Section ---- */}
+      <section className="contact-hero section">
+        <div className="container">
+          <h1 className="contact-hero__title">
+            Get in Touch with Meki Batu Union
+          </h1>
+          <p className="contact-hero__desc">
+            We welcome inquiries from global partners, local stakeholders, and farmers. Our team is ready to discuss agricultural exports, cooperative membership, and sustainable farming initiatives in the Great Rift Valley.
+          </p>
+        </div>
+      </section>
 
-      <section className="section">
-        <div className="container two-col">
-          <div>
-            <p><strong>Address</strong><br />Meki town, East Shewa Zone, Oromia, Ethiopia</p>
-            <p><strong>Phone</strong><br />+251 00 000 0000</p>
-            <p><strong>Email</strong><br />info@mekibatuunion.org</p>
-            <div className="img-placeholder" style={{ height: 220, marginTop: 'var(--space-6)' }}>
-              Map — Meki town
+      {/* ---- Contact Form & Info Grid ---- */}
+      <section className="contact-main section section--alt">
+        <div className="container contact-main__grid">
+          {/* Info Sidebar Column */}
+          <div className="contact-info-col">
+            <div className="contact-info-card">
+              <span className="label-caps label-caps--secondary block mb-3">Headquarters</span>
+              <div className="contact-info-item">
+                <span className="material-symbols-outlined contact-info-item__icon">location_on</span>
+                <div>
+                  <p className="font-medium">Meki Town</p>
+                  <p className="text-muted">East Shewa Zone, Oromia</p>
+                  <p className="text-muted">Ethiopia</p>
+                </div>
+              </div>
+
+              <span className="label-caps label-caps--secondary block mb-3 mt-6">Direct Lines</span>
+              <div className="contact-info-item">
+                <span className="material-symbols-outlined contact-info-item__icon">call</span>
+                <p>+251 11 123 4567</p>
+              </div>
+              <div className="contact-info-item">
+                <span className="material-symbols-outlined contact-info-item__icon">mail</span>
+                <p>info@mekibatuunion.com</p>
+              </div>
+            </div>
+
+            <div className="contact-info-media desktop-only">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWtRsi-Koe-nBfOqSS5HJljv_0RDEHckkgTna9Cjr3LLEVfFlf3PM6yIk9IoOZEAKKBRbepAlSUCN53nYl-IrGoFRjoQdvJoKWRKrUfQwFZlpVuNIzfP1k0Pgq0iomva4WeKd9auJx9uY_vYp3VGEoHBZWZdXEethuLbRFSl7BBQHQeAotnGKVJn2KKDOWoJp8bmBOkBAwi9y82DWHUhc_irl1KHej3ZYOs0-I9crg5WFIxD1m2E7v"
+                alt="Rich dark agricultural soil with green crops in Meki"
+                className="contact-info-img"
+              />
             </div>
           </div>
 
-          <div>
-            {submitted ? (
-              <p style={{ fontWeight: 600, color: 'var(--color-primary-dark)' }}>
-                Thanks for reaching out — we'll get back to you soon.
-              </p>
-            ) : (
-              <form className="form" onSubmit={handleSubmit}>
-                <div>
-                  <label htmlFor="c-name">Name</label>
-                  <input id="c-name" name="name" type="text" required />
+          {/* Form Column */}
+          <div className="contact-form-col">
+            <div className="contact-form-card">
+              {submitted ? (
+                <div className="contact-success">
+                  <span className="material-symbols-outlined contact-success__icon">check_circle</span>
+                  <h2>Message Sent!</h2>
+                  <p>Thank you for reaching out. Our team will review your inquiry and respond shortly.</p>
                 </div>
-                <div>
-                  <label htmlFor="c-email">Email</label>
-                  <input id="c-email" name="email" type="email" required />
-                </div>
-                <div>
-                  <label htmlFor="c-subject">Subject</label>
-                  <input id="c-subject" name="subject" type="text" />
-                </div>
-                <div>
-                  <label htmlFor="c-message">Message</label>
-                  <textarea id="c-message" name="message" required />
-                </div>
-                <button type="submit" className="btn btn--primary" style={{ alignSelf: 'flex-start' }}>
-                  Send message
-                </button>
-              </form>
-            )}
+              ) : (
+                <form className="form contact-form" onSubmit={handleSubmit}>
+                  <div className="form-row">
+                    <div>
+                      <label htmlFor="name">Full Name</label>
+                      <input id="name" name="name" type="text" required placeholder="e.g. Abebe Bekele" />
+                    </div>
+                    <div>
+                      <label htmlFor="email">Email Address</label>
+                      <input id="email" name="email" type="email" required placeholder="email@organization.com" />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="subject">Inquiry Subject</label>
+                    <select id="subject" name="subject" required defaultValue="">
+                      <option value="" disabled>Select a topic...</option>
+                      <option value="export">Export Partnerships</option>
+                      <option value="membership">Cooperative Membership</option>
+                      <option value="media">Media &amp; Press</option>
+                      <option value="other">General Inquiry</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message">Your Message</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      required
+                      placeholder="How can we assist you today?"
+                    />
+                  </div>
+
+                  <div className="contact-form__submit-wrap">
+                    <button type="submit" className="btn btn--primary">
+                      Send Message <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- Regional Map Placeholder ---- */}
+      <section className="contact-map section">
+        <div className="container">
+          <div className="contact-map__card">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxQeQ1AtLrFEWnP0RzsJJYKfiqP2ofAqycTJjMNGqftXPmq2HNjOJB0HutlHfp6LhMluKsAmY0GW_vdHJFUgaY2gEukDTaXefOVUmU7TWhqdCOJe6SZoXWVd9upnZamF0yA8KOdeht4MgL8ufAa4jf9doQQWbSdBgA9vhQo4RTBocMg92wXAEQM3j1mSUxMvXURJFQNIp1Rhvkg6k18Z4VB_qw6Wl3SF-oNGWFWVG7tGqBXAkUGdQo"
+              alt="Map showing Meki Headquarters location in Oromia, Ethiopia"
+              className="contact-map__img"
+            />
+            <div className="contact-map__badge">
+              <span className="material-symbols-outlined text-secondary">pin_drop</span>
+              <span className="label-caps label-caps--primary">Meki Headquarters</span>
+            </div>
           </div>
         </div>
       </section>

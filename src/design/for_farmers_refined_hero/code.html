@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>For Farmers - Meki Batu Union</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Source+Sans+3:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#324c3e",
+                      "primary-fixed-dim": "#b0cdbb",
+                      "on-tertiary-fixed-variant": "#464745",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#727973",
+                      "on-error-container": "#93000a",
+                      "background": "#fcf9f8",
+                      "on-secondary-container": "#742503",
+                      "tertiary": "#2b2c2a",
+                      "secondary-fixed": "#ffdbcf",
+                      "error-container": "#ffdad6",
+                      "secondary-container": "#fd8c63",
+                      "on-primary-fixed": "#062014",
+                      "on-primary-container": "#98b5a3",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#2d4739",
+                      "on-tertiary-fixed": "#1a1c1a",
+                      "secondary": "#9d4320",
+                      "tertiary-fixed": "#e3e2e0",
+                      "inverse-on-surface": "#f3f0ef",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#e5e2e1",
+                      "surface-dim": "#dcd9d9",
+                      "surface-tint": "#496455",
+                      "tertiary-container": "#414240",
+                      "secondary-fixed-dim": "#ffb59b",
+                      "outline-variant": "#c2c8c2",
+                      "inverse-surface": "#313030",
+                      "surface": "#fcf9f8",
+                      "on-surface-variant": "#424844",
+                      "primary-fixed": "#ccead6",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#f0eded",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed-dim": "#c7c6c4",
+                      "surface-container-low": "#f6f3f2",
+                      "on-secondary-fixed": "#380d00",
+                      "on-background": "#1c1b1b",
+                      "on-surface": "#1c1b1b",
+                      "inverse-primary": "#b0cdbb",
+                      "on-secondary-fixed-variant": "#7e2c0a",
+                      "on-error": "#ffffff",
+                      "on-tertiary-container": "#aeaeac",
+                      "surface-container-high": "#eae7e7",
+                      "primary": "#173124",
+                      "surface-bright": "#fcf9f8",
+                      "surface-variant": "#e5e2e1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-xl": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "\"Source Sans 3\""
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "\"Source Sans 3\""
+                      ]
+              },
+              "fontSize": {
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.8",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex flex-col">
+<!-- TopNavBar from JSON -->
+<header class="w-full top-0 sticky z-50 bg-background dark:bg-surface-container-low border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+                Meki Batu Union
+            </div>
+<nav class="hidden md:flex space-x-8">
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 py-2 px-3 rounded-lg" href="#">About</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 py-2 px-3 rounded-lg" href="#">Products</a>
+<a class="text-secondary dark:text-secondary-fixed font-bold border-b-2 border-secondary font-body-md text-body-md opacity-80 transition-opacity duration-150 py-2 px-3" href="#">Farmers</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 py-2 px-3 rounded-lg" href="#">Buyers</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 py-2 px-3 rounded-lg" href="#">News</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 py-2 px-3 rounded-lg" href="#">Contact</a>
+</nav>
+<button class="hidden md:block bg-secondary text-on-secondary px-4 py-2 rounded-lg font-body-md text-body-md font-medium hover:bg-secondary-container hover:text-on-secondary-container transition-colors duration-200">
+                Member Login
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative w-full bg-surface py-24 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-6 z-10">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-8 leading-tight">Empowering Primary Cooperatives</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+        Meki Batu Union provides essential services, training, and market access to our network of primary cooperatives, ensuring sustainable growth and prosperity for Ethiopian farmers.
+      </p>
+<div class="mt-12 flex gap-6">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-body-md font-medium hover:bg-secondary-container transition-colors">Our Services</button>
+<button class="border border-outline text-primary px-8 py-4 rounded-lg font-body-md font-medium hover:bg-surface-container-low transition-colors">Learn More</button>
+</div>
+</div>
+<div class="lg:col-span-6 relative mt-12 lg:mt-0">
+<div class="relative aspect-[4/3] rounded-xl overflow-hidden border border-outline-variant shadow-lg">
+<img alt="Ethiopian farmers in a professional agricultural packhouse" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuNDFZA-_K76aN8QAEZRdXVSymX50AqVpU0hH53C9qft4H1t7kxaSMhaYdRk5vgX3w18mraIdHNWKdnd3nVi2XLUG93qlSIE7M-2Pf-EmVZBQjFnulh0uahAyJQSz3NjoVtnck0JN3FhA7QqibciIIC55FsbRIiLMV0BESSjeq8V4KjBJvUrAmLVtu-SBwcuJZH15QVX9JVUfARufKTdLI1Hj3elpI3234eqFr1_aIcGxRxvHr54vf"/>
+</div>
+<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary opacity-10 rounded-full -z-10"></div>
+<div class="absolute -top-6 -right-6 w-48 h-48 bg-secondary opacity-5 rounded-full -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-background">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-16 border-b border-outline-variant pb-4">Member Services</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Service 1 -->
+<div class="border border-outline-variant p-8 bg-surface rounded-lg hover:bg-surface-container-lowest transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="agriculture" style="font-variation-settings: 'FILL' 0;">agriculture</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Input Supply</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Reliable access to high-quality seeds, fertilizers, and essential agricultural inputs at cooperative rates to maximize seasonal yields.</p>
+</div>
+<!-- Service 2 -->
+<div class="border border-outline-variant p-8 bg-surface rounded-lg hover:bg-surface-container-lowest transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="account_balance" style="font-variation-settings: 'FILL' 0;">account_balance</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Credit Access</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Facilitated financing and micro-credit solutions designed specifically for agricultural cycles and cooperative expansion needs.</p>
+</div>
+<!-- Service 3 -->
+<div class="border border-outline-variant p-8 bg-surface rounded-lg hover:bg-surface-container-lowest transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="trending_up" style="font-variation-settings: 'FILL' 0;">trending_up</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Market Information</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time pricing data, market trend analysis, and direct linkages to domestic and international export markets.</p>
+</div>
+<!-- Service 4 -->
+<div class="border border-outline-variant p-8 bg-surface rounded-lg hover:bg-surface-container-lowest transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="precision_manufacturing" style="font-variation-settings: 'FILL' 0;">precision_manufacturing</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Mechanization</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Access to shared modern farming equipment, maintenance support, and operational training to improve farming efficiency.</p>
+</div>
+<!-- Service 5 -->
+<div class="border border-outline-variant p-8 bg-surface rounded-lg hover:bg-surface-container-lowest transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="school" style="font-variation-settings: 'FILL' 0;">school</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Training &amp; Capacity</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Continuous education on GlobalG.A.P standards, organic farming practices, and cooperative management principles.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 lg:col-start-2">
+<h2 class="font-label-caps text-label-caps text-secondary mb-4 uppercase tracking-widest">Membership</h2>
+<h3 class="font-headline-xl text-headline-xl text-primary mb-8">How to Join Meki Batu Union</h3>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center font-headline-md font-bold">1</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Form a Primary Cooperative</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Organize local farmers into a legally registered primary cooperative under local agricultural directives.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center font-headline-md font-bold">2</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Submit Application</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Provide the union with your registration documents, member roster, and formal request for union affiliation.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center font-headline-md font-bold">3</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Assessment &amp; Onboarding</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Undergo our standard capacity assessment followed by initial training sessions to integrate into our supply chain.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 lg:col-start-8 mt-12 lg:mt-0">
+<img class="w-full h-auto object-cover rounded-lg border border-outline-variant" data-alt="A high-quality, editorial-style photograph of a cooperative training session outdoors in a field in Ethiopia. An agricultural expert is demonstrating soil techniques to a group of attentive local farmers. The lighting is bright and sunny, highlighting the rich brown of the earth and the vibrant green of the surrounding crops. The scene feels grounded, collaborative, and deeply professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi6J9q53heWgIYMaBheMC7J0O8XVQ8vm6RpwZuagDlhi9L8HEwgpnX8TdO-AluxdUCUvEohbxkx0oBkfRV_PI-D4fuonXHLyOtqkQlXJE6UG7HhsxjizKRlg0P3sQ9EsENMg73Hsr1n9xI_CEC6hAF3IKy0sWjkqZMFvmEhpIq-boakyfslyPJRVYLiBXuRRAV_H9dhrKhvCzLOJmRfQ2qdRRPpTTiaM0mpgb2l5EoFk1PhGi9VNix"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Portal Teaser Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-background">
+<div class="max-w-4xl mx-auto border border-outline-variant bg-surface rounded-xl p-12 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary opacity-5 rounded-bl-full pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-secondary opacity-5 rounded-tr-full pointer-events-none"></div>
+<span class="material-symbols-outlined text-5xl text-outline mb-6" data-icon="terminal" style="font-variation-settings: 'FILL' 0;">terminal</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Digital Member Portal</h2>
+<p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-8">Phase 2 Development - Coming Soon</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8">
+                     We are developing a secure, centralized digital portal for our primary cooperatives. Soon, members will be able to access market prices, request inputs, view transaction histories, and manage their union accounts directly online.
+                 </p>
+<div class="inline-block px-6 py-3 border border-outline text-on-surface-variant rounded-lg font-body-md text-body-md font-medium cursor-not-allowed opacity-60">
+                     Portal Access Unavailable
+                 </div>
+</div>
+</section>
+</main>
+<!-- Footer from JSON -->
+<footer class="w-full mt-auto bg-surface-container dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim mb-4">
+                    Meki Batu Union
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface mt-4">
+                    © 2024 Meki Batu Union. All rights reserved.
+                </p>
+</div>
+<div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col space-y-3">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-secondary transition-colors duration-200" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-secondary transition-colors duration-200" href="#">Our Products</a>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors duration-200 translate-y-[-2px] transition-transform" href="#">For Farmers</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-secondary transition-colors duration-200" href="#">For Buyers</a>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-secondary transition-colors duration-200" href="#">Retail Outlets</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-secondary transition-colors duration-200" href="#">News</a>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-secondary transition-colors duration-200" href="#">Impact</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-secondary transition-colors duration-200" href="#">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

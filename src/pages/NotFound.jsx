@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from '../assets/images/MBU_logo_new.png'
+import logo from '../assets/images/MBU_logo_new.webp'
 
 function NotFound() {
   return (
