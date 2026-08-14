@@ -50,6 +50,14 @@
   --on-background: #1c1b1b;
   --surface-variant: #e5e2e1;
 
+  /* ---- Brand extension: logo-derived accents ---- */
+  --color-canopy-light: #3d5f4a;   /* canopy highlight — hover states, subtle bg tint */
+  --color-water: #2f7fb8;          /* irrigation pipe/tap — links, icons, accent lines only, never large fills */
+  --color-chili: #c4331f;          /* pepper pods — sparing use: CTAs, "export" badges, emphasis */
+  --color-onion: #d9668f;          /* onion flesh — rare accent, never a large block */
+  --color-gold: #c98a2d;           /* brass tap fixture — dividers, badges, borders on featured/certified content */
+  --color-paper: #fbf8f3;          /* warm base background, replaces flat white/--surface where used as page bg */
+
   /* ---- Semantic aliases used throughout components ---- */
   --color-bg: var(--background);
   --color-bg-alt: var(--surface-container-low);

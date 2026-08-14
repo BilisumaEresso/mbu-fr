@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import SectionDivider from '../components/common/SectionDivider.jsx'
 import farmerHeroImg from '../assets/images/farmerHero.webp'
 import newsHeroImg from '../assets/images/newsHero.webp'
 import './InnerPage.css'
@@ -7,47 +8,57 @@ import './Farmers.css'
 
 const SERVICES = [
   {
-    icon: 'agriculture',
-    title: 'Input Supply',
-    desc: 'Reliable access to high-quality seeds, fertilizers, and essential agricultural inputs at cooperative rates to maximize seasonal yields.',
+    icon: 'local_shipping',
+    title: 'Input Supply Distribution',
+    desc: 'Reliable access to high-quality seeds, fertilizers, and essential agricultural inputs at cooperative rates.',
   },
   {
     icon: 'account_balance',
-    title: 'Credit Access',
-    desc: 'Facilitated financing and micro-credit solutions designed specifically for agricultural cycles and cooperative expansion needs.',
+    title: 'Financial Services Support',
+    desc: 'Facilitated financing and micro-credit solutions designed specifically for agricultural cycle needs.',
   },
   {
-    icon: 'trending_up',
-    title: 'Market Information',
-    desc: 'Real-time pricing data, market trend analysis, and direct linkages to domestic and international export markets.',
+    icon: 'storefront',
+    title: 'Market Linkage & Aggregation',
+    desc: 'Direct access to national wholesale markets, retail outlets, and international export contracts.',
   },
   {
     icon: 'precision_manufacturing',
-    title: 'Mechanization',
-    desc: 'Access to shared modern farming equipment, maintenance support, and operational training to improve farming efficiency.',
+    title: 'Mechanization Support',
+    desc: 'Shared access to modern farming machinery, irrigation technology, and equipment maintenance.',
+  },
+  {
+    icon: 'warehouse',
+    title: 'Storage & Cold Chain',
+    desc: 'Post-harvest handling facilities, warehouse management, and temperature-controlled storage.',
   },
   {
     icon: 'school',
-    title: 'Training & Capacity',
-    desc: 'Continuous education on GlobalG.A.P standards, organic farming practices, and cooperative management principles.',
+    title: 'Technical Training',
+    desc: 'Continuous education on GlobalG.A.P standards, organic farming practices, and cooperative management.',
   },
 ]
 
 const STEPS = [
   {
-    num: 1,
+    number: '01',
     title: 'Form a Primary Cooperative',
-    desc: 'Organize local farmers into a legally registered primary cooperative under local agricultural directives.',
+    desc: 'Organize local farmers into a legally registered primary cooperative under local agricultural regulations.',
   },
   {
-    num: 2,
+    number: '02',
     title: 'Submit Application',
     desc: 'Provide the union with your registration documents, member roster, and formal request for union affiliation.',
   },
   {
-    num: 3,
-    title: 'Assessment & Onboarding',
-    desc: 'Undergo our standard capacity assessment followed by initial training sessions to integrate into our supply chain.',
+    number: '03',
+    title: 'Union Board Review',
+    desc: 'The Meki Batu Union board reviews the application and conducts a site assessment visit.',
+  },
+  {
+    number: '04',
+    title: 'Full Affiliation',
+    desc: 'Upon approval, your primary co-op gains full access to all union services, inputs, and export market linkages.',
   },
 ]
 
@@ -58,7 +69,7 @@ function Farmers() {
         <title>Farmer Co-ops &amp; Membership | Meki Batu Union</title>
         <meta
           name="description"
-          content="Empowering 140+ primary agricultural cooperatives in Ethiopia through seed distribution, agronomy advisory, mechanization services, and fair market access."
+          content="Empowering 140+ primary agricultural cooperatives in Ethiopia through seed distribution, agronomy training, cold-chain storage, and direct export linkages."
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
@@ -79,6 +90,8 @@ function Farmers() {
         imageAlt="Ethiopian farmers in a professional agricultural packhouse"
         badge="140+ Primary Co-ops"
       />
+
+      <SectionDivider />
 
       {/* ---- Member Services Section ---- */}
       <section className="farmers-services section section--alt" id="services">
@@ -106,8 +119,8 @@ function Farmers() {
             <h2 className="farmers-membership__title">How to Join Meki Batu Union</h2>
             <div className="farmers-membership__steps">
               {STEPS.map((step) => (
-                <div key={step.num} className="farmers-step">
-                  <div className="farmers-step__num">{step.num}</div>
+                <div key={step.number} className="farmers-step">
+                  <div className="farmers-step__num">{step.number}</div>
                   <div>
                     <h4 className="farmers-step__title">{step.title}</h4>
                     <p className="farmers-step__desc">{step.desc}</p>

@@ -28,6 +28,25 @@
   pointer-events: none;
 }
 
+.home-hero::after {
+  content: '';
+  position: absolute;
+  right: -60px;
+  bottom: -60px;
+  width: 380px;
+  height: 380px;
+  background: url('../assets/motifs/tree-outline.svg') no-repeat center / contain;
+  opacity: 0.05;
+  color: var(--color-primary);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
 @media (min-width: 900px) {
   .home-hero {
     padding: var(--space-24) 0;

@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import SectionDivider from '../components/common/SectionDivider.jsx'
 import aboutHeroImg from '../assets/images/aboutHero.webp'
 import teamMember1 from '../assets/images/team_member_1.webp'
 import teamMember2 from '../assets/images/team_member_2.webp'
@@ -39,6 +40,8 @@ function About() {
         image={aboutHeroImg}
         imageAlt="Fertile Ethiopian agricultural land during golden hour"
       />
+
+      <SectionDivider />
 
       {/* ---- History Timeline (Our Foundation) ---- */}
       <section className="about-foundation section section--alt">

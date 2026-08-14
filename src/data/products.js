@@ -3,8 +3,13 @@ import bentoOnionImg from '../assets/images/bentoOnion.webp'
 import bentoGreenPepperImg from '../assets/images/bentoGreenPepper.webp'
 import bentoPotatoImg from '../assets/images/bentoPotato.webp'
 import bentoPapayaImg from '../assets/images/bentoPapaya.webp'
-import redBeanSeedsImg from '../assets/images/redBeanSeeds.webp'
 import bentoGreenBeansImg from '../assets/images/bentoGreenBeans.webp'
+import bentoCabbageImg from '../assets/images/bentoCabbage.webp'
+import bentoWatermelonImg from '../assets/images/bentoWatermelon.webp'
+import bentoBitterGourdImg from '../assets/images/bentoBitterGourd.webp'
+import bentoHybridSeedsImg from '../assets/images/bentoHybridSeeds.webp'
+import bentoOnionSeedsImg from '../assets/images/bentoOnionSeeds.webp'
+import bentoMaizeImg from '../assets/images/bentoMaize.webp'
 
 export const products = [
   {
@@ -89,7 +94,7 @@ export const products = [
     shelfLife: '1-2 Months (Cool storage)',
     packaging: '20kg Mesh Sacks',
     brix: 'Fresh & Crisp',
-    img: bentoGreenPepperImg,
+    img: bentoCabbageImg,
   },
   {
     id: 'papaya',
@@ -117,7 +122,7 @@ export const products = [
     shelfLife: '2-3 Weeks',
     packaging: 'Bulk Bins / Crates',
     brix: '10° - 12° Brix',
-    img: bentoPapayaImg,
+    img: bentoWatermelonImg,
   },
   {
     id: 'bitter-gourd',
@@ -131,7 +136,7 @@ export const products = [
     shelfLife: '10-12 Days',
     packaging: '5kg Export Boxes',
     brix: 'Export Grade',
-    img: bentoGreenBeansImg,
+    img: bentoBitterGourdImg,
   },
   {
     id: 'seeds',
@@ -145,7 +150,7 @@ export const products = [
     shelfLife: '12-24 Months (Sealed Packets)',
     packaging: '100g / 500g Moisture-proof Foil Packs',
     brix: '98%+ Germination Rate',
-    img: redBeanSeedsImg,
+    img: bentoHybridSeedsImg,
   },
   {
     id: 'onion-seed',
@@ -159,7 +164,7 @@ export const products = [
     shelfLife: '18-24 Months',
     packaging: '250g Foil Bags',
     brix: '95%+ Germination',
-    img: redBeanSeedsImg,
+    img: bentoOnionSeedsImg,
   },
   {
     id: 'maize-seed',
@@ -173,7 +178,7 @@ export const products = [
     shelfLife: '24 Months',
     packaging: '2kg / 10kg Bags',
     brix: '98%+ Germination',
-    img: redBeanSeedsImg,
+    img: bentoMaizeImg,
   },
 ]
 

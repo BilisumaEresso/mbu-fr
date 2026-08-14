@@ -79,10 +79,13 @@
   font-family: var(--font-mono);
   font-size: var(--fs-eyebrow);
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.95);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: var(--space-2);
+  display: inline-block;
+  border-bottom: 1.5px solid var(--color-gold);
+  padding-bottom: 2px;
 }
 
 .product-card__title {

@@ -28,6 +28,25 @@
   pointer-events: none;
 }
 
+.page-hero::after {
+  content: '';
+  position: absolute;
+  right: -60px;
+  bottom: -60px;
+  width: 380px;
+  height: 380px;
+  background: url('../../assets/motifs/tree-outline.svg') no-repeat center / contain;
+  opacity: 0.05;
+  color: var(--color-primary);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
 @media (min-width: 900px) {
   .page-hero {
     padding: var(--space-24) 0;
@@ -132,10 +151,10 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  background: rgba(252, 249, 248, 0.92);
+  background: rgba(252, 249, 248, 0.94);
   backdrop-filter: blur(8px);
-  border-top: 1px solid var(--outline-variant);
-  border-right: 1px solid var(--outline-variant);
+  border-top: 1.5px solid var(--color-gold);
+  border-right: 1.5px solid var(--color-gold);
   border-top-right-radius: var(--radius-md);
   padding: var(--space-3) var(--space-4);
 }

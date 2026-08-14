@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import SectionDivider from '../components/common/SectionDivider.jsx'
 import { news } from '../data/news.js'
 import './InnerPage.css'
 import './News.css'
@@ -57,6 +58,9 @@ function News() {
           </div>
         }
       />
+
+      <SectionDivider />
+
       <div className="container" style={{ paddingTop: 'var(--space-6)' }}>
 
         {/* Top Featured Row (8-col + 4-col) */}

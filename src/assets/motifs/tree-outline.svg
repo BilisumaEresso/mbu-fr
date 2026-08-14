@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer Canopy Contour -->
+    <path d="M 200 40 
+             C 140 40, 90 80, 80 135 
+             C 45 150, 30 190, 45 230 
+             C 25 265, 45 310, 85 320 
+             C 120 330, 160 325, 200 325 
+             C 240 325, 280 330, 315 320 
+             C 355 310, 375 265, 355 230 
+             C 370 190, 355 150, 320 135 
+             C 310 80, 260 40, 200 40 Z" />
+    <!-- Tree Trunk and Roots -->
+    <path d="M 180 325 L 170 380 M 220 325 L 230 380 M 200 325 L 200 385" stroke-width="12" />
+    <!-- Internal Branch Structure Accent Lines -->
+    <path d="M 200 325 C 200 250, 160 210, 120 180 M 200 270 C 200 220, 240 180, 280 150 M 200 220 C 190 160, 200 100, 200 60" stroke-width="7" opacity="0.75" />
+  </g>
+</svg>

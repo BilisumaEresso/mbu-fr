@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import SectionDivider from '../components/common/SectionDivider.jsx'
 import buyerHeroImg from '../assets/images/buyerHero.webp'
 import './InnerPage.css'
 import './Buyers.css'
@@ -113,6 +114,8 @@ function Buyers() {
         imageAlt="Fresh produce being inspected and packed in an export packhouse"
         badge="Export &amp; Wholesale"
       />
+
+      <SectionDivider />
 
       {/* ---- Value Props (Why Source From Us) ---- */}
       <section className="buyers-props section section--alt">

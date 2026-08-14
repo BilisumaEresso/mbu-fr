@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import SectionDivider from '../components/common/SectionDivider.jsx'
 import impactHeroImg from '../assets/images/impactHero.webp'
 import womenFarmerImg from '../assets/images/womenFarmer.webp'
 import './InnerPage.css'
@@ -54,6 +55,8 @@ function Impact() {
         imageAlt="Vibrant thriving agricultural field in Ethiopia during golden hour"
         badge="Empowering 50k+ Farmers"
       />
+
+      <SectionDivider />
 
       {/* ---- Measurable Impact Bento Grid ---- */}
       <section className="impact-metrics section section--alt">

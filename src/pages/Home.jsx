@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Button from '../components/common/Button.jsx'
+import SectionDivider from '../components/common/SectionDivider.jsx'
 import homeHeroImg from '../assets/images/homeHero.webp'
 import bentoTomatoImg from '../assets/images/bentoTomato.webp'
 import bentoOnionImg from '../assets/images/bentoOnion.webp'
@@ -57,6 +58,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* Stats Section */}
       <section className="home-stats section">

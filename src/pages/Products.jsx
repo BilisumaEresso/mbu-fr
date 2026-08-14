@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import SectionDivider from '../components/common/SectionDivider.jsx'
 import ourProductHeroImg from '../assets/images/ourProductHero.webp'
 import { products, categories, harvestCalendar } from '../data/products.js'
 import './InnerPage.css'
@@ -43,6 +44,8 @@ function Products() {
         imageAlt="Fresh harvest of red tomatoes in wooden crate on dark Ethiopian soil"
         badge="GlobalG.A.P Certified"
       />
+
+      <SectionDivider />
 
       {/* ---- Product Catalog Section ---- */}
       <section className="products-catalog section section--alt" id="catalog">

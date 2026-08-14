@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import SectionDivider from '../components/common/SectionDivider.jsx'
 import retailHeroImg from '../assets/images/retailHero.webp'
 import { outlets } from '../data/outlets.js'
 import './InnerPage.css'
@@ -40,6 +41,8 @@ function RetailOutlets() {
         imageAlt="Pristine fresh produce display in a modern retail setting"
         badge="5 Addis Ababa Locations"
       />
+
+      <SectionDivider />
 
       {/* ---- Locations List & Map Section ---- */}
       <section className="outlets-locations section section--alt" id="locations">

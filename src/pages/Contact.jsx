@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import SectionDivider from '../components/common/SectionDivider.jsx'
 import impactHeroImg from '../assets/images/impactHero.webp'
 import farmerMembershipImg from '../assets/images/FarmerMembership.webp'
 import './InnerPage.css'
@@ -64,6 +65,8 @@ function Contact() {
         title="Get in Touch with Meki Batu Union"
         description="We welcome inquiries from global partners, local stakeholders, and farmers. Our team is ready to discuss agricultural exports, cooperative membership, and sustainable farming initiatives in the Great Rift Valley."
       />
+
+      <SectionDivider />
 
       {/* ---- Contact Form & Info Grid ---- */}
       <section className="contact-main section section--alt">
