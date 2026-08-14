@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
+import impactHeroImg from '../assets/images/impactHero.png'
+import farmerMembershipImg from '../assets/images/FarmerMembership.jpg'
 import './InnerPage.css'
 
 function Contact() {
@@ -11,6 +14,13 @@ function Contact() {
 
   return (
     <>
+      <Helmet>
+        <title>Contact Us | Meki Batu Union</title>
+        <meta
+          name="description"
+          content="Get in touch with Meki Batu Union's headquarters in Meki, Oromia for export inquiries, cooperative membership, or general business questions."
+        />
+      </Helmet>
       {/* ---- Hero Section ---- */}
       <section className="contact-hero section">
         <div className="container">
@@ -34,8 +44,15 @@ function Contact() {
                 <span className="material-symbols-outlined contact-info-item__icon">location_on</span>
                 <div>
                   <p className="font-medium">Meki Town</p>
-                  <p className="text-muted">East Shewa Zone, Oromia</p>
-                  <p className="text-muted">Ethiopia</p>
+                  <p className="text-muted">East Shewa Zone, Oromia, Ethiopia</p>
+                  <a
+                    href="https://maps.app.goo.gl/h6Wbr4RpR7n3hAYu7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn--outline btn--sm mt-2 inline-flex items-center gap-1"
+                  >
+                    <span className="material-symbols-outlined text-xs">map</span> View on Google Maps
+                  </a>
                 </div>
               </div>
 
@@ -52,7 +69,7 @@ function Contact() {
 
             <div className="contact-info-media desktop-only">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWtRsi-Koe-nBfOqSS5HJljv_0RDEHckkgTna9Cjr3LLEVfFlf3PM6yIk9IoOZEAKKBRbepAlSUCN53nYl-IrGoFRjoQdvJoKWRKrUfQwFZlpVuNIzfP1k0Pgq0iomva4WeKd9auJx9uY_vYp3VGEoHBZWZdXEethuLbRFSl7BBQHQeAotnGKVJn2KKDOWoJp8bmBOkBAwi9y82DWHUhc_irl1KHej3ZYOs0-I9crg5WFIxD1m2E7v"
+                src={impactHeroImg}
                 alt="Rich dark agricultural soil with green crops in Meki"
                 className="contact-info-img"
               />
@@ -115,20 +132,27 @@ function Contact() {
         </div>
       </section>
 
-      {/* ---- Regional Map Placeholder ---- */}
+      {/* ---- Regional Map Section ---- */}
       <section className="contact-map section">
         <div className="container">
-          <div className="contact-map__card">
+          <a
+            href="https://maps.app.goo.gl/h6Wbr4RpR7n3hAYu7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-map__card"
+            style={{ display: 'block', textDecoration: 'none' }}
+          >
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxQeQ1AtLrFEWnP0RzsJJYKfiqP2ofAqycTJjMNGqftXPmq2HNjOJB0HutlHfp6LhMluKsAmY0GW_vdHJFUgaY2gEukDTaXefOVUmU7TWhqdCOJe6SZoXWVd9upnZamF0yA8KOdeht4MgL8ufAa4jf9doQQWbSdBgA9vhQo4RTBocMg92wXAEQM3j1mSUxMvXURJFQNIp1Rhvkg6k18Z4VB_qw6Wl3SF-oNGWFWVG7tGqBXAkUGdQo"
+              src={farmerMembershipImg}
               alt="Map showing Meki Headquarters location in Oromia, Ethiopia"
               className="contact-map__img"
             />
             <div className="contact-map__badge">
               <span className="material-symbols-outlined text-secondary">pin_drop</span>
-              <span className="label-caps label-caps--primary">Meki Headquarters</span>
+              <span className="label-caps label-caps--primary">Meki Headquarters — Open in Google Maps</span>
+              <span className="material-symbols-outlined text-xs">open_in_new</span>
             </div>
-          </div>
+          </a>
         </div>
       </section>
     </>

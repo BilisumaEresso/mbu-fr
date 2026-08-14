@@ -1,5 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
+import ourProductHeroImg from '../assets/images/ourProductHero.png'
+import tomatoImg from '../assets/images/tomato.jpg'
+import bentoOnionImg from '../assets/images/bentoOnion.jpg'
+import bentoGreenPepperImg from '../assets/images/bentoGreenPepper.jpg'
+import bentoPotatoImg from '../assets/images/bentoPotato.jpg'
+import bentoPapayaImg from '../assets/images/bentoPapaya.jpg'
+import redBeanSeedsImg from '../assets/images/redBeanSeeds.jpg'
 import './InnerPage.css'
 
 const CATEGORIES = ['All', 'Vegetables', 'Fruits', 'Seeds']
@@ -16,7 +24,7 @@ const PRODUCTS_DATA = [
     shelfLife: '14-21 Days (Cold-chain 8-10°C)',
     packaging: '5kg / 10kg Corrugated Export Cartons',
     brix: '4.8° - 5.5° Brix',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAdggR_aJ5c0oACcdBm_z3WZ4EP5pkda1i5jEF5eH16704v2I4wFCRWaOYkWQaOoaIZtOsYBZpZRIoe3n0D_XFdpbs17I3qjTB-f6PLKUWYQ7dr_ialhn6t5IX-_S-bEbpmhDo0SdyCsSjpT-rZhVfKWDH9uEEq9-6quYm9CAssatAG0tqjHsbYIPaneWHx-TPSJfQm7AEf2qXha21rJSlp3jybstC2wWv_WBN3oP7SHAZPDe4d1O1a',
+    img: tomatoImg,
   },
   {
     id: 'onions',
@@ -29,7 +37,7 @@ const PRODUCTS_DATA = [
     shelfLife: '3-5 Months (Dry storage)',
     packaging: '25kg / 50kg Mesh Bags',
     brix: 'N/A (Pungency index high)',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAHeKqc2FJB_KCHXDnSumRwsg59y4SXlJPrDvAAdXI_nA1PjqbId6gLhbszouO0XuVVlYCpFEQjm_qD0N_ujRnKM7V7_9zD99P7E2Lvyjcnw9SCSDMmwmoLRM-x49pYfx5uXHorEfhIpj2Si9r7UyOBF_bnakgVd-8_85e8zFhXRlG-g1GUyN_AsSvVZx0gy1hukN5R2sFfBMAem6gPFplwziI7jpus1CnmHRlfJ8sHf5yH5aFfdZPu',
+    img: bentoOnionImg,
   },
   {
     id: 'peppers',
@@ -42,7 +50,7 @@ const PRODUCTS_DATA = [
     shelfLife: '12-16 Days (Cold-chain 7°C)',
     packaging: '6kg Plastic Crates / Export Boxes',
     brix: 'Crisp & Sweet Grade A',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC8Y8BvBB6MFm2ZwpGXg4s3FN1cgYiENMzAcf51G0WYmQ7zbEJM_K3CVI2DDVh5TJgc-3vC0Ss9FRQPrDKNxSWy_M5U339kCnF0Ep38YUvAdkC4oHzqr9NddZq7k0G4-F4DcmLbN1KVCm9yH07XAw7SoIkUS_rlQ-RmWfYMtX_9Vd8yRZwQJ95B3Uq9_5sw_cOkMBdnXq9qQUQWwkcGv9H9Saz9JNP82BbRqHZQUZ3aMUyEXjDNF1nC',
+    img: bentoGreenPepperImg,
   },
   {
     id: 'potato',
@@ -55,7 +63,7 @@ const PRODUCTS_DATA = [
     shelfLife: '2-4 Months (Cool dry environment)',
     packaging: '50kg Jute Sacks',
     brix: 'High dry matter content',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUVd37W2XzABDNlNWZmL5s6ZVc9cJ2czIZhDAJ0yv-0FW87cGCV48OBYBsVtJVCeEK_sEjivii8EHA61A7LRJ_Ggw1HLcu2zWLJ3cpicR88SNd551KIVxmbhFveh5uDYwYJuHfnzUOCDJQeINjKPfPLoAXZ4NWBmt4FpG6X14a_khC0Vsd1PmyQfAFi0_DgFNWhTuOT5_oRsHMfWf7AojD1L45XZM82bnxvRTWmAdPDip-p7DXtg-D',
+    img: bentoPotatoImg,
   },
   {
     id: 'papaya',
@@ -68,7 +76,7 @@ const PRODUCTS_DATA = [
     shelfLife: '10-14 Days (12°C)',
     packaging: '4.5kg Single Layer Cartons',
     brix: '11° - 13° Brix',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCiFXx7lHckMWoHE9LmIO0g0B2-vNRbq-nJOzItsusiGRy1GsEOoi4VUH36rA8MXcsd6bsOeeTkiVRSSyavg4ACXtj-vWIwpXARGFYrtExRGvZnVZmkiMad-3Uzw6I3l6QpdzMS0HJtKDJGA9jP_bks90WxyZ68w5qEiXGdhVD4FNTFzEqXBVzBcx9oDvO-NDBEqsDV_FQMfPhchElV4ZfPa7LESOlLt_izdvlbpXrYACWCldk8jTm9',
+    img: bentoPapayaImg,
   },
   {
     id: 'seeds',
@@ -81,7 +89,7 @@ const PRODUCTS_DATA = [
     shelfLife: '12-24 Months (Sealed Packets)',
     packaging: '100g / 500g Moisture-proof Foil Packs',
     brix: '98%+ Germination Rate',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAC6-LnBnxoec0RzspHWkNKcW-DLU1c_pGnxJkQwjanGYvAeVGHpEodLsFhm_zOMXeOe_0c-MpBfMlt6e6qK6Kzmyt9bkLenffQ33XzB5YylZO2OmvCKRKcOeVFpBfXawZjQ-U34HA9-BZtYpXtq6rCmeNGeEvfRJW86sqXv1i74wrNlDzbdmlsjqUf0fZ7lMQtE0SL-xqpedsDAVoPQC1mvxAjQKr-wQXO-r4-IudvbuSX0rugBoUA',
+    img: redBeanSeedsImg,
   },
 ]
 
@@ -103,6 +111,13 @@ function Products() {
 
   return (
     <>
+      <Helmet>
+        <title>Our Products | Meki Batu Union</title>
+        <meta
+          name="description"
+          content="Explore our export-grade Ethiopian produce catalog including Rift Valley tomatoes, red onions, green peppers, highland potatoes, fresh papaya, and certified hybrid seeds."
+        />
+      </Helmet>
       {/* ---- Hero Section ---- */}
       <section className="products-hero section">
         <div className="container products-hero__grid">
@@ -115,16 +130,22 @@ function Products() {
             </p>
             <div className="products-hero__actions">
               <a href="#catalog" className="btn btn--primary">
-                View Catalog
+                View Catalog <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </a>
+              <Link to="/buyers" className="btn btn--outline">
+                Request a Quote <span className="material-symbols-outlined text-sm">description</span>
+              </Link>
             </div>
           </div>
           <div className="products-hero__media">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbY9MX4ZIkStrPPPVH8k9omtxj6ISM4FS2Od-MSW_uw-UMgsXpWOco6rndgemeJIGAcrjZvhkD7cTzNO216l876hf2mV3Ja-axuX_2BIT79laT_Z3KFOlt0dZdSlVwzSp2LrtBfbU3EVG3eUrTb8aWkKc2vh-dNPr6Yezqeg2plDKWNCPyeOap5yzwQohAZKzCkRLTbpf_Sqawe_Ah84Jpf19vwSFiwC5JIHNiYvlzqVVbWfgjgaBG"
+              src={ourProductHeroImg}
               alt="Fresh harvest of red tomatoes in wooden crate on dark Ethiopian soil"
               className="products-hero__img"
             />
+            <div className="products-hero__badge desktop-only">
+              <span className="label-caps">GlobalG.A.P Certified</span>
+            </div>
           </div>
         </div>
       </section>
@@ -134,11 +155,13 @@ function Products() {
         <div className="container">
           <div className="products-catalog__header">
             <h2 className="products-catalog__title">Product Catalog</h2>
-            <div className="category-tabs">
+            <div className="category-tabs" role="tablist" aria-label="Product categories">
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat}
                   type="button"
+                  role="tab"
+                  aria-selected={activeCategory === cat}
                   className={`category-tab ${activeCategory === cat ? 'category-tab--active' : ''}`}
                   onClick={() => setActiveCategory(cat)}
                 >
@@ -246,6 +269,10 @@ function Products() {
           </div>
 
           <div className="table-responsive">
+            <div className="table-mobile-hint">
+              <span className="material-symbols-outlined text-sm">swipe_left</span>
+              <span>Scroll horizontally to view full calendar</span>
+            </div>
             <table className="products-table">
               <thead>
                 <tr>

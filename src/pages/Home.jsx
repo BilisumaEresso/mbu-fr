@@ -1,5 +1,12 @@
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import Button from '../components/common/Button.jsx'
+import homeHeroImg from '../assets/images/homeHero.jpg'
+import bentoTomatoImg from '../assets/images/bentoTomato.jpg'
+import bentoOnionImg from '../assets/images/bentoOnion.jpg'
+import bentoGreenPepperImg from '../assets/images/bentoGreenPepper.jpg'
+import bentoGreenBeansImg from '../assets/images/bentoGreenBeans.jpg'
+import bentoPapayaImg from '../assets/images/bentoPapaya.jpg'
 import './Home.css'
 
 const STATS = [
@@ -12,6 +19,13 @@ const STATS = [
 function Home() {
   return (
     <>
+      <Helmet>
+        <title>Meki Batu Union | Ethiopian Fruit &amp; Vegetable Cooperative</title>
+        <meta
+          name="description"
+          content="Meki Batu Union empowers over 140 primary cooperatives and 50,000 farmers in the Ethiopian Rift Valley to deliver sustainable, export-quality produce worldwide."
+        />
+      </Helmet>
       {/* Hero Section */}
       <section className="home-hero">
         <div className="container home-hero__grid">
@@ -24,17 +38,17 @@ function Home() {
             </p>
             <div className="home-hero__actions">
               <Button to="/products" variant="primary">
-                View our products
+                View our products <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </Button>
               <Button to="/buyers" variant="outline">
-                Request a quote
+                Request a quote <span className="material-symbols-outlined text-sm">description</span>
               </Button>
             </div>
           </div>
           <div className="home-hero__media">
             <img
               className="home-hero__img"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFch0HzPZdK6IBUm9F6o0BhHdnU6J8JwTAh4YOmI_T7LMhHKJB_as_Zg_NPO3687HsO271QgwQYzMkGx__hnlSRMPazW6FngVOwQbZknlUi5FH4LfCmgJcHiailwsnSFzkaYqHtkYvuH-S_Bz-4VHhkIXS2ji1Sw1bk2kjdXtQUW1kz-2ZWUKn84VfUCIyeJ3ZrG8vuEHeAilW4ZYmqjb-Awx6yPeESVKIO7W0nZaJaHcSIxms1WsP"
+              src={homeHeroImg}
               alt="Lush vegetable farm in the Ethiopian Rift Valley Meki region"
             />
             <div className="home-hero__badge">
@@ -95,7 +109,7 @@ function Home() {
             {/* Large Item */}
             <div className="home-bento__item home-bento__item--large">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfP0xqvF1OumYSfc4KDP0RB2RvYIWuZGy-JyOgV-f0GlTjSy4EXJt3sdkyaXStrbwwZhSgH2FZ8n-DEu-jPbY5GLtrdiQjbuh1fXAyQFtjpjLssD1SQAW-QEEIHFYYJ7JF6KA8RHpb6VfF6bATaeMT-gqx93rIbJ6aWy5Q8boskMG_SVdyTeqnT8Q4kY4anl5bSm1b9y0gAEW6b8VULbHx43q-v5014TeUNwuiNvFlfDqukclSRBL9"
+                src={bentoTomatoImg}
                 alt="Rift Valley Tomatoes"
                 className="home-bento__img"
               />
@@ -109,7 +123,7 @@ function Home() {
             {/* Small Item 1 */}
             <div className="home-bento__item home-bento__item--small">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvYlX5ibp4MNwbpUgoVGZztasklKa994UQuFT5_WCOSWJzPOMP07bsAr2ydONNPEi_eeSi5yVmfNrsIfB5JUptvt00jVaPt1r8S4V_gKQ__oHeBJgegRc6fHT8DsJFIpjcKDd8ZkCu6DVbLENp_lMqFnNSECjGXeM2SeUqp7cskRWB0iQ0liD7fhiwsTC_RbizFBGJ8WJkEj-iDeiNyn5nBqo5V6Z5yPcWIsIzEc0PG5BwwpM0emH7"
+                src={bentoOnionImg}
                 alt="Red Onions"
                 className="home-bento__img"
               />
@@ -122,7 +136,7 @@ function Home() {
             {/* Small Item 2 */}
             <div className="home-bento__item home-bento__item--small">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl2WKGQHcO7oUsiBiuca6vqTzEKbZsLXsyvfOPRp6YRe0ikpGg47m6dMix-_mzq28D8CMLQtW8CxtcEXrP5yeVtSerCWU8biSdX48vbbxUf9GF4oOs4GnaIKRne_OOVEby0qpSWfwt0hyJdiBhegrdUP6Nb0knbVvOSiMgPaCbgqj-bezIOy9UQ0etOvmV-X3G6tvpgXRr-C3AwV9FMRYPlVakfgXa9q56zK127dZl0RbDoCl_k7sc"
+                src={bentoGreenPepperImg}
                 alt="Green Peppers"
                 className="home-bento__img"
               />
@@ -135,7 +149,7 @@ function Home() {
             {/* Wide Item 1 */}
             <div className="home-bento__item home-bento__item--wide">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC6-LnBnxoec0RzspHWkNKcW-DLU1c_pGnxJkQwjanGYvAeVGHpEodLsFhm_zOMXeOe_0c-MpBfMlt6e6qK6Kzmyt9bkLenffQ33XzB5YylZO2OmvCKRKcOeVFpBfXawZjQ-U34HA9-BZtYpXtq6rCmeNGeEvfRJW86sqXv1i74wrNlDzbdmlsjqUf0fZ7lMQtE0SL-xqpedsDAVoPQC1mvxAjQKr-wQXO-r4-IudvbuSX0rugBoUA"
+                src={bentoGreenBeansImg}
                 alt="Green Beans"
                 className="home-bento__img"
               />
@@ -148,7 +162,7 @@ function Home() {
             {/* Wide Item 2 */}
             <div className="home-bento__item home-bento__item--wide">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuApao1nWS1-JcPHH-aOam-vXV-2F1nx4p3qvYdy853RrLoSPgTwa9kve6NyVNNgWa7O6llryn_c3RAeHtmBKqeptnPWOAK3-sidQ2csQYELSWb7ChtbqNAwtvNfdtfxMwSkPjqOKClrr1Nw10Qzq7n5IQQD8o9ztxI3K4N1-RP258eHdp-J5gMlc9QsIJctqGjpwaWbNhgKicllKpbap5sRQ_XJGEgcnZF4zLUpAYSSeU_sLJeuFAXh"
+                src={bentoPapayaImg}
                 alt="Papaya"
                 className="home-bento__img"
               />

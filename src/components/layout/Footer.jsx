@@ -60,10 +60,16 @@ function Footer() {
               </a>
             </li>
             <li>
-              <Link className="footer__contact-item" to="/contact">
+              <a
+                className="footer__contact-item"
+                href="https://maps.app.goo.gl/h6Wbr4RpR7n3hAYu7"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Open location on Google Maps"
+              >
                 <span className="material-symbols-outlined footer__contact-icon">location_on</span>
                 <span>Meki Town, Oromia, Ethiopia</span>
-              </Link>
+              </a>
             </li>
           </ul>
 

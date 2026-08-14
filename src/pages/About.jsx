@@ -1,4 +1,5 @@
-import aboutHeroImg from '../assets/images/about_hero_farm.webp'
+import { Helmet } from 'react-helmet-async'
+import aboutHeroImg from '../assets/images/aboutHero.png'
 import teamMember1 from '../assets/images/team_member_1.webp'
 import teamMember2 from '../assets/images/team_member_2.webp'
 import teamMember3 from '../assets/images/team_member_3.webp'
@@ -22,6 +23,13 @@ const PARTNERS = ['Self Help Africa', 'Oromia Coop Bank', 'Agri-Invest']
 function About() {
   return (
     <>
+      <Helmet>
+        <title>About Us | Meki Batu Union</title>
+        <meta
+          name="description"
+          content="Learn about Meki Batu Union's history since 2002, our cooperative foundation, GlobalG.A.P certification, and leadership dedicated to sustainable Ethiopian agriculture."
+        />
+      </Helmet>
       {/* ---- Hero Section ---- */}
       <section className="about-hero">
         <div className="container">

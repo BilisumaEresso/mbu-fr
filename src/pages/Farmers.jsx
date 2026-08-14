@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
-import Button from '../components/common/Button.jsx'
+import { Helmet } from 'react-helmet-async'
+import farmerHeroImg from '../assets/images/farmerHero.png'
+import newsHeroImg from '../assets/images/newsHero.png'
 import './InnerPage.css'
 
 const SERVICES = [
@@ -51,6 +52,13 @@ const STEPS = [
 function Farmers() {
   return (
     <>
+      <Helmet>
+        <title>For Farmers | Meki Batu Union</title>
+        <meta
+          name="description"
+          content="Discover the input supplies, credit access, technical training, and market linkages Meki Batu Union provides to support Ethiopian primary cooperatives and member farmers."
+        />
+      </Helmet>
       {/* ---- Hero Section ---- */}
       <section className="farmers-hero section">
         <div className="container farmers-hero__grid">
@@ -61,19 +69,22 @@ function Farmers() {
             </p>
             <div className="farmers-hero__actions">
               <a href="#services" className="btn btn--primary">
-                Our Services
+                Our Services <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </a>
               <a href="#membership" className="btn btn--outline">
-                Learn More
+                Learn More <span className="material-symbols-outlined text-sm">info</span>
               </a>
             </div>
           </div>
           <div className="farmers-hero__media">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuNDFZA-_K76aN8QAEZRdXVSymX50AqVpU0hH53C9qft4H1t7kxaSMhaYdRk5vgX3w18mraIdHNWKdnd3nVi2XLUG93qlSIE7M-2Pf-EmVZBQjFnulh0uahAyJQSz3NjoVtnck0JN3FhA7QqibciIIC55FsbRIiLMV0BESSjeq8V4KjBJvUrAmLVtu-SBwcuJZH15QVX9JVUfARufKTdLI1Hj3elpI3234eqFr1_aIcGxRxvHr54vf"
+              src={farmerHeroImg}
               alt="Ethiopian farmers in a professional agricultural packhouse"
               className="farmers-hero__img"
             />
+            <div className="farmers-hero__badge desktop-only">
+              <span className="label-caps">140+ Primary Co-ops</span>
+            </div>
           </div>
         </div>
       </section>
@@ -116,7 +127,7 @@ function Farmers() {
           </div>
           <div className="farmers-membership__media">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi6J9q53heWgIYMaBheMC7J0O8XVQ8vm6RpwZuagDlhi9L8HEwgpnX8TdO-AluxdUCUvEohbxkx0oBkfRV_PI-D4fuonXHLyOtqkQlXJE6UG7HhsxjizKRlg0P3sQ9EsENMg73Hsr1n9xI_CEC6hAF3IKy0sWjkqZMFvmEhpIq-boakyfslyPJRVYLiBXuRRAV_H9dhrKhvCzLOJmRfQ2qdRRPpTTiaM0mpgb2l5EoFk1PhGi9VNix"
+              src={newsHeroImg}
               alt="Cooperative training session outdoors in a field in Ethiopia"
               className="farmers-membership__img"
             />

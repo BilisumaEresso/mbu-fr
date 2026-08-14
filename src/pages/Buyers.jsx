@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
+import buyerHeroImg from '../assets/images/buyerHero.png'
 import './InnerPage.css'
 
 const VALUE_PROPS = [
@@ -48,6 +50,13 @@ function Buyers() {
 
   return (
     <>
+      <Helmet>
+        <title>For Buyers &amp; Exporters | Meki Batu Union</title>
+        <meta
+          name="description"
+          content="Partner with Meki Batu Union for reliable, certified, high-volume export of fresh Ethiopian fruits and vegetables with full supply chain traceability."
+        />
+      </Helmet>
       {/* ---- Hero Section ---- */}
       <section className="buyers-hero section">
         <div className="container buyers-hero__grid">
@@ -58,16 +67,22 @@ function Buyers() {
             </p>
             <div className="buyers-hero__actions">
               <a href="#quote" className="btn btn--primary">
-                Request a Quote
+                Request a Quote <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </a>
+              <Link to="/products" className="btn btn--outline">
+                View Catalog <span className="material-symbols-outlined text-sm">inventory_2</span>
+              </Link>
             </div>
           </div>
           <div className="buyers-hero__media">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGhY3EMKJ0X1CLmJiabB1IaKdZpkG0oKsWPoHDfG-APgcG4iDxC2OEyLAlrAt0IDo6BV7P-toir6j2_lU5dzOVR0Ao7JfXEyTCxRwXqNyd6Cn9-7Yi-EwwPQhts6JF4OrmZYUdI5ntOzJ7R8hn0Ct7pw7nGdIhtIsz0GI6wSwAR8Z95japkiu8E2hguPOT5VVPsA6muwzkjzOJ9ltAgwarQ065EZlvP_3iPu0Lprlb1jWX3b81e7u9"
+              src={buyerHeroImg}
               alt="Fresh produce being inspected and packed in an export packhouse"
               className="buyers-hero__img"
             />
+            <div className="buyers-hero__badge desktop-only">
+              <span className="label-caps">Export &amp; Wholesale</span>
+            </div>
           </div>
         </div>
       </section>

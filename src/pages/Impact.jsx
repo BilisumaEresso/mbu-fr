@@ -1,3 +1,6 @@
+import { Helmet } from 'react-helmet-async'
+import impactHeroImg from '../assets/images/impactHero.png'
+import womenFarmerImg from '../assets/images/womenFarmer.jpg'
 import './InnerPage.css'
 
 const REPORTS = [
@@ -24,6 +27,13 @@ const REPORTS = [
 function Impact() {
   return (
     <>
+      <Helmet>
+        <title>Our Impact | Meki Batu Union</title>
+        <meta
+          name="description"
+          content="See how Meki Batu Union fosters sustainable farming, economic resilience, and women's empowerment across 140+ member cooperatives in Ethiopia."
+        />
+      </Helmet>
       {/* ---- Hero Section ---- */}
       <section className="impact-hero section">
         <div className="container impact-hero__grid">
@@ -34,13 +44,24 @@ function Impact() {
             <p className="impact-hero__desc">
               Our impact extends beyond agricultural output. We are dedicated to empowering farmers, fostering sustainable practices, and driving economic resilience across the Great Rift Valley.
             </p>
+            <div className="impact-hero__actions">
+              <a href="#metrics" className="btn btn--primary">
+                View Impact Metrics <span className="material-symbols-outlined text-sm">trending_up</span>
+              </a>
+              <a href="#reports" className="btn btn--outline">
+                Impact Reports <span className="material-symbols-outlined text-sm">download</span>
+              </a>
+            </div>
           </div>
           <div className="impact-hero__media">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuARKpjZhHgYJvocHwFGgS3of9YIH6JY43l-urwLuHS27ls4iL3KBxMHc_Mn4abkAfwsPQP2FJo1qbOoYkJQYMQI7PUMIFFCkLtm168OJDIW81zVwmt96qdii-I4bZnqe-Gl8zbZU-ZPCwAQVUtOOAv-WkP2LmmAP_kF47FADb5YPWrc3s9_IUl9DRfeOHbSb_2ffCpNYhHDmLso9jW9dvzmDCgYBdemNnmqHbd88Uq7nfceAYHbp2oq"
+              src={impactHeroImg}
               alt="Vibrant thriving agricultural field in Ethiopia during golden hour"
               className="impact-hero__img"
             />
+            <div className="impact-hero__badge desktop-only">
+              <span className="label-caps">Empowering 50k+ Farmers</span>
+            </div>
           </div>
         </div>
       </section>
@@ -77,7 +98,7 @@ function Impact() {
             {/* Metric 4 Visual */}
             <div className="impact-card impact-card--media impact-card--wide">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnaL5e2415LzDfdyXYCg0LgkGi0wUmcUIciD17ILuL_bIekXnojLwQag29sHuHPkoOBmMEHKVDejEr6Ne9h6goQX5-suygemAIBDja4pYXFVDCmQ01SnoZEoLC0Dirq6rrNMnsf4Vuv9Qt5kcTi-CweNSnkyfnuISQAFXyidymBFmUsuW6IOnWrg5QBrdCp_eIvZ6L0gtDQOp9s6jZfK0kYVFkPD2oCrPwI19oZr0VM7YKVX1NYUq-"
+                src={womenFarmerImg}
                 alt="Farmer hands holding organic produce"
                 className="impact-card__img"
               />
