@@ -1,15 +1,53 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import impactHeroImg from '../assets/images/impactHero.png'
-import farmerMembershipImg from '../assets/images/FarmerMembership.jpg'
+import PageHero from '../components/common/PageHero.jsx'
+import impactHeroImg from '../assets/images/impactHero.webp'
+import farmerMembershipImg from '../assets/images/FarmerMembership.webp'
 import './InnerPage.css'
+import './Contact.css'
 
 function Contact() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitting(true)
+    setErrorMessage('')
+
+    const endpoint = import.meta.env.VITE_CONTACT_FORM_ENDPOINT
+    const formData = new FormData(e.currentTarget)
+    const data = Object.fromEntries(formData.entries())
+
+    if (!endpoint) {
+      // Fallback for local demo preview prior to setting VITE_CONTACT_FORM_ENDPOINT in .env.local
+      setSubmitted(true)
+      setSubmitting(false)
+      return
+    }
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        const errData = await res.json().catch(() => ({}))
+        setErrorMessage(errData?.error || 'Form submission failed. Please try again.')
+      }
+    } catch {
+      setErrorMessage('Network error occurred. Please check your connection and try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -22,16 +60,10 @@ function Contact() {
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
-      <section className="contact-hero section">
-        <div className="container">
-          <h1 className="contact-hero__title">
-            Get in Touch with Meki Batu Union
-          </h1>
-          <p className="contact-hero__desc">
-            We welcome inquiries from global partners, local stakeholders, and farmers. Our team is ready to discuss agricultural exports, cooperative membership, and sustainable farming initiatives in the Great Rift Valley.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Get in Touch with Meki Batu Union"
+        description="We welcome inquiries from global partners, local stakeholders, and farmers. Our team is ready to discuss agricultural exports, cooperative membership, and sustainable farming initiatives in the Great Rift Valley."
+      />
 
       {/* ---- Contact Form & Info Grid ---- */}
       <section className="contact-main section section--alt">
@@ -120,9 +152,15 @@ function Contact() {
                     />
                   </div>
 
+                  {errorMessage && (
+                    <div className="form-error-callout" style={{ color: 'var(--color-accent)', padding: '10px 14px', background: 'var(--surface-container)', borderRadius: 'var(--radius-md)', marginBottom: '16px', fontSize: '14px' }}>
+                      {errorMessage}
+                    </div>
+                  )}
+
                   <div className="contact-form__submit-wrap">
-                    <button type="submit" className="btn btn--primary">
-                      Send Message <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    <button type="submit" className="btn btn--primary" disabled={submitting}>
+                      {submitting ? 'Sending...' : 'Send Message'} <span className="material-symbols-outlined text-sm">arrow_forward</span>
                     </button>
                   </div>
                 </form>

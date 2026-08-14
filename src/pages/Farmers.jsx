@@ -1,7 +1,9 @@
 import { Helmet } from 'react-helmet-async'
-import farmerHeroImg from '../assets/images/farmerHero.png'
-import newsHeroImg from '../assets/images/newsHero.png'
+import PageHero from '../components/common/PageHero.jsx'
+import farmerHeroImg from '../assets/images/farmerHero.webp'
+import newsHeroImg from '../assets/images/newsHero.webp'
 import './InnerPage.css'
+import './Farmers.css'
 
 const SERVICES = [
   {
@@ -53,41 +55,30 @@ function Farmers() {
   return (
     <>
       <Helmet>
-        <title>For Farmers | Meki Batu Union</title>
+        <title>Farmer Co-ops &amp; Membership | Meki Batu Union</title>
         <meta
           name="description"
-          content="Discover the input supplies, credit access, technical training, and market linkages Meki Batu Union provides to support Ethiopian primary cooperatives and member farmers."
+          content="Empowering 140+ primary agricultural cooperatives in Ethiopia through seed distribution, agronomy advisory, mechanization services, and fair market access."
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
-      <section className="farmers-hero section">
-        <div className="container farmers-hero__grid">
-          <div className="farmers-hero__content">
-            <h1 className="farmers-hero__title">Empowering Primary Cooperatives</h1>
-            <p className="farmers-hero__desc">
-              Meki Batu Union provides essential services, training, and market access to our network of primary cooperatives, ensuring sustainable growth and prosperity for Ethiopian farmers.
-            </p>
-            <div className="farmers-hero__actions">
-              <a href="#services" className="btn btn--primary">
-                Our Services <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-              <a href="#membership" className="btn btn--outline">
-                Learn More <span className="material-symbols-outlined text-sm">info</span>
-              </a>
-            </div>
-          </div>
-          <div className="farmers-hero__media">
-            <img
-              src={farmerHeroImg}
-              alt="Ethiopian farmers in a professional agricultural packhouse"
-              className="farmers-hero__img"
-            />
-            <div className="farmers-hero__badge desktop-only">
-              <span className="label-caps">140+ Primary Co-ops</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Empowering Primary Cooperatives"
+        description="Meki Batu Union provides essential services, training, and market access to our network of primary cooperatives, ensuring sustainable growth and prosperity for Ethiopian farmers."
+        actions={
+          <>
+            <a href="#services" className="btn btn--primary">
+              Our Services <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+            <a href="#membership" className="btn btn--outline">
+              Learn More <span className="material-symbols-outlined text-sm">info</span>
+            </a>
+          </>
+        }
+        image={farmerHeroImg}
+        imageAlt="Ethiopian farmers in a professional agricultural packhouse"
+        badge="140+ Primary Co-ops"
+      />
 
       {/* ---- Member Services Section ---- */}
       <section className="farmers-services section section--alt" id="services">

@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Button from '../components/common/Button.jsx'
-import homeHeroImg from '../assets/images/homeHero.jpg'
-import bentoTomatoImg from '../assets/images/bentoTomato.jpg'
-import bentoOnionImg from '../assets/images/bentoOnion.jpg'
-import bentoGreenPepperImg from '../assets/images/bentoGreenPepper.jpg'
-import bentoGreenBeansImg from '../assets/images/bentoGreenBeans.jpg'
-import bentoPapayaImg from '../assets/images/bentoPapaya.jpg'
+import homeHeroImg from '../assets/images/homeHero.webp'
+import bentoTomatoImg from '../assets/images/bentoTomato.webp'
+import bentoOnionImg from '../assets/images/bentoOnion.webp'
+import bentoGreenPepperImg from '../assets/images/bentoGreenPepper.webp'
+import bentoGreenBeansImg from '../assets/images/bentoGreenBeans.webp'
+import bentoPapayaImg from '../assets/images/bentoPapaya.webp'
 import './Home.css'
 
 const STATS = [

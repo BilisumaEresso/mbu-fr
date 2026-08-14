@@ -1,0 +1,303 @@
+/* ---- Farmers Page Layout & Component Styles ---- */
+.farmers-hero {
+  padding: var(--space-12) 0;
+}
+
+@media (min-width: 900px) {
+  .farmers-hero {
+    padding: var(--space-24) 0;
+  }
+}
+
+.farmers-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .farmers-hero__grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.farmers-hero__content {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 900px) {
+  .farmers-hero__content {
+    grid-column: 1 / 7;
+  }
+}
+
+.farmers-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1-mobile);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 900px) {
+  .farmers-hero__title {
+    font-size: var(--fs-h1);
+  }
+}
+
+.farmers-hero__desc {
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+}
+
+.farmers-hero__actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+@media (min-width: 520px) {
+  .farmers-hero__actions {
+    flex-wrap: nowrap;
+  }
+}
+
+.farmers-hero__media {
+  grid-column: 1 / -1;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--outline-variant);
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 900px) {
+  .farmers-hero__media {
+    grid-column: 7 / 13;
+    margin-top: 0;
+  }
+}
+
+.farmers-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.farmers-hero__badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(252, 249, 248, 0.92);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--outline-variant);
+  border-right: 1px solid var(--outline-variant);
+  border-top-right-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.farmers-services__heading {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  color: var(--color-primary);
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+.farmers-services__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .farmers-services__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.farmers-service-card {
+  background: var(--surface);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition: background-color var(--transition-fast);
+}
+
+.farmers-service-card:hover {
+  background: var(--surface-container-lowest);
+}
+
+.farmers-service-card__icon {
+  font-size: 36px !important;
+  color: var(--secondary);
+  margin-bottom: var(--space-4);
+}
+
+.farmers-service-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.farmers-service-card__desc {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.farmers-membership__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .farmers-membership__grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.farmers-membership__content {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 900px) {
+  .farmers-membership__content {
+    grid-column: 1 / 6;
+  }
+}
+
+.farmers-membership__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1-mobile);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 900px) {
+  .farmers-membership__title {
+    font-size: var(--fs-h1);
+  }
+}
+
+.farmers-membership__steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.farmers-step {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.farmers-step__num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.farmers-step__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 var(--space-1);
+}
+
+.farmers-step__desc {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.farmers-membership__media {
+  grid-column: 1 / -1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--outline-variant);
+}
+
+@media (min-width: 900px) {
+  .farmers-membership__media {
+    grid-column: 7 / 13;
+  }
+}
+
+.farmers-membership__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.farmers-portal__card {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid var(--outline-variant);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: var(--space-12);
+  }
+}
+
+.farmers-portal__icon {
+  font-size: 48px !important;
+  color: var(--outline);
+  margin-bottom: var(--space-4);
+}
+
+.farmers-portal__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
+
+.farmers-portal__desc {
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-muted);
+  max-width: 640px;
+  margin: 0 auto var(--space-6);
+  line-height: 1.6;
+}
+
+.farmers-portal__disabled-btn {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid var(--outline);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: var(--fs-body);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+

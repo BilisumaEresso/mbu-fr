@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import buyerHeroImg from '../assets/images/buyerHero.png'
+import PageHero from '../components/common/PageHero.jsx'
+import buyerHeroImg from '../assets/images/buyerHero.webp'
 import './InnerPage.css'
+import './Buyers.css'
 
 const VALUE_PROPS = [
   {
@@ -30,6 +32,8 @@ function Buyers() {
   const [searchParams] = useSearchParams()
   const [selectedProduct, setSelectedProduct] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
     const productParam = searchParams.get('product')
@@ -43,9 +47,43 @@ function Buyers() {
     }
   }, [searchParams])
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitting(true)
+    setErrorMessage('')
+
+    const endpoint = import.meta.env.VITE_BUYERS_FORM_ENDPOINT
+    const formData = new FormData(e.currentTarget)
+    const data = Object.fromEntries(formData.entries())
+
+    if (!endpoint) {
+      // Fallback for local demo preview prior to setting VITE_BUYERS_FORM_ENDPOINT in .env.local
+      setSubmitted(true)
+      setSubmitting(false)
+      return
+    }
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        const errData = await res.json().catch(() => ({}))
+        setErrorMessage(errData?.error || 'Form submission failed. Please try again.')
+      }
+    } catch {
+      setErrorMessage('Network error occurred. Please check your connection and try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -58,34 +96,23 @@ function Buyers() {
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
-      <section className="buyers-hero section">
-        <div className="container buyers-hero__grid">
-          <div className="buyers-hero__content">
-            <h1 className="buyers-hero__title">Reliable Global Export Partner</h1>
-            <p className="buyers-hero__desc">
-              Meki Batu Union offers certified, high-volume agricultural products directly from our extensive network of Ethiopian cooperatives. Experience transparent sourcing and uncompromising quality control.
-            </p>
-            <div className="buyers-hero__actions">
-              <a href="#quote" className="btn btn--primary">
-                Request a Quote <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-              <Link to="/products" className="btn btn--outline">
-                View Catalog <span className="material-symbols-outlined text-sm">inventory_2</span>
-              </Link>
-            </div>
-          </div>
-          <div className="buyers-hero__media">
-            <img
-              src={buyerHeroImg}
-              alt="Fresh produce being inspected and packed in an export packhouse"
-              className="buyers-hero__img"
-            />
-            <div className="buyers-hero__badge desktop-only">
-              <span className="label-caps">Export &amp; Wholesale</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Reliable Global Export Partner"
+        description="Meki Batu Union offers certified, high-volume agricultural products directly from our extensive network of Ethiopian cooperatives. Experience transparent sourcing and uncompromising quality control."
+        actions={
+          <>
+            <a href="#quote" className="btn btn--primary">
+              Request a Quote <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+            <Link to="/products" className="btn btn--outline">
+              View Catalog <span className="material-symbols-outlined text-sm">inventory_2</span>
+            </Link>
+          </>
+        }
+        image={buyerHeroImg}
+        imageAlt="Fresh produce being inspected and packed in an export packhouse"
+        badge="Export &amp; Wholesale"
+      />
 
       {/* ---- Value Props (Why Source From Us) ---- */}
       <section className="buyers-props section section--alt">
@@ -164,7 +191,6 @@ function Buyers() {
                       <option value="papaya">Fresh Papaya</option>
                       <option value="seeds">Certified Hybrid Seeds</option>
                       <option value="vegetables">General Fresh Vegetables</option>
-                      <option value="coffee">Coffee Beans</option>
                     </select>
                   </div>
                 </div>
@@ -184,9 +210,15 @@ function Buyers() {
                   />
                 </div>
 
+                {errorMessage && (
+                  <div className="form-error-callout" style={{ color: 'var(--color-accent)', padding: '10px 14px', background: 'var(--surface-container)', borderRadius: 'var(--radius-md)', marginBottom: '16px', fontSize: '14px' }}>
+                    {errorMessage}
+                  </div>
+                )}
+
                 <div className="buyers-form__submit-wrap">
-                  <button type="submit" className="btn btn--primary">
-                    Submit Request
+                  <button type="submit" className="btn btn--primary" disabled={submitting}>
+                    {submitting ? 'Submitting...' : 'Submit Request'}
                   </button>
                 </div>
               </form>

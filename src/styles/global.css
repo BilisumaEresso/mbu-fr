@@ -161,7 +161,10 @@ select:focus-visible {
 }
 
 .section--alt {
+  position: relative;
   background: var(--color-bg-alt);
+  background-image: 
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(23, 49, 36, 0.025) 0%, transparent 75%);
 }
 
 .section--dark {

@@ -1,87 +1,17 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import retailHeroImg from '../assets/images/retailHero.png'
+import PageHero from '../components/common/PageHero.jsx'
+import retailHeroImg from '../assets/images/retailHero.webp'
+import { outlets } from '../data/outlets.js'
 import './InnerPage.css'
-
-const OUTLETS_DATA = [
-  {
-    id: 'bole',
-    name: 'Bole Branch',
-    subcity: 'Bole Subcity',
-    address: 'Around Edna Mall, next to Zefmesh Grand Mall, Addis Ababa',
-    hours: 'Mon - Sat: 8:00 AM - 6:00 PM',
-    phone: '+251 11 661 2345',
-    manager: 'Ato Tadesse Bekele',
-    status: 'Open Now',
-    specialties: ['Export Grade Tomatoes', 'Fresh Papaya', 'Green Peppers'],
-    coords: { lat: 9.0012, lng: 38.7865 },
-    googleMapsUrl: 'https://maps.app.goo.gl/E6j3C6A2hiBBfs5Z7',
-    embedUrl: 'https://maps.google.com/maps?q=9.0012,38.7865&z=15&output=embed',
-  },
-  {
-    id: 'piassa',
-    name: 'Piassa Outlet',
-    subcity: 'Arada Subcity',
-    address: 'Mahmoud Music Shop building ground floor, Piassa, Addis Ababa',
-    hours: 'Mon - Sat: 8:00 AM - 5:30 PM',
-    phone: '+251 11 155 4321',
-    manager: 'W/ro Aster Worku',
-    status: 'Open Now',
-    specialties: ['Red Onions', 'Highland Potatoes', 'Seasonal Fruits'],
-    coords: { lat: 9.0345, lng: 38.7523 },
-    googleMapsUrl: 'https://maps.app.goo.gl/6DRdH4qAT2KdVJNG6',
-    embedUrl: 'https://maps.google.com/maps?q=9.0345,38.7523&z=15&output=embed',
-  },
-  {
-    id: 'sarbet',
-    name: 'Sarbet Market',
-    subcity: 'Kirkos / Nifas Silk',
-    address: 'Karls Square, near Oromia Offices, Sarbet, Addis Ababa',
-    hours: 'Mon - Sun: 7:00 AM - 7:00 PM',
-    phone: '+251 11 371 8901',
-    manager: 'Ato Dawit Alemu',
-    status: 'Open Now',
-    specialties: ['Organic Vegetables', 'Certified Hybrid Seeds', 'Fresh Tomatoes'],
-    coords: { lat: 9.0005, lng: 38.7341 },
-    googleMapsUrl: 'https://maps.app.goo.gl/6PMh2XeM6qKUZNwf9',
-    embedUrl: 'https://maps.google.com/maps?q=9.0005,38.7341&z=15&output=embed',
-  },
-  {
-    id: 'kera',
-    name: 'Kera Branch',
-    subcity: 'Nifas Silk-Lafto',
-    address: 'Near Kera Slaughterhouse main road, Addis Ababa',
-    hours: 'Mon - Sat: 6:00 AM - 4:00 PM',
-    phone: '+251 11 465 7890',
-    manager: 'Ato Solomon Kebede',
-    status: 'Open Now',
-    specialties: ['Bulk Produce', 'Red Onions', 'Green Beans'],
-    coords: { lat: 8.9856, lng: 38.7490 },
-    googleMapsUrl: 'https://maps.app.goo.gl/CLCpLhDtwM5Ta4xE8',
-    embedUrl: 'https://maps.google.com/maps?q=8.9856,38.7490&z=15&output=embed',
-  },
-  {
-    id: 'megenagna',
-    name: 'Megenagna Store',
-    subcity: 'Yeka Subcity',
-    address: 'Zequala Complex ground floor, Megenagna, Addis Ababa',
-    hours: 'Mon - Sat: 8:00 AM - 6:00 PM',
-    phone: '+251 11 647 3456',
-    manager: 'W/ro Tigist Hailu',
-    status: 'Open Now',
-    specialties: ['Fresh Papaya', 'Green Peppers', 'Seed Distribution'],
-    coords: { lat: 9.0201, lng: 38.8021 },
-    googleMapsUrl: 'https://maps.app.goo.gl/5eV5GyTxHdNVu9yo7',
-    embedUrl: 'https://maps.google.com/maps?q=9.0201,38.8021&z=15&output=embed',
-  },
-]
+import './RetailOutlets.css'
 
 function RetailOutlets() {
-  const [selectedOutletId, setSelectedOutletId] = useState(OUTLETS_DATA[0].id)
+  const [selectedOutletId, setSelectedOutletId] = useState(outlets[0].id)
   const [activeModalOutlet, setActiveModalOutlet] = useState(null)
 
-  const activeOutlet = OUTLETS_DATA.find((o) => o.id === selectedOutletId) || OUTLETS_DATA[0]
+  const activeOutlet = outlets.find((o) => o.id === selectedOutletId) || outlets[0]
 
   return (
     <>
@@ -93,35 +23,23 @@ function RetailOutlets() {
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
-      <section className="outlets-hero section">
-        <div className="container outlets-hero__grid">
-          <div className="outlets-hero__content">
-            <h1 className="outlets-hero__title">Direct from Our Farms to You.</h1>
-            <p className="outlets-hero__desc">
-              Meki Batu Union operates five dedicated retail outlets across Addis Ababa, ensuring urban consumers have direct access to the freshest, sustainably grown produce from our cooperative farmers.
-            </p>
-            <div className="outlets-hero__actions">
-              <a href="#locations" className="btn btn--primary">
-                View Locations <span className="material-symbols-outlined text-sm">arrow_downward</span>
-              </a>
-              <Link to="/contact" className="btn btn--outline">
-                Contact Retail Sales <span className="material-symbols-outlined text-sm">mail</span>
-              </Link>
-            </div>
-          </div>
-          <div className="outlets-hero__media">
-            <img
-              src={retailHeroImg}
-              alt="Pristine fresh produce display in a modern retail setting"
-              className="outlets-hero__img"
-            />
-            <div className="outlets-hero__badge desktop-only">
-              <div className="outlets-hero__badge-num">5</div>
-              <div className="outlets-hero__badge-label">Addis Ababa Locations</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Direct from Our Farms to You."
+        description="Meki Batu Union operates five dedicated retail outlets across Addis Ababa, ensuring urban consumers have direct access to the freshest, sustainably grown produce from our cooperative farmers."
+        actions={
+          <>
+            <a href="#locations" className="btn btn--primary">
+              View Locations <span className="material-symbols-outlined text-sm">arrow_downward</span>
+            </a>
+            <Link to="/contact" className="btn btn--outline">
+              Contact Retail Sales <span className="material-symbols-outlined text-sm">mail</span>
+            </Link>
+          </>
+        }
+        image={retailHeroImg}
+        imageAlt="Pristine fresh produce display in a modern retail setting"
+        badge="5 Addis Ababa Locations"
+      />
 
       {/* ---- Locations List & Map Section ---- */}
       <section className="outlets-locations section section--alt" id="locations">
@@ -136,7 +54,7 @@ function RetailOutlets() {
           <div className="outlets-locations__grid">
             {/* Outlets List Column */}
             <div className="outlets-list-col">
-              {OUTLETS_DATA.map((outlet) => (
+              {outlets.map((outlet) => (
                 <div
                   key={outlet.id}
                   className={`outlet-item-card ${selectedOutletId === outlet.id ? 'outlet-item-card--active' : ''}`}
@@ -172,7 +90,7 @@ function RetailOutlets() {
             <div className="outlets-map-col">
               <div className="outlets-map-container">
                 <div className="outlets-map-pins-header">
-                  {OUTLETS_DATA.map((outlet) => (
+                  {outlets.map((outlet) => (
                     <button
                       key={outlet.id}
                       type="button"

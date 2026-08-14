@@ -1,7 +1,9 @@
 import { Helmet } from 'react-helmet-async'
-import impactHeroImg from '../assets/images/impactHero.png'
-import womenFarmerImg from '../assets/images/womenFarmer.jpg'
+import PageHero from '../components/common/PageHero.jsx'
+import impactHeroImg from '../assets/images/impactHero.webp'
+import womenFarmerImg from '../assets/images/womenFarmer.webp'
 import './InnerPage.css'
+import './Impact.css'
 
 const REPORTS = [
   {
@@ -35,36 +37,23 @@ function Impact() {
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
-      <section className="impact-hero section">
-        <div className="container impact-hero__grid">
-          <div className="impact-hero__content">
-            <h1 className="impact-hero__title">
-              Cultivating Growth, Sustaining Communities
-            </h1>
-            <p className="impact-hero__desc">
-              Our impact extends beyond agricultural output. We are dedicated to empowering farmers, fostering sustainable practices, and driving economic resilience across the Great Rift Valley.
-            </p>
-            <div className="impact-hero__actions">
-              <a href="#metrics" className="btn btn--primary">
-                View Impact Metrics <span className="material-symbols-outlined text-sm">trending_up</span>
-              </a>
-              <a href="#reports" className="btn btn--outline">
-                Impact Reports <span className="material-symbols-outlined text-sm">download</span>
-              </a>
-            </div>
-          </div>
-          <div className="impact-hero__media">
-            <img
-              src={impactHeroImg}
-              alt="Vibrant thriving agricultural field in Ethiopia during golden hour"
-              className="impact-hero__img"
-            />
-            <div className="impact-hero__badge desktop-only">
-              <span className="label-caps">Empowering 50k+ Farmers</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Cultivating Growth, Sustaining Communities"
+        description="Our impact extends beyond agricultural output. We are dedicated to empowering farmers, fostering sustainable practices, and driving economic resilience across the Great Rift Valley."
+        actions={
+          <>
+            <a href="#metrics" className="btn btn--primary">
+              View Impact Metrics <span className="material-symbols-outlined text-sm">trending_up</span>
+            </a>
+            <a href="#reports" className="btn btn--outline">
+              Impact Reports <span className="material-symbols-outlined text-sm">download</span>
+            </a>
+          </>
+        }
+        image={impactHeroImg}
+        imageAlt="Vibrant thriving agricultural field in Ethiopia during golden hour"
+        badge="Empowering 50k+ Farmers"
+      />
 
       {/* ---- Measurable Impact Bento Grid ---- */}
       <section className="impact-metrics section section--alt">

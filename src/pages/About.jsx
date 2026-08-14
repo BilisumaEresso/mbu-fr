@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
-import aboutHeroImg from '../assets/images/aboutHero.png'
+import PageHero from '../components/common/PageHero.jsx'
+import aboutHeroImg from '../assets/images/aboutHero.webp'
 import teamMember1 from '../assets/images/team_member_1.webp'
 import teamMember2 from '../assets/images/team_member_2.webp'
 import teamMember3 from '../assets/images/team_member_3.webp'
@@ -31,30 +32,13 @@ function About() {
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
-      <section className="about-hero">
-        <div className="container">
-          <div className="about-hero__grid">
-            <div className="about-hero__sidebar desktop-only">
-              <span className="label-caps label-caps--muted">Since 2002</span>
-            </div>
-            <div className="about-hero__main">
-              <h1 className="about-hero__title">
-                Cultivating Progress Through Cooperative Strength
-              </h1>
-              <p className="about-hero__desc">
-                Meki Batu Union stands as a testament to the power of collective farming in Ethiopia. We unite farmers to ensure fair trade, sustainable practices, and premium quality produce for the global market.
-              </p>
-            </div>
-          </div>
-          <div className="about-hero__media">
-            <img
-              src={aboutHeroImg}
-              alt="Fertile Ethiopian agricultural land during golden hour"
-              className="about-hero__img"
-            />
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Since 2002"
+        title="Cultivating Progress Through Cooperative Strength"
+        description="Meki Batu Union stands as a testament to the power of collective farming in Ethiopia. We unite farmers to ensure fair trade, sustainable practices, and premium quality produce for the global market."
+        image={aboutHeroImg}
+        imageAlt="Fertile Ethiopian agricultural land during golden hour"
+      />
 
       {/* ---- History Timeline (Our Foundation) ---- */}
       <section className="about-foundation section section--alt">
@@ -76,7 +60,7 @@ function About() {
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Established in Meki town, our union began with a small group of visionary farmers dedicated to improving their livelihoods through shared resources and collective bargaining power.
+                  Founded on May 11, 2002 in Meki town, Oromia, our union began with 12 primary cooperatives and 527 founding members dedicated to improving their livelihoods through shared resources and collective bargaining power.
                 </p>
               </div>
             </div>

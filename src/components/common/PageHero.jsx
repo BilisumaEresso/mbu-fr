@@ -1,19 +1,60 @@
 import './PageHero.css'
 
 /**
- * Interior page hero section.
- * Used by About, Products, Farmers, Buyers, News, Contact, etc.
+ * Shared interior page hero section component.
+ * Used by About, Products, Farmers, Buyers, RetailOutlets, News, Impact, Contact.
  */
-function PageHero({ eyebrow, title, description }) {
+function PageHero({
+  eyebrow,
+  title,
+  description,
+  actions,
+  image,
+  imageAlt,
+  badge,
+  rightContent,
+  className = '',
+}) {
+  const hasRightColumn = Boolean(image || rightContent)
+
   return (
-    <section className="page-hero">
-      <div className="page-hero__container">
-        {eyebrow && (
-          <span className="page-hero__eyebrow">{eyebrow}</span>
-        )}
-        <h1 className="page-hero__title">{title}</h1>
-        {description && (
-          <p className="page-hero__description">{description}</p>
+    <section className={`page-hero ${className}`.trim()}>
+      <div className="container">
+        {hasRightColumn ? (
+          <div className="page-hero__grid">
+            <div className="page-hero__content">
+              {eyebrow && (
+                <span className="label-caps label-caps--primary block mb-2">{eyebrow}</span>
+              )}
+              <h1 className="page-hero__title">{title}</h1>
+              {description && <p className="page-hero__description">{description}</p>}
+              {actions && <div className="page-hero__actions">{actions}</div>}
+            </div>
+
+            <div className="page-hero__right">
+              {image ? (
+                <div className="page-hero__media">
+                  <img src={image} alt={imageAlt || title} className="page-hero__img" />
+                  {badge && (
+                    <div className="page-hero__badge desktop-only">
+                      <span className="label-caps">{badge}</span>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                rightContent
+              )}
+            </div>
+          </div>
+        ) : (
+          <div className="page-hero__simple">
+            {eyebrow && (
+              <span className="label-caps label-caps--primary block mb-2">{eyebrow}</span>
+            )}
+            <h1 className="page-hero__title">{title}</h1>
+            {description && <p className="page-hero__description">{description}</p>}
+            {actions && <div className="page-hero__actions">{actions}</div>}
+          </div>
         )}
       </div>
     </section>
