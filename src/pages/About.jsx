@@ -5,6 +5,9 @@ import aboutHeroImg from '../assets/images/aboutHero.webp'
 import teamMember1 from '../assets/images/team_member_1.webp'
 import teamMember2 from '../assets/images/team_member_2.webp'
 import teamMember3 from '../assets/images/team_member_3.webp'
+import teamMember4 from '../assets/images/team_member_4.webp'
+import teamMember5 from '../assets/images/team_member_5.webp'
+import teamStaff from '../assets/images/team_staff.webp'
 import './About.css'
 
 const OBJECTIVES = [
@@ -18,6 +21,14 @@ const TEAM = [
   { name: 'Ato Name Surname', title: 'General Manager', photo: teamMember1 },
   { name: 'W/ro Name Surname', title: 'Head of Operations', photo: teamMember2 },
   { name: 'Ato Name Surname', title: 'Chief Agronomist', photo: teamMember3 },
+  { name: 'W/ro Name Surname', title: 'Finance & Admin Director', photo: teamMember4 },
+  { name: 'Ato Name Surname', title: 'Supply Chain & Logistics Lead', photo: teamMember5 },
+  {
+    name: 'Union Staff & Extension Team',
+    title: '500+ Dedicated Field Workers & Staff',
+    photo: teamStaff,
+    isStaffCard: true,
+  },
 ]
 
 const PARTNERS = ['Self Help Africa', 'Oromia Coop Bank', 'Agri-Invest']
@@ -140,25 +151,33 @@ function About() {
         </div>
       </section>
 
-      {/* ---- Governance / Leadership ---- */}
+      {/* ---- Leadership & Staff ---- */}
       <section className="about-governance section section--alt">
         <div className="container">
           <div className="about-governance__header">
-            <h2 className="about-governance__title">Governance</h2>
+            <h2 className="about-governance__title">Leadership &amp; Staff</h2>
             <p className="about-governance__desc">
-              Guided by experienced leadership committed to cooperative principles.
+              Guided by experienced leadership and driven by our dedicated team across all operations.
             </p>
           </div>
 
           <div className="about-governance__grid">
             {TEAM.map((member) => (
-              <div key={member.title} className="about-governance__card">
+              <div
+                key={member.title}
+                className={`about-governance__card ${member.isStaffCard ? 'about-governance__card--staff' : ''}`}
+              >
                 <div className="about-governance__photo-wrap">
                   <img
                     src={member.photo}
                     alt={member.name}
                     className="about-governance__photo"
                   />
+                  {member.isStaffCard && (
+                    <span className="about-governance__staff-badge">
+                      <span className="material-symbols-outlined text-xs">groups</span> Union Team
+                    </span>
+                  )}
                 </div>
                 <h3 className="about-governance__name">{member.name}</h3>
                 <p className="label-caps label-caps--secondary text-xs mt-1">{member.title}</p>
