@@ -119,14 +119,13 @@ function Footer() {
           </div>
         </div>
 
-        {/* Copyright & Bottom Links */}
         <div className="footer__bottom">
           <p className="footer__copyright">
-            © {new Date().getFullYear()} Meki Batu Union. All rights reserved.
+            © {new Date().getFullYear()} Meki Batu Fruits and Vegetables Growers' Cooperative Union Ltd.
           </p>
           <div className="footer__bottom-links">
-            <Link to="/about" className="footer__bottom-link">Privacy Policy</Link>
-            <Link to="/about" className="footer__bottom-link">Terms of Service</Link>
+            <Link to="/privacy-policy" className="footer__bottom-link">Privacy policy</Link>
+            <Link to="/terms-of-service" className="footer__bottom-link">Terms of service</Link>
           </div>
         </div>
       </div>

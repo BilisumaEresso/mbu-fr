@@ -68,6 +68,7 @@
   --color-primary-dark: var(--primary);
   --color-accent: var(--secondary);
   --color-border: var(--outline-variant);
+  --color-error: var(--error); /* #ba1a1a — matches --error in the Material tonal palette above */
 
   /* ---- Typography ---- */
   --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

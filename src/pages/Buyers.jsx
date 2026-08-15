@@ -1,8 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
+import Toast from '../components/common/Toast.jsx'
+import { useToast } from '../hooks/useToast.js'
+import { validateFields } from '../utils/validateForm.js'
 import buyerHeroImg from '../assets/images/buyerHero.webp'
 import './InnerPage.css'
 import './Buyers.css'
@@ -29,17 +32,40 @@ const VALUE_PROPS = [
   },
 ]
 
+const VALIDATION_RULES = {
+  name: ['required'],
+  company: ['required'],
+  country: ['required'],
+  product: ['required'],
+}
+
+// IDs used for aria-describedby associations
+const ERROR_ID = (field) => `buyers-error-${field}`
+
+const EMPTY_FIELDS = { name: '', company: '', country: '', product: '', volume: '', message: '' }
+
 function Buyers() {
   const [searchParams] = useSearchParams()
-  const [selectedProduct, setSelectedProduct] = useState('')
+  const [fields, setFields] = useState(EMPTY_FIELDS)
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
+  const [errors, setErrors] = useState({})
+  const { toast, showToast, dismissToast } = useToast()
+
+  // Ref map for focusing the first invalid field
+  const fieldRefs = {
+    name: useRef(null),
+    company: useRef(null),
+    country: useRef(null),
+    product: useRef(null),
+    volume: useRef(null),
+    message: useRef(null),
+  }
 
   useEffect(() => {
     const productParam = searchParams.get('product')
     if (productParam) {
-      setSelectedProduct(productParam)
+      setFields((prev) => ({ ...prev, product: productParam }))
       // Smooth scroll to quote section
       const quoteElement = document.getElementById('quote')
       if (quoteElement) {
@@ -48,40 +74,75 @@ function Buyers() {
     }
   }, [searchParams])
 
+  function handleChange(e) {
+    const { name, value } = e.target
+    setFields((prev) => ({ ...prev, [name]: value }))
+    // Clear the error for this field as the user edits it
+    if (errors[name]) {
+      setErrors((prev) => {
+        const next = { ...prev }
+        delete next[name]
+        return next
+      })
+    }
+  }
+
   async function handleSubmit(e) {
     e.preventDefault()
+
+    // --- Client-side validation ---
+    const validationErrors = validateFields(fields, VALIDATION_RULES)
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors)
+      // Focus the first invalid field in DOM order
+      const firstInvalid = ['name', 'company', 'country', 'product', 'volume', 'message'].find(
+        (f) => validationErrors[f]
+      )
+      if (firstInvalid) fieldRefs[firstInvalid]?.current?.focus()
+      return
+    }
+
+    setErrors({})
     setSubmitting(true)
-    setErrorMessage('')
 
     const endpoint = import.meta.env.VITE_BUYERS_FORM_ENDPOINT
-    const formData = new FormData(e.currentTarget)
-    const data = Object.fromEntries(formData.entries())
 
     if (!endpoint) {
       // Fallback for local demo preview prior to setting VITE_BUYERS_FORM_ENDPOINT in .env.local
       setSubmitted(true)
       setSubmitting(false)
+      showToast(
+        "Thanks — your request has been received. Our team will follow up shortly.",
+        'success'
+      )
       return
     }
 
     try {
       const res = await fetch(endpoint, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(fields),
       })
 
       if (res.ok) {
         setSubmitted(true)
+        setFields(EMPTY_FIELDS)
+        showToast(
+          "Thanks — your request has been received. Our team will follow up shortly.",
+          'success'
+        )
       } else {
-        const errData = await res.json().catch(() => ({}))
-        setErrorMessage(errData?.error || 'Form submission failed. Please try again.')
+        showToast(
+          'Something went wrong. Please try again or email us directly.',
+          'error'
+        )
       }
     } catch {
-      setErrorMessage('Network error occurred. Please check your connection and try again.')
+      showToast(
+        'Something went wrong. Please try again or email us directly.',
+        'error'
+      )
     } finally {
       setSubmitting(false)
     }
@@ -96,6 +157,7 @@ function Buyers() {
           content="Partner with Meki Batu Union for reliable, certified, high-volume export of fresh Ethiopian fruits and vegetables with full supply chain traceability."
         />
       </Helmet>
+
       {/* ---- Hero Section ---- */}
       <PageHero
         title="Reliable Global Export Partner"
@@ -160,33 +222,80 @@ function Buyers() {
                 <p>Our export logistics team will follow up with your customized quote within 24 hours.</p>
               </div>
             ) : (
-              <form className="form buyers-form" onSubmit={handleSubmit}>
+              <form className="form buyers-form" onSubmit={handleSubmit} noValidate>
                 <div className="form-row">
                   <div>
-                    <label htmlFor="name">Full Name</label>
-                    <input id="name" name="name" type="text" required placeholder="Enter full name" />
+                    <label htmlFor="buyers-name">Full Name</label>
+                    <input
+                      ref={fieldRefs.name}
+                      id="buyers-name"
+                      name="name"
+                      type="text"
+                      value={fields.name}
+                      onChange={handleChange}
+                      placeholder="Enter full name"
+                      aria-invalid={!!errors.name}
+                      aria-describedby={errors.name ? ERROR_ID('name') : undefined}
+                    />
+                    {errors.name && (
+                      <span id={ERROR_ID('name')} className="form-field-error" role="alert">
+                        {errors.name}
+                      </span>
+                    )}
                   </div>
                   <div>
-                    <label htmlFor="company">Company</label>
-                    <input id="company" name="company" type="text" required placeholder="Company name" />
+                    <label htmlFor="buyers-company">Company</label>
+                    <input
+                      ref={fieldRefs.company}
+                      id="buyers-company"
+                      name="company"
+                      type="text"
+                      value={fields.company}
+                      onChange={handleChange}
+                      placeholder="Company name"
+                      aria-invalid={!!errors.company}
+                      aria-describedby={errors.company ? ERROR_ID('company') : undefined}
+                    />
+                    {errors.company && (
+                      <span id={ERROR_ID('company')} className="form-field-error" role="alert">
+                        {errors.company}
+                      </span>
+                    )}
                   </div>
                 </div>
 
                 <div className="form-row">
                   <div>
-                    <label htmlFor="country">Country of Destination</label>
-                    <input id="country" name="country" type="text" required placeholder="e.g. Netherlands, UK, Germany" />
+                    <label htmlFor="buyers-country">Country of Destination</label>
+                    <input
+                      ref={fieldRefs.country}
+                      id="buyers-country"
+                      name="country"
+                      type="text"
+                      value={fields.country}
+                      onChange={handleChange}
+                      placeholder="e.g. Netherlands, UK, Germany"
+                      aria-invalid={!!errors.country}
+                      aria-describedby={errors.country ? ERROR_ID('country') : undefined}
+                    />
+                    {errors.country && (
+                      <span id={ERROR_ID('country')} className="form-field-error" role="alert">
+                        {errors.country}
+                      </span>
+                    )}
                   </div>
                   <div>
-                    <label htmlFor="product">Product of Interest</label>
+                    <label htmlFor="buyers-product">Product of Interest</label>
                     <select
-                      id="product"
+                      ref={fieldRefs.product}
+                      id="buyers-product"
                       name="product"
-                      required
-                      value={selectedProduct}
-                      onChange={(e) => setSelectedProduct(e.target.value)}
+                      value={fields.product}
+                      onChange={handleChange}
+                      aria-invalid={!!errors.product}
+                      aria-describedby={errors.product ? ERROR_ID('product') : undefined}
                     >
-                      <option value="" disabled>Select a product...</option>
+                      <option value="">Select a product...</option>
                       <option value="tomatoes">Rift Valley Tomatoes</option>
                       <option value="onions">Red Onions</option>
                       <option value="peppers">Green Peppers</option>
@@ -195,29 +304,39 @@ function Buyers() {
                       <option value="seeds">Certified Hybrid Seeds</option>
                       <option value="vegetables">General Fresh Vegetables</option>
                     </select>
+                    {errors.product && (
+                      <span id={ERROR_ID('product')} className="form-field-error" role="alert">
+                        {errors.product}
+                      </span>
+                    )}
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="volume">Estimated Volume (Tonnes)</label>
-                  <input id="volume" name="volume" type="number" required placeholder="e.g. 20" />
-                </div>
-
-                <div>
-                  <label htmlFor="message">Additional Requirements</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    placeholder="Specify shipping terms, packaging specs, or delivery timelines..."
+                  <label htmlFor="buyers-volume">Estimated Volume (Tonnes)</label>
+                  <input
+                    ref={fieldRefs.volume}
+                    id="buyers-volume"
+                    name="volume"
+                    type="number"
+                    value={fields.volume}
+                    onChange={handleChange}
+                    placeholder="e.g. 20"
                   />
                 </div>
 
-                {errorMessage && (
-                  <div className="form-error-callout" style={{ color: 'var(--color-accent)', padding: '10px 14px', background: 'var(--surface-container)', borderRadius: 'var(--radius-md)', marginBottom: '16px', fontSize: '14px' }}>
-                    {errorMessage}
-                  </div>
-                )}
+                <div>
+                  <label htmlFor="buyers-message">Additional Requirements</label>
+                  <textarea
+                    ref={fieldRefs.message}
+                    id="buyers-message"
+                    name="message"
+                    rows={4}
+                    value={fields.message}
+                    onChange={handleChange}
+                    placeholder="Specify shipping terms, packaging specs, or delivery timelines..."
+                  />
+                </div>
 
                 <div className="buyers-form__submit-wrap">
                   <button type="submit" className="btn btn--primary" disabled={submitting}>
@@ -229,6 +348,9 @@ function Buyers() {
           </div>
         </div>
       </section>
+
+      {/* ---- Toast ---- */}
+      <Toast toast={toast} onDismiss={dismissToast} />
     </>
   )
 }
