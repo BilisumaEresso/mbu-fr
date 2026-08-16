@@ -3,7 +3,7 @@
 /* ---- Measurable Impact — brand-moment dark green band ---- */
 .impact-metrics {
   background-color: var(--color-primary);
-  /* No section--alt override needed — this section owns its own bg */
+  overflow: hidden;
 }
 
 .impact-metrics__header {
@@ -27,14 +27,15 @@
 
 .impact-metrics__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
   margin-bottom: var(--space-8);
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .impact-metrics__grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--space-6);
   }
 }
@@ -43,30 +44,53 @@
 .impact-metrics__grid > .reveal {
   display: flex;
   flex-direction: column;
+  min-width: 0; /* Prevents flex child overflow */
 }
 
 .impact-metrics__grid > .reveal > .stat-card {
   flex: 1;
+  min-width: 0;
 }
 
 /*
  * StatCard on dark-green background:
- * Override the light-surface defaults so cards sit as a
- * semi-transparent tinted inset rather than white blocks.
+ * Override padding, box-sizing, and font clamping to fit all viewports cleanly.
  */
 .impact-metrics .stat-card {
   background-color: rgba(255, 255, 255, 0.07);
   border-color: rgba(255, 255, 255, 0.14);
+  padding: var(--space-4) var(--space-2);
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 600px) {
+  .impact-metrics .stat-card {
+    padding: var(--space-6) var(--space-4);
+  }
+}
+
+@media (min-width: 900px) {
+  .impact-metrics .stat-card {
+    padding: var(--space-8) var(--space-6);
+  }
 }
 
 .impact-metrics .stat-card__value {
-  /* inverse-primary token = a light sage green — legible on dark green */
   color: var(--inverse-primary);
+  font-size: clamp(22px, 5.5vw, 44px);
+  line-height: 1.15;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .impact-metrics .stat-card__label {
   color: var(--inverse-on-surface);
-  opacity: 0.65;
+  opacity: 0.75;
+  font-size: clamp(10px, 2.5vw, 12px);
+  line-height: 1.35;
+  overflow-wrap: break-word;
 }
 
 /* Farmer photo row — sits below stats, still within the green band */

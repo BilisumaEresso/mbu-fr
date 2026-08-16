@@ -137,9 +137,6 @@ function Testimonials({
                     {item.category && (
                       <span className="testimonial-card__category">{item.category}</span>
                     )}
-                    <span className="testimonial-card__placeholder-badge">
-                      Example — pending real content
-                    </span>
                   </div>
 
                   {/* 5-Star Rating */}

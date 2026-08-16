@@ -77,17 +77,23 @@ function ProcessTimeline({
                       <span>{step.number || index + 1}</span>
                     )}
                   </div>
-                  <span className="process-timeline__step-num">Step {step.number || `0${index + 1}`}</span>
+                  <span className="process-timeline__step-num desktop-only">
+                    Step {step.number || `0${index + 1}`}
+                  </span>
                 </div>
 
                 {/* Content Card */}
                 <div className="process-timeline__card">
-                  <div className="process-timeline__card-header">
-                    <h3 className="process-timeline__step-title">{step.title}</h3>
+                  <div className="process-timeline__card-top">
+                    <span className="process-timeline__step-badge">
+                      Step {step.number || `0${index + 1}`}
+                    </span>
                     {step.tag && (
                       <span className="process-timeline__tag">{step.tag}</span>
                     )}
                   </div>
+
+                  <h3 className="process-timeline__step-title">{step.title}</h3>
                   <p className="process-timeline__step-desc">{step.description}</p>
                 </div>
               </Reveal>
