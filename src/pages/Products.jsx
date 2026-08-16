@@ -1,21 +1,37 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import ourProductHeroImg from '../assets/images/ourProductHero.webp'
 import { products, categories, harvestCalendar } from '../data/products.js'
 import './InnerPage.css'
 import './Products.css'
 
+// Cap stagger at 450ms for the initial product grid render
+const stagger = (i) => Math.min(i * 90, 450)
+
 function Products() {
   const [activeCategory, setActiveCategory] = useState('All')
   const [selectedProduct, setSelectedProduct] = useState(null)
+
+  // Track whether we've already rendered the initial grid. After the first
+  // render, filtering must NOT re-trigger reveal animations — cards simply
+  // show/hide instantly. We detect "has been filtered before" via a ref.
+  const hasFilteredRef = useRef(false)
 
   const filtered =
     activeCategory === 'All'
       ? products
       : products.filter((p) => p.category === activeCategory)
+
+  function handleCategoryChange(cat) {
+    if (cat !== activeCategory) {
+      hasFilteredRef.current = true
+      setActiveCategory(cat)
+    }
+  }
 
   return (
     <>
@@ -52,6 +68,7 @@ function Products() {
         <div className="container">
           <div className="products-catalog__header">
             <h2 className="products-catalog__title">Product Catalog</h2>
+            {/* Category tabs are a control — no animation */}
             <div className="category-tabs" role="tablist" aria-label="Product categories">
               {categories.map((cat) => (
                 <button
@@ -60,7 +77,7 @@ function Products() {
                   role="tab"
                   aria-selected={activeCategory === cat}
                   className={`category-tab ${activeCategory === cat ? 'category-tab--active' : ''}`}
-                  onClick={() => setActiveCategory(cat)}
+                  onClick={() => handleCategoryChange(cat)}
                 >
                   {cat}
                 </button>
@@ -69,34 +86,65 @@ function Products() {
           </div>
 
           <div className="products-grid">
-            {filtered.map((item) => (
-              <div
-                key={item.id}
-                className={`product-item-card ${item.featured && activeCategory === 'All' ? 'product-item-card--featured' : ''}`}
-                onClick={() => setSelectedProduct(item)}
-              >
-                <div className="product-item-card__media">
-                  <img src={item.img} alt={item.name} className="product-item-card__img" />
-                </div>
-                <div className="product-item-card__body">
-                  <div className="product-item-card__header">
-                    <h3 className="product-item-card__title">{item.name}</h3>
-                    <span className="product-item-card__badge">{item.category}</span>
+            {filtered.map((item, i) => {
+              const cardClasses = [
+                'product-item-card',
+                item.featured && activeCategory === 'All' ? 'product-item-card--featured' : '',
+              ]
+                .filter(Boolean)
+                .join(' ')
+
+              const cardContent = (
+                <>
+                  <div className="product-item-card__media">
+                    <img src={item.img} alt={item.name} className="product-item-card__img" />
                   </div>
-                  <p className="product-item-card__desc">{item.desc}</p>
-                  <div className="product-item-card__footer">
-                    <span className="label-caps label-caps--muted text-xs">Season: {item.season}</span>
-                    <Link
-                      to={`/buyers?product=${item.id}`}
-                      className="product-quote-link"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      Request Quote <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                    </Link>
+                  <div className="product-item-card__body">
+                    <div className="product-item-card__header">
+                      <h3 className="product-item-card__title">{item.name}</h3>
+                      <span className="product-item-card__badge">{item.category}</span>
+                    </div>
+                    <p className="product-item-card__desc">{item.desc}</p>
+                    <div className="product-item-card__footer">
+                      <span className="label-caps label-caps--muted text-xs">Season: {item.season}</span>
+                      <Link
+                        to={`/buyers?product=${item.id}`}
+                        className="product-quote-link"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Request Quote <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </>
+              )
+
+              // Do not use Reveal after filtering to avoid re-running animations
+              if (hasFilteredRef.current) {
+                return (
+                  <div
+                    key={item.id}
+                    className={cardClasses}
+                    onClick={() => setSelectedProduct(item)}
+                  >
+                    {cardContent}
+                  </div>
+                )
+              }
+
+              // Initial load: Reveal carries the card class so grid spans work
+              return (
+                <Reveal
+                  key={item.id}
+                  delay={stagger(i)}
+                  className={cardClasses}
+                  onClick={() => setSelectedProduct(item)}
+                  style={{ cursor: 'pointer' }}
+                >
+                  {cardContent}
+                </Reveal>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -196,10 +244,10 @@ function Products() {
         </div>
       </section>
 
-      {/* ---- Partner CTA Banner ---- */}
+      {/* ---- Partner CTA Banner — one Reveal ---- */}
       <section className="products-cta section section--alt">
         <div className="container">
-          <div className="products-cta__card">
+          <Reveal className="products-cta__card">
             <div className="products-cta__info">
               <h2 className="products-cta__title">Partner with Meki Batu</h2>
               <p className="products-cta__desc">
@@ -209,7 +257,7 @@ function Products() {
             <Link to="/buyers" className="btn btn--primary">
               Inquire for Buying
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

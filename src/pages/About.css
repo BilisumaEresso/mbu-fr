@@ -190,7 +190,7 @@
 }
 
 .about-timeline__node--tint {
-  background: var(--surface-tint);
+  background: var(--color-canopy-light);
 }
 
 .about-timeline__node--primary {
@@ -291,19 +291,19 @@
 
 .about-cert-card__icon {
   font-size: 36px !important;
-  color: var(--primary-fixed-dim);
+  color: var(--on-primary-container);
 }
 
 .about-cert-card__title {
   font-family: var(--font-display);
   font-size: var(--fs-h2);
-  color: #ffffff;
+  color: var(--on-primary);
   margin: 0;
 }
 
 .about-cert-card__desc {
   font-size: var(--fs-body);
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--inverse-on-surface);
   line-height: 1.6;
   margin-bottom: var(--space-6);
 }
@@ -320,10 +320,10 @@
 .about-cert-card__highlights li {
   font-family: var(--font-mono);
   font-size: var(--fs-eyebrow);
-  color: var(--primary-fixed);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  border-left: 2px solid var(--primary-fixed);
+  color: var(--inverse-primary);
+  border-left: 2px solid var(--inverse-primary);
   padding-left: var(--space-3);
 }
 
@@ -371,22 +371,20 @@
   padding: var(--space-4);
   background: var(--surface);
   border-radius: var(--radius-lg);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.35s ease,
-              background-color 0.35s ease;
+  transition: transform var(--transition-base),
+              border-color var(--transition-base),
+              background-color var(--transition-base);
 }
 
 .about-governance__card:hover {
   background: var(--surface-container-lowest);
   border-color: var(--secondary);
   transform: translateY(-4px);
-  box-shadow: 0 14px 28px -6px rgba(0, 0, 0, 0.08), 0 4px 10px -4px rgba(0, 0, 0, 0.03);
 }
 
 .about-governance__card--staff {
   border-style: dashed;
-  border-color: var(--secondary-dim, var(--outline-variant));
+  border-color: var(--outline-variant);
   background: var(--surface-container-low);
 }
 
@@ -411,9 +409,9 @@
   height: 100%;
   object-fit: cover;
   filter: saturate(0.82) brightness(0.96) contrast(1.02);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.4s ease,
-              opacity 0.4s ease;
+  transition: transform 500ms ease-out,
+              filter 400ms ease,
+              opacity 400ms ease;
   will-change: transform, filter;
 }
 
@@ -430,18 +428,17 @@
   align-items: center;
   gap: 4px;
   padding: 4px 10px;
-  background: rgba(18, 53, 36, 0.85);
+  background: var(--primary-container);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
-  border-radius: 20px;
+  color: var(--on-primary);
+  border-radius: var(--radius-full);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   z-index: 2;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .about-governance__name {
@@ -450,11 +447,11 @@
   font-weight: 600;
   color: var(--color-primary);
   margin: 0;
-  transition: color 0.3s ease;
+  transition: color var(--transition-fast);
 }
 
 .about-governance__card:hover .about-governance__name {
-  color: var(--secondary-dark, var(--color-primary));
+  color: var(--secondary);
 }
 
 /* Collaboration Partners */
@@ -487,7 +484,7 @@
 }
 
 .label-caps--tint {
-  color: var(--surface-tint) !important;
+  color: var(--color-canopy-light) !important;
 }
 
 .label-caps--primary {

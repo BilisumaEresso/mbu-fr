@@ -46,7 +46,7 @@
   font-family: var(--font-body);
   text-align: center;
   padding: var(--space-4);
-  transition: transform 700ms ease;
+  transition: transform 700ms ease-out;
 }
 
 .product-card:hover .product-card__image {
@@ -79,7 +79,7 @@
   font-family: var(--font-mono);
   font-size: var(--fs-eyebrow);
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--on-primary);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: var(--space-2);
@@ -92,7 +92,7 @@
   font-family: var(--font-display);
   font-size: var(--fs-h3);
   font-weight: 600;
-  color: #ffffff;
+  color: var(--on-primary);
   margin: 0;
   line-height: 1.2;
 }

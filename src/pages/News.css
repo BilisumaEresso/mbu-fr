@@ -148,7 +148,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 600ms ease;
+  transition: transform 600ms ease-out;
 }
 
 .news-article-card:hover .news-article-card__img {
@@ -312,7 +312,7 @@
 
 .news-pagination__page--active {
   background: var(--color-primary);
-  color: #ffffff;
+  color: var(--on-primary);
 }
 
 .news-pagination__ellipsis {

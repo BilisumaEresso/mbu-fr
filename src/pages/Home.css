@@ -166,6 +166,16 @@
   }
 }
 
+/* Reveal wrappers inside stats grid: fill the cell but let transition delay apply */
+.home-stats__grid > .reveal {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-stats__grid > .reveal > .stat-card {
+  flex: 1;
+}
+
 .home-stats__card {
   border: 1px solid var(--outline-variant);
   border-radius: var(--radius-lg);
@@ -196,12 +206,11 @@
   letter-spacing: 0.08em;
 }
 
-/* Certification Strip */
+/* Certification Strip — one bold brand-moment band */
 .home-cert {
-  background: var(--surface-container-low);
-  border-top: 1px solid var(--outline-variant);
-  border-bottom: 1px solid var(--outline-variant);
-  padding: var(--space-6) 0;
+  background-color: var(--color-primary);
+  /* no border — the contrast between cream page and dark band is enough */
+  padding: var(--space-8) 0;
 }
 
 .home-cert__inner {
@@ -227,7 +236,8 @@
 
 .home-cert__icon {
   font-size: 36px !important;
-  color: var(--color-primary);
+  color: var(--color-bg);
+  opacity: 0.9;
   flex-shrink: 0;
 }
 
@@ -235,18 +245,28 @@
   font-family: var(--font-display);
   font-size: var(--fs-h3);
   font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color-bg);
   margin: 0 0 var(--space-1);
 }
 
 .home-cert__desc {
   margin: 0;
-  color: var(--color-text-muted);
+  color: var(--inverse-on-surface);
+  opacity: 0.75;
   font-size: var(--fs-body);
 }
 
 .home-cert__btn {
   white-space: nowrap;
+  /* Override btn--outline for dark bg: cream border + cream text, terracotta fill on hover */
+  color: var(--color-bg) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.home-cert__btn:hover {
+  background-color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  color: var(--on-secondary) !important;
 }
 
 /* Bento Grid Produce Showcase */
@@ -338,7 +358,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 600ms ease;
+  transition: transform 600ms ease-out;
 }
 
 .home-bento__item:hover .home-bento__img {
@@ -357,12 +377,12 @@
   bottom: 0;
   left: 0;
   padding: var(--space-6);
-  color: #ffffff;
+  color: var(--on-primary);
   z-index: 1;
 }
 
 .home-bento__item-title {
-  color: #ffffff;
+  color: var(--on-primary);
   font-family: var(--font-display);
   font-size: var(--fs-h3);
   font-weight: 600;
@@ -374,7 +394,7 @@
 }
 
 .label-caps--white {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: var(--inverse-on-surface) !important;
 }
 
 /* Audience Split */

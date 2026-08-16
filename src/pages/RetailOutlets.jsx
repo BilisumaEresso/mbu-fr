@@ -2,11 +2,14 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import retailHeroImg from '../assets/images/retailHero.webp'
 import { outlets } from '../data/outlets.js'
 import './InnerPage.css'
 import './RetailOutlets.css'
+
+const stagger = (i) => Math.min(i * 90, 450)
 
 function RetailOutlets() {
   const [selectedOutletId, setSelectedOutletId] = useState(outlets[0].id)
@@ -55,11 +58,12 @@ function RetailOutlets() {
           </div>
 
           <div className="outlets-locations__grid">
-            {/* Outlets List Column */}
+            {/* Outlets List Column: wrap each card in Reveal, staggered */}
             <div className="outlets-list-col">
-              {outlets.map((outlet) => (
-                <div
+              {outlets.map((outlet, i) => (
+                <Reveal
                   key={outlet.id}
+                  delay={stagger(i)}
                   className={`outlet-item-card ${selectedOutletId === outlet.id ? 'outlet-item-card--active' : ''}`}
                   onClick={() => {
                     setSelectedOutletId(outlet.id)
@@ -85,12 +89,12 @@ function RetailOutlets() {
                       View Details &amp; Map <span className="material-symbols-outlined text-sm">arrow_forward</span>
                     </span>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
 
-            {/* Map Column */}
-            <div className="outlets-map-col">
+            {/* Map Column: wrapped in one Reveal */}
+            <Reveal className="outlets-map-col">
               <div className="outlets-map-container">
                 <div className="outlets-map-pins-header">
                   {outlets.map((outlet) => (
@@ -134,7 +138,7 @@ function RetailOutlets() {
                   </a>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -251,4 +255,3 @@ function RetailOutlets() {
 }
 
 export default RetailOutlets
-

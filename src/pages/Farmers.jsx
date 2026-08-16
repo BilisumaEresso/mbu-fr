@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import farmerHeroImg from '../assets/images/farmerHero.webp'
 import newsHeroImg from '../assets/images/newsHero.webp'
@@ -62,6 +63,9 @@ const STEPS = [
   },
 ]
 
+// Cap stagger at 450ms
+const stagger = (i) => Math.min(i * 90, 450)
+
 function Farmers() {
   return (
     <>
@@ -93,26 +97,26 @@ function Farmers() {
 
       <SectionDivider />
 
-      {/* ---- Member Services Section ---- */}
+      {/* ---- Member Services Section — stagger each service card ---- */}
       <section className="farmers-services section section--alt" id="services">
         <div className="container">
           <h2 className="farmers-services__heading">Member Services</h2>
           <div className="farmers-services__grid">
-            {SERVICES.map((s) => (
-              <div key={s.title} className="farmers-service-card">
+            {SERVICES.map((s, i) => (
+              <Reveal key={s.title} delay={stagger(i)} className="farmers-service-card">
                 <span className="material-symbols-outlined farmers-service-card__icon">
                   {s.icon}
                 </span>
                 <h3 className="farmers-service-card__title">{s.title}</h3>
                 <p className="farmers-service-card__desc">{s.desc}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ---- How to Join Section ---- */}
-      <section className="farmers-membership section" id="membership">
+      {/* ---- How to Join + Member Portal — one Reveal for the whole two-column block ---- */}
+      <Reveal as="section" className="farmers-membership section" id="membership">
         <div className="container farmers-membership__grid">
           <div className="farmers-membership__content">
             <span className="label-caps label-caps--secondary mb-2">Membership</span>
@@ -137,12 +141,12 @@ function Farmers() {
             />
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      {/* ---- Digital Member Portal Teaser ---- */}
+      {/* ---- Digital Member Portal Teaser — one Reveal ---- */}
       <section className="farmers-portal section section--alt">
         <div className="container">
-          <div className="farmers-portal__card">
+          <Reveal className="farmers-portal__card">
             <span className="material-symbols-outlined farmers-portal__icon">terminal</span>
             <h2 className="farmers-portal__title">Digital Member Portal</h2>
             <span className="label-caps label-caps--secondary mb-4 block">
@@ -154,7 +158,7 @@ function Farmers() {
             <div className="farmers-portal__disabled-btn">
               Portal Access Unavailable
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

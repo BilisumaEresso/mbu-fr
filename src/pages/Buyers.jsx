@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import Toast from '../components/common/Toast.jsx'
 import { useToast } from '../hooks/useToast.js'
@@ -39,10 +40,10 @@ const VALIDATION_RULES = {
   product: ['required'],
 }
 
-// IDs used for aria-describedby associations
 const ERROR_ID = (field) => `buyers-error-${field}`
-
 const EMPTY_FIELDS = { name: '', company: '', country: '', product: '', volume: '', message: '' }
+
+const stagger = (i) => Math.min(i * 90, 450)
 
 function Buyers() {
   const [searchParams] = useSearchParams()
@@ -52,7 +53,6 @@ function Buyers() {
   const [errors, setErrors] = useState({})
   const { toast, showToast, dismissToast } = useToast()
 
-  // Ref map for focusing the first invalid field
   const fieldRefs = {
     name: useRef(null),
     company: useRef(null),
@@ -66,7 +66,6 @@ function Buyers() {
     const productParam = searchParams.get('product')
     if (productParam) {
       setFields((prev) => ({ ...prev, product: productParam }))
-      // Smooth scroll to quote section
       const quoteElement = document.getElementById('quote')
       if (quoteElement) {
         quoteElement.scrollIntoView({ behavior: 'smooth' })
@@ -77,7 +76,6 @@ function Buyers() {
   function handleChange(e) {
     const { name, value } = e.target
     setFields((prev) => ({ ...prev, [name]: value }))
-    // Clear the error for this field as the user edits it
     if (errors[name]) {
       setErrors((prev) => {
         const next = { ...prev }
@@ -90,11 +88,9 @@ function Buyers() {
   async function handleSubmit(e) {
     e.preventDefault()
 
-    // --- Client-side validation ---
     const validationErrors = validateFields(fields, VALIDATION_RULES)
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors)
-      // Focus the first invalid field in DOM order
       const firstInvalid = ['name', 'company', 'country', 'product', 'volume', 'message'].find(
         (f) => validationErrors[f]
       )
@@ -108,7 +104,6 @@ function Buyers() {
     const endpoint = import.meta.env.VITE_BUYERS_FORM_ENDPOINT
 
     if (!endpoint) {
-      // Fallback for local demo preview prior to setting VITE_BUYERS_FORM_ENDPOINT in .env.local
       setSubmitted(true)
       setSubmitting(false)
       showToast(
@@ -121,28 +116,17 @@ function Buyers() {
     try {
       const res = await fetch(endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(fields),
       })
-
       if (res.ok) {
         setSubmitted(true)
-        setFields(EMPTY_FIELDS)
-        showToast(
-          "Thanks — your request has been received. Our team will follow up shortly.",
-          'success'
-        )
+        showToast("Thanks — your request has been received.", 'success')
       } else {
-        showToast(
-          'Something went wrong. Please try again or email us directly.',
-          'error'
-        )
+        showToast("Submission failed. Please try again later.", 'error')
       }
     } catch {
-      showToast(
-        'Something went wrong. Please try again or email us directly.',
-        'error'
-      )
+      showToast("Network error. Please try again.", 'error')
     } finally {
       setSubmitting(false)
     }
@@ -184,8 +168,8 @@ function Buyers() {
         <div className="container">
           <h2 className="buyers-props__heading">Why Source From Us</h2>
           <div className="buyers-props__grid">
-            {VALUE_PROPS.map((p) => (
-              <div key={p.title} className="buyers-prop-card">
+            {VALUE_PROPS.map((p, i) => (
+              <Reveal key={p.title} delay={stagger(i)} className="buyers-prop-card">
                 <span className={`material-symbols-outlined buyers-prop-card__icon buyers-prop-card__icon--${p.iconColor}`}>
                   {p.icon}
                 </span>
@@ -198,7 +182,7 @@ function Buyers() {
                     ))}
                   </div>
                 )}
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -207,7 +191,7 @@ function Buyers() {
       {/* ---- Quote Form Section ---- */}
       <section className="buyers-quote section" id="quote">
         <div className="container">
-          <div className="buyers-quote__card">
+          <Reveal className="buyers-quote__card">
             <div className="buyers-quote__header">
               <h2 className="buyers-quote__title">Request a Quote</h2>
               <p className="buyers-quote__subtitle">
@@ -345,7 +329,7 @@ function Buyers() {
                 </div>
               </form>
             )}
-          </div>
+          </Reveal>
         </div>
       </section>
 

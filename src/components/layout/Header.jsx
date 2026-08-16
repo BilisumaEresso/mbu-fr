@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import logoImg from '../../assets/images/MBU_logo_new.webp'
 import './Header.css'
@@ -45,7 +45,23 @@ const NAV_GROUPS = [
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
+  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const rafPending = useRef(false)
+
+  useEffect(() => {
+    function onScroll() {
+      if (rafPending.current) return
+      rafPending.current = true
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 24)
+        rafPending.current = false
+      })
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
 
   function handleDropdownToggle(key) {
     setActiveDropdown((prev) => (prev === key ? null : key))
@@ -57,7 +73,7 @@ function Header() {
   }
 
   return (
-    <header className="header">
+    <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
       <div className="header__container">
         {/* Brand Logo & Title */}
         <NavLink to="/" className="header__brand" onClick={closeAll}>

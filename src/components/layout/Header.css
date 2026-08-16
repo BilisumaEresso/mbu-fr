@@ -7,8 +7,23 @@
   top: 0;
   z-index: 50;
   width: 100%;
-  background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-primary);
+  /* No border at the very top of the page — only appears once scrolled */
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color var(--transition-base),
+    background-color var(--transition-base);
+}
+
+/* Once the user scrolls, show a very subtle light rule to
+   separate the dark header from the page content below */
+.header--scrolled {
+  border-bottom-color: rgba(252, 249, 248, 0.15);
+}
+
+.header--scrolled .header__container {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .header__container {
@@ -19,6 +34,7 @@
   max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-3) var(--margin-mobile);
+  transition: padding var(--transition-base);
 }
 
 @media (min-width: 768px) {
@@ -27,6 +43,7 @@
   }
 }
 
+/* ---- Brand / Logo ---- */
 .header__brand {
   display: flex;
   align-items: center;
@@ -44,17 +61,20 @@
   width: auto;
   object-fit: contain;
   display: block;
+  /* Logo asset has a built-in white circular background — renders fine on dark green */
 }
 
 .header__brand-text {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-primary);
+  /* Cream on dark green — matches footer logo-text treatment */
+  color: var(--color-bg);
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
 
+/* ---- Desktop Nav ---- */
 .header__nav {
   display: none;
 }
@@ -71,7 +91,8 @@
   font-family: var(--font-body);
   font-size: var(--fs-body);
   font-weight: 500;
-  color: var(--color-text-muted);
+  /* Dimmed cream — "present but secondary" against the green bar */
+  color: rgba(252, 249, 248, 0.70);
   text-decoration: none;
   padding: var(--space-2) 0;
   position: relative;
@@ -79,11 +100,13 @@
 }
 
 .header__link:hover {
-  color: var(--color-primary);
+  /* Full bright cream on hover */
+  color: var(--color-bg);
 }
 
 .header__link--active {
-  color: var(--color-primary);
+  /* Full cream for the active page — clearly distinct from inactive */
+  color: var(--color-bg);
   font-weight: 600;
 }
 
@@ -94,11 +117,12 @@
   left: 0;
   right: 0;
   height: 2px;
+  /* Terracotta underline — unchanged, still marks "current location" */
   background-color: var(--color-accent);
   border-radius: var(--radius-full);
 }
 
-/* Dropdown Menu Styles */
+/* ---- Dropdown Menu ---- */
 .header__dropdown-wrap {
   position: relative;
 }
@@ -112,14 +136,20 @@
   font-family: var(--font-body);
   font-size: var(--fs-body);
   font-weight: 500;
-  color: var(--color-text-muted);
+  /* Same dimmed-cream default as plain nav links */
+  color: rgba(252, 249, 248, 0.70);
   padding: var(--space-2) 0;
   cursor: pointer;
   transition: color var(--transition-fast);
 }
 
 .header__dropdown-trigger:hover {
-  color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* When the trigger's group is active, show full cream */
+.header__dropdown-trigger.header__link--active {
+  color: var(--color-bg);
 }
 
 .header__dropdown-icon {
@@ -131,9 +161,11 @@
   transform: rotate(180deg);
 }
 
+/* Dropdown panel: deliberately light surface on dark bar —
+   dark navbar + light dropdown = maximum readability of menu content */
 .header__dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 6px);
   left: -12px;
   width: 240px;
   background: var(--surface-container-lowest);
@@ -175,6 +207,7 @@
   background-color: var(--surface-container-low);
 }
 
+/* Dropdown item text uses normal dark-on-light colors — panel is light surface */
 .header__dropdown-title {
   font-family: var(--font-body);
   font-size: var(--fs-body);
@@ -189,6 +222,7 @@
   line-height: 1.3;
 }
 
+/* ---- Member Login CTA ---- */
 .header__actions {
   display: none;
 }
@@ -203,8 +237,9 @@
   font-family: var(--font-body);
   font-size: var(--fs-small);
   font-weight: 600;
-  color: var(--on-primary);
-  background-color: var(--color-primary);
+  color: var(--on-secondary);
+  /* Terracotta fill: the established "action color", clearly distinct from the green bar */
+  background-color: var(--color-accent);
   padding: 10px 20px;
   border-radius: var(--radius-md);
   border: none;
@@ -213,25 +248,30 @@
 }
 
 .header__login-btn:hover {
-  background-color: var(--primary-container);
-  color: var(--on-primary-container);
+  /* Darker terracotta on hover */
+  background-color: var(--on-secondary-container);
+  color: var(--on-primary);
+  transform: translateY(-1px);
 }
 
+/* ---- Mobile Hamburger Toggle ---- */
 .header__mobile-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
   background: none;
-  border: 1px solid var(--color-border);
+  /* Subtle translucent white border — replaces the dark border from the cream era */
+  border: 1px solid rgba(252, 249, 248, 0.3);
   border-radius: var(--radius-md);
-  color: var(--color-primary);
+  /* Cream icon color — matches nav text */
+  color: var(--color-bg);
   padding: var(--space-2);
   cursor: pointer;
   transition: background-color var(--transition-fast);
 }
 
 .header__mobile-toggle:hover {
-  background-color: var(--color-bg-alt);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 @media (min-width: 768px) {
@@ -240,12 +280,14 @@
   }
 }
 
+/* ---- Mobile Nav Panel ---- */
+/* Same green as the header — continuous surface, not a jarring light panel */
 .header__mobile-nav {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  background-color: var(--color-bg);
-  border-top: 1px solid var(--color-border);
+  background-color: var(--color-primary);
+  border-top: 1px solid rgba(252, 249, 248, 0.12);
   padding: var(--space-4) var(--margin-mobile);
 }
 
@@ -260,16 +302,20 @@
   font-family: var(--font-body);
   font-size: var(--fs-body);
   font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color-bg);
   text-decoration: none;
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-sm);
   transition: background-color var(--transition-fast);
 }
 
-.header__mobile-link:hover,
+.header__mobile-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .header__mobile-link--active {
-  background-color: var(--surface-container-low);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-bg);
 }
 
 .header__mobile-group {
@@ -281,7 +327,9 @@
 .header__mobile-group-title {
   font-family: var(--font-mono);
   font-size: var(--fs-eyebrow);
-  color: var(--color-text-muted);
+  /* Dimmed cream section label */
+  color: var(--color-bg);
+  opacity: 0.5;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: var(--space-1) var(--space-3);
@@ -299,21 +347,31 @@
   font-family: var(--font-body);
   font-size: var(--fs-body);
   font-weight: 500;
-  color: var(--color-text);
+  /* Dimmed cream — sub-level, slightly more receded than top-level */
+  color: rgba(252, 249, 248, 0.80);
   text-decoration: none;
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-sm);
-  transition: background-color var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 .header__mobile-sublink:hover,
 .header__mobile-sublink--active {
-  background-color: var(--surface-container-low);
-  color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-bg);
 }
 
 .header__login-btn--mobile {
   margin-top: var(--space-2);
   width: 100%;
   text-align: center;
+}
+
+/* ---- Accessibility: focus-visible inside header ----
+   The global rule outlines in var(--color-primary) — invisible on green.
+   Override to cream for all focusable header elements. */
+.header a:focus-visible,
+.header button:focus-visible {
+  outline: 2px solid var(--color-bg);
+  outline-offset: 2px;
 }

@@ -1,10 +1,19 @@
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import Reveal from '../components/common/Reveal.jsx'
+import StatCard from '../components/common/StatCard.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import impactHeroImg from '../assets/images/impactHero.webp'
 import womenFarmerImg from '../assets/images/womenFarmer.webp'
 import './InnerPage.css'
 import './Impact.css'
+
+const STATS = [
+  { value: '50,000+', label: 'Farmers Supported' },
+  { value: '140+',    label: 'Member Cooperatives' },
+  { value: '12',      label: 'Districts Served' },
+  { value: '35%',     label: 'Women in Leadership' },
+]
 
 const REPORTS = [
   {
@@ -26,6 +35,8 @@ const REPORTS = [
     link: '#',
   },
 ]
+
+const stagger = (i) => Math.min(i * 90, 450)
 
 function Impact() {
   return (
@@ -58,61 +69,37 @@ function Impact() {
 
       <SectionDivider />
 
-      {/* ---- Measurable Impact Bento Grid ---- */}
-      <section className="impact-metrics section section--alt">
+      {/* ---- Measurable Impact Stats — brand-moment dark green band ---- */}
+      <section className="impact-metrics section" id="metrics">
         <div className="container">
-          <div className="impact-metrics__header">
+          <Reveal className="impact-metrics__header">
             <h2 className="impact-metrics__title">Measurable Impact</h2>
             <p className="impact-metrics__desc">
               Key performance indicators reflecting our commitment to the cooperative network.
             </p>
-          </div>
+          </Reveal>
 
           <div className="impact-metrics__grid">
-            {/* Metric 1 */}
-            <div className="impact-card">
-              <span className="impact-card__number impact-card__number--secondary">50k+</span>
-              <span className="label-caps label-caps--muted">Tonnes Exported</span>
-            </div>
-
-            {/* Metric 2 */}
-            <div className="impact-card impact-card--primary impact-card--wide">
-              <span className="impact-card__number text-white">140+</span>
-              <span className="label-caps label-caps--tint">Member Cooperatives</span>
-            </div>
-
-            {/* Metric 3 */}
-            <div className="impact-card">
-              <span className="impact-card__number impact-card__number--secondary">12</span>
-              <span className="label-caps label-caps--muted">Districts Served</span>
-            </div>
-
-            {/* Metric 4 Visual */}
-            <div className="impact-card impact-card--media impact-card--wide">
-              <img
-                src={womenFarmerImg}
-                alt="Farmer hands holding organic produce"
-                className="impact-card__img"
-              />
-            </div>
-
-            {/* Metric 5 */}
-            <div className="impact-card impact-card--wide">
-              <h3 className="impact-card__title">Empowering Women in Agriculture</h3>
-              <div className="impact-card__stat-row">
-                <span className="impact-card__number impact-card__number--secondary">35%</span>
-                <span className="impact-card__stat-label">of cooperative leadership</span>
-              </div>
-              <p className="impact-card__desc">
-                Active initiatives to increase female participation in decision-making roles and agricultural training programs.
-              </p>
-            </div>
+            {STATS.map((s, i) => (
+              <Reveal key={s.label} delay={stagger(i)}>
+                <StatCard value={s.value} label={s.label} />
+              </Reveal>
+            ))}
           </div>
+
+          {/* Farmer photo — sits below the stat row on mobile, beside on desktop */}
+          <Reveal className="impact-metrics__photo" delay={stagger(STATS.length)}>
+            <img
+              src={womenFarmerImg}
+              alt="Women farmers in cooperative fields in Ethiopia"
+              className="impact-metrics__photo-img"
+            />
+          </Reveal>
         </div>
       </section>
 
       {/* ---- Reports & Documentation Section ---- */}
-      <section className="impact-reports section">
+      <section className="impact-reports section" id="reports">
         <div className="container impact-reports__grid">
           <div className="impact-reports__sidebar">
             <h2 className="impact-reports__title">Reports &amp; Documentation</h2>
@@ -120,7 +107,9 @@ function Impact() {
               Access our annual performance reviews, sustainability reports, and official certifications validating our global export standards.
             </p>
           </div>
-          <div className="impact-reports__list">
+
+          {/* Wrap whole list as one Reveal, no per-item stagger */}
+          <Reveal className="impact-reports__list">
             {REPORTS.map((r) => (
               <div key={r.id} className="impact-report-item">
                 <div>
@@ -133,7 +122,7 @@ function Impact() {
                 </a>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

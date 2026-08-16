@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
+import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import aboutHeroImg from '../assets/images/aboutHero.webp'
 import teamMember1 from '../assets/images/team_member_1.webp'
@@ -33,6 +34,9 @@ const TEAM = [
 
 const PARTNERS = ['Self Help Africa', 'Oromia Coop Bank', 'Agri-Invest']
 
+// Cap stagger at 450ms for card grids
+const stagger = (i) => Math.min(i * 90, 450)
+
 function About() {
   return (
     <>
@@ -62,7 +66,8 @@ function About() {
             <h2 className="about-foundation__title">Our Foundation</h2>
           </div>
 
-          <div className="about-timeline">
+          {/* Wrap the two content paragraphs together as one Reveal unit */}
+          <Reveal className="about-timeline">
             <div className="about-timeline__line desktop-only" />
 
             {/* Timeline Item 1 */}
@@ -106,7 +111,7 @@ function About() {
                 </p>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -114,8 +119,8 @@ function About() {
       <section className="about-mission-cert section">
         <div className="container">
           <div className="about-mission-cert__grid">
-            {/* Left: Mission */}
-            <div className="about-mission-card">
+            {/* Left: Mission — whole list as one Reveal */}
+            <Reveal className="about-mission-card">
               <h2 className="about-mission__title">Mission &amp; Objectives</h2>
               <ul className="about-mission__list">
                 {OBJECTIVES.map((obj, i) => (
@@ -125,10 +130,10 @@ function About() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
 
-            {/* Right: Certification */}
-            <div className="about-cert-card">
+            {/* Right: Certification — one Reveal */}
+            <Reveal className="about-cert-card" delay={90}>
               <div>
                 <div className="about-cert-card__header">
                   <span className="material-symbols-outlined about-cert-card__icon">verified</span>
@@ -146,7 +151,7 @@ function About() {
               <div className="about-cert-card__footer">
                 <span className="label-caps label-caps--muted text-xs opacity-70">Export Quality Assured</span>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -162,9 +167,10 @@ function About() {
           </div>
 
           <div className="about-governance__grid">
-            {TEAM.map((member) => (
-              <div
+            {TEAM.map((member, i) => (
+              <Reveal
                 key={member.title}
+                delay={stagger(i)}
                 className={`about-governance__card ${member.isStaffCard ? 'about-governance__card--staff' : ''}`}
               >
                 <div className="about-governance__photo-wrap">
@@ -181,25 +187,25 @@ function About() {
                 </div>
                 <h3 className="about-governance__name">{member.name}</h3>
                 <p className="label-caps label-caps--secondary text-xs mt-1">{member.title}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ---- Collaboration Partners ---- */}
+      {/* ---- Collaboration Partners — one Reveal, no stagger ---- */}
       <section className="about-partners section">
         <div className="container">
           <div className="text-center mb-8">
             <span className="label-caps label-caps--muted">In Collaboration With</span>
           </div>
-          <div className="about-partners__logos">
+          <Reveal className="about-partners__logos">
             {PARTNERS.map((p) => (
               <div key={p} className="about-partners__name">
                 {p}
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
     </>
