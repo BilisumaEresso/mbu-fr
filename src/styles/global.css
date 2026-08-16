@@ -257,3 +257,29 @@ hr, .divider {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
 }
+
+/* ---- Accessibility Skip Link ---- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 10000;
+  padding: 12px 24px;
+  background-color: var(--color-primary);
+  color: var(--color-bg) !important;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  outline: 2px solid var(--color-bg);
+  outline-offset: 2px;
+}

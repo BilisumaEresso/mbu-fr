@@ -1,6 +1,6 @@
 /* ---- News Page Styles (Refactored to match exact design specification) ---- */
 .news-page-container {
-  padding: var(--space-12) 0 var(--space-16);
+  padding: 0 0 var(--space-16);
 }
 
 .news-page-header {

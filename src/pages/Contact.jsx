@@ -101,6 +101,7 @@ function Contact() {
 
       {/* ---- Hero Section ---- */}
       <PageHero
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Contact' }]}
         title="Get in Touch with Meki Batu Union"
         description="We welcome inquiries from global partners, local stakeholders, and farmers. Our team is ready to discuss agricultural exports, cooperative membership, and sustainable farming initiatives in the Great Rift Valley."
       />

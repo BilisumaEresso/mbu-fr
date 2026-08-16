@@ -28,6 +28,7 @@ function RetailOutlets() {
       </Helmet>
       {/* ---- Hero Section ---- */}
       <PageHero
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Retail Outlets' }]}
         title="Direct from Our Farms to You."
         description="Meki Batu Union operates five dedicated retail outlets across Addis Ababa, ensuring urban consumers have direct access to the freshest, sustainably grown produce from our cooperative farmers."
         actions={

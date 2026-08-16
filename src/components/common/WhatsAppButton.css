@@ -1,0 +1,52 @@
+/* ==========================================================================
+   WhatsApp Floating Click-to-Chat Button
+   ========================================================================== */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 8000;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+  color: var(--on-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.whatsapp-btn:hover {
+  background-color: var(--on-secondary-container);
+  color: var(--on-primary);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.whatsapp-btn:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.whatsapp-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .whatsapp-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .whatsapp-btn__icon {
+    width: 24px;
+    height: 24px;
+  }
+}

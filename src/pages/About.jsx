@@ -9,6 +9,7 @@ import teamMember3 from '../assets/images/team_member_3.webp'
 import teamMember4 from '../assets/images/team_member_4.webp'
 import teamMember5 from '../assets/images/team_member_5.webp'
 import teamStaff from '../assets/images/team_staff.webp'
+import companyProfilePdf from '../assets/downloads/MekiBatuUnion_CompanyProfile.pdf'
 import './About.css'
 
 const OBJECTIVES = [
@@ -49,6 +50,7 @@ function About() {
       </Helmet>
       {/* ---- Hero Section ---- */}
       <PageHero
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'About Us' }]}
         eyebrow="Since 2002"
         title="Cultivating Progress Through Cooperative Strength"
         description="Meki Batu Union stands as a testament to the power of collective farming in Ethiopia. We unite farmers to ensure fair trade, sustainable practices, and premium quality produce for the global market."
@@ -149,7 +151,17 @@ function About() {
                 </ul>
               </div>
               <div className="about-cert-card__footer">
-                <span className="label-caps label-caps--muted text-xs opacity-70">Export Quality Assured</span>
+                <span className="label-caps label-caps--muted text-xs opacity-70 mb-3 block">Export Quality Assured</span>
+                <a
+                  href={companyProfilePdf}
+                  download="MekiBatuUnion_CompanyProfile.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn--outline btn--sm"
+                  title="Download Meki Batu Union Company Profile (PDF)"
+                >
+                  Download company profile (PDF) <span className="material-symbols-outlined text-sm">download</span>
+                </a>
               </div>
             </Reveal>
           </div>

@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/layout/Header.jsx'
 import Footer from './components/layout/Footer.jsx'
+import WhatsAppButton from './components/common/WhatsAppButton.jsx'
 
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
@@ -18,8 +19,11 @@ import NotFound from './pages/NotFound.jsx'
 function App() {
   return (
     <div className="site">
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Header />
-      <main className="site-main">
+      <main id="main-content" className="site-main" tabIndex="-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -36,6 +40,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

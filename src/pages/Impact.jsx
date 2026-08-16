@@ -50,6 +50,7 @@ function Impact() {
       </Helmet>
       {/* ---- Hero Section ---- */}
       <PageHero
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Impact' }]}
         title="Cultivating Growth, Sustaining Communities"
         description="Our impact extends beyond agricultural output. We are dedicated to empowering farmers, fostering sustainable practices, and driving economic resilience across the Great Rift Valley."
         actions={

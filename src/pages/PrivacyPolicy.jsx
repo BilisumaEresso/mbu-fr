@@ -14,6 +14,7 @@ function PrivacyPolicy() {
       </Helmet>
 
       <PageHero
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Privacy Policy' }]}
         eyebrow="Legal"
         title="Privacy policy"
         description="How Meki Batu Union collects, uses, and protects your information."

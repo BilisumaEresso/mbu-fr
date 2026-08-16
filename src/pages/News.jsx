@@ -58,6 +58,7 @@ function News() {
         />
       </Helmet>
       <PageHero
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'News' }]}
         eyebrow="Updates & Announcements"
         title="News & Updates"
         description="Stay informed with the latest reports on harvests, community initiatives, and global partnerships from Meki Batu Union."

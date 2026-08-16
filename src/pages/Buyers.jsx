@@ -5,11 +5,42 @@ import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import Toast from '../components/common/Toast.jsx'
+import FAQ from '../components/common/FAQ.jsx'
+import ProcessTimeline from '../components/common/ProcessTimeline.jsx'
 import { useToast } from '../hooks/useToast.js'
 import { validateFields } from '../utils/validateForm.js'
 import buyerHeroImg from '../assets/images/buyerHero.webp'
+import companyProfilePdf from '../assets/downloads/MekiBatuUnion_CompanyProfile.pdf'
 import './InnerPage.css'
 import './Buyers.css'
+
+const BUYERS_FAQ = [
+  {
+    question: 'What products can we source from Meki Batu Union?',
+    answer:
+      'We supply tomato, onion, pepper, potato, cabbage, and green beans, along with papaya, watermelon, and bitter gourd, plus certified bean, onion, and maize seed. See our Products page for the full list.',
+  },
+  {
+    question: 'Is your produce certified?',
+    answer:
+      'Yes — Meki Batu Union is GlobalG.A.P certified, meeting international standards for food safety, traceability, and sustainable farming practice.',
+  },
+  {
+    question: 'Do you export outside Ethiopia?',
+    answer:
+      'Yes, we currently export to markets in Europe, in addition to supplying five retail outlets in Addis Ababa.',
+  },
+  {
+    question: 'How do I request a quote or place an inquiry?',
+    answer:
+      'Use the Request a Quote form on this page with your product interest, estimated volume, and destination — our team will follow up directly.',
+  },
+  {
+    question: 'What is your minimum order quantity?',
+    answer:
+      "This varies by product and season — please reach out via the quote form or WhatsApp and we'll confirm current minimums for your specific order.",
+  },
+]
 
 const VALUE_PROPS = [
   {
@@ -144,6 +175,7 @@ function Buyers() {
 
       {/* ---- Hero Section ---- */}
       <PageHero
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'For Buyers' }]}
         title="Reliable Global Export Partner"
         description="Meki Batu Union offers certified, high-volume agricultural products directly from our extensive network of Ethiopian cooperatives. Experience transparent sourcing and uncompromising quality control."
         actions={
@@ -151,9 +183,16 @@ function Buyers() {
             <a href="#quote" className="btn btn--primary">
               Request a Quote <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
-            <Link to="/products" className="btn btn--outline">
-              View Catalog <span className="material-symbols-outlined text-sm">inventory_2</span>
-            </Link>
+            <a
+              href={companyProfilePdf}
+              download="MekiBatuUnion_CompanyProfile.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--outline"
+              title="Download Meki Batu Union Company Profile (PDF)"
+            >
+              Download company profile (PDF) <span className="material-symbols-outlined text-sm">download</span>
+            </a>
           </>
         }
         image={buyerHeroImg}
@@ -187,6 +226,9 @@ function Buyers() {
           </div>
         </div>
       </section>
+
+      {/* ---- Supply Chain Process Timeline ---- */}
+      <ProcessTimeline />
 
       {/* ---- Quote Form Section ---- */}
       <section className="buyers-quote section" id="quote">
@@ -332,6 +374,9 @@ function Buyers() {
           </Reveal>
         </div>
       </section>
+
+      {/* ---- FAQ Section ---- */}
+      <FAQ items={BUYERS_FAQ} />
 
       {/* ---- Toast ---- */}
       <Toast toast={toast} onDismiss={dismissToast} />

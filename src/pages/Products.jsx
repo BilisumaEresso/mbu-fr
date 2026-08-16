@@ -44,6 +44,7 @@ function Products() {
       </Helmet>
       {/* ---- Hero Section ---- */}
       <PageHero
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Our Products' }]}
         title="Cultivated with precision. Exported globally."
         description="Discover our range of premium, certified organic crops and seeds. Grown in the nutrient-rich soils of the Great Rift Valley by our network of cooperative farmers."
         actions={

@@ -1,8 +1,9 @@
+import Breadcrumbs from './Breadcrumbs.jsx'
 import './PageHero.css'
 
 /**
  * Shared interior page hero section component.
- * Used by About, Products, Farmers, Buyers, RetailOutlets, News, Impact, Contact.
+ * Used by About, Products, Farmers, Buyers, RetailOutlets, News, Impact, Contact, PrivacyPolicy, TermsOfService.
  */
 function PageHero({
   eyebrow,
@@ -13,6 +14,7 @@ function PageHero({
   imageAlt,
   badge,
   rightContent,
+  breadcrumbs,
   className = '',
 }) {
   const hasRightColumn = Boolean(image || rightContent)
@@ -20,6 +22,7 @@ function PageHero({
   return (
     <section className={`page-hero ${className}`.trim()}>
       <div className="container">
+        {breadcrumbs && <Breadcrumbs trail={breadcrumbs} />}
         {hasRightColumn ? (
           <div className="page-hero__grid">
             <div className="page-hero__content">

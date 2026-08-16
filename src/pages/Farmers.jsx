@@ -3,11 +3,35 @@ import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import Toast from '../components/common/Toast.jsx'
+import FAQ from '../components/common/FAQ.jsx'
 import { useToast } from '../hooks/useToast.js'
 import farmerHeroImg from '../assets/images/farmerHero.webp'
 import newsHeroImg from '../assets/images/newsHero.webp'
 import './InnerPage.css'
 import './Farmers.css'
+
+const FARMERS_FAQ = [
+  {
+    question: 'How do I join Meki Batu Union as a primary cooperative?',
+    answer:
+      'Primary cooperatives in our operating districts — Dugda woreda and Adami Tulu Jido Kombolcha — can apply to join. Contact our membership office using the details on our Contact page to learn about eligibility and the application process.',
+  },
+  {
+    question: 'What support does the union provide to member cooperatives?',
+    answer:
+      'We supply farm inputs at fair prices, help facilitate access to credit, share market information, provide mechanization and maintenance services, and offer training and technical advisory support.',
+  },
+  {
+    question: 'How many cooperatives are currently part of the union?',
+    answer:
+      'Meki Batu Union currently includes more than 140 primary cooperatives.',
+  },
+  {
+    question: 'Is there a cost to join?',
+    answer:
+      'Membership terms are discussed directly with applicants during the joining process — contact us for current details.',
+  },
+]
 
 const SERVICES = [
   {
@@ -89,6 +113,7 @@ function Farmers() {
       </Helmet>
       {/* ---- Hero Section ---- */}
       <PageHero
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'For Farmers' }]}
         title="Empowering Primary Cooperatives"
         description="Meki Batu Union provides essential services, training, and market access to our network of primary cooperatives, ensuring sustainable growth and prosperity for Ethiopian farmers."
         actions={
@@ -177,6 +202,9 @@ function Farmers() {
           </Reveal>
         </div>
       </section>
+
+      {/* ---- FAQ Section ---- */}
+      <FAQ items={FARMERS_FAQ} />
 
       {/* Toast Notification */}
       <Toast toast={toast} onDismiss={dismissToast} />

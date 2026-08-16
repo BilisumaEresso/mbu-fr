@@ -4,13 +4,96 @@ import Button from '../components/common/Button.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import StatCard from '../components/common/StatCard.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
+import Testimonials from '../components/common/Testimonial.jsx'
 import homeHeroImg from '../assets/images/homeHero.webp'
 import bentoTomatoImg from '../assets/images/bentoTomato.webp'
 import bentoOnionImg from '../assets/images/bentoOnion.webp'
 import bentoGreenPepperImg from '../assets/images/bentoGreenPepper.webp'
 import bentoGreenBeansImg from '../assets/images/bentoGreenBeans.webp'
 import bentoPapayaImg from '../assets/images/bentoPapaya.webp'
+import teamMember1 from '../assets/images/team_member_1.webp'
+import teamMember2 from '../assets/images/team_member_2.webp'
+import teamMember3 from '../assets/images/team_member_3.webp'
+import teamMember4 from '../assets/images/team_member_4.webp'
+import teamMember5 from '../assets/images/team_member_5.webp'
+import womenFarmer from '../assets/images/womenFarmer.webp'
 import './Home.css'
+
+// PLACEHOLDER CONTENT — replace with real buyer/member testimonials and remove the "Example" badge before launch.
+const TESTIMONIALS = [
+  {
+    id: 1,
+    name: 'Henrik Vestergaard',
+    role: 'Senior Procurement Lead',
+    org: 'Nordic Fresh Imports',
+    location: 'Copenhagen, Denmark',
+    category: 'Export Buyer',
+    avatar: teamMember1,
+    rating: 5,
+    quote:
+      'Working with Meki Batu Union has meant consistent quality and reliable export volumes season after season. Their GlobalG.A.P compliance gives our retail buyers total confidence.',
+  },
+  {
+    id: 2,
+    name: 'Ato Abebe Tadesse',
+    role: 'Primary Co-op Chairman',
+    org: 'Batu Farmers Co-op',
+    location: 'Dugda Woreda, Oromia',
+    category: 'Co-op Member',
+    avatar: teamMember3,
+    rating: 5,
+    quote:
+      'The union has helped our 350+ cooperative members access fair minimum pricing, agronomy workshops, and direct cold-chain transport that protects our harvests.',
+  },
+  {
+    id: 3,
+    name: 'Sophie Laurent',
+    role: 'Sourcing Director',
+    org: 'EuroAgri Trade Group',
+    location: 'Marseille, France',
+    category: 'Export Buyer',
+    avatar: teamMember2,
+    rating: 5,
+    quote:
+      'Their Rift Valley tomatoes and green beans set the benchmark for Ethiopian produce exports. Full batch traceability from field to air-freight packing.',
+  },
+  {
+    id: 4,
+    name: 'W/ro Chaltu Gemeda',
+    role: 'Women Agronomists Lead',
+    org: 'Meki Valley Produce Group',
+    location: 'East Shewa Zone',
+    category: 'Co-op Member',
+    avatar: womenFarmer,
+    rating: 5,
+    quote:
+      'Through Meki Batu Union’s capacity building and seed programs, female farmers in our district have doubled their yield and established independent farm revenues.',
+  },
+  {
+    id: 5,
+    name: 'Markus Lindner',
+    role: 'Category Director',
+    org: 'Global Harvest Logistics',
+    location: 'Rotterdam, Netherlands',
+    category: 'Export Buyer',
+    avatar: teamMember5,
+    rating: 5,
+    quote:
+      'Their GlobalG.A.P certification gave us total confidence to build a long-term sourcing relationship. Reliable logistics and prompt export documentation.',
+  },
+  {
+    id: 6,
+    name: 'Ato Worku Bekele',
+    role: 'Vegetable Seed Producer',
+    org: 'Adami Tulu Co-op Network',
+    location: 'Ziway / Adami Tulu',
+    category: 'Co-op Member',
+    avatar: teamMember4,
+    rating: 5,
+    quote:
+      'Access to high-germination hybrid seeds and union mechanization equipment transformed our harvest efficiency. We now export grade-A onions consistently.',
+  },
+]
 
 const STATS = [
   { value: '140+', label: 'Primary Co-ops' },
@@ -197,6 +280,9 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials items={TESTIMONIALS} />
     </>
   )
 }

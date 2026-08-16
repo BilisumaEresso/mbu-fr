@@ -14,6 +14,7 @@ function TermsOfService() {
       </Helmet>
 
       <PageHero
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Terms of Service' }]}
         eyebrow="Legal"
         title="Terms of service"
         description="The terms that apply when you use this website."
