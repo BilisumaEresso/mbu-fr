@@ -290,14 +290,25 @@
   line-height: 1.6;
 }
 
-.farmers-portal__disabled-btn {
-  display: inline-block;
-  padding: var(--space-3) var(--space-6);
-  border: 1px solid var(--outline);
-  border-radius: var(--radius-md);
-  color: var(--color-text-muted);
+.farmers-portal__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 12px 26px;
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-primary);
+  font-family: var(--font-display);
   font-size: var(--fs-body);
-  opacity: 0.6;
-  cursor: not-allowed;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.farmers-portal__btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  transform: translateY(-2px);
 }
 

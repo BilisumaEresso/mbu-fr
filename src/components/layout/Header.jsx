@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import logoImg from '../../assets/images/MBU_logo_new.webp'
+import Toast from '../common/Toast.jsx'
+import { useToast } from '../../hooks/useToast.js'
 import './Header.css'
 
 const NAV_GROUPS = [
@@ -48,6 +50,7 @@ function Header() {
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
   const rafPending = useRef(false)
+  const { toast, showToast, dismissToast } = useToast()
 
   useEffect(() => {
     function onScroll() {
@@ -62,7 +65,6 @@ function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-
   function handleDropdownToggle(key) {
     setActiveDropdown((prev) => (prev === key ? null : key))
   }
@@ -70,6 +72,14 @@ function Header() {
   function closeAll() {
     setMenuOpen(false)
     setActiveDropdown(null)
+  }
+
+  function handleLoginClick() {
+    closeAll()
+    showToast(
+      'Member Login is coming soon! Online portal access for member cooperatives is currently under development.',
+      'info'
+    )
   }
 
   return (
@@ -146,7 +156,7 @@ function Header() {
         </nav>
 
         <div className="header__actions">
-          <button className="header__login-btn" type="button">
+          <button className="header__login-btn" type="button" onClick={handleLoginClick}>
             Member Login
           </button>
         </div>
@@ -204,11 +214,18 @@ function Header() {
               </div>
             )
           })}
-          <button className="header__login-btn header__login-btn--mobile" type="button">
+          <button
+            className="header__login-btn header__login-btn--mobile"
+            type="button"
+            onClick={handleLoginClick}
+          >
             Member Login
           </button>
         </nav>
       )}
+
+      {/* Toast Notification */}
+      <Toast toast={toast} onDismiss={dismissToast} />
     </header>
   )
 }

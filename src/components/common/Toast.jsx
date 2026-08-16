@@ -21,8 +21,14 @@ function Toast({ toast, onDismiss }) {
   if (!toast) return null
 
   const isSuccess = toast.type === 'success'
-  const icon = isSuccess ? 'check_circle' : 'error'
-  const ariaRole = isSuccess ? 'status' : 'alert'
+  const isError = toast.type === 'error'
+  const isInfo = toast.type === 'info'
+
+  let icon = 'check_circle'
+  if (isError) icon = 'error'
+  if (isInfo) icon = 'info'
+
+  const ariaRole = isError ? 'alert' : 'status'
 
   return (
     <div

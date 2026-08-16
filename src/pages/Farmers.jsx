@@ -2,6 +2,8 @@ import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
+import Toast from '../components/common/Toast.jsx'
+import { useToast } from '../hooks/useToast.js'
 import farmerHeroImg from '../assets/images/farmerHero.webp'
 import newsHeroImg from '../assets/images/newsHero.webp'
 import './InnerPage.css'
@@ -67,6 +69,15 @@ const STEPS = [
 const stagger = (i) => Math.min(i * 90, 450)
 
 function Farmers() {
+  const { toast, showToast, dismissToast } = useToast()
+
+  function handleLoginClick() {
+    showToast(
+      'Member Login is coming soon! Online portal access for member cooperatives is currently under development.',
+      'info'
+    )
+  }
+
   return (
     <>
       <Helmet>
@@ -155,12 +166,20 @@ function Farmers() {
             <p className="farmers-portal__desc">
               We are developing a secure, centralized digital portal for our primary cooperatives. Soon, members will be able to access market prices, request inputs, view transaction histories, and manage their union accounts directly online.
             </p>
-            <div className="farmers-portal__disabled-btn">
-              Portal Access Unavailable
-            </div>
+            <button
+              type="button"
+              className="farmers-portal__btn"
+              onClick={handleLoginClick}
+            >
+              Access Member Portal
+              <span className="material-symbols-outlined text-sm">lock</span>
+            </button>
           </Reveal>
         </div>
       </section>
+
+      {/* Toast Notification */}
+      <Toast toast={toast} onDismiss={dismissToast} />
     </>
   )
 }
