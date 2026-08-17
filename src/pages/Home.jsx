@@ -165,23 +165,67 @@ function Home() {
         </div>
       </section>
 
-      {/* Certification Strip — one Reveal, whole unit */}
-      <Reveal as="section" className="home-cert">
-        <div className="container home-cert__inner">
-          <div className="home-cert__info">
-            <span className="material-symbols-outlined home-cert__icon">verified</span>
-            <div>
-              <h3 className="home-cert__title">GlobalG.A.P Certified</h3>
-              <p className="home-cert__desc">
-                Meeting international standards for safe and sustainable agriculture.
-              </p>
+      {/* GlobalG.A.P Certification Section */}
+      <section className="home-cert">
+        <div className="container">
+          <Reveal className="home-cert__card">
+            {/* Badge & heading */}
+            <div className="home-cert__header">
+              <div className="home-cert__header-text">
+                <span className="label-caps home-cert__eyebrow">International Certification</span>
+                <h3 className="home-cert__title">
+                  GlobalG.A.P Certified
+                  <span className="material-symbols-outlined home-cert__verified">verified</span>
+                </h3>
+                <p className="home-cert__desc">
+                  Meeting international standards for safe, sustainable, and traceable agriculture — ensuring every product from our cooperatives is world-market ready.
+                </p>
+              </div>
             </div>
-          </div>
-          <Link to="/about" className="btn btn--outline home-cert__btn">
-            View Certificate
-          </Link>
+
+            {/* Feature highlights */}
+            <div className="home-cert__features">
+              <div className="home-cert__feature">
+                <span className="material-symbols-outlined home-cert__feature-icon">track_changes</span>
+                <div>
+                  <h4 className="home-cert__feature-title">Full Traceability</h4>
+                  <p className="home-cert__feature-desc">Field-to-export batch tracking on every shipment.</p>
+                </div>
+              </div>
+              <div className="home-cert__feature">
+                <span className="material-symbols-outlined home-cert__feature-icon">health_and_safety</span>
+                <div>
+                  <h4 className="home-cert__feature-title">Food Safety</h4>
+                  <p className="home-cert__feature-desc">Rigorous hygiene, handling, and residue testing protocols.</p>
+                </div>
+              </div>
+              <div className="home-cert__feature">
+                <span className="material-symbols-outlined home-cert__feature-icon">eco</span>
+                <div>
+                  <h4 className="home-cert__feature-title">Sustainability</h4>
+                  <p className="home-cert__feature-desc">Responsible water, soil, and biodiversity stewardship.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Actions */}
+            <div className="home-cert__actions">
+              <Link to="/impact" className="btn btn--primary home-cert__btn">
+                View our certifications <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </Link>
+              <a
+                href="https://globalgap.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-cert__ext-link"
+              >
+                <span className="material-symbols-outlined text-sm">open_in_new</span>
+                Learn about GlobalG.A.P
+              </a>
+            </div>
+          </Reveal>
         </div>
-      </Reveal>
+      </section>
 
       {/* Featured Products Bento Grid — stagger each tile */}
       <section className="home-bento section">

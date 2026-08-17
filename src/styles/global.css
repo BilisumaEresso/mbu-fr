@@ -24,6 +24,7 @@ body {
   background-image: url('../assets/patterns/contour-texture.svg');
   background-repeat: repeat;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 .material-symbols-outlined {
@@ -148,7 +149,6 @@ select:focus-visible {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 .site-main {

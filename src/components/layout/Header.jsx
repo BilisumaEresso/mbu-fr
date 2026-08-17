@@ -50,6 +50,7 @@ function Header() {
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
   const rafPending = useRef(false)
+  const dropdownTimer = useRef(null)
   const { toast, showToast, dismissToast } = useToast()
 
   useEffect(() => {
@@ -115,8 +116,15 @@ function Header() {
               <div
                 key={group.key}
                 className="header__dropdown-wrap"
-                onMouseEnter={() => setActiveDropdown(group.key)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => {
+                  clearTimeout(dropdownTimer.current)
+                  setActiveDropdown(group.key)
+                }}
+                onMouseLeave={() => {
+                  dropdownTimer.current = setTimeout(() => {
+                    setActiveDropdown(null)
+                  }, 300)
+                }}
               >
                 <button
                   type="button"

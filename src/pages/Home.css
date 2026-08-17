@@ -206,67 +206,180 @@
   letter-spacing: 0.08em;
 }
 
-/* Certification Strip — one bold brand-moment band */
+/* ==========================================================================
+   GlobalG.A.P Certification Section — premium card layout
+   ========================================================================== */
 .home-cert {
-  background-color: var(--color-primary);
-  /* no border — the contrast between cream page and dark band is enough */
-  padding: var(--space-8) 0;
+  padding: var(--space-16) 0;
+  background-color: var(--color-bg);
 }
 
-.home-cert__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--space-4);
-}
-
-@media (min-width: 768px) {
-  .home-cert__inner {
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
-.home-cert__info {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.home-cert__icon {
-  font-size: 36px !important;
+/* Main card container */
+.home-cert__card {
+  position: relative;
+  background:
+    linear-gradient(135deg, var(--color-primary) 0%, hsl(153, 38%, 18%) 100%);
+  border-radius: var(--radius-xl, 20px);
+  padding: var(--space-10, 40px) var(--space-8);
+  overflow: hidden;
   color: var(--color-bg);
-  opacity: 0.9;
-  flex-shrink: 0;
+}
+
+/* Decorative dot pattern overlay */
+.home-cert__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(252, 249, 248, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+/* Decorative gradient glow at top-right */
+.home-cert__card::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(184, 74, 34, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Header row */
+.home-cert__header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-8);
+}
+
+/* Header text */
+.home-cert__eyebrow {
+  color: rgba(252, 249, 248, 0.55);
+  display: block;
+  margin-bottom: var(--space-1);
 }
 
 .home-cert__title {
   font-family: var(--font-display);
-  font-size: var(--fs-h3);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  color: var(--color-bg);
+  margin: 0 0 var(--space-2);
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Verified badge — inline with title */
+.home-cert__verified {
+  font-size: 32px !important;
+  color: var(--color-bg);
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(252, 249, 248, 0.35));
+  animation: verifiedPop 2.5s ease-in-out infinite;
+}
+
+@keyframes verifiedPop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.home-cert__desc {
+  margin: 0;
+  font-size: var(--fs-body-lg);
+  color: rgba(252, 249, 248, 0.75);
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+/* Feature highlights — three columns on desktop */
+.home-cert__features {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(252, 249, 248, 0.12);
+}
+
+@media (min-width: 600px) {
+  .home-cert__features {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+.home-cert__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.home-cert__feature-icon {
+  font-size: 28px !important;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.home-cert__feature-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-body);
   font-weight: 600;
   color: var(--color-bg);
   margin: 0 0 var(--space-1);
 }
 
-.home-cert__desc {
+.home-cert__feature-desc {
+  font-size: var(--fs-small);
+  color: rgba(252, 249, 248, 0.6);
+  line-height: 1.5;
   margin: 0;
-  color: var(--inverse-on-surface);
-  opacity: 0.75;
-  font-size: var(--fs-body);
 }
 
+/* Actions row */
+.home-cert__actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+@media (min-width: 520px) {
+  .home-cert__actions {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Primary CTA button — terracotta on dark green card */
 .home-cert__btn {
   white-space: nowrap;
-  /* Override btn--outline for dark bg: cream border + cream text, terracotta fill on hover */
-  color: var(--color-bg) !important;
-  border-color: rgba(255, 255, 255, 0.45) !important;
 }
 
-.home-cert__btn:hover {
-  background-color: var(--color-accent) !important;
-  border-color: var(--color-accent) !important;
-  color: var(--on-secondary) !important;
+/* External GlobalG.A.P link */
+.home-cert__ext-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: rgba(252, 249, 248, 0.7);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.home-cert__ext-link:hover {
+  color: var(--color-bg);
 }
 
 /* Bento Grid Produce Showcase */
