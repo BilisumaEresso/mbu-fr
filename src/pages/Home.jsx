@@ -8,31 +8,33 @@ import SectionDivider from '../components/common/SectionDivider.jsx'
 import Testimonials from '../components/common/Testimonial.jsx'
 import HeroCrossfade from '../components/common/HeroCrossfade.jsx'
 import WhereWeOperate from '../components/common/WhereWeOperate.jsx'
+import Certifications from '../components/common/Certifications.jsx'
 
 /* ── hero assets ── */
-import homeHeroImg from '../assets/images/homeHero.webp'
-import aboutHeroImg from '../assets/images/aboutHero.webp'
-import farmerHeroImg from '../assets/images/farmerHero.webp'
-import womenFarmerImg from '../assets/images/womenFarmer.webp'
-import buyerHeroImg from '../assets/images/buyerHero.webp'
+import homeHeroImg from '../assets/images/heroes/homeHero.webp'
+import aboutHeroImg from '../assets/images/heroes/aboutHero.webp'
+import farmerHeroImg from '../assets/images/heroes/farmerHero.webp'
+import womenFarmerImg from '../assets/images/community/womenFarmer.webp'
+import buyerHeroImg from '../assets/images/heroes/buyerHero.webp'
 
 /* ── bento assets ── */
-import bentoTomatoImg from '../assets/images/bentoTomato.webp'
-import bentoOnionImg from '../assets/images/bentoOnion.webp'
-import bentoGreenPepperImg from '../assets/images/bentoGreenPepper.webp'
-import bentoGreenBeansImg from '../assets/images/bentoGreenBeans.webp'
-import bentoPapayaImg from '../assets/images/bentoPapaya.webp'
+import bentoTomatoImg from '../assets/images/products/bentoTomato.webp'
+import bentoOnionImg from '../assets/images/products/bentoOnion.webp'
+import bentoGreenPepperImg from '../assets/images/products/bentoGreenPepper.webp'
+import bentoGreenBeansImg from '../assets/images/products/bentoGreenBeans.webp'
+import bentoPapayaImg from '../assets/images/products/bentoPapaya.webp'
 
 /* ── testimonial avatar assets ── */
-import teamMember1 from '../assets/images/team_member_1.webp'
-import teamMember2 from '../assets/images/team_member_2.webp'
-import teamMember3 from '../assets/images/team_member_3.webp'
-import teamMember4 from '../assets/images/team_member_4.webp'
-import teamMember5 from '../assets/images/team_member_5.webp'
+import teamMember1 from '../assets/images/team/team_member_1.webp'
+import teamMember2 from '../assets/images/team/team_member_2.webp'
+import teamMember3 from '../assets/images/team/team_member_3.webp'
+import teamMember4 from '../assets/images/team/team_member_4.webp'
+import teamMember5 from '../assets/images/team/team_member_5.webp'
 
 /* ── downloads & data ── */
 import companyProfilePdf from '../assets/downloads/MekiBatuUnion_CompanyProfile.pdf'
 import { news } from '../data/news.js'
+import { partners } from '../data/partners.js'
 import './Home.css'
 
 const HERO_IMAGES = [
@@ -41,31 +43,6 @@ const HERO_IMAGES = [
   { src: farmerHeroImg, alt: 'Cooperative farmer harvesting fresh produce' },
   { src: womenFarmerImg, alt: 'Women farmers working in cooperative fields' },
   { src: buyerHeroImg, alt: 'Export quality produce being sorted and packed' },
-]
-
-// Must stay in sync with PARTNERS array in About.jsx
-const PARTNERS = [
-  {
-    name: 'Self Help Africa',
-    tag: 'Development Partner',
-    desc: 'Supporting smallholder farmer livelihoods through capacity building, agronomy training, and market access programmes across East Africa.',
-    url: 'https://selfhelpafrica.org/ie/meki-batu-fruit-and-vegetable-growers-cooperative-union/',
-    icon: 'volunteer_activism',
-  },
-  {
-    name: 'Cooperative Bank of Oromia',
-    tag: 'Financial Partner',
-    desc: 'Providing cooperative-focused financial services, agricultural lending, and seasonal credit facilities to union member cooperatives.',
-    url: 'https://coopbankoromia.com.et/',
-    icon: 'account_balance',
-  },
-  {
-    name: 'Agri-Invest',
-    tag: 'Investment Partner',
-    desc: 'EU-backed programme strengthening agribusiness value chains through technical assistance, investment facilitation, and export readiness support.',
-    url: 'https://agriinvest.eu/en/home-2/',
-    icon: 'trending_up',
-  },
 ]
 
 // PLACEHOLDER CONTENT — replace with real buyer/member testimonials and remove the "Example" badge before launch.
@@ -145,10 +122,10 @@ const TESTIMONIALS = [
 ]
 
 const STATS = [
-  { value: '140+', label: 'Primary Co-ops' },
+  { value: '153', label: 'Primary Co-ops' },
+  { value: '8,410', label: 'Member Farmers' },
   { value: '50k+', label: 'Tonnes Sold/Yr' },
   { value: '5', label: 'Retail Outlets' },
-  { value: 'EU', label: 'Export Markets' },
 ]
 
 // Cap stagger at 450ms (5 items × 90ms = 450ms max)
@@ -166,7 +143,7 @@ function Home() {
         <title>Meki Batu Union | Ethiopian Fruit &amp; Vegetable Cooperative</title>
         <meta
           name="description"
-          content="Meki Batu Union empowers over 140 primary cooperatives and 50,000 farmers in the Ethiopian Rift Valley to deliver sustainable, export-quality produce worldwide."
+          content="Meki Batu Union empowers 153 primary cooperatives and 8,410 member farmers in the Ethiopian Rift Valley to deliver sustainable, export-quality produce worldwide."
         />
       </Helmet>
 
@@ -178,7 +155,7 @@ function Home() {
               Trusted Ethiopian fruit &amp; vegetable cooperative since 2002.
             </h1>
             <p className="home-hero__desc">
-              Empowering 140+ primary cooperatives and over 50,000 farmers in the Great Rift Valley. Delivering sustainable, export-quality produce to the world.
+              Empowering 153 primary cooperatives and 8,410 member farmers across the Great Rift Valley. Delivering sustainable, export-quality produce to the world.
             </p>
             <div className="home-hero__actions">
               <Button to="/products" variant="primary">
@@ -233,61 +210,19 @@ function Home() {
       {/* 3. Where We Operate (new) */}
       <WhereWeOperate />
 
-      {/* 4. Certification strip (existing, unchanged) */}
+      {/* 4. Certifications & Compliance */}
       <section className="home-cert">
         <div className="container">
-          <Reveal className="home-cert__card">
+          <Reveal className="home-cert__band">
+            <div className="home-cert__dots" aria-hidden="true" />
             <div className="home-cert__header">
-              <div className="home-cert__header-text">
-                <span className="label-caps home-cert__eyebrow">International Certification</span>
-                <h3 className="home-cert__title">
-                  GlobalG.A.P Certified
-                  <span className="material-symbols-outlined home-cert__verified">verified</span>
-                </h3>
-                <p className="home-cert__desc">
-                  Meeting international standards for safe, sustainable, and traceable agriculture — ensuring every product from our cooperatives is world-market ready.
-                </p>
-              </div>
+              <span className="label-caps home-cert__eyebrow">Certifications &amp; Compliance</span>
+              <h3 className="home-cert__title">Our Credentials</h3>
+              <p className="home-cert__desc">
+                Verified by international and national authorities for food safety, sustainable farming, and certified seed production.
+              </p>
             </div>
-
-            <div className="home-cert__features">
-              <div className="home-cert__feature">
-                <span className="material-symbols-outlined home-cert__feature-icon">track_changes</span>
-                <div>
-                  <h4 className="home-cert__feature-title">Full Traceability</h4>
-                  <p className="home-cert__feature-desc">Field-to-export batch tracking on every shipment.</p>
-                </div>
-              </div>
-              <div className="home-cert__feature">
-                <span className="material-symbols-outlined home-cert__feature-icon">health_and_safety</span>
-                <div>
-                  <h4 className="home-cert__feature-title">Food Safety</h4>
-                  <p className="home-cert__feature-desc">Rigorous hygiene, handling, and residue testing protocols.</p>
-                </div>
-              </div>
-              <div className="home-cert__feature">
-                <span className="material-symbols-outlined home-cert__feature-icon">eco</span>
-                <div>
-                  <h4 className="home-cert__feature-title">Sustainability</h4>
-                  <p className="home-cert__feature-desc">Responsible water, soil, and biodiversity stewardship.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="home-cert__actions">
-              <Link to="/impact" className="btn btn--primary home-cert__btn">
-                View our certifications <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </Link>
-              <a
-                href="https://globalgap.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home-cert__ext-link"
-              >
-                <span className="material-symbols-outlined text-sm">open_in_new</span>
-                Learn about GlobalG.A.P
-              </a>
-            </div>
+            <Certifications />
           </Reveal>
         </div>
       </section>
@@ -369,7 +304,7 @@ function Home() {
                   <span className="label-caps home-process__eyebrow">Quality &amp; Logistics</span>
                   <h2 className="home-process__title">From Farm to Export</h2>
                   <p className="home-process__subtitle">
-                    Our end-to-end supply chain ensures quality, GlobalG.A.P compliance, and reliable delivery — from harvest to your market.
+                    From 153 primary cooperatives through our pack house to domestic and export markets.
                   </p>
                 </div>
                 <Link to="/buyers" className="home-process__cta">
@@ -383,10 +318,10 @@ function Home() {
                 <div className="home-process__seg home-process__seg--3" aria-hidden="true" />
 
                 {[
-                  { num: '01', icon: 'eco', title: 'Harvest', desc: 'Member cooperatives harvest across 140+ primary co-ops in the Rift Valley.' },
-                  { num: '02', icon: 'verified', title: 'Grading & QC', desc: 'Sorted and graded to meet GlobalG.A.P certified food safety standards.' },
-                  { num: '03', icon: 'inventory_2', title: 'Consolidation', desc: 'Volumes consolidated from member co-ops for domestic and export markets.' },
-                  { num: '04', icon: 'local_shipping', title: 'Delivery', desc: 'Shipped to five Addis Ababa outlets or export markets across Europe.' },
+                  { num: '01', icon: 'verified', title: 'Grading', desc: 'Intake inspection and multi-tier grade calibration from 153 primary cooperatives.' },
+                  { num: '02', icon: 'inventory_2', title: 'Processing', desc: 'Field heat removal and post-harvest batch stabilization at the union pack house.' },
+                  { num: '03', icon: 'sanitizer', title: 'Cleaning', desc: 'Sanitary washing and residue compliance strictly meeting GlobalG.A.P standards.' },
+                  { num: '04', icon: 'local_shipping', title: 'Packing', desc: 'Packed into ventilated cartons and shipped to five Addis Ababa outlets or European export markets.' },
                 ].map((step, i) => (
                   <Reveal key={step.num} delay={i * 120} className="home-process__step">
                     <div className="home-process__node">
@@ -413,7 +348,7 @@ function Home() {
               <span className="material-symbols-outlined home-audience__icon">group</span>
               <h2 className="home-audience__card-title">For member cooperatives</h2>
               <p className="home-audience__card-desc">
-                Access agricultural inputs, training, and direct market linkages. We support our members in improving yields and ensuring sustainable livelihoods.
+                Access agricultural inputs, training, and direct market linkages. Supporting 8,410 member farmers across 153 primary cooperatives to improve yields and ensure sustainable livelihoods.
               </p>
               <Link to="/farmers" className="home-audience__link">
                 Join the union <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -490,26 +425,23 @@ function Home() {
           </Reveal>
 
           <div className="home-partners__grid">
-            {PARTNERS.map((p, i) => (
-              <Reveal key={p.name} delay={i * 100}>
-                <a
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="home-partners__card"
-                >
-                  <div className="home-partners__card-top">
-                    <span className="material-symbols-outlined home-partners__icon">{p.icon}</span>
-                    <span className="home-partners__tag">{p.tag}</span>
-                  </div>
-                  <h3 className="home-partners__name">{p.name}</h3>
-                  <p className="home-partners__card-desc">{p.desc}</p>
-                  <span className="home-partners__visit">
-                    Visit website <span className="material-symbols-outlined text-sm">open_in_new</span>
-                  </span>
-                </a>
+            {partners.slice(0, 8).map((p, i) => (
+              <Reveal key={p} delay={i * 60}>
+                <div className="home-partners__card">
+                  <span className="material-symbols-outlined home-partners__icon">handshake</span>
+                  <h3 className="home-partners__name">{p}</h3>
+                </div>
               </Reveal>
             ))}
+            <Reveal delay={8 * 60}>
+              <Link to="/about#partners" className="home-partners__card home-partners__card--more">
+                <span className="material-symbols-outlined home-partners__icon">add_circle</span>
+                <h3 className="home-partners__name">+ 9 More Partners</h3>
+                <span className="home-partners__visit">
+                  View full network <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </span>
+              </Link>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -545,8 +477,8 @@ function Home() {
             <Reveal delay={90}>
               <Link to="/impact#reports" className="home-resources__card">
                 <span className="material-symbols-outlined home-resources__icon">verified</span>
-                <h3 className="home-resources__card-title">GlobalG.A.P Certificate</h3>
-                <p className="home-resources__card-desc">Official international certification documentation for agricultural food safety and quality.</p>
+                <h3 className="home-resources__card-title">Certifications &amp; Compliance</h3>
+                <p className="home-resources__card-desc">Our GlobalG.A.P certification and Oromia seed producer license documentation.</p>
                 <span className="home-resources__action">
                   View Reports <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </span>

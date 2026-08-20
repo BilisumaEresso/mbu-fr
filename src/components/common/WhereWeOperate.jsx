@@ -11,14 +11,15 @@ export default function WhereWeOperate() {
             <span className="label-caps label-caps--secondary mb-2 block">Our Region</span>
             <h2 className="where-operate__title">Where We Operate</h2>
             <p className="where-operate__desc">
-              Our member cooperatives farm in the heart of Ethiopia&rsquo;s Great
-              Rift Valley, near Lake Ziway&nbsp;&mdash; one of the country&rsquo;s
-              most productive irrigated agricultural zones.
+              Our member cooperatives farm across six districts in the fertile Great Rift Valley: Dugda woreda, Adami Tulu Jido Kombolcha, Bora, Zuway Dugda, Adama, and Dodota Sire. Originally founded around Dembal Lake (Lake Ziway) across Dugda and Adami Tulu, the union has expanded to support 8,410 member farmers across all six woredas.
             </p>
             <div className="where-operate__tags">
               <span className="where-operate__tag">Dugda Woreda</span>
               <span className="where-operate__tag">Adami Tulu Jido Kombolcha</span>
-              <span className="where-operate__tag">East Shewa Zone</span>
+              <span className="where-operate__tag">Bora</span>
+              <span className="where-operate__tag">Zuway Dugda</span>
+              <span className="where-operate__tag">Adama</span>
+              <span className="where-operate__tag">Dodota Sire</span>
             </div>
             <a
               href="https://maps.app.goo.gl/HBFW3h7pe7W5tkMm8"

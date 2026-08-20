@@ -1,15 +1,14 @@
-import tomatoImg from '../assets/images/tomato.webp'
-import bentoOnionImg from '../assets/images/bentoOnion.webp'
-import bentoGreenPepperImg from '../assets/images/bentoGreenPepper.webp'
-import bentoPotatoImg from '../assets/images/bentoPotato.webp'
-import bentoPapayaImg from '../assets/images/bentoPapaya.webp'
-import bentoGreenBeansImg from '../assets/images/bentoGreenBeans.webp'
-import bentoCabbageImg from '../assets/images/bentoCabbage.webp'
-import bentoWatermelonImg from '../assets/images/bentoWatermelon.webp'
-import bentoBitterGourdImg from '../assets/images/bentoBitterGourd.webp'
-import bentoHybridSeedsImg from '../assets/images/bentoHybridSeeds.webp'
-import bentoOnionSeedsImg from '../assets/images/bentoOnionSeeds.webp'
-import bentoMaizeImg from '../assets/images/bentoMaize.webp'
+import tomatoImg from '../assets/images/products/tomato.webp'
+import bentoOnionImg from '../assets/images/products/bentoOnion.webp'
+import bentoGreenPepperImg from '../assets/images/products/bentoGreenPepper.webp'
+import bentoPotatoImg from '../assets/images/products/bentoPotato.webp'
+import bentoPapayaImg from '../assets/images/products/bentoPapaya.webp'
+import bentoGreenBeansImg from '../assets/images/products/bentoGreenBeans.webp'
+import bentoCabbageImg from '../assets/images/products/bentoCabbage.webp'
+import bentoWatermelonImg from '../assets/images/products/bentoWatermelon.webp'
+import bentoHybridSeedsImg from '../assets/images/products/bentoHybridSeeds.webp'
+import bentoOnionSeedsImg from '../assets/images/products/bentoOnionSeeds.webp'
+import bentoMaizeImg from '../assets/images/products/bentoMaize.webp'
 
 export const products = [
   {
@@ -123,20 +122,6 @@ export const products = [
     packaging: 'Bulk Bins / Crates',
     brix: '10° - 12° Brix',
     img: bentoWatermelonImg,
-  },
-  {
-    id: 'bitter-gourd',
-    name: 'Export Bitter Gourd',
-    category: 'Fruits',
-    tag: 'Newer export crop',
-    desc: 'Specialized horticultural crop introduced for direct export to international specialty buyers.',
-    season: 'Seasonal',
-    featured: false,
-    origin: 'Meki Trial Farms',
-    shelfLife: '10-12 Days',
-    packaging: '5kg Export Boxes',
-    brix: 'Export Grade',
-    img: bentoBitterGourdImg,
   },
   {
     id: 'seeds',

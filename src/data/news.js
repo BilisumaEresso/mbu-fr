@@ -1,9 +1,9 @@
-import newsHeroImg from '../assets/images/newsHero.webp'
-import farmerMembershipImg from '../assets/images/FarmerMembership.webp'
-import buyerHeroImg from '../assets/images/buyerHero_thumb.webp'
-import farmerHeroImg from '../assets/images/farmerHero.webp'
-import womenFarmerImg from '../assets/images/womenFarmer.webp'
-import aboutHeroFarmImg from '../assets/images/about_hero_farm.webp'
+import newsHeroImg from '../assets/images/heroes/newsHero.webp'
+import farmerMembershipImg from '../assets/images/community/FarmerMembership.webp'
+import buyerHeroImg from '../assets/images/heroes/buyerHero_thumb.webp'
+import farmerHeroImg from '../assets/images/heroes/farmerHero.webp'
+import womenFarmerImg from '../assets/images/community/womenFarmer.webp'
+import aboutHeroFarmImg from '../assets/images/heroes/about_hero_farm.webp'
 
 export const news = [
   {
@@ -18,7 +18,7 @@ export const news = [
     desc: "Early reports from across our cooperative network indicate unprecedented yields and exceptional quality profiles for this year's harvest, driven by favorable weather conditions and improved sustainable farming practices implemented earlier this year.",
     excerpt: "Early reports from across our cooperative network indicate unprecedented yields and exceptional quality profiles for this year's harvest.",
     fullContent: [
-      "The 2024 harvest season is shaping up to be one of the most prolific in Meki Batu Union's history. Early field audits across our 140+ primary member cooperatives indicate a 28% increase in overall crop yield compared to the previous fiscal year.",
+      "The 2024 harvest season is shaping up to be one of the most prolific in Meki Batu Union's history. Early field audits across our 153 primary member cooperatives indicate a 28% increase in overall crop yield compared to the previous fiscal year.",
       "Favorable rainfall patterns across the Great Rift Valley, paired with modern drip irrigation systems introduced through our union mechanization program, have created optimal growing conditions for both fresh fruit and vegetable crops.",
       "Furthermore, over 12,000 member farmers completed GlobalG.A.P soil management and organic fertilization workshops earlier this spring. This emphasis on soil health has not only boosted output volume but also elevated crop grade metrics across all major export commodities.",
       "Our central packhouses in Meki are currently operating at peak efficiency to process, grade, and package incoming harvests for immediate domestic distribution and international shipment to European trade partners."
@@ -43,7 +43,7 @@ export const news = [
     desc: 'Over 500 cooperative leaders gathered to discuss strategic initiatives, resource allocation, and market projections for the upcoming fiscal year.',
     excerpt: 'Over 500 cooperative leaders gathered to discuss strategic initiatives, resource allocation, and market projections.',
     fullContent: [
-      "The 2024 Meki Batu Union Annual General Assembly brought together over 500 delegates representing 140+ primary agricultural cooperatives across East Shewa Zone.",
+      "The 2024 Meki Batu Union Annual General Assembly brought together over 500 delegates representing 153 primary agricultural cooperatives across East Shewa Zone.",
       "Key topics addressed during the three-day summit included dividend distribution protocols, bulk seed purchasing programs, and the adoption of modern agricultural technology.",
       "Delegates unanimously approved a new capital reinvestment plan allocating 15% of annual net revenue toward expanding regional storage warehouses and farmer micro-loan funds."
     ],
@@ -149,21 +149,21 @@ export const news = [
   },
   {
     id: 7,
-    title: 'Bitter Gourd Added as a New Export Crop',
+    title: 'Green Beans Export Operations Expand with New Cold-Chain Links',
     category: 'Export Update',
     categoryType: 'primary',
     date: 'Jun 12, 2024',
     author: 'Agronomy Task Force',
     readTime: '3 min read',
     location: 'Dugda Woreda',
-    desc: 'Meki Batu Union introduces bitter gourd to its export lineup, expanding options for international specialty buyers in European markets.',
-    excerpt: 'Meki Batu Union introduces bitter gourd to its export lineup, expanding options for European buyers.',
+    desc: 'Meki Batu Union scales up export-grade green bean volumes with enhanced field-to-packhouse refrigerated transit.',
+    excerpt: 'Meki Batu Union scales up export-grade green bean volumes with enhanced refrigerated transit.',
     fullContent: [
-      "Following two seasons of successful field cultivation trials in the lowlands of Dugda Woreda, Meki Batu Union has formally added bitter gourd to its commercial export catalog.",
-      "Cultivated under controlled drip irrigation, the high-demand crop meets stringent European import specifications for size, color, and low chemical residue."
+      "Following successful field expansion in the lowlands of Dugda Woreda, Meki Batu Union has scaled up export volume for premium green beans.",
+      "Cultivated under controlled drip irrigation, the crop meets stringent European import specifications for freshness, uniform sizing, and residue compliance."
     ],
     highlights: [
-      'New high-value export crop successfully introduced',
+      'High-grade green bean export volumes scaled up',
       'Direct contract farming agreements established with 80 smallholders'
     ],
     img: farmerHeroImg,

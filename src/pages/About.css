@@ -212,7 +212,7 @@
   margin: 0;
 }
 
-/* Mission & Certification */
+/* Mission, Vision & Certification */
 .about-mission-cert__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -233,6 +233,25 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   transition: var(--transition-card);
+}
+
+.about-vision-block,
+.about-mission-block {
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+.about-vision__heading {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+}
+
+.about-objectives-block {
+  padding-top: var(--space-2);
 }
 
 .about-mission__title {
@@ -272,90 +291,20 @@
   line-height: 1.6;
 }
 
-/* GlobalG.A.P Card */
-.about-cert-card {
-  padding: var(--space-8);
-  background: var(--primary-container);
-  color: var(--on-primary);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--primary-container);
-  box-shadow: var(--shadow-md);
+/* Certifications & Compliance — wrapper for shared component */
+.about-cert-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: var(--space-6);
 }
 
-.about-cert-card__header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  margin-bottom: var(--space-4);
+.about-cert-wrap .certifications__grid {
+  grid-template-columns: 1fr;
 }
 
-.about-cert-card__icon {
-  font-size: 36px !important;
-  color: var(--on-primary-container);
-}
-
-.about-cert-card__title {
-  font-family: var(--font-display);
-  font-size: var(--fs-h2);
-  color: var(--on-primary);
-  margin: 0;
-}
-
-.about-cert-card__desc {
-  font-size: var(--fs-body);
-  color: var(--inverse-on-surface);
-  line-height: 1.6;
-  margin-bottom: var(--space-6);
-}
-
-.about-cert-card__highlights {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 var(--space-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.about-cert-card__highlights li {
-  font-family: var(--font-mono);
-  font-size: var(--fs-eyebrow);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--inverse-primary);
-  border-left: 2px solid var(--inverse-primary);
-  padding-left: var(--space-3);
-}
-
-.about-cert-card__footer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-2);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+.about-cert-wrap__footer {
   padding-top: var(--space-4);
-}
-
-.about-cert-card__footer .label-caps {
-  color: rgba(252, 249, 248, 0.8) !important;
-}
-
-.about-cert-card .btn--outline {
-  background-color: var(--color-bg) !important;
-  color: var(--color-primary) !important;
-  border-color: var(--color-bg) !important;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-  transition: all var(--transition-fast);
-}
-
-.about-cert-card .btn--outline:hover {
-  background-color: var(--color-accent) !important;
-  color: var(--color-bg) !important;
-  border-color: var(--color-accent) !important;
+  border-top: 1px solid var(--outline-variant);
 }
 
 /* Governance / Leadership */
@@ -479,6 +428,63 @@
 }
 
 /* Collaboration Partners */
+.about-partners__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 600px) {
+  .about-partners__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .about-partners__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-partners__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.about-partners__card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-card);
+}
+
+.about-partners__card:hover {
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.about-partners__card-icon {
+  font-size: 22px !important;
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+.about-partners__card-name {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm, 0.875rem);
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1.4;
+}
+
 .about-partners__logos {
   display: flex;
   flex-wrap: wrap;
@@ -518,3 +524,57 @@
 .label-caps--muted {
   color: var(--outline) !important;
 }
+
+/* Utility Helpers */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-sm {
+  font-size: var(--fs-body-sm, 0.875rem);
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: var(--fs-h2);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.block {
+  display: block;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }

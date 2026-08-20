@@ -323,7 +323,7 @@ function News() {
             <div className="news-modal-body-content">
               <p className="news-modal-lead">{selectedArticle.desc}</p>
               <p>
-                Meki Batu Union continues to drive agricultural innovation across our 140+ member primary cooperatives. Through strategic investments in infrastructure, technology, and sustainable farming practices, we empower smallholder farmers in the Great Rift Valley to achieve high-yield, export-grade output.
+                Meki Batu Union continues to drive agricultural innovation across our 153 member primary cooperatives representing 8,410 farmers. Through strategic investments in infrastructure, technology, and sustainable farming practices, we empower smallholder farmers in the Great Rift Valley to achieve high-yield, export-grade output.
               </p>
               <p>
                 This initiative directly aligns with our core mission of promoting economic resilience, environmental stewardship, and fair trade. By bridging local agricultural communities with international markets, we ensure high quality, traceable produce for our global partners.

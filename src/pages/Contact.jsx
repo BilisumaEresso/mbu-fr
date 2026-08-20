@@ -6,8 +6,8 @@ import SectionDivider from '../components/common/SectionDivider.jsx'
 import Toast from '../components/common/Toast.jsx'
 import { useToast } from '../hooks/useToast.js'
 import { validateFields } from '../utils/validateForm.js'
-import impactHeroImg from '../assets/images/impactHero.webp'
-import farmerMembershipImg from '../assets/images/FarmerMembership.webp'
+import impactHeroImg from '../assets/images/heroes/impactHero.webp'
+import farmerMembershipImg from '../assets/images/community/FarmerMembership.webp'
 import './InnerPage.css'
 import './Contact.css'
 
@@ -119,7 +119,8 @@ function Contact() {
                 <span className="material-symbols-outlined contact-info-item__icon">location_on</span>
                 <div>
                   <p className="font-medium">Meki Town</p>
-                  <p className="text-muted">East Shewa Zone, Oromia, Ethiopia</p>
+                  <p className="text-muted">138km on the road to Hawassa, 60km south of Mojo town, East Shoa Zone, Dugda Woreda, Oromia, Ethiopia</p>
+                  <p className="text-muted mt-1">P.O. Box: 006, Meki, Ethiopia</p>
                   <a
                     href="https://maps.app.goo.gl/HBFW3h7pe7W5tkMm8"
                     target="_blank"
@@ -134,11 +135,31 @@ function Contact() {
               <span className="label-caps label-caps--secondary block mb-3 mt-6">Direct Lines</span>
               <div className="contact-info-item">
                 <span className="material-symbols-outlined contact-info-item__icon">call</span>
-                <p>+251 11 123 4567</p>
+                <div>
+                  <p className="font-medium">Phone</p>
+                  <a href="tel:+251221181114" className="text-muted">022-118-11-14 / 02</a>
+                </div>
+              </div>
+              <div className="contact-info-item">
+                <span className="material-symbols-outlined contact-info-item__icon">phone_iphone</span>
+                <div>
+                  <p className="font-medium">Mobile</p>
+                  <a href="tel:+251904686868" className="text-muted">09-04-68-68-68 / 09-09-34-34-34</a>
+                </div>
+              </div>
+              <div className="contact-info-item">
+                <span className="material-symbols-outlined contact-info-item__icon">fax</span>
+                <div>
+                  <p className="font-medium">Fax</p>
+                  <p className="text-muted">022-118-04-08</p>
+                </div>
               </div>
               <div className="contact-info-item">
                 <span className="material-symbols-outlined contact-info-item__icon">mail</span>
-                <p>info@mekibatuunion.com</p>
+                <div>
+                  <p className="font-medium">Email <span className="text-xs text-muted font-normal">(pending confirmation)</span></p>
+                  <a href="mailto:info@mekibatuunion.org" className="text-muted">info@mekibatuunion.org</a>
+                </div>
               </div>
             </div>
 

@@ -5,8 +5,8 @@ import SectionDivider from '../components/common/SectionDivider.jsx'
 import Toast from '../components/common/Toast.jsx'
 import FAQ from '../components/common/FAQ.jsx'
 import { useToast } from '../hooks/useToast.js'
-import farmerHeroImg from '../assets/images/farmerHero.webp'
-import newsHeroImg from '../assets/images/newsHero.webp'
+import farmerHeroImg from '../assets/images/heroes/farmerHero.webp'
+import newsHeroImg from '../assets/images/heroes/newsHero.webp'
 import './InnerPage.css'
 import './Farmers.css'
 
@@ -24,7 +24,7 @@ const FARMERS_FAQ = [
   {
     question: 'How many cooperatives are currently part of the union?',
     answer:
-      'Meki Batu Union currently includes more than 140 primary cooperatives.',
+      'Meki Batu Union currently includes 153 primary cooperatives representing 8,410 member farmers.',
   },
   {
     question: 'Is there a cost to join?',
@@ -108,7 +108,7 @@ function Farmers() {
         <title>Farmer Co-ops &amp; Membership | Meki Batu Union</title>
         <meta
           name="description"
-          content="Empowering 140+ primary agricultural cooperatives in Ethiopia through seed distribution, agronomy training, cold-chain storage, and direct export linkages."
+          content="Empowering 153 primary agricultural cooperatives and 8,410 member farmers in Ethiopia through seed distribution, agronomy training, cold-chain storage, and direct export linkages."
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
@@ -128,7 +128,7 @@ function Farmers() {
         }
         image={farmerHeroImg}
         imageAlt="Ethiopian farmers in a professional agricultural packhouse"
-        badge="140+ Primary Co-ops"
+        badge="153 Primary Co-ops"
       />
 
       <SectionDivider />

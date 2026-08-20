@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logoImg from '../../assets/images/MBU_logo_new.webp'
+import logoImg from '../../assets/images/brand/MBU_logo_new.webp'
 import './Footer.css'
 
 function Footer() {
@@ -13,11 +13,11 @@ function Footer() {
             <span className="footer__logo-text">Meki Batu Union</span>
           </Link>
           <p className="footer__tagline">
-            Trusted Ethiopian fruit &amp; vegetable cooperative since 2002.
+            Trusted Ethiopian fruit &amp; vegetable cooperative with over two decades of experience since 2002.
           </p>
           <div className="footer__badge">
             <span className="footer__badge-dot" />
-            <span>GlobalG.A.P Certified</span>
+            <span>GlobalG.A.P Certified · Licensed Seed Producer</span>
           </div>
         </div>
 
@@ -54,9 +54,15 @@ function Footer() {
               </a>
             </li>
             <li>
-              <a className="footer__contact-item" href="tel:+251000000000">
+              <a className="footer__contact-item" href="tel:+251221181114">
                 <span className="material-symbols-outlined footer__contact-icon">phone</span>
-                <span>+251 (0) 11 000 0000</span>
+                <span>+251 (0) 22 118 1114 / 02</span>
+              </a>
+            </li>
+            <li>
+              <a className="footer__contact-item" href="tel:+251904686868">
+                <span className="material-symbols-outlined footer__contact-icon">phone</span>
+                <span>+251 (0) 904 686868 / 909 343434</span>
               </a>
             </li>
             <li>
@@ -68,7 +74,7 @@ function Footer() {
                 title="Open location on Google Maps"
               >
                 <span className="material-symbols-outlined footer__contact-icon">location_on</span>
-                <span>Meki Town, Oromia, Ethiopia</span>
+                <span>Meki Town, Dugda Woreda, East Shoa Zone, Oromia, Ethiopia</span>
               </a>
             </li>
           </ul>

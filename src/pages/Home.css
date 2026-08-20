@@ -21,7 +21,7 @@
   transform: translateY(-50%) rotate(-10deg);
   width: 460px;
   height: 460px;
-  background-image: url('../assets/images/MBU_logo_new.webp');
+  background-image: url('../assets/images/brand/MBU_logo_new.webp');
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.03;
@@ -207,28 +207,26 @@
   letter-spacing: 0.08em;
 }
 
-/* ==========================================================================
-   GlobalG.A.P Certification Section — premium card layout
-   ========================================================================== */
+/*
+   Certifications & Compliance Section
+   ───────────────────────────────────────────────────────── */
 .home-cert {
   padding: var(--space-16) 0;
   background-color: var(--color-bg);
 }
 
-/* Main card container */
-.home-cert__card {
+/* Green gradient band wrapper */
+.home-cert__band {
   position: relative;
   background:
     linear-gradient(135deg, var(--color-primary) 0%, hsl(153, 38%, 18%) 100%);
   border-radius: var(--radius-xl, 20px);
   padding: var(--space-10, 40px) var(--space-8);
   overflow: hidden;
-  color: var(--color-bg);
 }
 
 /* Decorative dot pattern overlay */
-.home-cert__card::before {
-  content: '';
+.home-cert__dots {
   position: absolute;
   inset: 0;
   background-image: radial-gradient(rgba(252, 249, 248, 0.06) 1px, transparent 1px);
@@ -237,7 +235,7 @@
 }
 
 /* Decorative gradient glow at top-right */
-.home-cert__card::after {
+.home-cert__band::after {
   content: '';
   position: absolute;
   top: -80px;
@@ -248,14 +246,13 @@
   pointer-events: none;
 }
 
-/* Header row */
+/* Header inside the green band */
 .home-cert__header {
   position: relative;
   z-index: 1;
   margin-bottom: var(--space-8);
 }
 
-/* Header text */
 .home-cert__eyebrow {
   color: rgba(252, 249, 248, 0.55);
   display: block;
@@ -269,24 +266,6 @@
   color: var(--color-bg);
   margin: 0 0 var(--space-2);
   line-height: 1.2;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-/* Verified badge — inline with title */
-.home-cert__verified {
-  font-size: 32px !important;
-  color: var(--color-bg);
-  flex-shrink: 0;
-  filter: drop-shadow(0 0 6px rgba(252, 249, 248, 0.35));
-  animation: verifiedPop 2.5s ease-in-out infinite;
-}
-
-@keyframes verifiedPop {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
 }
 
 .home-cert__desc {
@@ -297,90 +276,10 @@
   max-width: 560px;
 }
 
-/* Feature highlights — three columns on desktop */
-.home-cert__features {
+/* Certifications component overrides inside the green band */
+.home-cert__band .certifications {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-  margin-bottom: var(--space-8);
-  padding-top: var(--space-6);
-  border-top: 1px solid rgba(252, 249, 248, 0.12);
-}
-
-@media (min-width: 600px) {
-  .home-cert__features {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
-  }
-}
-
-.home-cert__feature {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-}
-
-.home-cert__feature-icon {
-  font-size: 28px !important;
-  color: var(--color-accent);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.home-cert__feature-title {
-  font-family: var(--font-display);
-  font-size: var(--fs-body);
-  font-weight: 600;
-  color: var(--color-bg);
-  margin: 0 0 var(--space-1);
-}
-
-.home-cert__feature-desc {
-  font-size: var(--fs-small);
-  color: rgba(252, 249, 248, 0.6);
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* Actions row */
-.home-cert__actions {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-4);
-}
-
-@media (min-width: 520px) {
-  .home-cert__actions {
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
-/* Primary CTA button — terracotta on dark green card */
-.home-cert__btn {
-  white-space: nowrap;
-}
-
-/* External GlobalG.A.P link */
-.home-cert__ext-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-family: var(--font-body);
-  font-size: var(--fs-body);
-  font-weight: 500;
-  color: rgba(252, 249, 248, 0.7);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.home-cert__ext-link:hover {
-  color: var(--color-bg);
 }
 
 /* Bento Grid Produce Showcase */

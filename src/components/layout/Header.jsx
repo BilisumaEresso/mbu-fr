@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import logoImg from '../../assets/images/MBU_logo_new.webp'
+import logoImg from '../../assets/images/brand/MBU_logo_new.webp'
 import Toast from '../common/Toast.jsx'
 import { useToast } from '../../hooks/useToast.js'
 import './Header.css'

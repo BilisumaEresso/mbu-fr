@@ -1,7 +1,6 @@
 import './WhatsAppButton.css'
 
-// NOTE: Replace 2510110000000 with the union's real WhatsApp Business number before launch
-const WHATSAPP_NUMBER = '2510110000000'
+const WHATSAPP_NUMBER = '251904686868'
 const DEFAULT_MESSAGE = encodeURIComponent("Hello Meki Batu Union, I'd like to inquire about...")
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${DEFAULT_MESSAGE}`
 

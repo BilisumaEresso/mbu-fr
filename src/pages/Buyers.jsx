@@ -9,7 +9,7 @@ import FAQ from '../components/common/FAQ.jsx'
 import ProcessTimeline from '../components/common/ProcessTimeline.jsx'
 import { useToast } from '../hooks/useToast.js'
 import { validateFields } from '../utils/validateForm.js'
-import buyerHeroImg from '../assets/images/buyerHero.webp'
+import buyerHeroImg from '../assets/images/heroes/buyerHero.webp'
 import companyProfilePdf from '../assets/downloads/MekiBatuUnion_CompanyProfile.pdf'
 import './InnerPage.css'
 import './Buyers.css'
@@ -18,12 +18,12 @@ const BUYERS_FAQ = [
   {
     question: 'What products can we source from Meki Batu Union?',
     answer:
-      'We supply tomato, onion, pepper, potato, cabbage, and green beans, along with papaya, watermelon, and bitter gourd, plus certified bean, onion, and maize seed. See our Products page for the full list.',
+      'We supply tomato, onion, pepper, potato, cabbage, and green beans, along with papaya and watermelon, plus certified bean, onion, and maize seed. See our Products page for the full list.',
   },
   {
     question: 'Is your produce certified?',
     answer:
-      'Yes — Meki Batu Union is GlobalG.A.P certified, meeting international standards for food safety, traceability, and sustainable farming practice.',
+      'Yes — Meki Batu Union is GlobalG.A.P certified and a licensed certified seed producer under Ethiopia\'s Seed Proclamation. We meet international standards for food safety, traceability, and sustainable farming practice.',
   },
   {
     question: 'Do you export outside Ethiopia?',
@@ -53,7 +53,7 @@ const VALUE_PROPS = [
   {
     icon: 'inventory_2',
     title: 'Consistent Volume',
-    desc: 'With over 140 cooperatives in our network, we provide reliable, large-scale supply capacities throughout the harvest seasons to meet your operational demands.',
+    desc: 'With 153 primary cooperatives and 8,410 member farmers in our network, we provide reliable, large-scale supply capacities throughout the harvest seasons to meet your operational demands.',
     iconColor: 'secondary',
   },
   {

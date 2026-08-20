@@ -2,13 +2,15 @@ import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
-import aboutHeroImg from '../assets/images/aboutHero.webp'
-import teamMember1 from '../assets/images/team_member_1.webp'
-import teamMember2 from '../assets/images/team_member_2.webp'
-import teamMember3 from '../assets/images/team_member_3.webp'
-import teamMember4 from '../assets/images/team_member_4.webp'
-import teamMember5 from '../assets/images/team_member_5.webp'
-import teamStaff from '../assets/images/team_staff.webp'
+import Certifications from '../components/common/Certifications.jsx'
+import { partners } from '../data/partners.js'
+import aboutHeroImg from '../assets/images/heroes/aboutHero.webp'
+import teamMember1 from '../assets/images/team/team_member_1.webp'
+import teamMember2 from '../assets/images/team/team_member_2.webp'
+import teamMember3 from '../assets/images/team/team_member_3.webp'
+import teamMember4 from '../assets/images/team/team_member_4.webp'
+import teamMember5 from '../assets/images/team/team_member_5.webp'
+import teamStaff from '../assets/images/team/team_staff.webp'
 import companyProfilePdf from '../assets/downloads/MekiBatuUnion_CompanyProfile.pdf'
 import './About.css'
 
@@ -33,8 +35,6 @@ const TEAM = [
   },
 ]
 
-const PARTNERS = ['Self Help Africa', 'Oromia Coop Bank', 'Agri-Invest']
-
 // Cap stagger at 450ms for card grids
 const stagger = (i) => Math.min(i * 90, 450)
 
@@ -45,15 +45,15 @@ function About() {
         <title>About Us | Meki Batu Union</title>
         <meta
           name="description"
-          content="Learn about Meki Batu Union's history since 2002, our cooperative foundation, GlobalG.A.P certification, and leadership dedicated to sustainable Ethiopian agriculture."
+          content="Learn about Meki Batu Union's history since 2002, our 153 member cooperatives, 8,410 farmers, GlobalG.A.P certification, and leadership dedicated to sustainable Ethiopian agriculture."
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
       <PageHero
         breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'About Us' }]}
-        eyebrow="Since 2002"
+        eyebrow="Since 2002 • 20+ Years of Experience"
         title="Cultivating Progress Through Cooperative Strength"
-        description="Meki Batu Union stands as a testament to the power of collective farming in Ethiopia. We unite farmers to ensure fair trade, sustainable practices, and premium quality produce for the global market."
+        description="Meki Batu Union stands as a testament to the power of collective farming in Ethiopia. We unite 153 primary cooperatives and 8,410 member farmers to ensure fair trade, sustainable practices, and premium quality produce for domestic and global markets."
         image={aboutHeroImg}
         imageAlt="Fertile Ethiopian agricultural land during golden hour"
       />
@@ -81,7 +81,7 @@ function About() {
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Founded on May 11, 2002 in Meki town, Oromia, our union began with 12 primary cooperatives and 527 founding members dedicated to improving their livelihoods through shared resources and collective bargaining power.
+                  Founded on May 11, 2002 in Meki town, Oromia, our union began with 12 primary cooperatives and 527 founding members, starting with an initial capital of 500,000 ETB.
                 </p>
               </div>
             </div>
@@ -95,7 +95,7 @@ function About() {
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Over the years, we expanded our reach, bringing more cooperatives under our umbrella, providing essential training, and modernizing agricultural techniques.
+                  Over the years, we expanded from our initial two districts (Dugda woreda and Adami Tulu Jido Kombolcha near Lake Dembal/Ziway) across six districts, adding Bora, Zuway Dugda, Adama, and Dodota Sire, while modernizing irrigation across 600 hectares of member land.
                 </p>
               </div>
             </div>
@@ -105,11 +105,11 @@ function About() {
               <div className="about-timeline__node desktop-only about-timeline__node--primary" />
               <div className="about-timeline__left">
                 <span className="label-caps label-caps--primary block mb-1">Present Day</span>
-                <h3 className="about-timeline__heading">140+ Cooperatives Strong</h3>
+                <h3 className="about-timeline__heading">153 Cooperatives &amp; 8,410 Farmers Strong</h3>
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Today, we proudly represent over 140 cooperatives, forming a robust network that ensures quality, sustainability, and economic stability for thousands of farming families.
+                  Today, we proudly represent 153 primary cooperatives and 8,410 member farmers, holding approximately 81.8 million ETB in own capital. Our network ensures quality, sustainability, and economic resilience for farming families across the Rift Valley.
                 </p>
               </div>
             </div>
@@ -121,37 +121,45 @@ function About() {
       <section className="about-mission-cert section">
         <div className="container">
           <div className="about-mission-cert__grid">
-            {/* Left: Mission — whole list as one Reveal */}
+            {/* Left: Mission, Vision & Objectives */}
             <Reveal className="about-mission-card">
-              <h2 className="about-mission__title">Mission &amp; Objectives</h2>
-              <ul className="about-mission__list">
-                {OBJECTIVES.map((obj, i) => (
-                  <li key={i} className="about-mission__item">
-                    <span className="material-symbols-outlined about-mission__check">check_circle</span>
-                    <span className="about-mission__text">{obj}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-
-            {/* Right: Certification — one Reveal */}
-            <Reveal className="about-cert-card" delay={90}>
-              <div>
-                <div className="about-cert-card__header">
-                  <span className="material-symbols-outlined about-cert-card__icon">verified</span>
-                  <h2 className="about-cert-card__title">GlobalG.A.P Certified</h2>
-                </div>
-                <p className="about-cert-card__desc">
-                  Our commitment to excellence is validated by our strict adherence to GlobalG.A.P standards. This internationally recognized certification ensures that our agricultural practices are safe, sustainable, and responsible.
+              <div className="about-vision-block mb-6">
+                <span className="label-caps label-caps--secondary block mb-1">Our Vision</span>
+                <h3 className="about-vision__heading text-xl font-display font-semibold mb-2">
+                  Betterment &amp; Competitive Capacity
+                </h3>
+                <p className="about-mission__text italic">
+                  &ldquo;To see betterment in members&rsquo; living condition and a union with a good competing capacity in the free market economy.&rdquo;
                 </p>
-                <ul className="about-cert-card__highlights">
-                  <li>Traceability &amp; Food Safety</li>
-                  <li>Environmental Conservation</li>
-                  <li>Worker Health &amp; Welfare</li>
+              </div>
+
+              <div className="about-mission-block mb-6">
+                <span className="label-caps label-caps--secondary block mb-1">Our Mission</span>
+                <h3 className="about-vision__heading text-xl font-display font-semibold mb-2">
+                  Production &amp; Marketability
+                </h3>
+                <p className="about-mission__text italic">
+                  &ldquo;To contribute to improvement in production, productivity and marketability of members&rsquo; products.&rdquo;
+                </p>
+              </div>
+
+              <div className="about-objectives-block">
+                <span className="label-caps label-caps--secondary block mb-3">Core Objectives</span>
+                <ul className="about-mission__list">
+                  {OBJECTIVES.map((obj, i) => (
+                    <li key={i} className="about-mission__item">
+                      <span className="material-symbols-outlined about-mission__check">check_circle</span>
+                      <span className="about-mission__text">{obj}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <div className="about-cert-card__footer">
-                <span className="label-caps label-caps--muted text-xs opacity-70 mb-3 block">Export Quality Assured</span>
+            </Reveal>
+
+            {/* Right: Certifications & Compliance */}
+            <Reveal className="about-cert-wrap" delay={90}>
+              <Certifications />
+              <div className="about-cert-wrap__footer">
                 <a
                   href={companyProfilePdf}
                   download="MekiBatuUnion_CompanyProfile.pdf"
@@ -205,16 +213,21 @@ function About() {
         </div>
       </section>
 
-      {/* ---- Collaboration Partners — one Reveal, no stagger ---- */}
-      <section className="about-partners section">
+      {/* ---- Collaboration Partners ---- */}
+      <section className="about-partners section" id="partners">
         <div className="container">
           <div className="text-center mb-8">
-            <span className="label-caps label-caps--muted">In Collaboration With</span>
+            <span className="label-caps label-caps--muted">Our Trusted Network</span>
+            <h2 className="text-2xl font-display font-semibold mt-1">Partners &amp; Collaborations</h2>
+            <p className="text-muted max-w-xl mx-auto mt-2 text-sm">
+              Working alongside 17 leading development organizations, research centers, financial institutions, and agricultural agencies.
+            </p>
           </div>
-          <Reveal className="about-partners__logos">
-            {PARTNERS.map((p) => (
-              <div key={p} className="about-partners__name">
-                {p}
+          <Reveal className="about-partners__grid">
+            {partners.map((p) => (
+              <div key={p} className="about-partners__card">
+                <span className="material-symbols-outlined about-partners__card-icon">handshake</span>
+                <span className="about-partners__card-name">{p}</span>
               </div>
             ))}
           </Reveal>

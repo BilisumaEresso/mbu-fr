@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import logo from '../assets/images/MBU_logo_new.webp'
+import logo from '../assets/images/brand/MBU_logo_new.webp'
 
 function NotFound() {
   return (
