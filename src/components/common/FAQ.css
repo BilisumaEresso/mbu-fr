@@ -34,18 +34,22 @@
 
 .faq-item__wrap {
   background: var(--surface-container-lowest);
-  border: 1px solid var(--outline-variant);
+  border: none;
   border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
-  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  transition: var(--transition-card);
 }
 
 .faq-item__wrap:hover {
-  border-color: var(--outline);
+  border: none;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
 }
 
 .faq-item__wrap--open {
-  border-color: var(--color-primary);
+  border: none;
+  box-shadow: var(--shadow-md);
 }
 
 .faq-item__trigger {
@@ -93,7 +97,7 @@
 
 .faq-item__content {
   padding: 0 var(--space-6) var(--space-6);
-  border-top: 1px solid var(--surface-container-low);
+  border-top: none;
   animation: faqFadeIn var(--transition-base) ease-out;
 }
 

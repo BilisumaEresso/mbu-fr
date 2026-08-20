@@ -169,7 +169,7 @@ function About() {
       </section>
 
       {/* ---- Leadership & Staff ---- */}
-      <section className="about-governance section section--alt">
+      <section className="about-governance section section--alt" id="leadership">
         <div className="container">
           <div className="about-governance__header">
             <h2 className="about-governance__title">Leadership &amp; Staff</h2>

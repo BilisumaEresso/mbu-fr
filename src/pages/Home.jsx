@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Button from '../components/common/Button.jsx'
@@ -5,19 +6,67 @@ import Reveal from '../components/common/Reveal.jsx'
 import StatCard from '../components/common/StatCard.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import Testimonials from '../components/common/Testimonial.jsx'
+import HeroCrossfade from '../components/common/HeroCrossfade.jsx'
+import WhereWeOperate from '../components/common/WhereWeOperate.jsx'
+
+/* ── hero assets ── */
 import homeHeroImg from '../assets/images/homeHero.webp'
+import aboutHeroImg from '../assets/images/aboutHero.webp'
+import farmerHeroImg from '../assets/images/farmerHero.webp'
+import womenFarmerImg from '../assets/images/womenFarmer.webp'
+import buyerHeroImg from '../assets/images/buyerHero.webp'
+
+/* ── bento assets ── */
 import bentoTomatoImg from '../assets/images/bentoTomato.webp'
 import bentoOnionImg from '../assets/images/bentoOnion.webp'
 import bentoGreenPepperImg from '../assets/images/bentoGreenPepper.webp'
 import bentoGreenBeansImg from '../assets/images/bentoGreenBeans.webp'
 import bentoPapayaImg from '../assets/images/bentoPapaya.webp'
+
+/* ── testimonial avatar assets ── */
 import teamMember1 from '../assets/images/team_member_1.webp'
 import teamMember2 from '../assets/images/team_member_2.webp'
 import teamMember3 from '../assets/images/team_member_3.webp'
 import teamMember4 from '../assets/images/team_member_4.webp'
 import teamMember5 from '../assets/images/team_member_5.webp'
-import womenFarmer from '../assets/images/womenFarmer.webp'
+
+/* ── downloads & data ── */
+import companyProfilePdf from '../assets/downloads/MekiBatuUnion_CompanyProfile.pdf'
+import { news } from '../data/news.js'
 import './Home.css'
+
+const HERO_IMAGES = [
+  { src: homeHeroImg, alt: 'Aerial view of irrigated farmland near Lake Ziway' },
+  { src: aboutHeroImg, alt: 'Fertile Ethiopian agricultural land during golden hour' },
+  { src: farmerHeroImg, alt: 'Cooperative farmer harvesting fresh produce' },
+  { src: womenFarmerImg, alt: 'Women farmers working in cooperative fields' },
+  { src: buyerHeroImg, alt: 'Export quality produce being sorted and packed' },
+]
+
+// Must stay in sync with PARTNERS array in About.jsx
+const PARTNERS = [
+  {
+    name: 'Self Help Africa',
+    tag: 'Development Partner',
+    desc: 'Supporting smallholder farmer livelihoods through capacity building, agronomy training, and market access programmes across East Africa.',
+    url: 'https://selfhelpafrica.org/ie/meki-batu-fruit-and-vegetable-growers-cooperative-union/',
+    icon: 'volunteer_activism',
+  },
+  {
+    name: 'Cooperative Bank of Oromia',
+    tag: 'Financial Partner',
+    desc: 'Providing cooperative-focused financial services, agricultural lending, and seasonal credit facilities to union member cooperatives.',
+    url: 'https://coopbankoromia.com.et/',
+    icon: 'account_balance',
+  },
+  {
+    name: 'Agri-Invest',
+    tag: 'Investment Partner',
+    desc: 'EU-backed programme strengthening agribusiness value chains through technical assistance, investment facilitation, and export readiness support.',
+    url: 'https://agriinvest.eu/en/home-2/',
+    icon: 'trending_up',
+  },
+]
 
 // PLACEHOLDER CONTENT — replace with real buyer/member testimonials and remove the "Example" badge before launch.
 const TESTIMONIALS = [
@@ -64,7 +113,7 @@ const TESTIMONIALS = [
     org: 'Meki Valley Produce Group',
     location: 'East Shewa Zone',
     category: 'Co-op Member',
-    avatar: womenFarmer,
+    avatar: womenFarmerImg,
     rating: 5,
     quote:
       'Through Meki Batu Union’s capacity building and seed programs, female farmers in our district have doubled their yield and established independent farm revenues.',
@@ -106,6 +155,11 @@ const STATS = [
 const stagger = (i) => Math.min(i * 90, 450)
 
 function Home() {
+  const [showStoryModal, setShowStoryModal] = useState(false)
+
+  // Top 3 recent news articles
+  const recentNews = news.slice(0, 3)
+
   return (
     <>
       <Helmet>
@@ -116,10 +170,9 @@ function Home() {
         />
       </Helmet>
 
-      {/* Hero Section */}
+      {/* 1. Hero Section (enhanced — multi-photo crossfade, video-ready) */}
       <section className="home-hero">
         <div className="container home-hero__grid">
-          {/* Hero text block as a single Reveal unit */}
           <Reveal className="home-hero__content">
             <h1 className="home-hero__title">
               Trusted Ethiopian fruit &amp; vegetable cooperative since 2002.
@@ -136,12 +189,10 @@ function Home() {
               </Button>
             </div>
           </Reveal>
-          {/* Hero image — not animated separately */}
           <div className="home-hero__media">
-            <img
-              className="home-hero__img"
-              src={homeHeroImg}
-              alt="Lush vegetable farm in the Ethiopian Rift Valley Meki region"
+            <HeroCrossfade
+              images={HERO_IMAGES}
+              onPlayClick={() => setShowStoryModal(true)}
             />
             <div className="home-hero__badge">
               <span className="label-caps">Meki, Oromia Region</span>
@@ -150,9 +201,23 @@ function Home() {
         </div>
       </section>
 
+      {/* Video-ready Modal */}
+      {showStoryModal && (
+        <div className="hero-crossfade__modal-backdrop" onClick={() => setShowStoryModal(false)}>
+          <div className="hero-crossfade__modal" onClick={(e) => e.stopPropagation()}>
+            <span className="material-symbols-outlined hero-crossfade__modal-icon">movie</span>
+            <h3 className="hero-crossfade__modal-text">Our story video is coming soon</h3>
+            <Button variant="primary" onClick={() => setShowStoryModal(false)}>
+              Dismiss
+            </Button>
+          </div>
+        </div>
+      )}
+
+      {/* Section Divider (kept sparingly per original design pattern) */}
       <SectionDivider />
 
-      {/* Stats Section — stagger each StatCard via Reveal */}
+      {/* 2. Stats bar (existing, unchanged) */}
       <section className="home-stats section">
         <div className="container">
           <div className="home-stats__grid">
@@ -165,11 +230,13 @@ function Home() {
         </div>
       </section>
 
-      {/* GlobalG.A.P Certification Section */}
+      {/* 3. Where We Operate (new) */}
+      <WhereWeOperate />
+
+      {/* 4. Certification strip (existing, unchanged) */}
       <section className="home-cert">
         <div className="container">
           <Reveal className="home-cert__card">
-            {/* Badge & heading */}
             <div className="home-cert__header">
               <div className="home-cert__header-text">
                 <span className="label-caps home-cert__eyebrow">International Certification</span>
@@ -183,7 +250,6 @@ function Home() {
               </div>
             </div>
 
-            {/* Feature highlights */}
             <div className="home-cert__features">
               <div className="home-cert__feature">
                 <span className="material-symbols-outlined home-cert__feature-icon">track_changes</span>
@@ -208,7 +274,6 @@ function Home() {
               </div>
             </div>
 
-            {/* Actions */}
             <div className="home-cert__actions">
               <Link to="/impact" className="btn btn--primary home-cert__btn">
                 View our certifications <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -227,7 +292,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Featured Products Bento Grid — stagger each tile */}
+      {/* 5. Featured products (existing, unchanged) */}
       <section className="home-bento section">
         <div className="container">
           <div className="home-bento__header">
@@ -243,7 +308,6 @@ function Home() {
           </div>
 
           <div className="home-bento__grid">
-            {/* Large Item */}
             <Reveal className="home-bento__item home-bento__item--large" delay={0}>
               <img src={bentoTomatoImg} alt="Rift Valley Tomatoes" className="home-bento__img" />
               <div className="home-bento__overlay" />
@@ -253,7 +317,6 @@ function Home() {
               </div>
             </Reveal>
 
-            {/* Small Item 1 */}
             <Reveal className="home-bento__item home-bento__item--small" delay={90}>
               <img src={bentoOnionImg} alt="Red Onions" className="home-bento__img" />
               <div className="home-bento__overlay" />
@@ -262,7 +325,6 @@ function Home() {
               </div>
             </Reveal>
 
-            {/* Small Item 2 */}
             <Reveal className="home-bento__item home-bento__item--small" delay={180}>
               <img src={bentoGreenPepperImg} alt="Green Peppers" className="home-bento__img" />
               <div className="home-bento__overlay" />
@@ -271,7 +333,6 @@ function Home() {
               </div>
             </Reveal>
 
-            {/* Wide Item 1 */}
             <Reveal className="home-bento__item home-bento__item--wide" delay={270}>
               <img src={bentoGreenBeansImg} alt="Green Beans" className="home-bento__img" />
               <div className="home-bento__overlay" />
@@ -280,7 +341,6 @@ function Home() {
               </div>
             </Reveal>
 
-            {/* Wide Item 2 */}
             <Reveal className="home-bento__item home-bento__item--wide" delay={360}>
               <img src={bentoPapayaImg} alt="Papaya" className="home-bento__img" />
               <div className="home-bento__overlay" />
@@ -296,7 +356,56 @@ function Home() {
         </div>
       </section>
 
-      {/* Audience Split — two cards with small stagger */}
+      {/* 6. Our Process — From Farm to Export */}
+      <section className="home-process">
+        <div className="container">
+          <Reveal>
+            <div className="home-process__card">
+              {/* Decorative dot grid overlay */}
+              <div className="home-process__dots" aria-hidden="true" />
+
+              <div className="home-process__header">
+                <div>
+                  <span className="label-caps home-process__eyebrow">Quality &amp; Logistics</span>
+                  <h2 className="home-process__title">From Farm to Export</h2>
+                  <p className="home-process__subtitle">
+                    Our end-to-end supply chain ensures quality, GlobalG.A.P compliance, and reliable delivery — from harvest to your market.
+                  </p>
+                </div>
+                <Link to="/buyers" className="home-process__cta">
+                  See full process <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </Link>
+              </div>
+
+              <div className="home-process__steps">
+                <div className="home-process__seg home-process__seg--1" aria-hidden="true" />
+                <div className="home-process__seg home-process__seg--2" aria-hidden="true" />
+                <div className="home-process__seg home-process__seg--3" aria-hidden="true" />
+
+                {[
+                  { num: '01', icon: 'eco', title: 'Harvest', desc: 'Member cooperatives harvest across 140+ primary co-ops in the Rift Valley.' },
+                  { num: '02', icon: 'verified', title: 'Grading & QC', desc: 'Sorted and graded to meet GlobalG.A.P certified food safety standards.' },
+                  { num: '03', icon: 'inventory_2', title: 'Consolidation', desc: 'Volumes consolidated from member co-ops for domestic and export markets.' },
+                  { num: '04', icon: 'local_shipping', title: 'Delivery', desc: 'Shipped to five Addis Ababa outlets or export markets across Europe.' },
+                ].map((step, i) => (
+                  <Reveal key={step.num} delay={i * 120} className="home-process__step">
+                    <div className="home-process__node">
+                      <div className="home-process__circle">
+                        <span className="material-symbols-outlined home-process__icon">{step.icon}</span>
+                      </div>
+                      <span className="home-process__num">Step {step.num}</span>
+                    </div>
+                    <h3 className="home-process__step-title">{step.title}</h3>
+                    <p className="home-process__step-desc">{step.desc}</p>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 7. Two-audience split (existing, unchanged) */}
       <section className="home-audience section">
         <div className="container">
           <div className="home-audience__grid">
@@ -325,8 +434,172 @@ function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* 8. Governance teaser (new, enhanced UI/UX) */}
+      <section className="home-governance">
+        <div className="container">
+          <Reveal>
+            <div className="home-governance__card">
+              <div className="home-governance__header-row">
+                <div className="home-governance__badges">
+                  <span className="label-caps home-governance__eyebrow">Governance &amp; Leadership</span>
+                  <span className="home-governance__badge">
+                    <span className="material-symbols-outlined text-xs">groups</span> 500+ Staff &amp; Agronomists
+                  </span>
+                </div>
+                <div className="home-governance__avatars" aria-label="Union Leadership &amp; Staff">
+                  <img src={teamMember1} alt="General Manager" className="home-governance__avatar" />
+                  <img src={teamMember2} alt="Head of Operations" className="home-governance__avatar" />
+                  <img src={teamMember3} alt="Chief Agronomist" className="home-governance__avatar" />
+                  <img src={teamMember4} alt="Finance &amp; Admin Director" className="home-governance__avatar" />
+                  <img src={teamMember5} alt="Supply Chain Lead" className="home-governance__avatar" />
+                </div>
+              </div>
+
+              <div className="home-governance__body">
+                <h2 className="home-governance__title">Led by Experienced Leadership Across 5+ Departments</h2>
+                <div className="home-governance__chips">
+                  <span className="home-governance__chip">General Management</span>
+                  <span className="home-governance__chip">Operations</span>
+                  <span className="home-governance__chip">Agronomy</span>
+                  <span className="home-governance__chip">Finance &amp; Admin</span>
+                  <span className="home-governance__chip">Supply Chain &amp; Logistics</span>
+                </div>
+              </div>
+
+              <div className="home-governance__footer">
+                <Button to="/about#leadership" variant="outline" className="home-governance__link">
+                  Meet our leadership <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </Button>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 9. Partners & Collaborations (new) */}
+      <section className="home-partners" aria-label="Partners and Collaborations">
+        <div className="container">
+          <Reveal>
+            <div className="home-partners__header">
+              <span className="label-caps home-partners__eyebrow">Our Partners</span>
+              <h2 className="home-partners__title">Trusted Collaborations Driving Impact</h2>
+              <p className="home-partners__desc">
+                We work alongside leading development organisations, financial institutions, and investment programmes to strengthen our value chain and empower our member farmers.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="home-partners__grid">
+            {PARTNERS.map((p, i) => (
+              <Reveal key={p.name} delay={i * 100}>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="home-partners__card"
+                >
+                  <div className="home-partners__card-top">
+                    <span className="material-symbols-outlined home-partners__icon">{p.icon}</span>
+                    <span className="home-partners__tag">{p.tag}</span>
+                  </div>
+                  <h3 className="home-partners__name">{p.name}</h3>
+                  <p className="home-partners__card-desc">{p.desc}</p>
+                  <span className="home-partners__visit">
+                    Visit website <span className="material-symbols-outlined text-sm">open_in_new</span>
+                  </span>
+                </a>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Testimonials (existing, unchanged) */}
       <Testimonials items={TESTIMONIALS} />
+
+      {/* 11. Resources quick-links (new) */}
+      <section className="home-resources">
+        <div className="container">
+          <Reveal className="home-resources__header">
+            <span className="label-caps label-caps--secondary mb-2 block">Documentation</span>
+            <h2 className="home-resources__title">Key Resources &amp; Downloads</h2>
+          </Reveal>
+
+          <div className="home-resources__grid">
+            <Reveal delay={0}>
+              <a
+                href={companyProfilePdf}
+                download="MekiBatuUnion_CompanyProfile.pdf"
+                className="home-resources__card"
+                title="Download Meki Batu Union Company Profile (PDF)"
+              >
+                <span className="material-symbols-outlined home-resources__icon">description</span>
+                <h3 className="home-resources__card-title">Company Profile</h3>
+                <p className="home-resources__card-desc">Comprehensive overview of our history, cooperative network, and operational capacity.</p>
+                <span className="home-resources__action">
+                  Download PDF <span className="material-symbols-outlined text-sm">download</span>
+                </span>
+              </a>
+            </Reveal>
+
+            <Reveal delay={90}>
+              <Link to="/impact#reports" className="home-resources__card">
+                <span className="material-symbols-outlined home-resources__icon">verified</span>
+                <h3 className="home-resources__card-title">GlobalG.A.P Certificate</h3>
+                <p className="home-resources__card-desc">Official international certification documentation for agricultural food safety and quality.</p>
+                <span className="home-resources__action">
+                  View Reports <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </span>
+              </Link>
+            </Reveal>
+
+            <Reveal delay={180}>
+              <Link to="/products" className="home-resources__card">
+                <span className="material-symbols-outlined home-resources__icon">grid_view</span>
+                <h3 className="home-resources__card-title">Product Catalog</h3>
+                <p className="home-resources__card-desc">Full specifications for our fresh fruits, vegetables, and certified seeds.</p>
+                <span className="home-resources__action">
+                  Browse Products <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </span>
+              </Link>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 12. Latest news (new) */}
+      <section className="home-news">
+        <div className="container">
+          <Reveal className="home-news__header">
+            <div>
+              <span className="label-caps label-caps--secondary mb-2 block">Updates &amp; Insights</span>
+              <h2 className="home-news__title">Latest News</h2>
+            </div>
+            <Link to="/news" className="home-bento__link">
+              View all news <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </Link>
+          </Reveal>
+
+          <div className="home-news__grid">
+            {recentNews.map((article, i) => (
+              <Reveal key={article.id} delay={stagger(i)}>
+                <Link to="/news" className="home-news__card">
+                  <img src={article.img} alt={article.title} className="home-news__img" />
+                  <div className="home-news__card-body">
+                    <div className="home-news__meta">
+                      <span>{article.category}</span>
+                      <span>&bull;</span>
+                      <span>{article.date}</span>
+                    </div>
+                    <h3 className="home-news__card-title">{article.title}</h3>
+                    <p className="home-news__excerpt">{article.excerpt}</p>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   )
 }

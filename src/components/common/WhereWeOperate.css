@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Where We Operate — two-column layout with stylised location SVG
+   ========================================================================== */
+
+.where-operate__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .where-operate__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+}
+
+.where-operate__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.where-operate__desc {
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0 0 var(--space-4);
+  max-width: 480px;
+}
+
+/* Tag / chip elements */
+.where-operate__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.where-operate__tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--secondary);
+  background: rgba(157, 67, 32, 0.08);
+  border: none;
+  box-shadow: 0 1px 3px rgba(157, 67, 32, 0.06);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+}
+
+/* SVG panel */
+.where-operate__map-panel {
+  background: var(--surface-container-lowest);
+  border: none;
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.where-operate__svg {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+/* ── SVG element styles ── */
+.where-operate__rift {
+  stroke: var(--outline-variant);
+  opacity: 0.4;
+  stroke-dasharray: 4 8;
+  stroke-width: 1;
+}
+
+.where-operate__lake {
+  stroke: var(--color-water);
+  fill: none;
+  opacity: 0.45;
+  stroke-dasharray: 6 4;
+  stroke-width: 1.5;
+}
+
+.where-operate__lake-label {
+  fill: var(--color-water);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  opacity: 0.65;
+}
+
+.where-operate__pin {
+  fill: var(--secondary);
+}
+
+.where-operate__place-label {
+  fill: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 11px;
+}
+
+.where-operate__dot {
+  fill: var(--color-primary);
+}
+
+.where-operate__dot-ring {
+  stroke: var(--color-primary);
+  fill: none;
+  opacity: 0.35;
+  stroke-width: 1;
+}
+
+.where-operate__town-label {
+  fill: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+}

@@ -110,4 +110,12 @@
   /* ---- Motion ---- */
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
+
+  /* ---- Shadow & Card Elevation (inspired by partnership cards — soft, borderless) ---- */
+  --shadow-sm: 0 2px 8px rgba(23, 49, 36, 0.04), 0 8px 24px rgba(23, 49, 36, 0.05);
+  --shadow-md: 0 4px 16px rgba(23, 49, 36, 0.06), 0 12px 32px rgba(23, 49, 36, 0.07);
+  --shadow-hover: 0 6px 16px rgba(23, 49, 36, 0.06), 0 18px 44px rgba(23, 49, 36, 0.09);
+  --scale-hover: 1.015;
+  --transition-card: transform 0.25s ease, box-shadow 0.25s ease;
 }
+

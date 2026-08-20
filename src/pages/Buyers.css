@@ -75,7 +75,8 @@
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--outline-variant);
+  border: none;
+  box-shadow: var(--shadow-md);
   margin-top: var(--space-6);
 }
 
@@ -98,8 +99,8 @@
   left: 0;
   background: rgba(252, 249, 248, 0.92);
   backdrop-filter: blur(8px);
-  border-top: 1px solid var(--outline-variant);
-  border-right: 1px solid var(--outline-variant);
+  border: none;
+  box-shadow: var(--shadow-sm);
   border-top-right-radius: var(--radius-md);
   padding: var(--space-3) var(--space-4);
 }
@@ -125,17 +126,20 @@
 }
 
 .buyers-prop-card {
-  background: var(--surface);
-  border: 1px solid var(--outline-variant);
+  background: var(--surface-container-lowest);
+  border: none;
   border-radius: var(--radius-lg);
   padding: var(--space-8);
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  transition: background-color var(--transition-fast);
+  transition: var(--transition-card);
 }
 
 .buyers-prop-card:hover {
-  background: var(--surface-container-lowest);
+  border: none;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px) scale(var(--scale-hover));
 }
 
 .buyers-prop-card__icon {
@@ -179,17 +183,19 @@
   letter-spacing: 0.08em;
   padding: 4px 10px;
   border-radius: var(--radius-sm);
-  background: var(--surface-variant);
+  background: var(--surface-container-high);
   color: var(--color-text-muted);
-  border: 1px solid var(--outline-variant);
+  border: none;
+  box-shadow: 0 1px 3px rgba(23, 49, 36, 0.04);
 }
 
 .buyers-quote__card {
   max-width: 800px;
   margin: 0 auto;
-  background: var(--surface);
-  border: 1px solid var(--outline-variant);
+  background: var(--surface-container-lowest);
+  border: none;
   border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
   padding: var(--space-8);
 
   @media (min-width: 768px) {
@@ -286,9 +292,9 @@
   font-family: var(--font-body);
   font-size: var(--fs-body);
   padding: var(--space-3);
-  border: 1px solid var(--outline);
+  border: 1px solid var(--outline-variant);
   border-radius: var(--radius-sm);
-  background: var(--color-bg);
+  background: var(--surface-container-lowest);
   color: var(--color-text);
   transition: border-color var(--transition-fast);
 }
@@ -302,6 +308,4 @@
 
 .form textarea {
   resize: vertical;
-  min-height: 120px;
 }
-

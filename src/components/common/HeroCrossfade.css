@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Hero Crossfade — multi-photo rotation with play trigger
+   ========================================================================== */
+
+.hero-crossfade {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-crossfade__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+/* First image is position-relative so the container gets intrinsic height */
+.hero-crossfade__img:first-of-type {
+  position: relative;
+}
+
+.hero-crossfade__img--active {
+  opacity: 1;
+}
+
+/* Play button */
+.hero-crossfade__play {
+  position: absolute;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--on-primary);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  z-index: 3;
+}
+
+.hero-crossfade__play:hover {
+  background: var(--color-canopy-light);
+  transform: scale(1.04);
+}
+
+.hero-crossfade__play .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.hero-crossfade__play-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .hero-crossfade__play-label {
+    display: none;
+  }
+  .hero-crossfade__play {
+    padding: var(--space-2);
+    border-radius: 50%;
+  }
+}
+
+/* ── Modal (rendered at page level but co-located styles) ── */
+.hero-crossfade__modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.hero-crossfade__modal {
+  background: var(--surface-container-lowest);
+  border: none;
+  box-shadow: var(--shadow-hover);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.hero-crossfade__modal-icon {
+  font-size: 48px !important;
+  color: var(--outline);
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.hero-crossfade__modal-text {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 var(--space-6);
+  line-height: 1.3;
+}
+
+/* ── Reduced motion: no transition ── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-crossfade__img {
+    transition: none;
+  }
+}

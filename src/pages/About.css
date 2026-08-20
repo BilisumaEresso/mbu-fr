@@ -231,6 +231,8 @@
   border: 1px solid var(--outline-variant);
   background: var(--surface-container-lowest);
   border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-card);
 }
 
 .about-mission__title {
@@ -277,6 +279,7 @@
   color: var(--on-primary);
   border-radius: var(--radius-lg);
   border: 1px solid var(--primary-container);
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -388,19 +391,19 @@
 
 .about-governance__card {
   position: relative;
-  border: 1px solid var(--outline-variant);
+  border: none;
   padding: var(--space-4);
-  background: var(--surface);
+  background: var(--surface-container-lowest);
   border-radius: var(--radius-lg);
-  transition: transform var(--transition-base),
-              border-color var(--transition-base),
-              background-color var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-card);
 }
 
 .about-governance__card:hover {
   background: var(--surface-container-lowest);
-  border-color: var(--secondary);
-  transform: translateY(-4px);
+  border: none;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px) scale(var(--scale-hover));
 }
 
 .about-governance__card--staff {
