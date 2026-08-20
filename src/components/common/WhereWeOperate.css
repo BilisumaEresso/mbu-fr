@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Where We Operate — two-column layout with stylised location SVG
+   Where We Operate — two-column layout with embedded Google Map
    ========================================================================== */
 
 .where-operate__grid {
@@ -37,6 +37,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
+  margin-bottom: var(--space-6);
 }
 
 .where-operate__tag {
@@ -54,71 +55,42 @@
   border-radius: var(--radius-sm);
 }
 
-/* SVG panel */
-.where-operate__map-panel {
-  background: var(--surface-container-lowest);
-  border: none;
-  box-shadow: var(--shadow-sm);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6);
-  display: flex;
+/* CTA button */
+.where-operate__cta {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: var(--space-2);
 }
 
-.where-operate__svg {
+/* Map panel — holds the iframe */
+.where-operate__map-panel {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--outline-variant);
+  background: var(--surface-container-lowest);
+  min-height: 320px;
+  aspect-ratio: 4 / 3;
+}
+
+@media (min-width: 768px) {
+  .where-operate__map-panel {
+    min-height: 400px;
+    aspect-ratio: auto;
+    height: 100%;
+  }
+}
+
+.where-operate__iframe {
+  display: block;
   width: 100%;
-  max-width: 320px;
-  height: auto;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+  border-radius: var(--radius-lg);
 }
 
-/* ── SVG element styles ── */
-.where-operate__rift {
-  stroke: var(--outline-variant);
-  opacity: 0.4;
-  stroke-dasharray: 4 8;
-  stroke-width: 1;
-}
-
-.where-operate__lake {
-  stroke: var(--color-water);
-  fill: none;
-  opacity: 0.45;
-  stroke-dasharray: 6 4;
-  stroke-width: 1.5;
-}
-
-.where-operate__lake-label {
-  fill: var(--color-water);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  opacity: 0.65;
-}
-
-.where-operate__pin {
-  fill: var(--secondary);
-}
-
-.where-operate__place-label {
-  fill: var(--color-text-muted);
-  font-family: var(--font-body);
-  font-size: 11px;
-}
-
-.where-operate__dot {
-  fill: var(--color-primary);
-}
-
-.where-operate__dot-ring {
-  stroke: var(--color-primary);
-  fill: none;
-  opacity: 0.35;
-  stroke-width: 1;
-}
-
-.where-operate__town-label {
-  fill: var(--color-primary);
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 600;
+@media (min-width: 768px) {
+  .where-operate__iframe {
+    min-height: 400px;
+  }
 }

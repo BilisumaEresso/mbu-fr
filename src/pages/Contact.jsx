@@ -121,7 +121,7 @@ function Contact() {
                   <p className="font-medium">Meki Town</p>
                   <p className="text-muted">East Shewa Zone, Oromia, Ethiopia</p>
                   <a
-                    href="https://maps.app.goo.gl/h6Wbr4RpR7n3hAYu7"
+                    href="https://maps.app.goo.gl/HBFW3h7pe7W5tkMm8"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn--outline btn--sm mt-2 inline-flex items-center gap-1"
@@ -260,7 +260,7 @@ function Contact() {
         <div className="container">
           <Reveal>
             <a
-              href="https://maps.app.goo.gl/h6Wbr4RpR7n3hAYu7"
+              href="https://maps.app.goo.gl/HBFW3h7pe7W5tkMm8"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-map__card"

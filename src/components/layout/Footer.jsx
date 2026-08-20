@@ -62,7 +62,7 @@ function Footer() {
             <li>
               <a
                 className="footer__contact-item"
-                href="https://maps.app.goo.gl/h6Wbr4RpR7n3hAYu7"
+                href="https://maps.app.goo.gl/HBFW3h7pe7W5tkMm8"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Open location on Google Maps"
