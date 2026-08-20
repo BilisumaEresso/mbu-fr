@@ -1,9 +1,12 @@
+import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import Certifications from '../components/common/Certifications.jsx'
-import { partners } from '../data/partners.js'
+import { partners, PARTNER_CATEGORIES } from '../data/partners.js'
+import { resources } from '../data/resources.js'
+import ResourceCard from '../components/common/ResourceCard.jsx'
 import aboutHeroImg from '../assets/images/heroes/aboutHero.webp'
 import teamMember1 from '../assets/images/team/team_member_1.webp'
 import teamMember2 from '../assets/images/team/team_member_2.webp'
@@ -39,6 +42,11 @@ const TEAM = [
 const stagger = (i) => Math.min(i * 90, 450)
 
 function About() {
+  const [selectedCategory, setSelectedCategory] = useState(PARTNER_CATEGORIES.ALL)
+  const filteredPartners = selectedCategory === PARTNER_CATEGORIES.ALL
+    ? partners
+    : partners.filter((p) => p.category === selectedCategory)
+
   return (
     <>
       <Helmet>
@@ -213,24 +221,146 @@ function About() {
         </div>
       </section>
 
-      {/* ---- Collaboration Partners ---- */}
-      <section className="about-partners section" id="partners">
+      {/* ---- Operations & Physical Infrastructure ---- */}
+      <section className="about-infrastructure section" id="infrastructure">
         <div className="container">
-          <div className="text-center mb-8">
-            <span className="label-caps label-caps--muted">Our Trusted Network</span>
-            <h2 className="text-2xl font-display font-semibold mt-1">Partners &amp; Collaborations</h2>
-            <p className="text-muted max-w-xl mx-auto mt-2 text-sm">
-              Working alongside 17 leading development organizations, research centers, financial institutions, and agricultural agencies.
+          <div className="about-infrastructure__header text-center">
+            <span className="label-caps label-caps--secondary mb-2 block">Physical Backbone</span>
+            <h2 className="about-infrastructure__title">Operational Facilities &amp; Fleet</h2>
+            <p className="about-infrastructure__subtitle">
+              High-capacity cold storage, refrigerated transport, modern pack houses, and river-fed irrigation powering sustainable agriculture in the Great Rift Valley.
             </p>
           </div>
-          <Reveal className="about-partners__grid">
-            {partners.map((p) => (
-              <div key={p} className="about-partners__card">
-                <span className="material-symbols-outlined about-partners__card-icon">handshake</span>
-                <span className="about-partners__card-name">{p}</span>
-              </div>
+
+          {/* Resources Photo Cards Grid */}
+          <div className="about-infrastructure__grid">
+            {resources.map((res, i) => (
+              <Reveal key={res.id} delay={Math.min(i * 80, 320)} className="about-infra-card-wrap">
+                <ResourceCard resource={res} />
+              </Reveal>
             ))}
-          </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- Multi-Stakeholder Collaboration Ecosystem ---- */}
+      <section className="about-partners section section--alt" id="partners">
+        <div className="container">
+          <div className="about-partners__header text-center">
+            <span className="label-caps label-caps--secondary mb-2 block">Strategic Ecosystem</span>
+            <h2 className="about-partners__title">Partners &amp; Collaborations</h2>
+            <p className="about-partners__subtitle">
+              Our impact is powered by trusted collaborations with 17 global development agencies, national research centers, financial institutions, and agricultural regulatory bodies.
+            </p>
+          </div>
+
+          {/* 4-P Collaboration Model Cards */}
+          <div className="about-model__grid mb-12">
+            <Reveal delay={0} className="about-model__card">
+              <div className="about-model__icon-wrap">
+                <span className="material-symbols-outlined about-model__icon">science</span>
+              </div>
+              <h3 className="about-model__title">Research &amp; Seed Trials</h3>
+              <p className="about-model__desc">
+                Partnering with EIAR Melkasa and OARI Adami Tulu to breed, test, and multiply high-germination certified seed varieties.
+              </p>
+            </Reveal>
+
+            <Reveal delay={100} className="about-model__card">
+              <div className="about-model__icon-wrap">
+                <span className="material-symbols-outlined about-model__icon">water_drop</span>
+              </div>
+              <h3 className="about-model__title">Landscape &amp; Sustainability</h3>
+              <p className="about-model__desc">
+                Collaborating with Wetlands International and IDH on Central Rift Valley lake conservation and sustainable drip irrigation.
+              </p>
+            </Reveal>
+
+            <Reveal delay={200} className="about-model__card">
+              <div className="about-model__icon-wrap">
+                <span className="material-symbols-outlined about-model__icon">local_shipping</span>
+              </div>
+              <h3 className="about-model__title">Cold-Chain &amp; Logistics</h3>
+              <p className="about-model__desc">
+                Equipped with ATI refrigerated transport trucks and pack house precooling facilities to ensure zero post-harvest quality loss.
+              </p>
+            </Reveal>
+
+            <Reveal delay={300} className="about-model__card">
+              <div className="about-model__icon-wrap">
+                <span className="material-symbols-outlined about-model__icon">flight_takeoff</span>
+              </div>
+              <h3 className="about-model__title">Market Access &amp; Off-Taking</h3>
+              <p className="about-model__desc">
+                Supplying Ethiopian Airlines Inflight Catering, European export buyers, and five dedicated retail stores in Addis Ababa.
+              </p>
+            </Reveal>
+          </div>
+
+          {/* Category Filter Tabs */}
+          <div className="about-partners__filter-bar" role="tablist" aria-label="Filter partners by category">
+            {Object.values(PARTNER_CATEGORIES).map((category) => (
+              <button
+                key={category}
+                type="button"
+                role="tab"
+                aria-selected={selectedCategory === category}
+                className={`about-partners__tab-btn ${selectedCategory === category ? 'about-partners__tab-btn--active' : ''}`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+                <span className="about-partners__tab-count">
+                  {category === PARTNER_CATEGORIES.ALL
+                    ? partners.length
+                    : partners.filter((p) => p.category === category).length}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* Filtered Partner Cards Grid */}
+          <div className="about-partners__cards-grid">
+            {filteredPartners.map((partner, index) => (
+              <Reveal key={partner.id} delay={Math.min(index * 60, 360)} className="about-partner-card-wrapper">
+                <div className="about-partner-card">
+                  <div className="about-partner-card__header">
+                    <div className="about-partner-card__icon-badge">
+                      <span className="material-symbols-outlined">{partner.icon}</span>
+                    </div>
+                    <span className="about-partner-card__tag">{partner.tag}</span>
+                  </div>
+
+                  <div className="about-partner-card__body">
+                    <div className="about-partner-card__meta">
+                      <span className="about-partner-card__acronym">{partner.acronym}</span>
+                      <span className="about-partner-card__category">{partner.category}</span>
+                    </div>
+                    <h3 className="about-partner-card__name">{partner.name}</h3>
+                    <p className="about-partner-card__role">{partner.role}</p>
+                  </div>
+
+                  <div className="about-partner-card__footer">
+                    <div className="about-partner-card__highlight">
+                      <span className="material-symbols-outlined text-xs">verified</span>
+                      <span>{partner.impactHighlight}</span>
+                    </div>
+                    {partner.url && (
+                      <a
+                        href={partner.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="about-partner-card__link"
+                        title={`Visit ${partner.name} website`}
+                      >
+                        <span>Visit</span>
+                        <span className="material-symbols-outlined text-xs">open_in_new</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </>

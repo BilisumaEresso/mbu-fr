@@ -34,7 +34,9 @@ import teamMember5 from '../assets/images/team/team_member_5.webp'
 /* ── downloads & data ── */
 import companyProfilePdf from '../assets/downloads/MekiBatuUnion_CompanyProfile.pdf'
 import { news } from '../data/news.js'
-import { partners } from '../data/partners.js'
+import { partners, PARTNER_CATEGORIES } from '../data/partners.js'
+import { resources } from '../data/resources.js'
+import ResourceCard from '../components/common/ResourceCard.jsx'
 import './Home.css'
 
 const HERO_IMAGES = [
@@ -340,6 +342,34 @@ function Home() {
         </div>
       </section>
 
+      {/* 7. Facilities & Infrastructure — Minimal Photo Showcase */}
+      <section className="home-resources-infra section" aria-label="Facilities and Infrastructure">
+        <div className="container">
+          <Reveal>
+            <div className="home-resources-infra__header">
+              <div>
+                <span className="label-caps label-caps--secondary mb-2 block">Operational Backbone</span>
+                <h2 className="home-resources-infra__title">Facilities &amp; Fleet</h2>
+                <p className="home-resources-infra__desc">
+                  Modern cold storage hubs, refrigerated transport trucks, certified pack houses, and lake irrigation schemes powering our harvest.
+                </p>
+              </div>
+              <Link to="/about#infrastructure" className="btn btn--outline btn--sm home-resources-infra__cta">
+                View on About <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </Link>
+            </div>
+          </Reveal>
+
+          <div className="home-resources-infra__grid">
+            {resources.map((res, i) => (
+              <Reveal key={res.id} delay={i * 90}>
+                <ResourceCard resource={res} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 7. Two-audience split (existing, unchanged) */}
       <section className="home-audience section">
         <div className="container">
@@ -411,38 +441,116 @@ function Home() {
         </div>
       </section>
 
-      {/* 9. Partners & Collaborations (new) */}
+      {/* 9. Partners & Collaborations — Strategic Multi-Stakeholder Ecosystem */}
       <section className="home-partners" aria-label="Partners and Collaborations">
         <div className="container">
           <Reveal>
             <div className="home-partners__header">
-              <span className="label-caps home-partners__eyebrow">Our Partners</span>
+              <span className="label-caps home-partners__eyebrow">Strategic Ecosystem</span>
               <h2 className="home-partners__title">Trusted Collaborations Driving Impact</h2>
               <p className="home-partners__desc">
-                We work alongside leading development organisations, financial institutions, and investment programmes to strengthen our value chain and empower our member farmers.
+                From international development agencies and agricultural research centers to airline off-takers and cooperative banks — we collaborate with 17 key organizations across four strategic pillars.
               </p>
             </div>
           </Reveal>
 
+          {/* Ecosystem Pillar Metrics Bar */}
+          <Reveal className="home-partners__pillars-bar">
+            <div className="home-partners__pillar-pill">
+              <span className="material-symbols-outlined home-partners__pillar-icon">volunteer_activism</span>
+              <div className="home-partners__pillar-text">
+                <strong>7 Global Development</strong>
+                <span>NGOs &amp; Sustainability</span>
+              </div>
+            </div>
+            <div className="home-partners__pillar-pill">
+              <span className="material-symbols-outlined home-partners__pillar-icon">science</span>
+              <div className="home-partners__pillar-text">
+                <strong>2 Research Centers</strong>
+                <span>Seed &amp; Agronomy Innovation</span>
+              </div>
+            </div>
+            <div className="home-partners__pillar-pill">
+              <span className="material-symbols-outlined home-partners__pillar-icon">flight_takeoff</span>
+              <div className="home-partners__pillar-text">
+                <strong>4 Finance &amp; Markets</strong>
+                <span>Off-Takers &amp; Banks</span>
+              </div>
+            </div>
+            <div className="home-partners__pillar-pill">
+              <span className="material-symbols-outlined home-partners__pillar-icon">policy</span>
+              <div className="home-partners__pillar-text">
+                <strong>4 Public Agencies</strong>
+                <span>Government &amp; Standards</span>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Headline Spotlight Collaborations Grid (Top 4 Featured) */}
+          <div className="home-partners__spotlight-header">
+            <span className="label-caps label-caps--muted">Key Strategic Spotlights</span>
+          </div>
+
           <div className="home-partners__grid">
-            {partners.slice(0, 8).map((p, i) => (
-              <Reveal key={p} delay={i * 60}>
-                <div className="home-partners__card">
-                  <span className="material-symbols-outlined home-partners__icon">handshake</span>
-                  <h3 className="home-partners__name">{p}</h3>
+            {partners.filter((p) => p.featuredHome).map((p, i) => (
+              <Reveal key={p.id} delay={i * 90}>
+                <div className="home-partners__card home-partners__card--spotlight">
+                  <div className="home-partners__card-top">
+                    <span className="material-symbols-outlined home-partners__icon">{p.icon}</span>
+                    <span className="home-partners__tag">{p.tag}</span>
+                  </div>
+                  <div className="home-partners__card-submeta">
+                    <span className="home-partners__acronym">{p.acronym}</span>
+                    <span className="home-partners__category">{p.category}</span>
+                  </div>
+                  <h3 className="home-partners__name">{p.name}</h3>
+                  <p className="home-partners__card-desc">{p.role}</p>
+                  <div className="home-partners__card-footer">
+                    <span className="home-partners__highlight">
+                      <span className="material-symbols-outlined text-xs">verified</span>
+                      {p.impactHighlight}
+                    </span>
+                    {p.url && (
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="home-partners__visit"
+                        title={`Visit ${p.name}`}
+                      >
+                        Visit <span className="material-symbols-outlined text-sm">open_in_new</span>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </Reveal>
             ))}
-            <Reveal delay={8 * 60}>
-              <Link to="/about#partners" className="home-partners__card home-partners__card--more">
-                <span className="material-symbols-outlined home-partners__icon">add_circle</span>
-                <h3 className="home-partners__name">+ 9 More Partners</h3>
-                <span className="home-partners__visit">
-                  View full network <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </span>
-              </Link>
-            </Reveal>
           </div>
+
+          {/* Complete 17-Partner Network Chip Directory */}
+          <Reveal className="home-partners__directory-card">
+            <div className="home-partners__directory-header">
+              <div>
+                <h3 className="home-partners__directory-title">Complete 17-Partner Directory</h3>
+                <p className="home-partners__directory-desc">
+                  Explore all partner organizations supporting Meki Batu Union across research, trade, logistics, and farmer empowerment.
+                </p>
+              </div>
+              <Link to="/about#partners" className="btn btn--primary btn--sm home-partners__directory-cta">
+                Explore Full Directory <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </Link>
+            </div>
+
+            <div className="home-partners__chips-wrap">
+              {partners.map((partner) => (
+                <div key={partner.id} className="home-partners__chip" title={`${partner.name} • ${partner.category}`}>
+                  <span className="material-symbols-outlined text-sm">{partner.icon}</span>
+                  <span className="home-partners__chip-name">{partner.name}</span>
+                  <span className="home-partners__chip-tag">{partner.acronym}</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
