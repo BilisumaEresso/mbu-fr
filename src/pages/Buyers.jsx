@@ -53,7 +53,7 @@ const VALUE_PROPS = [
   {
     icon: 'inventory_2',
     title: 'Consistent Volume',
-    desc: 'With 153 primary cooperatives and 8,410 member farmers in our network, we provide reliable, large-scale supply capacities throughout the harvest seasons to meet your operational demands.',
+    desc: 'With 135 primary cooperatives and 8,089 member farmers in our network, we provide reliable, large-scale supply capacities throughout the harvest seasons to meet your operational demands.',
     iconColor: 'secondary',
   },
   {

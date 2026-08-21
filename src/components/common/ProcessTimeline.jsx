@@ -8,15 +8,15 @@ const DEFAULT_STEPS = [
     location: 'Primary Co-ops to Pack House',
     icon: 'verified',
     title: 'Intake Inspection & Grading',
-    tag: '153 Primary Co-ops',
+    tag: '135 Primary Co-ops',
     description:
-      'Harvested produce arrives from 153 member primary cooperatives across 6 Rift Valley districts. Certified quality specialists immediately inspect, sort, and calibrate crops into precise export and domestic grades.',
+      'Harvested produce arrives from 135 member primary cooperatives across 6 districts in East Shewa and Arsi zones. Certified quality specialists immediately inspect, sort, and calibrate crops into precise export and domestic grades.',
     highlights: [
-      '153 Member Primary Cooperatives',
-      '8,410 Member Farmers',
+      '135 Member Primary Cooperatives',
+      '8,089 Member Farmers',
       'Multi-tier size & grade calibration',
     ],
-    stat: { value: '153', label: 'Primary Co-ops' },
+    stat: { value: '135', label: 'Primary Co-ops' },
   },
   {
     number: '02',
@@ -32,7 +32,7 @@ const DEFAULT_STEPS = [
       'Batch traceability from farm gate',
       'Stabilized cold aggregation',
     ],
-    stat: { value: '600 ha', label: 'Member Irrigated Land' },
+    stat: { value: '5,910 ha', label: 'Member Irrigated Land' },
   },
   {
     number: '03',
@@ -72,7 +72,7 @@ const stagger = (i) => Math.min(i * 120, 600)
 
 function ProcessTimeline({
   title = 'From Rift Valley Farms to Global Tables',
-  subtitle = 'From 153 primary cooperatives through our central pack house to domestic consumers and global export markets.',
+  subtitle = 'From 135 primary cooperatives through our central pack house to domestic consumers and global export markets.',
   steps = DEFAULT_STEPS,
   className = '',
   compact = false,

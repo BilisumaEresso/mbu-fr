@@ -124,8 +124,8 @@ const TESTIMONIALS = [
 ]
 
 const STATS = [
-  { value: '153', label: 'Primary Co-ops' },
-  { value: '8,410', label: 'Member Farmers' },
+  { value: '135', label: 'Primary Co-ops' },
+  { value: '8,089', label: 'Member Farmers' },
   { value: '50k+', label: 'Tonnes Sold/Yr' },
   { value: '5', label: 'Retail Outlets' },
 ]
@@ -145,7 +145,7 @@ function Home() {
         <title>Meki Batu Union | Ethiopian Fruit &amp; Vegetable Cooperative</title>
         <meta
           name="description"
-          content="Meki Batu Union empowers 153 primary cooperatives and 8,410 member farmers in the Ethiopian Rift Valley to deliver sustainable, export-quality produce worldwide."
+          content="Meki Batu Union empowers 135 primary cooperatives and 8,089 member farmers in the Ethiopian Rift Valley to deliver sustainable, export-quality produce worldwide."
         />
       </Helmet>
 
@@ -157,7 +157,7 @@ function Home() {
               Trusted Ethiopian fruit &amp; vegetable cooperative since 2002.
             </h1>
             <p className="home-hero__desc">
-              Empowering 153 primary cooperatives and 8,410 member farmers across the Great Rift Valley. Delivering sustainable, export-quality produce to the world.
+              Empowering 135 primary cooperatives and 8,089 member farmers across the Great Rift Valley. Delivering sustainable, export-quality produce to the world.
             </p>
             <div className="home-hero__actions">
               <Button to="/products" variant="primary">
@@ -306,7 +306,7 @@ function Home() {
                   <span className="label-caps home-process__eyebrow">Quality &amp; Logistics</span>
                   <h2 className="home-process__title">From Farm to Export</h2>
                   <p className="home-process__subtitle">
-                    From 153 primary cooperatives through our pack house to domestic and export markets.
+                    From 135 primary cooperatives through our pack house to domestic and export markets.
                   </p>
                 </div>
                 <Link to="/buyers" className="home-process__cta">
@@ -320,7 +320,7 @@ function Home() {
                 <div className="home-process__seg home-process__seg--3" aria-hidden="true" />
 
                 {[
-                  { num: '01', icon: 'verified', title: 'Grading', desc: 'Intake inspection and multi-tier grade calibration from 153 primary cooperatives.' },
+                  { num: '01', icon: 'verified', title: 'Grading', desc: 'Intake inspection and multi-tier grade calibration from 135 primary cooperatives.' },
                   { num: '02', icon: 'inventory_2', title: 'Processing', desc: 'Field heat removal and post-harvest batch stabilization at the union pack house.' },
                   { num: '03', icon: 'sanitizer', title: 'Cleaning', desc: 'Sanitary washing and residue compliance strictly meeting GlobalG.A.P standards.' },
                   { num: '04', icon: 'local_shipping', title: 'Packing', desc: 'Packed into ventilated cartons and shipped to five Addis Ababa outlets or European export markets.' },
@@ -378,7 +378,7 @@ function Home() {
               <span className="material-symbols-outlined home-audience__icon">group</span>
               <h2 className="home-audience__card-title">For member cooperatives</h2>
               <p className="home-audience__card-desc">
-                Access agricultural inputs, training, and direct market linkages. Supporting 8,410 member farmers across 153 primary cooperatives to improve yields and ensure sustainable livelihoods.
+                Access agricultural inputs, training, and direct market linkages. Supporting 8,089 member farmers across 135 primary cooperatives to improve yields and ensure sustainable livelihoods.
               </p>
               <Link to="/farmers" className="home-audience__link">
                 Join the union <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -399,44 +399,18 @@ function Home() {
         </div>
       </section>
 
-      {/* 8. Governance teaser (new, enhanced UI/UX) */}
-      <section className="home-governance">
+      {/* 8. Certifications showcase (existing) */}
+      <section className="home-cert-band section section--alt" aria-label="Certifications and Accreditations">
         <div className="container">
-          <Reveal>
-            <div className="home-governance__card">
-              <div className="home-governance__header-row">
-                <div className="home-governance__badges">
-                  <span className="label-caps home-governance__eyebrow">Governance &amp; Leadership</span>
-                  <span className="home-governance__badge">
-                    <span className="material-symbols-outlined text-xs">groups</span> 500+ Staff &amp; Agronomists
-                  </span>
-                </div>
-                <div className="home-governance__avatars" aria-label="Union Leadership &amp; Staff">
-                  <img src={teamMember1} alt="General Manager" className="home-governance__avatar" />
-                  <img src={teamMember2} alt="Head of Operations" className="home-governance__avatar" />
-                  <img src={teamMember3} alt="Chief Agronomist" className="home-governance__avatar" />
-                  <img src={teamMember4} alt="Finance &amp; Admin Director" className="home-governance__avatar" />
-                  <img src={teamMember5} alt="Supply Chain Lead" className="home-governance__avatar" />
-                </div>
-              </div>
-
-              <div className="home-governance__body">
-                <h2 className="home-governance__title">Led by Experienced Leadership Across 5+ Departments</h2>
-                <div className="home-governance__chips">
-                  <span className="home-governance__chip">General Management</span>
-                  <span className="home-governance__chip">Operations</span>
-                  <span className="home-governance__chip">Agronomy</span>
-                  <span className="home-governance__chip">Finance &amp; Admin</span>
-                  <span className="home-governance__chip">Supply Chain &amp; Logistics</span>
-                </div>
-              </div>
-
-              <div className="home-governance__footer">
-                <Button to="/about#leadership" variant="outline" className="home-governance__link">
-                  Meet our leadership <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </Button>
-              </div>
-            </div>
+          <Reveal className="home-cert-band__header text-center">
+            <span className="label-caps label-caps--secondary mb-2 block">Verified Excellence</span>
+            <h2 className="home-cert-band__title">Certified Standards &amp; Traceability</h2>
+            <p className="home-cert-band__desc">
+              Independent third-party certifications assuring food safety, sustainable farming practices, and official seed producer authorization.
+            </p>
+          </Reveal>
+          <Reveal delay={90}>
+            <Certifications />
           </Reveal>
         </div>
       </section>
@@ -449,44 +423,44 @@ function Home() {
               <span className="label-caps home-partners__eyebrow">Strategic Ecosystem</span>
               <h2 className="home-partners__title">Trusted Collaborations Driving Impact</h2>
               <p className="home-partners__desc">
-                From international development agencies and agricultural research centers to airline off-takers and cooperative banks — we collaborate with 17 key organizations across four strategic pillars.
+                Partnering with global development agencies, research centers, and financial institutions to advance smallholder agriculture in the Great Rift Valley.
               </p>
             </div>
           </Reveal>
 
-          {/* Ecosystem Pillar Metrics Bar */}
+          {/* 4-Pillar Indicator Bar */}
           <Reveal className="home-partners__pillars-bar">
             <div className="home-partners__pillar-pill">
               <span className="material-symbols-outlined home-partners__pillar-icon">volunteer_activism</span>
               <div className="home-partners__pillar-text">
-                <strong>7 Global Development</strong>
-                <span>NGOs &amp; Sustainability</span>
+                <strong>Development</strong>
+                <span>Capacity &amp; Sustainability</span>
               </div>
             </div>
             <div className="home-partners__pillar-pill">
               <span className="material-symbols-outlined home-partners__pillar-icon">science</span>
               <div className="home-partners__pillar-text">
-                <strong>2 Research Centers</strong>
-                <span>Seed &amp; Agronomy Innovation</span>
+                <strong>Research</strong>
+                <span>Seeds &amp; Field Trials</span>
               </div>
             </div>
             <div className="home-partners__pillar-pill">
               <span className="material-symbols-outlined home-partners__pillar-icon">flight_takeoff</span>
               <div className="home-partners__pillar-text">
-                <strong>4 Finance &amp; Markets</strong>
-                <span>Off-Takers &amp; Banks</span>
+                <strong>Off-Takers</strong>
+                <span>Domestic &amp; Export</span>
               </div>
             </div>
             <div className="home-partners__pillar-pill">
               <span className="material-symbols-outlined home-partners__pillar-icon">policy</span>
               <div className="home-partners__pillar-text">
-                <strong>4 Public Agencies</strong>
-                <span>Government &amp; Standards</span>
+                <strong>Regulatory</strong>
+                <span>Governance &amp; Standards</span>
               </div>
             </div>
           </Reveal>
 
-          {/* Headline Spotlight Collaborations Grid (Top 4 Featured) */}
+          {/* Featured Spotlight Grid */}
           <div className="home-partners__spotlight-header">
             <span className="label-caps label-caps--muted">Key Strategic Spotlights</span>
           </div>
@@ -496,7 +470,18 @@ function Home() {
               <Reveal key={p.id} delay={i * 90}>
                 <div className="home-partners__card home-partners__card--spotlight">
                   <div className="home-partners__card-top">
-                    <span className="material-symbols-outlined home-partners__icon">{p.icon}</span>
+                    {p.logo ? (
+                      <div className="home-partners__logo-wrap">
+                        <img
+                          src={p.logo}
+                          alt={`${p.name} logo`}
+                          className="home-partners__logo"
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                      <span className="material-symbols-outlined home-partners__icon">{p.icon}</span>
+                    )}
                     <span className="home-partners__tag">{p.tag}</span>
                   </div>
                   <div className="home-partners__card-submeta">
@@ -506,10 +491,12 @@ function Home() {
                   <h3 className="home-partners__name">{p.name}</h3>
                   <p className="home-partners__card-desc">{p.role}</p>
                   <div className="home-partners__card-footer">
-                    <span className="home-partners__highlight">
-                      <span className="material-symbols-outlined text-xs">verified</span>
-                      {p.impactHighlight}
-                    </span>
+                    {p.impactHighlight && (
+                      <span className="home-partners__highlight">
+                        <span className="material-symbols-outlined text-xs">verified</span>
+                        {p.impactHighlight}
+                      </span>
+                    )}
                     {p.url && (
                       <a
                         href={p.url}
@@ -527,11 +514,11 @@ function Home() {
             ))}
           </div>
 
-          {/* Complete 17-Partner Network Chip Directory */}
+          {/* Complete Partner Network Chip Directory */}
           <Reveal className="home-partners__directory-card">
             <div className="home-partners__directory-header">
               <div>
-                <h3 className="home-partners__directory-title">Complete 17-Partner Directory</h3>
+                <h3 className="home-partners__directory-title">Complete Partner Directory</h3>
                 <p className="home-partners__directory-desc">
                   Explore all partner organizations supporting Meki Batu Union across research, trade, logistics, and farmer empowerment.
                 </p>

@@ -21,7 +21,7 @@ function InfrastructureSection() {
           <span className="label-caps label-caps--secondary mb-2 block">Physical Infrastructure &amp; Assets</span>
           <h2 className="infrastructure-section__title">Operational Resources</h2>
           <p className="infrastructure-section__desc">
-            The logistical and technical backbone powering our 153 member cooperatives — from 2,000-tonne cold storage and refrigerated transport fleets to seed conditioning plants and lake pumping stations.
+            The logistical and technical backbone powering our 135 member cooperatives — from 2,000-tonne cold storage and refrigerated transport fleets to seed conditioning plants and lake pumping stations.
           </p>
         </Reveal>
 

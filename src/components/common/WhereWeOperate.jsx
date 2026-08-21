@@ -11,7 +11,7 @@ export default function WhereWeOperate() {
             <span className="label-caps label-caps--secondary mb-2 block">Our Region</span>
             <h2 className="where-operate__title">Where We Operate</h2>
             <p className="where-operate__desc">
-              Our member cooperatives farm across six districts in the fertile Great Rift Valley: Dugda woreda, Adami Tulu Jido Kombolcha, Bora, Zuway Dugda, Adama, and Dodota Sire. Originally founded around Dembal Lake (Lake Ziway) across Dugda and Adami Tulu, the union has expanded to support 8,410 member farmers across all six woredas.
+              Our member cooperatives farm across six districts in East Shewa and Arsi zones: Dugda woreda, Adami Tulu Jido Kombolcha, Bora, Zuway Dugda, Adama, and Dodota Sire. Originally founded around Dembal Lake (Lake Ziway) across Dugda and Adami Tulu, the union has expanded to support 8,089 member farmers across all six woredas.
             </p>
             <div className="where-operate__tags">
               <span className="where-operate__tag">Dugda Woreda</span>

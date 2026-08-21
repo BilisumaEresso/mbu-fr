@@ -381,6 +381,35 @@
   overflow: hidden;
 }
 
+/* Card Seed Varieties Strip */
+.product-item-card__varieties {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--surface-container-low, #f6f3f2);
+  border-radius: var(--radius-sm, 4px);
+  border: 1px solid var(--outline-variant, #c2c8c2);
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.product-item-card__varieties-label {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--secondary, #9d4320);
+}
+
+.product-item-card__varieties-list {
+  font-family: var(--font-body);
+  color: var(--color-primary, #173124);
+  font-weight: 600;
+}
+
 /* Card Meta Pill Strip */
 .product-item-card__meta {
   display: flex;

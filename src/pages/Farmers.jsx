@@ -14,7 +14,7 @@ const FARMERS_FAQ = [
   {
     question: 'How do I join Meki Batu Union as a primary cooperative?',
     answer:
-      'Primary cooperatives in our operating districts — Dugda woreda and Adami Tulu Jido Kombolcha — can apply to join. Contact our membership office using the details on our Contact page to learn about eligibility and the application process.',
+      'Primary cooperatives in our operating districts across East Shewa and Arsi zones — Dugda woreda, Adami Tulu Jido Kombolcha, Bora, Zuway Dugda, Adama, and Dodota Sire — can apply to join. Contact our membership office using the details on our Contact page to learn about eligibility and the application process.',
   },
   {
     question: 'What support does the union provide to member cooperatives?',
@@ -24,7 +24,7 @@ const FARMERS_FAQ = [
   {
     question: 'How many cooperatives are currently part of the union?',
     answer:
-      'Meki Batu Union currently includes 153 primary cooperatives representing 8,410 member farmers.',
+      'Meki Batu Union currently includes 135 primary cooperatives representing 8,089 member farmers.',
   },
   {
     question: 'Is there a cost to join?',
@@ -108,7 +108,7 @@ function Farmers() {
         <title>Farmer Co-ops &amp; Membership | Meki Batu Union</title>
         <meta
           name="description"
-          content="Empowering 153 primary agricultural cooperatives and 8,410 member farmers in Ethiopia through seed distribution, agronomy training, cold-chain storage, and direct export linkages."
+          content="Empowering 135 primary agricultural cooperatives and 8,089 member farmers in Ethiopia through seed distribution, agronomy training, cold-chain storage, and direct export linkages."
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
@@ -128,7 +128,7 @@ function Farmers() {
         }
         image={farmerHeroImg}
         imageAlt="Ethiopian farmers in a professional agricultural packhouse"
-        badge="153 Primary Co-ops"
+        badge="135 Primary Co-ops"
       />
 
       <SectionDivider />

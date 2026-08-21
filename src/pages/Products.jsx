@@ -100,7 +100,7 @@ function Products() {
               <span className="label-caps label-caps--secondary mb-2 block">Crop Directory</span>
               <h2 className="products-catalog__title">Export &amp; Domestic Produce</h2>
               <p className="products-catalog__desc">
-                Cultivated by 8,410 member farmers across 153 primary cooperatives. Meets GlobalG.A.P international standards for full traceability, food safety, and premium export grading.
+                Cultivated by 8,089 member farmers across 135 primary cooperatives. Meets GlobalG.A.P international standards for full traceability, food safety, and premium export grading.
               </p>
             </div>
           </div>
@@ -154,6 +154,13 @@ function Products() {
                       <h3 className="product-item-card__title">{item.name}</h3>
                       <p className="product-item-card__desc">{item.desc}</p>
                     </div>
+
+                    {Array.isArray(item.varieties) && item.varieties.length > 0 && (
+                      <div className="product-item-card__varieties">
+                        <span className="product-item-card__varieties-label">Varieties:</span>
+                        <span className="product-item-card__varieties-list">{item.varieties.join(', ')}</span>
+                      </div>
+                    )}
 
                     <div className="product-item-card__meta">
                       <div className="product-item-card__meta-item">
@@ -288,6 +295,18 @@ function Products() {
                       <span className="product-spec-card__value">{selectedProduct.shelfLife}</span>
                     </div>
                   </div>
+
+                  {Array.isArray(selectedProduct.varieties) && selectedProduct.varieties.length > 0 && (
+                    <div className="product-spec-card product-spec-card--full">
+                      <div className="product-spec-card__icon">
+                        <span className="material-symbols-outlined">spa</span>
+                      </div>
+                      <div className="product-spec-card__details">
+                        <span className="product-spec-card__label">Produced Varieties</span>
+                        <span className="product-spec-card__value">{selectedProduct.varieties.join(', ')}</span>
+                      </div>
+                    </div>
+                  )}
 
                   <div className="product-spec-card product-spec-card--full">
                     <div className="product-spec-card__icon">

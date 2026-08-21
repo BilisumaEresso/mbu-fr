@@ -4,9 +4,10 @@ import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import Certifications from '../components/common/Certifications.jsx'
+import OrgChart from '../components/common/OrgChart.jsx'
 import { partners, PARTNER_CATEGORIES } from '../data/partners.js'
 import { resources } from '../data/resources.js'
-import ResourceCard from '../components/common/ResourceCard.jsx'
+import FacilityCard from '../components/common/FacilityCard.jsx'
 import aboutHeroImg from '../assets/images/heroes/aboutHero.webp'
 import teamMember1 from '../assets/images/team/team_member_1.webp'
 import teamMember2 from '../assets/images/team/team_member_2.webp'
@@ -53,7 +54,7 @@ function About() {
         <title>About Us | Meki Batu Union</title>
         <meta
           name="description"
-          content="Learn about Meki Batu Union's history since 2002, our 153 member cooperatives, 8,410 farmers, GlobalG.A.P certification, and leadership dedicated to sustainable Ethiopian agriculture."
+          content="Learn about Meki Batu Union's history since 2002, our 135 member cooperatives, 8,089 farmers, GlobalG.A.P certification, and leadership dedicated to sustainable Ethiopian agriculture."
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
@@ -61,7 +62,7 @@ function About() {
         breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'About Us' }]}
         eyebrow="Since 2002 • 20+ Years of Experience"
         title="Cultivating Progress Through Cooperative Strength"
-        description="Meki Batu Union stands as a testament to the power of collective farming in Ethiopia. We unite 153 primary cooperatives and 8,410 member farmers to ensure fair trade, sustainable practices, and premium quality produce for domestic and global markets."
+        description="Meki Batu Union stands as a testament to the power of collective farming in Ethiopia. We unite 135 primary cooperatives and 8,089 member farmers to ensure fair trade, sustainable practices, and premium quality produce for domestic and global markets."
         image={aboutHeroImg}
         imageAlt="Fertile Ethiopian agricultural land during golden hour"
       />
@@ -103,7 +104,7 @@ function About() {
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Over the years, we expanded from our initial two districts (Dugda woreda and Adami Tulu Jido Kombolcha near Lake Dembal/Ziway) across six districts, adding Bora, Zuway Dugda, Adama, and Dodota Sire, while modernizing irrigation across 600 hectares of member land.
+                  Over the years, we expanded from our initial two districts (Dugda woreda and Adami Tulu Jido Kombolcha near Lake Dembal/Ziway) across six districts in East Shewa and Arsi zones: Dugda woreda, Adami Tulu Jido Kombolcha, Bora, Zuway Dugda, Adama, and Dodota Sire, while modernizing irrigation across 5,910 hectares of member land.
                 </p>
               </div>
             </div>
@@ -113,11 +114,11 @@ function About() {
               <div className="about-timeline__node desktop-only about-timeline__node--primary" />
               <div className="about-timeline__left">
                 <span className="label-caps label-caps--primary block mb-1">Present Day</span>
-                <h3 className="about-timeline__heading">153 Cooperatives &amp; 8,410 Farmers Strong</h3>
+                <h3 className="about-timeline__heading">135 Cooperatives &amp; 8,089 Farmers Strong</h3>
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Today, we proudly represent 153 primary cooperatives and 8,410 member farmers, holding approximately 81.8 million ETB in own capital. Our network ensures quality, sustainability, and economic resilience for farming families across the Rift Valley.
+                  Today, we proudly represent 135 primary cooperatives and 8,089 member farmers, holding approximately 94.5 million ETB in own capital. Our network ensures quality, sustainability, and economic resilience for farming families across the Rift Valley.
                 </p>
               </div>
             </div>
@@ -184,14 +185,25 @@ function About() {
         </div>
       </section>
 
-      {/* ---- Leadership & Staff ---- */}
+      {/* ---- Leadership & Governance Structure ---- */}
       <section className="about-governance section section--alt" id="leadership">
         <div className="container">
-          <div className="about-governance__header">
-            <h2 className="about-governance__title">Leadership &amp; Staff</h2>
+          <div className="about-governance__header text-center">
+            <span className="label-caps label-caps--secondary mb-2 block">Governance &amp; Hierarchy</span>
+            <h2 className="about-governance__title">Organizational Structure</h2>
             <p className="about-governance__desc">
-              Guided by experienced leadership and driven by our dedicated team across all operations.
+              Structured across three defined tiers of governance, executive leadership, and specialized departments to ensure operational excellence, member accountability, and sustainable growth.
             </p>
+          </div>
+
+          {/* 3-Tier Organizational Hierarchy Chart */}
+          <Reveal>
+            <OrgChart />
+          </Reveal>
+
+          {/* Leadership & Staff Grid */}
+          <div className="about-governance__subheader mt-12 mb-6">
+            <h3 className="text-xl font-display font-semibold text-primary">Executive &amp; Operational Leadership</h3>
           </div>
 
           <div className="about-governance__grid">
@@ -232,11 +244,11 @@ function About() {
             </p>
           </div>
 
-          {/* Resources Photo Cards Grid */}
+          {/* Facilities 2x2 Showcase Grid */}
           <div className="about-infrastructure__grid">
             {resources.map((res, i) => (
-              <Reveal key={res.id} delay={Math.min(i * 80, 320)} className="about-infra-card-wrap">
-                <ResourceCard resource={res} />
+              <Reveal key={res.id} delay={Math.min(i * 100, 300)} className="about-infra-card-wrap">
+                <FacilityCard resource={res} />
               </Reveal>
             ))}
           </div>
@@ -250,7 +262,7 @@ function About() {
             <span className="label-caps label-caps--secondary mb-2 block">Strategic Ecosystem</span>
             <h2 className="about-partners__title">Partners &amp; Collaborations</h2>
             <p className="about-partners__subtitle">
-              Our impact is powered by trusted collaborations with 17 global development agencies, national research centers, financial institutions, and agricultural regulatory bodies.
+              Our impact is powered by trusted collaborations with international development agencies, national research centers, financial institutions, and agricultural regulatory bodies.
             </p>
           </div>
 
@@ -325,7 +337,16 @@ function About() {
                 <div className="about-partner-card">
                   <div className="about-partner-card__header">
                     <div className="about-partner-card__icon-badge">
-                      <span className="material-symbols-outlined">{partner.icon}</span>
+                      {partner.logo ? (
+                        <img
+                          src={partner.logo}
+                          alt={`${partner.name} logo`}
+                          className="about-partner-card__logo"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <span className="material-symbols-outlined">{partner.icon}</span>
+                      )}
                     </div>
                     <span className="about-partner-card__tag">{partner.tag}</span>
                   </div>
@@ -340,10 +361,12 @@ function About() {
                   </div>
 
                   <div className="about-partner-card__footer">
-                    <div className="about-partner-card__highlight">
-                      <span className="material-symbols-outlined text-xs">verified</span>
-                      <span>{partner.impactHighlight}</span>
-                    </div>
+                    {partner.impactHighlight && (
+                      <div className="about-partner-card__highlight">
+                        <span className="material-symbols-outlined text-xs">verified</span>
+                        <span>{partner.impactHighlight}</span>
+                      </div>
+                    )}
                     {partner.url && (
                       <a
                         href={partner.url}

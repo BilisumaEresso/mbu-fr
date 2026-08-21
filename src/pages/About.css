@@ -456,18 +456,13 @@
 .about-infrastructure__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(20px, 2.5vw, 28px);
+  gap: clamp(24px, 3vw, 36px);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .about-infrastructure__grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1100px) {
-  .about-infrastructure__grid {
-    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(28px, 3.5vw, 40px);
   }
 }
 
@@ -735,25 +730,37 @@
 }
 
 .about-partner-card__icon-badge {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
-  background: rgba(23, 49, 36, 0.07);
+  width: 58px;
+  height: 42px;
+  border-radius: var(--radius-md, 10px);
+  background: #ffffff;
+  border: 1px solid var(--surface-container-high, #eae7e7);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 4px 6px;
   color: var(--color-primary);
   flex-shrink: 0;
-  transition: background var(--transition-fast), color var(--transition-fast);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
 .about-partner-card:hover .about-partner-card__icon-badge {
-  background: rgba(157, 67, 32, 0.1);
-  color: var(--secondary);
+  border-color: var(--outline-variant, #c2c8c2);
+  box-shadow: 0 2px 8px rgba(23, 49, 36, 0.08);
 }
 
 .about-partner-card__icon-badge .material-symbols-outlined {
   font-size: 24px !important;
+}
+
+.about-partner-card__logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .about-partner-card__tag {

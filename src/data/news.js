@@ -18,7 +18,7 @@ export const news = [
     desc: "Early reports from across our cooperative network indicate unprecedented yields and exceptional quality profiles for this year's harvest, driven by favorable weather conditions and improved sustainable farming practices implemented earlier this year.",
     excerpt: "Early reports from across our cooperative network indicate unprecedented yields and exceptional quality profiles for this year's harvest.",
     fullContent: [
-      "The 2024 harvest season is shaping up to be one of the most prolific in Meki Batu Union's history. Early field audits across our 153 primary member cooperatives indicate a 28% increase in overall crop yield compared to the previous fiscal year.",
+      "The 2024 harvest season is shaping up to be one of the most prolific in Meki Batu Union's history. Early field audits across our 135 primary member cooperatives indicate a 28% increase in overall crop yield compared to the previous fiscal year.",
       "Favorable rainfall patterns across the Great Rift Valley, paired with modern drip irrigation systems introduced through our union mechanization program, have created optimal growing conditions for both fresh fruit and vegetable crops.",
       "Furthermore, over 12,000 member farmers completed GlobalG.A.P soil management and organic fertilization workshops earlier this spring. This emphasis on soil health has not only boosted output volume but also elevated crop grade metrics across all major export commodities.",
       "Our central packhouses in Meki are currently operating at peak efficiency to process, grade, and package incoming harvests for immediate domestic distribution and international shipment to European trade partners."
@@ -43,7 +43,7 @@ export const news = [
     desc: 'Over 500 cooperative leaders gathered to discuss strategic initiatives, resource allocation, and market projections for the upcoming fiscal year.',
     excerpt: 'Over 500 cooperative leaders gathered to discuss strategic initiatives, resource allocation, and market projections.',
     fullContent: [
-      "The 2024 Meki Batu Union Annual General Assembly brought together over 500 delegates representing 153 primary agricultural cooperatives across East Shewa Zone.",
+      "The 2024 Meki Batu Union Annual General Assembly brought together over 500 delegates representing 135 primary agricultural cooperatives across East Shewa and Arsi zones.",
       "Key topics addressed during the three-day summit included dividend distribution protocols, bulk seed purchasing programs, and the adoption of modern agricultural technology.",
       "Delegates unanimously approved a new capital reinvestment plan allocating 15% of annual net revenue toward expanding regional storage warehouses and farmer micro-loan funds."
     ],

@@ -9,7 +9,7 @@ const CERT_DATA = {
     title: 'GlobalG.A.P Certified',
     src: globalgapLogo,
     alt: 'GlobalG.A.P Certification Logo and Badge',
-    caption: 'Official GlobalG.A.P Certification for safe, traceable, and sustainable farming practice.',
+    caption: "Official GlobalG.A.P Certification for safe, traceable, and sustainable farming practice — with more than 400 member households certified under the union's certification scheme.",
     url: 'https://globalgap.org/',
     urlLabel: 'Learn about GlobalG.A.P',
   },
@@ -93,7 +93,7 @@ function Certifications() {
             <h3 className="certifications__card-title">GlobalG.A.P Certified</h3>
             <p className="certifications__card-desc">
               Meeting international standards for food safety, traceability, and
-              responsible farming practice.
+              responsible farming practice. More than 400 member households are GlobalG.A.P certified under the union&rsquo;s certification scheme.
             </p>
             <div className="certifications__actions">
               <button

@@ -9,10 +9,10 @@ import './InnerPage.css'
 import './Impact.css'
 
 const STATS = [
-  { value: '8,410', label: 'Member Farmers' },
-  { value: '153', label: 'Primary Cooperatives' },
-  { value: '81.8M', label: 'ETB Own Capital' },
-  { value: '600 ha', label: 'Irrigated Land' },
+  { value: '8,089', label: 'Member Farmers' },
+  { value: '135', label: 'Primary Cooperatives' },
+  { value: '94.5M', label: 'ETB Own Capital' },
+  { value: '5,910 ha', label: 'Irrigated Land' },
   { value: '6', label: 'Operating Districts' },
   { value: '50k+ t', label: 'Annual Produce Volume' },
 ]
@@ -47,7 +47,7 @@ function Impact() {
         <title>Our Impact | Meki Batu Union</title>
         <meta
           name="description"
-          content="See how Meki Batu Union fosters sustainable farming, economic resilience, and community growth across 153 member cooperatives and 8,410 farmers in Ethiopia."
+          content="See how Meki Batu Union fosters sustainable farming, economic resilience, and community growth across 135 member cooperatives and 8,089 farmers in Ethiopia."
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
@@ -67,7 +67,7 @@ function Impact() {
         }
         image={impactHeroImg}
         imageAlt="Vibrant thriving agricultural field in Ethiopia during golden hour"
-        badge="Empowering 8,410 Member Farmers"
+        badge="Empowering 8,089 Member Farmers"
       />
 
       <SectionDivider />
