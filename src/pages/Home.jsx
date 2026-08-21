@@ -139,6 +139,12 @@ function Home() {
   // Top 3 recent news articles
   const recentNews = news.slice(0, 3)
 
+  // Partner logos for marquee directory
+  const partnerLogos = partners.filter((p) => p.logo)
+  const halfLogoCount = Math.ceil(partnerLogos.length / 2)
+  const row1Logos = partnerLogos.slice(0, halfLogoCount)
+  const row2Logos = partnerLogos.slice(halfLogoCount)
+
   return (
     <>
       <Helmet>
@@ -415,128 +421,68 @@ function Home() {
         </div>
       </section>
 
-      {/* 9. Partners & Collaborations — Strategic Multi-Stakeholder Ecosystem */}
-      <section className="home-partners" aria-label="Partners and Collaborations">
+      {/* 9. Partners & Collaborations — Full-Width Edge-to-Edge Showcase */}
+      <section className="home-partners" aria-label="Complete Partner Directory">
         <div className="container">
-          <Reveal>
-            <div className="home-partners__header">
-              <span className="label-caps home-partners__eyebrow">Strategic Ecosystem</span>
-              <h2 className="home-partners__title">Trusted Collaborations Driving Impact</h2>
-              <p className="home-partners__desc">
-                Partnering with global development agencies, research centers, and financial institutions to advance smallholder agriculture in the Great Rift Valley.
-              </p>
-            </div>
+          <Reveal className="home-partners__header text-center">
+            <span className="label-caps home-partners__eyebrow">
+              <span className="material-symbols-outlined text-sm">handshake</span> Strategic Ecosystem &bull; 17+ Organizations
+            </span>
+            <h2 className="home-partners__title">Complete Partner Directory</h2>
+            <p className="home-partners__desc">
+              Explore all partner organizations supporting Meki Batu Union across research, trade, logistics, and farmer empowerment.
+            </p>
           </Reveal>
+        </div>
 
-          {/* 4-Pillar Indicator Bar */}
-          <Reveal className="home-partners__pillars-bar">
-            <div className="home-partners__pillar-pill">
-              <span className="material-symbols-outlined home-partners__pillar-icon">volunteer_activism</span>
-              <div className="home-partners__pillar-text">
-                <strong>Development</strong>
-                <span>Capacity &amp; Sustainability</span>
-              </div>
-            </div>
-            <div className="home-partners__pillar-pill">
-              <span className="material-symbols-outlined home-partners__pillar-icon">science</span>
-              <div className="home-partners__pillar-text">
-                <strong>Research</strong>
-                <span>Seeds &amp; Field Trials</span>
-              </div>
-            </div>
-            <div className="home-partners__pillar-pill">
-              <span className="material-symbols-outlined home-partners__pillar-icon">flight_takeoff</span>
-              <div className="home-partners__pillar-text">
-                <strong>Off-Takers</strong>
-                <span>Domestic &amp; Export</span>
-              </div>
-            </div>
-            <div className="home-partners__pillar-pill">
-              <span className="material-symbols-outlined home-partners__pillar-icon">policy</span>
-              <div className="home-partners__pillar-text">
-                <strong>Regulatory</strong>
-                <span>Governance &amp; Standards</span>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Featured Spotlight Grid */}
-          <div className="home-partners__spotlight-header">
-            <span className="label-caps label-caps--muted">Key Strategic Spotlights</span>
-          </div>
-
-          <div className="home-partners__grid">
-            {partners.filter((p) => p.featuredHome).map((p, i) => (
-              <Reveal key={p.id} delay={i * 90}>
-                <div className="home-partners__card home-partners__card--spotlight">
-                  <div className="home-partners__card-top">
-                    {p.logo ? (
-                      <div className="home-partners__logo-wrap">
-                        <img
-                          src={p.logo}
-                          alt={`${p.name} logo`}
-                          className="home-partners__logo"
-                          loading="lazy"
-                        />
-                      </div>
-                    ) : (
-                      <span className="material-symbols-outlined home-partners__icon">{p.icon}</span>
-                    )}
-                    <span className="home-partners__tag">{p.tag}</span>
-                  </div>
-                  <div className="home-partners__card-submeta">
-                    <span className="home-partners__acronym">{p.acronym}</span>
-                    <span className="home-partners__category">{p.category}</span>
-                  </div>
-                  <h3 className="home-partners__name">{p.name}</h3>
-                  <p className="home-partners__card-desc">{p.role}</p>
-                  <div className="home-partners__card-footer">
-                    {p.impactHighlight && (
-                      <span className="home-partners__highlight">
-                        <span className="material-symbols-outlined text-xs">verified</span>
-                        {p.impactHighlight}
-                      </span>
-                    )}
-                    {p.url && (
-                      <a
-                        href={p.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="home-partners__visit"
-                        title={`Visit ${p.name}`}
-                      >
-                        Visit <span className="material-symbols-outlined text-sm">open_in_new</span>
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          {/* Complete Partner Network Chip Directory */}
-          <Reveal className="home-partners__directory-card">
-            <div className="home-partners__directory-header">
-              <div>
-                <h3 className="home-partners__directory-title">Complete Partner Directory</h3>
-                <p className="home-partners__directory-desc">
-                  Explore all partner organizations supporting Meki Batu Union across research, trade, logistics, and farmer empowerment.
-                </p>
-              </div>
-              <Link to="/about#partners" className="btn btn--primary btn--sm home-partners__directory-cta">
-                Explore Full Directory <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </Link>
-            </div>
-
-            <div className="home-partners__chips-wrap">
-              {partners.map((partner) => (
-                <div key={partner.id} className="home-partners__chip" title={`${partner.name} • ${partner.category}`}>
-                  <span className="material-symbols-outlined text-sm">{partner.icon}</span>
-                  <span className="home-partners__chip-name">{partner.name}</span>
-                  <span className="home-partners__chip-tag">{partner.acronym}</span>
+        {/* Full-width edge-to-edge logo marquee (screen-to-screen frame) */}
+        <div className="home-partners__marquee-wrapper" aria-label="Partner organizations logo marquee">
+          {/* Row 1: Leftward Smooth Scroll */}
+          <div className="home-partners__marquee-row home-partners__marquee-row--left">
+            <div className="home-partners__marquee-track">
+              {[...row1Logos, ...row1Logos].map((partner, idx) => (
+                <div
+                  key={`r1-${partner.id}-${idx}`}
+                  className="home-partners__marquee-item"
+                  title={`${partner.name} (${partner.category})`}
+                >
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="home-partners__marquee-logo"
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Row 2: Rightward Smooth Scroll */}
+          <div className="home-partners__marquee-row home-partners__marquee-row--right">
+            <div className="home-partners__marquee-track">
+              {[...row2Logos, ...row2Logos].map((partner, idx) => (
+                <div
+                  key={`r2-${partner.id}-${idx}`}
+                  className="home-partners__marquee-item"
+                  title={`${partner.name} (${partner.category})`}
+                >
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="home-partners__marquee-logo"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="container text-center home-partners__footer-action">
+          <Reveal delay={150}>
+            <Link to="/about#partners" className="btn btn--outline home-partners__full-cta">
+              Explore All Partners on About Page <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </Link>
           </Reveal>
         </div>
       </section>
