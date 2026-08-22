@@ -300,91 +300,75 @@ function Home() {
       </section>
 
       {/* 6. Our Process — From Farm to Export */}
-      <section id="process" className="home-process">
+      <section id="process" className="home-process section" aria-label="Quality and Logistics Pipeline">
         <div className="container">
           <Reveal>
-            <div className="home-process__card">
-              {/* Decorative dot grid overlay */}
-              <div className="home-process__dots" aria-hidden="true" />
-
-              <div className="home-process__header">
-                <div>
-                  <div className="home-process__badge-wrap">
-                    <span className="material-symbols-outlined text-xs">schema</span>
-                    <span className="label-caps home-process__eyebrow">Quality &amp; Logistics Pipeline</span>
-                  </div>
-                  <h2 className="home-process__title">From Farm to Export</h2>
-                  <p className="home-process__subtitle">
-                    Integrated sorting, cleaning, cold-chain stabilization, and certified air freight from 135 cooperatives to global markets.
-                  </p>
-                </div>
-                <Link to="/buyers" className="home-process__cta">
-                  <span>Explore full specifications</span>
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </Link>
+            <div className="home-process__header">
+              <div>
+                <span className="label-caps label-caps--secondary mb-2 block">Quality &amp; Logistics Pipeline</span>
+                <h2 className="home-process__title">From Farm to Export</h2>
+                <p className="home-process__desc">
+                  Integrated sorting, cleaning, cold-chain stabilization, and certified air freight connecting 135 member cooperatives to global export markets.
+                </p>
               </div>
-
-              {/* Steps Container */}
-              <div className="home-process__steps">
-                {/* Horizontal line segments for Desktop */}
-                <div className="home-process__seg home-process__seg--1" aria-hidden="true" />
-                <div className="home-process__seg home-process__seg--2" aria-hidden="true" />
-                <div className="home-process__seg home-process__seg--3" aria-hidden="true" />
-
-                {/* Vertical connected timeline track for Mobile */}
-                <div className="home-process__mobile-spine" aria-hidden="true" />
-
-                {[
-                  {
-                    num: '01',
-                    icon: 'verified',
-                    title: 'Grading & Intake',
-                    tag: 'Field Intake',
-                    desc: 'Rigorous physical intake inspection, moisture checks, and grade calibration at primary member cooperatives.',
-                  },
-                  {
-                    num: '02',
-                    icon: 'ac_unit',
-                    title: 'Cold Stabilization',
-                    tag: 'Pack House',
-                    desc: 'Rapid field heat removal, hydro-cooling, and temperature-controlled batch staging at our central union hub.',
-                  },
-                  {
-                    num: '03',
-                    icon: 'sanitizer',
-                    title: 'Sanitary Cleaning',
-                    tag: 'GlobalG.A.P',
-                    desc: 'Food-safe sanitizing wash lines, organic residue filtration, and GlobalG.A.P compliant sorting protocols.',
-                  },
-                  {
-                    num: '04',
-                    icon: 'local_shipping',
-                    title: 'Export Packing',
-                    tag: 'Global Freight',
-                    desc: 'Ventilated export cartons and refrigerated reefer dispatch to Ethiopian Airlines air cargo & regional markets.',
-                  },
-                ].map((step, i) => (
-                  <Reveal key={step.num} delay={i * 90} className="home-process__step">
-                    <div className="home-process__node">
-                      <div className="home-process__circle">
-                        <span className="material-symbols-outlined home-process__icon">{step.icon}</span>
-                      </div>
-                      <span className="home-process__num">Step {step.num}</span>
-                    </div>
-
-                    <div className="home-process__content">
-                      <div className="home-process__meta">
-                        <span className="home-process__tag">{step.tag}</span>
-                        <span className="home-process__mobile-step-num">STAGE {step.num}</span>
-                      </div>
-                      <h3 className="home-process__step-title">{step.title}</h3>
-                      <p className="home-process__step-desc">{step.desc}</p>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
+              <Link to="/buyers" className="home-process__link">
+                Explore specifications <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </Link>
             </div>
           </Reveal>
+
+          <div className="home-process__grid">
+            {[
+              {
+                num: '01',
+                icon: 'verified',
+                title: 'Grading & Intake',
+                tag: 'Field Intake',
+                desc: 'Rigorous physical intake inspection, moisture checks, and grade calibration at primary member cooperatives.',
+              },
+              {
+                num: '02',
+                icon: 'ac_unit',
+                title: 'Cold Stabilization',
+                tag: 'Pack House',
+                desc: 'Rapid field heat removal, hydro-cooling, and temperature-controlled batch staging at our central union hub.',
+              },
+              {
+                num: '03',
+                icon: 'sanitizer',
+                title: 'Sanitary Cleaning',
+                tag: 'GlobalG.A.P',
+                desc: 'Food-safe sanitizing wash lines, organic residue filtration, and GlobalG.A.P compliant sorting protocols.',
+              },
+              {
+                num: '04',
+                icon: 'local_shipping',
+                title: 'Export Packing',
+                tag: 'Global Freight',
+                desc: 'Ventilated export cartons and refrigerated reefer dispatch to Ethiopian Airlines air cargo & regional markets.',
+              },
+            ].map((step, i) => (
+              <Reveal key={step.num} delay={i * 70} className="home-process__card-wrap">
+                <article className="home-process__card">
+                  <div className="home-process__card-top">
+                    <div className="home-process__icon-box">
+                      <span className="material-symbols-outlined">{step.icon}</span>
+                    </div>
+                    <span className="home-process__step-num">{step.num}</span>
+                  </div>
+                  <div className="home-process__card-body">
+                    <span className="home-process__tag">{step.tag}</span>
+                    <h3 className="home-process__card-title">{step.title}</h3>
+                    <p className="home-process__card-desc">{step.desc}</p>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          <Link to="/buyers" className="home-process__link mobile-only mt-6">
+            Explore specifications <span className="material-symbols-outlined text-sm">arrow_forward</span>
+          </Link>
         </div>
       </section>
 
