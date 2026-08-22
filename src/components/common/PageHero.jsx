@@ -16,11 +16,12 @@ function PageHero({
   rightContent,
   breadcrumbs,
   className = '',
+  id = 'hero',
 }) {
   const hasRightColumn = Boolean(image || rightContent)
 
   return (
-    <section className={`page-hero ${className}`.trim()}>
+    <section id={id} className={`page-hero ${className}`.trim()}>
       <div className="container">
         {breadcrumbs && <Breadcrumbs trail={breadcrumbs} />}
         {hasRightColumn ? (
@@ -37,7 +38,14 @@ function PageHero({
             <div className="page-hero__right">
               {image ? (
                 <div className="page-hero__media">
-                  <img src={image} alt={imageAlt || title} className="page-hero__img" />
+                  <img
+                    src={image}
+                    alt={imageAlt || title}
+                    className="page-hero__img"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
+                  />
                   {badge && (
                     <div className="page-hero__badge desktop-only">
                       <span className="label-caps">{badge}</span>

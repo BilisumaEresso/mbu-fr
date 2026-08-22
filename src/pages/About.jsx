@@ -9,13 +9,8 @@ import { partners, PARTNER_CATEGORIES } from '../data/partners.js'
 import { resources } from '../data/resources.js'
 import FacilityCard from '../components/common/FacilityCard.jsx'
 import aboutHeroImg from '../assets/images/heroes/aboutHero.webp'
-import teamMember1 from '../assets/images/team/team_member_1.webp'
-import teamMember2 from '../assets/images/team/team_member_2.webp'
-import teamMember3 from '../assets/images/team/team_member_3.webp'
-import teamMember4 from '../assets/images/team/team_member_4.webp'
-import teamMember5 from '../assets/images/team/team_member_5.webp'
-import teamStaff from '../assets/images/team/team_staff.webp'
-import companyProfilePdf from '../assets/downloads/MekiBatuUnion_CompanyProfile.pdf'
+import { teamMembers } from '../data/team.js'
+import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
 import './About.css'
 
 const OBJECTIVES = [
@@ -25,28 +20,21 @@ const OBJECTIVES = [
   'To maintain the highest standards of produce quality for international export.',
 ]
 
-const TEAM = [
-  { name: 'Ato Name Surname', title: 'General Manager', photo: teamMember1 },
-  { name: 'W/ro Name Surname', title: 'Head of Operations', photo: teamMember2 },
-  { name: 'Ato Name Surname', title: 'Chief Agronomist', photo: teamMember3 },
-  { name: 'W/ro Name Surname', title: 'Finance & Admin Director', photo: teamMember4 },
-  { name: 'Ato Name Surname', title: 'Supply Chain & Logistics Lead', photo: teamMember5 },
-  {
-    name: 'Union Staff & Extension Team',
-    title: '500+ Dedicated Field Workers & Staff',
-    photo: teamStaff,
-    isStaffCard: true,
-  },
-]
-
 // Cap stagger at 450ms for card grids
-const stagger = (i) => Math.min(i * 90, 450)
+const stagger = (i) => Math.min(i * 70, 450)
 
 function About() {
   const [selectedCategory, setSelectedCategory] = useState(PARTNER_CATEGORIES.ALL)
+  const [showAllPartners, setShowAllPartners] = useState(false)
+
   const filteredPartners = selectedCategory === PARTNER_CATEGORIES.ALL
     ? partners
     : partners.filter((p) => p.category === selectedCategory)
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category)
+    setShowAllPartners(false)
+  }
 
   return (
     <>
@@ -70,14 +58,14 @@ function About() {
       <SectionDivider />
 
       {/* ---- History Timeline (Our Foundation) ---- */}
-      <section className="about-foundation section section--alt">
+      <section id="foundation" className="about-foundation section section--alt">
         <div className="container">
           <div className="about-foundation__header">
             <span className="material-symbols-outlined about-foundation__icon">history</span>
             <h2 className="about-foundation__title">Our Foundation</h2>
           </div>
 
-          {/* Wrap the two content paragraphs together as one Reveal unit */}
+          {/* Wrap the content paragraphs together as one Reveal unit */}
           <Reveal className="about-timeline">
             <div className="about-timeline__line desktop-only" />
 
@@ -90,7 +78,7 @@ function About() {
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Founded on May 11, 2002 in Meki town, Oromia, our union began with 12 primary cooperatives and 527 founding members, starting with an initial capital of 500,000 ETB.
+                  Established in Meki town with 12 primary cooperatives and 527 founding members, pooling 500,000 ETB in initial capital to build a shared agricultural union.
                 </p>
               </div>
             </div>
@@ -100,11 +88,11 @@ function About() {
               <div className="about-timeline__node desktop-only about-timeline__node--tint" />
               <div className="about-timeline__left">
                 <span className="label-caps label-caps--tint block mb-1">Growth Phase</span>
-                <h3 className="about-timeline__heading">Expanding the Network</h3>
+                <h3 className="about-timeline__heading">Regional Expansion</h3>
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Over the years, we expanded from our initial two districts (Dugda woreda and Adami Tulu Jido Kombolcha near Lake Dembal/Ziway) across six districts in East Shewa and Arsi zones: Dugda woreda, Adami Tulu Jido Kombolcha, Bora, Zuway Dugda, Adama, and Dodota Sire, while modernizing irrigation across 5,910 hectares of member land.
+                  Expanded across six Rift Valley districts in East Shewa and Arsi zones, scaling modern irrigation infrastructure across 5,910 hectares of fertile farmland.
                 </p>
               </div>
             </div>
@@ -114,11 +102,11 @@ function About() {
               <div className="about-timeline__node desktop-only about-timeline__node--primary" />
               <div className="about-timeline__left">
                 <span className="label-caps label-caps--primary block mb-1">Present Day</span>
-                <h3 className="about-timeline__heading">135 Cooperatives &amp; 8,089 Farmers Strong</h3>
+                <h3 className="about-timeline__heading">135 Co-ops &amp; 8,089 Farmers</h3>
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Today, we proudly represent 135 primary cooperatives and 8,089 member farmers, holding approximately 94.5 million ETB in own capital. Our network ensures quality, sustainability, and economic resilience for farming families across the Rift Valley.
+                  Today uniting 135 cooperatives and 8,089 farmers with 94.5 million ETB in union capital, delivering reliable, certified produce across domestic and global markets.
                 </p>
               </div>
             </div>
@@ -127,7 +115,7 @@ function About() {
       </section>
 
       {/* ---- Mission & Certification ---- */}
-      <section className="about-mission-cert section">
+      <section id="mission-vision" className="about-mission-cert section">
         <div className="container">
           <div className="about-mission-cert__grid">
             {/* Left: Mission, Vision & Objectives */}
@@ -135,20 +123,20 @@ function About() {
               <div className="about-vision-block mb-6">
                 <span className="label-caps label-caps--secondary block mb-1">Our Vision</span>
                 <h3 className="about-vision__heading text-xl font-display font-semibold mb-2">
-                  Betterment &amp; Competitive Capacity
+                  Prosperity &amp; Competitive Excellence
                 </h3>
                 <p className="about-mission__text italic">
-                  &ldquo;To see betterment in members&rsquo; living condition and a union with a good competing capacity in the free market economy.&rdquo;
+                  &ldquo;To ensure members&rsquo; economic prosperity and build a highly competitive agricultural enterprise in the global marketplace.&rdquo;
                 </p>
               </div>
 
               <div className="about-mission-block mb-6">
                 <span className="label-caps label-caps--secondary block mb-1">Our Mission</span>
                 <h3 className="about-vision__heading text-xl font-display font-semibold mb-2">
-                  Production &amp; Marketability
+                  Productivity &amp; Market Integration
                 </h3>
                 <p className="about-mission__text italic">
-                  &ldquo;To contribute to improvement in production, productivity and marketability of members&rsquo; products.&rdquo;
+                  &ldquo;To enhance sustainable production, farm productivity, and direct market access for all member cooperative produce.&rdquo;
                 </p>
               </div>
 
@@ -172,8 +160,6 @@ function About() {
                 <a
                   href={companyProfilePdf}
                   download="MekiBatuUnion_CompanyProfile.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="btn btn--outline btn--sm"
                   title="Download Meki Batu Union Company Profile (PDF)"
                 >
@@ -192,7 +178,7 @@ function About() {
             <span className="label-caps label-caps--secondary mb-2 block">Governance &amp; Hierarchy</span>
             <h2 className="about-governance__title">Organizational Structure</h2>
             <p className="about-governance__desc">
-              Structured across three defined tiers of governance, executive leadership, and specialized departments to ensure operational excellence, member accountability, and sustainable growth.
+              Three-tier governance structure connecting general assembly oversight, executive management, and specialized operational departments.
             </p>
           </div>
 
@@ -203,30 +189,48 @@ function About() {
 
           {/* Leadership & Staff Grid */}
           <div className="about-governance__subheader mt-12 mb-6">
-            <h3 className="text-xl font-display font-semibold text-primary">Executive &amp; Operational Leadership</h3>
+            <h3 className="text-xl font-display font-semibold text-primary">Executive Leadership</h3>
+            <p className="text-sm text-muted mt-1">Union directors and department heads driving cooperative operations.</p>
           </div>
 
           <div className="about-governance__grid">
-            {TEAM.map((member, i) => (
+            {teamMembers.map((member, i) => (
               <Reveal
-                key={member.title}
+                key={member.id}
                 delay={stagger(i)}
-                className={`about-governance__card ${member.isStaffCard ? 'about-governance__card--staff' : ''}`}
+                className="about-governance__card-wrapper"
               >
-                <div className="about-governance__photo-wrap">
-                  <img
-                    src={member.photo}
-                    alt={member.name}
-                    className="about-governance__photo"
-                  />
-                  {member.isStaffCard && (
-                    <span className="about-governance__staff-badge">
-                      <span className="material-symbols-outlined text-xs">groups</span> Union Team
+                <div className="about-governance__card">
+                  <div className="about-governance__photo-wrap">
+                    <img
+                      src={member.photo}
+                      alt={`${member.name} - ${member.title}`}
+                      className="about-governance__photo"
+                      loading="lazy"
+                    />
+                    <span className="about-governance__role-badge">
+                      {member.department}
                     </span>
-                  )}
+                  </div>
+                  <div className="about-governance__card-body">
+                    <h3 className="about-governance__name">{member.name}</h3>
+                    <p className="label-caps label-caps--secondary text-xs mt-1">{member.title}</p>
+
+                    {member.email && (
+                      <div className="about-governance__contacts">
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="about-governance__contact-link"
+                          title={`Email ${member.name}: ${member.email}`}
+                          aria-label={`Email ${member.name} at ${member.email}`}
+                        >
+                          <span className="material-symbols-outlined about-governance__contact-icon">mail</span>
+                          <span className="about-governance__contact-text">{member.email}</span>
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <h3 className="about-governance__name">{member.name}</h3>
-                <p className="label-caps label-caps--secondary text-xs mt-1">{member.title}</p>
               </Reveal>
             ))}
           </div>
@@ -240,7 +244,7 @@ function About() {
             <span className="label-caps label-caps--secondary mb-2 block">Physical Backbone</span>
             <h2 className="about-infrastructure__title">Operational Facilities &amp; Fleet</h2>
             <p className="about-infrastructure__subtitle">
-              High-capacity cold storage, refrigerated transport, modern pack houses, and river-fed irrigation powering sustainable agriculture in the Great Rift Valley.
+              Cold storage hubs, refrigerated transport, certified pack houses, and river irrigation schemes across the Great Rift Valley.
             </p>
           </div>
 
@@ -262,49 +266,61 @@ function About() {
             <span className="label-caps label-caps--secondary mb-2 block">Strategic Ecosystem</span>
             <h2 className="about-partners__title">Partners &amp; Collaborations</h2>
             <p className="about-partners__subtitle">
-              Our impact is powered by trusted collaborations with international development agencies, national research centers, financial institutions, and agricultural regulatory bodies.
+              Strategic partnerships with development agencies, research institutions, and regulatory bodies.
             </p>
           </div>
 
           {/* 4-P Collaboration Model Cards */}
           <div className="about-model__grid mb-12">
             <Reveal delay={0} className="about-model__card">
-              <div className="about-model__icon-wrap">
-                <span className="material-symbols-outlined about-model__icon">science</span>
+              <div className="about-model__card-top">
+                <div className="about-model__icon-wrap">
+                  <span className="material-symbols-outlined about-model__icon">science</span>
+                </div>
+                <span className="about-model__step">Pillar 01</span>
               </div>
               <h3 className="about-model__title">Research &amp; Seed Trials</h3>
               <p className="about-model__desc">
-                Partnering with EIAR Melkasa and OARI Adami Tulu to breed, test, and multiply high-germination certified seed varieties.
+                Partnering with EIAR and OARI to test and multiply high-germination certified seed varieties.
               </p>
             </Reveal>
 
             <Reveal delay={100} className="about-model__card">
-              <div className="about-model__icon-wrap">
-                <span className="material-symbols-outlined about-model__icon">water_drop</span>
+              <div className="about-model__card-top">
+                <div className="about-model__icon-wrap">
+                  <span className="material-symbols-outlined about-model__icon">water_drop</span>
+                </div>
+                <span className="about-model__step">Pillar 02</span>
               </div>
               <h3 className="about-model__title">Landscape &amp; Sustainability</h3>
               <p className="about-model__desc">
-                Collaborating with Wetlands International and IDH on Central Rift Valley lake conservation and sustainable drip irrigation.
+                Collaborating with Wetlands International and IDH on Rift Valley conservation and drip irrigation.
               </p>
             </Reveal>
 
             <Reveal delay={200} className="about-model__card">
-              <div className="about-model__icon-wrap">
-                <span className="material-symbols-outlined about-model__icon">local_shipping</span>
+              <div className="about-model__card-top">
+                <div className="about-model__icon-wrap">
+                  <span className="material-symbols-outlined about-model__icon">local_shipping</span>
+                </div>
+                <span className="about-model__step">Pillar 03</span>
               </div>
               <h3 className="about-model__title">Cold-Chain &amp; Logistics</h3>
               <p className="about-model__desc">
-                Equipped with ATI refrigerated transport trucks and pack house precooling facilities to ensure zero post-harvest quality loss.
+                Equipped with ATI refrigerated fleet and pack house precooling to minimize post-harvest loss.
               </p>
             </Reveal>
 
             <Reveal delay={300} className="about-model__card">
-              <div className="about-model__icon-wrap">
-                <span className="material-symbols-outlined about-model__icon">flight_takeoff</span>
+              <div className="about-model__card-top">
+                <div className="about-model__icon-wrap">
+                  <span className="material-symbols-outlined about-model__icon">flight_takeoff</span>
+                </div>
+                <span className="about-model__step">Pillar 04</span>
               </div>
               <h3 className="about-model__title">Market Access &amp; Off-Taking</h3>
               <p className="about-model__desc">
-                Supplying Ethiopian Airlines Inflight Catering, European export buyers, and five dedicated retail stores in Addis Ababa.
+                Supplying Ethiopian Airlines Inflight Catering, European exporters, and Addis Ababa retail outlets.
               </p>
             </Reveal>
           </div>
@@ -318,9 +334,9 @@ function About() {
                 role="tab"
                 aria-selected={selectedCategory === category}
                 className={`about-partners__tab-btn ${selectedCategory === category ? 'about-partners__tab-btn--active' : ''}`}
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => handleCategoryChange(category)}
               >
-                {category}
+                <span>{category}</span>
                 <span className="about-partners__tab-count">
                   {category === PARTNER_CATEGORIES.ALL
                     ? partners.length
@@ -330,13 +346,18 @@ function About() {
             ))}
           </div>
 
-          {/* Filtered Partner Cards Grid */}
+          {/* Filtered Partner Cards Grid (Two-Tone Logo Stage Cards) */}
           <div className="about-partners__cards-grid">
             {filteredPartners.map((partner, index) => (
-              <Reveal key={partner.id} delay={Math.min(index * 60, 360)} className="about-partner-card-wrapper">
+              <Reveal
+                key={partner.id}
+                delay={Math.min(index * 50, 300)}
+                className={`about-partner-card-wrapper ${index >= 6 && !showAllPartners ? 'about-partner-card-wrapper--hidden' : ''}`}
+              >
                 <div className="about-partner-card">
-                  <div className="about-partner-card__header">
-                    <div className="about-partner-card__icon-badge">
+                  {/* Two-Tone Top Logo Stage */}
+                  <div className="about-partner-card__stage">
+                    <div className="about-partner-card__logo-wrap">
                       {partner.logo ? (
                         <img
                           src={partner.logo}
@@ -345,12 +366,15 @@ function About() {
                           loading="lazy"
                         />
                       ) : (
-                        <span className="material-symbols-outlined">{partner.icon}</span>
+                        <div className="about-partner-card__fallback-icon">
+                          <span className="material-symbols-outlined">{partner.icon}</span>
+                        </div>
                       )}
                     </div>
                     <span className="about-partner-card__tag">{partner.tag}</span>
                   </div>
 
+                  {/* Card Content Body */}
                   <div className="about-partner-card__body">
                     <div className="about-partner-card__meta">
                       <span className="about-partner-card__acronym">{partner.acronym}</span>
@@ -360,6 +384,7 @@ function About() {
                     <p className="about-partner-card__role">{partner.role}</p>
                   </div>
 
+                  {/* Card Footer */}
                   <div className="about-partner-card__footer">
                     {partner.impactHighlight && (
                       <div className="about-partner-card__highlight">
@@ -375,7 +400,7 @@ function About() {
                         className="about-partner-card__link"
                         title={`Visit ${partner.name} website`}
                       >
-                        <span>Visit</span>
+                        <span>Official Website</span>
                         <span className="material-symbols-outlined text-xs">open_in_new</span>
                       </a>
                     )}
@@ -384,6 +409,30 @@ function About() {
               </Reveal>
             ))}
           </div>
+
+          {/* Show All / Show Less Toggle Button (Desktop + Mobile) */}
+          {filteredPartners.length > 6 && (
+            <div className="about-partners__toggle">
+              <button
+                type="button"
+                className="about-partners__toggle-btn"
+                onClick={() => setShowAllPartners(!showAllPartners)}
+                aria-expanded={showAllPartners}
+              >
+                {showAllPartners ? (
+                  <>
+                    <span>Show fewer partners</span>
+                    <span className="material-symbols-outlined text-sm">expand_less</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Show all {filteredPartners.length} partners</span>
+                    <span className="material-symbols-outlined text-sm">expand_more</span>
+                  </>
+                )}
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </>

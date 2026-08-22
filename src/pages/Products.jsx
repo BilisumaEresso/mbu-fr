@@ -100,7 +100,7 @@ function Products() {
               <span className="label-caps label-caps--secondary mb-2 block">Crop Directory</span>
               <h2 className="products-catalog__title">Export &amp; Domestic Produce</h2>
               <p className="products-catalog__desc">
-                Cultivated by 8,089 member farmers across 135 primary cooperatives. Meets GlobalG.A.P international standards for full traceability, food safety, and premium export grading.
+                Cultivated across 135 cooperatives and 8,089 member farms, meeting GlobalG.A.P standards for full traceability, food safety, and export quality.
               </p>
             </div>
           </div>
@@ -354,12 +354,12 @@ function Products() {
       )}
 
       {/* ---- Harvest Calendar Table Section ---- */}
-      <section className="products-calendar section">
+      <section className="products-calendar section" id="calendar">
         <div className="container">
           <div className="products-calendar__header">
             <h2 className="products-calendar__title">Harvest Calendar</h2>
             <p className="products-calendar__desc">
-              Strategic planting cycles allow us to maintain a consistent supply of core commodities throughout the year. Data below reflects primary harvest windows.
+              Year-round production cycles powered by modern Rift Valley irrigation ensure steady export and domestic supply.
             </p>
           </div>
 
@@ -395,13 +395,13 @@ function Products() {
       </section>
 
       {/* ---- Partner CTA Banner — one Reveal ---- */}
-      <section className="products-cta section section--alt">
+      <section className="products-cta section section--alt" id="inquire">
         <div className="container">
           <Reveal className="products-cta__card">
             <div className="products-cta__info">
               <h2 className="products-cta__title">Partner with Meki Batu</h2>
               <p className="products-cta__desc">
-                We supply reliable, high-volume agricultural products to exporters, processing facilities, and regional markets. Contact our sales team for pricing and logistics.
+                Supplying bulk, certified produce to international exporters, processing facilities, and regional markets. Contact our sales team for pricing and logistics.
               </p>
             </div>
             <Link to="/buyers" className="btn btn--primary">

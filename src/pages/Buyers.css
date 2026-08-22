@@ -128,7 +128,7 @@
 .buyers-prop-card {
   background: var(--surface-container-lowest);
   border: none;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl, 20px);
   padding: var(--space-8);
   box-shadow: var(--shadow-sm);
   display: flex;
@@ -139,7 +139,7 @@
 .buyers-prop-card:hover {
   border: none;
   box-shadow: var(--shadow-hover);
-  transform: translateY(-2px) scale(var(--scale-hover));
+  transform: translateY(-3px) scale(var(--scale-hover));
 }
 
 .buyers-prop-card__icon {
@@ -194,7 +194,7 @@
   margin: 0 auto;
   background: var(--surface-container-lowest);
   border: none;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl, 20px);
   box-shadow: var(--shadow-md);
   padding: var(--space-8);
 

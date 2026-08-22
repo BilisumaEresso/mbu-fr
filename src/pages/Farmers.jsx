@@ -12,80 +12,80 @@ import './Farmers.css'
 
 const FARMERS_FAQ = [
   {
-    question: 'How do I join Meki Batu Union as a primary cooperative?',
+    question: 'How do primary cooperatives join Meki Batu Union?',
     answer:
-      'Primary cooperatives in our operating districts across East Shewa and Arsi zones — Dugda woreda, Adami Tulu Jido Kombolcha, Bora, Zuway Dugda, Adama, and Dodota Sire — can apply to join. Contact our membership office using the details on our Contact page to learn about eligibility and the application process.',
+      'Primary cooperatives in East Shewa and Arsi zones (Dugda, Adami Tulu, Bora, Zuway Dugda, Adama, and Dodota Sire) can apply by submitting registration documents and member rosters to our union secretariat.',
   },
   {
-    question: 'What support does the union provide to member cooperatives?',
+    question: 'What core support does the union provide members?',
     answer:
-      'We supply farm inputs at fair prices, help facilitate access to credit, share market information, provide mechanization and maintenance services, and offer training and technical advisory support.',
+      'We provide certified seed and fertilizer distribution, facilitated agricultural credit, tractor mechanization, cold-chain aggregation, and GlobalG.A.P agronomy training.',
   },
   {
-    question: 'How many cooperatives are currently part of the union?',
+    question: 'How many cooperatives and farmers are in the union?',
     answer:
-      'Meki Batu Union currently includes 135 primary cooperatives representing 8,089 member farmers.',
+      'Meki Batu Union unites 135 primary cooperatives representing 8,089 member farming households across 5,910 hectares.',
   },
   {
-    question: 'Is there a cost to join?',
+    question: 'What are the membership affiliation terms?',
     answer:
-      'Membership terms are discussed directly with applicants during the joining process — contact us for current details.',
+      'Membership criteria and capital share requirements are reviewed during the formal board assessment. Contact our office for current guidelines.',
   },
 ]
 
 const SERVICES = [
   {
     icon: 'local_shipping',
-    title: 'Input Supply Distribution',
-    desc: 'Reliable access to high-quality seeds, fertilizers, and essential agricultural inputs at cooperative rates.',
+    title: 'Input Distribution',
+    desc: 'High-germination certified seeds, fertilizers, and crop protection supplied at subsidized cooperative rates.',
   },
   {
     icon: 'account_balance',
-    title: 'Financial Services Support',
-    desc: 'Facilitated financing and micro-credit solutions designed specifically for agricultural cycle needs.',
+    title: 'Financial Credit Support',
+    desc: 'Facilitated micro-financing and seasonal credit lines tailored to member cropping cycles.',
   },
   {
     icon: 'storefront',
-    title: 'Market Linkage & Aggregation',
-    desc: 'Direct access to national wholesale markets, retail outlets, and international export contracts.',
+    title: 'Market Aggregation',
+    desc: 'Direct off-take agreements connecting member harvests with national retailers and international export buyers.',
   },
   {
     icon: 'precision_manufacturing',
-    title: 'Mechanization Support',
-    desc: 'Shared access to modern farming machinery, irrigation technology, and equipment maintenance.',
+    title: 'Farm Mechanization',
+    desc: 'Shared tractor services, river pump maintenance, and modern drip irrigation installation support.',
   },
   {
     icon: 'warehouse',
-    title: 'Storage & Cold Chain',
-    desc: 'Post-harvest handling facilities, warehouse management, and temperature-controlled storage.',
+    title: 'Cold Storage & Logistics',
+    desc: 'Post-harvest packhouse sorting, precooling, and temperature-controlled transport to eliminate spoilage.',
   },
   {
     icon: 'school',
-    title: 'Technical Training',
-    desc: 'Continuous education on GlobalG.A.P standards, organic farming practices, and cooperative management.',
+    title: 'Agronomy Training',
+    desc: 'Continuous extension services covering GlobalG.A.P compliance, soil health, and organic practices.',
   },
 ]
 
 const STEPS = [
   {
     number: '01',
-    title: 'Form a Primary Cooperative',
-    desc: 'Organize local farmers into a legally registered primary cooperative under local agricultural regulations.',
+    title: 'Register Primary Cooperative',
+    desc: 'Organize local farmers into a legally recognized primary cooperative under regional agricultural guidelines.',
   },
   {
     number: '02',
-    title: 'Submit Application',
-    desc: 'Provide the union with your registration documents, member roster, and formal request for union affiliation.',
+    title: 'Submit Documentation',
+    desc: 'Provide registration certificates, active member roster, and a formal letter requesting union affiliation.',
   },
   {
     number: '03',
-    title: 'Union Board Review',
-    desc: 'The Meki Batu Union board reviews the application and conducts a site assessment visit.',
+    title: 'Board Assessment',
+    desc: 'Union leadership conducts a field assessment of cooperative farm acreage, water access, and member alignment.',
   },
   {
     number: '04',
     title: 'Full Affiliation',
-    desc: 'Upon approval, your primary co-op gains full access to all union services, inputs, and export market linkages.',
+    desc: 'Gain immediate access to union inputs, machinery fleet, cold-chain packhouses, and direct export markets.',
   },
 ]
 
@@ -97,7 +97,7 @@ function Farmers() {
 
   function handleLoginClick() {
     showToast(
-      'Member Login is coming soon! Online portal access for member cooperatives is currently under development.',
+      'Member Login is under active development. Online portal features will launch in Phase 2.',
       'info'
     )
   }
@@ -115,14 +115,14 @@ function Farmers() {
       <PageHero
         breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'For Farmers' }]}
         title="Empowering Primary Cooperatives"
-        description="Meki Batu Union provides essential services, training, and market access to our network of primary cooperatives, ensuring sustainable growth and prosperity for Ethiopian farmers."
+        description="Meki Batu Union provides input supply, agronomy training, mechanization, and direct export linkages to 135 primary cooperatives and 8,089 farming families across the Great Rift Valley."
         actions={
           <>
             <a href="#services" className="btn btn--primary">
               Our Services <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
             <a href="#membership" className="btn btn--outline">
-              Learn More <span className="material-symbols-outlined text-sm">info</span>
+              How to Join <span className="material-symbols-outlined text-sm">info</span>
             </a>
           </>
         }
@@ -180,7 +180,7 @@ function Farmers() {
       </Reveal>
 
       {/* ---- Digital Member Portal Teaser — one Reveal ---- */}
-      <section className="farmers-portal section section--alt">
+      <section className="farmers-portal section section--alt" id="portal">
         <div className="container">
           <Reveal className="farmers-portal__card">
             <span className="material-symbols-outlined farmers-portal__icon">terminal</span>
@@ -189,7 +189,7 @@ function Farmers() {
               Phase 2 Development - Coming Soon
             </span>
             <p className="farmers-portal__desc">
-              We are developing a secure, centralized digital portal for our primary cooperatives. Soon, members will be able to access market prices, request inputs, view transaction histories, and manage their union accounts directly online.
+              A secure digital platform under active development for member cooperatives to track crop deliveries, access market prices, request inputs, and manage union accounts online.
             </p>
             <button
               type="button"

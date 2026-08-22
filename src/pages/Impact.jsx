@@ -54,7 +54,7 @@ function Impact() {
       <PageHero
         breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Impact' }]}
         title="Cultivating Growth, Sustaining Communities"
-        description="Our impact extends beyond agricultural output. We are dedicated to empowering farmers, fostering sustainable practices, and driving economic resilience across the Great Rift Valley."
+        description="Empowering 8,089 member farmers across 135 cooperatives with modern irrigation, inputs, and guaranteed market access across Ethiopia's Great Rift Valley."
         actions={
           <>
             <a href="#metrics" className="btn btn--primary">
@@ -78,7 +78,7 @@ function Impact() {
           <Reveal className="impact-metrics__header">
             <h2 className="impact-metrics__title">Measurable Impact</h2>
             <p className="impact-metrics__desc">
-              Key performance indicators reflecting our commitment to the cooperative network.
+              Key performance indicators reflecting cooperative strength, agricultural footprint, and community prosperity.
             </p>
           </Reveal>
 
@@ -107,7 +107,7 @@ function Impact() {
           <div className="impact-reports__sidebar">
             <h2 className="impact-reports__title">Reports &amp; Documentation</h2>
             <p className="impact-reports__desc">
-              Access our annual performance reviews, sustainability reports, and official certifications validating our global export standards.
+              Download our annual performance reviews, sustainability reports, and official GlobalG.A.P certifications.
             </p>
           </div>
 

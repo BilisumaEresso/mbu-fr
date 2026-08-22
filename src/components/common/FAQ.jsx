@@ -16,6 +16,7 @@ function FAQ({
   description,
   items = [],
   className = '',
+  id = 'faq',
 }) {
   const [openIndex, setOpenIndex] = useState(0) // Default first item open for immediate clarity
 
@@ -26,7 +27,7 @@ function FAQ({
   if (!items || items.length === 0) return null
 
   return (
-    <section className={`faq-section section section--alt ${className}`.trim()}>
+    <section id={id} className={`faq-section section section--alt ${className}`.trim()}>
       <div className="container">
         <Reveal className="faq-section__header">
           <h2 className="faq-section__title">{title}</h2>

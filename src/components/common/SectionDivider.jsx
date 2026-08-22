@@ -1,10 +1,9 @@
-import waterFlow from '../../assets/motifs/water-flow.svg'
 import './SectionDivider.css'
 
-export default function SectionDivider() {
+export default function SectionDivider({ className = '' }) {
   return (
-    <div className="section-divider" aria-hidden="true">
-      <img src={waterFlow} alt="" />
+    <div className={`section-divider ${className}`.trim()} aria-hidden="true">
+      <div className="section-divider__line" />
     </div>
   )
 }

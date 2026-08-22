@@ -52,7 +52,7 @@
   background: var(--surface-container-lowest);
   border: none;
   box-shadow: var(--shadow-sm);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl, 20px);
   padding: var(--space-8);
 }
 
@@ -75,7 +75,7 @@
 }
 
 .contact-info-media {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl, 20px);
   overflow: hidden;
   border: none;
   box-shadow: var(--shadow-md);
@@ -102,7 +102,7 @@
   background: var(--surface-container-lowest);
   border: none;
   box-shadow: var(--shadow-md);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl, 20px);
   padding: var(--space-8);
 
   @media (min-width: 768px) {
@@ -142,7 +142,7 @@
 .contact-map__card {
   position: relative;
   height: 380px;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl, 20px);
   overflow: hidden;
   border: none;
   box-shadow: var(--shadow-md);
@@ -165,12 +165,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(252, 249, 248, 0.92);
-  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-full);
   border: none;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   display: flex;
   align-items: center;
   gap: var(--space-2);

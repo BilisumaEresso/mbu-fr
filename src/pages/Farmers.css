@@ -129,7 +129,7 @@
 .farmers-service-card {
   background: var(--surface-container-lowest);
   border: none;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl, 20px);
   padding: var(--space-8);
   box-shadow: var(--shadow-sm);
   transition: var(--transition-card);
@@ -138,7 +138,7 @@
 .farmers-service-card:hover {
   background: var(--surface-container-lowest);
   box-shadow: var(--shadow-hover);
-  transform: translateY(-2px) scale(var(--scale-hover));
+  transform: translateY(-3px) scale(var(--scale-hover));
 }
 
 .farmers-service-card__icon {
@@ -216,14 +216,14 @@
   border-radius: 50%;
   background: var(--primary-container);
   color: var(--on-primary);
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 6px rgba(23, 49, 36, 0.15);
 }
 
 .farmers-step__title {
@@ -243,7 +243,7 @@
 
 .farmers-membership__media {
   grid-column: 1 / -1;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl, 20px);
   overflow: hidden;
   border: none;
   box-shadow: var(--shadow-md);
@@ -267,7 +267,7 @@
   border: none;
   background: var(--surface-container-lowest);
   box-shadow: var(--shadow-md);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl, 20px);
   padding: var(--space-8);
   text-align: center;
 

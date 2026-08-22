@@ -1,0 +1,68 @@
+{
+  "staff": [
+    {
+      "filename": "kumesa_gudina.webp",
+      "name": "Kumesa Gudina",
+      "position": "General Manager",
+      "phone": "+251904686868",
+      "email": "kumesa.gudina@mekibatuunion.org",
+      "source": "photo_1_2026-08-22_07-37-40.jpg"
+    },
+    {
+      "filename": "ashenafi_roba.webp",
+      "name": "Ashenafi Roba",
+      "position": "Deputy Manager",
+      "phone": "+251909343434",
+      "email": "ashenafi.roba@mekibatuunion.org",
+      "source": "photo_2_2026-08-22_07-37-40.jpg"
+    },
+    {
+      "filename": "biyo_uke.webp",
+      "name": "Biyo Uke",
+      "position": "Lawyer",
+      "phone": "+251911841941",
+      "email": "biyo.uke@mekibatuunion.org",
+      "source": "photo_biyo_uke.jpg"
+    },
+    {
+      "filename": "geleta_diriba.webp",
+      "name": "Geleta Diriba",
+      "position": "Preparing plan, evaluating and budgeting senior expert",
+      "phone": "+251921759054",
+      "email": "geleta.diriba@mekibatuunion.org",
+      "source": "photo_8_2026-08-22_07-37-40.jpg"
+    },
+    {
+      "filename": "megarso_ebso.webp",
+      "name": "Megarso Ebso",
+      "position": "Agriculture and Farmer Service Center Department Head",
+      "phone": "+251913404379",
+      "email": "megarso.ebso@mekibatuunion.org",
+      "source": "photo_6_2026-08-22_07-37-40.jpg"
+    },
+    {
+      "filename": "lencho_hamde.webp",
+      "name": "Lencho Hamde",
+      "position": "Marketing Department Head",
+      "phone": "+251916103712",
+      "email": "lencho.hamde@mekibatuunion.org",
+      "source": "photo_3_2026-08-22_07-37-40.jpg"
+    },
+    {
+      "filename": "ereso_ambaso.webp",
+      "name": "Ereso Ambaso",
+      "position": "Human Resource Management and General Service Department Head",
+      "phone": "+251913961808",
+      "email": "ereso.ambaso@mekibatuunion.org",
+      "source": "photo_4_2026-08-22_07-37-40.jpg"
+    },
+    {
+      "filename": "sisay_yadesa.webp",
+      "name": "Sisay Yadesa",
+      "position": "Finance and Procurement Department Head",
+      "phone": "+251910223584",
+      "email": "sisay.yadesa@mekibatuunion.org",
+      "source": "photo_5_2026-08-22_07-37-40.jpg"
+    }
+  ]
+}

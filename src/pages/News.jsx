@@ -61,7 +61,7 @@ function News() {
         breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'News' }]}
         eyebrow="Updates & Announcements"
         title="News & Updates"
-        description="Stay informed with the latest reports on harvests, community initiatives, and global partnerships from Meki Batu Union."
+        description="Latest updates on harvests, farmer development initiatives, and global partnership milestones from Meki Batu Union."
         rightContent={
           <div className="news-search-box">
             <input
@@ -78,7 +78,7 @@ function News() {
 
       <SectionDivider />
 
-      <div className="container" style={{ paddingTop: 'var(--space-6)' }}>
+      <div className="container" style={{ paddingTop: 'var(--space-6)' }} id="articles">
         {/* Top Featured Row (8-col + 4-col) */}
         {featuredLarge && featuredSmall && (
           <section className="news-featured-row">

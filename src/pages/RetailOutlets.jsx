@@ -30,7 +30,7 @@ function RetailOutlets() {
       <PageHero
         breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Retail Outlets' }]}
         title="Direct from Our Farms to You."
-        description="Meki Batu Union operates five dedicated retail outlets across Addis Ababa, ensuring urban consumers have direct access to the freshest, sustainably grown produce from our cooperative farmers."
+        description="Meki Batu Union operates five official retail stores across Addis Ababa, providing urban households with fresh, daily harvested produce directly from member farms."
         actions={
           <>
             <a href="#locations" className="btn btn--primary">
@@ -54,7 +54,7 @@ function RetailOutlets() {
           <div className="outlets-locations__header">
             <h2 className="outlets-locations__title">Find an Outlet</h2>
             <p className="outlets-locations__desc">
-              Tap any location below to view branch details, manager contacts, and exact Google Maps navigation.
+              Browse store locations below to check opening hours, view produce specialties, and get instant Google Maps navigation.
             </p>
           </div>
 

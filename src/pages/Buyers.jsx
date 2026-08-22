@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { useSearchParams, Link } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
@@ -10,35 +10,35 @@ import ProcessTimeline from '../components/common/ProcessTimeline.jsx'
 import { useToast } from '../hooks/useToast.js'
 import { validateFields } from '../utils/validateForm.js'
 import buyerHeroImg from '../assets/images/heroes/buyerHero.webp'
-import companyProfilePdf from '../assets/downloads/MekiBatuUnion_CompanyProfile.pdf'
+import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
 import './InnerPage.css'
 import './Buyers.css'
 
 const BUYERS_FAQ = [
   {
-    question: 'What products can we source from Meki Batu Union?',
+    question: 'What commodities are available for export sourcing?',
     answer:
-      'We supply tomato, onion, pepper, potato, cabbage, and green beans, along with papaya and watermelon, plus certified bean, onion, and maize seed. See our Products page for the full list.',
+      'We supply export-grade Rift Valley tomatoes, red onions, green peppers, highland potatoes, cabbage, green beans, fresh papaya, and certified hybrid seeds.',
   },
   {
-    question: 'Is your produce certified?',
+    question: 'What certifications back Meki Batu Union produce?',
     answer:
-      'Yes — Meki Batu Union is GlobalG.A.P certified and a licensed certified seed producer under Ethiopia\'s Seed Proclamation. We meet international standards for food safety, traceability, and sustainable farming practice.',
+      'Our crops are GlobalG.A.P certified with full farm-gate traceability. We are also a licensed seed producer under Ethiopian national standards.',
   },
   {
-    question: 'Do you export outside Ethiopia?',
+    question: 'Which international markets do you currently supply?',
     answer:
-      'Yes, we currently export to markets in Europe, in addition to supplying five retail outlets in Addis Ababa.',
+      'We supply European export markets via air freight, as well as Ethiopian Airlines Inflight Catering and wholesale buyers in East Africa.',
   },
   {
-    question: 'How do I request a quote or place an inquiry?',
+    question: 'How do I request a tailored volume quote?',
     answer:
-      'Use the Request a Quote form on this page with your product interest, estimated volume, and destination — our team will follow up directly.',
+      'Submit the inquiry form on this page with your required commodity, tonnage, and destination. Our export team responds within 24 hours.',
   },
   {
-    question: 'What is your minimum order quantity?',
+    question: 'What are the minimum order quantities (MOQ)?',
     answer:
-      "This varies by product and season — please reach out via the quote form or WhatsApp and we'll confirm current minimums for your specific order.",
+      'MOQs depend on commodity perishability and seasonal windows. Contact us with your delivery schedule for custom volume terms.',
   },
 ]
 
@@ -46,20 +46,20 @@ const VALUE_PROPS = [
   {
     icon: 'verified',
     title: 'Certified Quality',
-    desc: 'Adhering to strict international standards including GlobalG.A.P and Organic certifications, ensuring every shipment meets premium market requirements.',
+    desc: 'Strict compliance with GlobalG.A.P and Ethiopian seed standards, ensuring full traceability from farm gate to destination ports.',
     tags: ['GAP', 'ORG'],
     iconColor: 'primary',
   },
   {
     icon: 'inventory_2',
-    title: 'Consistent Volume',
-    desc: 'With 135 primary cooperatives and 8,089 member farmers in our network, we provide reliable, large-scale supply capacities throughout the harvest seasons to meet your operational demands.',
+    title: 'Reliable Supply Volume',
+    desc: '135 member cooperatives across 5,910 irrigated hectares provide consistent, high-tonnage supply throughout harvest seasons.',
     iconColor: 'secondary',
   },
   {
     icon: 'language',
-    title: 'Export Experience',
-    desc: 'Decades of experience navigating international logistics, customs, and global market expectations, ensuring smooth end-to-end delivery.',
+    title: 'Export-Grade Logistics',
+    desc: 'Refrigerated fleet transport and central packhouse precooling maintain optimal cold-chain integrity for international air freight.',
     iconColor: 'primary',
   },
 ]
@@ -186,8 +186,6 @@ function Buyers() {
             <a
               href={companyProfilePdf}
               download="MekiBatuUnion_CompanyProfile.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
               className="btn btn--outline"
               title="Download Meki Batu Union Company Profile (PDF)"
             >
@@ -203,7 +201,7 @@ function Buyers() {
       <SectionDivider />
 
       {/* ---- Value Props (Why Source From Us) ---- */}
-      <section className="buyers-props section section--alt">
+      <section className="buyers-props section section--alt" id="why-us">
         <div className="container">
           <h2 className="buyers-props__heading">Why Source From Us</h2>
           <div className="buyers-props__grid">

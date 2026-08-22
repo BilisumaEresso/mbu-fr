@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { teamMembers } from '../../data/team.js'
 import './OrgChart.css'
 
 const ORG_DATA = {
@@ -227,6 +228,7 @@ export default function OrgChart() {
     : []
 
   const activeNode = activeId ? ORG_DATA[activeId] : null
+  const appointedLeader = activeId ? teamMembers.find((m) => m.orgId === activeId) : null
 
   const handleNodeClick = (id) => {
     if (activeId === id) {
@@ -699,6 +701,35 @@ export default function OrgChart() {
                     <p className="org-inspector-panel__sub">{activeNode.sub}</p>
                   </div>
                 </div>
+
+                {appointedLeader && (
+                  <div className="org-inspector-panel__leader">
+                    <div className="org-inspector-panel__leader-photo-wrap">
+                      <img
+                        src={appointedLeader.photo}
+                        alt={appointedLeader.name}
+                        className="org-inspector-panel__leader-photo"
+                      />
+                    </div>
+                    <div className="org-inspector-panel__leader-info">
+                      <span className="org-inspector-panel__leader-tag">Appointed Leadership</span>
+                      <h5 className="org-inspector-panel__leader-name">{appointedLeader.name}</h5>
+                      <p className="org-inspector-panel__leader-title">{appointedLeader.title}</p>
+                      {appointedLeader.email && (
+                        <div className="org-inspector-panel__leader-contacts">
+                          <a
+                            href={`mailto:${appointedLeader.email}`}
+                            className="org-inspector-panel__leader-link"
+                            title={`Email ${appointedLeader.name}`}
+                          >
+                            <span className="material-symbols-outlined text-xs">mail</span>
+                            <span>{appointedLeader.email}</span>
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
 
                 <p className="org-inspector-panel__desc">{activeNode.desc}</p>
               </div>

@@ -103,13 +103,13 @@ function Contact() {
       <PageHero
         breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Contact' }]}
         title="Get in Touch with Meki Batu Union"
-        description="We welcome inquiries from global partners, local stakeholders, and farmers. Our team is ready to discuss agricultural exports, cooperative membership, and sustainable farming initiatives in the Great Rift Valley."
+        description="Get in touch with our headquarters team in Meki for agricultural export partnerships, cooperative membership, wholesale supply, or general inquiries."
       />
 
       <SectionDivider />
 
       {/* ---- Contact Form & Info Grid ---- */}
-      <section className="contact-main section section--alt">
+      <section className="contact-main section section--alt" id="inquiry">
         <div className="container contact-main__grid">
           {/* Info Sidebar Column (Reveal delay 0ms) */}
           <Reveal delay={0} className="contact-info-col">
@@ -277,7 +277,7 @@ function Contact() {
       </section>
 
       {/* ---- Regional Map Section ---- */}
-      <section className="contact-map section">
+      <section className="contact-map section" id="map">
         <div className="container">
           <Reveal>
             <a

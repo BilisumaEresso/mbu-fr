@@ -77,11 +77,13 @@ function ProcessTimeline({
   className = '',
   compact = false,
   header = null,
+  id = 'process',
 }) {
   if (!steps || steps.length === 0) return null
 
   return (
     <section
+      id={id}
       className={`process-timeline section section--alt${compact ? ' process-timeline--compact' : ''} ${className}`.trim()}
       aria-label="Supply Chain Process"
     >

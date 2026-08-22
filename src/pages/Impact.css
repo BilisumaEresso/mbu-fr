@@ -3,6 +3,9 @@
 /* ---- Measurable Impact — brand-moment dark green band ---- */
 .impact-metrics {
   background-color: var(--color-primary);
+  background-image:
+    radial-gradient(ellipse 60% 50% at 90% 10%, rgba(157, 67, 32, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 10% 90%, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
   overflow: hidden;
 }
 
@@ -57,8 +60,10 @@
  * Override padding, box-sizing, and font clamping to fit all viewports cleanly.
  */
 .impact-metrics .stat-card {
-  background-color: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.14);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: var(--radius-xl, 20px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   padding: var(--space-4) var(--space-2);
   box-sizing: border-box;
   min-width: 0;
@@ -95,9 +100,10 @@
 
 /* Farmer photo row — sits below stats, still within the green band */
 .impact-metrics__photo {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl, 20px);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: none;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   max-height: 340px;
 }
 
@@ -163,7 +169,8 @@
   gap: var(--space-3);
   padding: var(--space-6);
   background: var(--surface-container-lowest);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl, 20px);
+  border: none;
   box-shadow: var(--shadow-sm);
   margin-bottom: var(--space-3);
   transition: var(--transition-card);
@@ -171,7 +178,7 @@
 
 .impact-report-item:hover {
   box-shadow: var(--shadow-hover);
-  transform: translateY(-2px) scale(var(--scale-hover));
+  transform: translateY(-3px) scale(var(--scale-hover));
 }
 
 @media (min-width: 640px) {
@@ -201,4 +208,17 @@
   align-items: center;
   gap: var(--space-2);
   white-space: nowrap;
+  background: var(--surface-container-low);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.impact-report-item:hover .impact-report-item__download {
+  background: var(--color-primary);
+  color: var(--on-primary);
+}
+
+.impact-report-item:hover .impact-report-item__download .label-caps {
+  color: var(--on-primary);
 }

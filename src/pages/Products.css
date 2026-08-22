@@ -145,8 +145,8 @@
   padding: 6px 8px;
   background: var(--surface-container-lowest, #ffffff);
   border-radius: 100px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  border: none;
+  box-shadow: 0 4px 18px rgba(23, 49, 36, 0.06);
 }
 
 .products-toolbar__tabs {
@@ -257,10 +257,10 @@
 
 .product-item-card {
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: var(--radius-xl, 20px);
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 4px 18px -2px rgba(10, 24, 18, 0.04);
+  border: none;
+  box-shadow: var(--shadow-sm);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
@@ -268,8 +268,8 @@
 }
 
 .product-item-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 40px -4px rgba(10, 24, 18, 0.12), 0 0 0 1px rgba(34, 112, 69, 0.25);
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: var(--shadow-hover);
 }
 
 /* Card Media Header */
@@ -387,10 +387,11 @@
   flex-wrap: wrap;
   align-items: baseline;
   gap: 6px;
-  padding: 6px 10px;
+  padding: 6px 12px;
   background: var(--surface-container-low, #f6f3f2);
-  border-radius: var(--radius-sm, 4px);
-  border: 1px solid var(--outline-variant, #c2c8c2);
+  border-radius: var(--radius-sm, 6px);
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   font-size: 12.5px;
   line-height: 1.4;
 }
@@ -658,7 +659,7 @@
   height: 44px;
   border-radius: 50%;
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: none;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   display: flex;
   align-items: center;
@@ -845,7 +846,8 @@
   padding: 14px 18px;
   background: var(--surface-container-low, #f6f3f2);
   border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
   transition: all var(--transition-fast, 0.2s ease);
 }
 
@@ -857,7 +859,8 @@
 .product-spec-card--full {
   grid-column: 1 / -1;
   background: #f4f8f5;
-  border-color: rgba(34, 112, 69, 0.15);
+  border: none;
+  box-shadow: 0 1px 4px rgba(34, 112, 69, 0.08);
 }
 
 .product-spec-card__icon {
@@ -908,7 +911,8 @@
   padding: 14px 18px;
   background: #fbfbfb;
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
 .product-modal-perk {

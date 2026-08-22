@@ -44,7 +44,8 @@
   height: 44px;
   border-radius: var(--radius-full);
   background-color: var(--surface-container-lowest);
-  border: 1px solid var(--outline-variant);
+  border: none;
+  box-shadow: var(--shadow-sm);
   color: var(--color-primary);
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -53,7 +54,7 @@
 .testimonials-slider__btn:hover {
   background-color: var(--color-primary);
   color: var(--color-bg);
-  border-color: var(--color-primary);
+  box-shadow: var(--shadow-hover);
   transform: translateY(-2px);
 }
 
@@ -128,10 +129,10 @@
   letter-spacing: 0.04em;
   color: var(--color-text-muted);
   background: var(--surface-container-low);
-  border: 1px solid var(--outline-variant);
+  border: none;
+  box-shadow: 0 1px 3px rgba(23, 49, 36, 0.05);
   padding: 2px 8px;
   border-radius: var(--radius-sm);
-  opacity: 0.85;
 }
 
 .testimonial-card__rating {

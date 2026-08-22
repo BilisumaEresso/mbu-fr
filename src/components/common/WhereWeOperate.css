@@ -64,12 +64,18 @@
 
 /* Map panel — holds the iframe */
 .where-operate__map-panel {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl, 20px);
   overflow: hidden;
-  border: 1px solid var(--outline-variant);
+  border: none;
+  box-shadow: var(--shadow-md);
   background: var(--surface-container-lowest);
   min-height: 320px;
   aspect-ratio: 4 / 3;
+  transition: var(--transition-card);
+}
+
+.where-operate__map-panel:hover {
+  box-shadow: var(--shadow-hover);
 }
 
 @media (min-width: 768px) {

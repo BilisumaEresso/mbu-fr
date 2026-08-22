@@ -34,7 +34,7 @@ import teamMember5 from '../assets/images/team/team_member_5.webp'
 /* ── downloads & data ── */
 import companyProfilePdf from '../assets/downloads/MekiBatuUnion_CompanyProfile.pdf'
 import { news } from '../data/news.js'
-import { partners, PARTNER_CATEGORIES } from '../data/partners.js'
+import { partners } from '../data/partners.js'
 import { resources } from '../data/resources.js'
 import ResourceCard from '../components/common/ResourceCard.jsx'
 import './Home.css'
@@ -156,14 +156,14 @@ function Home() {
       </Helmet>
 
       {/* 1. Hero Section (enhanced — multi-photo crossfade, video-ready) */}
-      <section className="home-hero">
+      <section id="hero" className="home-hero">
         <div className="container home-hero__grid">
           <Reveal className="home-hero__content">
             <h1 className="home-hero__title">
               Trusted Ethiopian fruit &amp; vegetable cooperative since 2002.
             </h1>
             <p className="home-hero__desc">
-              Empowering 135 primary cooperatives and 8,089 member farmers across the Great Rift Valley. Delivering sustainable, export-quality produce to the world.
+              Empowering 135 primary cooperatives and 8,089 member farmers across the Great Rift Valley to deliver sustainable, export-quality produce worldwide.
             </p>
             <div className="home-hero__actions">
               <Button to="/products" variant="primary">
@@ -186,24 +186,39 @@ function Home() {
         </div>
       </section>
 
-      {/* Video-ready Modal */}
+      {/* Hero Video Story Modal */}
       {showStoryModal && (
         <div className="hero-crossfade__modal-backdrop" onClick={() => setShowStoryModal(false)}>
           <div className="hero-crossfade__modal" onClick={(e) => e.stopPropagation()}>
-            <span className="material-symbols-outlined hero-crossfade__modal-icon">movie</span>
-            <h3 className="hero-crossfade__modal-text">Our story video is coming soon</h3>
-            <Button variant="primary" onClick={() => setShowStoryModal(false)}>
-              Dismiss
-            </Button>
+            <div className="hero-crossfade__modal-header">
+              <h3 className="hero-crossfade__modal-title">Our Story &bull; Meki Batu Union</h3>
+              <button
+                type="button"
+                className="hero-crossfade__modal-close"
+                onClick={() => setShowStoryModal(false)}
+                aria-label="Close story video"
+              >
+                <span className="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div className="hero-crossfade__video-wrap">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/6GAUQu7QsCc?autoplay=1&rel=0"
+                title="Meki Batu Union Story Video"
+                className="hero-crossfade__video-iframe"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
       )}
 
-      {/* Section Divider (kept sparingly per original design pattern) */}
+      {/* Section Divider */}
       <SectionDivider />
 
-      {/* 2. Stats bar (existing, unchanged) */}
-      <section className="home-stats section">
+      {/* 2. Stats bar */}
+      <section id="stats" className="home-stats section">
         <div className="container">
           <div className="home-stats__grid">
             {STATS.map((s, i) => (
@@ -215,34 +230,19 @@ function Home() {
         </div>
       </section>
 
-      {/* 3. Where We Operate (new) */}
-      <WhereWeOperate />
+      {/* 3. Where We Operate */}
+      <div id="where-we-operate">
+        <WhereWeOperate />
+      </div>
 
-      {/* 4. Certifications & Compliance */}
-      <section className="home-cert">
-        <div className="container">
-          <Reveal className="home-cert__band">
-            <div className="home-cert__dots" aria-hidden="true" />
-            <div className="home-cert__header">
-              <span className="label-caps home-cert__eyebrow">Certifications &amp; Compliance</span>
-              <h3 className="home-cert__title">Our Credentials</h3>
-              <p className="home-cert__desc">
-                Verified by international and national authorities for food safety, sustainable farming, and certified seed production.
-              </p>
-            </div>
-            <Certifications />
-          </Reveal>
-        </div>
-      </section>
-
-      {/* 5. Featured products (existing, unchanged) */}
-      <section className="home-bento section">
+      {/* 4. Featured products */}
+      <section id="products" className="home-bento section">
         <div className="container">
           <div className="home-bento__header">
             <div>
               <h2 className="home-bento__title">Export Quality Produce</h2>
               <p className="home-bento__desc">
-                Sourced directly from our member cooperatives, ensuring freshness, quality, and fair trade.
+                Fresh produce sourced directly from our member cooperatives, ensuring quality and fair trade.
               </p>
             </div>
             <Link to="/products" className="home-bento__link desktop-only">
@@ -300,7 +300,7 @@ function Home() {
       </section>
 
       {/* 6. Our Process — From Farm to Export */}
-      <section className="home-process">
+      <section id="process" className="home-process">
         <div className="container">
           <Reveal>
             <div className="home-process__card">
@@ -309,37 +309,77 @@ function Home() {
 
               <div className="home-process__header">
                 <div>
-                  <span className="label-caps home-process__eyebrow">Quality &amp; Logistics</span>
+                  <div className="home-process__badge-wrap">
+                    <span className="material-symbols-outlined text-xs">schema</span>
+                    <span className="label-caps home-process__eyebrow">Quality &amp; Logistics Pipeline</span>
+                  </div>
                   <h2 className="home-process__title">From Farm to Export</h2>
                   <p className="home-process__subtitle">
-                    From 135 primary cooperatives through our pack house to domestic and export markets.
+                    Integrated sorting, cleaning, cold-chain stabilization, and certified air freight from 135 cooperatives to global markets.
                   </p>
                 </div>
                 <Link to="/buyers" className="home-process__cta">
-                  See full process <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  <span>Explore full specifications</span>
+                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </Link>
               </div>
 
+              {/* Steps Container */}
               <div className="home-process__steps">
+                {/* Horizontal line segments for Desktop */}
                 <div className="home-process__seg home-process__seg--1" aria-hidden="true" />
                 <div className="home-process__seg home-process__seg--2" aria-hidden="true" />
                 <div className="home-process__seg home-process__seg--3" aria-hidden="true" />
 
+                {/* Vertical connected timeline track for Mobile */}
+                <div className="home-process__mobile-spine" aria-hidden="true" />
+
                 {[
-                  { num: '01', icon: 'verified', title: 'Grading', desc: 'Intake inspection and multi-tier grade calibration from 135 primary cooperatives.' },
-                  { num: '02', icon: 'inventory_2', title: 'Processing', desc: 'Field heat removal and post-harvest batch stabilization at the union pack house.' },
-                  { num: '03', icon: 'sanitizer', title: 'Cleaning', desc: 'Sanitary washing and residue compliance strictly meeting GlobalG.A.P standards.' },
-                  { num: '04', icon: 'local_shipping', title: 'Packing', desc: 'Packed into ventilated cartons and shipped to five Addis Ababa outlets or European export markets.' },
+                  {
+                    num: '01',
+                    icon: 'verified',
+                    title: 'Grading & Intake',
+                    tag: 'Field Intake',
+                    desc: 'Rigorous physical intake inspection, moisture checks, and grade calibration at primary member cooperatives.',
+                  },
+                  {
+                    num: '02',
+                    icon: 'ac_unit',
+                    title: 'Cold Stabilization',
+                    tag: 'Pack House',
+                    desc: 'Rapid field heat removal, hydro-cooling, and temperature-controlled batch staging at our central union hub.',
+                  },
+                  {
+                    num: '03',
+                    icon: 'sanitizer',
+                    title: 'Sanitary Cleaning',
+                    tag: 'GlobalG.A.P',
+                    desc: 'Food-safe sanitizing wash lines, organic residue filtration, and GlobalG.A.P compliant sorting protocols.',
+                  },
+                  {
+                    num: '04',
+                    icon: 'local_shipping',
+                    title: 'Export Packing',
+                    tag: 'Global Freight',
+                    desc: 'Ventilated export cartons and refrigerated reefer dispatch to Ethiopian Airlines air cargo & regional markets.',
+                  },
                 ].map((step, i) => (
-                  <Reveal key={step.num} delay={i * 120} className="home-process__step">
+                  <Reveal key={step.num} delay={i * 90} className="home-process__step">
                     <div className="home-process__node">
                       <div className="home-process__circle">
                         <span className="material-symbols-outlined home-process__icon">{step.icon}</span>
                       </div>
                       <span className="home-process__num">Step {step.num}</span>
                     </div>
-                    <h3 className="home-process__step-title">{step.title}</h3>
-                    <p className="home-process__step-desc">{step.desc}</p>
+
+                    <div className="home-process__content">
+                      <div className="home-process__meta">
+                        <span className="home-process__tag">{step.tag}</span>
+                        <span className="home-process__mobile-step-num">STAGE {step.num}</span>
+                      </div>
+                      <h3 className="home-process__step-title">{step.title}</h3>
+                      <p className="home-process__step-desc">{step.desc}</p>
+                    </div>
                   </Reveal>
                 ))}
               </div>
@@ -348,8 +388,8 @@ function Home() {
         </div>
       </section>
 
-      {/* 7. Facilities & Infrastructure — Minimal Photo Showcase */}
-      <section className="home-resources-infra section" aria-label="Facilities and Infrastructure">
+      {/* 7. Facilities & Infrastructure */}
+      <section id="facilities" className="home-resources-infra section" aria-label="Facilities and Infrastructure">
         <div className="container">
           <Reveal>
             <div className="home-resources-infra__header">
@@ -357,7 +397,7 @@ function Home() {
                 <span className="label-caps label-caps--secondary mb-2 block">Operational Backbone</span>
                 <h2 className="home-resources-infra__title">Facilities &amp; Fleet</h2>
                 <p className="home-resources-infra__desc">
-                  Modern cold storage hubs, refrigerated transport trucks, certified pack houses, and lake irrigation schemes powering our harvest.
+                  Cold storage hubs, refrigerated transport, certified pack houses, and lake irrigation schemes.
                 </p>
               </div>
               <Link to="/about#infrastructure" className="btn btn--outline btn--sm home-resources-infra__cta">
@@ -376,15 +416,15 @@ function Home() {
         </div>
       </section>
 
-      {/* 7. Two-audience split (existing, unchanged) */}
-      <section className="home-audience section">
+      {/* 8. Two-audience split */}
+      <section id="audience" className="home-audience section">
         <div className="container">
           <div className="home-audience__grid">
             <Reveal className="home-audience__card" delay={0}>
               <span className="material-symbols-outlined home-audience__icon">group</span>
               <h2 className="home-audience__card-title">For member cooperatives</h2>
               <p className="home-audience__card-desc">
-                Access agricultural inputs, training, and direct market linkages. Supporting 8,089 member farmers across 135 primary cooperatives to improve yields and ensure sustainable livelihoods.
+                Access certified inputs, technical training, and direct market access for 8,089 farmers across 135 cooperatives.
               </p>
               <Link to="/farmers" className="home-audience__link">
                 Join the union <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -395,7 +435,7 @@ function Home() {
               <span className="material-symbols-outlined home-audience__icon">local_shipping</span>
               <h2 className="home-audience__card-title">For buyers &amp; exporters</h2>
               <p className="home-audience__card-desc">
-                Source reliable, certified, and traceable produce directly from the heart of Ethiopia's agricultural hub. Consistent quality and volume guaranteed.
+                Source reliable, GlobalG.A.P certified, fully traceable produce directly from Ethiopia's Great Rift Valley.
               </p>
               <Link to="/buyers" className="home-audience__link">
                 Partner with us <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -405,14 +445,14 @@ function Home() {
         </div>
       </section>
 
-      {/* 8. Certifications showcase (existing) */}
-      <section className="home-cert-band section section--alt" aria-label="Certifications and Accreditations">
+      {/* 8. Certifications showcase */}
+      <section id="certifications" className="home-cert-band section section--alt" aria-label="Certifications and Accreditations">
         <div className="container">
           <Reveal className="home-cert-band__header text-center">
             <span className="label-caps label-caps--secondary mb-2 block">Verified Excellence</span>
             <h2 className="home-cert-band__title">Certified Standards &amp; Traceability</h2>
             <p className="home-cert-band__desc">
-              Independent third-party certifications assuring food safety, sustainable farming practices, and official seed producer authorization.
+              Independent accreditations guaranteeing food safety, sustainable practices, and authorized seed production.
             </p>
           </Reveal>
           <Reveal delay={90}>
@@ -421,8 +461,8 @@ function Home() {
         </div>
       </section>
 
-      {/* 9. Partners & Collaborations — Full-Width Edge-to-Edge Showcase */}
-      <section className="home-partners" aria-label="Complete Partner Directory">
+      {/* 10. Partners & Collaborations */}
+      <section id="partners" className="home-partners" aria-label="Complete Partner Directory">
         <div className="container">
           <Reveal className="home-partners__header text-center">
             <span className="label-caps home-partners__eyebrow">
@@ -430,7 +470,7 @@ function Home() {
             </span>
             <h2 className="home-partners__title">Complete Partner Directory</h2>
             <p className="home-partners__desc">
-              Explore all partner organizations supporting Meki Batu Union across research, trade, logistics, and farmer empowerment.
+              Key institutional and commercial partners supporting our research, cold chain, and export development.
             </p>
           </Reveal>
         </div>
@@ -487,11 +527,13 @@ function Home() {
         </div>
       </section>
 
-      {/* 10. Testimonials (existing, unchanged) */}
-      <Testimonials items={TESTIMONIALS} />
+      {/* 11. Testimonials */}
+      <div id="testimonials">
+        <Testimonials items={TESTIMONIALS} />
+      </div>
 
-      {/* 11. Resources quick-links (new) */}
-      <section className="home-resources">
+      {/* 12. Resources quick-links */}
+      <section id="resources" className="home-resources">
         <div className="container">
           <Reveal className="home-resources__header">
             <span className="label-caps label-caps--secondary mb-2 block">Documentation</span>
@@ -508,7 +550,7 @@ function Home() {
               >
                 <span className="material-symbols-outlined home-resources__icon">description</span>
                 <h3 className="home-resources__card-title">Company Profile</h3>
-                <p className="home-resources__card-desc">Comprehensive overview of our history, cooperative network, and operational capacity.</p>
+                <p className="home-resources__card-desc">History, cooperative governance, and operational capacity overview.</p>
                 <span className="home-resources__action">
                   Download PDF <span className="material-symbols-outlined text-sm">download</span>
                 </span>
@@ -519,7 +561,7 @@ function Home() {
               <Link to="/impact#reports" className="home-resources__card">
                 <span className="material-symbols-outlined home-resources__icon">verified</span>
                 <h3 className="home-resources__card-title">Certifications &amp; Compliance</h3>
-                <p className="home-resources__card-desc">Our GlobalG.A.P certification and Oromia seed producer license documentation.</p>
+                <p className="home-resources__card-desc">GlobalG.A.P certification and official seed producer documentation.</p>
                 <span className="home-resources__action">
                   View Reports <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </span>
@@ -530,7 +572,7 @@ function Home() {
               <Link to="/products" className="home-resources__card">
                 <span className="material-symbols-outlined home-resources__icon">grid_view</span>
                 <h3 className="home-resources__card-title">Product Catalog</h3>
-                <p className="home-resources__card-desc">Full specifications for our fresh fruits, vegetables, and certified seeds.</p>
+                <p className="home-resources__card-desc">Full specifications for fresh produce and certified vegetable seeds.</p>
                 <span className="home-resources__action">
                   Browse Products <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </span>
@@ -540,8 +582,8 @@ function Home() {
         </div>
       </section>
 
-      {/* 12. Latest news (new) */}
-      <section className="home-news">
+      {/* 13. Latest news */}
+      <section id="news" className="home-news">
         <div className="container">
           <Reveal className="home-news__header">
             <div>
