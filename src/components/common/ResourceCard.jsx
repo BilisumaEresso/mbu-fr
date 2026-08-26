@@ -1,8 +1,22 @@
-﻿import './ResourceCard.css'
+import './ResourceCard.css'
 
 function ResourceCard({ resource, onSelect }) {
+  function handleKeyDown(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      onSelect && onSelect(resource)
+    }
+  }
+
   return (
-    <article className="resource-photo-card" onClick={() => onSelect && onSelect(resource)}>
+    <article
+      className="resource-photo-card"
+      onClick={() => onSelect && onSelect(resource)}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      role="button"
+      aria-label={`View details for ${resource.name}`}
+    >
       <div className="resource-photo-card__media">
         <img
           src={resource.image}

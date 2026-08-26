@@ -18,7 +18,7 @@ const CERT_DATA = {
     title: 'Oromia Bureau of Agriculture & Natural Resource — Competence Assurance Certificate',
     src: oromiaCert,
     alt: 'Oromia Bureau of Agriculture Competence Assurance Certificate for Meki Batu Union, certified seed producer license',
-    caption: "Certified Seed Producer License Reg. No. 72 under Ethiopia's Seed Proclamation No. 782/2013.",
+    caption: "Certified Seed Producer License Ltd Reg. No. 72 under Ethiopia's Seed Proclamation No. 782/2013.",
   },
 }
 
@@ -76,7 +76,7 @@ function Certifications() {
               <button
                 type="button"
                 className="certifications__thumb-btn certifications__thumb-btn--logo"
-                onClick={() => openLightbox('globalgap')}
+                onClick={() => openLightbox("globalgap")}
                 aria-label="View GlobalG.A.P certificate logo at full size"
               >
                 <img
@@ -90,18 +90,24 @@ function Certifications() {
                 </span>
               </button>
             </div>
-            <h3 className="certifications__card-title">GlobalG.A.P Certified</h3>
+            <h3 className="certifications__card-title">
+              GlobalG.A.P Certified
+            </h3>
             <p className="certifications__card-desc">
               Meeting international standards for food safety, traceability, and
-              responsible farming practice. More than 400 member households are GlobalG.A.P certified under the union&rsquo;s certification scheme.
+              responsible farming practice. More than 400 member households are
+              GlobalG.A.P certified under the union&rsquo;s certification
+              scheme.
             </p>
             <div className="certifications__actions">
               <button
                 type="button"
                 className="certifications__view-btn"
-                onClick={() => openLightbox('globalgap')}
+                onClick={() => openLightbox("globalgap")}
               >
-                <span className="material-symbols-outlined text-sm">fullscreen</span>
+                <span className="material-symbols-outlined text-sm">
+                  fullscreen
+                </span>
                 View credential
               </button>
               <a
@@ -111,7 +117,9 @@ function Certifications() {
                 className="certifications__ext-link"
               >
                 <span>globalgap.org</span>
-                <span className="material-symbols-outlined text-sm">open_in_new</span>
+                <span className="material-symbols-outlined text-sm">
+                  open_in_new
+                </span>
               </a>
             </div>
           </div>
@@ -122,7 +130,7 @@ function Certifications() {
               <button
                 type="button"
                 className="certifications__thumb-btn"
-                onClick={() => openLightbox('oromia')}
+                onClick={() => openLightbox("oromia")}
                 aria-label="View Oromia seed producer certificate document at full size"
               >
                 <img
@@ -142,9 +150,9 @@ function Certifications() {
             </h3>
             <p className="certifications__card-desc">
               Authorized under Ethiopia&rsquo;s Seed Proclamation No. 782/2013
-              to produce certified seeds of cereal, pulses, vegetables, and
-              fruit crops. License Reg. No. 72, issued to Meki Batu Fruit &amp;
-              Vegetable Growers Cooperative Union.
+              to produce certified seeds of vegetables, fruit, cereal, and
+              pulses. License Reg. No. 72, issued to Meki Batu Fruit
+              &amp; Vegetable Growers Cooperative Union.
             </p>
             <span className="label-caps certifications__meta">
               Issued 14/01/2019 &middot; Oromia Bureau of Agriculture &amp;
@@ -154,9 +162,11 @@ function Certifications() {
               <button
                 type="button"
                 className="certifications__view-btn"
-                onClick={() => openLightbox('oromia')}
+                onClick={() => openLightbox("oromia")}
               >
-                <span className="material-symbols-outlined text-sm">visibility</span>
+                <span className="material-symbols-outlined text-sm">
+                  visibility
+                </span>
                 View certificate document
               </button>
             </div>
@@ -179,7 +189,9 @@ function Certifications() {
           >
             <div className="cert-lightbox__header">
               <div className="cert-lightbox__header-text">
-                <span className="label-caps label-caps--secondary text-xs">Official Credential</span>
+                <span className="label-caps label-caps--secondary text-xs">
+                  Official Credential
+                </span>
                 <h4 className="cert-lightbox__title">{activeCert.title}</h4>
               </div>
               <button
@@ -210,8 +222,13 @@ function Certifications() {
                   rel="noopener noreferrer"
                   className="cert-lightbox__ext-link"
                 >
-                  <span>Visit {activeCert.url.replace('https://', '').replace('/', '')}</span>
-                  <span className="material-symbols-outlined text-sm">open_in_new</span>
+                  <span>
+                    Visit{" "}
+                    {activeCert.url.replace("https://", "").replace("/", "")}
+                  </span>
+                  <span className="material-symbols-outlined text-sm">
+                    open_in_new
+                  </span>
                 </a>
               )}
             </div>
@@ -219,7 +236,7 @@ function Certifications() {
         </div>
       )}
     </>
-  )
+  );
 }
 
 export default Certifications

@@ -248,6 +248,7 @@
 }
 
 .testimonials-slider__dot {
+  position: relative;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -256,6 +257,21 @@
   padding: 0;
   cursor: pointer;
   transition: all var(--transition-fast);
+}
+
+.testimonials-slider__dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.testimonials-slider__dot:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
 }
 
 .testimonials-slider__dot--active {

@@ -15,6 +15,7 @@ import cbeLogo from '../assets/images/partners/cbe.webp'
 import atiLogo from '../assets/images/partners/ati.webp'
 import ehpeaLogo from '../assets/images/partners/ehpea.webp'
 import ocaLogo from '../assets/images/partners/oca.webp'
+import arsiUniLogo from '../assets/images/partners/arsi_unversity.png'
 
 export const PARTNER_CATEGORIES = {
   ALL: 'All Partners',
@@ -125,6 +126,28 @@ export const partners = [
     logo: croplifeLogo,
     featuredHome: false,
   },
+  {
+    id: 'ati',
+    name: 'Agricultural Transformation Institute (ATI / ATA)',
+    acronym: 'ATI',
+    category: PARTNER_CATEGORIES.DEVELOPMENT,
+    tag: 'Development Partner',
+    role: 'Government agency supporting systemic agricultural transformation in Ethiopia.',
+    icon: 'local_shipping',
+    logo: atiLogo,
+    featuredHome: true,
+  },
+  {
+    id: 'ehpea',
+    name: 'Ethiopian Horticulture Producer Exporters Association (EHPEA)',
+    acronym: 'EHPEA',
+    category: PARTNER_CATEGORIES.DEVELOPMENT,
+    tag: 'Development Partner',
+    role: 'National association representing Ethiopian horticulture producers and exporters.',
+    icon: 'verified',
+    logo: ehpeaLogo,
+    featuredHome: false,
+  },
 
   /* ── 2. Research & Innovation Centers ── */
   {
@@ -156,11 +179,22 @@ export const partners = [
     name: 'Ethiopian Airlines',
     acronym: 'Ethiopian Airlines',
     category: PARTNER_CATEGORIES.FINANCE_MARKETS,
-    tag: 'Commercial Partner',
-    role: 'National carrier and commercial partner.',
+    tag: 'Off-Taker',
+    role: 'National carrier and major commercial off-taker for fresh fruit and vegetable catering supply.',
     icon: 'flight_takeoff',
     logo: airlinesLogo,
     featuredHome: true,
+  },
+  {
+    id: 'arsi-university',
+    name: 'Arsi University',
+    acronym: 'AU',
+    category: PARTNER_CATEGORIES.FINANCE_MARKETS,
+    tag: 'Off-Taker',
+    role: 'Regional university and institutional off-taker for fresh produce supply.',
+    icon: 'school',
+    logo: arsiUniLogo,
+    featuredHome: false,
   },
   {
     id: 'coop-bank-oromia',
@@ -197,28 +231,6 @@ export const partners = [
   },
 
   /* ── 4. Government & Regulatory Agencies ── */
-  {
-    id: 'ati',
-    name: 'Agricultural Transformation Institute (ATI / ATA)',
-    acronym: 'ATI',
-    category: PARTNER_CATEGORIES.GOVERNMENT,
-    tag: 'Government Agency',
-    role: 'Government agency supporting systemic agricultural transformation in Ethiopia.',
-    icon: 'local_shipping',
-    logo: atiLogo,
-    featuredHome: true,
-  },
-  {
-    id: 'ehpea',
-    name: 'Ethiopian Horticulture Producer Exporters Association (EHPEA)',
-    acronym: 'EHPEA',
-    category: PARTNER_CATEGORIES.GOVERNMENT,
-    tag: 'Industry Association',
-    role: 'National association representing Ethiopian horticulture producers and exporters.',
-    icon: 'verified',
-    logo: ehpeaLogo,
-    featuredHome: false,
-  },
   {
     id: 'oromia-coop-agency',
     name: 'Oromia Cooperative Agency',

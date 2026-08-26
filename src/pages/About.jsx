@@ -53,6 +53,7 @@ function About() {
         description="Meki Batu Union stands as a testament to the power of collective farming in Ethiopia. We unite 135 primary cooperatives and 8,089 member farmers to ensure fair trade, sustainable practices, and premium quality produce for domestic and global markets."
         image={aboutHeroImg}
         imageAlt="Fertile Ethiopian agricultural land during golden hour"
+        badge="Meki, Oromia • Est. 2002"
       />
 
       <SectionDivider />
@@ -78,7 +79,7 @@ function About() {
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Established in Meki town with 12 primary cooperatives and 527 founding members, pooling 500,000 ETB in initial capital to build a shared agricultural union.
+                  Established in Meki town with 12 primary cooperatives and 527 founding members, pooling 500,000 ETB in initial capital to build a agricultural firm.
                 </p>
               </div>
             </div>
@@ -106,7 +107,7 @@ function About() {
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Today uniting 135 cooperatives and 8,089 farmers with 94.5 million ETB in union capital, delivering reliable, certified produce across domestic and global markets.
+                  Today uniting 135 cooperatives and 8,089 farmers with 154.2 million ETB in union capital, delivering reliable, certified produce across domestic and global markets.
                 </p>
               </div>
             </div>
@@ -188,9 +189,14 @@ function About() {
           </Reveal>
 
           {/* Leadership & Staff Grid */}
-          <div className="about-governance__subheader mt-12 mb-6">
-            <h3 className="text-xl font-display font-semibold text-primary">Executive Leadership</h3>
-            <p className="text-sm text-muted mt-1">Union directors and department heads driving cooperative operations.</p>
+          <div className="about-governance__subheader">
+            <span className="label-caps label-caps--secondary mb-2 block">Management Team</span>
+            <h3 className="about-governance__subtitle">Executive Leadership</h3>
+            <p className="about-governance__subdesc">Union directors and department heads driving cooperative operations.</p>
+            <div className="about-governance__swipe-hint mobile-only">
+              <span className="material-symbols-outlined about-governance__swipe-icon">swipe</span>
+              <span>Swipe to browse leadership ({teamMembers.length})</span>
+            </div>
           </div>
 
           <div className="about-governance__grid">

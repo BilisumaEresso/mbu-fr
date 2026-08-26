@@ -208,19 +208,61 @@ const ORG_DATA = {
     ancestors: ['ga', 'bod', 'gm', 'dm'],
     desc: 'Manages financial reporting, member dividend allocation, asset accounting, treasury management, farm input procurement, and banking relationships.',
     responsibilities: [
-      'Manages financial accounting, 94.5 million ETB own capital treasury, and statutory financial audits',
+      'Manages financial accounting, 154.2 million ETB own capital treasury, and statutory financial audits',
       'Administers transparent member dividend distributions and primary cooperative accounts',
       'Directs bulk commercial procurement of seed stocks, machinery, and agricultural inputs',
     ],
   },
 }
 
+const TIERS = [
+  {
+    key: 'tier1',
+    number: 'Tier 01',
+    title: 'Supreme Governance & Oversight',
+    sub: 'General Assembly, Control Committee & Board of Directors',
+    icon: 'gavel',
+    theme: 'green',
+    nodeIds: ['ga', 'cc', 'bod'],
+  },
+  {
+    key: 'tier2',
+    number: 'Tier 02',
+    title: 'Executive Management & Advisory',
+    sub: 'General Manager, Specialized Advisors & Deputy Manager',
+    icon: 'manage_accounts',
+    theme: 'terracotta',
+    nodeIds: ['gm', 'lawyer', 'sec', 'plan', 'auditor', 'ict', 'dm'],
+  },
+  {
+    key: 'tier3',
+    number: 'Tier 03',
+    title: 'Operational Departments',
+    sub: 'Agriculture, Marketing, HR & Finance Departments',
+    icon: 'psychiatry',
+    theme: 'dept',
+    nodeIds: ['agri', 'marketing', 'hr', 'finance'],
+  },
+]
+
 export default function OrgChart() {
   const [activeId, setActiveId] = useState(null)
   const [hoveredId, setHoveredId] = useState(null)
   const [isExporting, setIsExporting] = useState(false)
+  const [expandedTiers, setExpandedTiers] = useState({
+    tier1: true,
+    tier2: false,
+    tier3: false,
+  })
   const chartRef = useRef(null)
   const inspectorRef = useRef(null)
+
+  const toggleTier = (tierKey) => {
+    setExpandedTiers((prev) => ({
+      ...prev,
+      [tierKey]: !prev[tierKey],
+    }))
+  }
 
   const currentFocusId = activeId || hoveredId
   const activeAncestors = currentFocusId && ORG_DATA[currentFocusId]
@@ -298,7 +340,7 @@ export default function OrgChart() {
       ctx.lineWidth = 2.5
       ctx.beginPath()
       ctx.moveTo(550, 100)
-      ctx.lineTo(550, 810)
+      ctx.lineTo(550, 840)
       ctx.stroke()
 
       // Horizontal Connectors
@@ -309,45 +351,45 @@ export default function OrgChart() {
         ctx.stroke()
       }
 
-      // GA -> BOD & CC
-      drawHLine(360, 205, 550)
+      // GA -> CC (higher) & BOD (lower) — staggered per source diagram
       drawHLine(550, 185, 740)
+      drawHLine(360, 205, 550)
 
-      // GM Spine to Advisory
+      // GM Spine to Advisory (staggered per source diagram)
       drawHLine(360, 375, 550) // Lawyer
       drawHLine(550, 395, 740) // Secretary
-      drawHLine(360, 485, 550) // Planning
-      drawHLine(550, 485, 740) // Auditor
-      drawHLine(550, 560, 740) // ICT
+      drawHLine(360, 480, 550) // Planning
+      drawHLine(550, 530, 740) // Auditor
+      drawHLine(550, 595, 740) // ICT
 
       // DM to 4 Depts
-      drawHLine(140, 845, 960)
+      drawHLine(140, 875, 960)
       ;[140, 410, 690, 960].forEach((x) => {
         ctx.beginPath()
-        ctx.moveTo(x, 845)
-        ctx.lineTo(x, 875)
+        ctx.moveTo(x, 875)
+        ctx.lineTo(x, 905)
         ctx.stroke()
       })
 
-      // Draw Boxes
+      // Draw Boxes (ordered by vertical position, matching source diagram stagger)
       drawBox(410, 100, 280, 48, 'General Assembly', '#173124', '#ffffff', '#173124')
-      drawBox(140, 180, 240, 48, 'Board of Directors', '#173124', '#ffffff', '#173124')
       drawBox(720, 160, 240, 48, 'Control Committee', '#173124', '#ffffff', '#173124')
+      drawBox(140, 180, 240, 48, 'Board of Directors', '#173124', '#ffffff', '#173124')
 
       drawBox(250, 275, 600, 48, 'General Manager', '#9d4320', '#ffffff', '#9d4320')
 
       drawBox(140, 350, 240, 48, 'Lawyer', '#173124', '#ffffff', '#173124')
       drawBox(720, 370, 240, 48, 'Executive Secretary', '#173124', '#ffffff', '#173124')
-      drawBox(100, 460, 280, 52, 'Preparing Plan, Evaluate & Budgeting', '#173124', '#ffffff', '#173124')
-      drawBox(720, 460, 240, 48, 'Internal Auditor', '#173124', '#ffffff', '#173124')
-      drawBox(720, 535, 240, 48, 'ICT Expert', '#173124', '#ffffff', '#173124')
+      drawBox(100, 455, 280, 52, 'Preparing Plan, Evaluate & Budgeting', '#173124', '#ffffff', '#173124')
+      drawBox(720, 505, 240, 48, 'Internal Auditor', '#173124', '#ffffff', '#173124')
+      drawBox(720, 570, 240, 48, 'ICT Expert', '#173124', '#ffffff', '#173124')
 
-      drawBox(250, 670, 600, 48, 'Deputy Manager', '#9d4320', '#ffffff', '#9d4320')
+      drawBox(250, 700, 600, 48, 'Deputy Manager', '#9d4320', '#ffffff', '#9d4320')
 
-      drawBox(30, 875, 220, 58, 'Agriculture & Farmers Service', '#fdf6ee', '#9d4320', '#d88d60')
-      drawBox(290, 875, 220, 58, 'Marketing Department', '#fdf6ee', '#9d4320', '#d88d60')
-      drawBox(550, 875, 250, 58, 'Human Resource & General Service', '#fdf6ee', '#9d4320', '#d88d60')
-      drawBox(830, 875, 240, 58, 'Finance & Procurement Dept', '#fdf6ee', '#9d4320', '#d88d60')
+      drawBox(30, 905, 220, 58, 'Agriculture & Farmers Service', '#fdf6ee', '#9d4320', '#d88d60')
+      drawBox(290, 905, 220, 58, 'Marketing Department', '#fdf6ee', '#9d4320', '#d88d60')
+      drawBox(550, 905, 250, 58, 'Human Resource & General Service', '#fdf6ee', '#9d4320', '#d88d60')
+      drawBox(830, 905, 240, 58, 'Finance & Procurement Dept', '#fdf6ee', '#9d4320', '#d88d60')
 
       // Download Trigger
       const link = document.createElement('a')
@@ -366,7 +408,7 @@ export default function OrgChart() {
       {/* Modern Control Toolbar */}
       <div className="org-toolbar">
         <div className="org-toolbar__status">
-          <span className="org-toolbar__pulse-dot" />
+          <span className="material-symbols-outlined org-toolbar__status-icon">account_tree</span>
           <span className="org-toolbar__text">
             {currentFocusId
               ? `Selected: ${ORG_DATA[currentFocusId].title}`
@@ -412,7 +454,7 @@ export default function OrgChart() {
       {/* =========================================================================
           Exact Source Architecture: Continuous Center Spine with Left/Right Nodes
           ========================================================================= */}
-      <div className="org-spine-container">
+      <div className="org-spine-container desktop-tree-only">
         {/* Continuous Animated Spine Line */}
         <div className={`org-central-spine ${currentFocusId ? 'org-central-spine--active' : ''}`} />
 
@@ -434,26 +476,9 @@ export default function OrgChart() {
           </button>
         </div>
 
-        {/* 2. Board of Directors (Left) & Control Committee (Right) */}
-        <div className="org-spine-row">
-          <div className="org-spine-side org-spine-side--left">
-            <button
-              type="button"
-              className={`org-box org-box--green ${activeId === 'bod' ? 'org-box--active' : ''}`}
-              onClick={() => handleNodeClick('bod')}
-              onMouseEnter={() => setHoveredId('bod')}
-              onMouseLeave={() => setHoveredId(null)}
-              aria-expanded={activeId === 'bod'}
-            >
-              <span className="material-symbols-outlined org-box__icon">gavel</span>
-              <span className="org-box__title">Board of Directors</span>
-              <span className="material-symbols-outlined org-box__info">
-                {activeId === 'bod' ? 'expand_less' : 'info'}
-              </span>
-            </button>
-            <div className={`org-branch-line org-branch-line--to-center ${activeAncestors.includes('bod') ? 'org-branch-line--active' : ''}`} />
-          </div>
-
+        {/* 2. Control Committee (Right, higher) then Board of Directors (Left, lower) — per source diagram */}
+        <div className="org-spine-row org-spine-row--staggered">
+          <div className="org-spine-side org-spine-side--left org-spine-side--empty" />
           <div className="org-spine-side org-spine-side--right">
             <div className={`org-branch-line org-branch-line--from-center ${activeAncestors.includes('cc') ? 'org-branch-line--active' : ''}`} />
             <button
@@ -471,6 +496,27 @@ export default function OrgChart() {
               </span>
             </button>
           </div>
+        </div>
+
+        <div className="org-spine-row org-spine-row--staggered">
+          <div className="org-spine-side org-spine-side--left">
+            <button
+              type="button"
+              className={`org-box org-box--green ${activeId === 'bod' ? 'org-box--active' : ''}`}
+              onClick={() => handleNodeClick('bod')}
+              onMouseEnter={() => setHoveredId('bod')}
+              onMouseLeave={() => setHoveredId(null)}
+              aria-expanded={activeId === 'bod'}
+            >
+              <span className="material-symbols-outlined org-box__icon">gavel</span>
+              <span className="org-box__title">Board of Directors</span>
+              <span className="material-symbols-outlined org-box__info">
+                {activeId === 'bod' ? 'expand_less' : 'info'}
+              </span>
+            </button>
+            <div className={`org-branch-line org-branch-line--to-center ${activeAncestors.includes('bod') ? 'org-branch-line--active' : ''}`} />
+          </div>
+          <div className="org-spine-side org-spine-side--right org-spine-side--empty" />
         </div>
 
         {/* 3. General Manager (Wide Centered Terracotta Bar) */}
@@ -491,9 +537,9 @@ export default function OrgChart() {
           </button>
         </div>
 
-        {/* 4. Support Roles (Alternating exactly as shown in source slide) */}
-        {/* Pair 1: Lawyer (Left) & Executive Secretary (Right) */}
-        <div className="org-spine-row">
+        {/* 4. Support Roles — Vertically staggered per source diagram */}
+        {/* Lawyer (Left, higher) */}
+        <div className="org-spine-row org-spine-row--staggered">
           <div className="org-spine-side org-spine-side--left">
             <button
               type="button"
@@ -511,7 +557,12 @@ export default function OrgChart() {
             </button>
             <div className={`org-branch-line org-branch-line--to-center ${activeAncestors.includes('lawyer') ? 'org-branch-line--active' : ''}`} />
           </div>
+          <div className="org-spine-side org-spine-side--right org-spine-side--empty" />
+        </div>
 
+        {/* Executive Secretary (Right, lower) */}
+        <div className="org-spine-row org-spine-row--staggered">
+          <div className="org-spine-side org-spine-side--left org-spine-side--empty" />
           <div className="org-spine-side org-spine-side--right">
             <div className={`org-branch-line org-branch-line--from-center ${activeAncestors.includes('sec') ? 'org-branch-line--active' : ''}`} />
             <button
@@ -531,8 +582,8 @@ export default function OrgChart() {
           </div>
         </div>
 
-        {/* Pair 2: Preparing Plan (Left) & Internal Auditor (Right) */}
-        <div className="org-spine-row">
+        {/* Preparing Plan Expert (Left, higher) */}
+        <div className="org-spine-row org-spine-row--staggered">
           <div className="org-spine-side org-spine-side--left">
             <button
               type="button"
@@ -550,7 +601,12 @@ export default function OrgChart() {
             </button>
             <div className={`org-branch-line org-branch-line--to-center ${activeAncestors.includes('plan') ? 'org-branch-line--active' : ''}`} />
           </div>
+          <div className="org-spine-side org-spine-side--right org-spine-side--empty" />
+        </div>
 
+        {/* Internal Auditor (Right, lower) */}
+        <div className="org-spine-row org-spine-row--staggered">
+          <div className="org-spine-side org-spine-side--left org-spine-side--empty" />
           <div className="org-spine-side org-spine-side--right">
             <div className={`org-branch-line org-branch-line--from-center ${activeAncestors.includes('auditor') ? 'org-branch-line--active' : ''}`} />
             <button
@@ -570,8 +626,8 @@ export default function OrgChart() {
           </div>
         </div>
 
-        {/* Row 3: ICT Expert (Right) */}
-        <div className="org-spine-row">
+        {/* ICT Expert (Right, lowest) */}
+        <div className="org-spine-row org-spine-row--staggered">
           <div className="org-spine-side org-spine-side--left org-spine-side--empty" />
           <div className="org-spine-side org-spine-side--right">
             <div className={`org-branch-line org-branch-line--from-center ${activeAncestors.includes('ict') ? 'org-branch-line--active' : ''}`} />
@@ -647,6 +703,75 @@ export default function OrgChart() {
             })}
           </div>
         </div>
+      </div>
+
+      {/* =========================================================================
+          Mobile Tiered Accordion Structure (< 900px)
+          ========================================================================= */}
+      <div className="org-mobile-accordion mobile-tree-only" role="region" aria-label="Hierarchical Governance Tiers">
+        {TIERS.map((tier) => {
+          const isOpen = expandedTiers[tier.key]
+          const hasSelectedNode = tier.nodeIds.includes(activeId)
+          return (
+            <div
+              key={tier.key}
+              className={`org-tier-card org-tier-card--${tier.theme} ${isOpen ? 'org-tier-card--open' : ''} ${hasSelectedNode ? 'org-tier-card--has-active' : ''}`}
+            >
+              <button
+                type="button"
+                className="org-tier-card__header"
+                onClick={() => toggleTier(tier.key)}
+                aria-expanded={isOpen}
+              >
+                <div className="org-tier-card__header-left">
+                  <div className={`org-tier-card__icon-box org-tier-card__icon-box--${tier.theme}`}>
+                    <span className="material-symbols-outlined">{tier.icon}</span>
+                  </div>
+                  <div className="org-tier-card__titles">
+                    <div className="org-tier-card__badge-row">
+                      <span className="org-tier-card__num">{tier.number}</span>
+                      <span className="org-tier-card__count">{tier.nodeIds.length} Roles</span>
+                    </div>
+                    <h4 className="org-tier-card__title">{tier.title}</h4>
+                    <p className="org-tier-card__sub">{tier.sub}</p>
+                  </div>
+                </div>
+                <span className="material-symbols-outlined org-tier-card__chevron">
+                  {isOpen ? 'expand_less' : 'expand_more'}
+                </span>
+              </button>
+
+              {isOpen && (
+                <div className="org-tier-card__body">
+                  <div className="org-tier-card__roles-list">
+                    {tier.nodeIds.map((id) => {
+                      const node = ORG_DATA[id]
+                      const isSelected = activeId === id
+                      return (
+                        <button
+                          key={id}
+                          type="button"
+                          className={`org-mobile-role-btn org-mobile-role-btn--${node.theme} ${isSelected ? 'org-mobile-role-btn--active' : ''}`}
+                          onClick={() => handleNodeClick(id)}
+                          aria-expanded={isSelected}
+                        >
+                          <span className="material-symbols-outlined org-mobile-role-btn__icon">{node.icon}</span>
+                          <div className="org-mobile-role-btn__info">
+                            <span className="org-mobile-role-btn__title">{node.title}</span>
+                            <span className="org-mobile-role-btn__sub">{node.sub}</span>
+                          </div>
+                          <span className="material-symbols-outlined org-mobile-role-btn__arrow">
+                            {isSelected ? 'expand_less' : 'info'}
+                          </span>
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+          )
+        })}
       </div>
 
       {/* Living Inspector Panel (Seamlessly Connected Dossier with Auto-scroll) */}

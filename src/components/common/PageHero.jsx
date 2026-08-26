@@ -47,7 +47,7 @@ function PageHero({
                     fetchPriority="high"
                   />
                   {badge && (
-                    <div className="page-hero__badge desktop-only">
+                    <div className="page-hero__badge">
                       <span className="label-caps">{badge}</span>
                     </div>
                   )}

@@ -6,7 +6,7 @@
 
 .toast {
   position: fixed;
-  bottom: var(--space-6);
+  bottom: 84px;
   left: var(--margin-mobile);
   right: var(--margin-mobile);
   z-index: 9000;
@@ -28,7 +28,8 @@
 @media (min-width: 600px) {
   .toast {
     left: auto;
-    right: var(--margin-desktop);
+    right: 24px;
+    bottom: 88px;
     max-width: 380px;
     width: auto;
   }
@@ -86,18 +87,27 @@
   background: none;
   border: none;
   padding: 0;
-  margin: 0;
-  line-height: 1;
+  margin: -4px -4px 0 0;
+  min-width: 36px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
   font-size: 18px;
   color: var(--color-text-muted);
   cursor: pointer;
-  transition: color var(--transition-fast);
-  /* align vertically with first line of text */
-  margin-top: 1px;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .toast__close:hover {
   color: var(--color-text);
+  background-color: var(--surface-container-low);
+}
+
+.toast__close:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
 }
 
 /* ---- Animation ---- */

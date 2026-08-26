@@ -280,7 +280,9 @@
   border-radius: var(--radius-md);
   /* Cream icon color — matches nav text */
   color: var(--color-bg);
-  padding: var(--space-2);
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
   cursor: pointer;
   transition: background-color var(--transition-fast);
 }
@@ -313,13 +315,15 @@
 }
 
 .header__mobile-link {
-  display: block;
+  display: flex;
+  align-items: center;
   font-family: var(--font-body);
   font-size: var(--fs-body);
   font-weight: 600;
   color: var(--color-bg);
   text-decoration: none;
-  padding: var(--space-2) var(--space-3);
+  padding: 10px var(--space-3);
+  min-height: 42px;
   border-radius: var(--radius-sm);
   transition: background-color var(--transition-fast);
 }
@@ -358,14 +362,16 @@
 }
 
 .header__mobile-sublink {
-  display: block;
+  display: flex;
+  align-items: center;
   font-family: var(--font-body);
   font-size: var(--fs-body);
   font-weight: 500;
   /* Dimmed cream — sub-level, slightly more receded than top-level */
   color: rgba(252, 249, 248, 0.80);
   text-decoration: none;
-  padding: var(--space-2) var(--space-3);
+  padding: 10px var(--space-3);
+  min-height: 40px;
   border-radius: var(--radius-sm);
   transition: background-color var(--transition-fast), color var(--transition-fast);
 }
@@ -380,13 +386,21 @@
   margin-top: var(--space-2);
   width: 100%;
   text-align: center;
+  min-height: 44px;
 }
 
 /* ---- Accessibility: focus-visible inside header ----
    The global rule outlines in var(--color-primary) — invisible on green.
-   Override to cream for all focusable header elements. */
+   Override to cream for all focusable header elements on the dark bar. */
 .header a:focus-visible,
 .header button:focus-visible {
   outline: 2px solid var(--color-bg);
+  outline-offset: 2px;
+}
+
+/* On the light dropdown panel, switch focus outline back to dark green for high contrast */
+.header__dropdown-menu a:focus-visible,
+.header__dropdown-menu button:focus-visible {
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }

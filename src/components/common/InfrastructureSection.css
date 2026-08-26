@@ -143,7 +143,8 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: 8px 18px;
+  padding: 9px 18px;
+  min-height: 40px;
   border: none;
   border-radius: var(--radius-full);
   background: transparent;
@@ -161,10 +162,14 @@
   background: rgba(255, 255, 255, 0.7);
 }
 
+.infrastructure-tab-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 .infrastructure-tab-btn--active {
   background: var(--color-primary);
   color: var(--on-primary, #ffffff) !important;
-  box-shadow: 0 2px 8px rgba(23, 49, 36, 0.2);
 }
 
 .infrastructure-tab-count {

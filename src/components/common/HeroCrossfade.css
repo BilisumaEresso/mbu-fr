@@ -65,7 +65,12 @@
     display: none;
   }
   .hero-crossfade__play {
-    padding: var(--space-2);
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
     border-radius: 50%;
   }
 }
@@ -115,8 +120,10 @@
   border: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-full);
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +132,8 @@
   transition: all var(--transition-fast);
 }
 
-.hero-crossfade__modal-close:hover {
+.hero-crossfade__modal-close:hover,
+.hero-crossfade__modal-close:focus-visible {
   background: var(--color-primary);
   color: var(--on-primary);
 }

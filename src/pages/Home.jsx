@@ -299,14 +299,14 @@ function Home() {
         </div>
       </section>
 
-      {/* 6. Our Process — From Farm to Export */}
+      {/* 6. Our Process — From Farm to Fork */}
       <section id="process" className="home-process section" aria-label="Quality and Logistics Pipeline">
         <div className="container">
           <Reveal>
             <div className="home-process__header">
               <div>
                 <span className="label-caps label-caps--secondary mb-2 block">Quality &amp; Logistics Pipeline</span>
-                <h2 className="home-process__title">From Farm to Export</h2>
+                <h2 className="home-process__title">From Farm to Fork</h2>
                 <p className="home-process__desc">
                   Integrated sorting, cleaning, cold-chain stabilization, and certified air freight connecting 135 member cooperatives to global export markets.
                 </p>
@@ -365,10 +365,6 @@ function Home() {
               </Reveal>
             ))}
           </div>
-
-          <Link to="/buyers" className="home-process__link mobile-only mt-6">
-            Explore specifications <span className="material-symbols-outlined text-sm">arrow_forward</span>
-          </Link>
         </div>
       </section>
 

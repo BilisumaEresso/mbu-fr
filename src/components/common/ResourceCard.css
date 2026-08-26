@@ -1,4 +1,4 @@
-﻿/* ═══════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════
    Resource Photo Card — Visual-First, Borderless & Soft Shadow
    ═══════════════════════════════════════════════════════════════ */
 
@@ -13,12 +13,17 @@
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(23, 49, 36, 0.07), 0 1px 4px rgba(0, 0, 0, 0.03);
   transition: transform var(--transition-base, 250ms ease), box-shadow var(--transition-base, 250ms ease);
-  cursor: default;
+  cursor: pointer;
 }
 
 .resource-photo-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 40px rgba(23, 49, 36, 0.13), 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.resource-photo-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 /* Photo Media Container */

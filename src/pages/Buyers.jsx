@@ -194,8 +194,8 @@ function Buyers() {
           </>
         }
         image={buyerHeroImg}
-        imageAlt="Fresh produce being inspected and packed in an export packhouse"
-        badge="Export &amp; Wholesale"
+        imageAlt="Export quality produce being sorted and packed in modern facility"
+        badge="Export & Wholesale"
       />
 
       <SectionDivider />

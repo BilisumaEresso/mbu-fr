@@ -70,6 +70,16 @@ function RetailOutlets() {
                     setSelectedOutletId(outlet.id)
                     setActiveModalOutlet(outlet)
                   }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setSelectedOutletId(outlet.id)
+                      setActiveModalOutlet(outlet)
+                    }
+                  }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`View details and map for ${outlet.name}`}
                 >
                   <div className="outlet-item-card__header">
                     <h3 className="outlet-item-card__title">{outlet.name}</h3>

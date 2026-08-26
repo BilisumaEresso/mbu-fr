@@ -108,8 +108,10 @@
   background: var(--surface-container, #f0f4f0);
   border: none;
   border-radius: var(--radius-full);
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,7 +121,8 @@
   transition: all var(--transition-fast);
 }
 
-.resource-modal__close-btn:hover {
+.resource-modal__close-btn:hover,
+.resource-modal__close-btn:focus-visible {
   background: var(--color-primary);
   color: #ffffff;
 }

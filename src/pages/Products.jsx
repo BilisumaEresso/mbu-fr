@@ -183,6 +183,13 @@ function Products() {
                 </>
               )
 
+              const handleCardKeyDown = (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  setSelectedProduct(item)
+                }
+              }
+
               // After initial render, skip Reveal wrapper to avoid animation flashes
               if (hasFilteredRef.current) {
                 return (
@@ -190,6 +197,10 @@ function Products() {
                     key={item.id}
                     className="product-item-card"
                     onClick={() => setSelectedProduct(item)}
+                    onKeyDown={handleCardKeyDown}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`View specifications for ${item.name}`}
                   >
                     {cardContent}
                   </div>
@@ -203,6 +214,10 @@ function Products() {
                   delay={stagger(i)}
                   className="product-item-card"
                   onClick={() => setSelectedProduct(item)}
+                  onKeyDown={handleCardKeyDown}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`View specifications for ${item.name}`}
                   style={{ cursor: 'pointer' }}
                 >
                   {cardContent}

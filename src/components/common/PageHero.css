@@ -155,18 +155,24 @@
 
 .page-hero__badge {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  bottom: 0;
+  left: 0;
+  background: rgba(252, 249, 248, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: var(--space-3) var(--space-4);
   border: none;
-  border-radius: var(--radius-full);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  padding: 6px 14px;
+  border-top-right-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   color: var(--color-primary);
   display: inline-flex;
   align-items: center;
   pointer-events: none;
   z-index: 2;
+}
+
+.page-hero__badge .label-caps {
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }

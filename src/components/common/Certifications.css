@@ -269,8 +269,10 @@
   background: var(--surface-container);
   border: none;
   border-radius: var(--radius-full);
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -287,7 +289,7 @@
 }
 
 .cert-lightbox__close .material-symbols-outlined {
-  font-size: 20px !important;
+  font-size: 22px !important;
 }
 
 .cert-lightbox__body {

@@ -87,6 +87,15 @@ function News() {
               <article
                 className="news-article-card news-article-card--large"
                 onClick={() => setSelectedArticle(featuredLarge)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    setSelectedArticle(featuredLarge)
+                  }
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label={`Read report: ${featuredLarge.title}`}
               >
                 <div className="news-article-card__media">
                   <img
@@ -115,6 +124,15 @@ function News() {
                 delay={0}
                 className="news-article-card news-article-card--large"
                 onClick={() => setSelectedArticle(featuredLarge)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    setSelectedArticle(featuredLarge)
+                  }
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label={`Read report: ${featuredLarge.title}`}
               >
                 <div className="news-article-card__media">
                   <img
@@ -144,6 +162,15 @@ function News() {
               <article
                 className="news-article-card news-article-card--small"
                 onClick={() => setSelectedArticle(featuredSmall)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    setSelectedArticle(featuredSmall)
+                  }
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label={`Read article: ${featuredSmall.title}`}
               >
                 <div className="news-article-card__media">
                   <img
@@ -172,6 +199,15 @@ function News() {
                 delay={90}
                 className="news-article-card news-article-card--small"
                 onClick={() => setSelectedArticle(featuredSmall)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    setSelectedArticle(featuredSmall)
+                  }
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label={`Read article: ${featuredSmall.title}`}
               >
                 <div className="news-article-card__media">
                   <img
@@ -230,12 +266,23 @@ function News() {
               </>
             )
 
+            const handleArticleKeyDown = (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                setSelectedArticle(article)
+              }
+            }
+
             if (hasInteractedRef.current) {
               return (
                 <article
                   key={article.id}
                   className="news-article-card news-article-card--grid"
                   onClick={() => setSelectedArticle(article)}
+                  onKeyDown={handleArticleKeyDown}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`Read article: ${article.title}`}
                 >
                   {cardContent}
                 </article>
@@ -249,6 +296,10 @@ function News() {
                 delay={stagger(i + 2)}
                 className="news-article-card news-article-card--grid"
                 onClick={() => setSelectedArticle(article)}
+                onKeyDown={handleArticleKeyDown}
+                tabIndex={0}
+                role="button"
+                aria-label={`Read article: ${article.title}`}
               >
                 {cardContent}
               </Reveal>

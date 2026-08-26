@@ -11,7 +11,7 @@ import './Impact.css'
 const STATS = [
   { value: '8,089', label: 'Member Farmers' },
   { value: '135', label: 'Primary Cooperatives' },
-  { value: '94.5M', label: 'ETB Own Capital' },
+  { value: '154.2M', label: 'ETB Own Capital' },
   { value: '5,910 ha', label: 'Irrigated Land' },
   { value: '6', label: 'Operating Districts' },
   { value: '50k+ t', label: 'Annual Produce Volume' },

@@ -209,9 +209,16 @@
   gap: var(--space-2);
   white-space: nowrap;
   background: var(--surface-container-low);
-  padding: 6px 14px;
+  padding: 8px 16px;
+  min-height: 38px;
   border-radius: var(--radius-full);
+  text-decoration: none;
   transition: all var(--transition-fast);
+}
+
+.impact-report-item__download:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .impact-report-item:hover .impact-report-item__download {

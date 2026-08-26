@@ -180,6 +180,11 @@
   transform: translateY(-3px) scale(1.01);
 }
 
+.outlet-item-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
 .outlet-item-card__header {
   display: flex;
   justify-content: space-between;
@@ -286,7 +291,8 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 6px 12px;
+  padding: 8px 14px;
+  min-height: 38px;
   font-size: 13px;
   font-weight: 500;
   border-radius: var(--radius-full);
@@ -301,6 +307,11 @@
 .outlet-pin-btn:hover {
   background: var(--surface-container-low);
   color: var(--color-primary);
+}
+
+.outlet-pin-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .outlet-pin-btn--active {
@@ -331,7 +342,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 18px;
+  padding: 10px 20px;
+  min-height: 40px;
   border-radius: var(--radius-full);
   background-color: var(--color-primary);
   color: var(--color-surface) !important;
@@ -344,9 +356,14 @@
 }
 
 .gmaps-cool-btn:hover {
-  background-color: var(--color-accent);
-  box-shadow: var(--shadow-hover);
+  background-color: var(--primary-container);
+  color: var(--on-primary-container) !important;
   transform: translateY(-1px);
+}
+
+.gmaps-cool-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 /* ---- Outlet Detail Modal Styles ---- */
@@ -383,8 +400,10 @@
   border: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-full);
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -393,7 +412,8 @@
   transition: all var(--transition-fast);
 }
 
-.outlet-modal-close:hover {
+.outlet-modal-close:hover,
+.outlet-modal-close:focus-visible {
   background: var(--color-primary);
   color: var(--on-primary);
 }
