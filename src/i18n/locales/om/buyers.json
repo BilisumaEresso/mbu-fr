@@ -3,90 +3,86 @@
     "title": "Oomishaalee Sadarkaa Daldala Alaa. Sanjata Dhiyeessaa Amanamaa.",
     "desc": "Yuniyeenii Maqii Baatuu dhiyeessaa guddaa kuduraalee, muduraalee fi sanyiilee filatamoo waraqaa ragaa GlobalG.A.P qaban kan ergitoota alaa, dhaabbilee nyaata qopheessanii fi dukaannoota addunyaati.",
     "badge": "Dhiyeessaa Kallattii Daldala Alaa",
-    "requestQuote": "Gatii Daldala Alaa Gaafadhaa",
-    "downloadPdf": "Piroofayilii Dhaabbataa Buufadhaa",
+    "requestQuote": "Gatii Gaafadhu",
+    "downloadPdf": "Piroofayilii Dhaabbataa Buufadhu",
     "imageAlt": "Oomisha sadarkaa daldala alaa qulqullina olaanaa qabu wiirtuu ammayyaa keessatti filatamaa fi saamsamaa jiru",
-    "downloadPdfTitle": "Piroofayilii Dhaabbata Yuniyeenii Maqii Baatuu Buufadhaa (PDF)"
+    "downloadPdfTitle": "Piroofayilii WHG Maqii Baatuu Buufadhu (PDF)"
   },
   "valueProps": {
     "prop1": {
       "title": "Qulqullina Mirkanaa'e",
-      "desc": "Ulaagaalee GlobalG.A.P fi qajeelfama sanyii Itoophiyaa guutuun oomisha dirreerraa hanga buufata gabaatti hordofamuu danda'u."
+      "desc": "Ulaagaa GlobalG.A.P fi sanyii Itoophiyaa guutuun oomisha dirreerraa hanga buufataatti hordofamuu danda'u dhiyeessa."
     },
     "prop2": {
-      "title": "Dhiyeessii Baay'ina Amanamaa",
-      "desc": "Lafa jallisii hektaara 5,910 irratti waldaaleen bu'uuraa 135 oomisha gahaa fi baay'ina olaanaa waqtii hundatti dhiyeessu."
+      "title": "Dhiyeessii Amanamaa",
+      "desc": "Lafa jallisii hek 5,910 irratti waldaaleen 135 oomisha gahaa fi baay'ina olaanaa waqtii hundatti dhiyeessu."
     },
     "prop3": {
-      "title": "Loojistiiksii Sadarkaa Daldala Alaa",
-      "desc": "Konkolaattota qabbanaawaa fi kuusaa qabbaneessaa wiirtuu qulqullina eeguun ergaa qilleensaa idil-addunyaatiif oomisha qopheessuu."
+      "title": "Loojistiiksii Ergaa Alaa",
+      "desc": "Konkolaattota qabbanaawaa fi kuusaan qulqullina eeguun ergaa qilleensaa idil-addunyaatiif oomisha qopheessu."
     }
   },
   "form": {
-    "tag": "Gaaffilee Daldalaa",
-    "title": "Gaaffii Gatii Bittaa Jumlaa Dhiyeessaa",
-    "desc": "Gatii baay'inaa, tarreeffama saamsamaa, fi sagantaa dhiyeessii waajjira daldala alaa keenya irraa argachuuf unka armaan gadii guutaa.",
+    "tag": "Ergaa Ergi",
+    "title": "Garee Keenya Quunnami",
+    "desc": "Bittaa daldalaa, miseensummaa ykn tumsaaf, gaaffii keessan asumaan nuuf ergaa.",
     "fields": {
       "name": "Maqaa Guutuu",
-      "namePlaceholder": "fkn. Obbo / Adde / Mr. / Ms.",
+      "namePlaceholder": "fkn. Caalaa Mokonnin",
       "company": "Dhaabbata / Waldaa",
-      "companyPlaceholder": "fkn. Dhaabbata Daldala Alaa",
+      "companyPlaceholder": "fkn. Dhaabbata Ergaa Alaa",
       "country": "Biyya Geessu",
       "countryPlaceholder": "fkn. Nezerlaands, UAE, Jarmanii",
-      "product": "Akaakuu Oomishaa Barbaadamu",
-      "productSelect": "Oomisha filadhaa...",
+      "product": "Oomisha Barbaadame",
+      "productSelect": "Oomisha filadhu...",
       "products": {
         "tomatoes": "Tamaatii Sulula Qiinxamaa",
         "onions": "Shunkurtaa Diimaa",
         "peppers": "Qaaraa Magariisa",
         "potato": "Dinicha Baddaa",
         "cabbage": "Raafuu Haaraa",
-        "greenBeans": "Luubiyaa / Baaqelaa Magariisa",
+        "greenBeans": "Luubiyaa",
         "papaya": "Paappaayyaa Haaraa",
         "watermelon": "Habhabii Mi'aawaa",
-        "seeds": "Sanyiilee Filatamoo"
+        "seeds": "Sanyii Filatamaa"
       },
-      "volume": "Tilmaama Baay'inaa / Toonii",
-      "volumePlaceholder": "fkn. Toonii 5 / Torbaniitti",
-      "message": "Ulaagaalee & Yaadannoo",
-      "messagePlaceholder": "Sadarkaa qulqullinaa, filannoo saamsamaa, fi yeroo dhiyeessii ibsaa...",
-      "submit": "Gaaffii Gatii Ergaa",
+      "volume": "Tilmaama Toonii",
+      "volumePlaceholder": "fkn. Toonii 5 / Torbanitti",
+      "message": "Ulaagaa & Yaadannoo",
+      "messagePlaceholder": "Sadarkaa qulqullinaa, filannoo saamsamaa, fi yeroo ibsaa...",
+      "submit": "Gaaffii Ergi",
       "submitting": "Ergamaa jira..."
     },
     "success": {
-      "title": "Gaaffiin Gatii Milkaa'inaan Ergameera!",
-      "desc": "Yuniyeenii Maqii Baatuu qunnamuu keessaniif galatoomaa. Gareen daldala alaa keenya gaaffii keessan gamaaggamuun sa'aatii 24 keessatti deebii gatii isiniif kenna.",
-      "button": "Gaaffii Biroo Ergaa"
+      "title": "Ergaan Nu Ga'eera",
+      "desc": "Nu quunnamuu keetiif galatoomi. Bakka bu'aan keenya guyyoota hojii 1–2 keessatti deebii kenna.",
+      "button": "Gaaffii Biroo Ergi"
     },
     "toasts": {
-      "success": "Gaaffiin gatii milkaa'inaan ergameera! Dhihootti isin qunnamna.",
-      "fail": "Erguun hin danda'amne. Mee odeeffannoo keessan mirkaneessaa irra deebi'aa yaalaa.",
-      "network": "Hidhata sararaa irratti rakkoon uumameera. Mee yeroo biraa yaalaa."
+      "success": "Galatoomi — dhihootti deebii kennina.",
+      "fail": "Hin ergamne. Mee irra deebi'i.",
+      "network": "Rakkoo sararaa. Mee irra deebi'i."
     }
   },
   "faq": {
-    "title": "Gaaffilee Yeroo Baay'ee Gaafataman Bittoota & Ergitoota Alaatiif",
-    "desc": "Waa'ee waraqaa ragaa, baay'ina bittaa xiqqaa (MOQ), loojistiiksii, fi qulqullinaa irratti odeeffannoo ijoo.",
+    "title": "Gaaffilee Qoteebultootaa",
+    "desc": "Waa'ee miseensummaa, galtee, liqii, fi ulaagaalee hojii irratti deebii argadhaa.",
     "items": [
       {
-        "question": "Oomishaaleen daldala alaatiif qophaa'an kamfa'i?",
-        "answer": "Tamaatii Sulula Qiinxamaa, shunkurtaa diimaa, qaaraa, dinicha baddaa, raafuu, luubiyaa, paappaayyaa haaraa, fi sanyiilee filatamoo sadarkaa daldala alaa ni dhiyeessina."
+        "question": "Waldaaleen bu'uuraa akkamitti yuniyeeniitti makamu?",
+        "answer": "Waldaaleen Godina Shawaa Bahaa fi Arsii jiran sanada galmee fi tarree miseensotaa waajjira yuniyeeniitti dhiyeessuun iyyachuu danda'u."
       },
       {
-        "question": "Oomishaalee Yuniyeenii Maqii Baatuu waraqaa ragaa akkamiitu deeggara?",
-        "answer": "Oomishni keenya hordoffii guutuu kan qabu waraqaa ragaa GlobalG.A.P kan qabudha. Akkasumas ulaagaa biyyaalessaa Itoophiyaatiin oomishtuu sanyii eeyyamameedha."
+        "question": "Yuniyeeniin deeggarsa akkamii dhiyeessa?",
+        "answer": "Sanyii filatamaa, xaa'oo, liqii qonnaa, tiraaktara, kuusaa qabbaneessaa, fi leenjii GlobalG.A.P ni dhiyeessina."
       },
       {
-        "question": "Amma gabaawwan idil-addunyaa kamiif dhiyeessitu?",
-        "answer": "Gabaawwan Awurooppaa xiyyaaraan, tajaajila soorata balalii Daandii Qilleensa Itoophiyaa, fi bittoota jumlaa Baha Afriikaatiif ni dhiyeessina."
+        "question": "Yuniyeenii keessa waldaalee fi qoteebultoota meeqatu jira?",
+        "answer": "Yuniyeeniin Maqii Baatuu lafa hek 5,910 irratti waldaalee 135 fi qoteebultoota 8,089 tokkoomsa."
       },
       {
-        "question": "Gaaffii gatii addaa akkamittiin dhiyeessa?",
-        "answer": "Unka fuula kana irratti argamuun oomisha barbaaddan, baay'ina toonii, fi biyya itti ergamu guutuun ergaa. Gareen daldala alaa sa'aatii 24 keessatti deebii kenna."
-      },
-      {
-        "question": "Hangi bittaa xiqqaa (MOQ) meeqa?",
-        "answer": "Hangi bittaa xiqqaa akkaakuu oomishaa fi waqtii irratti hundaa'a. Sagantaa dhiyeessii keessan nuuf erguun nu haasofsiisaa."
+        "question": "Ulaagaaleen seensa miseensummaa maali?",
+        "answer": "Ulaagaan miseensummaa fi qoodni kaappitaalaa boordiin murtaa'a. Qajeelfama argachuuf waajjira keenya quunnamaa."
       }
     ]
   }

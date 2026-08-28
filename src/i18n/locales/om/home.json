@@ -2,20 +2,20 @@
   "hero": {
     "title": "Waldaa kuduraa fi muduraa Itoophiyaa amanamaa bara 1994 irraa eegale.",
     "desc": "Yuniyeenii Maqii Baatuu waldaalee bu'uuraa 135 fi qonnaan bultoota miseensa 8,089 Oromiyaa, Itoophiyaa keessatti tokkoomsa. Oomishaalee qulqullina olaanaa qaban, kan waraqaa ragaa GlobalG.A.P qabanii fi sanyiilee eeyyamaman addunyaa guutuutti dhiyeessina.",
-    "ctaProducts": "Oomishaalee Keenya Daawwadhaa",
-    "ctaAbout": "Moodeela Hojii Gamtaa Keenya",
+    "ctaProducts": "Oomishaalee Keenya Ilaali",
+    "ctaAbout": "Moodeela WHG Keenya",
     "stats": {
-      "farmers": "Qonnaan Bultoota Miseensa",
+      "farmers": "Qoteebultoota",
       "coops": "Waldaalee Bu'uuraa",
-      "ha": "Lafa Jallisiin Misoomu",
-      "capital": "Kaappitaala Dhuunfaa (ETB)"
+      "ha": "Lafa Jallisii",
+      "capital": "Kaappitaala (ETB)"
     },
     "images": {
-      "aerial": "Bifa lafa qonnaa jallisiin misoomu kan naannoo Haroo Dambal qilleensa irraan",
-      "fertile": "Lafa qonnaa Itoophiyaa gabbataa wayita ifa barii",
-      "farmer": "Qonnaan bulaa waldaa oomisha haaraa haamu",
-      "women": "Qonnaan bultoota dubartootaa maasii waldaa keessatti hojjetan",
-      "buyer": "Oomisha sadarkaa daldala alaa qabu filatamuufi saamsamu"
+      "aerial": "Bifa lafa jallisii Haroo Dambal qilleensarraan",
+      "fertile": "Lafa qonnaa Itoophiyaa gabbataa barii",
+      "farmer": "Qoteebulaa waldaa oomisha haamu",
+      "women": "Dubartoota maasii waldaa keessatti hojjetan",
+      "buyer": "Oomisha ergaa alaa filatamuu fi saamsamuu"
     },
     "storyBadge": "Seenaa Keenya • Yuniyeenii Maqii Baatuu",
     "videoTitle": "Viidiyoo Seenaa Yuniyeenii Maqii Baatuu",
@@ -23,13 +23,13 @@
   },
   "bento": {
     "tag": "Kuusaa Oomishaa",
-    "title": "Oomishaalee Kuduraa fi Muduraa Sadarkaa Daldala Alaa",
-    "desc": "Biyyoo gabbataa Sulula Qiinxamaa Keessatti (Great Rift Valley) ulaagaalee waraqaa ragaa GlobalG.A.P jalatti oomishame.",
-    "viewCatalog": "Tarree oomishaa guutuu ilaalaa",
+    "title": "Oomishaalee Ergaa Alaa",
+    "desc": "Biyyoo gabbataa Sulula Qiinxamaatti ulaagaa GlobalG.A.P jalatti oomishame.",
+    "viewCatalog": "Tarree oomishaa guutuu ilaali",
     "items": {
       "tomatoes": {
         "name": "Tamaatii Sulula Qiinxamaa",
-        "tag": "Haaraa, sadarkaa daldala alaa"
+        "tag": "Haaraa, sadarkaa ergaa alaa"
       },
       "onions": {
         "name": "Shunkurtaa Diimaa",
@@ -37,7 +37,7 @@
       },
       "peppers": {
         "name": "Qaaraa Magariisa",
-        "tag": "Waqtiitiin"
+        "tag": "Waqtiidhaan"
       },
       "potato": {
         "name": "Dinicha Baddaa",
@@ -48,31 +48,31 @@
         "tag": "Oomisha waqtii"
       },
       "seeds": {
-        "name": "Sanyii Filatamaa Eeyyamameef",
+        "name": "Sanyii Filatamaa",
         "tag": "Eeyyama Seeraa"
       }
     }
   },
   "process": {
     "badge": "Sanjata Dhiyeessaa Guutuu",
-    "badgeFlow": "Tamsaasa Qonnaa Hanga Gabaatti",
-    "title": "Qonna Sulula Qiinxamaa Irraa Hanga Minjaala Addunyaatti",
-    "desc": "Tamsaasa qabbaneessaa sadarkaa 4 guutuu waldaalee bu'uuraa 135 fayyadamtoota biyya keessaa fi bittoota idil-addunyaa waliin walqunnamsiisu.",
-    "buyersLink": "Akka bittaatti oomisha keenya akkamitti akka argattu baraa",
+    "badgeFlow": "Tamsaasa Maasiirraa Gabaatti",
+    "title": "Qonna Sulula Qiinxamaarraa Hanga Addunyaatti",
+    "desc": "Tamsaasa qabbaneessaa sadarkaa 4 kan waldaalee 135 fayyadamtoota biyyaa fi addunyaatti quunnamsiisu.",
+    "buyersLink": "Akka bittaatti oomisha keenya akkamitti akka argattu bari",
     "ariaLabel": "Adeemsa Sanjata Dhiyeessaa",
-    "swipeHint": "Tamsaasa sadarkaa 4 daawwachuuf harka keessan irra oofaa (swipe)",
+    "swipeHint": "Tamsaasa sadarkaa 4 daawwachuuf harka oofi",
     "steps": [
       {
         "number": "01",
         "phase": "Fudhaafi Qulqullina",
         "location": "Waldaalee Bu'uuraa",
         "icon": "verified",
-        "title": "Oomisha Fudhuufi Sadarkeessuu",
-        "tag": "Waldaalee Bu'uuraa 135",
-        "description": "Oomishni haamame waldaalee miseensotaa 135 irraa dhufee yeruma sana sakatta'amee, filatamee gabaa biyya keessaa fi daldala alaaf sadarkeessama.",
+        "title": "Oomisha Fudhuu fi Sadarkeessuu",
+        "tag": "Waldaalee 135",
+        "description": "Oomishni waldaalee irraa dhufee yeruma sana sakatta'amee, filatamee gabaa biyyaa fi ergaa alaaf sadarkeessama.",
         "highlights": [
-          "Qonnaan Bultoota Miseensa 8,089",
-          "Sadarkeessuu qulqullinaa fi guddinaa marsaa adda addaa"
+          "Qoteebultoota 8,089",
+          "Sadarkeessuu marsaa adda addaa"
         ],
         "stat": {
           "value": "135",
@@ -81,49 +81,49 @@
       },
       {
         "number": "02",
-        "phase": "Dursanii Qabbaneessuufi Mana Kuusaa",
-        "location": "Wiirtuu Giddugaleessaa Maqii",
+        "phase": "Dursanii Qabbaneessuu",
+        "location": "Wiirtuu Maqii",
         "icon": "inventory_2",
-        "title": "Erga Haamamee Booda Qabbaneessuu",
-        "tag": "Saffisaan Qabbanaatti Walitti-qabuu",
-        "description": "Saffisaan qabbaneessuun oo'a maasii sa'aatii muraasa keessatti balleessuun qulqullina, jabinummaa fi haaraa ta'uu oomishaa eega.",
+        "title": "Erga Haamamee Booda",
+        "tag": "Saffisaan Qabbaneessuu",
+        "description": "Saffisaan qabbaneessuun oo'a maasii balleessuun qulqullina, jabinummaa fi haarummaa oomishaa eega.",
         "highlights": [
           "Oo'a maasii saffisaan balleessuu",
-          "Hordoffii oomishaa balbala maasii irraa"
+          "Hordoffii oomishaa maasiirraa"
         ],
         "stat": {
           "value": "5,910 ha",
-          "label": "Lafa Jallisiin Misoomu"
+          "label": "Lafa Jallisii"
         }
       },
       {
         "number": "03",
-        "phase": "Qulqullinaa & Mirkaneessa Qulqullinaa",
-        "location": "Sarara Qulqulleessuu Mirkanaa'e",
+        "phase": "Mirkaneessa Qulqullinaa",
+        "location": "Sarara Mirkanaa'e",
         "icon": "sanitizer",
-        "title": "Qulqullinaan Dhiquu fi QA",
-        "tag": "Waraqaa Ragaa GlobalG.A.P",
-        "description": "Oomishni qulqullinaan dhiqama, haraafi kemikaalli ni qoratama, akkasumas ulaagaa GlobalG.A.P eeguuf sakatta'insa QA cimaa keessa darba.",
+        "title": "Dhiquu fi QA",
+        "tag": "Ragaa GlobalG.A.P",
+        "description": "Oomishni dhiqama, keemikaalli ni qoratama, akkasumas ulaagaa GlobalG.A.P eeguuf sakatta'insa keessa darba.",
         "highlights": [
-          "Qorannoo haraa kemikaalaa zeeroo ta'e",
-          "Sararawwan bishaan qulqulluun dhiquu"
+          "Qorannoo keemikaalaa zeeroo",
+          "Sarara bishaan qulqulluun dhiquu"
         ],
         "stat": {
           "value": "100%",
-          "label": "Nageenyi Nyaataa Kan Mirkanaa'e"
+          "label": "Nageenyi Nyaataa Mirkanaa'e"
         }
       },
       {
         "number": "04",
-        "phase": "Saamsuufi Addunyaatti Erguu",
+        "phase": "Saamsuu fi Erguu",
         "location": "Finfinnee & Fe'umsa Qilleensaa",
         "icon": "local_shipping",
-        "title": "Loojistiiksii Qabbanaawaa & Daldala Alaa",
+        "title": "Loojistiiksii & Ergaa Alaa",
         "tag": "Kallattiin Fudhachuu",
-        "description": "Kaartoonii daldala alaa qilleensa gaarii qabutti saamsamee geejjiba qabbanaawaadhaan suuqiiwwan Finfinnee 5 fi fe'umsa qilleensaa idil-addunyaatti ergama.",
+        "description": "Kaartoonii daldala alaatti saamsamee geejjiba qabbanaawaan suuqiiwwan Finfinnee 5 fi fe'umsa qilleensaatti ergama.",
         "highlights": [
           "Suuqiiwwan Finfinnee 5",
-          "Daldala alaa awurooppaa fi daandii xiyyaaraa kallattiin"
+          "Ergaa alaa Awurooppaa fi daandii xiyyaaraa"
         ],
         "stat": {
           "value": "Toonii 50k+",
@@ -133,136 +133,136 @@
     ]
   },
   "resources": {
-    "tag": "Bu'uuraalee Misoomaa & Qabeenya",
+    "tag": "Bu'uuraalee & Qabeenya",
     "title": "Bu'uuraalee Qonnaa Ammayyaa",
-    "desc": "Kuusaa qabbaneessaa, geejjiba qabbaneessaa qabu, fi jallisii ammayyaa oomisha olaanaa fi qisaasama boodaa xiqqaachiisu.",
-    "exploreAll": "Bu'uuraalee misoomaa fi safartuuwwan hunda ilaalaa",
+    "desc": "Kuusaa qabbaneessaa, geejjibaa, fi jallisii ammayyaa oomisha guddisan fi qisaasama xiqqaachiisan.",
+    "exploreAll": "Bu'uuraalee hunda ilaali",
     "items": {
       "coldStorage": {
-        "name": "Kuusaa Qabbaneessaa & Mana Kuusaa",
+        "name": "Kuusaa Qabbaneessaa",
         "stat": "Toonii 2,000",
-        "desc": "Kutaa qabbaneessaa adda addaa waldaalee 135 tajaajilan."
+        "desc": "Kutaa qabbaneessaa to'annoo ho'aa qaban kan waldaalee 135 tajaajilan."
       },
       "fleet": {
-        "name": "Konkolaattota Geejjiba Qabbanaawaa",
-        "stat": "Konkolaattota & Tiraaktaroota 18+",
+        "name": "Geejjiba Qabbanaawaa",
+        "stat": "Konkolaattota 18+",
         "desc": "Konkolaattota qabbanaawaa qulqullina oomishaa eegan."
       },
       "packhouse": {
-        "name": "Wiirtuu Qulqulleessuu & Saamsuu Daldala Alaa",
+        "name": "Wiirtuu Saamsamaa Daldala Alaa",
         "stat": "Toonii 50,000 / Waggaatti",
-        "desc": "Sarara qulqulleessuu, dhiquu fi saamsuu waraqaa ragaa GlobalG.A.P qabu."
+        "desc": "Sarara sadarkeessuu, dhiquu fi saamsuu ragaa GlobalG.A.P qabu."
       },
       "irrigation": {
-        "name": "Sagantaa Jallisii Haroo Dambal",
+        "name": "Jallisii Haroo Dambal",
         "stat": "Hektaara 5,910",
-        "desc": "Wiirtuu paampii humna elektirikii fi sirna jallisii ammayyaa oomisha waggaa guutuu dandeessisu."
+        "desc": "Paampii elektiriikii fi jallisii ammayyaa oomisha waggaa guutuu dandeessisu."
       }
     }
   },
   "documentation": {
     "tag": "Sanadoota",
-    "title": "Qabeenya Ijoo & Buufachuuf",
+    "title": "Qabeenya & Buufachuuf",
     "companyProfile": {
       "title": "Pirofaayilii Dhaabbataa",
-      "desc": "Seenaa, bulchiinsa waldaa, fi ibsa dandeettii hojii.",
-      "download": "Pirofaayilii Dhaabbataa Yuniyeenii Maqii Baatuu Buufadhaa (PDF)"
+      "desc": "Seenaa, bulchiinsa, fi dandeettii hojii.",
+      "download": "Pirofaayilii Yuniyeenii Maqii Baatuu Buufadhu (PDF)"
     },
     "impactReports": {
-      "desc": "Waraqaa ragaa GlobalG.A.P fi sanada oomishtummaa sanyii eeyyamame."
+      "desc": "Ragaa GlobalG.A.P fi sanada oomishtuu sanyii eeyyamame."
     },
     "products": {
-      "desc": "Bal'ina tarreeffama oomishaalee kuduraa fi muduraa akkasumas sanyii kuduraalee mirkanaa'an guutuu."
+      "desc": "Tarreeffama oomishaalee kuduraa fi sanyii mirkanaa'an guutuu."
     }
   },
   "audience": {
     "farmers": {
       "tag": "Oomishtootaaf",
-      "title": "Qonnaan bulaa yookiin waldaa bu'uuraati?",
-      "desc": "Sanyii filatamaa, tajaajila tiraaktaraa, dandeettii daldalaa gamtaa, fi gabaa amanamaa argachuuf waldaalee miseensa 135tti makamaa.",
-      "link": "Waa'ee miseensummaa fi faayidaalee baraa"
+      "title": "Qoteebulaa ykn waldaa bu'uuraati?",
+      "desc": "Sanyii filatamaa, tiraaktara, aango daldalaa, fi gabaa amanamaa argachuuf waldaalee 135tti makami.",
+      "link": "Waa'ee miseensummaa fi faayidaa bari"
     },
     "buyers": {
       "tag": "Bittootaaf",
-      "title": "Bittaa daldalaa yookiin ergaa alaa dhaa?",
-      "desc": "Tamaatii, shunkurtaa diimaa, paappaayyaa, fi luubiyaa qulqullina olaanaa fi hordoffii GlobalG.A.P qabu bittaa.",
-      "link": "Gaaffii bittaa daldala alaa ergaa"
+      "title": "Bittaa daldalaa ykn ergaa alaati?",
+      "desc": "Tamaatii, shunkurtaa, paappaayyaa, fi luubiyaa qulqullina olaanaa fi hordoffii GlobalG.A.P qabu bittaa.",
+      "link": "Gaaffii bittaa daldala alaa ergi"
     }
   },
   "testimonials": {
     "tag": "Hawaasa & Dhiibbaa",
-    "title": "Sagalee Miseensota Waldaa Keenyaa",
-    "desc": "Qonnaan bultoota miseensaa, gaggeessitoota waldaa, fi harka-qalleeyyii daldalaa Itoophiyaa fi Awurooppaa irraa dhaga'aa.",
-    "badge": "Yaada Kennitootaa",
-    "ariaLabelPrev": "Yaada kennaman darban",
-    "ariaLabelNext": "Yaada kennaman ittaanan",
-    "verifiedPartner": "Michuu Waldaa Mirkanaa'e",
+    "title": "Sagalee Waldaa Keenyaa",
+    "desc": "Qoteebultoota, gaggeessitoota, fi michoota daldalaa Itoophiyaa fi Awurooppaa dhaga'i.",
+    "badge": "Yaada Kennaman",
+    "ariaLabelPrev": "Yaada darban",
+    "ariaLabelNext": "Yaada ittaanan",
+    "verifiedPartner": "Michuu Mirkanaa'e",
     "ratingAriaLabel": "Urjii 5 keessaa 5",
-    "goToSlide": "Gara fooyyaa {{slide}} deemi",
+    "goToSlide": "Gara fuula {{slide}} deemi",
     "items": {
       "t1": {
         "role": "Hogganaa Bittaa Olaanaa",
         "org": "Nordic Fresh Imports",
         "location": "Copenhagen, Denmark",
-        "category": "Bittaa Daldala Alaa",
-        "quote": "Yuniyeenii Maqii Baatuu waliin hojjechuun keenya waqtii hunda qulqullina itti fufiinsa qabuufi hamma daldala alaa amansiisaa akka argannu nu taasiseera. Ulaagaan GlobalG.A.P isaanii bittoota keenyaaf of-itti amanamummaa guutuu kenna."
+        "category": "Bittaa Ergaa Alaa",
+        "quote": "Yuniyeeniin Maqii Baatuu waliin hojjechuun qulqullina itti fufiinsa qabuufi hamma ergaa alaa amansiisaa nuuf kenne. Ulaagaan GlobalG.A.P ofitti amanamummaa guutuu uuma."
       },
       "t2": {
-        "role": "Dura Taa'aa Waldaa Bu'uuraa",
-        "org": "Waldaa Qonnaan Bultootaa Baatuu",
+        "role": "Dura Taa'aa Waldaa",
+        "org": "Waldaa Q/Bultoota Baatuu",
         "location": "Aanaa Dugdaa, Oromiyaa",
         "category": "Miseensa Waldaa",
-        "quote": "Yuuniyeenichi miseensota waldaa keenyaa 350+ ta'aniif gatii ka'umsaa haqa qabeessa ta'e, leenjii qonnaa, fi geejjiba qabbanaawaa kallattii oomisha keenya eegu akka argatan gargaareera."
+        "quote": "Yuniyeeniin miseensota 350+ ta'aniif gatii haqaqabeessa, leenjii qonnaa, fi geejjiba qabbanaawaa oomisha eegu akka argatan gargaareera."
       },
       "t3": {
         "role": "Daarektara Bittaa",
         "org": "EuroAgri Trade Group",
         "location": "Marseille, France",
-        "category": "Bittaa Daldala Alaa",
-        "quote": "Tamaatiin Sulula Qiinxamaa fi luubiyaan isaanii daldala alaa kuduraa fi muduraa Itoophiyaatiif sadarkaa uuma. Hordoffii guutuun maasii irraa hanga saamsama xiyyaaraatti ni jira."
+        "category": "Bittaa Ergaa Alaa",
+        "quote": "Tamaatiin Sulula Qiinxamaa fi luubiyaan isaanii ergaa alaa kuduraatiif sadarkaa uuma. Hordoffii guutuun maasii irraa hanga xiyyaaraatti jira."
       },
       "t4": {
-        "role": "Hogganaa Ogeessota Qonnaa Dubartootaa",
-        "org": "Maqii Valley Produce Group",
+        "role": "Hogganaa Ogeessota Dubartootaa",
+        "org": "Meki Valley Produce Group",
         "location": "Godina Shawaa Bahaa",
         "category": "Miseensa Waldaa",
-        "quote": "Sagantaalee ijaarsa dandeettii fi sanyii Yuniyeenii Maqii Baatuutiin, dubartoonni qonnaan bultoonni aanaa keenyaa oomisha isaanii dachaadhaan guddisanii galiidhaan of danda'aniiru."
+        "quote": "Sagantaalee sanyii fi ijaarsa dandeettii Yuniyeeniitiin, dubartoonni qonnaan bultootni aanaa keenyaa oomisha isaanii dachaadhaan guddisaniiru."
       },
       "t5": {
         "role": "Daarektara Ramaddii",
         "org": "Global Harvest Logistics",
         "location": "Rotterdam, Netherlands",
-        "category": "Bittaa Daldala Alaa",
-        "quote": "Waraqaan ragaa GlobalG.A.P isaanii hariiroo bittaa yeroo dheeraa ijaaruuf of-itti amanamummaa guutuu nuuf kenne. Loojistiiksii amansiisaa fi sanadoota daldala alaa yeroon qopheessu."
+        "category": "Bittaa Ergaa Alaa",
+        "quote": "Ragaan GlobalG.A.P isaanii hariiroo bittaa yeroo dheeraa ijaaruuf ofitti amanamummaa guutuu nuuf kenne. Loojistiiksii amansiisaa fi sanada saffisaa."
       },
       "t6": {
         "role": "Oomishaa Sanyii Kuduraa",
-        "org": "Adami Tulu Co-op Network",
+        "org": "Hidhata Waldaa Adaamii Tulluu",
         "location": "Zeway / Adaamii Tulluu",
         "category": "Miseensa Waldaa",
-        "quote": "Sanyii filatamaa biqilummaan isaa olaanaa ta'eefi meeshaalee makaanayizeeshinii yuuniyeenichaa argachuun si'aayina haamaa keenya jijjiireera. Amma yeroo hunda shunkurtaa sadarkaa A guutuun alatti ergina."
+        "quote": "Sanyii filatamaa fi meeshaaleen makaanayizeeshinii yuniyeenichaa si'aayina haamaa keenya jijjiireera. Amma shunkurtaa sadarkaa A guutuun alatti ergina."
       }
     }
   },
   "partners": {
-    "certTag": "Ulaagaalee Qulqullinaa",
-    "certTitle": "Qulqullina Mirkanaa'e & Waraqaa Ragaa",
-    "certDesc": "Hojiin keenya ulaagaalee nageenya nyaataa, naannoo fi hordoffii idil-addunyaa guuta.",
-    "partnersTag": "Waliigaltee Addunyaa",
-    "partnersTitle": "Michoota Misoomaa & Tarsiimoo Keenya",
-    "partnersDesc": "Qonna Itoophiyaa ceesisuuf dhaabbilee biyyaalessaa, ejensiiwwan misoomaa idil-addunyaa, fi dursitoota gabaa waliin hojjechuu.",
-    "viewAll": "Fuula Waa'ee Keenya irratti michoota hunda ilaalaa",
+    "certTag": "Ulaagaa Qulqullinaa",
+    "certTitle": "Qulqullina Mirkanaa'e & Ragaa",
+    "certDesc": "Hojiin keenya ulaagaa nageenya nyaataa, naannoo fi hordoffii idil-addunyaa guuta.",
+    "partnersTag": "Hidhata Addunyaa",
+    "partnersTitle": "Michoota Tarsiimoo & Misoomaa",
+    "partnersDesc": "Qonna Itoophiyaa ceesisuuf dhaabbilee biyyaa, ejensiiwwan misoomaa idil-addunyaa, fi dursitoota gabaa waliin hojjechuu.",
+    "viewAll": "Fuula Waa'ee Keenya irratti michoota hunda ilaali",
     "logoAlt": "Looogoo {{name}}",
     "logoTitle": "{{name}} ({{category}})"
   },
   "leadership": {
     "tag": "Geggeessummaa Dimokraatawaa",
-    "title": "Hooggansa Hojii Raawwachiiftuu & Bulchiinsaa",
-    "desc": "Daarektaroota muuxannoo qabanii fi hooggantoota kutaalee waldaalee bu'uuraa 135 fi qonnaan bultoota 8,089 gara milkaa'ina gabaatti, qonna itti-fufiinsa qabuu fi dhiyeessii daldala alaa amansiisaatti qajeelchan.",
-    "viewGovernance": "Caasaa Bulchiinsaa Guutuu Ilaalaa",
-    "emailAria": "E-meelii {{name}} gara ergi",
-    "emailTitle": "E-meelii {{name}}: {{email}}",
-    "badge": "Hooggansa Yuuniyeenichaa",
-    "swipeHint": "Hooggansa daawwachuuf harka keessan irra oofaa ({{count}})"
+    "title": "Hooggansa Olaanaa & Bulchiinsa",
+    "desc": "Daarektarootni fi hooggantootni kutaalee waldaalee 135 fi qoteebultoota 8,089 gara milkaa'ina gabaatti fi dhiyeessii ergaa alaatti qajeelchan.",
+    "viewGovernance": "Caasaa Bulchiinsaa Guutuu Ilaali",
+    "emailAria": "Imeelii {{name}} gara ergi",
+    "emailTitle": "Imeelii {{name}}: {{email}}",
+    "badge": "Hooggansa Yuniyeenii",
+    "swipeHint": "Hooggansa daawwachuuf harka oofi ({{count}})"
   }
 }

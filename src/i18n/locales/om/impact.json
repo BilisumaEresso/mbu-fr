@@ -3,57 +3,57 @@
     "title": "Guddina Misoomsanii Hawaasa Deeggaruu",
     "desc": "Sulula Qiinxamaa Itoophiyaa keessatti jallisii ammayyaa, galteewwan, fi gabaa mirkanaa'een qonnaan bultoota miseensa 8,089 waldaalee 135 keessatti jajjabeessuu.",
     "badge": "Qonnaan Bultoota Miseensa 8,089 Jajjabeessuu",
-    "viewMetrics": "Safartuuwwan Dhiibbaa Ilaalaa",
-    "impactReports": "Gabaasa Dhiibbaa",
+    "viewMetrics": "Safartuu Bu'aa Ilaali",
+    "impactReports": "Gabaasa Bu'aa",
     "imageAlt": "Lafa qonnaa lalisaa fi ifa aduu yeroo galgalaa Itoophiyaa keessatti"
   },
   "metrics": {
-    "title": "Dhiibbaa Safaramuu Danda'u",
-    "desc": "Safartuuwwan bu'aa hojii gamtaa, bal'ina qonnaa, fi badhaadhina hawaasaa agarsiisan.",
+    "title": "Dhiibbaa Safaramu",
+    "desc": "Safartuu bu'aa hojii gamtaa, bal'ina qonnaa, fi badhaadhina hawaasaa agarsiisu.",
     "stats": {
-      "farmers": "Qonnaan Bultoota Miseensa",
+      "farmers": "Qoteebultoota",
       "coops": "Waldaalee Bu'uuraa",
-      "capital": "Kaappitaala Dhuunfaa (ETB)",
-      "ha": "Lafa Jallisiin Misoomu",
-      "districts": "Aanolee Hojii",
-      "volume": "Baay'ina Oomisha Waggaa"
+      "capital": "Kaappitaala (ETB)",
+      "ha": "Lafa Jallisii",
+      "districts": "Aanoolee Hojii",
+      "volume": "Oomisha Waggaa"
     },
-    "imageAlt": "Dubartoota qonnaan bultoota ooyiruu waldaa Itoophiyaa keessatti"
+    "imageAlt": "Dubartoota maasii waldaa keessatti"
   },
   "pillars": {
     "tag": "Utubaalee Ijoo",
-    "title": "Utubaalee Dhiibbaa Itti-fufiinsa Qaban",
-    "desc": "Kunuunsa naannoo, dandeettii dubartootaa jajjabeessuu, fi guddina diinagdee hojii gamtaatiif kutannoo yeroo dheeraa qabnu.",
+    "title": "Utubaalee Dhiibbaa Itti-fufaan",
+    "desc": "Kunuunsa naannoo, dandeettii dubartootaa jajjabeessuu, fi guddina diinagdee waldaatiif kutannoo qabnu.",
     "pillar1": {
       "title": "Eegumsa Naannoo",
-      "desc": "Xaa'oo uumamaa jajjabeessuu, qusannaa bishaan jallisii, fi eegumsa laga Haroo Dambal."
+      "desc": "Xaa'oo uumamaa, qusannaa jallisii, fi eegumsa laga Haroo Dambal jajjabeessuu."
     },
     "pillar2": {
       "title": "Dubartoota Qonna Keessatti",
-      "desc": "Miseensota dubartootaaf liqii maayikiroo fi leenjii hooggansaa kennuun jajjabeessuu."
+      "desc": "Miseensota dubartootaaf liqii maayikiroo fi leenjii hooggansaa kennuu."
     },
     "pillar3": {
       "title": "Cimina Diinagdee",
-      "desc": "Gatii gabaa gadi-aanaa mirkanaa'e fi qooda bu'aa waggaa iftoomina qabuun qonnaan bulaa jijjiirama gabaa irraa eeguu."
+      "desc": "Gatii gadi-aanaa mirkanaa'e fi qooda bu'aa iftoomina qabuun qoteebulaa eeguu."
     }
   },
   "reports": {
-    "tag": "Iftoomina & Gaafatama",
-    "title": "Maxxansoota & Gabaasa Oditii",
-    "desc": "Gamaaggama dhiibbaa waggaa fi sanadoota iftoomina faayinaansii mirkanaa'an buufadhaa.",
-    "downloadPdf": "PDF Buufadhaa",
+    "tag": "Iftoomina",
+    "title": "Maxxansa & Gabaasa Oditii",
+    "desc": "Gamaaggama dhiibbaa waggaa fi sanada iftoomina faayinaansii mirkanaa'an buufadhu.",
+    "downloadPdf": "PDF Buufadhu",
     "items": [
       {
-        "title": "Gabaasa Dhiibbaa Waggaa 2023",
+        "title": "Gabaasa Waggaa 2023",
         "desc": "Gabaasa guutuu bu'aa hojii fi tattaaffii hawaasaa."
       },
       {
-        "title": "Waraqaa Ragaa GlobalG.A.P",
-        "desc": "Mirkaneessa seera qabeessa hojimaata qonna nagaa fi itti-fufiinsa qabu."
+        "title": "Ragaa GlobalG.A.P",
+        "desc": "Mirkaneessa seeraa hojimaata qonna nagaa fi itti-fufiinsa qabu."
       },
       {
         "title": "Gamaaggama Iftoomina Faayinaansii Q4",
-        "desc": "Ibsa baasii baasii fi galii faayinaansii fi qooda bu'aa miseensotaa."
+        "desc": "Ibsa baasii fi galii faayinaansii fi qooda bu'aa miseensotaa."
       }
     ]
   }

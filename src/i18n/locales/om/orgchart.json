@@ -2,193 +2,193 @@
   "roles": {
     "ga": {
       "title": "Yaa'ii Waliigalaa",
-      "sub": "Qaama Bulchiinsaa Ol'aanaa",
-      "reportsTo": "Bakka bu'oota waldaalee miseensota jalqabaa 135 bakka bu'an",
-      "desc": "Aangoo murteessuu ol'aanaa Waldaa Maqii Baatuu yoo ta'u, bakka bu'oota filataman waldaalee miseensota jalqabaa 135 Godina Shawaa Bahaa fi Arsii keessaa filataman of keessatti hammata.",
+      "sub": "Qaama Bulchiinsa Olaanaa",
+      "reportsTo": "Bakka bu'oota waldaalee 135",
+      "desc": "Aangoo murteessuu olaanaa yuniyeenii yoo ta'u, bakka bu'oota waldaalee 135 Shawaa Bahaa fi Arsii irraa filataman of keessaa qaba.",
       "responsibilities": [
-        "Aangoo seera fi tarsiimoo ol'aanaa imaammata fi dambii waldaa irratti",
-        "Boordii Daayirektaroota fi Koree To'annoo filata, hordofa",
-        "Gabaasa odiitii waldaa waggaa fi hirmaannaa bu'aa miseensotaa ni mirkaneessa"
+        "Aangoo seeraa fi imaammata yuniyeenii irratti olaanaa",
+        "Boordii Daarektarootaa fi Koree To'annoo filata",
+        "Gabaasa oditii fi qooda bu'aa miseensotaa mirkaneessa"
       ]
     },
     "bod": {
-      "title": "Boordii Daayirektaroota",
-      "sub": "Hoggantoota Filataman",
-      "reportsTo": "Yaa'ii Waliigalaatti kallattiin gabaasa",
-      "desc": "Hoggantoota waldaa filataman bulchiinsa tarsiimoo waldaa, bocuu imaammata yeroo dheeraa, raggaasisuu investimentii kaappitaalaa, fi qacaruu/hordoffii hogganaa raawwachiisaaf itti gaafataman.",
+      "title": "Boordii Daarektarootaa",
+      "sub": "Hooggansa Filatame",
+      "reportsTo": "Yaa'ii Waliigalaatti gabaasa",
+      "desc": "Hooggantoota filataman kan tarsiimoo bulchiinsaa, imaammata, invastimantii, fi qaxara hojii raawwachiisaaf itti gaafataman.",
       "responsibilities": [
-        "Bulchiinsa tarsiimoo, karoora waggaa hedduu, fi murteewwan investimentii kaappitaalaa",
-        "Muudama, madaallii raawwii, fi hordoffii Maanaajeraa Waliigalaa",
-        "Qabeenyaa waldaa, haqa miseensotaa, fi maqaa gaarii dhaabbataa eega"
+        "Bulchiinsa tarsiimoo, karoora fi murtee invastimantii",
+        "Muudama, madaallii, fi hordoffii Hojii Raawwachiisaa",
+        "Qabeenya, haqa miseensaa, fi maqaa dhaabbataa eeguu"
       ]
     },
     "cc": {
       "title": "Koree To'annoo",
       "sub": "Hordoffii Keessoo",
-      "reportsTo": "Yaa'ii Waliigalaatti bilisaan gabaasa",
-      "desc": "Koree hordoffii bilisaa miseensotaan filatame fayyaa maallaqaa odiitii gochuu, hojii irra oolmaa seeraa dirqisiisuu, dambii waldaa mirkaneessuu, fi iftoominaa dhaabbataa mirkaneessuuf.",
+      "reportsTo": "Yaa'ii Waliigalaatti gabaasa",
+      "desc": "Koree bilisaa fayyummaa maallaqaa, hojiirra oolmaa seeraa, dambii waldaa, fi iftoomina mirkaneessuuf filatame.",
       "responsibilities": [
-        "Odiitii hojii irra oolmaa maallaqaa fi seeraa bilisaa kutaalee waldaa hunda keessatti",
-        "Sarara gabaasaa seeraa kallattii Yaa'ii Waliigalaatti, fillannoo bulchiinsaa malee",
-        "Mirkaneessuu dambii waldaa, galmee qabeenyaa, fi naamusa bittaa"
+        "Oditii maallaqaa fi seeraa kutaalee hunda keessatti",
+        "Gabaasa kallattii Yaa'ii Waliigalaaf dhiyeessuu",
+        "Dambii, galmee qabeenyaa, fi naamusa bittaa mirkaneessuu"
       ]
     },
     "gm": {
-      "title": "Maanaajeraa Waliigalaa",
-      "sub": "Hoogganaa Ol'aanaa Hojii Raawwachiisaa",
-      "reportsTo": "Boordii Daayirektarootaatti gabaasa",
-      "desc": "Hoogganaa hojii raawwachiisaa ol'aanaa bulchiinsa hojii waliigalaa, raawwii sagantaa tarsiimoo, hariiroo michoomaa dhaabbilee, fi guddinaa daldalaa waldaaf itti gaafatamummaa qabu.",
+      "title": "Hojii Raawwachiisaa",
+      "sub": "Hoogganaa Olaanaa",
+      "reportsTo": "Boordiitti gabaasa",
+      "desc": "Hoogganaa olaanaa bulchiinsa hojii, raawwii sagantaa, hariiroo michootaa, fi guddina daldala yuniyeeniif itti gaafatamau.",
       "responsibilities": [
-        "Hogganummaa guutuu hojii waldaa, guddina daldalaa, fi dhiibbaa miseensota 8,089+ irratti",
-        "Hogganaa walitti dhufeenya dhaabbilee ministeera mootummaa, UNIDO, LVIA, fi bittootaa daldalaa waliin",
-        "To'annoo kallattii ogeeyyii deeggarsa hojii raawwachiisaa fi Itti Aanaa Maanaajeraa"
+        "Hooggansa hojii, guddina daldalaa, fi dhiibbaa miseensa 8,089+",
+        "Hariiroo dhaabbilee mootummaa, UNIDO, LVIA, fi bittootaa",
+        "To'annoo ogeeyyii deeggarsaa fi Itti Aanaa Hojii Raawwachiisaa"
       ]
     },
     "lawyer": {
       "title": "Abukaatoo",
       "sub": "Gorsa Seeraa",
-      "reportsTo": "Maanaajeraa Waliigalaatti kallattiin gabaasa",
-      "desc": "Gorsa seeraa, bulchiinsa waliigaltee, hordoffii hojii irra oolmaa seeraa, fi ittisa mirga qabeenyaa fi daldalaa miseensota waldaa kenna.",
+      "reportsTo": "Hojii Raawwachiisaatti gabaasa",
+      "desc": "Gorsa seeraa, bulchiinsa waliigaltee, hordoffii seeraa, fi ittisa mirga daldalaa miseensotaa kenna.",
       "responsibilities": [
-        "Waliigaltee dhiyeessii, waliigaltee ergii alaatti, fi kakuu dhiyeessitootaa qopheessa, ni xiinxala",
-        "Dhaabbii seeraa waldaa, kireeffama lafaa, fi maqaa qabeenyaa mana murtii keessatti ittisa",
-        "Maanaajeraa Waliigalaa seera hojjettootaa, dambii waldaa, fi hir'isuu balaa irratti gorsa"
+        "Waliigaltee bittaa, ergaa alaa, fi dhiyeessitootaa qopheessa",
+        "Dhaabbii seeraa, kireeffama lafaa, fi mirga qabeenyaa ittisa",
+        "Hojii Raawwachiisaa seera hojjettootaa fi dambii irratti gorsa"
       ]
     },
     "sec": {
-      "title": "Barreessaa Hojii Raawwachiisaa",
-      "sub": "Waajjira Hojii Raawwachiisaa",
-      "reportsTo": "Maanaajeraa Waliigalaatti kallattiin gabaasa",
-      "desc": "Hojii waajjira hojii raawwachiisaa, quunnamtii boordii, galmeewwan ofiisaa, walgahiiwwan bakka bu'ootaa, fi adeemsa hojii bulchiinsa hojii raawwachiisaa qindeessa.",
+      "title": "Barreessaa Olaanaa",
+      "sub": "Waajjira Olaanaa",
+      "reportsTo": "Hojii Raawwachiisaatti gabaasa",
+      "desc": "Hojii waajjiraa, quunnamtii boordii, galmee, walgahii bakka bu'ootaa, fi adeemsa bulchiinsaa qindeessa.",
       "responsibilities": [
-        "Dukkaanaa ofiisaa, hasaa'a hojii raawwachiisaa, murtii boordii, fi galmee bakka bu'ootaa eega",
-        "Sagantaa hojii raawwachiisaa, pirotokoola michoomaa ofiisaa, fi yaa'iiwwan boordii qindeessa",
-        "Xalayaa hojii raawwachiisaa keessoo Maanaajeraa Waliigalaa fi hoggantoota muummee gidduu haala mijeessa"
+        "Galmee ofiisaa, qaboo yaa'ii, murtii boordii, fi galmee eega",
+        "Sagantaa, pirotokoola michootaa, fi yaa'ii boordii qindeessa",
+        "Xalayaa Hojii Raawwachiisaa fi hooggantoota gidduu haala mijeessa"
       ]
     },
     "plan": {
-      "title": "Ogeessa Olaanaa Karoora Qopheessuu, Madaaluu fi Baajata",
-      "sub": "Karoora fi Madaallii",
-      "reportsTo": "Maanaajeraa Waliigalaatti kallattiin gabaasa",
-      "desc": "Karoora hojii waggaa, baajata kaappitaalaa, xiinxala dandeettii pirojektii, safartuu madaallii raawwii, fi hordoffii dhiibbaa dinagdee hawaasummaa hogganaa.",
+      "title": "Ogeessa Karooraa fi Baajataa",
+      "sub": "Karoora & Madaallii",
+      "reportsTo": "Hojii Raawwachiisaatti gabaasa",
+      "desc": "Karoora waggaa, baajata, xiinxala pirojektii, safartuu madaallii, fi hordoffii dhiibbaa diinagdee hoggana.",
       "responsibilities": [
-        "Karoora hojii waggaa waliigalaa fi moodeela baajata kaappitaalaa bocuu",
-        "Madaallii agarsiistuu raawwii (KPI) kurmaanaa kutaalee hunda keessatti gaggeessuu",
-        "Qorannoo dandeettii pirojektii deeggartoota, gamaaggama dhiibbaa dinagdee hawaasummaa, fi gabaasa deebi'uu galii qopheessuu"
+        "Karoora hojii waggaa fi moodeela baajataa bocuu",
+        "Madaallii agarsiistuu raawwii (KPI) kurmaanaa gaggeessuu",
+        "Qorannoo pirojektii deeggartootaa fi gabaasa qopheessuu"
       ]
     },
     "auditor": {
-      "title": "Odiitara Keessoo",
-      "sub": "Odiitii fi Hojii Irra Oolmaa",
-      "reportsTo": "Maanaajeraa Waliigalaatti kallattiin gabaasa",
-      "desc": "Odiitii hojii fi maallaqaa keessoo yeroo yerootti, madaallii balaa, sakatta'iinsa kuusaa, fi sirna maallaqaa kutaalee waldaa hunda keessatti gaggeessa.",
+      "title": "Oditara Keessoo",
+      "sub": "Oditii & Seera",
+      "reportsTo": "Hojii Raawwachiisaatti gabaasa",
+      "desc": "Oditii hojii fi maallaqaa, madaallii balaa, sakatta'iinsa kuusaa, fi sirna maallaqaa kutaalee hundaatti gaggeessa.",
       "responsibilities": [
-        "Odiitii maallaqaa, kuusaa meeshaa, fi to'annoo bittaa idilee ni raawwata",
-        "Rakkoolee hojii, dhangala'iinsa maallaqaa adda baasee tarkaanfii sirreessaa ni gorsa",
-        "Gabaasa odiitii ji'aa fi kurmaanaa bilisaa kallattiin Maanaajeraa Waliigalaatti dhiyeessa"
+        "Oditii maallaqaa, kuusaa, fi to'annoo bittaa raawwata",
+        "Rakkoo hojii fi maallaqaa adda baasee sirreessaa gorsa",
+        "Gabaasa oditii ji'aa fi kurmaanaa Hojii Raawwachiisaaf dhiyeessa"
       ]
     },
     "ict": {
       "title": "Ogeessa ICT",
-      "sub": "Sirna fi Teeknooloojii",
-      "reportsTo": "Maanaajeraa Waliigalaatti kallattiin gabaasa",
-      "desc": "Pilaatifoomii dijitaalaa waldaa, hordoffii ERP loojistikii, bu'uura misoomaa IT, nageenya neetworkii, fi sirna bulchiinsa deetaa miseensotaa bulcha.",
+      "sub": "Sirna & Teeknooloojii",
+      "reportsTo": "Hojii Raawwachiisaatti gabaasa",
+      "desc": "Pilaatifoomii dijitaalaa, hordoffii ERP loojistiiksii, bu'uura IT, nageenya neetworkii, fi deetaa miseensotaa bulcha.",
       "responsibilities": [
-        "Pilaatifoomii dijitaalaa waldaa, kuusaa deetaa miseensotaa, fi sirna bulchiinsa loojistikii hordofa",
-        "Bu'uura misoomaa IT, walitti hidhamiinsa kilaawudii, nageenya neetworkii, fi yeroo hojii haardweerii eega",
-        "Walitti makamsa agiroonooomii dijitaalaa fi galmee elektirooniksii waldaalee jalqabaaf oofaa"
+        "Pilaatifoomii dijitaalaa, deetaa miseensotaa, fi sirna loojistiiksii hordofa",
+        "Bu'uura IT, neetworkii, fi yeroo hojii haardweerii eega",
+        "Walitti makamsa dijitaalaa fi galmee elektirooniksii oofa"
       ]
     },
     "dm": {
-      "title": "Itti Aanaa Maanaajeraa",
-      "sub": "Hojii fi Hordoffii Kutaalee",
-      "reportsTo": "Maanaajeraa Waliigalaatti kallattiin gabaasa",
-      "desc": "Maanaajeraa Waliigalaa bulchiinsa guyyaa guyyaa keessatti gargaara, qindoomina hojii kallattii kutaalee hojii ijoo afran irratti gaggeessa.",
+      "title": "Itti Aanaa Raawwachiisaa",
+      "sub": "Hojii & Hordoffii Kutaa",
+      "reportsTo": "Hojii Raawwachiisaatti gabaasa",
+      "desc": "Bulchiinsa guyyaa keessatti gargaara, qindoomina hojii kallattii kutaalee afran irratti gaggeessa.",
       "responsibilities": [
-        "Qindoomina hojii kallattii kutaalee Qonnaa, Gabaa, Namni, fi Faayinaansii keessatti",
-        "Hiriira adeemsa hojii guyyaa guyyaa, ramaddii qabeenya, fi hojii ergii dirree hordofa",
-        "Yeroo Maanaajeraan Waliigalaa hin jirre fi hojii dirree addaa bakka bu'ee hojjeta"
+        "Qindoomina kallattii kutaalee Qonnaa, Gabaa, Q/Namaa, fi Faayinaansii",
+        "Adeemsa hojii guyyaa, ramaddii qabeenyaa, fi ergii dirree hordofa",
+        "Yeroo Hojii Raawwachiisaan hin jirre bakka bu'ee hojjeta"
       ]
     },
     "agri": {
-      "title": "Kutaa Qonnaa fi Tajaajila Qotee Bulaa",
-      "sub": "Agroonoomii fi Galteewwan",
-      "reportsTo": "Itti Aanaa Maanaajeraatti kallattiin gabaasa",
-      "desc": "Baay'isuu sanyii mirkanaa'e (boqqolloo, baaqelaa, shunkurtii, qamadii), tajaajila agroonoomii, deeggarsa to'annoo ilbiisotaa, tajaajila meeshaa jallisii, fi raabsuu galteewwan waldaalee jalqabaaf hordofa.",
+      "title": "Kutaa Qonnaa & Tajaajila Q/Bulaa",
+      "sub": "Qonna & Galtee",
+      "reportsTo": "Itti Aanaatti gabaasa",
+      "desc": "Baay'isuu sanyii, tajaajila qonnaa, to'annoo ilbiisotaa, meeshaa jallisii, fi raabsa galtee hordofa.",
       "responsibilities": [
-        "Sanyii guddina ol'aanaa mirkanaa'e baay'isa (Boqqolloo BH-661, Baaqelaa Seeri 125, Shunkurtii Naafis, Qamadii Qaqqabaa)",
-        "Leenjii agroonoomii ammayyaa, hordoffii ilbiisotaa, fi deeggarsa ragga'iinsa GlobalG.A.P kenna",
-        "Xaa'oo qulqulluu, keemikaalota qonnaa, fi haardweerii jallisii copha bita, raabsa"
+        "Sanyii mirkanaa'e (Boqqolloo, Baaqelaa, Shunkurtaa, Qamadii) baay'isa",
+        "Leenjii qonnaa ammayyaa, hordoffii ilbiisotaa, fi deeggarsa GlobalG.A.P kenna",
+        "Xaa'oo, keemikaala qonnaa, fi haardweerii jallisii bitaa raabsa"
       ]
     },
     "marketing": {
       "title": "Kutaa Gabaa",
-      "sub": "Daldala fi Raabsuu",
-      "reportsTo": "Itti Aanaa Maanaajeraatti kallattiin gabaasa",
-      "desc": "Bittaa daldalaa guddistuu, buufataalee raabsaa Finfinnee, hojii irra oolmaa maxxansaa ergii alaatti, dhiyeessii nyaata Xiyyaarota Itoophiyaa, fi daldala ergii alaatti addunyaa bulcha.",
+      "sub": "Daldala & Raabsaa",
+      "reportsTo": "Itti Aanaatti gabaasa",
+      "desc": "Bittaa jumlaa, raabsaa dukaannoota Finfinnee, saamsama ergaa alaa, dhiyeessii Xiyyaara Itoophiyaa, fi daldala addunyaa bulcha.",
       "responsibilities": [
-        "Omisha miseensotaa toonii 50,000+ ol waggaatti walitti qabee bita",
-        "Buufataalee gabaa kallattii 5 Finfinnee keessatti hojjata, sarara suuppar maarkeettii guguddootti ni dhiyeessa",
-        "Waliigaltee dhiyeessii fuduraa/kuduraa sadarkaa ol'aanaa Xiyyaarota Itoophiyaa fi ergii alaatti bulcha"
+        "Oomisha miseensotaa toonii 50,000+ waggaatti bitaa walitti qaba",
+        "Dukaannoota 5 Finfinneetti hojjechiisa, suupparmaarkeetotaaf dhiyeessa",
+        "Waliigaltee dhiyeessii kuduraa/muduraa Xiyyaara Itoophiyaa fi ergaa alaa bulcha"
       ]
     },
     "hr": {
-      "title": "Kutaa Bulchiinsa Namaa fi Tajaajila Waliigalaa",
-      "sub": "Namni, Geejjiba fi Dhaabbii",
-      "reportsTo": "Itti Aanaa Maanaajeraatti kallattiin gabaasa",
-      "desc": "Dandeettii hojjettoota, leenjii, loojistikii garee geejjibaa waldaa, ergii konkolaataa firrijii, suphaa dhaabbii, fi pirotokoola nageenya waldaa bulcha.",
+      "title": "Kutaa Q/Namaa & Tajaajilaa",
+      "sub": "Namoota, Geejjiba & Dhaabbii",
+      "reportsTo": "Itti Aanaatti gabaasa",
+      "desc": "Dandeettii hojjettootaa, leenjii, loojistiiksii geejjibaa, ergii konkolaataa qabbanaawaa, suphaa dhaabbii, fi nageenya bulcha.",
       "responsibilities": [
-        "Qacaruu waldaa, madaallii raawwii, faayidaa hojjettootaa, fi leenjii dandeettii bulcha",
-        "Garee konkolaataa to'annoo ho'aa loojistikii omisha lallaafaaf erga, supha",
-        "Waajjira muummee waldaa, mana fe'umsa, kuusaa qabbaneessaa, fi nageenya qaamaa eega"
+        "Qaxara, madaallii raawwii, faayidaa hojjettootaa, fi leenjii dandeettii bulcha",
+        "Konkolaattota to'annoo ho'aa loojistiiksii oomishaaf ergaa supha",
+        "Waajjira muummee, wiirtuu saamsamaa, kuusaa qabbaneessaa, fi nageenya eega"
       ]
     },
     "finance": {
-      "title": "Kutaa Faayinaansii fi Bittaa",
-      "sub": "Faayinaansii fi Dhiyeessii",
-      "reportsTo": "Itti Aanaa Maanaajeraatti kallattiin gabaasa",
-      "desc": "Gabaasa maallaqaa, hirmaannaa bu'aa miseensotaa, herrega qabeenyaa, bulchiinsa saanduqa, bittaa galteewwan qonnaa, fi hariiroo baankii bulcha.",
+      "title": "Kutaa Faayinaansii & Bittaa",
+      "sub": "Faayinaansii & Dhiyeessii",
+      "reportsTo": "Itti Aanaatti gabaasa",
+      "desc": "Gabaasa maallaqaa, qooda bu'aa, herrega qabeenyaa, saanduqa, bittaa galtee qonnaa, fi hariiroo baankii bulcha.",
       "responsibilities": [
-        "Herrega maallaqaa, saanduqa kaappitaalaa dhuunfaa miliyoona ETB 154.2, fi odiitii maallaqaa seeraa bulcha",
-        "Raabsuu bu'aa miseensotaa iftoominaan fi herrega waldaalee jalqabaa bulcha",
-        "Bittaa daldalaa guddistuu kuusaa sanyii, maashinarii, fi galteewwan qonnaa hogganaa"
+        "Herrega maallaqaa, kaappitaala mil 154.2, fi oditii maallaqaa bulcha",
+        "Qooda bu'aa iftoominaan fi herrega waldaalee bu'uuraa bulcha",
+        "Bittaa jumlaa kuusaa sanyii, maashinarii, fi galtee qonnaa hoggana"
       ]
     }
   },
   "tiers": {
     "tier1": {
       "number": "Sadarkaa 01",
-      "title": "Bulchiinsa Ol'aanaa fi Hordoffii",
-      "sub": "Yaa'ii Waliigalaa, Koree To'annoo fi Boordii Daayirektaroota"
+      "title": "Bulchiinsa & Hordoffii",
+      "sub": "Yaa'ii Waliigalaa, Koree To'annoo & Boordii Daarektarootaa"
     },
     "tier2": {
       "number": "Sadarkaa 02",
-      "title": "Bulchiinsa Hojii Raawwachiisaa fi Gorsa",
-      "sub": "Maanaajeraa Waliigalaa, Gorsitoota Addaa fi Itti Aanaa Maanaajeraa"
+      "title": "Hooggansa & Gorsa",
+      "sub": "Hojii Raawwachiisaa, Gorsitoota & Itti Aanaa"
     },
     "tier3": {
       "number": "Sadarkaa 03",
       "title": "Kutaalee Hojii",
-      "sub": "Kutaalee Qonnaa, Gabaa, Namaa fi Faayinaansii"
+      "sub": "Kutaalee Qonnaa, Gabaa, Q/Namaa & Faayinaansii"
     }
   },
   "ui": {
-    "ariaLabel": "Caasaa Dhaabbataa Waldaa Maqii Baatuu",
+    "ariaLabel": "Caasaa Yuniyeenii Maqii Baatuu",
     "selectedPrefix": "Filatame:",
-    "defaultStatus": "Muka Dhaabbataa Waliin Hojjetamu • Gahee kamiyyuu cuqaasii aangoo ilaaluuf",
-    "clearFocus": "Xiyyeeffannoo Haquu",
-    "downloadTitle": "Fakkii qulqullina ol'aanaa buufadhaa",
+    "defaultStatus": "Caasaa Dhaabbataa • Gahee ilaaluuf cuqaasi",
+    "clearFocus": "Xiyyeeffannoo Haqi",
+    "downloadTitle": "Fakkii qulqulluu buufadhu",
     "generating": "Qophaa'aa jira...",
     "saveImage": "Fakkii Olkaa'i",
-    "printTitle": "Maxxansuu ykn PDF Olkaa'i",
-    "print": "Maxxansuu",
-    "tiersAriaLabel": "Sadarkaalee Bulchiinsaa Sadarkaa Sadarkaan",
+    "printTitle": "Maxxansi ykn PDF Olkaa'i",
+    "print": "Maxxansi",
+    "tiersAriaLabel": "Sadarkaa Bulchiinsaa",
     "rolesCount": "Gahee {{count}}",
-    "roleProfile": "Ibsa Gahee fi Aangoo",
-    "dismissInspector": "Sakatta'iinsa cufuu",
-    "closeDossier": "Faayila cufuu",
-    "appointedLeadership": "Hogganummaa Muudame",
-    "emailTitle": "{{name}} iimeelii erguu",
-    "keyMandates": "Aangoo fi Itti Gaafatamummaa Ijoo"
+    "roleProfile": "Ibsa Gahee & Aangoo",
+    "dismissInspector": "Sakatta'iinsa cufi",
+    "closeDossier": "Faayila cufi",
+    "appointedLeadership": "Hooggansa Muudame",
+    "emailTitle": "Imeelii {{name}}",
+    "keyMandates": "Aangoo fi Itti Gaafatamummaa"
   }
 }

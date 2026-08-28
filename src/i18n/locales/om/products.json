@@ -3,63 +3,63 @@
     "title": "Of-eeggannoon oomishame. Addunyaa guutuutti daldalame.",
     "desc": "Kuduraa, muduraa fi sanyiilee filatamoo waraqaa ragaa qaban daawwadhaa. Sulula Qiinxamaa biyyoo gabbataa keessatti waldaalee miseensa keenyaan kan oomishame.",
     "badge": "Waraqaa Ragaa GlobalG.A.P",
-    "viewCatalog": "Tarree Oomishaa Ilaalaa",
+    "viewCatalog": "Tarree Ilaali",
     "requestQuote": "Gaaffii Gatii Dhiyeessaa",
     "imageAlt": "Oomisha tamaatii diimaa haaraa saanduqa mukaa keessatti biyyoo gurraacha Itoophiyaa irratti"
   },
   "catalog": {
     "directory": "Kuusaa Oomishaa",
-    "title": "Kuduraa, Muduraa & Sanyiilee Filatamaa",
-    "desc": "Kuduraalee, muduraalee fi akaakuu sanyii filatamoo lafa hektaara 5,910 Sulula Qiinxamaa keessatti jallisii ammayyaatiin misoomu ilaalaa.",
+    "title": "Kuduraa, Muduraa & Sanyii",
+    "desc": "Kuduraa, muduraa fi sanyii lafa hek 5,910 Sulula Qiinxamaa keessatti jallisiin misoomu ilaali.",
     "filters": {
-      "all": "Oomishaalee Hunda",
-      "vegetables": "Kuduraalee",
-      "fruits": "Muduraalee",
-      "seeds": "Sanyiilee Filatamoo"
+      "all": "Oomisha Hunda",
+      "vegetables": "Kuduraa",
+      "fruits": "Muduraa",
+      "seeds": "Sanyii Filatamaa"
     },
     "labels": {
       "season": "Waqtii",
       "packaging": "Saamsama",
-      "shelfLife": "Turtii Tursiisaa",
-      "origin": "Bakka Oomishaa",
-      "brix": "Qulqullina / Sadarkaa",
-      "viewDetails": "Bal'ina Tarreeffamaa Ilaalaa",
-      "requestQuote": "Gatii Gaafadhaa",
-      "varieties": "Akaakuuwwan:",
-      "producedVarieties": "Akaakuuwwan Oomishaman",
-      "globalGap": "Waraqaa Ragaa GlobalG.A.P"
+      "shelfLife": "Turtii",
+      "origin": "Madda",
+      "brix": "Sadarkaa",
+      "viewDetails": "Bal'ina Tarreeffamaa Ilaali",
+      "requestQuote": "Gatii Gaafadhu",
+      "varieties": "Akaakuu:",
+      "producedVarieties": "Akaakuu Oomishamu",
+      "globalGap": "Ragaa GlobalG.A.P"
     },
     "modal": {
-      "title": "Bal'ina Teeknikaa Oomishaa",
+      "title": "Bal'ina Teeknikaa",
       "overview": "Ibsa Oomishaa",
-      "exportCompliance": "Qulqullina & Ulaagaa Daldala Alaa",
-      "certifiedScheme": "Sagantaa GlobalG.A.P Jalatti Mirkanaa'e",
+      "exportCompliance": "Qulqullina Ergaa Alaa",
+      "certifiedScheme": "Sagantaa GlobalG.A.P Jalatti",
       "close": "Bal'ina Cufi"
     },
-    "showingPrefix": "Kan agarsiisu",
+    "showingPrefix": "Agarsiisaa",
     "commodity": "oomisha",
     "commodities": "oomishaalee",
-    "ariaViewDetails": "Bal'ina {{name}} ilaalaa",
+    "ariaViewDetails": "Bal'ina {{name}} ilaali",
     "perks": {
-      "traceable": "100% Waldaalee Miseensaatti Hordoffii Qaba",
-      "coldChain": "Geejjiba Sanjata Qabbanaawaa Kallattii"
+      "traceable": "100% Waldaaleetti Hordofama",
+      "coldChain": "Geejjiba Qabbanaawaa"
     }
   },
   "calendar": {
     "tag": "Sagantaa Waqtii",
-    "title": "Gabatee Waqtii Haamaa & Dhiyeessii",
-    "desc": "Sulula Qiinxamaa Itoophiyaa keessatti waqtii oomishaa irratti hundaa'uun karoora bittaa keessan qopheeffadhaa.",
-    "mobileHint": "Gabatee waqtii guutuu ilaaluuf garagarumatti (horizontally) oofaa",
+    "title": "Gabatee Haamaa & Dhiyeessii",
+    "desc": "Sulula Qiinxamaatti waqtii oomishaa irratti hundaa'uun bittaa karoorsaa.",
+    "mobileHint": "Gabatee guutuu ilaaluuf oofi",
     "table": {
       "commodity": "Oomisha",
       "category": "Ramaddii",
-      "harvestWindow": "Waqtii Haamaa Ijoo",
-      "exportAvailability": "Dhiyeessii Daldala Alaa"
+      "harvestWindow": "Waqtii Haamaa",
+      "exportAvailability": "Dhiyeessii Ergaa Alaa"
     }
   },
   "cta": {
-    "title": "Hamma Addaa Yookiin Waliigaltee Bittaa Waqtii Barbaadduu?",
-    "desc": "Gareen loojistiiksii ergaa alaa keenya geejjiba qabbanaawaa qilleensaa fi lafaa sagantaa bittaa keessaniif mijatu qindeessa.",
-    "button": "Garee Daldala Alaa Qunnamaa"
+    "title": "Dhiyeessii Daldalaa fi Dhaabbilee",
+    "desc": "Hoteelota, suupparmaarkeetii, fi dhaabbilee Finfinnee jiraniif oomisha jumlaa dhiyeessuu.",
+    "button": "Garee Daldalaa Quunnami"
   }
 }

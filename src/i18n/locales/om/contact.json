@@ -7,41 +7,41 @@
   },
   "info": {
     "hqTitle": "Waajjira Muummee & Wiirtuu Saamsamaa",
-    "hqAddress": "Magaalaa Maqii, Aanaa Dugda, Godina Shawaa Bahaa, Oromiyaa, Itoophiyaa (Finfinnee irraa KM 138 gara kibbaatti)",
-    "address": "Finfinnee irraa KM 138 gara kibbaatti Daandii Hawaasaa irratti",
+    "hqAddress": "Maqii, Dugdaa, Shawaa Bahaa, Oromiyaa (Finfinneerraa KM 138 gara kibbaatti)",
+    "address": "Finfinneerraa KM 138 gara kibbaatti",
     "poBox": "L.S.P: 44, Maqii, Itoophiyaa",
     "viewMaps": "Google Maps irratti bani",
     "directLines": "Sarara Kallattii fi Quunnamtii",
-    "phone": "Bilbila Waajjiraa (PBX)",
-    "mobile": "Mobayilii / WhatsApp",
-    "fax": "Sarara Faaksii",
+    "phone": "Bilbila Waajjiraa",
+    "mobile": "Moobaayila / WhatsApp",
+    "fax": "Faaksii",
     "email": "Gaaffilee Waliigalaa",
     "emailTitle": "Gaaffilee Kallattii",
     "phoneTitle": "Bilbila & Moobaayila",
     "hoursTitle": "Sa'aatii Hojii",
-    "hoursValue": "Wiixata – Jimaata: 8:00 AM – 5:30 PM (EAT) | Sanbata: 8:00 AM – 12:30 PM",
-    "imageAlt": "Biyyoo gabbataa qonnaa omisha magariisa waliin Maqii keessatti"
+    "hoursValue": "Wiixata – Jimaata: 8:00 WB – 11:30 B ｜ Sanbata: 8:00 WB – 6:30 B",
+    "imageAlt": "Biyyoo qonnaa gabbataa oomisha waliin"
   },
   "form": {
     "tag": "Ergaa Ergaa",
     "title": "Garee Keenya Qunnamaa",
     "desc": "Bittaa daldalaa, miseensummaa waldaa, yookiin tumsa waliigalaatiif gaaffii keessan asumaan nuuf ergaa.",
-    "name": "Maqaa Keessan",
+    "name": "Maqaa Kee",
     "namePlaceholder": "fkn. Caalaa Mokonnin",
     "email": "Teessoo Imeelii",
     "emailPlaceholder": "fkn. chala@example.com",
-    "subject": "Dhimma / Mata-duree",
-    "subjectPlaceholder": "fkn. Gaaffii Bittaa / Tumsasa Daldalaa",
+    "subject": "Dhimma",
+    "subjectPlaceholder": "fkn. Gaaffii Ergaa Alaa / Tumsa",
     "subjects": {
-      "select": "Mata-duree filadhaa...",
+      "select": "Dhimma filadhu...",
       "export": "Gaaffii Daldalaa & Ergaa Alaa",
-      "membership": "Miseensummaa Waldaa & Galteewwan",
+      "membership": "Miseensummaa WHG & Galtee",
       "media": "Miidiyaa, Qorannoo & Tumsa",
       "other": "Gaaffilee Biroo"
     },
-    "message": "Ergaa Keessan",
-    "messagePlaceholder": "Akkamitti isin gargaaruu dandeenya? Ibsa gahaa nuuf dhiyeessaa...",
-    "submit": "Ergaa Ergaa",
+    "message": "Ergaa Kee",
+    "messagePlaceholder": "Akkamitti si gargaarru? Ibsa gahaa nuuf dhiyeessi...",
+    "submit": "Ergaa Ergi",
     "submitting": "Ergamaa jira...",
     "success": {
       "title": "Ergaan Keessan Nu Ga'eera",
@@ -50,7 +50,7 @@
     "toasts": {
       "success": "Galatoomaa — dhihootti deebii isiniif kennina.",
       "fail": "Ergaan hin ergamne. Mee irra deebi'aa yaalaa.",
-      "error": "Ergaan hin ergamne. Mee irra deebi'aa yaalaa.",
+      "error": "Hin ergamne. Mee irra deebi'i.",
       "network": "Rakkoo neetwoorkii. Mee irra deebi'aa yaalaa."
     }
   }

@@ -3,66 +3,66 @@
     "title": "Tokkummaan caalaatti cima. Fuuldura qonna Itoophiyaa guddisuu.",
     "desc": "Yuniyeenii Maqii Baatuu waldaalee bu'uuraa 135 keessatti qonnaan bultoota miseensa 8,089 sanyii filatamaa, tajaajila tiraaktaraa ammayyaa, liqii haqa-qabeessaa, fi gabaa oomishaa mirkanaa'e dhiyeessa.",
     "badge": "Waldaalee Bu'uuraa 135",
-    "viewBenefits": "Tajaajiloota Miseensotaa Ilaalaa",
-    "joinCoop": "Adeemsa Miseensummaa",
+    "viewBenefits": "Tajaajila Miseensaa Ilaali",
+    "joinCoop": "Adeemsa Makamuu",
     "imageAlt": "Qonnaan bultoota Itoophiyaa mana kuusaa oomishaa qonnaa ogummaa keessatti"
   },
   "services": {
     "tag": "Deeggarsa Guutuu",
-    "title": "Tajaajiloota Waldaa & Deeggarsa Qonnaan Bulaa",
-    "desc": "Galteewwan qonnaa qulqullina olaanaa irraa eegalee hanga walitti-qabaa oomishaatti, yuuniyeeniin keenya oomisha fi bu'aa qonnaan bultootaa dabaluuf hojjeta.",
+    "title": "Tajaajila Waldaa & Deeggarsa Q/Bulaa",
+    "desc": "Galtee qonnaarraa hanga oomisha walitti-qabuutti, yuniyeeniin keenya bu'aa qoteebulaa guddisuuf hojjeta.",
     "items": {
       "input": {
-        "title": "Raabsa Galtee Qonnaa",
-        "desc": "Sanyiilee filatamoo biqilummaan isaanii olaanaa ta'e, xaa'oo, fi qorichoota eegumsa biqiltootaa gatii deeggarsa qabuun dhiyeessuu."
+        "title": "Raabsa Galtee",
+        "desc": "Sanyii filatamaa, xaa'oo, fi qoricha biqiltootaa gatii waldaatiin dhiyeessuu."
       },
       "credit": {
-        "title": "Deeggarsa Liqii Faayinaansii",
-        "desc": "Waqtii oomisha qonnaan bulaa irratti hundaa'uun liqii maayikiroo fi tajaajila faayinaansii mijeessuu."
+        "title": "Deeggarsa Liqii",
+        "desc": "Liqii maayikiroo fi tajaajila faayinaansii waqtii oomishaa irratti hundaa'e."
       },
       "market": {
-        "title": "Walitti-qabaa fi Dhiyeessii Gabaa",
-        "desc": "Oomisha miseensotaa gurgurtoota biyya keessaa fi bittoota daldala alaa waliin kallattiin walqunnamsiisuu."
+        "title": "Walitti-qabaa Gabaa",
+        "desc": "Oomisha miseensotaa gurgurtoota biyya keessaa fi daldala alaa waliin walquunnamsiisuu."
       },
       "mechanization": {
-        "title": "Makaanayizeeshinii Qonnaa",
-        "desc": "Tajaajila tiraaktaraa waliinii, suphaa paampii bishaanii, fi sirna jallisii ammayyaa diriirsuu."
+        "title": "Makaanayizeeshinii",
+        "desc": "Tajaajila tiraaktaraa, suphaa paampii, fi sirna jallisii ammayyaa."
       },
       "storage": {
         "title": "Kuusaa Qabbaneessaa & Loojistiiksii",
-        "desc": "Qisaasama hir'isuuf qulqulleessuu, qabbaneessuu fi geejjiba to'annoo qabbanaa qabu dhiyeessuu."
+        "desc": "Qisaasama hir'isuuf qulqulleessuu fi geejjiba to'annoo ho'aa qabu dhiyeessuu."
       },
       "training": {
-        "title": "Leenjii Ogummaa Qonnaa",
-        "desc": "Ulaagaalee GlobalG.A.P, fayyummaa biyyoo, fi hojimaata qonna uumamaa irratti leenjii itti-fufiinsaan kennuu."
+        "title": "Leenjii Qonnaa",
+        "desc": "Ulaagaa GlobalG.A.P, fayyaa biyyoo, fi qonna uumamaa irratti leenjii kennuu."
       }
     }
   },
   "steps": {
-    "tag": "Tarkaanfiiwwan Tokko Tokkoon",
+    "tag": "Tarkaanfiiwwan",
     "title": "Akkaataa Yuniyeenii Maqii Baatuutti Makaman",
-    "desc": "Shawaa Bahaa fi Arsiitti hidhata waldaalee bu'uuraa 135 keenyatti makamaa.",
+    "desc": "Shawaa Bahaa fi Arsiitti hidhata waldaalee 135 keenyatti makamaa.",
     "step1": {
       "number": "01",
-      "title": "Waldaa Bu'uuraa Galmeessisuu",
-      "desc": "Qonnaan bultoota naannoo qindeessuun qajeelfama qonnaa naannichaa jalatti waldaa bu'uuraa seera qabeessa ta'e ijaaruu."
+      "title": "Waldaa Bu'uuraa Galmeessi",
+      "desc": "Qoteebultoota naannoo qajeelfama qonnaa jalatti waldaa seera qabeessatti ijaaruu."
     },
     "step2": {
       "number": "02",
-      "title": "Sanadoota Dhiyeessuu",
-      "desc": "Waraqaa ragaa galmee, tarree miseensota hojiirra jiranii, fi xalayaa seensa yuuniyeenii dhiyeessuu."
+      "title": "Sanada Dhiyeessi",
+      "desc": "Ragaa galmee, tarree miseensotaa, fi xalayaa seensa yuniyeenii dhiyeessuu."
     },
     "step3": {
       "number": "03",
       "title": "Gamaaggama Boordii",
-      "desc": "Hoggansi yuuniyeenichaa bal'ina lafa qonnaa, argama bishaanii, fi qophii miseensotaa dirreerratti gamaggamu."
+      "desc": "Boordiin yuniyeenii bal'ina lafaa, bishaan fi qophii miseensotaa dirreerratti gamaggama."
     },
     "step4": {
       "number": "04",
       "title": "Miseensummaa Guutuu",
-      "desc": "Galteewwan yuuniyeenichaa, konkolaattota, kuusaa qabbaneessaa, fi gabaa kallattii daldala alaatti battalatti fayyadamuu."
+      "desc": "Galtee yuniyeenii, maashinarii, kuusaa qabbaneessaa fi gabaa kallattiitti fayyadamuu."
     },
-    "imageAlt": "Leenjii waldaa dirree irratti Itoophiyaa keessatti"
+    "imageAlt": "Leenjii waldaa dirreerratti Itoophiyaa keessatti"
   },
   "faq": {
     "title": "Gaaffilee Yeroo Baay'ee Gaafataman Qonnaan Bultootaaf",
@@ -86,11 +86,11 @@
       }
     ]
   },
-  "memberLoginToast": "Seensi miseensotaa qophiirra jira. Tajaajilli marsariitii marsaa lammaffaa keessatti hojiirra oola.",
+  "memberLoginToast": "Seensi miseensaa qophiirra jira. Tajaajilli marsariitii marsaa 2ffaa keessatti eegala.",
   "portal": {
-    "title": "Poortaalii Miseensotaa Dijitaalaa",
+    "title": "Poortaalii Miseensotaa",
     "badge": "Misooma Marsaa 2ffaa - Dhiyeenyatti Dhufa",
-    "desc": "Waltajjii dijitaalaa eegumsa qabu kan waldaaleen miseensaa dhiyeessii oomishaa hordofuuf, gatii gabaa ilaaluuf, galtee gaafachuu fi herrega yuuniyeenii to'achuuf gargaaru hojjetamaa jira.",
-    "button": "Poortaalii Miseensotaa Seeni"
+    "desc": "Waltajjii dijitaalaa waldaaleen oomisha ittiin hordofan, gatii ilaalan fi galtee gaafatan qophaa'aa jira.",
+    "button": "Poortaalii Seeni"
   }
 }
