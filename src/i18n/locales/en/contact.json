@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "eyebrow": "Headquarters & Branch Network",
+    "title": "Get in Touch with Meki Batu Union",
+    "desc": "Reach our headquarters in Meki, connect with our export logistics desk, or visit one of our five retail storefronts in Addis Ababa.",
+    "badge": "Meki Headquarters & Addis Hub"
+  },
+  "info": {
+    "hqTitle": "Headquarters & Main Packhouse",
+    "hqAddress": "Meki Town, Dugda Woreda, East Shoa Zone, Oromia, Ethiopia (138km South of Addis Ababa on Hawassa Highway)",
+    "address": "138km South of Addis Ababa on Hawassa Highway",
+    "poBox": "P.O. Box: 44, Meki, Ethiopia",
+    "viewMaps": "Open on Google Maps",
+    "directLines": "Direct Lines & Contacts",
+    "phone": "Office Tel (PBX)",
+    "mobile": "Mobile / WhatsApp Desk",
+    "fax": "Fax Line",
+    "email": "General Inquiries",
+    "emailTitle": "Direct Inquiries",
+    "phoneTitle": "Telephone & Mobile",
+    "hoursTitle": "Operating Hours",
+    "hoursValue": "Monday – Friday: 8:00 AM – 5:30 PM (EAT) | Saturday: 8:00 AM – 12:30 PM",
+    "imageAlt": "Rich dark agricultural soil with green crops in Meki"
+  },
+  "form": {
+    "tag": "Send a Message",
+    "title": "Contact Our Team",
+    "desc": "Whether you are interested in commercial sourcing, union membership, or general partnership, submit your inquiry below.",
+    "name": "Your Name",
+    "namePlaceholder": "e.g. Abebe Bikila",
+    "email": "Email Address",
+    "emailPlaceholder": "e.g. abebe@example.com",
+    "subject": "Subject / Topic",
+    "subjectPlaceholder": "e.g. Export Inquiry / Sourcing Partnership",
+    "subjects": {
+      "select": "Select a topic...",
+      "export": "Commercial & Export Inquiries",
+      "membership": "Cooperative Membership & Inputs",
+      "media": "Media, Research & Partnerships",
+      "other": "General Questions"
+    },
+    "message": "Your Message",
+    "messagePlaceholder": "How can we help you? Please provide relevant details...",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "success": {
+      "title": "Message Received",
+      "desc": "Thank you for reaching out. Our representative will respond within 1–2 business days."
+    },
+    "toasts": {
+      "success": "Thanks — we'll get back to you soon.",
+      "fail": "Submission failed. Please try again later.",
+      "error": "Submission failed. Please try again later.",
+      "network": "Network error. Please try again."
+    }
+  }
+}

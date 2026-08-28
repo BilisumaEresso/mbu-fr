@@ -1,35 +1,37 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import globalgapLogo from '../../assets/certifications/globalgap_logo.webp'
 import oromiaCert from '../../assets/certifications/oromia_seed_certificate.webp'
 import './Certifications.css'
 
-const CERT_DATA = {
-  globalgap: {
-    id: 'globalgap',
-    title: 'GlobalG.A.P Certified',
-    src: globalgapLogo,
-    alt: 'GlobalG.A.P Certification Logo and Badge',
-    caption: "Official GlobalG.A.P Certification for safe, traceable, and sustainable farming practice — with more than 400 member households certified under the union's certification scheme.",
-    url: 'https://globalgap.org/',
-    urlLabel: 'Learn about GlobalG.A.P',
-  },
-  oromia: {
-    id: 'oromia',
-    title: 'Oromia Bureau of Agriculture & Natural Resource — Competence Assurance Certificate',
-    src: oromiaCert,
-    alt: 'Oromia Bureau of Agriculture Competence Assurance Certificate for Meki Batu Union, certified seed producer license',
-    caption: "Certified Seed Producer License Ltd Reg. No. 72 under Ethiopia's Seed Proclamation No. 782/2013.",
-  },
-}
-
 function Certifications() {
+  const { t } = useTranslation('common')
   const [activeCert, setActiveCert] = useState(null)
   const closeBtnRef = useRef(null)
   const triggerRef = useRef(null)
 
+  const certData = {
+    globalgap: {
+      id: 'globalgap',
+      title: t('certifications.globalgapTitle'),
+      src: globalgapLogo,
+      alt: t('certifications.globalgapAlt', 'GlobalG.A.P Certification Logo and Badge'),
+      caption: t('certifications.globalgapCaption'),
+      url: 'https://globalgap.org/',
+      urlLabel: t('certifications.globalgapLearn'),
+    },
+    oromia: {
+      id: 'oromia',
+      title: t('certifications.oromiaTitle'),
+      src: oromiaCert,
+      alt: t('certifications.oromiaAlt', 'Oromia Bureau of Agriculture Competence Assurance Certificate for Meki Batu Union, certified seed producer license'),
+      caption: t('certifications.oromiaCaption'),
+    },
+  }
+
   const openLightbox = (certKey) => {
     triggerRef.current = document.activeElement
-    setActiveCert(CERT_DATA[certKey] || CERT_DATA.oromia)
+    setActiveCert(certData[certKey] || certData.oromia)
   }
 
   const closeLightbox = useCallback(() => {
@@ -76,39 +78,36 @@ function Certifications() {
               <button
                 type="button"
                 className="certifications__thumb-btn certifications__thumb-btn--logo"
-                onClick={() => openLightbox("globalgap")}
-                aria-label="View GlobalG.A.P certificate logo at full size"
+                onClick={() => openLightbox('globalgap')}
+                aria-label={t('certifications.globalgapAriaLabel', 'View GlobalG.A.P certificate logo at full size')}
               >
                 <img
                   src={globalgapLogo}
-                  alt="GlobalG.A.P logo"
+                  alt={t('certifications.globalgapLogoAlt', 'GlobalG.A.P logo')}
                   className="certifications__thumb-img certifications__thumb-img--logo"
                 />
                 <span className="certifications__zoom">
                   <span className="material-symbols-outlined">zoom_in</span>
-                  Expand
+                  {t('certifications.expand')}
                 </span>
               </button>
             </div>
             <h3 className="certifications__card-title">
-              GlobalG.A.P Certified
+              {t('certifications.globalgapTitle')}
             </h3>
             <p className="certifications__card-desc">
-              Meeting international standards for food safety, traceability, and
-              responsible farming practice. More than 400 member households are
-              GlobalG.A.P certified under the union&rsquo;s certification
-              scheme.
+              {t('certifications.globalgapDesc')}
             </p>
             <div className="certifications__actions">
               <button
                 type="button"
                 className="certifications__view-btn"
-                onClick={() => openLightbox("globalgap")}
+                onClick={() => openLightbox('globalgap')}
               >
                 <span className="material-symbols-outlined text-sm">
                   fullscreen
                 </span>
-                View credential
+                {t('buttons.viewCredential')}
               </button>
               <a
                 href="https://globalgap.org/"
@@ -130,44 +129,39 @@ function Certifications() {
               <button
                 type="button"
                 className="certifications__thumb-btn"
-                onClick={() => openLightbox("oromia")}
-                aria-label="View Oromia seed producer certificate document at full size"
+                onClick={() => openLightbox('oromia')}
+                aria-label={t('certifications.oromiaAriaLabel', 'View Oromia seed producer certificate document at full size')}
               >
                 <img
                   src={oromiaCert}
-                  alt="Oromia Bureau of Agriculture Competence Assurance Certificate for Meki Batu Union, certified seed producer license"
+                  alt={t('certifications.oromiaAlt', 'Oromia Bureau of Agriculture Competence Assurance Certificate for Meki Batu Union, certified seed producer license')}
                   className="certifications__thumb-img certifications__thumb-img--doc"
                 />
                 <span className="certifications__zoom">
                   <span className="material-symbols-outlined">zoom_in</span>
-                  Expand Document
+                  {t('certifications.expandDoc')}
                 </span>
               </button>
             </div>
             <h3 className="certifications__card-title">
-              Certified Seed Producer — Oromia Bureau of Agriculture &amp;
-              Natural Resource
+              {t('certifications.oromiaTitle')}
             </h3>
             <p className="certifications__card-desc">
-              Authorized under Ethiopia&rsquo;s Seed Proclamation No. 782/2013
-              to produce certified seeds of vegetables, fruit, cereal, and
-              pulses. License Reg. No. 72, issued to Meki Batu Fruit
-              &amp; Vegetable Growers Cooperative Union.
+              {t('certifications.oromiaDesc')}
             </p>
             <span className="label-caps certifications__meta">
-              Issued 14/01/2019 &middot; Oromia Bureau of Agriculture &amp;
-              Natural Resource
+              {t('certifications.oromiaMeta')}
             </span>
             <div className="certifications__actions">
               <button
                 type="button"
                 className="certifications__view-btn"
-                onClick={() => openLightbox("oromia")}
+                onClick={() => openLightbox('oromia')}
               >
                 <span className="material-symbols-outlined text-sm">
                   visibility
                 </span>
-                View certificate document
+                {t('buttons.viewCertificateDoc')}
               </button>
             </div>
           </div>
@@ -190,7 +184,7 @@ function Certifications() {
             <div className="cert-lightbox__header">
               <div className="cert-lightbox__header-text">
                 <span className="label-caps label-caps--secondary text-xs">
-                  Official Credential
+                  {t('certifications.officialCredential')}
                 </span>
                 <h4 className="cert-lightbox__title">{activeCert.title}</h4>
               </div>
@@ -199,7 +193,7 @@ function Certifications() {
                 className="cert-lightbox__close"
                 onClick={closeLightbox}
                 ref={closeBtnRef}
-                aria-label="Close certificate viewer"
+                aria-label={t('certifications.closeViewer')}
               >
                 <span className="material-symbols-outlined">close</span>
               </button>
@@ -223,8 +217,8 @@ function Certifications() {
                   className="cert-lightbox__ext-link"
                 >
                   <span>
-                    Visit{" "}
-                    {activeCert.url.replace("https://", "").replace("/", "")}
+                    {t('certifications.visit')}{' '}
+                    {activeCert.url.replace('https://', '').replace('/', '')}
                   </span>
                   <span className="material-symbols-outlined text-sm">
                     open_in_new
@@ -236,7 +230,7 @@ function Certifications() {
         </div>
       )}
     </>
-  );
+  )
 }
 
 export default Certifications

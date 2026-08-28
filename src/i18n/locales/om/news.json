@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "eyebrow": "Odeeffannoowwan & Beeksisa",
+    "title": "Oduu & Odeeffannoo Haaraa",
+    "desc": "Haamaa oomishaa, sagantaalee misooma qonnaan bulaa, fi milkiiwwan hidhata addunyaa Yuniyeenii Maqii Baatuu irraa kan argamu.",
+    "searchPlaceholder": "Oduu barbaadaa..."
+  },
+  "labels": {
+    "readReport": "Gabaasa Dubbisaa",
+    "share": "Barruu Qoodaa",
+    "copyLink": "Geessituu Garagalchaa",
+    "copied": "Geessituun Garagalfameera!",
+    "featured": "Oduu Ijoo",
+    "latestUpdates": "Oduu Yuuniyeenii Haaraa",
+    "noResults": "Barruun barbaaddan hin argamne.",
+    "clearSearch": "Barbaacha haqi",
+    "backToAll": "Barruulee Hunda Ilaalaa",
+    "modalClose": "Barruu Cufi",
+    "readReportAria": "Gabaasa dubbisaa: {{title}}",
+    "readArticleAria": "Barruu dubbisaa: {{title}}",
+    "readTime": "Daawwitii daqiiqaa 5"
+  },
+  "article": {
+    "paragraph1": "Yuniyeenii Maqii Baatuu waldaalee bu'uuraa 135 fi qonnaan bultoota 8,089 bakka bu'an keessatti kalaqa qonnaa jajjabeessuu itti fufeera. Invastimantii tarsiimaawaa bu'uura misoomaa, teeknooloojii, fi qonna itti-fufiinsa qabuun, qonnaan bultoota xixinnoo Sulula Qiinxamaa keessa jiran oomisha baay'inaan fi sadarkaa daldala alaatiin akka oomishan dandeessisna.",
+    "paragraph2": "Sochiin kun kallattiin kaayyoo keenya ijoo kan ta'e cimina diinagdee, eegumsa naannoo, fi daldala haqa qabeessa jajjabeessuu waliin walsima. Hawaasa qonnaa naannoo gabaa addunyaa waliin walqunnamsiisuun, michoota keenya addunyaatiif oomisha qulqullina olaanaa qabuu fi hordofamuu danda'u ni mirkaneessina."
+  }
+}

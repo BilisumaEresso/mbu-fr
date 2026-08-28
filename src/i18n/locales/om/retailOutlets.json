@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "title": "Maasii Keenya Irraa Kallattiin Isiniif.",
+    "desc": "Waldaan Maqii Baatuu dukaannoota qinsharraa ofiisaa shan Finfinnee keessatti kan hojjechiisu yoo ta'u, maatiiwwan magaalatiif oomisha guyyaa guyyaan qulqullinaan haamame dhiyeessa.",
+    "badge": "Iddoowwan 5 Finfinnee Keessatti",
+    "viewLocations": "Bakkeewwan Ilaalaa",
+    "contactSales": "Gurgurtaa Qinsharraa Qunnamaa",
+    "imageAlt": "Agarsiisa oomisha haaraa bakka gurgurtaa ammayyaa keessatti"
+  },
+  "locations": {
+    "title": "Dukaana Argadhaa",
+    "desc": "Sa'aatii banama dukaana ilaaluuf, oomishaalee argaman baruuf, fi qajeelcha Google Maps argachuuf dukaannoota armaan gadii daawwadhaa.",
+    "viewDetailsMap": "Bal'ina fi Kaartaa Ilaalaa",
+    "openGoogleMaps": "Google Maps irratti bani",
+    "operatingHours": "Sa'aatii Hojii",
+    "directPhone": "Bilbila Kallattii",
+    "produceArrivals": "Oomishaalee Ijoo & Qophii Guyyaa",
+    "getDirections": "Kallattii Argadhaa",
+    "callBranch": "Dukaana Bilbilaa",
+    "labels": {
+      "hours": "Sa'aatii",
+      "phone": "Bilbila",
+      "manager": "Gaggeessaa Dukaanaa",
+      "specialties": "Oomishaalee Ijoo & Addaa",
+      "viewDetails": "Bal'ina fi Kaartaa Ilaalaa",
+      "openMaps": "Google Maps irratti bani",
+      "storeSpecs": "Ulaagaalee Dukaanaa",
+      "address": "Teessoo",
+      "status": "Haala Hojii",
+      "openNow": "Amma Banaadha",
+      "closeModal": "Bal'ina Cufi"
+    },
+    "ariaViewDetails": "Bal'ina fi kaartaa {{name}} ilaalaa",
+    "mapTitle": "Kaartaa {{name}} agarsiisu"
+  },
+  "network": {
+    "title": "Wiirtuu Raabsa Finfinnee",
+    "desc": "Ergiin konkolaattota qabbanaawaa guyyaa guyyaan dukaannoota keenya hunda keessatti haarummaa oomishaa eega."
+  },
+  "freshProduce": {
+    "tag": "Qulqullina Mirkanaa'e",
+    "title": "Waldaalee Miseensotaa Irraa Kallattiin Finfinneetti",
+    "desc": "Dallaalota gidduu hambisuun, Waldaan Maqii Baatuu qonnaan bultoonni gatii haqa-qabeessa akka argatan akkasumas fayyadamtoonni magaalaa oomisha haaraa ganama hunda akka argatan mirkaneessa.",
+    "perk1Title": "Maasii Irraa Hanga Dukaanaatti Sa'aatii 24 Gadi",
+    "perk1Desc": "Sulula Qiinxamaa keessatti haamamee, wiirtuu Maqiitti qabbanaa'ee, barii dura dukaannoota Finfinneetti dhiyaata.",
+    "perk2Title": "Gatii Haqa-Qabeessa fi Iftoomina Qabu",
+    "perk2Desc": "Raabsiin waldaa kallattii gatii dabalataa dallaalaa hambisuun gatii madaalawaa eega.",
+    "perk3Title": "Nageenya Nyaataa GlobalG.A.P",
+    "perk3Desc": "Balfa keemikaalaa kan hin qabnee fi qulqullinni isaa maasii irraa hanga dukaanaatti kan mirkanaa'e.",
+    "dailyDispatchBadge": "Konkolaattota Qabbanaawaa Guyyaa Hunda Ergamani",
+    "imageAlt": "Ergiin oomisha haaraa dukaana qinsharraa Finfinnee geesse"
+  },
+  "cta": {
+    "title": "Dhiyeessii Daldalaa fi Dhaabbilee Guguddoo",
+    "desc": "Hotellota, manneen nyaataa, suupparmaarkeetota fi kushiinaalee dhaabbilee Finfinnee keessa jiraniif oomisha guddaa dhiyeessuu.",
+    "button": "Garee Daldalaa Qunnamaa"
+  }
+}

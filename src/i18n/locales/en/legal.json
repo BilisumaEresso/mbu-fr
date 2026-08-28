@@ -1,0 +1,121 @@
+{
+  "privacy": {
+    "eyebrow": "Legal",
+    "title": "Privacy policy",
+    "description": "How Meki Batu Union collects, uses, and protects your information.",
+    "lastUpdated": "Last updated: 15 August 2026",
+    "sections": {
+      "s1": {
+        "title": "1. Who we are",
+        "p1": "Meki Batu Fruits and Vegetables Growers' Cooperative Union Ltd (\"Meki Batu Union,\" \"we,\" \"us,\" or \"our\") is an agricultural cooperative union based in Meki town, East Shewa Zone, Oromia, Ethiopia. This policy explains how we collect, use, and protect information you provide through this website."
+      },
+      "s2": {
+        "title": "2. What information we collect",
+        "p1": "We currently collect information only when you voluntarily submit it through a form on this site:",
+        "li1": "Contact form: name, email address, subject, and message",
+        "li2": "Request a Quote form (Buyers/Exporters page): name, company name, country, product(s) of interest, estimated volume, and message",
+        "p2": "We do not currently use cookies, analytics tracking, or any automated data collection on this website."
+      },
+      "s3": {
+        "title": "3. How we use your information",
+        "p1": "We use the information you submit to:",
+        "li1": "Respond to your inquiry or quote request",
+        "li2": "Communicate with you about your request by email or phone",
+        "li3": "Maintain a record of business inquiries for our own internal purposes",
+        "p2": "We do not use your information for advertising, and we do not sell your information to any third party."
+      },
+      "s4": {
+        "title": "4. How your information is processed",
+        "p1": "Form submissions on this site are processed through a third-party form-handling service, which delivers your submission to us by email. We do not currently operate a database that stores form submissions independently of this service. As our systems develop, this section will be updated to reflect any additional processing."
+      },
+      "s5": {
+        "title": "5. How long we keep your information",
+        "p1": "We retain information submitted through our forms for as long as reasonably necessary to respond to and follow up on your inquiry, and generally no longer than 12 months from your last contact with us, unless a longer period is required for legitimate business or legal reasons."
+      },
+      "s6": {
+        "title": "6. Your rights",
+        "p1": "Depending on where you are located, you may have the right to request access to, correction of, or deletion of the personal information you have submitted to us. To make such a request, contact us using the details below."
+      },
+      "s7": {
+        "title": "7. Cookies",
+        "p1": "This website does not currently set cookies or use browser tracking technologies. If this changes in the future, this policy will be updated accordingly, and where required by law we will request your consent first."
+      },
+      "s8": {
+        "title": "8. Children's privacy",
+        "p1": "This website is intended for business use by farmers, cooperative members, buyers, and members of the public, and is not directed at children. We do not knowingly collect information from children."
+      },
+      "s9": {
+        "title": "9. Changes to this policy",
+        "p1": "We may update this policy from time to time. The \"Last updated\" date at the top of this page reflects the most recent revision. Continued use of this site after changes are posted constitutes acceptance of the updated policy."
+      },
+      "s10": {
+        "title": "10. Contact us",
+        "p1": "If you have questions about this privacy policy or wish to exercise your rights regarding your information, contact us at:",
+        "entity": "Meki Batu Fruits and Vegetables Growers' Cooperative Union Ltd",
+        "address": "Meki town, East Shewa Zone, Oromia, Ethiopia",
+        "emailLabel": "Email:"
+      }
+    }
+  },
+  "terms": {
+    "eyebrow": "Legal",
+    "title": "Terms of service",
+    "description": "The terms that apply when you use this website.",
+    "lastUpdated": "Last updated: 15 August 2026",
+    "sections": {
+      "s1": {
+        "title": "1. Acceptance of these terms",
+        "p1": "By accessing or using this website, you agree to these Terms of Service. If you do not agree, please do not use this website."
+      },
+      "s2": {
+        "title": "2. About this website",
+        "p1": "This website is operated by Meki Batu Fruits and Vegetables Growers' Cooperative Union Ltd, an agricultural cooperative union based in Meki town, Oromia, Ethiopia. It provides information about our cooperative, our members, our products, and ways to get in touch as a farmer, buyer, or member of the public."
+      },
+      "s3": {
+        "title": "3. Informational purpose",
+        "p1": "The content on this website, including product listings, production volumes, certifications, and cooperative statistics, is provided for general informational purposes. It does not constitute a binding offer to sell or supply goods. Any commercial arrangement, including pricing, quantities, and delivery terms, must be confirmed directly and separately with Meki Batu Union."
+      },
+      "s4": {
+        "title": "4. Request a Quote and Contact forms",
+        "p1": "Submitting a form on this website (including the Request a Quote or Contact form) is an inquiry only and does not create a contract or purchase obligation on either side. We aim to respond to genuine inquiries in a timely manner but do not guarantee a response time."
+      },
+      "s5": {
+        "title": "5. Accuracy of information",
+        "p1": "We make reasonable efforts to keep the information on this website accurate and up to date, including membership numbers, production volumes, certifications, and retail outlet details. However, we do not guarantee that all information is complete, current, or error-free at all times."
+      },
+      "s6": {
+        "title": "6. Intellectual property",
+        "p1": "All content on this website, including text, images, logos, and branding, is the property of Meki Batu Union or its licensors, unless otherwise noted. You may not reproduce, distribute, or use this content for commercial purposes without our prior written permission."
+      },
+      "s7": {
+        "title": "7. Acceptable use",
+        "p1": "You agree not to use this website to:",
+        "li1": "Submit false or misleading information",
+        "li2": "Attempt to disrupt or gain unauthorized access to the site or any related systems",
+        "li3": "Use the site for any unlawful purpose"
+      },
+      "s8": {
+        "title": "8. Limitation of liability",
+        "p1": "To the fullest extent permitted by law, Meki Batu Union is not liable for any indirect, incidental, or consequential damages arising from your use of this website or reliance on its content."
+      },
+      "s9": {
+        "title": "9. Governing law",
+        "p1": "These terms are governed by the laws of the Federal Democratic Republic of Ethiopia. Any disputes arising from the use of this website will be subject to the jurisdiction of the courts of Oromia Region, Ethiopia."
+      },
+      "s10": {
+        "title": "10. Changes to these terms",
+        "p1": "We may update these Terms of Service from time to time. The \"Last updated\" date at the top of this page reflects the most recent revision. Continued use of this site after changes are posted constitutes acceptance of the updated terms."
+      },
+      "s11": {
+        "title": "11. Contact us",
+        "p1": "Questions about these terms can be sent to:",
+        "entity": "Meki Batu Fruits and Vegetables Growers' Cooperative Union Ltd",
+        "address": "Meki town, East Shewa Zone, Oromia, Ethiopia",
+        "emailLabel": "Email:"
+      }
+    }
+  },
+  "common": {
+    "emailLabel": "Email: "
+  }
+}

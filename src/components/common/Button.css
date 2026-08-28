@@ -108,3 +108,17 @@
   transform: none !important;
   pointer-events: none;
 }
+
+@media (max-width: 480px) {
+  .btn {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+    padding: 12px 18px;
+  }
+  .btn--lg {
+    padding: 14px 22px;
+    font-size: 15px;
+  }
+}

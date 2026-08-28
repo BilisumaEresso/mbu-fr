@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
@@ -10,125 +11,105 @@ import newsHeroImg from '../assets/images/heroes/newsHero.webp'
 import './InnerPage.css'
 import './Farmers.css'
 
-const FARMERS_FAQ = [
-  {
-    question: 'How do primary cooperatives join Meki Batu Union?',
-    answer:
-      'Primary cooperatives in East Shewa and Arsi zones (Dugda, Adami Tulu, Bora, Zuway Dugda, Adama, and Dodota Sire) can apply by submitting registration documents and member rosters to our union secretariat.',
-  },
-  {
-    question: 'What core support does the union provide members?',
-    answer:
-      'We provide certified seed and fertilizer distribution, facilitated agricultural credit, tractor mechanization, cold-chain aggregation, and GlobalG.A.P agronomy training.',
-  },
-  {
-    question: 'How many cooperatives and farmers are in the union?',
-    answer:
-      'Meki Batu Union unites 135 primary cooperatives representing 8,089 member farming households across 5,910 hectares.',
-  },
-  {
-    question: 'What are the membership affiliation terms?',
-    answer:
-      'Membership criteria and capital share requirements are reviewed during the formal board assessment. Contact our office for current guidelines.',
-  },
-]
-
-const SERVICES = [
-  {
-    icon: 'local_shipping',
-    title: 'Input Distribution',
-    desc: 'High-germination certified seeds, fertilizers, and crop protection supplied at subsidized cooperative rates.',
-  },
-  {
-    icon: 'account_balance',
-    title: 'Financial Credit Support',
-    desc: 'Facilitated micro-financing and seasonal credit lines tailored to member cropping cycles.',
-  },
-  {
-    icon: 'storefront',
-    title: 'Market Aggregation',
-    desc: 'Direct off-take agreements connecting member harvests with national retailers and international export buyers.',
-  },
-  {
-    icon: 'precision_manufacturing',
-    title: 'Farm Mechanization',
-    desc: 'Shared tractor services, river pump maintenance, and modern drip irrigation installation support.',
-  },
-  {
-    icon: 'warehouse',
-    title: 'Cold Storage & Logistics',
-    desc: 'Post-harvest packhouse sorting, precooling, and temperature-controlled transport to eliminate spoilage.',
-  },
-  {
-    icon: 'school',
-    title: 'Agronomy Training',
-    desc: 'Continuous extension services covering GlobalG.A.P compliance, soil health, and organic practices.',
-  },
-]
-
-const STEPS = [
-  {
-    number: '01',
-    title: 'Register Primary Cooperative',
-    desc: 'Organize local farmers into a legally recognized primary cooperative under regional agricultural guidelines.',
-  },
-  {
-    number: '02',
-    title: 'Submit Documentation',
-    desc: 'Provide registration certificates, active member roster, and a formal letter requesting union affiliation.',
-  },
-  {
-    number: '03',
-    title: 'Board Assessment',
-    desc: 'Union leadership conducts a field assessment of cooperative farm acreage, water access, and member alignment.',
-  },
-  {
-    number: '04',
-    title: 'Full Affiliation',
-    desc: 'Gain immediate access to union inputs, machinery fleet, cold-chain packhouses, and direct export markets.',
-  },
-]
-
 // Cap stagger at 450ms
 const stagger = (i) => Math.min(i * 90, 450)
 
 function Farmers() {
+  const { t } = useTranslation(['farmers', 'meta', 'common'])
   const { toast, showToast, dismissToast } = useToast()
 
   function handleLoginClick() {
     showToast(
-      'Member Login is under active development. Online portal features will launch in Phase 2.',
+      t('farmers:memberLoginToast', 'Member Login is under active development. Online portal features will launch in Phase 2.'),
       'info'
     )
   }
 
+  const services = [
+    {
+      icon: 'local_shipping',
+      title: t('farmers:services.items.input.title'),
+      desc: t('farmers:services.items.input.desc'),
+    },
+    {
+      icon: 'account_balance',
+      title: t('farmers:services.items.credit.title'),
+      desc: t('farmers:services.items.credit.desc'),
+    },
+    {
+      icon: 'storefront',
+      title: t('farmers:services.items.market.title'),
+      desc: t('farmers:services.items.market.desc'),
+    },
+    {
+      icon: 'precision_manufacturing',
+      title: t('farmers:services.items.mechanization.title'),
+      desc: t('farmers:services.items.mechanization.desc'),
+    },
+    {
+      icon: 'warehouse',
+      title: t('farmers:services.items.storage.title'),
+      desc: t('farmers:services.items.storage.desc'),
+    },
+    {
+      icon: 'school',
+      title: t('farmers:services.items.training.title'),
+      desc: t('farmers:services.items.training.desc'),
+    },
+  ]
+
+  const steps = [
+    {
+      number: t('farmers:steps.step1.number', '01'),
+      title: t('farmers:steps.step1.title'),
+      desc: t('farmers:steps.step1.desc'),
+    },
+    {
+      number: t('farmers:steps.step2.number', '02'),
+      title: t('farmers:steps.step2.title'),
+      desc: t('farmers:steps.step2.desc'),
+    },
+    {
+      number: t('farmers:steps.step3.number', '03'),
+      title: t('farmers:steps.step3.title'),
+      desc: t('farmers:steps.step3.desc'),
+    },
+    {
+      number: t('farmers:steps.step4.number', '04'),
+      title: t('farmers:steps.step4.title'),
+      desc: t('farmers:steps.step4.desc'),
+    },
+  ]
+
+  const faqItems = t('farmers:faq.items', { returnObjects: true }) || []
+
   return (
     <>
       <Helmet>
-        <title>Farmer Co-ops &amp; Membership | Meki Batu Union</title>
+        <title>{t('meta:farmers.title')}</title>
         <meta
           name="description"
-          content="Empowering 135 primary agricultural cooperatives and 8,089 member farmers in Ethiopia through seed distribution, agronomy training, cold-chain storage, and direct export linkages."
+          content={t('meta:farmers.description')}
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
       <PageHero
-        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'For Farmers' }]}
-        title="Empowering Primary Cooperatives"
-        description="Meki Batu Union provides input supply, agronomy training, mechanization, and direct export linkages to 135 primary cooperatives and 8,089 farming families across the Great Rift Valley."
+        breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.farmers') }]}
+        title={t('farmers:hero.title')}
+        description={t('farmers:hero.desc')}
         actions={
           <>
             <a href="#services" className="btn btn--primary">
-              Our Services <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              {t('farmers:hero.viewBenefits')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
             <a href="#membership" className="btn btn--outline">
-              How to Join <span className="material-symbols-outlined text-sm">info</span>
+              {t('farmers:hero.joinCoop')} <span className="material-symbols-outlined text-sm">info</span>
             </a>
           </>
         }
         image={farmerHeroImg}
-        imageAlt="Ethiopian farmers in a professional agricultural packhouse"
-        badge="135 Primary Co-ops"
+        imageAlt={t('farmers:hero.imageAlt')}
+        badge={t('farmers:hero.badge')}
       />
 
       <SectionDivider />
@@ -136,9 +117,13 @@ function Farmers() {
       {/* ---- Member Services Section — stagger each service card ---- */}
       <section className="farmers-services section section--alt" id="services">
         <div className="container">
-          <h2 className="farmers-services__heading">Member Services</h2>
+          <div className="farmers-services__header text-center mb-8">
+            <span className="label-caps label-caps--secondary mb-2 block">{t('farmers:services.tag')}</span>
+            <h2 className="farmers-services__heading">{t('farmers:services.title')}</h2>
+            <p className="farmers-services__desc max-w-2xl mx-auto">{t('farmers:services.desc')}</p>
+          </div>
           <div className="farmers-services__grid">
-            {SERVICES.map((s, i) => (
+            {services.map((s, i) => (
               <Reveal key={s.title} delay={stagger(i)} className="farmers-service-card">
                 <span className="material-symbols-outlined farmers-service-card__icon">
                   {s.icon}
@@ -155,10 +140,10 @@ function Farmers() {
       <Reveal as="section" className="farmers-membership section" id="membership">
         <div className="container farmers-membership__grid">
           <div className="farmers-membership__content">
-            <span className="label-caps label-caps--secondary mb-2">Membership</span>
-            <h2 className="farmers-membership__title">How to Join Meki Batu Union</h2>
+            <span className="label-caps label-caps--secondary mb-2">{t('farmers:steps.tag')}</span>
+            <h2 className="farmers-membership__title">{t('farmers:steps.title')}</h2>
             <div className="farmers-membership__steps">
-              {STEPS.map((step) => (
+              {steps.map((step) => (
                 <div key={step.number} className="farmers-step">
                   <div className="farmers-step__num">{step.number}</div>
                   <div>
@@ -172,7 +157,7 @@ function Farmers() {
           <div className="farmers-membership__media">
             <img
               src={newsHeroImg}
-              alt="Cooperative training session outdoors in a field in Ethiopia"
+              alt={t('farmers:steps.imageAlt')}
               className="farmers-membership__img"
             />
           </div>
@@ -184,19 +169,19 @@ function Farmers() {
         <div className="container">
           <Reveal className="farmers-portal__card">
             <span className="material-symbols-outlined farmers-portal__icon">terminal</span>
-            <h2 className="farmers-portal__title">Digital Member Portal</h2>
+            <h2 className="farmers-portal__title">{t('farmers:portal.title')}</h2>
             <span className="label-caps label-caps--secondary mb-4 block">
-              Phase 2 Development - Coming Soon
+              {t('farmers:portal.badge')}
             </span>
             <p className="farmers-portal__desc">
-              A secure digital platform under active development for member cooperatives to track crop deliveries, access market prices, request inputs, and manage union accounts online.
+              {t('farmers:portal.desc')}
             </p>
             <button
               type="button"
               className="farmers-portal__btn"
               onClick={handleLoginClick}
             >
-              Access Member Portal
+              {t('farmers:portal.button')}
               <span className="material-symbols-outlined text-sm">lock</span>
             </button>
           </Reveal>
@@ -204,7 +189,11 @@ function Farmers() {
       </section>
 
       {/* ---- FAQ Section ---- */}
-      <FAQ items={FARMERS_FAQ} />
+      <FAQ
+        title={t('farmers:faq.title')}
+        description={t('farmers:faq.desc')}
+        items={Array.isArray(faqItems) ? faqItems : []}
+      />
 
       {/* Toast Notification */}
       <Toast toast={toast} onDismiss={dismissToast} />

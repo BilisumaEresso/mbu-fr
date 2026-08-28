@@ -1,0 +1,237 @@
+{
+  "skipLink": "Qabiyyee guddaatti darbi",
+  "header": {
+    "brand": "Yuniyeenii Maqii Baatuu",
+    "brandLogoAlt": "Mallattoo Yuniyeenii Maqii Baatuu",
+    "memberLogin": "Seensa Miseensotaa",
+    "memberLoginToast": "Seensi miseensotaa dhihootti ni eegala! Marsariitiin tajaajila waldaalee miseensaaf qophaa'aa jira.",
+    "toggleNav": "Baafata jijjiiri",
+    "nav": {
+      "about": "Waa'ee Keenya",
+      "aboutDesc": "Seenaa, ergama fi hooggansa keenya",
+      "impact": "Bu'aa fi Dhiibbaa",
+      "impactDesc": "Waraqaalee ragaa fi gabaasa waggaa",
+      "products": "Oomishaalee",
+      "ourProducts": "Oomishaalee Keenya",
+      "ourProductsDesc": "Kuduraalee, muduraalee fi sanyiilee filatamoo",
+      "retailOutlets": "Dukaannoota Magaalaa",
+      "retailOutletsDesc": "Dukaannoota 5 Finfinnee keessatti argaman",
+      "farmers": "Q/Bultootaaf",
+      "buyers": "Bittootaaf",
+      "news": "Oduu",
+      "contact": "Nu Qunnamaa"
+    }
+  },
+  "footer": {
+    "tagline": "Yuniyeenii waldaalee kuduraa fi muduraa Itoophiyaa amanamaa, muuxannoo waggoota 20 oliin bara 1994 irraa eegalee tajaajilaa jiru.",
+    "badge": "Waraqaa Ragaa GlobalG.A.P · Oomishtuu Sanyii Mirkanaa'e",
+    "company": "Waa'ee Yuuniyeenichaa",
+    "stakeholders": "Miseensota & Bittoota",
+    "contact": "Teessoo & Quunnamtii",
+    "followUs": "Nu Hordofaa",
+    "copyright": "© {{year}} Waldaa Hojii Gamtaa Oomishtoota Kuduraa fi Muduraa Maqii Baatuu Ltd.",
+    "privacyPolicy": "Imaammata Iccitii",
+    "termsOfService": "Waliigaltee Tajaajilaa",
+    "address": "Magaalaa Maqii, Aanaa Dugda, Godina Shawaa Bahaa, Oromiyaa, Itoophiyaa",
+    "openMaps": "Teessoo kana Google Maps irratti ilaalaa",
+    "facebook": "Facebook",
+    "telegram": "Telegram",
+    "linkedin": "LinkedIn"
+  },
+  "breadcrumbs": {
+    "ariaLabel": "Qajeelcha Karaa",
+    "home": "Fuula Duraa",
+    "about": "Waa'ee Keenya",
+    "products": "Oomishaalee Keenya",
+    "farmers": "Qonnaan Bultootaaf",
+    "buyers": "Bittootaaf",
+    "retailOutlets": "Dukaannoota Magaalaa",
+    "news": "Oduu",
+    "impact": "Bu'aa & Dhiibbaa",
+    "contact": "Nu Qunnamaa",
+    "privacyPolicy": "Imaammata Iccitii",
+    "termsOfService": "Waliigaltee Tajaajilaa"
+  },
+  "buttons": {
+    "learnMore": "Dabalata Baraa",
+    "getInTouch": "Nu Qunnamaa",
+    "requestQuote": "Gaaffii Gatii Dhiyeessaa",
+    "viewCatalog": "Tarree Oomishaa Ilaalaa",
+    "viewLocations": "Bakkeewwan Ilaalaa",
+    "viewImpactMetrics": "Safartuuwwan Dhiibbaa Ilaalaa",
+    "impactReports": "Gabaasa Dhiibbaa",
+    "downloadPdf": "Piroofayilii Dhaabbataa Buufadhaa",
+    "viewCredential": "Ragaa ilaalaa",
+    "viewCertificateDoc": "Sanada waraqaa ragaa ilaalaa",
+    "openGoogleMaps": "Google Maps irratti bani",
+    "close": "Cufi",
+    "backToHome": "Gara fuula duraatti deebi'aa",
+    "viewDetailsMap": "Bal'ina fi Kaartaa Ilaalaa",
+    "readReport": "Gabaasa dubbisaa",
+    "search": "Barbaadi"
+  },
+  "whatsapp": {
+    "ariaLabel": "WhatsApp irratti nu haasofsiisaa",
+    "defaultMessage": "Akkam Yuniyeenii Maqii Baatuu, waa'ee... gaafachuu barbaadeen ture"
+  },
+  "langSwitcher": {
+    "en": "EN",
+    "om": "OM",
+    "label": "Afaan jijjiiri",
+    "mobileTitle": "Afaan / Language"
+  },
+  "heroCrossfade": {
+    "watchStory": "Seenaa keenya daawwadhaa"
+  },
+  "faq": {
+    "title": "Gaaffilee Yeroo Baay'ee Gaafataman"
+  },
+  "toast": {
+    "dismiss": "Beeksisa haquu"
+  },
+  "certifications": {
+    "globalgapTitle": "Waraqaa Ragaa GlobalG.A.P",
+    "globalgapDesc": "Ulaagaalee idil-addunyaa nageenya nyaataa, hordoffii, fi hojimaata qonna itti-fufiinsa qabu guutuu. Maatiiwwan miseensa 400 ol ta'an sagantaa waraqaa ragaa yuuniyeenichaa jalatti GlobalG.A.P argataniiru.",
+    "globalgapCaption": "Waraqaa ragaa GlobalG.A.P qonna nagaa, hordofamuu danda'u fi itti-fufiinsa qabuuf — maatiiwwan miseensaa 400 ol ta'an sagantaa yuuniyeenichaa jalatti ragaa argataniiru.",
+    "globalgapLearn": "Waa'ee GlobalG.A.P baraa",
+    "globalgapAlt": "Mallattoo fi Baajii Waraqaa Ragaa GlobalG.A.P",
+    "globalgapAriaLabel": "Fakkii waraqaa ragaa GlobalG.A.P guddaa ilaalaa",
+    "globalgapLogoAlt": "Mallattoo GlobalG.A.P",
+    "oromiaTitle": "Oomishtuu Sanyii Eeyyamameef — Biiroo Qonnaa fi Qabeenya Uumamaa Oromiyaa",
+    "oromiaDesc": "Labsii Sanyii Itoophiyaa Lakkoofsa 782/2013 jalatti sanyii filatamaa kuduraa, muduraa, midhaan dheedhii fi oomishaalee biroo oomishuuf eeyyama kan argate. Lakkoofsa Eeyyamaa 72, Waldaa Hojii Gamtaa Oomishtoota Kuduraa fi Muduraa Maqii Baatuuf kan kenname.",
+    "oromiaMeta": "Kan kenname 14/01/2019 · Biiroo Qonnaa fi Qabeenya Uumamaa Oromiyaa",
+    "oromiaCaption": "Waraqaa Ragaa Ga'umsa Oomishtuu Sanyii Eeyyamameef Reg. No. 72 Labsii Sanyii Itoophiyaa Lakkoofsa 782/2013 jalatti.",
+    "oromiaAlt": "Waraqaa Ragaa Ga'umsa Biiroo Qonnaa Oromiyaa Yuniyeenii Maqii Baatuu, eeyyama oomishtuu sanyii mirkanaa'e",
+    "oromiaAriaLabel": "Sanada waraqaa ragaa oomishtuu sanyii Oromiyaa guddaa ilaalaa",
+    "expand": "Guddisi",
+    "expandDoc": "Sanada Guddisi",
+    "officialCredential": "Ragaa Hojii Qabatamaa",
+    "closeViewer": "Agarsiistuu sanadaa cufi",
+    "visit": "Daawwadhaa"
+  },
+  "whereWeOperate": {
+    "region": "Naannoo Keenya",
+    "title": "Bakka Nutti Hojjennu",
+    "desc": "Waldaaleen miseensota keenyaa aanolee ja'a Godinaalee Shawaa Bahaa fi Arsiitti argaman keessatti oomishu: Aanaa Dugda, Adaamii Tulluu Jiddo Kombolcha, Booraa, Zeway Dugda, Adaamaa, fi Doodota Siree. Jalqaba Haroo Dambal (Haroo Ziway) naannoo Dugda fi Adaamii Tulluutti kan hundeeffame yoo ta'u, amma qonnaan bultoota miseensa 8,089 aanolee ja'an keessatti deeggara.",
+    "mapTitle": "Bakka Yuniyeenii Maqii Baatuu — Magaalaa Maqii, Godina Shawaa Bahaa, Oromiyaa, Itoophiyaa",
+    "districts": {
+      "dugda": "Aanaa Dugda",
+      "adamiTulu": "Adaamii Tulluu Jiddo Kombolcha",
+      "bora": "Booraa",
+      "zuwayDugda": "Zeway Dugda",
+      "adama": "Adaamaa",
+      "dodotaSire": "Doodota Siree"
+    }
+  },
+  "validation": {
+    "required": "Bakki kun guutamuu qaba.",
+    "email": "Mee teessoo imeelii sirrii galchaa."
+  },
+  "team": {
+    "members": {
+      "kumesaGudina": {
+        "name": "Kumesa Gudina",
+        "title": "Maneejara Waliigalaa",
+        "department": "Hooggansa Hojii Raawwachiiftuu",
+        "category": "Hojii Raawwachiisaa"
+      },
+      "ashenafiRoba": {
+        "name": "Ashenafi Roba",
+        "title": "Itti Aanaa Maneejaraa",
+        "department": "Hooggansa Hojiiwwanii",
+        "category": "Hojii Raawwachiisaa"
+      },
+      "biyoUke": {
+        "name": "Biyo Uke",
+        "title": "Abukaatoo & Gorsaa Seeraa",
+        "department": "Gorsa Seeraa",
+        "category": "Deeggarsa Hojii Raawwachiiftuu"
+      },
+      "geletaDiriba": {
+        "name": "Geleta Diriba",
+        "title": "Ogeessa Ol'aanaa Karoora, Gamaggamaa fi Baajataa",
+        "department": "Karoora & Gamaggama",
+        "category": "Deeggarsa Hojii Raawwachiiftuu"
+      },
+      "megarsoEbso": {
+        "name": "Megarso Ebso",
+        "title": "Hoogganaa Kutaa Qonnaa & Wiirtuu Tajaajila Qonnaan Bulaa",
+        "department": "Qonna & Galteewwan",
+        "category": "Hoogganaa Kutaa"
+      },
+      "lenchoHamde": {
+        "name": "Lencho Hamde",
+        "title": "Hoogganaa Kutaa Daldalaa fi Gabaa",
+        "department": "Gabaa & Daldala",
+        "category": "Hoogganaa Kutaa"
+      },
+      "eresoAmbaso": {
+        "name": "Ereso Ambaso",
+        "title": "Hoogganaa Kutaa Qabeenya Namaa & Tajaajila Waliigalaa",
+        "department": "Qabeenya Namaa & Tajaajila Waliigalaa",
+        "category": "Hoogganaa Kutaa"
+      },
+      "sisayYadesa": {
+        "name": "Sisay Yadesa",
+        "title": "Hoogganaa Kutaa Faayinaansii fi Bittaa",
+        "department": "Faayinaansii & Bittaa",
+        "category": "Hoogganaa Kutaa"
+      }
+    }
+  },
+  "notFound": {
+    "title": "Fuulli hin argamne",
+    "desc": "Fuulli ati barbaadaa jirtu hin jiru.",
+    "button": "Gara fuula duraatti deebi'aa"
+  },
+  "facilities": {
+    "centralColdHub": {
+      "name": "Kuusaa Qabbaneessaa & Mana Kuusaa",
+      "tag": "Wiirtuu Kuusaa",
+      "stat": "Toonii 2,000",
+      "location": "Wiirtuu Maqii",
+      "desc": "Kutaa qabbaneessaa adda addaa fi manneen kuusaa to'annoo ho'aa qaban kan waldaalee 135 tajaajilan.",
+      "features": [
+        "Kutaalee Qabbanaawaa Adda Addaa",
+        "Humna Elektiriikii Bakka Bu'aa",
+        "Oomisha Waldaalee Irraa Kallattiin"
+      ]
+    },
+    "refrigeratedFleet": {
+      "name": "Konkolaattota Geejjiba Qabbanaawaa",
+      "tag": "Loojistiiksii Qabbanaawaa",
+      "stat": "Konkolaattota & Tiraaktaroota 18+",
+      "location": "Sulula Qiinxamaa & Finfinnee",
+      "desc": "Konkolaattota qabbanaawaa qorrisiifaman fi tiraaktaroota qonnaa oomisha balbala maasii irraa hanga gabaa xumuraatti haarummaan geessan.",
+      "features": [
+        "To'annoo Ho'aa Qabatamaa",
+        "Geejjiba Maasii Hanga Gabaatti",
+        "Kallattii Loojistiiksii Saffisaa"
+      ]
+    },
+    "centralPackhouse": {
+      "name": "Wiirtuu Qulqulleessuu & Saamsuu Daldala Alaa",
+      "tag": "Sadarkeessuu & Saamsuu",
+      "stat": "Toonii 50,000 / Waggaatti",
+      "location": "Wiirtuu Saamsamaa Maqii",
+      "desc": "Sarara sadarkeessuu qulqullinaa, dhiquu qulqulluu, fi saamsuu daldala alaa waraqaa ragaa GlobalG.A.P qabu.",
+      "features": [
+        "Sadarkeessuu Qulqullinaa Marsaa Hedduu",
+        "Sarara Dhiquu Qulqulluu",
+        "Kaartoonii Saamsamaa GlobalG.A.P"
+      ]
+    },
+    "irrigationSchemes": {
+      "name": "Sagantaa Jallisii Haroo Dambal",
+      "tag": "Bishaan & Jallisii",
+      "stat": "Hektaara 5,910",
+      "location": "Sulula Haroo Dambal",
+      "desc": "Buufataalee paampii elektiriikii laga irraa fi sirna jallisii copha ammayyaa oomisha waggaa guutuu dandeessisan.",
+      "features": [
+        "Paampii Lagaa Elektiriikii",
+        "Bu'uuraalee Jallisii Cophaa Ammayyaa",
+        "Oomishtummaa Waggaa Guutuu"
+      ]
+    }
+  }
+}

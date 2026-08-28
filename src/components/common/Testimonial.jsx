@@ -1,6 +1,7 @@
 // PLACEHOLDER CONTENT — replace with real buyer/member testimonials and remove the "Example" badge before launch.
 
 import { useState, useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import Reveal from './Reveal.jsx'
 import './Testimonial.css'
 
@@ -23,11 +24,16 @@ import './Testimonial.css'
  *   }>
  */
 function Testimonials({
-  title = 'Partner & Member Voice',
-  subtitle = 'Feedback from global agricultural buyers and primary cooperative members across the Great Rift Valley.',
+  title,
+  subtitle,
   items = [],
   className = '',
 }) {
+  const { t } = useTranslation('home')
+  
+  const displayTitle = title || t('testimonials.title')
+  const displaySubtitle = subtitle || t('testimonials.desc')
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const [itemsPerPage, setItemsPerPage] = useState(3)
   const touchStartX = useRef(null)
@@ -86,9 +92,9 @@ function Testimonials({
       <div className="container">
         <div className="testimonials-section__header-row">
           <Reveal className="testimonials-section__header">
-            <span className="label-caps label-caps--secondary mb-2 block">Testimonials</span>
-            <h2 className="testimonials-section__title">{title}</h2>
-            {subtitle && <p className="testimonials-section__desc">{subtitle}</p>}
+            <span className="label-caps label-caps--secondary mb-2 block">{t('testimonials.badge', 'Testimonials')}</span>
+            <h2 className="testimonials-section__title">{displayTitle}</h2>
+            {displaySubtitle && <p className="testimonials-section__desc">{displaySubtitle}</p>}
           </Reveal>
 
           {/* Controls header desktop */}
@@ -97,8 +103,8 @@ function Testimonials({
               type="button"
               className="testimonials-slider__btn"
               onClick={prevSlide}
-              aria-label="Previous testimonials"
-              title="Previous testimonials"
+              aria-label={t('testimonials.ariaLabelPrev', 'Previous testimonials')}
+              title={t('testimonials.ariaLabelPrev', 'Previous testimonials')}
             >
               <span className="material-symbols-outlined">arrow_back</span>
             </button>
@@ -106,8 +112,8 @@ function Testimonials({
               type="button"
               className="testimonials-slider__btn"
               onClick={nextSlide}
-              aria-label="Next testimonials"
-              title="Next testimonials"
+              aria-label={t('testimonials.ariaLabelNext', 'Next testimonials')}
+              title={t('testimonials.ariaLabelNext', 'Next testimonials')}
             >
               <span className="material-symbols-outlined">arrow_forward</span>
             </button>
@@ -140,7 +146,7 @@ function Testimonials({
                   </div>
 
                   {/* 5-Star Rating */}
-                  <div className="testimonial-card__rating" aria-label="5 out of 5 stars">
+                  <div className="testimonial-card__rating" aria-label={t('testimonials.ratingAriaLabel', '5 out of 5 stars')}>
                     {Array.from({ length: item.rating || 5 }).map((_, i) => (
                       <span key={i} className="material-symbols-outlined testimonial-card__star">
                         star
@@ -165,7 +171,7 @@ function Testimonials({
                       )}
                       <span
                         className="material-symbols-outlined testimonial-card__verified"
-                        title="Verified Cooperative Partner"
+                        title={t('testimonials.verifiedPartner', 'Verified Cooperative Partner')}
                       >
                         verified
                       </span>
@@ -201,7 +207,7 @@ function Testimonials({
                 currentIndex === i ? 'testimonials-slider__dot--active' : ''
               }`}
               onClick={() => setCurrentIndex(i)}
-              aria-label={`Go to slide ${i + 1}`}
+              aria-label={t('testimonials.goToSlide', { slide: i + 1, defaultValue: `Go to slide ${i + 1}` })}
             />
           ))}
         </div>

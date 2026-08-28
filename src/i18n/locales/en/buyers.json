@@ -1,0 +1,93 @@
+{
+  "hero": {
+    "title": "Export-Grade Produce. Reliable Supply Chains.",
+    "desc": "Meki Batu Union is a trusted primary supplier of GlobalG.A.P certified Rift Valley vegetables, fruits, and hybrid seeds to international importers, food service leaders, and retail chains.",
+    "badge": "Direct Export Aggregator",
+    "requestQuote": "Request Export Quote",
+    "downloadPdf": "Download Company Profile",
+    "imageAlt": "Export quality produce being sorted and packed in modern facility",
+    "downloadPdfTitle": "Download Meki Batu Union Company Profile (PDF)"
+  },
+  "valueProps": {
+    "prop1": {
+      "title": "Certified Quality",
+      "desc": "Strict compliance with GlobalG.A.P and Ethiopian seed standards, ensuring full traceability from farm gate to destination ports."
+    },
+    "prop2": {
+      "title": "Reliable Supply Volume",
+      "desc": "135 member cooperatives across 5,910 irrigated hectares provide consistent, high-tonnage supply throughout harvest seasons."
+    },
+    "prop3": {
+      "title": "Export-Grade Logistics",
+      "desc": "Refrigerated fleet transport and central packhouse precooling maintain optimal cold-chain integrity for international air freight."
+    }
+  },
+  "form": {
+    "tag": "Commercial Inquiries",
+    "title": "Request a Bulk Sourcing Quote",
+    "desc": "Complete the form below to receive a volume pricing quote, packaging specifications, and delivery schedules from our export desk.",
+    "fields": {
+      "name": "Full Name",
+      "namePlaceholder": "e.g. John Doe",
+      "company": "Company / Organization",
+      "companyPlaceholder": "e.g. Fresh Produce Imports Ltd",
+      "country": "Destination Country",
+      "countryPlaceholder": "e.g. Netherlands, UAE, Germany",
+      "product": "Commodity Required",
+      "productSelect": "Select commodity...",
+      "products": {
+        "tomatoes": "Rift Valley Tomatoes",
+        "onions": "Red Onions",
+        "peppers": "Green Peppers",
+        "potato": "Highland Potatoes",
+        "cabbage": "Fresh Cabbage",
+        "greenBeans": "Green Beans",
+        "papaya": "Fresh Papaya",
+        "watermelon": "Sweet Watermelon",
+        "seeds": "Certified Seeds"
+      },
+      "volume": "Estimated Volume / Tonnage",
+      "volumePlaceholder": "e.g. 5 Tonnes / Weekly",
+      "message": "Specifications & Notes",
+      "messagePlaceholder": "Specify grade requirements, packaging preferences, target delivery window...",
+      "submit": "Submit Quote Request",
+      "submitting": "Submitting..."
+    },
+    "success": {
+      "title": "Quote Request Submitted!",
+      "desc": "Thank you for contacting Meki Batu Union. Our commercial export team will review your inquiry and provide a tailored quote within 24 hours.",
+      "button": "Submit Another Request"
+    },
+    "toasts": {
+      "success": "Quote request submitted successfully! We will contact you shortly.",
+      "fail": "Submission failed. Please check your information and try again.",
+      "network": "Network error. Please try again later."
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions for Buyers & Exporters",
+    "desc": "Key operational details on certifications, minimum order quantities, logistics, and quality assurance.",
+    "items": [
+      {
+        "question": "What commodities are available for export sourcing?",
+        "answer": "We supply export-grade Rift Valley tomatoes, red onions, green peppers, highland potatoes, cabbage, green beans, fresh papaya, and certified hybrid seeds."
+      },
+      {
+        "question": "What certifications back Meki Batu Union produce?",
+        "answer": "Our crops are GlobalG.A.P certified with full farm-gate traceability. We are also a licensed seed producer under Ethiopian national standards."
+      },
+      {
+        "question": "Which international markets do you currently supply?",
+        "answer": "We supply European export markets via air freight, as well as Ethiopian Airlines Inflight Catering and wholesale buyers in East Africa."
+      },
+      {
+        "question": "How do I request a tailored volume quote?",
+        "answer": "Submit the inquiry form on this page with your required commodity, tonnage, and destination. Our export team responds within 24 hours."
+      },
+      {
+        "question": "What are the minimum order quantities (MOQ)?",
+        "answer": "MOQs depend on commodity perishability and seasonal windows. Contact us with your delivery schedule for custom volume terms."
+      }
+    ]
+  }
+}

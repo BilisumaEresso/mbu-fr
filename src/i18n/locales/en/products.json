@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "title": "Cultivated with precision. Exported globally.",
+    "desc": "Discover our range of premium, certified organic crops and seeds. Grown in the nutrient-rich soils of the Great Rift Valley by our network of cooperative farmers.",
+    "badge": "GlobalG.A.P Certified",
+    "viewCatalog": "View Catalog",
+    "requestQuote": "Request a Quote",
+    "imageAlt": "Fresh harvest of red tomatoes in wooden crate on dark Ethiopian soil"
+  },
+  "catalog": {
+    "directory": "Crop Directory",
+    "title": "Premium Produce & Certified Seeds",
+    "desc": "Browse our high-yield vegetables, fruits, and certified seed varieties grown across 5,910 irrigated hectares in the Great Rift Valley.",
+    "filters": {
+      "all": "All Products",
+      "vegetables": "Vegetables",
+      "fruits": "Fruits",
+      "seeds": "Certified Seeds"
+    },
+    "labels": {
+      "season": "Season",
+      "packaging": "Packaging",
+      "shelfLife": "Shelf Life",
+      "origin": "Origin",
+      "brix": "Brix / Spec",
+      "viewDetails": "View Full Specifications",
+      "requestQuote": "Request Quote",
+      "varieties": "Varieties:",
+      "producedVarieties": "Produced Varieties",
+      "globalGap": "GlobalG.A.P Certified"
+    },
+    "modal": {
+      "title": "Technical Specifications",
+      "overview": "Product Overview",
+      "exportCompliance": "Export Quality & Compliance",
+      "certifiedScheme": "Certified Under GlobalG.A.P Scheme",
+      "close": "Close Specifications"
+    },
+    "showingPrefix": "Showing",
+    "commodity": "commodity",
+    "commodities": "commodities",
+    "ariaViewDetails": "View specifications for {{name}}",
+    "perks": {
+      "traceable": "100% Traceable to Member Co-ops",
+      "coldChain": "Direct Cold-Chain Transit"
+    }
+  },
+  "calendar": {
+    "tag": "Seasonal Schedule",
+    "title": "Harvest & Availability Calendar",
+    "desc": "Plan your sourcing pipeline across seasonal windows in the Ethiopian Great Rift Valley.",
+    "mobileHint": "Scroll horizontally to view full calendar",
+    "table": {
+      "commodity": "Commodity",
+      "category": "Category",
+      "harvestWindow": "Main Harvest Window",
+      "exportAvailability": "Export Availability"
+    }
+  },
+  "cta": {
+    "title": "Need Custom Volume or Seasonal Off-Take Terms?",
+    "desc": "Our export logistics team arranges refrigerated air-freight and overland distribution tailored to your procurement schedule.",
+    "button": "Contact Export Team"
+  }
+}

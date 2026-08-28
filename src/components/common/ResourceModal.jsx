@@ -1,7 +1,16 @@
 import { useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import './ResourceModal.css'
 
+const KEY_MAP = {
+  'central-cold-hub': 'centralColdHub',
+  'refrigerated-fleet': 'refrigeratedFleet',
+  'central-packhouse': 'centralPackhouse',
+  'irrigation-schemes': 'irrigationSchemes',
+}
+
 function ResourceModal({ resource, onClose }) {
+  const { t } = useTranslation(['about', 'common'])
   const closeBtnRef = useRef(null)
 
   useEffect(() => {
@@ -26,8 +35,14 @@ function ResourceModal({ resource, onClose }) {
 
   if (!resource) return null
 
+  const key = KEY_MAP[resource.id]
+  const name = key ? t(`common:facilities.${key}.name`, resource.name) : resource.name
+  const desc = key ? t(`common:facilities.${key}.desc`, resource.desc || resource.description) : (resource.desc || resource.description)
+  const location = key ? t(`common:facilities.${key}.location`, resource.location) : resource.location
+  const tag = key ? t(`common:facilities.${key}.tag`, resource.tag || resource.category) : (resource.tag || resource.category)
+
   return (
-    <div className="resource-modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-label={resource.name}>
+    <div className="resource-modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-label={name}>
       <div className="resource-modal-card" onClick={(e) => e.stopPropagation()}>
         {/* Modal Header */}
         <div className="resource-modal__header">
@@ -36,9 +51,9 @@ function ResourceModal({ resource, onClose }) {
               <span className="material-symbols-outlined">{resource.icon}</span>
             </div>
             <div>
-              <span className="resource-modal__category">{resource.category}</span>
-              <h2 className="resource-modal__title">{resource.name}</h2>
-              <p className="resource-modal__type">{resource.type} &bull; <span className="resource-modal__status">{resource.status}</span></p>
+              <span className="resource-modal__category">{tag}</span>
+              <h2 className="resource-modal__title">{name}</h2>
+              <p className="resource-modal__type">{resource.type || tag} &bull; <span className="resource-modal__status">{resource.status || t('about:facilities.tag', 'Verified Asset')}</span></p>
             </div>
           </div>
           <button
@@ -46,7 +61,7 @@ function ResourceModal({ resource, onClose }) {
             className="resource-modal__close-btn"
             onClick={onClose}
             ref={closeBtnRef}
-            aria-label="Close specifications dialog"
+            aria-label={t('about:resourceModal.closeAriaLabel', 'Close specifications dialog')}
           >
             <span className="material-symbols-outlined">close</span>
           </button>
@@ -59,10 +74,10 @@ function ResourceModal({ resource, onClose }) {
             <div className="resource-modal__banner-overlay">
               <span className="material-symbols-outlined resource-modal__banner-icon">{resource.icon}</span>
               <div className="resource-modal__banner-meta">
-                <span className="resource-modal__banner-cap">{resource.capacity}</span>
+                <span className="resource-modal__banner-cap">{resource.capacity || resource.stat}</span>
                 <span className="resource-modal__banner-loc">
                   <span className="material-symbols-outlined text-xs">location_on</span>
-                  {resource.location}
+                  {location}
                 </span>
               </div>
             </div>
@@ -70,18 +85,18 @@ function ResourceModal({ resource, onClose }) {
 
           {/* Description */}
           <div className="resource-modal__desc-box">
-            <h4 className="resource-modal__section-title">Operational Overview</h4>
-            <p className="resource-modal__desc">{resource.description}</p>
+            <h4 className="resource-modal__section-title">{t('about:resourceModal.overview', 'Operational Overview')}</h4>
+            <p className="resource-modal__desc">{desc}</p>
           </div>
 
           {/* Technical Specifications Table */}
           {resource.specs && (
             <div className="resource-modal__specs-box">
-              <h4 className="resource-modal__section-title">Technical Specifications</h4>
+              <h4 className="resource-modal__section-title">{t('about:resourceModal.specs', 'Technical Specifications')}</h4>
               <div className="resource-modal__specs-grid">
-                {Object.entries(resource.specs).map(([key, val]) => (
-                  <div key={key} className="resource-modal__spec-row">
-                    <span className="resource-modal__spec-label">{key}</span>
+                {Object.entries(resource.specs).map(([specKey, val]) => (
+                  <div key={specKey} className="resource-modal__spec-row">
+                    <span className="resource-modal__spec-label">{specKey}</span>
                     <span className="resource-modal__spec-value">{val}</span>
                   </div>
                 ))}
@@ -92,7 +107,7 @@ function ResourceModal({ resource, onClose }) {
           {/* Operational Highlights */}
           {Array.isArray(resource.highlights) && resource.highlights.length > 0 && (
             <div className="resource-modal__highlights-box">
-              <h4 className="resource-modal__section-title">Operational Capabilities &amp; Impact</h4>
+              <h4 className="resource-modal__section-title">{t('about:resourceModal.capabilities', 'Operational Capabilities & Impact')}</h4>
               <ul className="resource-modal__highlights-list">
                 {resource.highlights.map((h, i) => (
                   <li key={i} className="resource-modal__highlight-item">
@@ -107,9 +122,9 @@ function ResourceModal({ resource, onClose }) {
 
         {/* Modal Footer */}
         <div className="resource-modal__footer">
-          <span className="resource-modal__footer-text">Meki Batu Union &bull; Verified Operational Infrastructure</span>
+          <span className="resource-modal__footer-text">{t('about:resourceModal.footerText', 'Meki Batu Union • Verified Operational Infrastructure')}</span>
           <button type="button" className="btn btn--primary btn--sm" onClick={onClose}>
-            Close Specifications
+            {t('about:resourceModal.closeBtn', 'Close Specifications')}
           </button>
         </div>
       </div>

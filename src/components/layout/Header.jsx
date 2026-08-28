@@ -1,47 +1,54 @@
 import { useState, useEffect, useRef } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import logoImg from '../../assets/images/brand/MBU_logo_new.webp'
 import Toast from '../common/Toast.jsx'
 import { useToast } from '../../hooks/useToast.js'
+import { getLocalePath } from '../../utils/locale.js'
 import './Header.css'
 
-const NAV_GROUPS = [
-  {
-    key: 'about',
-    label: 'About Us',
-    items: [
-      { to: '/about', label: 'About Us', desc: 'Our heritage, mission & leadership' },
-      { to: '/impact', label: 'Impact & Reports', desc: 'Certifications & annual reviews' },
-    ],
-  },
-  {
-    key: 'products',
-    label: 'Products',
-    items: [
-      { to: '/products', label: 'Our Products', desc: 'Fresh produce & seed catalog' },
-      { to: '/retail-outlets', label: 'Retail Outlets', desc: '5 Addis Ababa storefronts' },
-    ],
-  },
-  {
-    key: 'farmers',
-    to: '/farmers',
-    label: 'For Farmers',
-  },
-  {
-    key: 'buyers',
-    to: '/buyers',
-    label: 'For Buyers',
-  },
-  {
-    key: 'news',
-    to: '/news',
-    label: 'News',
-  },
-  {
-    key: 'contact',
-    to: '/contact',
-    label: 'Contact',
-  },
+function FlagUK({ className = '', width = 18, height = 12 }) {
+  return (
+    <svg
+      className={className}
+      width={width}
+      height={height}
+      viewBox="0 0 640 480"
+      style={{ borderRadius: '2px', flexShrink: 0, display: 'inline-block', verticalAlign: 'middle', boxShadow: '0 0 1px rgba(0,0,0,0.5)' }}
+      aria-hidden="true"
+    >
+      <path fill="#012169" d="M0 0h640v480H0z"/>
+      <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
+      <path fill="#C8102E" d="m424 288 216 159v33h-44L366 316l58-28zM640 0v10L454 150l34 32L640 33V0zm-247 90L137 282l-34-26L359 64l34 26zM0 470l183-137-33-31L0 437v33z"/>
+      <path fill="#FFF" d="M240 0h160v480H240zM0 160h640v160H0z"/>
+      <path fill="#C8102E" d="M267 0h106v480H267zM0 187h640v106H0z"/>
+    </svg>
+  )
+}
+
+function FlagET({ className = '', width = 18, height = 12 }) {
+  return (
+    <svg
+      className={className}
+      width={width}
+      height={height}
+      viewBox="0 0 640 480"
+      style={{ borderRadius: '2px', flexShrink: 0, display: 'inline-block', verticalAlign: 'middle', boxShadow: '0 0 1px rgba(0,0,0,0.5)' }}
+      aria-hidden="true"
+    >
+      <path fill="#078930" d="M0 0h640v160H0z"/>
+      <path fill="#FCDD09" d="M0 160h640v160H0z"/>
+      <path fill="#DA121A" d="M0 320h640v160H0z"/>
+      <circle cx="320" cy="240" r="62" fill="#0F47AF"/>
+      <path fill="#FCDD09" d="m320 188 15 45h48l-39 28 15 45-39-28-39 28 15-45-39-28h48z"/>
+      <path stroke="#0F47AF" strokeWidth="4.5" d="M320 202v76M282 240h76M293 213l54 54M347 213l-54 54"/>
+    </svg>
+  )
+}
+
+const LANGUAGES = [
+  { code: 'en', label: 'EN', name: 'English', nativeName: 'English', Flag: FlagUK },
+  { code: 'om', label: 'OM', name: 'Oromo', nativeName: 'Afaan Oromoo', Flag: FlagET },
 ]
 
 function Header() {
@@ -49,9 +56,51 @@ function Header() {
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
   const rafPending = useRef(false)
   const dropdownTimer = useRef(null)
   const { toast, showToast, dismissToast } = useToast()
+  const { t, i18n } = useTranslation('common')
+  const currentLang = i18n.language || 'en'
+
+  const navGroups = [
+    {
+      key: 'about',
+      label: t('header.nav.about'),
+      items: [
+        { to: '/about', label: t('header.nav.about'), desc: t('header.nav.aboutDesc') },
+        { to: '/impact', label: t('header.nav.impact'), desc: t('header.nav.impactDesc') },
+      ],
+    },
+    {
+      key: 'products',
+      label: t('header.nav.products'),
+      items: [
+        { to: '/products', label: t('header.nav.ourProducts'), desc: t('header.nav.ourProductsDesc') },
+        { to: '/retail-outlets', label: t('header.nav.retailOutlets'), desc: t('header.nav.retailOutletsDesc') },
+      ],
+    },
+    {
+      key: 'farmers',
+      to: '/farmers',
+      label: t('header.nav.farmers'),
+    },
+    {
+      key: 'buyers',
+      to: '/buyers',
+      label: t('header.nav.buyers'),
+    },
+    {
+      key: 'news',
+      to: '/news',
+      label: t('header.nav.news'),
+    },
+    {
+      key: 'contact',
+      to: '/contact',
+      label: t('header.nav.contact'),
+    },
+  ]
 
   useEffect(() => {
     function onScroll() {
@@ -78,28 +127,39 @@ function Header() {
   function handleLoginClick() {
     closeAll()
     showToast(
-      'Member Login is coming soon! Online portal access for member cooperatives is currently under development.',
+      t('header.memberLoginToast'),
       'info'
     )
+  }
+
+  function handleLanguageSwitch(targetLang) {
+    if (targetLang === currentLang) return
+    closeAll()
+    const targetPath = getLocalePath(
+      location.pathname + location.search + location.hash,
+      targetLang
+    )
+    navigate(targetPath)
   }
 
   return (
     <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
       <div className="header__container">
         {/* Brand Logo & Title */}
-        <NavLink to="/" className="header__brand" onClick={closeAll}>
-          <img src={logoImg} alt="Meki Batu Union Logo" className="header__logo-img" />
-          <span className="header__brand-text">Meki Batu Union</span>
+        <NavLink to={getLocalePath('/', currentLang)} className="header__brand" onClick={closeAll}>
+          <img src={logoImg} alt={t('header.brandLogoAlt')} className="header__logo-img" />
+          <span className="header__brand-text">{t('header.brand')}</span>
         </NavLink>
 
         {/* Desktop Nav */}
         <nav className="header__nav">
-          {NAV_GROUPS.map((group) => {
+          {navGroups.map((group) => {
             if (group.to) {
+              const localeTo = getLocalePath(group.to, currentLang)
               return (
                 <NavLink
                   key={group.key}
-                  to={group.to}
+                  to={localeTo}
                   className={({ isActive }) =>
                     `header__link ${isActive ? 'header__link--active' : ''}`
                   }
@@ -110,7 +170,9 @@ function Header() {
               )
             }
 
-            const isGroupActive = group.items.some((item) => item.to === location.pathname)
+            const isGroupActive = group.items.some(
+              (item) => getLocalePath(item.to, currentLang) === location.pathname
+            )
 
             return (
               <div
@@ -144,7 +206,7 @@ function Header() {
                     {group.items.map((sub) => (
                       <NavLink
                         key={sub.to}
-                        to={sub.to}
+                        to={getLocalePath(sub.to, currentLang)}
                         className={({ isActive }) =>
                           `header__dropdown-item ${
                             isActive ? 'header__dropdown-item--active' : ''
@@ -164,8 +226,66 @@ function Header() {
         </nav>
 
         <div className="header__actions">
+          {/* Compact Dropdown Language Switcher */}
+          <div
+            className="header__lang-dropdown-wrap desktop-only"
+            onMouseEnter={() => {
+              clearTimeout(dropdownTimer.current)
+              setActiveDropdown('lang')
+            }}
+            onMouseLeave={() => {
+              dropdownTimer.current = setTimeout(() => {
+                setActiveDropdown(null)
+              }, 250)
+            }}
+          >
+            <button
+              type="button"
+              className={`header__lang-trigger ${activeDropdown === 'lang' ? 'header__lang-trigger--active' : ''}`}
+              onClick={() => handleDropdownToggle('lang')}
+              aria-label={t('langSwitcher.label', 'Switch language')}
+              aria-expanded={activeDropdown === 'lang'}
+            >
+              {currentLang === 'om' ? <FlagET width={16} height={11} /> : <FlagUK width={16} height={11} />}
+              <span className="header__lang-code-current">{currentLang.toUpperCase()}</span>
+              <span className="material-symbols-outlined header__lang-chevron">
+                expand_more
+              </span>
+            </button>
+
+            {activeDropdown === 'lang' && (
+              <div className="header__lang-menu" role="menu">
+                {LANGUAGES.map((lang) => {
+                  const isActive = currentLang === lang.code
+                  const FlagComp = lang.Flag
+                  return (
+                    <button
+                      key={lang.code}
+                      type="button"
+                      className={`header__lang-menu-item ${isActive ? 'header__lang-menu-item--active' : ''}`}
+                      onClick={() => handleLanguageSwitch(lang.code)}
+                      role="menuitem"
+                    >
+                      <FlagComp width={18} height={12} />
+                      <div className="header__lang-menu-info">
+                        <span className="header__lang-menu-name">{lang.nativeName}</span>
+                        <span className="header__lang-menu-sub">{lang.name} ({lang.label})</span>
+                      </div>
+                      {isActive && (
+                        <span className="material-symbols-outlined header__lang-menu-check">
+                          check
+                        </span>
+                      )}
+                    </button>
+                  )
+                })}
+              </div>
+            )}
+          </div>
+
           <button className="header__login-btn" type="button" onClick={handleLoginClick}>
-            Member Login
+            <span className="material-symbols-outlined header__login-icon">lock</span>
+            <span>{t('header.memberLogin')}</span>
           </button>
         </div>
 
@@ -173,7 +293,7 @@ function Header() {
         <button
           className="header__mobile-toggle"
           type="button"
-          aria-label="Toggle navigation menu"
+          aria-label={t('header.toggleNav')}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((open) => !open)}
         >
@@ -181,15 +301,49 @@ function Header() {
         </button>
       </div>
 
-      {/* Mobile Nav Accordion */}
+      {/* Mobile Nav Drawer */}
       {menuOpen && (
         <nav className="header__mobile-nav">
-          {NAV_GROUPS.map((group) => {
+          {/* Enhanced Mobile Language Selector Card */}
+          <div className="header__mobile-lang-box">
+            <div className="header__mobile-lang-header">
+              <span className="material-symbols-outlined header__mobile-lang-icon">language</span>
+              <span className="header__mobile-lang-title">{t('langSwitcher.mobileTitle', 'Language / Afaan')}</span>
+            </div>
+            <div className="header__mobile-lang-grid">
+              {LANGUAGES.map((lang) => {
+                const isActive = currentLang === lang.code
+                const FlagComp = lang.Flag
+                return (
+                  <button
+                    key={lang.code}
+                    type="button"
+                    className={`header__mobile-lang-card ${isActive ? 'header__mobile-lang-card--active' : ''}`}
+                    onClick={() => handleLanguageSwitch(lang.code)}
+                    aria-pressed={isActive}
+                  >
+                    <FlagComp width={22} height={15} />
+                    <div className="header__mobile-lang-labels">
+                      <strong className="header__mobile-lang-name">{lang.nativeName}</strong>
+                      <span className="header__mobile-lang-sub">{lang.name} ({lang.label})</span>
+                    </div>
+                    {isActive && (
+                      <span className="material-symbols-outlined header__mobile-lang-check">
+                        check_circle
+                      </span>
+                    )}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+
+          {navGroups.map((group) => {
             if (group.to) {
               return (
                 <NavLink
                   key={group.key}
-                  to={group.to}
+                  to={getLocalePath(group.to, currentLang)}
                   className={({ isActive }) =>
                     `header__mobile-link ${isActive ? 'header__mobile-link--active' : ''}`
                   }
@@ -207,7 +361,7 @@ function Header() {
                   {group.items.map((sub) => (
                     <NavLink
                       key={sub.to}
-                      to={sub.to}
+                      to={getLocalePath(sub.to, currentLang)}
                       className={({ isActive }) =>
                         `header__mobile-sublink ${
                           isActive ? 'header__mobile-sublink--active' : ''
@@ -227,7 +381,7 @@ function Header() {
             type="button"
             onClick={handleLoginClick}
           >
-            Member Login
+            {t('header.memberLogin')}
           </button>
         </nav>
       )}

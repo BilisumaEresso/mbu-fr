@@ -1,0 +1,194 @@
+{
+  "roles": {
+    "ga": {
+      "title": "General Assembly",
+      "sub": "Supreme Governing Body",
+      "reportsTo": "Delegate representation of 135 member primary cooperatives",
+      "desc": "The supreme decision-making authority of Meki Batu Union, composed of elected delegate representatives from all 135 primary member cooperatives across East Shewa and Arsi zones.",
+      "responsibilities": [
+        "Supreme statutory and strategic authority over union policy and bylaws",
+        "Elects and oversees the Board of Directors and the Control Committee",
+        "Approves annual union audit reports and member dividend allocations"
+      ]
+    },
+    "bod": {
+      "title": "Board of Directors",
+      "sub": "Elected Leadership",
+      "reportsTo": "Reports directly to General Assembly",
+      "desc": "Elected cooperative leaders responsible for strategic union governance, long-term policy formulation, capital investment approvals, and hiring/oversight of executive management.",
+      "responsibilities": [
+        "Strategic governance, multi-year roadmaps, and capital investment decisions",
+        "Appointment, performance evaluation, and oversight of the General Manager",
+        "Safeguards cooperative assets, member equity, and institutional reputation"
+      ]
+    },
+    "cc": {
+      "title": "Control Committee",
+      "sub": "Internal Oversight",
+      "reportsTo": "Reports independently to General Assembly",
+      "desc": "Independent oversight committee elected by members to audit financial health, enforce statutory compliance, verify cooperative bylaws, and ensure organizational transparency.",
+      "responsibilities": [
+        "Independent financial and statutory compliance audits across all union units",
+        "Direct statutory reporting line to the General Assembly without management filtering",
+        "Verification of cooperative bylaws, asset registers, and procurement ethics"
+      ]
+    },
+    "gm": {
+      "title": "General Manager",
+      "sub": "Chief Executive Officer",
+      "reportsTo": "Reports to Board of Directors",
+      "desc": "Top executive officer accountable for overall operational management, strategic program execution, institutional partner relations, and commercial growth of the union.",
+      "responsibilities": [
+        "Total leadership of union operations, commercial growth, and 8,089+ member impact",
+        "Lead institutional liaison with government ministries, UNIDO, LVIA, and commercial buyers",
+        "Direct supervision of executive support experts and the Deputy Manager"
+      ]
+    },
+    "lawyer": {
+      "title": "Lawyer",
+      "sub": "Legal Advisory",
+      "reportsTo": "Reports directly to General Manager",
+      "desc": "Provides legal counsel, contracts management, regulatory compliance oversight, and defense of cooperative member property and commercial rights.",
+      "responsibilities": [
+        "Drafts and reviews off-take supply contracts, export agreements, and supplier covenants",
+        "Defends cooperative legal standing, land leases, and asset titles in legal jurisdictions",
+        "Advises the GM on statutory labor law, cooperative regulations, and risk mitigation"
+      ]
+    },
+    "sec": {
+      "title": "Executive Secretary",
+      "sub": "Executive Office",
+      "reportsTo": "Reports directly to General Manager",
+      "desc": "Coordinates executive office operations, board communications, official records, delegate meetings, and executive administrative workflows.",
+      "responsibilities": [
+        "Maintains official archives, executive minutes, board resolutions, and delegate registry",
+        "Coordinates executive scheduling, official partner protocol, and board assemblies",
+        "Facilitates internal executive correspondence between GM and department heads"
+      ]
+    },
+    "plan": {
+      "title": "Preparing Plan, Evaluate and Budgeting Senior Expert",
+      "sub": "Planning & Evaluation",
+      "reportsTo": "Reports directly to General Manager",
+      "desc": "Leads annual operational planning, capital budgeting, project feasibility analysis, performance evaluation metrics, and socio-economic impact tracking.",
+      "responsibilities": [
+        "Formulates comprehensive annual operational plans and capital budget models",
+        "Conducts quarterly key performance indicator (KPI) assessments across departments",
+        "Prepares donor project feasibility studies, socio-economic impact reviews, and grant reports"
+      ]
+    },
+    "auditor": {
+      "title": "Internal Auditor",
+      "sub": "Audit & Compliance",
+      "reportsTo": "Reports directly to General Manager",
+      "desc": "Conducts periodic internal operational and fiscal audits, risk assessments, inventory checks, and ensures financial discipline across all union departments.",
+      "responsibilities": [
+        "Executes regular fiscal, store inventory, and procurement control audits",
+        "Identifies operational bottlenecks, financial leakages, and recommends corrective measures",
+        "Submits independent monthly and quarterly audit reports directly to the General Manager"
+      ]
+    },
+    "ict": {
+      "title": "ICT Expert",
+      "sub": "Systems & Technology",
+      "reportsTo": "Reports directly to General Manager",
+      "desc": "Manages digital cooperative platforms, logistics ERP tracking, IT infrastructure, network security, and member data management systems.",
+      "responsibilities": [
+        "Oversees union digital platforms, member databases, and logistics management systems",
+        "Maintains IT infrastructure, cloud connectivity, network security, and hardware uptime",
+        "Drives digital agronomy integration and electronic record-keeping for primary cooperatives"
+      ]
+    },
+    "dm": {
+      "title": "Deputy Manager",
+      "sub": "Operations & Department Oversight",
+      "reportsTo": "Reports directly to General Manager",
+      "desc": "Assists the General Manager in daily administration and exercises direct operational coordination across the four primary operating departments.",
+      "responsibilities": [
+        "Direct operational coordination across Agriculture, Marketing, HR, and Finance departments",
+        "Monitors day-to-day workflow alignment, resource allocation, and field dispatch operations",
+        "Acts on behalf of the General Manager during executive absences and special field assignments"
+      ]
+    },
+    "agri": {
+      "title": "Agriculture and Farmers Service Center Department",
+      "sub": "Agronomy & Inputs",
+      "reportsTo": "Reports directly to Deputy Manager",
+      "desc": "Oversees certified seed multiplication (maize, bean, onion, wheat), agronomy extension, pest management support, irrigation equipment services, and input distribution to primary co-ops.",
+      "responsibilities": [
+        "Multiplies certified high-yield seeds (Maize BH-661, Bean Seeri 125, Onion Naafis, Wheat Qaqqabaa)",
+        "Provides modern agronomy training, pest monitoring, and GlobalG.A.P certification support",
+        "Procures and distributes quality fertilizers, agrochemicals, and drip irrigation hardware"
+      ]
+    },
+    "marketing": {
+      "title": "Marketing Department",
+      "sub": "Trade & Distribution",
+      "reportsTo": "Reports directly to Deputy Manager",
+      "desc": "Manages wholesale commercial off-taking, Addis Ababa retail distribution outlets, export packaging compliance, Ethiopian Airlines catering supply, and international export trade.",
+      "responsibilities": [
+        "Off-takes and aggregates 50,000+ tonnes of fresh member produce annually",
+        "Operates 5 direct retail consumer outlets in Addis Ababa and supplies major supermarket chains",
+        "Manages high-grade fruit/vegetable supply contracts for Ethiopian Airlines catering and export"
+      ]
+    },
+    "hr": {
+      "title": "Human Resource Management and General Service Department",
+      "sub": "HR, Fleet & Facilities",
+      "reportsTo": "Reports directly to Deputy Manager",
+      "desc": "Administers staff talent, training, union transport fleet logistics, cold-chain vehicle dispatch, facility maintenance, and union security protocols.",
+      "responsibilities": [
+        "Manages union staffing, performance evaluations, employee benefits, and skills training",
+        "Dispatches and maintains the temperature-controlled vehicle fleet for fresh produce logistics",
+        "Maintains union headquarters, packhouses, cold-storage warehouses, and physical security"
+      ]
+    },
+    "finance": {
+      "title": "Finance and Procurement Department",
+      "sub": "Finance & Supply",
+      "reportsTo": "Reports directly to Deputy Manager",
+      "desc": "Manages financial reporting, member dividend allocation, asset accounting, treasury management, farm input procurement, and banking relationships.",
+      "responsibilities": [
+        "Manages financial accounting, 154.2 million ETB own capital treasury, and statutory financial audits",
+        "Administers transparent member dividend distributions and primary cooperative accounts",
+        "Directs bulk commercial procurement of seed stocks, machinery, and agricultural inputs"
+      ]
+    }
+  },
+  "tiers": {
+    "tier1": {
+      "number": "Tier 01",
+      "title": "Supreme Governance & Oversight",
+      "sub": "General Assembly, Control Committee & Board of Directors"
+    },
+    "tier2": {
+      "number": "Tier 02",
+      "title": "Executive Management & Advisory",
+      "sub": "General Manager, Specialized Advisors & Deputy Manager"
+    },
+    "tier3": {
+      "number": "Tier 03",
+      "title": "Operational Departments",
+      "sub": "Agriculture, Marketing, HR & Finance Departments"
+    }
+  },
+  "ui": {
+    "ariaLabel": "Meki Batu Union Organizational Structure",
+    "selectedPrefix": "Selected:",
+    "defaultStatus": "Interactive Organizational Tree • Click any role to view mandate",
+    "clearFocus": "Clear Focus",
+    "downloadTitle": "Download high-resolution image",
+    "generating": "Generating...",
+    "saveImage": "Save Image",
+    "printTitle": "Print or Save PDF",
+    "print": "Print",
+    "tiersAriaLabel": "Hierarchical Governance Tiers",
+    "rolesCount": "{{count}} Roles",
+    "roleProfile": "Role Profile & Mandate",
+    "dismissInspector": "Dismiss inspector",
+    "closeDossier": "Close dossier",
+    "appointedLeadership": "Appointed Leadership",
+    "emailTitle": "Email {{name}}",
+    "keyMandates": "Key Mandates & Responsibilities"
+  }
+}

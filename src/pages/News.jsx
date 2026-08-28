@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
@@ -7,66 +8,84 @@ import { news } from '../data/news.js'
 import './InnerPage.css'
 import './News.css'
 
+// Cap stagger at 450ms
 const stagger = (i) => Math.min(i * 90, 450)
 
 function News() {
+  const { t } = useTranslation(['news', 'meta', 'common'])
   const [searchTerm, setSearchTerm] = useState('')
-  const [activePage, setActivePage] = useState(1)
   const [selectedArticle, setSelectedArticle] = useState(null)
   const [copiedLink, setCopiedLink] = useState(false)
-
-  // Track if user has interacted (searched or changed page).
-  // Once interacted, render standard cards without Reveal to avoid re-triggering.
+  const [activePage, setActivePage] = useState(1)
   const hasInteractedRef = useRef(false)
+
+  // Filter articles based on search
+  const filteredNews = useMemo(() => {
+    if (!searchTerm.trim()) return news
+    const term = searchTerm.toLowerCase()
+    return news.filter(
+      (item) =>
+        item.title.toLowerCase().includes(term) ||
+        item.desc.toLowerCase().includes(term) ||
+        item.category.toLowerCase().includes(term)
+    )
+  }, [searchTerm])
 
   function handleSearchChange(e) {
     hasInteractedRef.current = true
     setSearchTerm(e.target.value)
+    setActivePage(1)
   }
 
-  function handlePageChange(page) {
+  function handlePageChange(p) {
     hasInteractedRef.current = true
-    setActivePage(page)
+    setActivePage(p)
+    const el = document.getElementById('articles')
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
-
-  const filteredNews = news.filter(
-    (item) =>
-      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (item.category && item.category.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.desc && item.desc.toLowerCase().includes(searchTerm.toLowerCase()))
-  )
-
-  const featuredLarge = filteredNews.find((n) => n.featuredLarge) || filteredNews[0]
-  const featuredSmall = filteredNews.find((n) => n.featuredSmall) || filteredNews[1]
-  const gridArticles = filteredNews.filter(
-    (n) => n.id !== featuredLarge?.id && n.id !== featuredSmall?.id
-  )
 
   function handleCopyLink() {
-    navigator.clipboard?.writeText(window.location.href)
+    navigator.clipboard.writeText(window.location.href)
     setCopiedLink(true)
     setTimeout(() => setCopiedLink(false), 2000)
   }
 
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (selectedArticle) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [selectedArticle])
+
+  // Divide into Featured (first 2) and Grid (remaining)
+  const featuredLarge = filteredNews[0]
+  const featuredSmall = filteredNews[1]
+  const gridArticles = filteredNews.slice(2)
+
   return (
     <div className="news-page-container">
       <Helmet>
-        <title>News &amp; Updates | Meki Batu Union</title>
+        <title>{t('meta:news.title')}</title>
         <meta
           name="description"
-          content="Read the latest updates on harvest forecasts, trade agreements, community initiatives, and infrastructure upgrades from Meki Batu Union."
+          content={t('meta:news.description')}
         />
       </Helmet>
       <PageHero
-        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'News' }]}
-        eyebrow="Updates & Announcements"
-        title="News & Updates"
-        description="Latest updates on harvests, farmer development initiatives, and global partnership milestones from Meki Batu Union."
+        breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.news') }]}
+        eyebrow={t('news:hero.eyebrow')}
+        title={t('news:hero.title')}
+        description={t('news:hero.desc')}
         rightContent={
           <div className="news-search-box">
             <input
               type="text"
-              placeholder="Search news..."
+              placeholder={t('news:hero.searchPlaceholder', 'Search news...')}
               className="news-search-input"
               value={searchTerm}
               onChange={handleSearchChange}
@@ -95,7 +114,7 @@ function News() {
                 }}
                 tabIndex={0}
                 role="button"
-                aria-label={`Read report: ${featuredLarge.title}`}
+                aria-label={t('news:labels.readReportAria', { title: featuredLarge.title })}
               >
                 <div className="news-article-card__media">
                   <img
@@ -114,7 +133,7 @@ function News() {
                   </h2>
                   <p className="news-article-card__desc">{featuredLarge.desc}</p>
                   <div className="news-article-card__cta">
-                    Read Full Report <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    {t('news:labels.readReport')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </div>
                 </div>
               </article>
@@ -132,7 +151,7 @@ function News() {
                 }}
                 tabIndex={0}
                 role="button"
-                aria-label={`Read report: ${featuredLarge.title}`}
+                aria-label={t('news:labels.readReportAria', { title: featuredLarge.title })}
               >
                 <div className="news-article-card__media">
                   <img
@@ -151,7 +170,7 @@ function News() {
                   </h2>
                   <p className="news-article-card__desc">{featuredLarge.desc}</p>
                   <div className="news-article-card__cta">
-                    Read Full Report <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    {t('news:labels.readReport')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </div>
                 </div>
               </Reveal>
@@ -170,7 +189,7 @@ function News() {
                 }}
                 tabIndex={0}
                 role="button"
-                aria-label={`Read article: ${featuredSmall.title}`}
+                aria-label={t('news:labels.readArticleAria', { title: featuredSmall.title })}
               >
                 <div className="news-article-card__media">
                   <img
@@ -189,7 +208,7 @@ function News() {
                   <h2 className="news-article-card__title">{featuredSmall.title}</h2>
                   <p className="news-article-card__desc">{featuredSmall.desc}</p>
                   <div className="news-article-card__cta">
-                    Read Article <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    {t('news:labels.readReport')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </div>
                 </div>
               </article>
@@ -207,7 +226,7 @@ function News() {
                 }}
                 tabIndex={0}
                 role="button"
-                aria-label={`Read article: ${featuredSmall.title}`}
+                aria-label={t('news:labels.readArticleAria', { title: featuredSmall.title })}
               >
                 <div className="news-article-card__media">
                   <img
@@ -226,7 +245,7 @@ function News() {
                   <h2 className="news-article-card__title">{featuredSmall.title}</h2>
                   <p className="news-article-card__desc">{featuredSmall.desc}</p>
                   <div className="news-article-card__cta">
-                    Read Article <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    {t('news:labels.readReport')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </div>
                 </div>
               </Reveal>
@@ -260,7 +279,7 @@ function News() {
                   <h3 className="news-article-card__title">{article.title}</h3>
                   <p className="news-article-card__desc">{article.desc}</p>
                   <div className="news-article-card__cta">
-                    Read Article <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    {t('news:labels.readReport')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </div>
                 </div>
               </>
@@ -282,7 +301,7 @@ function News() {
                   onKeyDown={handleArticleKeyDown}
                   tabIndex={0}
                   role="button"
-                  aria-label={`Read article: ${article.title}`}
+                  aria-label={t('news:labels.readArticleAria', { title: article.title })}
                 >
                   {cardContent}
                 </article>
@@ -299,7 +318,7 @@ function News() {
                 onKeyDown={handleArticleKeyDown}
                 tabIndex={0}
                 role="button"
-                aria-label={`Read article: ${article.title}`}
+                aria-label={t('news:labels.readArticleAria', { title: article.title })}
               >
                 {cardContent}
               </Reveal>
@@ -344,7 +363,7 @@ function News() {
               type="button"
               className="news-modal-close"
               onClick={() => setSelectedArticle(null)}
-              aria-label="Close article modal"
+              aria-label={t('common:buttons.close')}
             >
               <span className="material-symbols-outlined">close</span>
             </button>
@@ -357,7 +376,7 @@ function News() {
               </span>
               <span className="news-modal-meta-item">
                 <span className="material-symbols-outlined text-xs">schedule</span>
-                5 min read
+                {t('news:labels.readTime')}
               </span>
             </div>
 
@@ -374,10 +393,10 @@ function News() {
             <div className="news-modal-body-content">
               <p className="news-modal-lead">{selectedArticle.desc}</p>
               <p>
-                Meki Batu Union continues to drive agricultural innovation across our 135 member primary cooperatives representing 8,089 farmers. Through strategic investments in infrastructure, technology, and sustainable farming practices, we empower smallholder farmers in the Great Rift Valley to achieve high-yield, export-grade output.
+                {t('news:article.paragraph1')}
               </p>
               <p>
-                This initiative directly aligns with our core mission of promoting economic resilience, environmental stewardship, and fair trade. By bridging local agricultural communities with international markets, we ensure high quality, traceable produce for our global partners.
+                {t('news:article.paragraph2')}
               </p>
             </div>
 
@@ -388,7 +407,7 @@ function News() {
                 onClick={handleCopyLink}
               >
                 <span className="material-symbols-outlined text-xs">share</span>
-                {copiedLink ? 'Link Copied!' : 'Share Article'}
+                {copiedLink ? t('news:labels.copied') : t('news:labels.share')}
               </button>
             </div>
           </div>

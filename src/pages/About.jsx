@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
@@ -9,21 +10,16 @@ import { partners, PARTNER_CATEGORIES } from '../data/partners.js'
 import { resources } from '../data/resources.js'
 import FacilityCard from '../components/common/FacilityCard.jsx'
 import aboutHeroImg from '../assets/images/heroes/aboutHero.webp'
-import { teamMembers } from '../data/team.js'
+import { getTeamMembers } from '../data/team.js'
 import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
 import './About.css'
-
-const OBJECTIVES = [
-  'To empower member farmers through fair market access and equitable trade practices.',
-  'To promote and implement sustainable, environmentally conscious agricultural methods.',
-  'To provide continuous education and capacity building for rural farming communities.',
-  'To maintain the highest standards of produce quality for international export.',
-]
 
 // Cap stagger at 450ms for card grids
 const stagger = (i) => Math.min(i * 70, 450)
 
 function About() {
+  const { t } = useTranslation(['about', 'meta', 'common'])
+  const teamMembersList = getTeamMembers(t)
   const [selectedCategory, setSelectedCategory] = useState(PARTNER_CATEGORIES.ALL)
   const [showAllPartners, setShowAllPartners] = useState(false)
 
@@ -36,24 +32,26 @@ function About() {
     setShowAllPartners(false)
   }
 
+  const objectives = t('about:missionVision.objectives', { returnObjects: true }) || []
+
   return (
     <>
       <Helmet>
-        <title>About Us | Meki Batu Union</title>
+        <title>{t('meta:about.title')}</title>
         <meta
           name="description"
-          content="Learn about Meki Batu Union's history since 2002, our 135 member cooperatives, 8,089 farmers, GlobalG.A.P certification, and leadership dedicated to sustainable Ethiopian agriculture."
+          content={t('meta:about.description')}
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
       <PageHero
-        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'About Us' }]}
-        eyebrow="Since 2002 • 20+ Years of Experience"
-        title="Cultivating Progress Through Cooperative Strength"
-        description="Meki Batu Union stands as a testament to the power of collective farming in Ethiopia. We unite 135 primary cooperatives and 8,089 member farmers to ensure fair trade, sustainable practices, and premium quality produce for domestic and global markets."
+        breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.about') }]}
+        eyebrow={t('about:hero.eyebrow')}
+        title={t('about:hero.title')}
+        description={t('about:hero.desc')}
         image={aboutHeroImg}
-        imageAlt="Fertile Ethiopian agricultural land during golden hour"
-        badge="Meki, Oromia • Est. 2002"
+        imageAlt={t('about:hero.imageAlt')}
+        badge={t('about:hero.badge')}
       />
 
       <SectionDivider />
@@ -63,7 +61,7 @@ function About() {
         <div className="container">
           <div className="about-foundation__header">
             <span className="material-symbols-outlined about-foundation__icon">history</span>
-            <h2 className="about-foundation__title">Our Foundation</h2>
+            <h2 className="about-foundation__title">{t('about:foundation.title')}</h2>
           </div>
 
           {/* Wrap the content paragraphs together as one Reveal unit */}
@@ -74,12 +72,12 @@ function About() {
             <div className="about-timeline__item">
               <div className="about-timeline__node desktop-only about-timeline__node--secondary" />
               <div className="about-timeline__left">
-                <span className="label-caps label-caps--secondary block mb-1">May 11, 2002</span>
-                <h3 className="about-timeline__heading">Inception in Meki</h3>
+                <span className="label-caps label-caps--secondary block mb-1">{t('about:foundation.item1.date')}</span>
+                <h3 className="about-timeline__heading">{t('about:foundation.item1.heading')}</h3>
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Established in Meki town with 12 primary cooperatives and 527 founding members, pooling 500,000 ETB in initial capital to build a agricultural firm.
+                  {t('about:foundation.item1.text')}
                 </p>
               </div>
             </div>
@@ -88,12 +86,12 @@ function About() {
             <div className="about-timeline__item about-timeline__item--reverse">
               <div className="about-timeline__node desktop-only about-timeline__node--tint" />
               <div className="about-timeline__left">
-                <span className="label-caps label-caps--tint block mb-1">Growth Phase</span>
-                <h3 className="about-timeline__heading">Regional Expansion</h3>
+                <span className="label-caps label-caps--tint block mb-1">{t('about:foundation.item2.date')}</span>
+                <h3 className="about-timeline__heading">{t('about:foundation.item2.heading')}</h3>
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Expanded across six Rift Valley districts in East Shewa and Arsi zones, scaling modern irrigation infrastructure across 5,910 hectares of fertile farmland.
+                  {t('about:foundation.item2.text')}
                 </p>
               </div>
             </div>
@@ -102,12 +100,12 @@ function About() {
             <div className="about-timeline__item">
               <div className="about-timeline__node desktop-only about-timeline__node--primary" />
               <div className="about-timeline__left">
-                <span className="label-caps label-caps--primary block mb-1">Present Day</span>
-                <h3 className="about-timeline__heading">135 Co-ops &amp; 8,089 Farmers</h3>
+                <span className="label-caps label-caps--primary block mb-1">{t('about:foundation.item3.date')}</span>
+                <h3 className="about-timeline__heading">{t('about:foundation.item3.heading')}</h3>
               </div>
               <div className="about-timeline__right">
                 <p className="about-timeline__text">
-                  Today uniting 135 cooperatives and 8,089 farmers with 154.2 million ETB in union capital, delivering reliable, certified produce across domestic and global markets.
+                  {t('about:foundation.item3.text')}
                 </p>
               </div>
             </div>
@@ -122,29 +120,29 @@ function About() {
             {/* Left: Mission, Vision & Objectives */}
             <Reveal className="about-mission-card">
               <div className="about-vision-block mb-6">
-                <span className="label-caps label-caps--secondary block mb-1">Our Vision</span>
+                <span className="label-caps label-caps--secondary block mb-1">{t('about:missionVision.visionTitle')}</span>
                 <h3 className="about-vision__heading text-xl font-display font-semibold mb-2">
-                  Prosperity &amp; Competitive Excellence
+                  {t('about:missionVision.visionHeading')}
                 </h3>
                 <p className="about-mission__text italic">
-                  &ldquo;To ensure members&rsquo; economic prosperity and build a highly competitive agricultural enterprise in the global marketplace.&rdquo;
+                  {t('about:missionVision.visionText')}
                 </p>
               </div>
 
               <div className="about-mission-block mb-6">
-                <span className="label-caps label-caps--secondary block mb-1">Our Mission</span>
+                <span className="label-caps label-caps--secondary block mb-1">{t('about:missionVision.missionTitle')}</span>
                 <h3 className="about-vision__heading text-xl font-display font-semibold mb-2">
-                  Productivity &amp; Market Integration
+                  {t('about:missionVision.missionHeading')}
                 </h3>
                 <p className="about-mission__text italic">
-                  &ldquo;To enhance sustainable production, farm productivity, and direct market access for all member cooperative produce.&rdquo;
+                  {t('about:missionVision.missionText')}
                 </p>
               </div>
 
               <div className="about-objectives-block">
-                <span className="label-caps label-caps--secondary block mb-3">Core Objectives</span>
+                <span className="label-caps label-caps--secondary block mb-3">{t('about:missionVision.objectivesTitle')}</span>
                 <ul className="about-mission__list">
-                  {OBJECTIVES.map((obj, i) => (
+                  {Array.isArray(objectives) && objectives.map((obj, i) => (
                     <li key={i} className="about-mission__item">
                       <span className="material-symbols-outlined about-mission__check">check_circle</span>
                       <span className="about-mission__text">{obj}</span>
@@ -162,9 +160,9 @@ function About() {
                   href={companyProfilePdf}
                   download="MekiBatuUnion_CompanyProfile.pdf"
                   className="btn btn--outline btn--sm"
-                  title="Download Meki Batu Union Company Profile (PDF)"
+                  title={t('about:missionVision.downloadPdfTitle')}
                 >
-                  Download company profile (PDF) <span className="material-symbols-outlined text-sm">download</span>
+                  {t('common:buttons.downloadPdf')} <span className="material-symbols-outlined text-sm">download</span>
                 </a>
               </div>
             </Reveal>
@@ -176,10 +174,10 @@ function About() {
       <section className="about-governance section section--alt" id="leadership">
         <div className="container">
           <div className="about-governance__header text-center">
-            <span className="label-caps label-caps--secondary mb-2 block">Governance &amp; Hierarchy</span>
-            <h2 className="about-governance__title">Organizational Structure</h2>
+            <span className="label-caps label-caps--secondary mb-2 block">{t('about:governance.eyebrow')}</span>
+            <h2 className="about-governance__title">{t('about:governance.title')}</h2>
             <p className="about-governance__desc">
-              Three-tier governance structure connecting general assembly oversight, executive management, and specialized operational departments.
+              {t('about:governance.desc')}
             </p>
           </div>
 
@@ -190,17 +188,13 @@ function About() {
 
           {/* Leadership & Staff Grid */}
           <div className="about-governance__subheader">
-            <span className="label-caps label-caps--secondary mb-2 block">Management Team</span>
-            <h3 className="about-governance__subtitle">Executive Leadership</h3>
-            <p className="about-governance__subdesc">Union directors and department heads driving cooperative operations.</p>
-            <div className="about-governance__swipe-hint mobile-only">
-              <span className="material-symbols-outlined about-governance__swipe-icon">swipe</span>
-              <span>Swipe to browse leadership ({teamMembers.length})</span>
-            </div>
+            <span className="label-caps label-caps--secondary mb-2 block">{t('about:governance.teamTag')}</span>
+            <h3 className="about-governance__subtitle">{t('about:governance.teamSubtitle')}</h3>
+            <p className="about-governance__subdesc">{t('about:governance.teamDesc')}</p>
           </div>
 
           <div className="about-governance__grid">
-            {teamMembers.map((member, i) => (
+            {teamMembersList.map((member, i) => (
               <Reveal
                 key={member.id}
                 delay={stagger(i)}
@@ -210,7 +204,7 @@ function About() {
                   <div className="about-governance__photo-wrap">
                     <img
                       src={member.photo}
-                      alt={`${member.name} - ${member.title}`}
+                      alt={t('about:governance.memberAlt', { name: member.name, title: member.title })}
                       className="about-governance__photo"
                       loading="lazy"
                     />
@@ -227,8 +221,8 @@ function About() {
                         <a
                           href={`mailto:${member.email}`}
                           className="about-governance__contact-link"
-                          title={`Email ${member.name}: ${member.email}`}
-                          aria-label={`Email ${member.name} at ${member.email}`}
+                          title={t('about:governance.emailTitle', { name: member.name, email: member.email })}
+                          aria-label={t('about:governance.emailAria', { name: member.name, email: member.email })}
                         >
                           <span className="material-symbols-outlined about-governance__contact-icon">mail</span>
                           <span className="about-governance__contact-text">{member.email}</span>
@@ -247,10 +241,10 @@ function About() {
       <section className="about-infrastructure section" id="infrastructure">
         <div className="container">
           <div className="about-infrastructure__header text-center">
-            <span className="label-caps label-caps--secondary mb-2 block">Physical Backbone</span>
-            <h2 className="about-infrastructure__title">Operational Facilities &amp; Fleet</h2>
+            <span className="label-caps label-caps--secondary mb-2 block">{t('about:facilities.tag')}</span>
+            <h2 className="about-infrastructure__title">{t('about:facilities.title')}</h2>
             <p className="about-infrastructure__subtitle">
-              Cold storage hubs, refrigerated transport, certified pack houses, and river irrigation schemes across the Great Rift Valley.
+              {t('about:facilities.desc')}
             </p>
           </div>
 
@@ -269,10 +263,10 @@ function About() {
       <section className="about-partners section section--alt" id="partners">
         <div className="container">
           <div className="about-partners__header text-center">
-            <span className="label-caps label-caps--secondary mb-2 block">Strategic Ecosystem</span>
-            <h2 className="about-partners__title">Partners &amp; Collaborations</h2>
+            <span className="label-caps label-caps--secondary mb-2 block">{t('about:partners.eyebrow')}</span>
+            <h2 className="about-partners__title">{t('about:partners.title')}</h2>
             <p className="about-partners__subtitle">
-              Strategic partnerships with development agencies, research institutions, and regulatory bodies.
+              {t('about:partners.desc')}
             </p>
           </div>
 
@@ -283,12 +277,10 @@ function About() {
                 <div className="about-model__icon-wrap">
                   <span className="material-symbols-outlined about-model__icon">science</span>
                 </div>
-                <span className="about-model__step">Pillar 01</span>
+                <span className="about-model__step">{t('about:partners.pillars.p1.step')}</span>
               </div>
-              <h3 className="about-model__title">Research &amp; Seed Trials</h3>
-              <p className="about-model__desc">
-                Partnering with EIAR and OARI to test and multiply high-germination certified seed varieties.
-              </p>
+              <h3 className="about-model__title">{t('about:partners.pillars.p1.title')}</h3>
+              <p className="about-model__desc">{t('about:partners.pillars.p1.desc')}</p>
             </Reveal>
 
             <Reveal delay={100} className="about-model__card">
@@ -296,12 +288,10 @@ function About() {
                 <div className="about-model__icon-wrap">
                   <span className="material-symbols-outlined about-model__icon">water_drop</span>
                 </div>
-                <span className="about-model__step">Pillar 02</span>
+                <span className="about-model__step">{t('about:partners.pillars.p2.step')}</span>
               </div>
-              <h3 className="about-model__title">Landscape &amp; Sustainability</h3>
-              <p className="about-model__desc">
-                Collaborating with Wetlands International and IDH on Rift Valley conservation and drip irrigation.
-              </p>
+              <h3 className="about-model__title">{t('about:partners.pillars.p2.title')}</h3>
+              <p className="about-model__desc">{t('about:partners.pillars.p2.desc')}</p>
             </Reveal>
 
             <Reveal delay={200} className="about-model__card">
@@ -309,12 +299,10 @@ function About() {
                 <div className="about-model__icon-wrap">
                   <span className="material-symbols-outlined about-model__icon">local_shipping</span>
                 </div>
-                <span className="about-model__step">Pillar 03</span>
+                <span className="about-model__step">{t('about:partners.pillars.p3.step')}</span>
               </div>
-              <h3 className="about-model__title">Cold-Chain &amp; Logistics</h3>
-              <p className="about-model__desc">
-                Equipped with ATI refrigerated fleet and pack house precooling to minimize post-harvest loss.
-              </p>
+              <h3 className="about-model__title">{t('about:partners.pillars.p3.title')}</h3>
+              <p className="about-model__desc">{t('about:partners.pillars.p3.desc')}</p>
             </Reveal>
 
             <Reveal delay={300} className="about-model__card">
@@ -322,17 +310,15 @@ function About() {
                 <div className="about-model__icon-wrap">
                   <span className="material-symbols-outlined about-model__icon">flight_takeoff</span>
                 </div>
-                <span className="about-model__step">Pillar 04</span>
+                <span className="about-model__step">{t('about:partners.pillars.p4.step')}</span>
               </div>
-              <h3 className="about-model__title">Market Access &amp; Off-Taking</h3>
-              <p className="about-model__desc">
-                Supplying Ethiopian Airlines Inflight Catering, European exporters, and Addis Ababa retail outlets.
-              </p>
+              <h3 className="about-model__title">{t('about:partners.pillars.p4.title')}</h3>
+              <p className="about-model__desc">{t('about:partners.pillars.p4.desc')}</p>
             </Reveal>
           </div>
 
           {/* Category Filter Tabs */}
-          <div className="about-partners__filter-bar" role="tablist" aria-label="Filter partners by category">
+          <div className="about-partners__filter-bar" role="tablist" aria-label={t('about:infrastructure.filterAriaLabel', 'Filter by category')}>
             {Object.values(PARTNER_CATEGORIES).map((category) => (
               <button
                 key={category}
@@ -367,7 +353,7 @@ function About() {
                       {partner.logo ? (
                         <img
                           src={partner.logo}
-                          alt={`${partner.name} logo`}
+                          alt={t('about:partners.logoAlt', { name: partner.name })}
                           className="about-partner-card__logo"
                           loading="lazy"
                         />
@@ -404,9 +390,9 @@ function About() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="about-partner-card__link"
-                        title={`Visit ${partner.name} website`}
+                        title={t('about:partners.visitTitle', { name: partner.name })}
                       >
-                        <span>Official Website</span>
+                        <span>{t('about:partners.officialWebsite')}</span>
                         <span className="material-symbols-outlined text-xs">open_in_new</span>
                       </a>
                     )}
@@ -427,12 +413,12 @@ function About() {
               >
                 {showAllPartners ? (
                   <>
-                    <span>Show fewer partners</span>
+                    <span>{t('about:partners.showLess')}</span>
                     <span className="material-symbols-outlined text-sm">expand_less</span>
                   </>
                 ) : (
                   <>
-                    <span>Show all {filteredPartners.length} partners</span>
+                    <span>{t('about:partners.showAll', { count: filteredPartners.length })}</span>
                     <span className="material-symbols-outlined text-sm">expand_more</span>
                   </>
                 )}

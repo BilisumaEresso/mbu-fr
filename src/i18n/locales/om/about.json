@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "eyebrow": "Bara 1994 Irraa Eegale • Muuxannoo Waggaa 20+",
+    "title": "Humna Waldaa Hojii Gamtaatiin Guddina Fiduu",
+    "desc": "Yuniyeenii Maqii Baatuu fakkeenya gaarii qonna gamtaa Itoophiyaa keessatti ijaarameeti. Daldala haqa qabeessa, hojimaata itti-fufiinsa qabuu fi oomisha qulqullina olaanaa gabaa biyya keessaa fi addunyaatiif dhiyeessuuf waldaalee bu'uuraa 135 fi qonnaan bultoota miseensa 8,089 tokkoomsa.",
+    "badge": "Maqii, Oromiyaa • Hundeeffama 1994",
+    "imageAlt": "Lafa qonnaa Itoophiyaa gabbataa wayita ifa barii"
+  },
+  "foundation": {
+    "title": "Hundeeffama Keenya",
+    "item1": {
+      "date": "Caamsaa 11, 1994",
+      "heading": "Hundeeffama Magaalaa Maqii",
+      "text": "Waldaalee bu'uuraa 12 fi miseensota hundeeffamaa 527n, kaappitaala jalqabaa qarshii 500,000 walitti buusuun magaalaa Maqiitti hundeeffame."
+    },
+    "item2": {
+      "date": "Marsaa Guddinaa",
+      "heading": "Babal'ina Naannoo",
+      "text": "Godinaalee Shawaa Bahaa fi Arsiitti aanolee Sulula Qiinxamaa ja'a keessatti babal'atee, lafa hektaara 5,910 irratti bu'uuraalee jallisii ammayyaa diriirse."
+    },
+    "item3": {
+      "date": "Bara Ammaa",
+      "heading": "Waldaalee 135 & Qonnaan Bultoota 8,089",
+      "text": "Har'a waldaalee 135 fi qonnaan bultoota 8,089 kaappitaala dhuunfaa qarshii miliyoona 154.2n tokkoomsuun, oomisha mirkanaa'e gabaa biyya keessaa fi addunyaatti dhiyeessa."
+    }
+  },
+  "missionVision": {
+    "visionTitle": "Mul'ata Keenya",
+    "visionHeading": "Badhaadhina & Dorgomtummaa Olaanaa",
+    "visionText": "“Badhaadhina diinagdee miseensotaa mirkaneessuu fi gabaa addunyaa keessatti dhaabbata qonnaa dorgomaa ta'e ijaaruu.”",
+    "missionTitle": "Ergama Keenya",
+    "missionHeading": "Oomishtummaa & Walitti-hidhamiinsa Gabaa",
+    "missionText": "“Oomisha itti-fufiinsa qabu, oomishtummaa lafaa fi oomisha waldaalee miseensaa hundaaf kallattiin carraa gabaa uumuu guddisuu.”",
+    "objectivesTitle": "Kaayyoowwan Ijoo",
+    "objectives": [
+      "Carraa gabaa haqa-qabeessaa fi sirna daldala walqixa ta'een qonnaan bultoota miseensa jajjabeessuu.",
+      "Mala qonnaa itti-fufiinsa qabuufi naannoof mijatu lallabuu fi hojiirra oolchuu.",
+      "Hawaasa qonnaan bulaa baadiyyaatiif barnoota fi ijaarsa dandeettii walirraa hin cinne kennuu.",
+      "Oomisha daldala alaa idil-addunyaatiif qulqullina sadarkaa olaanaa eeguu."
+    ],
+    "downloadPdfTitle": "Pirofaayilii Dhaabbataa Yuniyeenii Maqii Baatuu Buufadhaa (PDF)"
+  },
+  "governance": {
+    "eyebrow": "Geggeessummaa Dimokraatawaa",
+    "title": "Sirna Bulchiinsaa & Caasaa Dhaabbataa",
+    "desc": "Geggeessummaa dimokraatawaa miseensotaa kan iftoomina qabu, to'annoo keessoo cimaa fi hooggansa ogummaa Yaa'ii Waliigalaa irraa hanga waldaa sadarkaa qonnaatti mirkaneessu.",
+    "subtitle": "Gabatee caasaa bulchiinsaa — ergama fi caasaa hubachuuf sadarkaa hooggansaa yookiin kutaa kamiyyuu filadhaa.",
+    "teamTag": "Garee Hooggansaa",
+    "teamSubtitle": "Hooggansa Hojii Raawwachiiftuu",
+    "teamDesc": "Daarektaroota yuuniyeenii fi hooggantoota kutaa hojii waldaa gaggeessan.",
+    "swipeHint": "Hooggansa daawwachuuf harka keessan irra oofaa (swipe) ({{count}})",
+    "memberAlt": "{{name}} - {{title}}",
+    "emailTitle": "E-meelii {{name}}: {{email}}",
+    "emailAria": "E-meelii {{name}} gara {{email}} ergi"
+  },
+  "facilities": {
+    "tag": "Qabeenya Yuuniyeenichaa",
+    "title": "Wiirtuuwwan Hojii & Bu'uuraalee Misoomaa",
+    "desc": "Bu'uuraaleen misoomaa ammayyaa keenya qabbanaawaa eeguu, qulqullinaan filuu fi saamsuu waraqaa ragaa qabu Shawaa Bahaa fi Arsiitti dandeessisa."
+  },
+  "infrastructure": {
+    "ariaLabel": "Qabeenya Hojii fi Bu'uuraalee Misoomaa Yuuniyeenii",
+    "badge": "Bu'uuraalee Misoomaa & Qabeenya",
+    "title": "Qabeenya Hojii",
+    "desc": "Utubaa loojistiiksii fi teeknikaa waldaalee miseensa keenyaa 135 humneessu — kuusaa qabbaneessaa toonii 2,000 fi konkolaattota geejjiba qabbanaawaa irraa eegalee hanga wiirtuu qophii sanyii fi paampiiwwan harootti.",
+    "filterAriaLabel": "Qabeenya ramaddiin calalii"
+  },
+  "resourceModal": {
+    "closeAriaLabel": "Ibsa bal'aa cufi",
+    "overview": "Ibsa Hojii Waliigalaa",
+    "specs": "Bal'ina Teeknikaa",
+    "capabilities": "Dandeettii Hojii & Dhiibbaa",
+    "footerText": "Yuniyeenii Maqii Baatuu • Bu'uuraalee Misoomaa Mirkanaa'an",
+    "closeBtn": "Bal'ina Cufi"
+  },
+  "resourceCard": {
+    "viewDetailsFor": "Bal'ina {{name}} ilaalaa"
+  },
+  "partners": {
+    "eyebrow": "Hidhata Dhaabbilee",
+    "title": "Michoota Misoomaa & Tarsiimawaa",
+    "desc": "Qonna itti-fufiinsa qabu guddisuuf ejensiiwwan mootummaa, dhaabbilee qorannoo, fi dhaabbilee misoomaa idil-addunyaa waliin dhiyeenyaan hojjanna.",
+    "categories": {
+      "all": "Michoota Hunda",
+      "development": "Misooma & Itti-fufiinsa",
+      "research": "Qorannoo & Kalaqa",
+      "finance": "Faayinaansii & Bittoota",
+      "government": "Mootummaa & Seera"
+    },
+    "showAll": "Michoota Hunda Agarsiisi ({{count}})",
+    "showLess": "Xiqqeessi Agarsiisi",
+    "pillars": {
+      "p1": {
+        "step": "Utubaa 01",
+        "title": "Qorannoo & Yaalii Sanyii",
+        "desc": "Sanyiilee filatamaa biqilummaan isaanii olaanaa ta'e qoruu fi baay'isuuf EIAR fi OARI waliin hojjechuu."
+      },
+      "p2": {
+        "step": "Utubaa 02",
+        "title": "Naannoo & Itti-fufiinsa",
+        "desc": "Eegumsa Sulula Qiinxamaa fi jallisii cobxoo irratti Wetlands International fi IDH waliin tumsuu."
+      },
+      "p3": {
+        "step": "Utubaa 03",
+        "title": "Sanjata Qabbanaawaa & Loojistiiksii",
+        "desc": "Qisaasama oomisha boodaa hir'isuuf konkolaattota geejjiba qabbanaawaa ATI fi mana kuusaa qabbaneessaa qabaachuu."
+      },
+      "p4": {
+        "step": "Utubaa 04",
+        "title": "Walitti-hidhamiinsa Gabaa & Bittaa",
+        "desc": "Tajaajila Nyaataa Xiyyaara Itoophiyaa, bittoota Awurooppaa, fi suuqiiwwan Finfinneetiif dhiyeessuu."
+      }
+    },
+    "logoAlt": "Looogoo {{name}}",
+    "visitTitle": "Marsariitii {{name}} daawwadhaa",
+    "officialWebsite": "Marsariitii Ofiisaa"
+  }
+}

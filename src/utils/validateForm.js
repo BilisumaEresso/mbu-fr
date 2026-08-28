@@ -17,23 +17,26 @@ export function isValidEmail(value) {
  *
  * @param {Record<string, string>} values   - Current field values keyed by field name.
  * @param {Record<string, string[]>} rules  - Rules per field, e.g. { email: ['required', 'email'] }
+ * @param {Record<string, string>} [customMessages] - Optional custom error messages { required?: string, email?: string }
  * @returns {Record<string, string>}        - { fieldName: 'Error message' } for each failing field.
  *
  * Supported rule strings: 'required', 'email'
  */
-export function validateFields(values, rules) {
+export function validateFields(values, rules, customMessages = {}) {
   const errors = {}
+  const requiredMsg = customMessages.required || 'This field is required.'
+  const emailMsg = customMessages.email || 'Please enter a valid email address.'
 
   for (const [field, fieldRules] of Object.entries(rules)) {
     const value = values[field] ?? ''
 
     for (const rule of fieldRules) {
       if (rule === 'required' && !isRequired(value)) {
-        errors[field] = 'This field is required.'
+        errors[field] = requiredMsg
         break
       }
       if (rule === 'email' && isRequired(value) && !isValidEmail(value)) {
-        errors[field] = 'Please enter a valid email address.'
+        errors[field] = emailMsg
         break
       }
     }

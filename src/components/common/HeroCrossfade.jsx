@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import './HeroCrossfade.css'
 
 export default function HeroCrossfade({ images = [], interval = 7000, onPlayClick }) {
+  const { t } = useTranslation('common')
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {
@@ -33,10 +35,10 @@ export default function HeroCrossfade({ images = [], interval = 7000, onPlayClic
         <button
           className="hero-crossfade__play"
           onClick={onPlayClick}
-          aria-label="Watch our story"
+          aria-label={t('heroCrossfade.watchStory', 'Watch our story')}
         >
           <span className="material-symbols-outlined" aria-hidden="true">play_arrow</span>
-          <span className="hero-crossfade__play-label">Watch our story</span>
+          <span className="hero-crossfade__play-label">{t('heroCrossfade.watchStory', 'Watch our story')}</span>
         </button>
       )}
     </div>

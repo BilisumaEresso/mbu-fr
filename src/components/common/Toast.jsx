@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import './Toast.css'
 
 const AUTO_DISMISS_MS = 5000
@@ -11,6 +12,7 @@ const AUTO_DISMISS_MS = 5000
  *   onDismiss  () => void
  */
 function Toast({ toast, onDismiss }) {
+  const { t } = useTranslation('common')
   // Auto-dismiss after 5 s; restart when toast.id changes (new toast)
   useEffect(() => {
     if (!toast) return
@@ -49,7 +51,7 @@ function Toast({ toast, onDismiss }) {
         type="button"
         className="toast__close"
         onClick={onDismiss}
-        aria-label="Dismiss notification"
+        aria-label={t('toast.dismiss', 'Dismiss notification')}
       >
         ×
       </button>

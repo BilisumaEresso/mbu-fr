@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import ourProductHeroImg from '../assets/images/heroes/ourProductHero.webp'
 import { products, categories, harvestCalendar } from '../data/products.js'
+import { getLocalePath } from '../utils/locale.js'
 import './InnerPage.css'
 import './Products.css'
 
@@ -13,6 +15,8 @@ import './Products.css'
 const stagger = (i) => Math.min(i * 90, 450)
 
 function Products() {
+  const { t, i18n } = useTranslation(['products', 'meta', 'common'])
+  const currentLang = i18n.language || 'en'
   const [activeCategory, setActiveCategory] = useState('All')
   const [selectedProduct, setSelectedProduct] = useState(null)
 
@@ -35,9 +39,6 @@ function Products() {
     }
   }, [selectedProduct])
 
-  // Track whether we've already rendered the initial grid. After the first
-  // render, filtering must NOT re-trigger reveal animations — cards simply
-  // show/hide instantly. We detect "has been filtered before" via a ref.
   const hasFilteredRef = useRef(false)
 
   const filtered =
@@ -60,33 +61,40 @@ function Products() {
     }
   }
 
+  const categoryLabels = {
+    All: t('products:catalog.filters.all', 'All Products'),
+    Vegetables: t('products:catalog.filters.vegetables', 'Vegetables'),
+    Fruits: t('products:catalog.filters.fruits', 'Fruits'),
+    Seeds: t('products:catalog.filters.seeds', 'Certified Seeds'),
+  }
+
   return (
     <>
       <Helmet>
-        <title>Our Products | Meki Batu Union</title>
+        <title>{t('meta:products.title')}</title>
         <meta
           name="description"
-          content="Explore our export-grade Ethiopian produce catalog including Rift Valley tomatoes, red onions, green peppers, highland potatoes, fresh papaya, and certified hybrid seeds."
+          content={t('meta:products.description')}
         />
       </Helmet>
       {/* ---- Hero Section ---- */}
       <PageHero
-        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Our Products' }]}
-        title="Cultivated with precision. Exported globally."
-        description="Discover our range of premium, certified organic crops and seeds. Grown in the nutrient-rich soils of the Great Rift Valley by our network of cooperative farmers."
+        breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.products') }]}
+        title={t('products:hero.title')}
+        description={t('products:hero.desc')}
         actions={
           <>
             <a href="#catalog" className="btn btn--primary">
-              View Catalog <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              {t('products:hero.viewCatalog')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
-            <Link to="/buyers" className="btn btn--outline">
-              Request a Quote <span className="material-symbols-outlined text-sm">description</span>
+            <Link to={getLocalePath('/buyers', currentLang)} className="btn btn--outline">
+              {t('products:hero.requestQuote')} <span className="material-symbols-outlined text-sm">description</span>
             </Link>
           </>
         }
         image={ourProductHeroImg}
-        imageAlt="Fresh harvest of red tomatoes in wooden crate on dark Ethiopian soil"
-        badge="GlobalG.A.P Certified"
+        imageAlt={t('products:hero.imageAlt')}
+        badge={t('products:hero.badge')}
       />
 
       <SectionDivider />
@@ -97,17 +105,17 @@ function Products() {
           {/* Section Header */}
           <div className="products-catalog__header">
             <div className="products-catalog__header-content">
-              <span className="label-caps label-caps--secondary mb-2 block">Crop Directory</span>
-              <h2 className="products-catalog__title">Export &amp; Domestic Produce</h2>
+              <span className="label-caps label-caps--secondary mb-2 block">{t('products:catalog.directory')}</span>
+              <h2 className="products-catalog__title">{t('products:catalog.title')}</h2>
               <p className="products-catalog__desc">
-                Cultivated across 135 cooperatives and 8,089 member farms, meeting GlobalG.A.P standards for full traceability, food safety, and export quality.
+                {t('products:catalog.desc')}
               </p>
             </div>
           </div>
 
           {/* Interactive Filter & Status Toolbar */}
           <div className="products-toolbar">
-            <div className="products-toolbar__tabs" role="tablist" aria-label="Product Categories">
+            <div className="products-toolbar__tabs" role="tablist" aria-label={t('products:catalog.directory', 'Product Categories')}>
               {categories.map((cat) => (
                 <button
                   key={cat}
@@ -116,7 +124,7 @@ function Products() {
                   className={`products-toolbar__tab ${activeCategory === cat ? 'products-toolbar__tab--active' : ''}`}
                   onClick={() => handleCategoryChange(cat)}
                 >
-                  <span className="products-toolbar__tab-label">{cat}</span>
+                  <span className="products-toolbar__tab-label">{categoryLabels[cat] || cat}</span>
                   <span className="products-toolbar__tab-count">{categoryCounts[cat] || 0}</span>
                 </button>
               ))}
@@ -125,7 +133,7 @@ function Products() {
             <div className="products-toolbar__status">
               <span className="products-toolbar__status-dot" />
               <span>
-                Showing <strong>{filtered.length}</strong> {filtered.length === 1 ? 'commodity' : 'commodities'}
+                {t('products:catalog.showingPrefix')} <strong>{filtered.length}</strong> {filtered.length === 1 ? t('products:catalog.commodity') : t('products:catalog.commodities')}
               </span>
             </div>
           </div>
@@ -157,7 +165,7 @@ function Products() {
 
                     {Array.isArray(item.varieties) && item.varieties.length > 0 && (
                       <div className="product-item-card__varieties">
-                        <span className="product-item-card__varieties-label">Varieties:</span>
+                        <span className="product-item-card__varieties-label">{t('products:catalog.labels.varieties')}</span>
                         <span className="product-item-card__varieties-list">{item.varieties.join(', ')}</span>
                       </div>
                     )}
@@ -174,7 +182,7 @@ function Products() {
                     </div>
 
                     <div className="product-item-card__footer">
-                      <span className="product-item-card__action-label">View Specifications</span>
+                      <span className="product-item-card__action-label">{t('products:catalog.labels.viewDetails')}</span>
                       <div className="product-item-card__arrow-wrap">
                         <span className="material-symbols-outlined">arrow_forward</span>
                       </div>
@@ -200,7 +208,7 @@ function Products() {
                     onKeyDown={handleCardKeyDown}
                     tabIndex={0}
                     role="button"
-                    aria-label={`View specifications for ${item.name}`}
+                    aria-label={t('products:catalog.ariaViewDetails', { name: item.name })}
                   >
                     {cardContent}
                   </div>
@@ -217,7 +225,7 @@ function Products() {
                   onKeyDown={handleCardKeyDown}
                   tabIndex={0}
                   role="button"
-                  aria-label={`View specifications for ${item.name}`}
+                  aria-label={t('products:catalog.ariaViewDetails', { name: item.name })}
                   style={{ cursor: 'pointer' }}
                 >
                   {cardContent}
@@ -241,7 +249,7 @@ function Products() {
             <button
               className="product-modal-close"
               onClick={() => setSelectedProduct(null)}
-              aria-label="Close product details"
+              aria-label={t('common:buttons.close')}
             >
               <span className="material-symbols-outlined">close</span>
             </button>
@@ -256,7 +264,7 @@ function Products() {
                 <div className="product-modal-media-overlay" />
                 <div className="product-modal-media-badge">
                   <span className="material-symbols-outlined text-xs">verified</span>
-                  <span>GlobalG.A.P Certified</span>
+                  <span>{t('products:catalog.labels.globalGap')}</span>
                 </div>
               </div>
 
@@ -276,7 +284,7 @@ function Products() {
                       <span className="material-symbols-outlined">location_on</span>
                     </div>
                     <div className="product-spec-card__details">
-                      <span className="product-spec-card__label">Origin</span>
+                      <span className="product-spec-card__label">{t('products:catalog.labels.origin')}</span>
                       <span className="product-spec-card__value">{selectedProduct.origin}</span>
                     </div>
                   </div>
@@ -286,7 +294,7 @@ function Products() {
                       <span className="material-symbols-outlined">calendar_today</span>
                     </div>
                     <div className="product-spec-card__details">
-                      <span className="product-spec-card__label">Harvest Season</span>
+                      <span className="product-spec-card__label">{t('products:catalog.labels.season')}</span>
                       <span className="product-spec-card__value">{selectedProduct.season}</span>
                     </div>
                   </div>
@@ -296,7 +304,7 @@ function Products() {
                       <span className="material-symbols-outlined">inventory_2</span>
                     </div>
                     <div className="product-spec-card__details">
-                      <span className="product-spec-card__label">Export Packaging</span>
+                      <span className="product-spec-card__label">{t('products:catalog.labels.packaging')}</span>
                       <span className="product-spec-card__value">{selectedProduct.packaging}</span>
                     </div>
                   </div>
@@ -306,7 +314,7 @@ function Products() {
                       <span className="material-symbols-outlined">timelapse</span>
                     </div>
                     <div className="product-spec-card__details">
-                      <span className="product-spec-card__label">Shelf Life</span>
+                      <span className="product-spec-card__label">{t('products:catalog.labels.shelfLife')}</span>
                       <span className="product-spec-card__value">{selectedProduct.shelfLife}</span>
                     </div>
                   </div>
@@ -317,7 +325,7 @@ function Products() {
                         <span className="material-symbols-outlined">spa</span>
                       </div>
                       <div className="product-spec-card__details">
-                        <span className="product-spec-card__label">Produced Varieties</span>
+                        <span className="product-spec-card__label">{t('products:catalog.labels.producedVarieties')}</span>
                         <span className="product-spec-card__value">{selectedProduct.varieties.join(', ')}</span>
                       </div>
                     </div>
@@ -328,7 +336,7 @@ function Products() {
                       <span className="material-symbols-outlined">verified</span>
                     </div>
                     <div className="product-spec-card__details">
-                      <span className="product-spec-card__label">Quality Standard &amp; Spec</span>
+                      <span className="product-spec-card__label">{t('products:catalog.labels.brix')}</span>
                       <span className="product-spec-card__value">{selectedProduct.brix}</span>
                     </div>
                   </div>
@@ -337,21 +345,21 @@ function Products() {
                 <div className="product-modal-perks">
                   <div className="product-modal-perk">
                     <span className="material-symbols-outlined text-xs">check_circle</span>
-                    <span>100% Traceable to Member Co-ops</span>
+                    <span>{t('products:catalog.perks.traceable')}</span>
                   </div>
                   <div className="product-modal-perk">
                     <span className="material-symbols-outlined text-xs">check_circle</span>
-                    <span>Direct Cold-Chain Transit</span>
+                    <span>{t('products:catalog.perks.coldChain')}</span>
                   </div>
                 </div>
 
                 <div className="product-modal-actions">
                   <Link
-                    to={`/buyers?product=${selectedProduct.id}`}
+                    to={getLocalePath(`/buyers?product=${selectedProduct.id}`, currentLang)}
                     className="btn btn--primary product-modal-cta"
                     onClick={() => setSelectedProduct(null)}
                   >
-                    Request Export Quote
+                    {t('products:catalog.labels.requestQuote')}
                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </Link>
                   <button
@@ -359,7 +367,7 @@ function Products() {
                     className="btn btn--outline product-modal-dismiss"
                     onClick={() => setSelectedProduct(null)}
                   >
-                    Close
+                    {t('common:buttons.close')}
                   </button>
                 </div>
               </div>
@@ -372,24 +380,24 @@ function Products() {
       <section className="products-calendar section" id="calendar">
         <div className="container">
           <div className="products-calendar__header">
-            <h2 className="products-calendar__title">Harvest Calendar</h2>
+            <h2 className="products-calendar__title">{t('products:calendar.title')}</h2>
             <p className="products-calendar__desc">
-              Year-round production cycles powered by modern Rift Valley irrigation ensure steady export and domestic supply.
+              {t('products:calendar.desc')}
             </p>
           </div>
 
           <div className="table-responsive">
             <div className="table-mobile-hint">
               <span className="material-symbols-outlined text-sm">swipe_left</span>
-              <span>Scroll horizontally to view full calendar</span>
+              <span>{t('products:calendar.mobileHint')}</span>
             </div>
             <table className="products-table">
               <thead>
                 <tr>
-                  <th>Commodity</th>
-                  <th>Category</th>
-                  <th>Main Harvest Window</th>
-                  <th>Export Availability</th>
+                  <th>{t('products:calendar.table.commodity')}</th>
+                  <th>{t('products:calendar.table.category')}</th>
+                  <th>{t('products:calendar.table.harvestWindow')}</th>
+                  <th>{t('products:calendar.table.exportAvailability')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -414,13 +422,13 @@ function Products() {
         <div className="container">
           <Reveal className="products-cta__card">
             <div className="products-cta__info">
-              <h2 className="products-cta__title">Partner with Meki Batu</h2>
+              <h2 className="products-cta__title">{t('products:cta.title')}</h2>
               <p className="products-cta__desc">
-                Supplying bulk, certified produce to international exporters, processing facilities, and regional markets. Contact our sales team for pricing and logistics.
+                {t('products:cta.desc')}
               </p>
             </div>
-            <Link to="/buyers" className="btn btn--primary">
-              Inquire for Buying
+            <Link to={getLocalePath('/buyers', currentLang)} className="btn btn--primary">
+              {t('products:cta.button')}
             </Link>
           </Reveal>
         </div>

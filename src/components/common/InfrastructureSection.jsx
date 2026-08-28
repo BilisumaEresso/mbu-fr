@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import Reveal from './Reveal.jsx'
 import ResourceCard from './ResourceCard.jsx'
 import ResourceModal from './ResourceModal.jsx'
@@ -6,6 +7,7 @@ import { resources, RESOURCE_CATEGORIES, RESOURCE_METRICS } from '../../data/res
 import './InfrastructureSection.css'
 
 function InfrastructureSection() {
+  const { t } = useTranslation('about')
   const [selectedCategory, setSelectedCategory] = useState(RESOURCE_CATEGORIES.ALL)
   const [activeModalResource, setActiveModalResource] = useState(null)
 
@@ -14,14 +16,14 @@ function InfrastructureSection() {
     : resources.filter((r) => r.category === selectedCategory)
 
   return (
-    <section className="infrastructure-section section" id="infrastructure" aria-label="Union Operational Resources and Infrastructure">
+    <section className="infrastructure-section section" id="infrastructure" aria-label={t('infrastructure.ariaLabel', 'Union Operational Resources and Infrastructure')}>
       <div className="container">
         {/* Section Header */}
         <Reveal className="infrastructure-section__header text-center">
-          <span className="label-caps label-caps--secondary mb-2 block">Physical Infrastructure &amp; Assets</span>
-          <h2 className="infrastructure-section__title">Operational Resources</h2>
+          <span className="label-caps label-caps--secondary mb-2 block">{t('infrastructure.badge', 'Physical Infrastructure & Assets')}</span>
+          <h2 className="infrastructure-section__title">{t('infrastructure.title', 'Operational Resources')}</h2>
           <p className="infrastructure-section__desc">
-            The logistical and technical backbone powering our 135 member cooperatives — from 2,000-tonne cold storage and refrigerated transport fleets to seed conditioning plants and lake pumping stations.
+            {t('infrastructure.desc', 'The logistical and technical backbone powering our 135 member cooperatives — from 2,000-tonne cold storage and refrigerated transport fleets to seed conditioning plants and lake pumping stations.')}
           </p>
         </Reveal>
 
@@ -40,7 +42,7 @@ function InfrastructureSection() {
         </Reveal>
 
         {/* Category Filter Tabs */}
-        <div className="infrastructure-section__filter-bar" role="tablist" aria-label="Filter resources by category">
+        <div className="infrastructure-section__filter-bar" role="tablist" aria-label={t('infrastructure.filterAriaLabel', 'Filter resources by category')}>
           {Object.values(RESOURCE_CATEGORIES).map((cat) => (
             <button
               key={cat}

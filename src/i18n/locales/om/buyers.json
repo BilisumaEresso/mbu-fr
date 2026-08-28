@@ -1,0 +1,93 @@
+{
+  "hero": {
+    "title": "Oomishaalee Sadarkaa Daldala Alaa. Sanjata Dhiyeessaa Amanamaa.",
+    "desc": "Yuniyeenii Maqii Baatuu dhiyeessaa guddaa kuduraalee, muduraalee fi sanyiilee filatamoo waraqaa ragaa GlobalG.A.P qaban kan ergitoota alaa, dhaabbilee nyaata qopheessanii fi dukaannoota addunyaati.",
+    "badge": "Dhiyeessaa Kallattii Daldala Alaa",
+    "requestQuote": "Gatii Daldala Alaa Gaafadhaa",
+    "downloadPdf": "Piroofayilii Dhaabbataa Buufadhaa",
+    "imageAlt": "Oomisha sadarkaa daldala alaa qulqullina olaanaa qabu wiirtuu ammayyaa keessatti filatamaa fi saamsamaa jiru",
+    "downloadPdfTitle": "Piroofayilii Dhaabbata Yuniyeenii Maqii Baatuu Buufadhaa (PDF)"
+  },
+  "valueProps": {
+    "prop1": {
+      "title": "Qulqullina Mirkanaa'e",
+      "desc": "Ulaagaalee GlobalG.A.P fi qajeelfama sanyii Itoophiyaa guutuun oomisha dirreerraa hanga buufata gabaatti hordofamuu danda'u."
+    },
+    "prop2": {
+      "title": "Dhiyeessii Baay'ina Amanamaa",
+      "desc": "Lafa jallisii hektaara 5,910 irratti waldaaleen bu'uuraa 135 oomisha gahaa fi baay'ina olaanaa waqtii hundatti dhiyeessu."
+    },
+    "prop3": {
+      "title": "Loojistiiksii Sadarkaa Daldala Alaa",
+      "desc": "Konkolaattota qabbanaawaa fi kuusaa qabbaneessaa wiirtuu qulqullina eeguun ergaa qilleensaa idil-addunyaatiif oomisha qopheessuu."
+    }
+  },
+  "form": {
+    "tag": "Gaaffilee Daldalaa",
+    "title": "Gaaffii Gatii Bittaa Jumlaa Dhiyeessaa",
+    "desc": "Gatii baay'inaa, tarreeffama saamsamaa, fi sagantaa dhiyeessii waajjira daldala alaa keenya irraa argachuuf unka armaan gadii guutaa.",
+    "fields": {
+      "name": "Maqaa Guutuu",
+      "namePlaceholder": "fkn. Obbo / Adde / Mr. / Ms.",
+      "company": "Dhaabbata / Waldaa",
+      "companyPlaceholder": "fkn. Dhaabbata Daldala Alaa",
+      "country": "Biyya Geessu",
+      "countryPlaceholder": "fkn. Nezerlaands, UAE, Jarmanii",
+      "product": "Akaakuu Oomishaa Barbaadamu",
+      "productSelect": "Oomisha filadhaa...",
+      "products": {
+        "tomatoes": "Tamaatii Sulula Qiinxamaa",
+        "onions": "Shunkurtaa Diimaa",
+        "peppers": "Qaaraa Magariisa",
+        "potato": "Dinicha Baddaa",
+        "cabbage": "Raafuu Haaraa",
+        "greenBeans": "Luubiyaa / Baaqelaa Magariisa",
+        "papaya": "Paappaayyaa Haaraa",
+        "watermelon": "Habhabii Mi'aawaa",
+        "seeds": "Sanyiilee Filatamoo"
+      },
+      "volume": "Tilmaama Baay'inaa / Toonii",
+      "volumePlaceholder": "fkn. Toonii 5 / Torbaniitti",
+      "message": "Ulaagaalee & Yaadannoo",
+      "messagePlaceholder": "Sadarkaa qulqullinaa, filannoo saamsamaa, fi yeroo dhiyeessii ibsaa...",
+      "submit": "Gaaffii Gatii Ergaa",
+      "submitting": "Ergamaa jira..."
+    },
+    "success": {
+      "title": "Gaaffiin Gatii Milkaa'inaan Ergameera!",
+      "desc": "Yuniyeenii Maqii Baatuu qunnamuu keessaniif galatoomaa. Gareen daldala alaa keenya gaaffii keessan gamaaggamuun sa'aatii 24 keessatti deebii gatii isiniif kenna.",
+      "button": "Gaaffii Biroo Ergaa"
+    },
+    "toasts": {
+      "success": "Gaaffiin gatii milkaa'inaan ergameera! Dhihootti isin qunnamna.",
+      "fail": "Erguun hin danda'amne. Mee odeeffannoo keessan mirkaneessaa irra deebi'aa yaalaa.",
+      "network": "Hidhata sararaa irratti rakkoon uumameera. Mee yeroo biraa yaalaa."
+    }
+  },
+  "faq": {
+    "title": "Gaaffilee Yeroo Baay'ee Gaafataman Bittoota & Ergitoota Alaatiif",
+    "desc": "Waa'ee waraqaa ragaa, baay'ina bittaa xiqqaa (MOQ), loojistiiksii, fi qulqullinaa irratti odeeffannoo ijoo.",
+    "items": [
+      {
+        "question": "Oomishaaleen daldala alaatiif qophaa'an kamfa'i?",
+        "answer": "Tamaatii Sulula Qiinxamaa, shunkurtaa diimaa, qaaraa, dinicha baddaa, raafuu, luubiyaa, paappaayyaa haaraa, fi sanyiilee filatamoo sadarkaa daldala alaa ni dhiyeessina."
+      },
+      {
+        "question": "Oomishaalee Yuniyeenii Maqii Baatuu waraqaa ragaa akkamiitu deeggara?",
+        "answer": "Oomishni keenya hordoffii guutuu kan qabu waraqaa ragaa GlobalG.A.P kan qabudha. Akkasumas ulaagaa biyyaalessaa Itoophiyaatiin oomishtuu sanyii eeyyamameedha."
+      },
+      {
+        "question": "Amma gabaawwan idil-addunyaa kamiif dhiyeessitu?",
+        "answer": "Gabaawwan Awurooppaa xiyyaaraan, tajaajila soorata balalii Daandii Qilleensa Itoophiyaa, fi bittoota jumlaa Baha Afriikaatiif ni dhiyeessina."
+      },
+      {
+        "question": "Gaaffii gatii addaa akkamittiin dhiyeessa?",
+        "answer": "Unka fuula kana irratti argamuun oomisha barbaaddan, baay'ina toonii, fi biyya itti ergamu guutuun ergaa. Gareen daldala alaa sa'aatii 24 keessatti deebii kenna."
+      },
+      {
+        "question": "Hangi bittaa xiqqaa (MOQ) meeqa?",
+        "answer": "Hangi bittaa xiqqaa akkaakuu oomishaa fi waqtii irratti hundaa'a. Sagantaa dhiyeessii keessan nuuf erguun nu haasofsiisaa."
+      }
+    ]
+  }
+}

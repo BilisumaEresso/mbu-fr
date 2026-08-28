@@ -1,0 +1,237 @@
+{
+  "skipLink": "Skip to main content",
+  "header": {
+    "brand": "Meki Batu Union",
+    "brandLogoAlt": "Meki Batu Union Logo",
+    "memberLogin": "Member Login",
+    "memberLoginToast": "Member Login is coming soon! Online portal access for member cooperatives is currently under development.",
+    "toggleNav": "Toggle navigation menu",
+    "nav": {
+      "about": "About Us",
+      "aboutDesc": "Our heritage, mission & leadership",
+      "impact": "Impact & Reports",
+      "impactDesc": "Certifications & annual reviews",
+      "products": "Products",
+      "ourProducts": "Our Products",
+      "ourProductsDesc": "Fresh produce & seed catalog",
+      "retailOutlets": "Retail Outlets",
+      "retailOutletsDesc": "5 Addis Ababa storefronts",
+      "farmers": "For Farmers",
+      "buyers": "For Buyers",
+      "news": "News",
+      "contact": "Contact"
+    }
+  },
+  "footer": {
+    "tagline": "Trusted Ethiopian fruit & vegetable cooperative with over two decades of experience since 2002.",
+    "badge": "GlobalG.A.P Certified · Licensed Seed Producer",
+    "company": "About Union",
+    "stakeholders": "Stakeholders",
+    "contact": "Contact Desk",
+    "followUs": "Follow Us",
+    "copyright": "© {{year}} Meki Batu Fruits and Vegetables Growers' Cooperative Union Ltd.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "address": "Meki Town, Dugda Woreda, East Shoa Zone, Oromia, Ethiopia",
+    "openMaps": "Open location on Google Maps",
+    "facebook": "Facebook",
+    "telegram": "Telegram",
+    "linkedin": "LinkedIn"
+  },
+  "breadcrumbs": {
+    "ariaLabel": "Breadcrumb",
+    "home": "Home",
+    "about": "About Us",
+    "products": "Our Products",
+    "farmers": "For Farmers",
+    "buyers": "For Buyers",
+    "retailOutlets": "Retail Outlets",
+    "news": "News",
+    "impact": "Impact",
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "buttons": {
+    "learnMore": "Learn More",
+    "getInTouch": "Get in Touch",
+    "requestQuote": "Request a Quote",
+    "viewCatalog": "View Catalog",
+    "viewLocations": "View Locations",
+    "viewImpactMetrics": "View Impact Metrics",
+    "impactReports": "Impact Reports",
+    "downloadPdf": "Download Company Profile",
+    "viewCredential": "View credential",
+    "viewCertificateDoc": "View certificate document",
+    "openGoogleMaps": "Open in Google Maps",
+    "close": "Close",
+    "backToHome": "Back to home",
+    "viewDetailsMap": "View Details & Map",
+    "readReport": "Read report",
+    "search": "Search"
+  },
+  "whatsapp": {
+    "ariaLabel": "Chat with us on WhatsApp",
+    "defaultMessage": "Hello Meki Batu Union, I'd like to inquire about..."
+  },
+  "langSwitcher": {
+    "en": "EN",
+    "om": "OM",
+    "label": "Switch language",
+    "mobileTitle": "Language / Afaan"
+  },
+  "heroCrossfade": {
+    "watchStory": "Watch our story"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions"
+  },
+  "toast": {
+    "dismiss": "Dismiss notification"
+  },
+  "certifications": {
+    "globalgapTitle": "GlobalG.A.P Certified",
+    "globalgapDesc": "Meeting international standards for food safety, traceability, and responsible farming practice. More than 400 member households are GlobalG.A.P certified under the union's certification scheme.",
+    "globalgapCaption": "Official GlobalG.A.P Certification for safe, traceable, and sustainable farming practice — with more than 400 member households certified under the union's certification scheme.",
+    "globalgapLearn": "Learn about GlobalG.A.P",
+    "globalgapAlt": "GlobalG.A.P Certification Logo and Badge",
+    "globalgapAriaLabel": "View GlobalG.A.P certificate logo at full size",
+    "globalgapLogoAlt": "GlobalG.A.P logo",
+    "oromiaTitle": "Certified Seed Producer — Oromia Bureau of Agriculture & Natural Resource",
+    "oromiaDesc": "Authorized under Ethiopia's Seed Proclamation No. 782/2013 to produce certified seeds of vegetables, fruit, cereal, and pulses. License Reg. No. 72, issued to Meki Batu Fruit & Vegetable Growers Cooperative Union.",
+    "oromiaMeta": "Issued 14/01/2019 · Oromia Bureau of Agriculture & Natural Resource",
+    "oromiaCaption": "Certified Seed Producer License Ltd Reg. No. 72 under Ethiopia's Seed Proclamation No. 782/2013.",
+    "oromiaAlt": "Oromia Bureau of Agriculture Competence Assurance Certificate for Meki Batu Union, certified seed producer license",
+    "oromiaAriaLabel": "View Oromia seed producer certificate document at full size",
+    "expand": "Expand",
+    "expandDoc": "Expand Document",
+    "officialCredential": "Official Credential",
+    "closeViewer": "Close certificate viewer",
+    "visit": "Visit"
+  },
+  "whereWeOperate": {
+    "region": "Our Region",
+    "title": "Where We Operate",
+    "desc": "Our member cooperatives farm across six districts in East Shewa and Arsi zones: Dugda woreda, Adami Tulu Jido Kombolcha, Bora, Zuway Dugda, Adama, and Dodota Sire. Originally founded around Dembal Lake (Lake Ziway) across Dugda and Adami Tulu, the union has expanded to support 8,089 member farmers across all six woredas.",
+    "mapTitle": "Meki Batu Union location — Meki Town, East Shewa Zone, Oromia, Ethiopia",
+    "districts": {
+      "dugda": "Dugda Woreda",
+      "adamiTulu": "Adami Tulu Jido Kombolcha",
+      "bora": "Bora",
+      "zuwayDugda": "Zuway Dugda",
+      "adama": "Adama",
+      "dodotaSire": "Dodota Sire"
+    }
+  },
+  "validation": {
+    "required": "This field is required.",
+    "email": "Please enter a valid email address."
+  },
+  "team": {
+    "members": {
+      "kumesaGudina": {
+        "name": "Kumesa Gudina",
+        "title": "General Manager",
+        "department": "Executive Management",
+        "category": "Executive"
+      },
+      "ashenafiRoba": {
+        "name": "Ashenafi Roba",
+        "title": "Deputy Manager",
+        "department": "Operational Management",
+        "category": "Executive"
+      },
+      "biyoUke": {
+        "name": "Biyo Uke",
+        "title": "Lawyer & Legal Advisor",
+        "department": "Legal Advisory",
+        "category": "Executive Support"
+      },
+      "geletaDiriba": {
+        "name": "Geleta Diriba",
+        "title": "Senior Planning, Evaluation & Budgeting Expert",
+        "department": "Planning & Evaluation",
+        "category": "Executive Support"
+      },
+      "megarsoEbso": {
+        "name": "Megarso Ebso",
+        "title": "Agriculture & Farmer Service Center Dept Head",
+        "department": "Agriculture & Inputs",
+        "category": "Department Head"
+      },
+      "lenchoHamde": {
+        "name": "Lencho Hamde",
+        "title": "Marketing Department Head",
+        "department": "Marketing & Commercial",
+        "category": "Department Head"
+      },
+      "eresoAmbaso": {
+        "name": "Ereso Ambaso",
+        "title": "HR & General Service Department Head",
+        "department": "Human Resources & General Service",
+        "category": "Department Head"
+      },
+      "sisayYadesa": {
+        "name": "Sisay Yadesa",
+        "title": "Finance & Procurement Department Head",
+        "department": "Finance & Procurement",
+        "category": "Department Head"
+      }
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "desc": "The page you're looking for doesn't exist.",
+    "button": "Back to home"
+  },
+  "facilities": {
+    "centralColdHub": {
+      "name": "Cold Storage & Warehousing",
+      "tag": "Storage Hub",
+      "stat": "2,000 Tonnes",
+      "location": "Meki Hub",
+      "desc": "Multi-chamber temperature-controlled cold rooms and warehouses serving 135 cooperatives.",
+      "features": [
+        "Multi-Chamber Cold Rooms",
+        "Backup Power Supply",
+        "Direct Coop Intake"
+      ]
+    },
+    "refrigeratedFleet": {
+      "name": "Refrigerated Transport Fleet",
+      "tag": "Cold-Chain Logistics",
+      "stat": "18+ Fleet & Tractors",
+      "location": "Rift Valley & Addis Ababa",
+      "desc": "Insulated cold-chain trucks and farm tractors ensuring farm-gate freshness to final market.",
+      "features": [
+        "Active Temperature Control",
+        "Farm-to-Market Transit",
+        "Express Logistics Routes"
+      ]
+    },
+    "centralPackhouse": {
+      "name": "Central Export Pack House",
+      "tag": "Grading & Packaging",
+      "stat": "50,000t / Year",
+      "location": "Meki Pack House",
+      "desc": "Standardized grading, sanitary washing, and GlobalG.A.P certified export packaging lines.",
+      "features": [
+        "Multi-Tier Optical Grading",
+        "Sanitary Washing Lines",
+        "GlobalG.A.P Export Cartons"
+      ]
+    },
+    "irrigationSchemes": {
+      "name": "Lake Ziway Irrigation Schemes",
+      "tag": "Water & Irrigation",
+      "stat": "5,910 Hectares",
+      "location": "Dembal Lake Basin",
+      "desc": "River-fed electric pumping stations and modern drip systems powering year-round cultivation.",
+      "features": [
+        "Electric River Pumping",
+        "Modern Drip Infrastructure",
+        "Year-Round Cultivation"
+      ]
+    }
+  }
+}

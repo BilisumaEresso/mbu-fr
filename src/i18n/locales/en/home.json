@@ -1,0 +1,238 @@
+{
+  "hero": {
+    "title": "Trusted Ethiopian fruit & vegetable cooperative since 2002.",
+    "desc": "Meki Batu Union unites 135 primary cooperatives and 8,089 member farmers in Oromia, Ethiopia. We cultivate and distribute premium, GlobalG.A.P certified fresh produce and licensed seeds worldwide.",
+    "ctaProducts": "Explore Our Products",
+    "ctaAbout": "Our Cooperative Model",
+    "stats": {
+      "farmers": "Member Farmers",
+      "coops": "Primary Cooperatives",
+      "ha": "Irrigated Land",
+      "capital": "ETB Own Capital"
+    },
+    "images": {
+      "aerial": "Aerial view of irrigated farmland near Lake Ziway",
+      "fertile": "Fertile Ethiopian agricultural land during golden hour",
+      "farmer": "Cooperative farmer harvesting fresh produce",
+      "women": "Women farmers working in cooperative fields",
+      "buyer": "Export quality produce being sorted and packed"
+    },
+    "storyBadge": "Our Story • Meki Batu Union",
+    "videoTitle": "Meki Batu Union Story Video",
+    "locationBadge": "Meki, Oromia"
+  },
+  "bento": {
+    "tag": "Produce Directory",
+    "title": "Export-Grade Ethiopian Produce",
+    "desc": "Grown in the volcanic soils of the Great Rift Valley under GlobalG.A.P certified standards.",
+    "viewCatalog": "View full crop catalog",
+    "items": {
+      "tomatoes": { "name": "Rift Valley Tomatoes", "tag": "Fresh, export grade" },
+      "onions": { "name": "Red Onions", "tag": "Bulk and retail" },
+      "peppers": { "name": "Green Peppers", "tag": "Seasonal" },
+      "potato": { "name": "Highland Potatoes", "tag": "Year-round" },
+      "papaya": { "name": "Fresh Papaya", "tag": "Seasonal harvest" },
+      "seeds": { "name": "Certified Hybrid Seeds", "tag": "Official License" }
+    }
+  },
+  "process": {
+    "badge": "End-to-End Supply Chain",
+    "badgeFlow": "Farm to Market Flow",
+    "title": "From Rift Valley Farms to Global Tables",
+    "desc": "A fully traceable 4-stage cold chain connecting 135 primary cooperatives to domestic consumers and international buyers.",
+    "buyersLink": "Learn how to source our produce as a buyer",
+    "ariaLabel": "Supply Chain Process",
+    "swipeHint": "Swipe to explore 4-stage pipeline",
+    "steps": [
+      {
+        "number": "01",
+        "phase": "Intake & Grading",
+        "location": "Primary Co-ops",
+        "icon": "verified",
+        "title": "Intake & Calibration",
+        "tag": "135 Primary Co-ops",
+        "description": "Harvested produce arrives from 135 member cooperatives and is immediately inspected, sorted, and calibrated into export and domestic grades.",
+        "highlights": [
+          "8,089 Member Farmers",
+          "Multi-tier size & grade calibration"
+        ],
+        "stat": { "value": "135", "label": "Primary Co-ops" }
+      },
+      {
+        "number": "02",
+        "phase": "Pre-Cooling & Pack House",
+        "location": "Meki Central Hub",
+        "icon": "inventory_2",
+        "title": "Post-Harvest Precooling",
+        "tag": "Rapid Cold Aggregation",
+        "description": "Swift pre-cooling removes field heat within hours of harvest, locking in nutritional value, firm texture, and extended post-harvest freshness.",
+        "highlights": [
+          "Field-heat rapid removal",
+          "Farm-gate batch traceability"
+        ],
+        "stat": { "value": "5,910 ha", "label": "Irrigated Land" }
+      },
+      {
+        "number": "03",
+        "phase": "Hygiene & Quality Assurance",
+        "location": "Certified Processing Line",
+        "icon": "sanitizer",
+        "title": "Sanitary Washing & QA",
+        "tag": "GlobalG.A.P Certified",
+        "description": "Produce undergoes sanitized washing, residue testing, and rigorous QA inspection adhering strictly to GlobalG.A.P compliance.",
+        "highlights": [
+          "Zero chemical residue testing",
+          "Purified water washing lines"
+        ],
+        "stat": { "value": "100%", "label": "Food Safety Verified" }
+      },
+      {
+        "number": "04",
+        "phase": "Packaging & Global Dispatch",
+        "location": "Addis Ababa & Air Freight",
+        "icon": "local_shipping",
+        "title": "Cold Logistics & Export",
+        "tag": "Direct Off-Taking",
+        "description": "Packed into ventilated export cartons and dispatched via refrigerated transport to 5 Addis retail outlets and international air freight.",
+        "highlights": [
+          "5 Addis Ababa retail storefronts",
+          "Direct European & airline export"
+        ],
+        "stat": { "value": "50k+ t", "label": "Annual Volume" }
+      }
+    ]
+  },
+  "resources": {
+    "tag": "Physical Infrastructure & Assets",
+    "title": "Modern Agro-Infrastructure",
+    "desc": "Temperature-controlled facilities, refrigerated transport, and modern irrigation driving high yields and low post-harvest loss.",
+    "exploreAll": "Explore all facilities & specs",
+    "items": {
+      "coldStorage": {
+        "name": "Cold Storage & Warehousing",
+        "stat": "2,000 Tonnes",
+        "desc": "Multi-chamber temperature-controlled cold rooms and warehouses serving 135 cooperatives."
+      },
+      "fleet": {
+        "name": "Refrigerated Transport Fleet",
+        "stat": "18+ Fleet & Tractors",
+        "desc": "Insulated cold-chain trucks and farm tractors ensuring farm-gate freshness to final market."
+      },
+      "packhouse": {
+        "name": "Central Export Pack House",
+        "stat": "50,000t / Year",
+        "desc": "Standardized grading, sanitary washing, and GlobalG.A.P certified export packaging lines."
+      },
+      "irrigation": {
+        "name": "Lake Ziway Irrigation Schemes",
+        "stat": "5,910 Hectares",
+        "desc": "River-fed electric pumping stations and modern drip systems powering year-round cultivation."
+      }
+    }
+  },
+  "documentation": {
+    "tag": "Documentation",
+    "title": "Key Resources & Downloads",
+    "companyProfile": {
+      "title": "Company Profile",
+      "desc": "History, cooperative governance, and operational capacity overview.",
+      "download": "Download Meki Batu Union Company Profile (PDF)"
+    },
+    "impactReports": {
+      "desc": "GlobalG.A.P certification and official seed producer documentation."
+    },
+    "products": {
+      "desc": "Full specifications for fresh produce and certified vegetable seeds."
+    }
+  },
+  "audience": {
+    "farmers": {
+      "tag": "For Producers",
+      "title": "Are you a farmer or primary cooperative?",
+      "desc": "Join 135 member cooperatives to access certified seeds, modern tractor mechanization, collective bargaining power, and reliable market off-take.",
+      "link": "Learn about membership & benefits"
+    },
+    "buyers": {
+      "tag": "For Off-Takers",
+      "title": "Are you a commercial buyer or exporter?",
+      "desc": "Source export-quality Rift Valley tomatoes, red onions, papaya, and green beans with certified GlobalG.A.P traceability and year-round volume.",
+      "link": "Submit an export inquiry & RFQ"
+    }
+  },
+  "testimonials": {
+    "tag": "Community & Impact",
+    "title": "Voices From Our Cooperative Network",
+    "desc": "Hear from member farmers, cooperative leaders, and commercial trade partners across Ethiopia and Europe.",
+    "badge": "Testimonials",
+    "ariaLabelPrev": "Previous testimonials",
+    "ariaLabelNext": "Next testimonials",
+    "verifiedPartner": "Verified Cooperative Partner",
+    "ratingAriaLabel": "5 out of 5 stars",
+    "goToSlide": "Go to slide {{slide}}",
+    "items": {
+      "t1": {
+        "role": "Senior Procurement Lead",
+        "org": "Nordic Fresh Imports",
+        "location": "Copenhagen, Denmark",
+        "category": "Export Buyer",
+        "quote": "Working with Meki Batu Union has meant consistent quality and reliable export volumes season after season. Their GlobalG.A.P compliance gives our retail buyers total confidence."
+      },
+      "t2": {
+        "role": "Primary Co-op Chairman",
+        "org": "Batu Farmers Co-op",
+        "location": "Dugda Woreda, Oromia",
+        "category": "Co-op Member",
+        "quote": "The union has helped our 350+ cooperative members access fair minimum pricing, agronomy workshops, and direct cold-chain transport that protects our harvests."
+      },
+      "t3": {
+        "role": "Sourcing Director",
+        "org": "EuroAgri Trade Group",
+        "location": "Marseille, France",
+        "category": "Export Buyer",
+        "quote": "Their Rift Valley tomatoes and green beans set the benchmark for Ethiopian produce exports. Full batch traceability from field to air-freight packing."
+      },
+      "t4": {
+        "role": "Women Agronomists Lead",
+        "org": "Meki Valley Produce Group",
+        "location": "East Shewa Zone",
+        "category": "Co-op Member",
+        "quote": "Through Meki Batu Union’s capacity building and seed programs, female farmers in our district have doubled their yield and established independent farm revenues."
+      },
+      "t5": {
+        "role": "Category Director",
+        "org": "Global Harvest Logistics",
+        "location": "Rotterdam, Netherlands",
+        "category": "Export Buyer",
+        "quote": "Their GlobalG.A.P certification gave us total confidence to build a long-term sourcing relationship. Reliable logistics and prompt export documentation."
+      },
+      "t6": {
+        "role": "Vegetable Seed Producer",
+        "org": "Adami Tulu Co-op Network",
+        "location": "Ziway / Adami Tulu",
+        "category": "Co-op Member",
+        "quote": "Access to high-germination hybrid seeds and union mechanization equipment transformed our harvest efficiency. We now export grade-A onions consistently."
+      }
+    }
+  },
+  "partners": {
+    "certTag": "Quality Standards",
+    "certTitle": "Certified Excellence & Verified Quality",
+    "certDesc": "Our operations meet strict international food safety, environmental, and traceability standards.",
+    "partnersTag": "Global Network",
+    "partnersTitle": "Our Strategic & Development Partners",
+    "partnersDesc": "Collaborating with national institutions, international development agencies, and market leaders to transform Ethiopian agriculture.",
+    "viewAll": "View all partners on About page",
+    "logoAlt": "{{name}} logo",
+    "logoTitle": "{{name}} ({{category}})"
+  },
+  "leadership": {
+    "tag": "Democratic Leadership",
+    "title": "Executive Leadership & Management",
+    "desc": "Experienced directors and department heads steering 135 primary member cooperatives and 8,089 farmers towards market excellence, sustainable agronomy, and reliable export supply.",
+    "viewGovernance": "View Full Governance & Org Chart",
+    "emailAria": "Send email to {{name}}",
+    "emailTitle": "Email {{name}}: {{email}}",
+    "badge": "Union Leadership",
+    "swipeHint": "Swipe to browse leadership ({{count}})"
+  }
+}

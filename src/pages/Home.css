@@ -889,7 +889,9 @@
 .home-partners__eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  justify-content: center;
+  vertical-align: middle;
+  gap: 8px;
   color: var(--secondary);
   background: rgba(184, 74, 34, 0.09);
   padding: 6px 16px;
@@ -899,7 +901,22 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  line-height: 1;
   margin-bottom: var(--space-3);
+}
+
+.home-partners__eyebrow-icon {
+  font-size: 16px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.home-partners__eyebrow-text {
+  display: inline-block;
+  line-height: 1;
 }
 
 .home-partners__title {
@@ -1301,5 +1318,6 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 
 

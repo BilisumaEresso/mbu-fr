@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "eyebrow": "Waajjira Muummee fi Dameewwan",
+    "title": "Yuniyeenii Maqii Baatuu Qunnamaa",
+    "desc": "Waajjira muummee keenya kan Magaalaa Maqiitti argamu qunnamaa, yookiin dukaannoota keenya Finfinnee keessa jiran shananiitti daawwadhaa.",
+    "badge": "Waajjira Muummee Maqii & Wiirtuu Finfinnee"
+  },
+  "info": {
+    "hqTitle": "Waajjira Muummee & Wiirtuu Saamsamaa",
+    "hqAddress": "Magaalaa Maqii, Aanaa Dugda, Godina Shawaa Bahaa, Oromiyaa, Itoophiyaa (Finfinnee irraa KM 138 gara kibbaatti)",
+    "address": "Finfinnee irraa KM 138 gara kibbaatti Daandii Hawaasaa irratti",
+    "poBox": "L.S.P: 44, Maqii, Itoophiyaa",
+    "viewMaps": "Google Maps irratti bani",
+    "directLines": "Sarara Kallattii fi Quunnamtii",
+    "phone": "Bilbila Waajjiraa (PBX)",
+    "mobile": "Mobayilii / WhatsApp",
+    "fax": "Sarara Faaksii",
+    "email": "Gaaffilee Waliigalaa",
+    "emailTitle": "Gaaffilee Kallattii",
+    "phoneTitle": "Bilbila & Moobaayila",
+    "hoursTitle": "Sa'aatii Hojii",
+    "hoursValue": "Wiixata – Jimaata: 8:00 AM – 5:30 PM (EAT) | Sanbata: 8:00 AM – 12:30 PM",
+    "imageAlt": "Biyyoo gabbataa qonnaa omisha magariisa waliin Maqii keessatti"
+  },
+  "form": {
+    "tag": "Ergaa Ergaa",
+    "title": "Garee Keenya Qunnamaa",
+    "desc": "Bittaa daldalaa, miseensummaa waldaa, yookiin tumsa waliigalaatiif gaaffii keessan asumaan nuuf ergaa.",
+    "name": "Maqaa Keessan",
+    "namePlaceholder": "fkn. Caalaa Mokonnin",
+    "email": "Teessoo Imeelii",
+    "emailPlaceholder": "fkn. chala@example.com",
+    "subject": "Dhimma / Mata-duree",
+    "subjectPlaceholder": "fkn. Gaaffii Bittaa / Tumsasa Daldalaa",
+    "subjects": {
+      "select": "Mata-duree filadhaa...",
+      "export": "Gaaffii Daldalaa & Ergaa Alaa",
+      "membership": "Miseensummaa Waldaa & Galteewwan",
+      "media": "Miidiyaa, Qorannoo & Tumsa",
+      "other": "Gaaffilee Biroo"
+    },
+    "message": "Ergaa Keessan",
+    "messagePlaceholder": "Akkamitti isin gargaaruu dandeenya? Ibsa gahaa nuuf dhiyeessaa...",
+    "submit": "Ergaa Ergaa",
+    "submitting": "Ergamaa jira...",
+    "success": {
+      "title": "Ergaan Keessan Nu Ga'eera",
+      "desc": "Nu qunnamuu keessaniif galatoomaa. Bakka bu'aan keenya guyyoota hojii 1–2 keessatti deebii isiniif kenna."
+    },
+    "toasts": {
+      "success": "Galatoomaa — dhihootti deebii isiniif kennina.",
+      "fail": "Ergaan hin ergamne. Mee irra deebi'aa yaalaa.",
+      "error": "Ergaan hin ergamne. Mee irra deebi'aa yaalaa.",
+      "network": "Rakkoo neetwoorkii. Mee irra deebi'aa yaalaa."
+    }
+  }
+}

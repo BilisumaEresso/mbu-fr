@@ -1,18 +1,22 @@
+import { useTranslation } from 'react-i18next'
 import './WhatsAppButton.css'
 
 const WHATSAPP_NUMBER = '251904686868'
-const DEFAULT_MESSAGE = encodeURIComponent("Hello Meki Batu Union, I'd like to inquire about...")
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${DEFAULT_MESSAGE}`
 
 function WhatsAppButton() {
+  const { t } = useTranslation('common')
+  const defaultMsg = t('whatsapp.defaultMessage', "Hello Meki Batu Union, I'd like to inquire about...")
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(defaultMsg)}`
+  const ariaLabel = t('whatsapp.ariaLabel', 'Chat with us on WhatsApp')
+
   return (
     <a
-      href={WHATSAPP_URL}
+      href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-btn"
-      aria-label="Chat with us on WhatsApp"
-      title="Chat with us on WhatsApp"
+      aria-label={ariaLabel}
+      title={ariaLabel}
     >
       <svg
         className="whatsapp-btn__icon"

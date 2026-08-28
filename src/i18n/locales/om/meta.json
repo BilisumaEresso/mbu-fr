@@ -1,0 +1,50 @@
+{
+  "home": {
+    "title": "Yuniyeenii Maqii Baatuu | Waldaa Hojii Gamtaa Kuduraa fi Muduraa Itoophiyaa",
+    "description": "Yuniyeenii Maqii Baatuu oomishaalee itti-fufiinsa qabanii fi sadarkaa daldala alaa addunyaatiif dhiyeessuuf waldaalee 135 fi qonnaan bultoota 8,089 Sulula Qiinxamaa keessatti jajjabeessa."
+  },
+  "about": {
+    "title": "Waa'ee Keenya | Yuniyeenii Maqii Baatuu",
+    "description": "Waa'ee seenaa Yuniyeenii Maqii Baatuu bara 1994 irraa eegalee, waldaalee 135, qonnaan bultoota 8,089, waraqaa ragaa GlobalG.A.P fi geggeessummaa qonna itti-fufiinsa qabuuf kutate baraa."
+  },
+  "products": {
+    "title": "Oomishaalee Keenya | Yuniyeenii Maqii Baatuu",
+    "description": "Kuusaa oomishaalee daldala alaa Itoophiyaa tamaatii, shunkurtaa diimaa, qaaraa, dinicha baddaa, paappaayyaa haaraa, fi sanyii filatamaa daawwadhaa."
+  },
+  "farmers": {
+    "title": "Qonnaan Bultootaaf | Yuniyeenii Maqii Baatuu",
+    "description": "Waldaalee miseensa 135 keessatti qonnaan bultoota 8,089f faayidaa miseensummaa, tajaajila tiraaktaraa, raabsa sanyii filatamaa, fi leenjii ogummaa qonnaa argadhaa."
+  },
+  "buyers": {
+    "title": "Bittoota & Ergitoota Alaatiif | Yuniyeenii Maqii Baatuu",
+    "description": "Kuduraa, muduraa fi sanyiilee filatamoo waraqaa ragaa GlobalG.A.P qaban bittaa. Tamsaasa qabbaneessaa amanamaa, hordoffii guutuu, fi dhiyeessii gahaa."
+  },
+  "retailOutlets": {
+    "title": "Dukaannoota Qinsharraa | Yuniyeenii Maqii Baatuu",
+    "description": "Finfinnee keessatti dukaannoota qinsharraa seera qabeessa shan Yuniyeenii Maqii Baatuu oomisha haaraa kallattiin qonna irraa dhiyeessan argadhaa."
+  },
+  "news": {
+    "title": "Oduu & Odeeffannoo Haaraa | Yuniyeenii Maqii Baatuu",
+    "description": "Odeeffannoowwan haamaa oomishaa, waliigalteewwan daldalaa, sagantaalee hawaasaa, fi bu'uuraalee misoomaa Yuniyeenii Maqii Baatuu irraa dubbisaa."
+  },
+  "impact": {
+    "title": "Dhiibbaa Keenya | Yuniyeenii Maqii Baatuu",
+    "description": "Itoophiyaa keessatti waldaalee 135 fi qonnaan bultoota 8,089 keessatti qonna itti-fufiinsa qabu, cimina diinagdee, fi guddina hawaasaa akkamitti akka fidu ilaalaa."
+  },
+  "contact": {
+    "title": "Nu Qunnamaa | Yuniyeenii Maqii Baatuu",
+    "description": "Waajjira muummee Yuniyeenii Maqii Baatuu magaalaa Maqii, Oromiyaa, Itoophiyaa qunnamaa. Daldala alaa, miseensummaa, yookiin gurgurtaaf nu qunnamaa."
+  },
+  "privacyPolicy": {
+    "title": "Imaammata Iddoo Iccitii | Yuniyeenii Maqii Baatuu",
+    "description": "Waldaan Hojii Gamtaa Oomishtoota Kuduraa fi Muduraa Maqii Baatuu odeeffannoo dhuunfaa keessan akkamitti akka walitti qabu, itti fayyadamuu fi eegu."
+  },
+  "termsOfService": {
+    "title": "Waliigaltee Tajaajilaa | Yuniyeenii Maqii Baatuu",
+    "description": "Ulaagaalee yeroo marsariitii Waldaa Hojii Gamtaa Oomishtoota Kuduraa fi Muduraa Maqii Baatuu fayyadamtan hojiirra oolan."
+  },
+  "notFound": {
+    "title": "Fuulli Hin Argamne | Yuniyeenii Maqii Baatuu",
+    "description": "Fuulli isin barbaaddan marsariitii Yuniyeenii Maqii Baatuu irratti hin argamne."
+  }
+}

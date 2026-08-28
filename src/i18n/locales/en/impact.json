@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "title": "Cultivating Growth, Sustaining Communities",
+    "desc": "Empowering 8,089 member farmers across 135 cooperatives with modern irrigation, inputs, and guaranteed market access across Ethiopia's Great Rift Valley.",
+    "badge": "Empowering 8,089 Member Farmers",
+    "viewMetrics": "View Impact Metrics",
+    "impactReports": "Impact Reports",
+    "imageAlt": "Vibrant thriving agricultural field in Ethiopia during golden hour"
+  },
+  "metrics": {
+    "title": "Measurable Impact",
+    "desc": "Key performance indicators reflecting cooperative strength, agricultural footprint, and community prosperity.",
+    "stats": {
+      "farmers": "Member Farmers",
+      "coops": "Primary Cooperatives",
+      "capital": "ETB Own Capital",
+      "ha": "Irrigated Land",
+      "districts": "Operating Districts",
+      "volume": "Annual Produce Volume"
+    },
+    "imageAlt": "Women farmers in cooperative fields in Ethiopia"
+  },
+  "pillars": {
+    "tag": "Core Pillars",
+    "title": "Sustainable Impact Pillars",
+    "desc": "Our long-term commitment to ecological conservation, female empowerment, and cooperative economic growth.",
+    "pillar1": {
+      "title": "Environmental Stewardship",
+      "desc": "Promoting organic fertilization, drip efficiency, and Lake Ziway watershed conservation."
+    },
+    "pillar2": {
+      "title": "Women in Agriculture",
+      "desc": "Micro-finance packages and leadership training empowering female cooperative members."
+    },
+    "pillar3": {
+      "title": "Economic Resilience",
+      "desc": "Guaranteed price floors and transparent annual dividend sharing shielding smallholders from market volatility."
+    }
+  },
+  "reports": {
+    "tag": "Accountability",
+    "title": "Publications & Audit Reports",
+    "desc": "Download our certified annual impact assessments and financial transparency documents.",
+    "downloadPdf": "Download PDF",
+    "items": [
+      {
+        "title": "Annual Impact Report 2023",
+        "desc": "Comprehensive overview of operational output and community initiatives."
+      },
+      {
+        "title": "GlobalG.A.P Certification Document",
+        "desc": "Official validation of safe and sustainable agricultural practices."
+      },
+      {
+        "title": "Financial Transparency Review Q4",
+        "desc": "Detailed financial breakdown and cooperative dividend distribution."
+      }
+    ]
+  }
+}

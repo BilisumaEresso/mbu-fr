@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "title": "Tokkummaan caalaatti cima. Fuuldura qonna Itoophiyaa guddisuu.",
+    "desc": "Yuniyeenii Maqii Baatuu waldaalee bu'uuraa 135 keessatti qonnaan bultoota miseensa 8,089 sanyii filatamaa, tajaajila tiraaktaraa ammayyaa, liqii haqa-qabeessaa, fi gabaa oomishaa mirkanaa'e dhiyeessa.",
+    "badge": "Waldaalee Bu'uuraa 135",
+    "viewBenefits": "Tajaajiloota Miseensotaa Ilaalaa",
+    "joinCoop": "Adeemsa Miseensummaa",
+    "imageAlt": "Qonnaan bultoota Itoophiyaa mana kuusaa oomishaa qonnaa ogummaa keessatti"
+  },
+  "services": {
+    "tag": "Deeggarsa Guutuu",
+    "title": "Tajaajiloota Waldaa & Deeggarsa Qonnaan Bulaa",
+    "desc": "Galteewwan qonnaa qulqullina olaanaa irraa eegalee hanga walitti-qabaa oomishaatti, yuuniyeeniin keenya oomisha fi bu'aa qonnaan bultootaa dabaluuf hojjeta.",
+    "items": {
+      "input": {
+        "title": "Raabsa Galtee Qonnaa",
+        "desc": "Sanyiilee filatamoo biqilummaan isaanii olaanaa ta'e, xaa'oo, fi qorichoota eegumsa biqiltootaa gatii deeggarsa qabuun dhiyeessuu."
+      },
+      "credit": {
+        "title": "Deeggarsa Liqii Faayinaansii",
+        "desc": "Waqtii oomisha qonnaan bulaa irratti hundaa'uun liqii maayikiroo fi tajaajila faayinaansii mijeessuu."
+      },
+      "market": {
+        "title": "Walitti-qabaa fi Dhiyeessii Gabaa",
+        "desc": "Oomisha miseensotaa gurgurtoota biyya keessaa fi bittoota daldala alaa waliin kallattiin walqunnamsiisuu."
+      },
+      "mechanization": {
+        "title": "Makaanayizeeshinii Qonnaa",
+        "desc": "Tajaajila tiraaktaraa waliinii, suphaa paampii bishaanii, fi sirna jallisii ammayyaa diriirsuu."
+      },
+      "storage": {
+        "title": "Kuusaa Qabbaneessaa & Loojistiiksii",
+        "desc": "Qisaasama hir'isuuf qulqulleessuu, qabbaneessuu fi geejjiba to'annoo qabbanaa qabu dhiyeessuu."
+      },
+      "training": {
+        "title": "Leenjii Ogummaa Qonnaa",
+        "desc": "Ulaagaalee GlobalG.A.P, fayyummaa biyyoo, fi hojimaata qonna uumamaa irratti leenjii itti-fufiinsaan kennuu."
+      }
+    }
+  },
+  "steps": {
+    "tag": "Tarkaanfiiwwan Tokko Tokkoon",
+    "title": "Akkaataa Yuniyeenii Maqii Baatuutti Makaman",
+    "desc": "Shawaa Bahaa fi Arsiitti hidhata waldaalee bu'uuraa 135 keenyatti makamaa.",
+    "step1": {
+      "number": "01",
+      "title": "Waldaa Bu'uuraa Galmeessisuu",
+      "desc": "Qonnaan bultoota naannoo qindeessuun qajeelfama qonnaa naannichaa jalatti waldaa bu'uuraa seera qabeessa ta'e ijaaruu."
+    },
+    "step2": {
+      "number": "02",
+      "title": "Sanadoota Dhiyeessuu",
+      "desc": "Waraqaa ragaa galmee, tarree miseensota hojiirra jiranii, fi xalayaa seensa yuuniyeenii dhiyeessuu."
+    },
+    "step3": {
+      "number": "03",
+      "title": "Gamaaggama Boordii",
+      "desc": "Hoggansi yuuniyeenichaa bal'ina lafa qonnaa, argama bishaanii, fi qophii miseensotaa dirreerratti gamaggamu."
+    },
+    "step4": {
+      "number": "04",
+      "title": "Miseensummaa Guutuu",
+      "desc": "Galteewwan yuuniyeenichaa, konkolaattota, kuusaa qabbaneessaa, fi gabaa kallattii daldala alaatti battalatti fayyadamuu."
+    },
+    "imageAlt": "Leenjii waldaa dirree irratti Itoophiyaa keessatti"
+  },
+  "faq": {
+    "title": "Gaaffilee Yeroo Baay'ee Gaafataman Qonnaan Bultootaaf",
+    "desc": "Waa'ee miseensummaa, galteewwan, deeggarsa liqii, fi ulaagaalee hojii irratti deebii argadhaa.",
+    "items": [
+      {
+        "question": "Waldaaleen bu'uuraa akkamitti yuniyeenii Maqii Baatuutti makamu?",
+        "answer": "Waldaaleen bu'uuraa Godinaalee Shawaa Bahaa fi Arsiitti argaman (Dugda, Adaamii Tulluu, Booraa, Zeway Dugda, Adaamaa, fi Doodota Siree) sanada galmee fi tarree miseensotaa waajjira yuuniyeenichaatti dhiyeessuun iyyachuu danda'u."
+      },
+      {
+        "question": "Yuuniyeenichi miseensotaaf deeggarsa akkamii dhiyeessa?",
+        "answer": "Sanyii filatamaa fi xaa'oo raabsuu, liqii qonnaa mijeessuu, tajaajila tiraaktaraa, kuusaa qabbaneessaa, fi leenjii ogummaa qonnaa GlobalG.A.P ni dhiyeessina."
+      },
+      {
+        "question": "Yuuniyeenicha keessa waldaaleen fi qonnaan bultoonni meeqa jiru?",
+        "answer": "Yuniyeenii Maqii Baatuu lafa hektaara 5,910 irratti waldaalee bu'uuraa 135 fi maatiiwwan qonnaan bulaa miseensa 8,089 tokkoomsa."
+      },
+      {
+        "question": "Ulaagaaleen seensa miseensummaa maali?",
+        "answer": "Ulaagaaleen miseensummaa fi qooda kaappitaalaa gamaaggama boordii irratti murtaa'u. Qajeelfama ammaa argachuuf waajjira keenya qunnamaa."
+      }
+    ]
+  },
+  "memberLoginToast": "Seensi miseensotaa qophiirra jira. Tajaajilli marsariitii marsaa lammaffaa keessatti hojiirra oola.",
+  "portal": {
+    "title": "Poortaalii Miseensotaa Dijitaalaa",
+    "badge": "Misooma Marsaa 2ffaa - Dhiyeenyatti Dhufa",
+    "desc": "Waltajjii dijitaalaa eegumsa qabu kan waldaaleen miseensaa dhiyeessii oomishaa hordofuuf, gatii gabaa ilaaluuf, galtee gaafachuu fi herrega yuuniyeenii to'achuuf gargaaru hojjetamaa jira.",
+    "button": "Poortaalii Miseensotaa Seeni"
+  }
+}

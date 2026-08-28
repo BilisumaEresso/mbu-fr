@@ -1,7 +1,29 @@
+import { useTranslation } from 'react-i18next'
 import './FacilityCard.css'
 
+const KEY_MAP = {
+  'central-cold-hub': 'centralColdHub',
+  'refrigerated-fleet': 'refrigeratedFleet',
+  'central-packhouse': 'centralPackhouse',
+  'irrigation-schemes': 'irrigationSchemes',
+}
+
 function FacilityCard({ resource }) {
+  const { t } = useTranslation(['common'])
+
   if (!resource) return null
+
+  const key = KEY_MAP[resource.id]
+  const name = key ? t(`common:facilities.${key}.name`, resource.name) : resource.name
+  const tag = key ? t(`common:facilities.${key}.tag`, resource.tag) : resource.tag
+  const stat = key ? t(`common:facilities.${key}.stat`, resource.stat) : resource.stat
+  const location = key ? t(`common:facilities.${key}.location`, resource.location) : resource.location
+  const desc = key ? t(`common:facilities.${key}.desc`, resource.desc) : resource.desc
+  const features = key
+    ? (Array.isArray(t(`common:facilities.${key}.features`, { returnObjects: true }))
+        ? t(`common:facilities.${key}.features`, { returnObjects: true })
+        : resource.features)
+    : resource.features
 
   return (
     <article className="facility-card">
@@ -9,7 +31,7 @@ function FacilityCard({ resource }) {
       <div className="facility-card__media">
         <img
           src={resource.image}
-          alt={resource.name}
+          alt={name}
           className="facility-card__img"
           loading="lazy"
         />
@@ -17,7 +39,7 @@ function FacilityCard({ resource }) {
 
         {/* Top Badges: Category Tag & Icon */}
         <div className="facility-card__top-bar">
-          <span className="facility-card__tag">{resource.tag}</span>
+          <span className="facility-card__tag">{tag}</span>
           {resource.icon && (
             <div className="facility-card__icon-badge" aria-hidden="true">
               <span className="material-symbols-outlined">{resource.icon}</span>
@@ -26,10 +48,10 @@ function FacilityCard({ resource }) {
         </div>
 
         {/* Bottom Stat Highlight Badge */}
-        {resource.stat && (
+        {stat && (
           <div className="facility-card__stat-badge">
             <span className="material-symbols-outlined text-xs">verified</span>
-            <span className="facility-card__stat-val">{resource.stat}</span>
+            <span className="facility-card__stat-val">{stat}</span>
           </div>
         )}
       </div>
@@ -39,17 +61,17 @@ function FacilityCard({ resource }) {
         {/* Location Row */}
         <div className="facility-card__location">
           <span className="material-symbols-outlined facility-card__loc-icon">location_on</span>
-          <span>{resource.location}</span>
+          <span>{location}</span>
         </div>
 
         {/* Title & Description */}
-        <h3 className="facility-card__title">{resource.name}</h3>
-        <p className="facility-card__desc">{resource.desc}</p>
+        <h3 className="facility-card__title">{name}</h3>
+        <p className="facility-card__desc">{desc}</p>
 
         {/* Feature Highlights Pills */}
-        {resource.features && resource.features.length > 0 && (
+        {features && features.length > 0 && (
           <div className="facility-card__features">
-            {resource.features.map((feature, idx) => (
+            {features.map((feature, idx) => (
               <span key={idx} className="facility-card__feature-pill">
                 <span className="material-symbols-outlined text-xs">check</span>
                 {feature}

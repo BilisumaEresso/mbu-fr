@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "title": "Direct from Our Farms to You.",
+    "desc": "Meki Batu Union operates five official retail stores across Addis Ababa, providing urban households with fresh, daily harvested produce directly from member farms.",
+    "badge": "5 Addis Ababa Locations",
+    "viewLocations": "View Locations",
+    "contactSales": "Contact Retail Sales",
+    "imageAlt": "Pristine fresh produce display in a modern retail setting"
+  },
+  "locations": {
+    "title": "Find an Outlet",
+    "desc": "Browse store locations below to check opening hours, view produce specialties, and get instant Google Maps navigation.",
+    "viewDetailsMap": "View Details & Map",
+    "openGoogleMaps": "Open in Google Maps",
+    "operatingHours": "Operating Hours",
+    "directPhone": "Direct Phone",
+    "produceArrivals": "Key Produce & Daily Specialties",
+    "getDirections": "Get Directions",
+    "callBranch": "Call Branch",
+    "labels": {
+      "hours": "Hours",
+      "phone": "Phone",
+      "manager": "Store Manager",
+      "specialties": "Key Produce & Specialties",
+      "viewDetails": "View Details & Map",
+      "openMaps": "Open in Google Maps",
+      "storeSpecs": "Store Specifications",
+      "address": "Address",
+      "status": "Status",
+      "openNow": "Open Now",
+      "closeModal": "Close Store Details"
+    },
+    "ariaViewDetails": "View details and map for {{name}}",
+    "mapTitle": "Map showing {{name}}"
+  },
+  "network": {
+    "title": "Addis Ababa Distribution Hub",
+    "desc": "Daily refrigerated supply runs maintain field-fresh quality across all our retail branches."
+  },
+  "freshProduce": {
+    "tag": "Guaranteed Freshness",
+    "title": "Direct From Member Cooperatives to Addis Ababa",
+    "desc": "By cutting out intermediary brokers, Meki Batu Union ensures that farmers receive fair value while urban consumers get crisp, freshly harvested produce every single morning.",
+    "perk1Title": "Farm-to-Store in Under 24 Hours",
+    "perk1Desc": "Harvested in the Rift Valley, pre-cooled at our Meki hub, and delivered before dawn to Addis stores.",
+    "perk2Title": "Fair & Transparent Pricing",
+    "perk2Desc": "Direct cooperative distribution eliminates middleman markups, keeping prices affordable.",
+    "perk3Title": "GlobalG.A.P Food Safety",
+    "perk3Desc": "Zero pesticide residues and sanitary handling verified from farm gate to checkout counter.",
+    "dailyDispatchBadge": "Refrigerated Fleet Dispatched Daily",
+    "imageAlt": "Fresh produce delivery arrives at an Addis Ababa retail store"
+  },
+  "cta": {
+    "title": "Wholesale & Commercial Institutional Supply",
+    "desc": "Supplying hotels, restaurants, supermarkets, and institutional kitchens across Addis Ababa with bulk farm-fresh produce.",
+    "button": "Contact Commercial Sales"
+  }
+}

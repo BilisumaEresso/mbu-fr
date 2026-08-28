@@ -1,251 +1,200 @@
 import { useState, useRef, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { teamMembers } from '../../data/team.js'
 import './OrgChart.css'
 
-const ORG_DATA = {
+const getOrgData = (t) => ({
+
   ga: {
     id: 'ga',
-    title: 'General Assembly',
-    sub: 'Supreme Governing Body',
-    reportsTo: 'Delegate representation of 135 member primary cooperatives',
+    title: t('roles.ga.title'),
+    sub: t('roles.ga.sub'),
+    reportsTo: t('roles.ga.reportsTo'),
     icon: 'groups',
     theme: 'green',
     ancestors: [],
-    desc: 'The supreme decision-making authority of Meki Batu Union, composed of elected delegate representatives from all 135 primary member cooperatives across East Shewa and Arsi zones.',
-    responsibilities: [
-      'Supreme statutory and strategic authority over union policy and bylaws',
-      'Elects and oversees the Board of Directors and the Control Committee',
-      'Approves annual union audit reports and member dividend allocations',
-    ],
+    desc: t('roles.ga.desc'),
+    responsibilities: t('roles.ga.responsibilities', { returnObjects: true }),
   },
   bod: {
     id: 'bod',
-    title: 'Board of Directors',
-    sub: 'Elected Leadership',
-    reportsTo: 'Reports directly to General Assembly',
+    title: t('roles.bod.title'),
+    sub: t('roles.bod.sub'),
+    reportsTo: t('roles.bod.reportsTo'),
     icon: 'gavel',
     theme: 'green',
     ancestors: ['ga'],
-    desc: 'Elected cooperative leaders responsible for strategic union governance, long-term policy formulation, capital investment approvals, and hiring/oversight of executive management.',
-    responsibilities: [
-      'Strategic governance, multi-year roadmaps, and capital investment decisions',
-      'Appointment, performance evaluation, and oversight of the General Manager',
-      'Safeguards cooperative assets, member equity, and institutional reputation',
-    ],
+    desc: t('roles.bod.desc'),
+    responsibilities: t('roles.bod.responsibilities', { returnObjects: true }),
   },
   cc: {
     id: 'cc',
-    title: 'Control Committee',
-    sub: 'Internal Oversight',
-    reportsTo: 'Reports independently to General Assembly',
+    title: t('roles.cc.title'),
+    sub: t('roles.cc.sub'),
+    reportsTo: t('roles.cc.reportsTo'),
     icon: 'verified_user',
     theme: 'green',
     ancestors: ['ga'],
-    desc: 'Independent oversight committee elected by members to audit financial health, enforce statutory compliance, verify cooperative bylaws, and ensure organizational transparency.',
-    responsibilities: [
-      'Independent financial and statutory compliance audits across all union units',
-      'Direct statutory reporting line to the General Assembly without management filtering',
-      'Verification of cooperative bylaws, asset registers, and procurement ethics',
-    ],
+    desc: t('roles.cc.desc'),
+    responsibilities: t('roles.cc.responsibilities', { returnObjects: true }),
   },
   gm: {
     id: 'gm',
-    title: 'General Manager',
-    sub: 'Chief Executive Officer',
-    reportsTo: 'Reports to Board of Directors',
+    title: t('roles.gm.title'),
+    sub: t('roles.gm.sub'),
+    reportsTo: t('roles.gm.reportsTo'),
     icon: 'person',
     theme: 'terracotta',
     ancestors: ['ga', 'bod'],
-    desc: 'Top executive officer accountable for overall operational management, strategic program execution, institutional partner relations, and commercial growth of the union.',
-    responsibilities: [
-      'Total leadership of union operations, commercial growth, and 8,089+ member impact',
-      'Lead institutional liaison with government ministries, UNIDO, LVIA, and commercial buyers',
-      'Direct supervision of executive support experts and the Deputy Manager',
-    ],
+    desc: t('roles.gm.desc'),
+    responsibilities: t('roles.gm.responsibilities', { returnObjects: true }),
   },
   lawyer: {
     id: 'lawyer',
-    title: 'Lawyer',
-    sub: 'Legal Advisory',
-    reportsTo: 'Reports directly to General Manager',
+    title: t('roles.lawyer.title'),
+    sub: t('roles.lawyer.sub'),
+    reportsTo: t('roles.lawyer.reportsTo'),
     icon: 'policy',
     theme: 'green',
     ancestors: ['ga', 'bod', 'gm'],
-    desc: 'Provides legal counsel, contracts management, regulatory compliance oversight, and defense of cooperative member property and commercial rights.',
-    responsibilities: [
-      'Drafts and reviews off-take supply contracts, export agreements, and supplier covenants',
-      'Defends cooperative legal standing, land leases, and asset titles in legal jurisdictions',
-      'Advises the GM on statutory labor law, cooperative regulations, and risk mitigation',
-    ],
+    desc: t('roles.lawyer.desc'),
+    responsibilities: t('roles.lawyer.responsibilities', { returnObjects: true }),
   },
   sec: {
     id: 'sec',
-    title: 'Executive Secretary',
-    sub: 'Executive Office',
-    reportsTo: 'Reports directly to General Manager',
+    title: t('roles.sec.title'),
+    sub: t('roles.sec.sub'),
+    reportsTo: t('roles.sec.reportsTo'),
     icon: 'badge',
     theme: 'green',
     ancestors: ['ga', 'bod', 'gm'],
-    desc: 'Coordinates executive office operations, board communications, official records, delegate meetings, and executive administrative workflows.',
-    responsibilities: [
-      'Maintains official archives, executive minutes, board resolutions, and delegate registry',
-      'Coordinates executive scheduling, official partner protocol, and board assemblies',
-      'Facilitates internal executive correspondence between GM and department heads',
-    ],
+    desc: t('roles.sec.desc'),
+    responsibilities: t('roles.sec.responsibilities', { returnObjects: true }),
   },
   plan: {
     id: 'plan',
-    title: 'Preparing Plan, Evaluate and Budgeting Senior Expert',
-    sub: 'Planning & Evaluation',
-    reportsTo: 'Reports directly to General Manager',
+    title: t('roles.plan.title'),
+    sub: t('roles.plan.sub'),
+    reportsTo: t('roles.plan.reportsTo'),
     icon: 'query_stats',
     theme: 'green',
     ancestors: ['ga', 'bod', 'gm'],
-    desc: 'Leads annual operational planning, capital budgeting, project feasibility analysis, performance evaluation metrics, and socio-economic impact tracking.',
-    responsibilities: [
-      'Formulates comprehensive annual operational plans and capital budget models',
-      'Conducts quarterly key performance indicator (KPI) assessments across departments',
-      'Prepares donor project feasibility studies, socio-economic impact reviews, and grant reports',
-    ],
+    desc: t('roles.plan.desc'),
+    responsibilities: t('roles.plan.responsibilities', { returnObjects: true }),
   },
   auditor: {
     id: 'auditor',
-    title: 'Internal Auditor',
-    sub: 'Audit & Compliance',
-    reportsTo: 'Reports directly to General Manager',
+    title: t('roles.auditor.title'),
+    sub: t('roles.auditor.sub'),
+    reportsTo: t('roles.auditor.reportsTo'),
     icon: 'fact_check',
     theme: 'green',
     ancestors: ['ga', 'bod', 'gm'],
-    desc: 'Conducts periodic internal operational and fiscal audits, risk assessments, inventory checks, and ensures financial discipline across all union departments.',
-    responsibilities: [
-      'Executes regular fiscal, store inventory, and procurement control audits',
-      'Identifies operational bottlenecks, financial leakages, and recommends corrective measures',
-      'Submits independent monthly and quarterly audit reports directly to the General Manager',
-    ],
+    desc: t('roles.auditor.desc'),
+    responsibilities: t('roles.auditor.responsibilities', { returnObjects: true }),
   },
   ict: {
     id: 'ict',
-    title: 'ICT Expert',
-    sub: 'Systems & Technology',
-    reportsTo: 'Reports directly to General Manager',
+    title: t('roles.ict.title'),
+    sub: t('roles.ict.sub'),
+    reportsTo: t('roles.ict.reportsTo'),
     icon: 'terminal',
     theme: 'green',
     ancestors: ['ga', 'bod', 'gm'],
-    desc: 'Manages digital cooperative platforms, logistics ERP tracking, IT infrastructure, network security, and member data management systems.',
-    responsibilities: [
-      'Oversees union digital platforms, member databases, and logistics management systems',
-      'Maintains IT infrastructure, cloud connectivity, network security, and hardware uptime',
-      'Drives digital agronomy integration and electronic record-keeping for primary cooperatives',
-    ],
+    desc: t('roles.ict.desc'),
+    responsibilities: t('roles.ict.responsibilities', { returnObjects: true }),
   },
   dm: {
     id: 'dm',
-    title: 'Deputy Manager',
-    sub: 'Operations & Department Oversight',
-    reportsTo: 'Reports directly to General Manager',
+    title: t('roles.dm.title'),
+    sub: t('roles.dm.sub'),
+    reportsTo: t('roles.dm.reportsTo'),
     icon: 'manage_accounts',
     theme: 'terracotta',
     ancestors: ['ga', 'bod', 'gm'],
-    desc: 'Assists the General Manager in daily administration and exercises direct operational coordination across the four primary operating departments.',
-    responsibilities: [
-      'Direct operational coordination across Agriculture, Marketing, HR, and Finance departments',
-      'Monitors day-to-day workflow alignment, resource allocation, and field dispatch operations',
-      'Acts on behalf of the General Manager during executive absences and special field assignments',
-    ],
+    desc: t('roles.dm.desc'),
+    responsibilities: t('roles.dm.responsibilities', { returnObjects: true }),
   },
   agri: {
     id: 'agri',
-    title: 'Agriculture and Farmers Service Center Department',
-    sub: 'Agronomy & Inputs',
-    reportsTo: 'Reports directly to Deputy Manager',
+    title: t('roles.agri.title'),
+    sub: t('roles.agri.sub'),
+    reportsTo: t('roles.agri.reportsTo'),
     icon: 'psychiatry',
     theme: 'dept',
     ancestors: ['ga', 'bod', 'gm', 'dm'],
-    desc: 'Oversees certified seed multiplication (maize, bean, onion, wheat), agronomy extension, pest management support, irrigation equipment services, and input distribution to primary co-ops.',
-    responsibilities: [
-      'Multiplies certified high-yield seeds (Maize BH-661, Bean Seeri 125, Onion Naafis, Wheat Qaqqabaa)',
-      'Provides modern agronomy training, pest monitoring, and GlobalG.A.P certification support',
-      'Procures and distributes quality fertilizers, agrochemicals, and drip irrigation hardware',
-    ],
+    desc: t('roles.agri.desc'),
+    responsibilities: t('roles.agri.responsibilities', { returnObjects: true }),
   },
   marketing: {
     id: 'marketing',
-    title: 'Marketing Department',
-    sub: 'Trade & Distribution',
-    reportsTo: 'Reports directly to Deputy Manager',
+    title: t('roles.marketing.title'),
+    sub: t('roles.marketing.sub'),
+    reportsTo: t('roles.marketing.reportsTo'),
     icon: 'storefront',
     theme: 'dept',
     ancestors: ['ga', 'bod', 'gm', 'dm'],
-    desc: 'Manages wholesale commercial off-taking, Addis Ababa retail distribution outlets, export packaging compliance, Ethiopian Airlines catering supply, and international export trade.',
-    responsibilities: [
-      'Off-takes and aggregates 50,000+ tonnes of fresh member produce annually',
-      'Operates 5 direct retail consumer outlets in Addis Ababa and supplies major supermarket chains',
-      'Manages high-grade fruit/vegetable supply contracts for Ethiopian Airlines catering and export',
-    ],
+    desc: t('roles.marketing.desc'),
+    responsibilities: t('roles.marketing.responsibilities', { returnObjects: true }),
   },
   hr: {
     id: 'hr',
-    title: 'Human Resource Management and General Service Department',
-    sub: 'HR, Fleet & Facilities',
-    reportsTo: 'Reports directly to Deputy Manager',
+    title: t('roles.hr.title'),
+    sub: t('roles.hr.sub'),
+    reportsTo: t('roles.hr.reportsTo'),
     icon: 'corporate_fare',
     theme: 'dept',
     ancestors: ['ga', 'bod', 'gm', 'dm'],
-    desc: 'Administers staff talent, training, union transport fleet logistics, cold-chain vehicle dispatch, facility maintenance, and union security protocols.',
-    responsibilities: [
-      'Manages union staffing, performance evaluations, employee benefits, and skills training',
-      'Dispatches and maintains the temperature-controlled vehicle fleet for fresh produce logistics',
-      'Maintains union headquarters, packhouses, cold-storage warehouses, and physical security',
-    ],
+    desc: t('roles.hr.desc'),
+    responsibilities: t('roles.hr.responsibilities', { returnObjects: true }),
   },
   finance: {
     id: 'finance',
-    title: 'Finance and Procurement Department',
-    sub: 'Finance & Supply',
-    reportsTo: 'Reports directly to Deputy Manager',
+    title: t('roles.finance.title'),
+    sub: t('roles.finance.sub'),
+    reportsTo: t('roles.finance.reportsTo'),
     icon: 'account_balance_wallet',
     theme: 'dept',
     ancestors: ['ga', 'bod', 'gm', 'dm'],
-    desc: 'Manages financial reporting, member dividend allocation, asset accounting, treasury management, farm input procurement, and banking relationships.',
-    responsibilities: [
-      'Manages financial accounting, 154.2 million ETB own capital treasury, and statutory financial audits',
-      'Administers transparent member dividend distributions and primary cooperative accounts',
-      'Directs bulk commercial procurement of seed stocks, machinery, and agricultural inputs',
-    ],
+    desc: t('roles.finance.desc'),
+    responsibilities: t('roles.finance.responsibilities', { returnObjects: true }),
   },
-}
+})
 
-const TIERS = [
+const getTiers = (t) => ([
   {
     key: 'tier1',
-    number: 'Tier 01',
-    title: 'Supreme Governance & Oversight',
-    sub: 'General Assembly, Control Committee & Board of Directors',
+    number: t('tiers.tier1.number'),
+    title: t('tiers.tier1.title'),
+    sub: t('tiers.tier1.sub'),
     icon: 'gavel',
     theme: 'green',
     nodeIds: ['ga', 'cc', 'bod'],
   },
   {
     key: 'tier2',
-    number: 'Tier 02',
-    title: 'Executive Management & Advisory',
-    sub: 'General Manager, Specialized Advisors & Deputy Manager',
+    number: t('tiers.tier2.number'),
+    title: t('tiers.tier2.title'),
+    sub: t('tiers.tier2.sub'),
     icon: 'manage_accounts',
     theme: 'terracotta',
     nodeIds: ['gm', 'lawyer', 'sec', 'plan', 'auditor', 'ict', 'dm'],
   },
   {
     key: 'tier3',
-    number: 'Tier 03',
-    title: 'Operational Departments',
-    sub: 'Agriculture, Marketing, HR & Finance Departments',
+    number: t('tiers.tier3.number'),
+    title: t('tiers.tier3.title'),
+    sub: t('tiers.tier3.sub'),
     icon: 'psychiatry',
     theme: 'dept',
     nodeIds: ['agri', 'marketing', 'hr', 'finance'],
   },
-]
+])
 
 export default function OrgChart() {
+  const { t } = useTranslation('orgchart')
+  const ORG_DATA = getOrgData(t)
+  const TIERS = getTiers(t)
   const [activeId, setActiveId] = useState(null)
   const [hoveredId, setHoveredId] = useState(null)
   const [isExporting, setIsExporting] = useState(false)
@@ -404,15 +353,15 @@ export default function OrgChart() {
   }
 
   return (
-    <div className="org-root" ref={chartRef} aria-label="Meki Batu Union Organizational Structure">
+    <div className="org-root" ref={chartRef} aria-label={t('ui.ariaLabel')}>
       {/* Modern Control Toolbar */}
       <div className="org-toolbar">
         <div className="org-toolbar__status">
           <span className="material-symbols-outlined org-toolbar__status-icon">account_tree</span>
           <span className="org-toolbar__text">
             {currentFocusId
-              ? `Selected: ${ORG_DATA[currentFocusId].title}`
-              : 'Interactive Organizational Tree • Click any role to view mandate'}
+              ? `${t('ui.selectedPrefix')} ${ORG_DATA[currentFocusId].title}`
+              : t('ui.defaultStatus')}
           </span>
         </div>
 
@@ -423,7 +372,7 @@ export default function OrgChart() {
               className="org-action-btn org-action-btn--reset"
               onClick={() => setActiveId(null)}
             >
-              <span>Clear Focus</span>
+              <span>{t('ui.clearFocus')}</span>
               <span className="material-symbols-outlined text-xs">close</span>
             </button>
           )}
@@ -433,20 +382,20 @@ export default function OrgChart() {
             className="org-action-btn"
             onClick={handleExportPNG}
             disabled={isExporting}
-            title="Download high-resolution image"
+            title={t('ui.downloadTitle')}
           >
             <span className="material-symbols-outlined text-sm">download</span>
-            <span>{isExporting ? 'Generating...' : 'Save Image'}</span>
+            <span>{isExporting ? t('ui.generating') : t('ui.saveImage')}</span>
           </button>
 
           <button
             type="button"
             className="org-action-btn"
             onClick={() => window.print()}
-            title="Print or Save PDF"
+            title={t('ui.printTitle')}
           >
             <span className="material-symbols-outlined text-sm">print</span>
-            <span>Print</span>
+            <span>{t('ui.print')}</span>
           </button>
         </div>
       </div>
@@ -469,7 +418,7 @@ export default function OrgChart() {
             aria-expanded={activeId === 'ga'}
           >
             <span className="material-symbols-outlined org-box__icon">groups</span>
-            <span className="org-box__title">General Assembly</span>
+            <span className="org-box__title">{ORG_DATA.ga.title}</span>
             <span className="material-symbols-outlined org-box__info">
               {activeId === 'ga' ? 'expand_less' : 'info'}
             </span>
@@ -490,7 +439,7 @@ export default function OrgChart() {
               aria-expanded={activeId === 'cc'}
             >
               <span className="material-symbols-outlined org-box__icon">verified_user</span>
-              <span className="org-box__title">Control Committee</span>
+              <span className="org-box__title">{ORG_DATA.cc.title}</span>
               <span className="material-symbols-outlined org-box__info">
                 {activeId === 'cc' ? 'expand_less' : 'info'}
               </span>
@@ -509,7 +458,7 @@ export default function OrgChart() {
               aria-expanded={activeId === 'bod'}
             >
               <span className="material-symbols-outlined org-box__icon">gavel</span>
-              <span className="org-box__title">Board of Directors</span>
+              <span className="org-box__title">{ORG_DATA.bod.title}</span>
               <span className="material-symbols-outlined org-box__info">
                 {activeId === 'bod' ? 'expand_less' : 'info'}
               </span>
@@ -530,7 +479,7 @@ export default function OrgChart() {
             aria-expanded={activeId === 'gm'}
           >
             <span className="material-symbols-outlined org-box__icon">person</span>
-            <span className="org-box__title org-box__title--lg">General Manager</span>
+            <span className="org-box__title org-box__title--lg">{ORG_DATA.gm.title}</span>
             <span className="material-symbols-outlined org-box__info">
               {activeId === 'gm' ? 'expand_less' : 'info'}
             </span>
@@ -550,7 +499,7 @@ export default function OrgChart() {
               aria-expanded={activeId === 'lawyer'}
             >
               <span className="material-symbols-outlined org-box__icon">policy</span>
-              <span className="org-box__title">Lawyer</span>
+              <span className="org-box__title">{ORG_DATA.lawyer.title}</span>
               <span className="material-symbols-outlined org-box__info">
                 {activeId === 'lawyer' ? 'expand_less' : 'info'}
               </span>
@@ -574,7 +523,7 @@ export default function OrgChart() {
               aria-expanded={activeId === 'sec'}
             >
               <span className="material-symbols-outlined org-box__icon">badge</span>
-              <span className="org-box__title">Executive Secretary</span>
+              <span className="org-box__title">{ORG_DATA.sec.title}</span>
               <span className="material-symbols-outlined org-box__info">
                 {activeId === 'sec' ? 'expand_less' : 'info'}
               </span>
@@ -594,7 +543,7 @@ export default function OrgChart() {
               aria-expanded={activeId === 'plan'}
             >
               <span className="material-symbols-outlined org-box__icon">query_stats</span>
-              <span className="org-box__title">Preparing Plan, Evaluate and Budgeting Senior Expert</span>
+              <span className="org-box__title">{ORG_DATA.plan.title}</span>
               <span className="material-symbols-outlined org-box__info">
                 {activeId === 'plan' ? 'expand_less' : 'info'}
               </span>
@@ -618,7 +567,7 @@ export default function OrgChart() {
               aria-expanded={activeId === 'auditor'}
             >
               <span className="material-symbols-outlined org-box__icon">fact_check</span>
-              <span className="org-box__title">Internal Auditor</span>
+              <span className="org-box__title">{ORG_DATA.auditor.title}</span>
               <span className="material-symbols-outlined org-box__info">
                 {activeId === 'auditor' ? 'expand_less' : 'info'}
               </span>
@@ -640,7 +589,7 @@ export default function OrgChart() {
               aria-expanded={activeId === 'ict'}
             >
               <span className="material-symbols-outlined org-box__icon">terminal</span>
-              <span className="org-box__title">ICT Expert</span>
+              <span className="org-box__title">{ORG_DATA.ict.title}</span>
               <span className="material-symbols-outlined org-box__info">
                 {activeId === 'ict' ? 'expand_less' : 'info'}
               </span>
@@ -659,7 +608,7 @@ export default function OrgChart() {
             aria-expanded={activeId === 'dm'}
           >
             <span className="material-symbols-outlined org-box__icon">manage_accounts</span>
-            <span className="org-box__title org-box__title--lg">Deputy Manager</span>
+            <span className="org-box__title org-box__title--lg">{ORG_DATA.dm.title}</span>
             <span className="material-symbols-outlined org-box__info">
               {activeId === 'dm' ? 'expand_less' : 'info'}
             </span>
@@ -708,7 +657,7 @@ export default function OrgChart() {
       {/* =========================================================================
           Mobile Tiered Accordion Structure (< 900px)
           ========================================================================= */}
-      <div className="org-mobile-accordion mobile-tree-only" role="region" aria-label="Hierarchical Governance Tiers">
+      <div className="org-mobile-accordion mobile-tree-only" role="region" aria-label={t('ui.tiersAriaLabel')}>
         {TIERS.map((tier) => {
           const isOpen = expandedTiers[tier.key]
           const hasSelectedNode = tier.nodeIds.includes(activeId)
@@ -730,7 +679,7 @@ export default function OrgChart() {
                   <div className="org-tier-card__titles">
                     <div className="org-tier-card__badge-row">
                       <span className="org-tier-card__num">{tier.number}</span>
-                      <span className="org-tier-card__count">{tier.nodeIds.length} Roles</span>
+                      <span className="org-tier-card__count">{t('ui.rolesCount', { count: tier.nodeIds.length })}</span>
                     </div>
                     <h4 className="org-tier-card__title">{tier.title}</h4>
                     <p className="org-tier-card__sub">{tier.sub}</p>
@@ -782,7 +731,7 @@ export default function OrgChart() {
             <div className="org-inspector-bridge__line" />
             <div className="org-inspector-bridge__badge">
               <span className="material-symbols-outlined text-xs">manage_search</span>
-              <span>Role Profile &amp; Mandate</span>
+              <span>{t('ui.roleProfile')}</span>
             </div>
             <div className="org-inspector-bridge__line" />
           </div>
@@ -807,8 +756,8 @@ export default function OrgChart() {
                 type="button"
                 className="org-inspector-panel__close"
                 onClick={() => setActiveId(null)}
-                aria-label="Dismiss inspector"
-                title="Close dossier"
+                aria-label={t('ui.dismissInspector')}
+                title={t('ui.closeDossier')}
               >
                 <span className="material-symbols-outlined">close</span>
               </button>
@@ -837,7 +786,7 @@ export default function OrgChart() {
                       />
                     </div>
                     <div className="org-inspector-panel__leader-info">
-                      <span className="org-inspector-panel__leader-tag">Appointed Leadership</span>
+                      <span className="org-inspector-panel__leader-tag">{t('ui.appointedLeadership')}</span>
                       <h5 className="org-inspector-panel__leader-name">{appointedLeader.name}</h5>
                       <p className="org-inspector-panel__leader-title">{appointedLeader.title}</p>
                       {appointedLeader.email && (
@@ -845,7 +794,7 @@ export default function OrgChart() {
                           <a
                             href={`mailto:${appointedLeader.email}`}
                             className="org-inspector-panel__leader-link"
-                            title={`Email ${appointedLeader.name}`}
+                            title={t('ui.emailTitle', { name: appointedLeader.name })}
                           >
                             <span className="material-symbols-outlined text-xs">mail</span>
                             <span>{appointedLeader.email}</span>
@@ -865,7 +814,7 @@ export default function OrgChart() {
                   <div className="org-inspector-panel__responsibilities-card">
                     <h5 className="org-inspector-panel__section-heading">
                       <span className="material-symbols-outlined text-xs">checklist</span>
-                      Key Mandates &amp; Responsibilities
+                      {t('ui.keyMandates')}
                     </h5>
                     <ul className="org-inspector-panel__list">
                       {activeNode.responsibilities.map((resp, i) => (

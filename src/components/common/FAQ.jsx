@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import Reveal from './Reveal.jsx'
 import './FAQ.css'
 
@@ -6,18 +7,20 @@ import './FAQ.css'
  * FAQ Accordion Component.
  *
  * Props:
- *   title: string (default "Frequently Asked Questions")
+ *   title: string
  *   description?: string
  *   items: Array<{ question: string, answer: string }>
  *   className?: string
  */
 function FAQ({
-  title = 'Frequently Asked Questions',
+  title,
   description,
   items = [],
   className = '',
   id = 'faq',
 }) {
+  const { t } = useTranslation('common')
+  const displayTitle = title || t('faq.title', 'Frequently Asked Questions')
   const [openIndex, setOpenIndex] = useState(0) // Default first item open for immediate clarity
 
   function toggleItem(index) {
@@ -30,7 +33,7 @@ function FAQ({
     <section id={id} className={`faq-section section section--alt ${className}`.trim()}>
       <div className="container">
         <Reveal className="faq-section__header">
-          <h2 className="faq-section__title">{title}</h2>
+          <h2 className="faq-section__title">{displayTitle}</h2>
           {description && <p className="faq-section__desc">{description}</p>}
         </Reveal>
 

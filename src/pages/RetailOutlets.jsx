@@ -1,18 +1,23 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import retailHeroImg from '../assets/images/heroes/retailHero.webp'
 import { outlets } from '../data/outlets.js'
+import { getLocalePath } from '../utils/locale.js'
 import './InnerPage.css'
 import './RetailOutlets.css'
 
+// Cap stagger at 450ms for outlet list items
 const stagger = (i) => Math.min(i * 90, 450)
 
 function RetailOutlets() {
-  const [selectedOutletId, setSelectedOutletId] = useState(outlets[0].id)
+  const { t, i18n } = useTranslation(['retailOutlets', 'meta', 'common'])
+  const currentLang = i18n.language || 'en'
+  const [selectedOutletId, setSelectedOutletId] = useState(outlets[0]?.id || 1)
   const [activeModalOutlet, setActiveModalOutlet] = useState(null)
 
   const activeOutlet = outlets.find((o) => o.id === selectedOutletId) || outlets[0]
@@ -20,30 +25,31 @@ function RetailOutlets() {
   return (
     <>
       <Helmet>
-        <title>Retail Outlets | Meki Batu Union</title>
+        <title>{t('meta:retailOutlets.title')}</title>
         <meta
           name="description"
-          content="Locate Meki Batu Union's five official retail storefronts across Addis Ababa supplying fresh, farm-direct produce to urban consumers."
+          content={t('meta:retailOutlets.description')}
         />
       </Helmet>
+
       {/* ---- Hero Section ---- */}
       <PageHero
-        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Retail Outlets' }]}
-        title="Direct from Our Farms to You."
-        description="Meki Batu Union operates five official retail stores across Addis Ababa, providing urban households with fresh, daily harvested produce directly from member farms."
+        breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.retailOutlets') }]}
+        title={t('retailOutlets:hero.title')}
+        description={t('retailOutlets:hero.desc')}
         actions={
           <>
             <a href="#locations" className="btn btn--primary">
-              View Locations <span className="material-symbols-outlined text-sm">arrow_downward</span>
+              {t('retailOutlets:hero.viewLocations')} <span className="material-symbols-outlined text-sm">arrow_downward</span>
             </a>
-            <Link to="/contact" className="btn btn--outline">
-              Contact Retail Sales <span className="material-symbols-outlined text-sm">mail</span>
+            <Link to={getLocalePath('/contact', currentLang)} className="btn btn--outline">
+              {t('retailOutlets:hero.contactSales')} <span className="material-symbols-outlined text-sm">mail</span>
             </Link>
           </>
         }
         image={retailHeroImg}
-        imageAlt="Pristine fresh produce display in a modern retail setting"
-        badge="5 Addis Ababa Locations"
+        imageAlt={t('retailOutlets:hero.imageAlt')}
+        badge={t('retailOutlets:hero.badge')}
       />
 
       <SectionDivider />
@@ -52,9 +58,9 @@ function RetailOutlets() {
       <section className="outlets-locations section section--alt" id="locations">
         <div className="container">
           <div className="outlets-locations__header">
-            <h2 className="outlets-locations__title">Find an Outlet</h2>
+            <h2 className="outlets-locations__title">{t('retailOutlets:locations.title')}</h2>
             <p className="outlets-locations__desc">
-              Browse store locations below to check opening hours, view produce specialties, and get instant Google Maps navigation.
+              {t('retailOutlets:locations.desc')}
             </p>
           </div>
 
@@ -79,7 +85,7 @@ function RetailOutlets() {
                   }}
                   tabIndex={0}
                   role="button"
-                  aria-label={`View details and map for ${outlet.name}`}
+                  aria-label={t('retailOutlets:locations.ariaViewDetails', { name: outlet.name })}
                 >
                   <div className="outlet-item-card__header">
                     <h3 className="outlet-item-card__title">{outlet.name}</h3>
@@ -97,7 +103,7 @@ function RetailOutlets() {
                   </div>
                   <div className="outlet-item-card__actions">
                     <span className="outlet-action-btn">
-                      View Details &amp; Map <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                      {t('retailOutlets:locations.viewDetailsMap')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
                     </span>
                   </div>
                 </Reveal>
@@ -124,7 +130,7 @@ function RetailOutlets() {
                   ))}
                 </div>
                 <iframe
-                  title={`Map showing ${activeOutlet.name}`}
+                  title={t('retailOutlets:locations.mapTitle', { name: activeOutlet.name })}
                   src={activeOutlet.embedUrl}
                   className="outlets-map-iframe"
                   loading="lazy"
@@ -144,7 +150,7 @@ function RetailOutlets() {
                     className="gmaps-cool-btn"
                   >
                     <span className="material-symbols-outlined text-sm">map</span>
-                    Open in Google Maps
+                    {t('retailOutlets:locations.openGoogleMaps')}
                     <span className="material-symbols-outlined text-sm">open_in_new</span>
                   </a>
                 </div>
@@ -159,108 +165,145 @@ function RetailOutlets() {
         <div className="outlet-modal-backdrop" onClick={() => setActiveModalOutlet(null)}>
           <div className="outlet-modal-card" onClick={(e) => e.stopPropagation()}>
             <button
-              type="button"
               className="outlet-modal-close"
               onClick={() => setActiveModalOutlet(null)}
-              aria-label="Close detail modal"
+              aria-label={t('common:buttons.close')}
             >
               <span className="material-symbols-outlined">close</span>
             </button>
-
             <div className="outlet-modal-header">
-              <div className="outlet-modal-tags">
-                <span className="outlet-status-badge">
-                  <span className="material-symbols-outlined text-xs">check_circle</span>
-                  {activeModalOutlet.status}
-                </span>
-                <span className="label-caps label-caps--secondary text-xs">{activeModalOutlet.subcity}</span>
-              </div>
+              <span className="outlet-modal-subcity">{activeModalOutlet.subcity}</span>
               <h2 className="outlet-modal-title">{activeModalOutlet.name}</h2>
+              <p className="outlet-modal-address">{activeModalOutlet.address}</p>
             </div>
-
-            <div className="outlet-modal-grid">
-              <div className="outlet-modal-info-list">
+            <div className="outlet-modal-body">
+              <div className="outlet-modal-info-row">
                 <div className="outlet-modal-info-item">
-                  <span className="material-symbols-outlined">location_on</span>
+                  <span className="material-symbols-outlined text-sm">schedule</span>
                   <div>
-                    <strong style={{ display: 'block', marginBottom: '2px' }}>Address</strong>
-                    <span>{activeModalOutlet.address}</span>
+                    <strong>{t('retailOutlets:locations.operatingHours')}</strong>
+                    <p>{activeModalOutlet.hours}</p>
                   </div>
                 </div>
-
                 <div className="outlet-modal-info-item">
-                  <span className="material-symbols-outlined">schedule</span>
+                  <span className="material-symbols-outlined text-sm">phone</span>
                   <div>
-                    <strong style={{ display: 'block', marginBottom: '2px' }}>Operating Hours</strong>
-                    <span>{activeModalOutlet.hours}</span>
+                    <strong>{t('retailOutlets:locations.directPhone')}</strong>
+                    <p>{activeModalOutlet.phone}</p>
                   </div>
                 </div>
+              </div>
 
-                <div className="outlet-modal-info-item">
-                  <span className="material-symbols-outlined">person</span>
-                  <div>
-                    <strong style={{ display: 'block', marginBottom: '2px' }}>Branch Manager</strong>
-                    <span>{activeModalOutlet.manager}</span>
-                  </div>
-                </div>
-
-                <div className="outlet-modal-info-item">
-                  <span className="material-symbols-outlined">call</span>
-                  <div>
-                    <strong style={{ display: 'block', marginBottom: '2px' }}>Direct Line</strong>
-                    <a href={`tel:${activeModalOutlet.phone}`} style={{ color: 'var(--color-primary)', fontWeight: 600 }}>
-                      {activeModalOutlet.phone}
-                    </a>
-                  </div>
-                </div>
-
-                <div style={{ marginTop: '8px' }}>
-                  <strong style={{ display: 'block', fontSize: '13px', color: 'var(--color-text-muted)', marginBottom: '6px' }}>
-                    Primary Produce Specialties
-                  </strong>
-                  <div className="outlet-specialties-list">
-                    {activeModalOutlet.specialties.map((spec) => (
-                      <span key={spec} className="outlet-specialty-chip">
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
+              <div className="outlet-modal-specialties">
+                <strong>{t('retailOutlets:locations.produceArrivals')}</strong>
+                <div className="outlet-modal-tags">
+                  {activeModalOutlet.specialties?.map((spec) => (
+                    <span key={spec} className="outlet-modal-tag">
+                      {spec}
+                    </span>
+                  ))}
                 </div>
               </div>
 
               <div className="outlet-modal-map-wrap">
                 <iframe
-                  title={`Location map for ${activeModalOutlet.name}`}
+                  title={t('retailOutlets:locations.mapTitle', { name: activeModalOutlet.name })}
                   src={activeModalOutlet.embedUrl}
-                  className="outlet-modal-map-iframe"
+                  className="outlet-modal-iframe"
                   loading="lazy"
+                  allowFullScreen
                 />
               </div>
-            </div>
 
-            <div className="outlet-modal-actions">
-              <a
-                href={activeModalOutlet.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="gmaps-cool-btn"
-              >
-                <span className="material-symbols-outlined">near_me</span>
-                Navigate on Google Maps
-                <span className="material-symbols-outlined text-sm">open_in_new</span>
-              </a>
-
-              <a
-                href={`tel:${activeModalOutlet.phone}`}
-                className="btn btn--outline"
-              >
-                <span className="material-symbols-outlined text-sm">call</span>
-                Call Manager
-              </a>
+              <div className="outlet-modal-actions">
+                <a
+                  href={activeModalOutlet.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn--primary"
+                >
+                  <span className="material-symbols-outlined text-sm">directions</span>
+                  {t('retailOutlets:locations.getDirections')}
+                </a>
+                <a
+                  href={`tel:${activeModalOutlet.phone.replace(/[^0-9+]/g, '')}`}
+                  className="btn btn--outline"
+                >
+                  <span className="material-symbols-outlined text-sm">call</span>
+                  {t('retailOutlets:locations.callBranch')}
+                </a>
+              </div>
             </div>
           </div>
         </div>
       )}
+
+      {/* ---- Guaranteed Fresh Produce Section ---- */}
+      <section className="outlets-experience section">
+        <div className="container">
+          <div className="outlets-experience__grid">
+            <Reveal className="outlets-experience__content">
+              <span className="label-caps label-caps--secondary mb-2 block">{t('retailOutlets:freshProduce.tag')}</span>
+              <h2 className="outlets-experience__title">{t('retailOutlets:freshProduce.title')}</h2>
+              <p className="outlets-experience__desc">
+                {t('retailOutlets:freshProduce.desc')}
+              </p>
+              <ul className="outlets-perks-list">
+                <li className="outlets-perk-item">
+                  <span className="material-symbols-outlined outlets-perk-icon">check_circle</span>
+                  <div>
+                    <strong>{t('retailOutlets:freshProduce.perk1Title')}</strong>
+                    <p>{t('retailOutlets:freshProduce.perk1Desc')}</p>
+                  </div>
+                </li>
+                <li className="outlets-perk-item">
+                  <span className="material-symbols-outlined outlets-perk-icon">check_circle</span>
+                  <div>
+                    <strong>{t('retailOutlets:freshProduce.perk2Title')}</strong>
+                    <p>{t('retailOutlets:freshProduce.perk2Desc')}</p>
+                  </div>
+                </li>
+                <li className="outlets-perk-item">
+                  <span className="material-symbols-outlined outlets-perk-icon">check_circle</span>
+                  <div>
+                    <strong>{t('retailOutlets:freshProduce.perk3Title')}</strong>
+                    <p>{t('retailOutlets:freshProduce.perk3Desc')}</p>
+                  </div>
+                </li>
+              </ul>
+            </Reveal>
+
+            <Reveal className="outlets-experience__media" delay={90}>
+              <img
+                src={retailHeroImg}
+                alt={t('retailOutlets:freshProduce.imageAlt')}
+                className="outlets-experience__img"
+              />
+              <div className="outlets-experience__badge">
+                <span className="material-symbols-outlined">local_shipping</span>
+                <span>{t('retailOutlets:freshProduce.dailyDispatchBadge')}</span>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- CTA Banner ---- */}
+      <section className="outlets-cta section section--alt">
+        <div className="container">
+          <Reveal className="outlets-cta__card">
+            <div className="outlets-cta__info">
+              <h2 className="outlets-cta__title">{t('retailOutlets:cta.title')}</h2>
+              <p className="outlets-cta__desc">
+                {t('retailOutlets:cta.desc')}
+              </p>
+            </div>
+            <Link to={getLocalePath('/contact', currentLang)} className="btn btn--primary">
+              {t('retailOutlets:cta.button')}
+            </Link>
+          </Reveal>
+        </div>
+      </section>
     </>
   )
 }

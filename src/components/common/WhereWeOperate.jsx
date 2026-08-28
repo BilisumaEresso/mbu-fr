@@ -1,25 +1,32 @@
+import { useTranslation } from 'react-i18next'
 import Reveal from './Reveal.jsx'
 import './WhereWeOperate.css'
 
 export default function WhereWeOperate() {
+  const { t } = useTranslation('common')
+
   return (
     <section className="where-operate section">
       <div className="container">
         <div className="where-operate__grid">
           {/* Left — text content */}
           <Reveal className="where-operate__content">
-            <span className="label-caps label-caps--secondary mb-2 block">Our Region</span>
-            <h2 className="where-operate__title">Where We Operate</h2>
+            <span className="label-caps label-caps--secondary mb-2 block">
+              {t('whereWeOperate.region')}
+            </span>
+            <h2 className="where-operate__title">
+              {t('whereWeOperate.title')}
+            </h2>
             <p className="where-operate__desc">
-              Our member cooperatives farm across six districts in East Shewa and Arsi zones: Dugda woreda, Adami Tulu Jido Kombolcha, Bora, Zuway Dugda, Adama, and Dodota Sire. Originally founded around Dembal Lake (Lake Ziway) across Dugda and Adami Tulu, the union has expanded to support 8,089 member farmers across all six woredas.
+              {t('whereWeOperate.desc')}
             </p>
             <div className="where-operate__tags">
-              <span className="where-operate__tag">Dugda Woreda</span>
-              <span className="where-operate__tag">Adami Tulu Jido Kombolcha</span>
-              <span className="where-operate__tag">Bora</span>
-              <span className="where-operate__tag">Zuway Dugda</span>
-              <span className="where-operate__tag">Adama</span>
-              <span className="where-operate__tag">Dodota Sire</span>
+              <span className="where-operate__tag">{t('whereWeOperate.districts.dugda')}</span>
+              <span className="where-operate__tag">{t('whereWeOperate.districts.adamiTulu')}</span>
+              <span className="where-operate__tag">{t('whereWeOperate.districts.bora')}</span>
+              <span className="where-operate__tag">{t('whereWeOperate.districts.zuwayDugda')}</span>
+              <span className="where-operate__tag">{t('whereWeOperate.districts.adama')}</span>
+              <span className="where-operate__tag">{t('whereWeOperate.districts.dodotaSire')}</span>
             </div>
             <a
               href="https://maps.app.goo.gl/HBFW3h7pe7W5tkMm8"
@@ -27,7 +34,7 @@ export default function WhereWeOperate() {
               rel="noopener noreferrer"
               className="btn btn--outline btn--sm where-operate__cta"
             >
-              Open in Google Maps
+              {t('buttons.openGoogleMaps')}
               <span className="material-symbols-outlined text-sm">open_in_new</span>
             </a>
           </Reveal>
@@ -43,7 +50,7 @@ export default function WhereWeOperate() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Meki Batu Union location — Meki Town, East Shewa Zone, Oromia, Ethiopia"
+              title={t('whereWeOperate.mapTitle', 'Meki Batu Union location — Meki Town, East Shewa Zone, Oromia, Ethiopia')}
             />
           </Reveal>
         </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
@@ -13,56 +14,6 @@ import buyerHeroImg from '../assets/images/heroes/buyerHero.webp'
 import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
 import './InnerPage.css'
 import './Buyers.css'
-
-const BUYERS_FAQ = [
-  {
-    question: 'What commodities are available for export sourcing?',
-    answer:
-      'We supply export-grade Rift Valley tomatoes, red onions, green peppers, highland potatoes, cabbage, green beans, fresh papaya, and certified hybrid seeds.',
-  },
-  {
-    question: 'What certifications back Meki Batu Union produce?',
-    answer:
-      'Our crops are GlobalG.A.P certified with full farm-gate traceability. We are also a licensed seed producer under Ethiopian national standards.',
-  },
-  {
-    question: 'Which international markets do you currently supply?',
-    answer:
-      'We supply European export markets via air freight, as well as Ethiopian Airlines Inflight Catering and wholesale buyers in East Africa.',
-  },
-  {
-    question: 'How do I request a tailored volume quote?',
-    answer:
-      'Submit the inquiry form on this page with your required commodity, tonnage, and destination. Our export team responds within 24 hours.',
-  },
-  {
-    question: 'What are the minimum order quantities (MOQ)?',
-    answer:
-      'MOQs depend on commodity perishability and seasonal windows. Contact us with your delivery schedule for custom volume terms.',
-  },
-]
-
-const VALUE_PROPS = [
-  {
-    icon: 'verified',
-    title: 'Certified Quality',
-    desc: 'Strict compliance with GlobalG.A.P and Ethiopian seed standards, ensuring full traceability from farm gate to destination ports.',
-    tags: ['GAP', 'ORG'],
-    iconColor: 'primary',
-  },
-  {
-    icon: 'inventory_2',
-    title: 'Reliable Supply Volume',
-    desc: '135 member cooperatives across 5,910 irrigated hectares provide consistent, high-tonnage supply throughout harvest seasons.',
-    iconColor: 'secondary',
-  },
-  {
-    icon: 'language',
-    title: 'Export-Grade Logistics',
-    desc: 'Refrigerated fleet transport and central packhouse precooling maintain optimal cold-chain integrity for international air freight.',
-    iconColor: 'primary',
-  },
-]
 
 const VALIDATION_RULES = {
   name: ['required'],
@@ -77,6 +28,7 @@ const EMPTY_FIELDS = { name: '', company: '', country: '', product: '', volume: 
 const stagger = (i) => Math.min(i * 90, 450)
 
 function Buyers() {
+  const { t } = useTranslation(['buyers', 'meta', 'common'])
   const [searchParams] = useSearchParams()
   const [fields, setFields] = useState(EMPTY_FIELDS)
   const [submitted, setSubmitted] = useState(false)
@@ -92,6 +44,30 @@ function Buyers() {
     volume: useRef(null),
     message: useRef(null),
   }
+
+  const valueProps = [
+    {
+      icon: 'verified',
+      title: t('buyers:valueProps.prop1.title'),
+      desc: t('buyers:valueProps.prop1.desc'),
+      tags: ['GAP', 'ORG'],
+      iconColor: 'primary',
+    },
+    {
+      icon: 'inventory_2',
+      title: t('buyers:valueProps.prop2.title'),
+      desc: t('buyers:valueProps.prop2.desc'),
+      iconColor: 'secondary',
+    },
+    {
+      icon: 'language',
+      title: t('buyers:valueProps.prop3.title'),
+      desc: t('buyers:valueProps.prop3.desc'),
+      iconColor: 'primary',
+    },
+  ]
+
+  const faqItems = t('buyers:faq.items', { returnObjects: true }) || []
 
   useEffect(() => {
     const productParam = searchParams.get('product')
@@ -119,7 +95,10 @@ function Buyers() {
   async function handleSubmit(e) {
     e.preventDefault()
 
-    const validationErrors = validateFields(fields, VALIDATION_RULES)
+    const validationErrors = validateFields(fields, VALIDATION_RULES, {
+      required: t('common:validation.required'),
+      email: t('common:validation.email'),
+    })
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors)
       const firstInvalid = ['name', 'company', 'country', 'product', 'volume', 'message'].find(
@@ -138,7 +117,7 @@ function Buyers() {
       setSubmitted(true)
       setSubmitting(false)
       showToast(
-        "Thanks — your request has been received. Our team will follow up shortly.",
+        t('buyers:form.toasts.success', "Thanks — your request has been received. Our team will follow up shortly."),
         'success'
       )
       return
@@ -152,12 +131,12 @@ function Buyers() {
       })
       if (res.ok) {
         setSubmitted(true)
-        showToast("Thanks — your request has been received.", 'success')
+        showToast(t('buyers:form.toasts.success', "Thanks — your request has been received."), 'success')
       } else {
-        showToast("Submission failed. Please try again later.", 'error')
+        showToast(t('buyers:form.toasts.fail', "Submission failed. Please try again later."), 'error')
       }
     } catch {
-      showToast("Network error. Please try again.", 'error')
+      showToast(t('buyers:form.toasts.network', "Network error. Please try again."), 'error')
     } finally {
       setSubmitting(false)
     }
@@ -166,36 +145,36 @@ function Buyers() {
   return (
     <>
       <Helmet>
-        <title>For Buyers &amp; Exporters | Meki Batu Union</title>
+        <title>{t('meta:buyers.title')}</title>
         <meta
           name="description"
-          content="Partner with Meki Batu Union for reliable, certified, high-volume export of fresh Ethiopian fruits and vegetables with full supply chain traceability."
+          content={t('meta:buyers.description')}
         />
       </Helmet>
 
       {/* ---- Hero Section ---- */}
       <PageHero
-        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'For Buyers' }]}
-        title="Reliable Global Export Partner"
-        description="Meki Batu Union offers certified, high-volume agricultural products directly from our extensive network of Ethiopian cooperatives. Experience transparent sourcing and uncompromising quality control."
+        breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.buyers') }]}
+        title={t('buyers:hero.title')}
+        description={t('buyers:hero.desc')}
         actions={
           <>
             <a href="#quote" className="btn btn--primary">
-              Request a Quote <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              {t('buyers:hero.requestQuote')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
             <a
               href={companyProfilePdf}
               download="MekiBatuUnion_CompanyProfile.pdf"
               className="btn btn--outline"
-              title="Download Meki Batu Union Company Profile (PDF)"
+              title={t('buyers:hero.downloadPdfTitle')}
             >
-              Download company profile (PDF) <span className="material-symbols-outlined text-sm">download</span>
+              {t('common:buttons.downloadPdf')} <span className="material-symbols-outlined text-sm">download</span>
             </a>
           </>
         }
         image={buyerHeroImg}
-        imageAlt="Export quality produce being sorted and packed in modern facility"
-        badge="Export & Wholesale"
+        imageAlt={t('buyers:hero.imageAlt')}
+        badge={t('buyers:hero.badge')}
       />
 
       <SectionDivider />
@@ -203,9 +182,9 @@ function Buyers() {
       {/* ---- Value Props (Why Source From Us) ---- */}
       <section className="buyers-props section section--alt" id="why-us">
         <div className="container">
-          <h2 className="buyers-props__heading">Why Source From Us</h2>
+          <h2 className="buyers-props__heading">{t('home:audience.buyers.tag', 'Why Source From Us')}</h2>
           <div className="buyers-props__grid">
-            {VALUE_PROPS.map((p, i) => (
+            {valueProps.map((p, i) => (
               <Reveal key={p.title} delay={stagger(i)} className="buyers-prop-card">
                 <span className={`material-symbols-outlined buyers-prop-card__icon buyers-prop-card__icon--${p.iconColor}`}>
                   {p.icon}
@@ -233,23 +212,34 @@ function Buyers() {
         <div className="container">
           <Reveal className="buyers-quote__card">
             <div className="buyers-quote__header">
-              <h2 className="buyers-quote__title">Request a Quote</h2>
+              <span className="label-caps label-caps--secondary mb-2 block">{t('buyers:form.tag')}</span>
+              <h2 className="buyers-quote__title">{t('buyers:form.title')}</h2>
               <p className="buyers-quote__subtitle">
-                Provide your details below and our export team will contact you within 24 hours.
+                {t('buyers:form.desc')}
               </p>
             </div>
 
             {submitted ? (
               <div className="buyers-quote__success">
                 <span className="material-symbols-outlined buyers-quote__success-icon">check_circle</span>
-                <h3>Thank you for your request!</h3>
-                <p>Our export logistics team will follow up with your customized quote within 24 hours.</p>
+                <h3>{t('buyers:form.success.title')}</h3>
+                <p>{t('buyers:form.success.desc')}</p>
+                <button
+                  type="button"
+                  className="btn btn--outline mt-4"
+                  onClick={() => {
+                    setFields(EMPTY_FIELDS)
+                    setSubmitted(false)
+                  }}
+                >
+                  {t('buyers:form.success.button')}
+                </button>
               </div>
             ) : (
               <form className="form buyers-form" onSubmit={handleSubmit} noValidate>
                 <div className="form-row">
                   <div>
-                    <label htmlFor="buyers-name">Full Name</label>
+                    <label htmlFor="buyers-name">{t('buyers:form.fields.name')}</label>
                     <input
                       ref={fieldRefs.name}
                       id="buyers-name"
@@ -257,7 +247,7 @@ function Buyers() {
                       type="text"
                       value={fields.name}
                       onChange={handleChange}
-                      placeholder="Enter full name"
+                      placeholder={t('buyers:form.fields.namePlaceholder')}
                       aria-invalid={!!errors.name}
                       aria-describedby={errors.name ? ERROR_ID('name') : undefined}
                     />
@@ -268,7 +258,7 @@ function Buyers() {
                     )}
                   </div>
                   <div>
-                    <label htmlFor="buyers-company">Company</label>
+                    <label htmlFor="buyers-company">{t('buyers:form.fields.company')}</label>
                     <input
                       ref={fieldRefs.company}
                       id="buyers-company"
@@ -276,7 +266,7 @@ function Buyers() {
                       type="text"
                       value={fields.company}
                       onChange={handleChange}
-                      placeholder="Company name"
+                      placeholder={t('buyers:form.fields.companyPlaceholder')}
                       aria-invalid={!!errors.company}
                       aria-describedby={errors.company ? ERROR_ID('company') : undefined}
                     />
@@ -290,7 +280,7 @@ function Buyers() {
 
                 <div className="form-row">
                   <div>
-                    <label htmlFor="buyers-country">Country of Destination</label>
+                    <label htmlFor="buyers-country">{t('buyers:form.fields.country')}</label>
                     <input
                       ref={fieldRefs.country}
                       id="buyers-country"
@@ -298,7 +288,7 @@ function Buyers() {
                       type="text"
                       value={fields.country}
                       onChange={handleChange}
-                      placeholder="e.g. Netherlands, UK, Germany"
+                      placeholder={t('buyers:form.fields.countryPlaceholder')}
                       aria-invalid={!!errors.country}
                       aria-describedby={errors.country ? ERROR_ID('country') : undefined}
                     />
@@ -309,7 +299,7 @@ function Buyers() {
                     )}
                   </div>
                   <div>
-                    <label htmlFor="buyers-product">Product of Interest</label>
+                    <label htmlFor="buyers-product">{t('buyers:form.fields.product')}</label>
                     <select
                       ref={fieldRefs.product}
                       id="buyers-product"
@@ -319,14 +309,16 @@ function Buyers() {
                       aria-invalid={!!errors.product}
                       aria-describedby={errors.product ? ERROR_ID('product') : undefined}
                     >
-                      <option value="">Select a product...</option>
-                      <option value="tomatoes">Rift Valley Tomatoes</option>
-                      <option value="onions">Red Onions</option>
-                      <option value="peppers">Green Peppers</option>
-                      <option value="potato">Highland Potatoes</option>
-                      <option value="papaya">Fresh Papaya</option>
-                      <option value="seeds">Certified Hybrid Seeds</option>
-                      <option value="vegetables">General Fresh Vegetables</option>
+                      <option value="">{t('buyers:form.fields.productSelect')}</option>
+                      <option value="tomatoes">{t('buyers:form.fields.products.tomatoes')}</option>
+                      <option value="onions">{t('buyers:form.fields.products.onions')}</option>
+                      <option value="peppers">{t('buyers:form.fields.products.peppers')}</option>
+                      <option value="potato">{t('buyers:form.fields.products.potato')}</option>
+                      <option value="cabbage">{t('buyers:form.fields.products.cabbage')}</option>
+                      <option value="greenBeans">{t('buyers:form.fields.products.greenBeans')}</option>
+                      <option value="papaya">{t('buyers:form.fields.products.papaya')}</option>
+                      <option value="watermelon">{t('buyers:form.fields.products.watermelon')}</option>
+                      <option value="seeds">{t('buyers:form.fields.products.seeds')}</option>
                     </select>
                     {errors.product && (
                       <span id={ERROR_ID('product')} className="form-field-error" role="alert">
@@ -337,20 +329,20 @@ function Buyers() {
                 </div>
 
                 <div>
-                  <label htmlFor="buyers-volume">Estimated Volume (Tonnes)</label>
+                  <label htmlFor="buyers-volume">{t('buyers:form.fields.volume')}</label>
                   <input
                     ref={fieldRefs.volume}
                     id="buyers-volume"
                     name="volume"
-                    type="number"
+                    type="text"
                     value={fields.volume}
                     onChange={handleChange}
-                    placeholder="e.g. 20"
+                    placeholder={t('buyers:form.fields.volumePlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="buyers-message">Additional Requirements</label>
+                  <label htmlFor="buyers-message">{t('buyers:form.fields.message')}</label>
                   <textarea
                     ref={fieldRefs.message}
                     id="buyers-message"
@@ -358,13 +350,13 @@ function Buyers() {
                     rows={4}
                     value={fields.message}
                     onChange={handleChange}
-                    placeholder="Specify shipping terms, packaging specs, or delivery timelines..."
+                    placeholder={t('buyers:form.fields.messagePlaceholder')}
                   />
                 </div>
 
                 <div className="buyers-form__submit-wrap">
                   <button type="submit" className="btn btn--primary" disabled={submitting}>
-                    {submitting ? 'Submitting...' : 'Submit Request'}
+                    {submitting ? t('buyers:form.fields.submitting') : t('buyers:form.fields.submit')}
                   </button>
                 </div>
               </form>
@@ -374,7 +366,11 @@ function Buyers() {
       </section>
 
       {/* ---- FAQ Section ---- */}
-      <FAQ items={BUYERS_FAQ} />
+      <FAQ
+        title={t('buyers:faq.title')}
+        description={t('buyers:faq.desc')}
+        items={Array.isArray(faqItems) ? faqItems : []}
+      />
 
       {/* ---- Toast ---- */}
       <Toast toast={toast} onDismiss={dismissToast} />

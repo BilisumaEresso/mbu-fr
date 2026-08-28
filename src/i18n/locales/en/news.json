@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "eyebrow": "Updates & Announcements",
+    "title": "News & Updates",
+    "desc": "Latest updates on harvests, farmer development initiatives, and global partnership milestones from Meki Batu Union.",
+    "searchPlaceholder": "Search news..."
+  },
+  "labels": {
+    "readReport": "Read Report",
+    "share": "Share Article",
+    "copyLink": "Copy Link",
+    "copied": "Link Copied!",
+    "featured": "Featured Story",
+    "latestUpdates": "Latest Union Updates",
+    "noResults": "No articles match your search query.",
+    "clearSearch": "Clear search",
+    "backToAll": "View All Articles",
+    "modalClose": "Close Article",
+    "readReportAria": "Read report: {{title}}",
+    "readArticleAria": "Read article: {{title}}",
+    "readTime": "5 min read"
+  },
+  "article": {
+    "paragraph1": "Meki Batu Union continues to drive agricultural innovation across our 135 member primary cooperatives representing 8,089 farmers. Through strategic investments in infrastructure, technology, and sustainable farming practices, we empower smallholder farmers in the Great Rift Valley to achieve high-yield, export-grade output.",
+    "paragraph2": "This initiative directly aligns with our core mission of promoting economic resilience, environmental stewardship, and fair trade. By bridging local agricultural communities with international markets, we ensure high quality, traceable produce for our global partners."
+  }
+}

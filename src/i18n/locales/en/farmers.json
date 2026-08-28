@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "title": "Stronger together. Growing the future of Ethiopian farming.",
+    "desc": "Meki Batu Union provides 8,089 member farmers across 135 primary cooperatives with certified seeds, modern tractor mechanization, fair credit access, and guaranteed market off-take.",
+    "badge": "135 Primary Cooperatives",
+    "viewBenefits": "Explore Member Services",
+    "joinCoop": "Affiliation Process",
+    "imageAlt": "Ethiopian farmers in a professional agricultural packhouse"
+  },
+  "services": {
+    "tag": "Comprehensive Support",
+    "title": "Cooperative Services & Farmer Support",
+    "desc": "From high-quality agricultural inputs to post-harvest aggregation, our union equips smallholder farmers for maximum yield and profitability.",
+    "items": {
+      "input": {
+        "title": "Input Distribution",
+        "desc": "High-germination certified seeds, fertilizers, and crop protection supplied at subsidized cooperative rates."
+      },
+      "credit": {
+        "title": "Financial Credit Support",
+        "desc": "Facilitated micro-financing and seasonal credit lines tailored to member cropping cycles."
+      },
+      "market": {
+        "title": "Market Aggregation",
+        "desc": "Direct off-take agreements connecting member harvests with national retailers and international export buyers."
+      },
+      "mechanization": {
+        "title": "Farm Mechanization",
+        "desc": "Shared tractor services, river pump maintenance, and modern drip irrigation installation support."
+      },
+      "storage": {
+        "title": "Cold Storage & Logistics",
+        "desc": "Post-harvest packhouse sorting, precooling, and temperature-controlled transport to eliminate spoilage."
+      },
+      "training": {
+        "title": "Agronomy Training",
+        "desc": "Continuous extension services covering GlobalG.A.P compliance, soil health, and organic practices."
+      }
+    }
+  },
+  "steps": {
+    "tag": "Step-by-Step Pathway",
+    "title": "How to Affiliate with Meki Batu Union",
+    "desc": "Join our expanding network of 135 primary cooperatives in East Shewa and Arsi zones.",
+    "step1": {
+      "number": "01",
+      "title": "Register Primary Cooperative",
+      "desc": "Organize local farmers into a legally recognized primary cooperative under regional agricultural guidelines."
+    },
+    "step2": {
+      "number": "02",
+      "title": "Submit Documentation",
+      "desc": "Provide registration certificates, active member roster, and a formal letter requesting union affiliation."
+    },
+    "step3": {
+      "number": "03",
+      "title": "Board Assessment",
+      "desc": "Union leadership conducts a field assessment of cooperative farm acreage, water access, and member alignment."
+    },
+    "step4": {
+      "number": "04",
+      "title": "Full Affiliation",
+      "desc": "Gain immediate access to union inputs, machinery fleet, cold-chain packhouses, and direct export markets."
+    },
+    "imageAlt": "Cooperative training session outdoors in a field in Ethiopia"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions for Farmers",
+    "desc": "Find answers to common questions about union membership, inputs, credit support, and operational requirements.",
+    "items": [
+      {
+        "question": "How do primary cooperatives join Meki Batu Union?",
+        "answer": "Primary cooperatives in East Shewa and Arsi zones (Dugda, Adami Tulu, Bora, Zuway Dugda, Adama, and Dodota Sire) can apply by submitting registration documents and member rosters to our union secretariat."
+      },
+      {
+        "question": "What core support does the union provide members?",
+        "answer": "We provide certified seed and fertilizer distribution, facilitated agricultural credit, tractor mechanization, cold-chain aggregation, and GlobalG.A.P agronomy training."
+      },
+      {
+        "question": "How many cooperatives and farmers are in the union?",
+        "answer": "Meki Batu Union unites 135 primary cooperatives representing 8,089 member farming households across 5,910 hectares."
+      },
+      {
+        "question": "What are the membership affiliation terms?",
+        "answer": "Membership criteria and capital share requirements are reviewed during the formal board assessment. Contact our office for current guidelines."
+      }
+    ]
+  },
+  "memberLoginToast": "Member Login is under active development. Online portal features will launch in Phase 2.",
+  "portal": {
+    "title": "Digital Member Portal",
+    "badge": "Phase 2 Development - Coming Soon",
+    "desc": "A secure digital platform under active development for member cooperatives to track crop deliveries, access market prices, request inputs, and manage union accounts online.",
+    "button": "Access Member Portal"
+  }
+}

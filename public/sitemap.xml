@@ -1,57 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home Page -->
   <url>
-    <loc>https://mekibatuunion.org/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://mekibatuunion.org/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en" />
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mekibatuunion.org/about</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://mekibatuunion.org/om</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://mekibatuunion.org/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/about" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/about" />
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mekibatuunion.org/products</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://mekibatuunion.org/om/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/about" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/about" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Products Page -->
+  <url>
+    <loc>https://mekibatuunion.org/en/products</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/products" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/products" />
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mekibatuunion.org/farmers</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://mekibatuunion.org/om/products</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/products" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/products" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Farmers Page -->
+  <url>
+    <loc>https://mekibatuunion.org/en/farmers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/farmers" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/farmers" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/farmers" />
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mekibatuunion.org/buyers</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://mekibatuunion.org/om/farmers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/farmers" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/farmers" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/farmers" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Buyers Page -->
+  <url>
+    <loc>https://mekibatuunion.org/en/buyers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/buyers" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/buyers" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/buyers" />
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mekibatuunion.org/retail-outlets</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://mekibatuunion.org/om/buyers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/buyers" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/buyers" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/buyers" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Retail Outlets Page -->
+  <url>
+    <loc>https://mekibatuunion.org/en/retail-outlets</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/retail-outlets" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/retail-outlets" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/retail-outlets" />
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mekibatuunion.org/news</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://mekibatuunion.org/om/retail-outlets</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/retail-outlets" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/retail-outlets" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/retail-outlets" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- News Page -->
+  <url>
+    <loc>https://mekibatuunion.org/en/news</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/news" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/news" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/news" />
+    <lastmod>2026-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mekibatuunion.org/impact</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://mekibatuunion.org/om/news</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/news" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/news" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/news" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Impact Page -->
+  <url>
+    <loc>https://mekibatuunion.org/en/impact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/impact" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/impact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/impact" />
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mekibatuunion.org/contact</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://mekibatuunion.org/om/impact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/impact" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/impact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/impact" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://mekibatuunion.org/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/contact" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/contact" />
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mekibatuunion.org/om/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/contact" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/contact" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Privacy Policy Page -->
+  <url>
+    <loc>https://mekibatuunion.org/en/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/privacy-policy" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://mekibatuunion.org/om/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/privacy-policy" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Terms of Service Page -->
+  <url>
+    <loc>https://mekibatuunion.org/en/terms-of-service</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/terms-of-service" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/terms-of-service" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/terms-of-service" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://mekibatuunion.org/om/terms-of-service</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mekibatuunion.org/en/terms-of-service" />
+    <xhtml:link rel="alternate" hreflang="om" href="https://mekibatuunion.org/om/terms-of-service" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mekibatuunion.org/en/terms-of-service" />
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
