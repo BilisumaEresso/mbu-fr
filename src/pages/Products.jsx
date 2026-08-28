@@ -144,12 +144,18 @@ function Products() {
               const cardContent = (
                 <>
                   <div className="product-item-card__media">
-                    <img
-                      src={item.img}
-                      alt={item.name}
-                      className="product-item-card__img"
-                      loading="lazy"
-                    />
+                    {item.img ? (
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="product-item-card__img"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="product-item-card__img img-placeholder" aria-label={`Photo pending — ${item.name}`}>
+                        REPLACE WITH REAL PHOTO<br />{item.name}
+                      </div>
+                    )}
                     <div className="product-item-card__media-overlay" />
                     <div className="product-item-card__badges">
                       <span className="product-item-card__badge-cat">{item.category}</span>
@@ -256,11 +262,17 @@ function Products() {
 
             <div className="product-modal-grid">
               <div className="product-modal-media">
-                <img
-                  src={selectedProduct.img}
-                  alt={selectedProduct.name}
-                  className="product-modal-img"
-                />
+                {selectedProduct.img ? (
+                  <img
+                    src={selectedProduct.img}
+                    alt={selectedProduct.name}
+                    className="product-modal-img"
+                  />
+                ) : (
+                  <div className="product-modal-img img-placeholder" aria-label={`Photo pending — ${selectedProduct.name}`}>
+                    REPLACE WITH REAL PHOTO<br />{selectedProduct.name}
+                  </div>
+                )}
                 <div className="product-modal-media-overlay" />
                 <div className="product-modal-media-badge">
                   <span className="material-symbols-outlined text-xs">verified</span>

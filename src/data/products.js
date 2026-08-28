@@ -10,6 +10,8 @@ import bentoHybridSeedsImg from '../assets/images/products/bentoHybridSeeds.webp
 import bentoOnionSeedsImg from '../assets/images/products/bentoOnionSeeds.webp'
 import bentoMaizeImg from '../assets/images/products/bentoMaize.webp'
 import redBeanSeedsImg from '../assets/images/products/redBeanSeeds.webp'
+import bentoCarrotImg from '../assets/images/products/bentoCarrot.webp'
+import bentoGarlicImg from '../assets/images/products/bentoGarlic.webp'
 
 export const products = [
   {
@@ -84,7 +86,7 @@ export const products = [
   },
   {
     id: 'cabbage',
-    name: 'Fresh Cabbage',
+    name: 'White Head Cabbage',
     category: 'Vegetables',
     tag: 'Seasonal',
     desc: 'Dense, tightly packed green heads grown under organic soil management practices.',
@@ -136,7 +138,7 @@ export const products = [
     shelfLife: '24 Months (Hermetic storage)',
     packaging: '2kg / 10kg Moisture-proof Bags',
     brix: '98%+ Germination Rate',
-    varieties: ['BH-661', 'BH-546', 'Jibaat', 'Malkaasaa-2'],
+    varieties: ['BH-661', 'BH-546', 'Jibat', 'Ambo', 'Melkasa-2'],
     img: bentoMaizeImg,
   },
   {
@@ -151,7 +153,7 @@ export const products = [
     shelfLife: '18-24 Months',
     packaging: '2kg / 5kg Sealed Packets',
     brix: '96%+ Germination Rate',
-    varieties: ['Seeri 125', 'Seeri 119', 'Awash 1'],
+    varieties: ['Awash-1', 'Nasir-1', 'Seeri-119', 'Seeri-125'],
     img: redBeanSeedsImg,
   },
   {
@@ -166,7 +168,7 @@ export const products = [
     shelfLife: '18-24 Months',
     packaging: '100g / 250g Foil Bags',
     brix: '95%+ Germination Rate',
-    varieties: ['Naafis', 'Reed Boombee'],
+    varieties: ['Nafis', 'Bomb Red'],
     img: bentoOnionSeedsImg,
   },
   {
@@ -181,8 +183,36 @@ export const products = [
     shelfLife: '18-24 Months',
     packaging: '25kg / 50kg Certified Sacks',
     brix: '97%+ Germination Rate',
-    varieties: ['Qaqqabaa'],
+    varieties: ['Kekeba'],
     img: bentoHybridSeedsImg,
+  },
+  {
+    id: 'carrot',
+    name: 'Carrot',
+    category: 'Vegetables',
+    tag: 'Fresh, firm root vegetable',
+    desc: 'Fresh, firm-textured carrots with vibrant colour and natural sweetness, suited for domestic wholesale and export markets.',
+    season: 'Oct - Jan', // ⚠️ PLACEHOLDER — season unconfirmed; verify with the union before publishing
+    featured: false,
+    origin: 'East Shewa Zone',
+    shelfLife: '3-4 Weeks (Cool storage)',
+    packaging: '20kg Mesh Sacks / 10kg Export Cartons',
+    brix: 'High dry matter, firm Grade A',
+    img: bentoCarrotImg,
+  },
+  {
+    id: 'garlic',
+    name: 'Garlic',
+    category: 'Vegetables',
+    tag: 'Dried bulb, bulk and retail',
+    desc: 'Pungent, tightly cloved garlic bulbs air-dried and cleaned for domestic distribution and export packing.',
+    season: 'Nov - Feb', // ⚠️ PLACEHOLDER — season unconfirmed; verify with the union before publishing
+    featured: false,
+    origin: 'East Shewa Zone',
+    shelfLife: '4-6 Months (Dry cool storage)',
+    packaging: '10kg / 25kg Mesh Bags',
+    brix: 'N/A (High allicin content)',
+    img: bentoGarlicImg,
   },
 ]
 
