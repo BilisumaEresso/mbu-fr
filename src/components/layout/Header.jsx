@@ -148,7 +148,10 @@ function Header() {
         {/* Brand Logo & Title */}
         <NavLink to={getLocalePath('/', currentLang)} className="header__brand" onClick={closeAll}>
           <img src={logoImg} alt={t('header.brandLogoAlt')} className="header__logo-img" />
-          <span className="header__brand-text">{t('header.brand')}</span>
+          <span className="header__brand-text">
+            <span className="header__brand-line1">{t('header.brandLine1')}</span>
+            <span className="header__brand-line2">{t('header.brandLine2')}</span>
+          </span>
         </NavLink>
 
         {/* Desktop Nav */}

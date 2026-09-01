@@ -3,13 +3,61 @@
    ========================================================================== */
 
 .footer {
+  /* Position context for ::before dot grid and ::after gold top border */
+  position: relative;
   background-color: var(--color-primary);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background-image:
+    /* Strong warm terracotta glow top-right — mirrors Impact metrics section */
+    radial-gradient(ellipse 60% 50% at 95% 8%,  rgba(157, 67, 32, 0.42) 0%, rgba(157, 67, 32, 0.10) 55%, transparent 70%),
+    /* Ghost-white lift bottom-left — prevents total darkness at corner */
+    radial-gradient(ellipse 45% 40% at 4% 92%,  rgba(255, 255, 255, 0.06) 0%, transparent 60%),
+    /* Diagonal depth: lighter canopy top → very dark forest bottom */
+    linear-gradient(
+      150deg,
+      hsl(153, 40%, 21%) 0%,
+      var(--color-primary) 50%,
+      #0b1a10 100%
+    );
+  border-top: none;
   width: 100%;
   margin-top: auto;
 }
 
+/* Layer 3: cream 1px dot grid — same as Home cert band, adds printed-textile depth */
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(252, 249, 248, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gold gradient top border — same center-fade technique as site's hr/.gradient-divider */
+.footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 138, 45, 0.0) 8%,
+    rgba(201, 138, 45, 0.45) 30%,
+    rgba(201, 138, 45, 0.65) 55%,
+    rgba(201, 138, 45, 0.0) 92%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Ensure all footer content sits above the ::before dot grid */
 .footer__container {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--gutter);
@@ -33,7 +81,7 @@
 
 .footer__logo-link {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-3);
   text-decoration: none;
   margin-bottom: var(--space-4);
@@ -52,11 +100,22 @@
 }
 
 .footer__logo-text {
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-display);
-  font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-bg);
-  line-height: 1.2;
+  line-height: 1.15;
+}
+
+.footer__logo-line1 {
+  font-size: 1.2rem;
+}
+
+.footer__logo-line2 {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  letter-spacing: 0.02em;
 }
 
 .footer__tagline {
@@ -86,8 +145,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  /* terracotta accent so it's visible against dark-green background */
-  background-color: var(--color-accent);
+  background-color: var(--color-gold);
 }
 
 .footer__links-group {
@@ -109,7 +167,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--color-accent);
+  color: var(--color-gold);
   margin: 0 0 var(--space-4) 0;
 }
 
@@ -169,7 +227,7 @@
 
 .footer__contact-icon {
   font-size: 18px;
-  color: var(--color-accent);
+  color: var(--color-gold);
   flex-shrink: 0;
 }
 
@@ -179,7 +237,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--color-accent);
+  color: var(--color-gold);
   margin: 0 0 var(--space-3) 0;
 }
 

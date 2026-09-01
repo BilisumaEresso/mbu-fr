@@ -15,15 +15,15 @@ function Footer() {
         <div className="footer__brand">
           <Link to={getLocalePath('/', currentLang)} className="footer__logo-link">
             <img src={logoImg} alt={t('header.brandLogoAlt')} className="footer__logo-img" />
-            <span className="footer__logo-text">{t('header.brand')}</span>
+            <span className="footer__logo-text">
+              <span className="footer__logo-line1">{t('header.brandLine1')}</span>
+              <span className="footer__logo-line2">{t('header.brandLine2')}</span>
+            </span>
           </Link>
           <p className="footer__tagline">
             {t('footer.tagline')}
           </p>
-          <div className="footer__badge">
-            <span className="footer__badge-dot" />
-            <span>{t('footer.badge')}</span>
-          </div>
+          
         </div>
 
         {/* Link Columns */}
