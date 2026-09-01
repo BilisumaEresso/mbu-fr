@@ -44,6 +44,8 @@
         "greenBeans": "Luubiyaa",
         "papaya": "Paappaayyaa Haaraa",
         "watermelon": "Habhabii Mi'aawaa",
+        "carrot": "Kaarotii",
+        "garlic": "Qullubbii Adii",
         "seeds": "Sanyii Filatamaa"
       },
       "volume": "Tilmaama Toonii",
@@ -59,7 +61,7 @@
       "button": "Gaaffii Biroo Ergi"
     },
     "toasts": {
-      "success": "Galatoomi — dhihootti deebii kennina.",
+      "success": "Galatoomaa! Dhihootti deebii isiniif kennina.",
       "fail": "Hin ergamne. Mee irra deebi'i.",
       "network": "Rakkoo sararaa. Mee irra deebi'i."
     }

@@ -17,11 +17,41 @@ import './About.css'
 // Cap stagger at 450ms for card grids
 const stagger = (i) => Math.min(i * 70, 450)
 
+const PARTNER_CATEGORY_KEYS = {
+  [PARTNER_CATEGORIES.ALL]: 'all',
+  [PARTNER_CATEGORIES.DEVELOPMENT]: 'development',
+  [PARTNER_CATEGORIES.RESEARCH]: 'research',
+  [PARTNER_CATEGORIES.FINANCE_MARKETS]: 'finance',
+  [PARTNER_CATEGORIES.GOVERNMENT]: 'government',
+}
+
+const PARTNER_TAG_KEYS = {
+  'Development Partner': 'development',
+  'Environmental Partner': 'environmental',
+  'Industry Partner': 'industry',
+  'Research Partner': 'research',
+  'Off-Taker': 'offTaker',
+  'Financial Partner': 'financial',
+  'Market Partner': 'market',
+  'Regulatory Body': 'regulatory',
+  'Government Bureau': 'government',
+}
+
 function About() {
   const { t } = useTranslation(['about', 'meta', 'common'])
   const teamMembersList = getTeamMembers(t)
   const [selectedCategory, setSelectedCategory] = useState(PARTNER_CATEGORIES.ALL)
   const [showAllPartners, setShowAllPartners] = useState(false)
+
+  const getCategoryLabel = (category) => {
+    const key = PARTNER_CATEGORY_KEYS[category]
+    return key ? t(`about:partners.categories.${key}`, category) : category
+  }
+
+  const getTagLabel = (tag) => {
+    const key = PARTNER_TAG_KEYS[tag]
+    return key ? t(`about:partners.tags.${key}`, tag) : tag
+  }
 
   const filteredPartners = selectedCategory === PARTNER_CATEGORIES.ALL
     ? partners
@@ -318,7 +348,7 @@ function About() {
           </div>
 
           {/* Category Filter Tabs */}
-          <div className="about-partners__filter-bar" role="tablist" aria-label={t('about:infrastructure.filterAriaLabel', 'Filter by category')}>
+          <div className="about-partners__filter-bar" role="tablist" aria-label={t('about:partners.filterAriaLabel', 'Filter by category')}>
             {Object.values(PARTNER_CATEGORIES).map((category) => (
               <button
                 key={category}
@@ -328,7 +358,7 @@ function About() {
                 className={`about-partners__tab-btn ${selectedCategory === category ? 'about-partners__tab-btn--active' : ''}`}
                 onClick={() => handleCategoryChange(category)}
               >
-                <span>{category}</span>
+                <span>{getCategoryLabel(category)}</span>
                 <span className="about-partners__tab-count">
                   {category === PARTNER_CATEGORIES.ALL
                     ? partners.length
@@ -363,14 +393,14 @@ function About() {
                         </div>
                       )}
                     </div>
-                    <span className="about-partner-card__tag">{partner.tag}</span>
+                    <span className="about-partner-card__tag">{getTagLabel(partner.tag)}</span>
                   </div>
 
                   {/* Card Content Body */}
                   <div className="about-partner-card__body">
                     <div className="about-partner-card__meta">
                       <span className="about-partner-card__acronym">{partner.acronym}</span>
-                      <span className="about-partner-card__category">{partner.category}</span>
+                      <span className="about-partner-card__category">{getCategoryLabel(partner.category)}</span>
                     </div>
                     <h3 className="about-partner-card__name">{partner.name}</h3>
                     <p className="about-partner-card__role">{partner.role}</p>

@@ -19,7 +19,7 @@
     "emailTitle": "Gaaffilee Kallattii",
     "phoneTitle": "Bilbila & Moobaayila",
     "hoursTitle": "Sa'aatii Hojii",
-    "hoursValue": "Wiixata – Jimaata: 8:00 WB – 11:30 B ｜ Sanbata: 8:00 WB – 6:30 B",
+    "hoursValue": "Wiixata – Jimaata: 8:00 WB – 11:30 B | Sanbata: 8:00 WB – 6:30 B",
     "imageAlt": "Biyyoo qonnaa gabbataa oomisha waliin"
   },
   "form": {
@@ -48,7 +48,7 @@
       "desc": "Nu qunnamuu keessaniif galatoomaa. Bakka bu'aan keenya guyyoota hojii 1–2 keessatti deebii isiniif kenna."
     },
     "toasts": {
-      "success": "Galatoomaa — dhihootti deebii isiniif kennina.",
+      "success": "Galatoomaa! Dhihootti deebii isiniif kennina.",
       "fail": "Ergaan hin ergamne. Mee irra deebi'aa yaalaa.",
       "error": "Hin ergamne. Mee irra deebi'i.",
       "network": "Rakkoo neetwoorkii. Mee irra deebi'aa yaalaa."

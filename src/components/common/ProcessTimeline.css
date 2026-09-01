@@ -129,8 +129,14 @@
   padding: 6px 16px 16px;
   margin-left: calc(-1 * var(--margin-mobile, 16px));
   margin-right: calc(-1 * var(--margin-mobile, 16px));
-  scrollbar-width: thin;
-  scrollbar-color: var(--secondary) rgba(0, 0, 0, 0.05);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.process-timeline__pipeline::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .process-timeline__step-col {

@@ -44,7 +44,7 @@
     "eyebrow": "Democratic Governance",
     "title": "Governance & Organizational Structure",
     "desc": "Democratic member governance ensuring transparent leadership, strict internal control, and professional management from the General Assembly to farm-level cooperatives.",
-    "subtitle": "Interactive governance chart — select any leadership tier or department to inspect mandate & structure.",
+    "subtitle": "Interactive governance chart: select any leadership tier or department to inspect mandate & structure.",
     "teamTag": "Management Team",
     "teamSubtitle": "Executive Leadership",
     "teamDesc": "Union directors and department heads driving cooperative operations.",
@@ -62,7 +62,7 @@
     "ariaLabel": "Union Operational Resources and Infrastructure",
     "badge": "Physical Infrastructure & Assets",
     "title": "Operational Resources",
-    "desc": "The logistical and technical backbone powering our 135 member cooperatives — from 2,000-tonne cold storage and refrigerated transport fleets to seed conditioning plants and lake pumping stations.",
+    "desc": "The logistical and technical backbone powering our 135 member cooperatives, from 2,000-tonne cold storage and refrigerated transport fleets to seed conditioning plants and lake pumping stations.",
     "filterAriaLabel": "Filter resources by category"
   },
   "resourceModal": {
@@ -80,12 +80,24 @@
     "eyebrow": "Institutional Network",
     "title": "Strategic & Institutional Partners",
     "desc": "We work closely with government agencies, research institutions, and international development organizations to advance sustainable agriculture.",
+    "filterAriaLabel": "Filter partners by category",
     "categories": {
       "all": "All Partners",
       "development": "Development & Sustainability",
       "research": "Research & Innovation",
       "finance": "Finance & Off-Takers",
       "government": "Government & Regulatory"
+    },
+    "tags": {
+      "development": "Development Partner",
+      "environmental": "Environmental Partner",
+      "industry": "Industry Partner",
+      "research": "Research Partner",
+      "offTaker": "Commercial Off-Taker",
+      "financial": "Financial Partner",
+      "market": "Market Partner",
+      "regulatory": "Regulatory Body",
+      "government": "Government Bureau"
     },
     "showAll": "Show All Partners ({{count}})",
     "showLess": "Show Less",

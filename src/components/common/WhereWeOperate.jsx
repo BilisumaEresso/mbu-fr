@@ -50,7 +50,7 @@ export default function WhereWeOperate() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title={t('whereWeOperate.mapTitle', 'Meki Batu Union location — Meki Town, East Shewa Zone, Oromia, Ethiopia')}
+              title={t('whereWeOperate.mapTitle', 'Meki Batu Union location, Meki Town, East Shewa Zone, Oromia, Ethiopia')}
             />
           </Reveal>
         </div>

@@ -70,7 +70,7 @@ function Contact() {
       setSubmitted(true)
       setSubmitting(false)
       showToast(
-        t('contact:form.toasts.success', "Thanks — we'll get back to you soon."),
+        t('contact:form.toasts.success', "Thank you! We will get back to you soon."),
         'success'
       )
       return
@@ -84,7 +84,7 @@ function Contact() {
       })
       if (res.ok) {
         setSubmitted(true)
-        showToast(t('contact:form.toasts.success', "Thanks — we'll get back to you soon."), 'success')
+        showToast(t('contact:form.toasts.success', "Thank you! We will get back to you soon."), 'success')
       } else {
         showToast(t('contact:form.toasts.fail', "Submission failed. Please try again later."), 'error')
       }

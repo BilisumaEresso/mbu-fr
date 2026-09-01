@@ -32,8 +32,15 @@
   gap: var(--space-3);
   padding-bottom: var(--space-2);
   margin-bottom: clamp(36px, 5vw, 52px);
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
+}
+
+.infrastructure-section__metrics-bar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 @media (min-width: 640px) {

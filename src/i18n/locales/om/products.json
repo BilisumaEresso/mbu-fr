@@ -17,6 +17,7 @@
       "fruits": "Muduraa",
       "seeds": "Sanyii Filatamaa"
     },
+    "placeholderText": "FAKKOO DHUGAA BAKKA BUUSAA",
     "labels": {
       "season": "Waqtii",
       "packaging": "Saamsama",
@@ -45,6 +46,166 @@
       "coldChain": "Geejjiba Qabbanaawaa"
     }
   },
+  "items": {
+    "tomatoes": {
+      "name": "Tamaatima Sulula Qiinxamaa",
+      "category": "Kuduraa",
+      "tag": "Haaraa, sadarkaa ergaa alaa",
+      "desc": "Akaakuu bu'a-qabeessa, dhibee dandamatu fi daldala biyya keessaa fi alaatiif ta'u. Dhandhama gaarii fi yeroo dheeraa turuun beekama.",
+      "season": "Waggaa Guutuu",
+      "origin": "Gammoojjii Maqii & Ziwaay",
+      "shelfLife": "Guyyoota 14-21 (Kuusaa Qabbanaawaa 8-10°C)",
+      "packaging": "Saanduqa Kaartoonii Ergaa Alaa 5kg / 10kg",
+      "brix": "4.8° - 5.5° Brix"
+    },
+    "onions": {
+      "name": "Shunkurtaa Diimaa",
+      "category": "Kuduraa",
+      "tag": "Jumlaa fi qinsharraa",
+      "desc": "Qullubbii diimaa urgooftuu qabu, baay'ee jabaatu fi tursiisuuf mijatu, haala qilleensa gogaa irratti kan oomishamu.",
+      "season": "Guddaa: Ful - Mud",
+      "origin": "Qonnaalee Shawaa Bahaa",
+      "shelfLife": "Ji'oota 3-5 (Kuusaa Gogaa)",
+      "packaging": "Koroojoo Qiyyaasaa 25kg / 50kg",
+      "brix": "N/A (Urgooftuu olaanaa)"
+    },
+    "peppers": {
+      "name": "Qaaraa Magariisa",
+      "category": "Kuduraa",
+      "tag": "Waqtiidhaan",
+      "desc": "Qaaraa yabbuu fi gabbataa, gabaa biyya keessaa fi industiriilee qophii nyaataatiin baay'ee jaallatamu.",
+      "season": "Waggaa Guutuu",
+      "origin": "Jallisii Baatuu",
+      "shelfLife": "Guyyoota 12-16 (Kuusaa Qabbanaawaa 7°C)",
+      "packaging": "Kireetii Pilaastikii 6kg / Saanduqa Ergaa Alaa",
+      "brix": "Sadarkaa A Mi'aawaa fi Qulqulluu"
+    },
+    "potato": {
+      "name": "Dinicha Baddaa",
+      "category": "Kuduraa",
+      "tag": "Waggaa guutuu",
+      "desc": "Akaakuu dinichaa baddaa irratti biqilu, soorata qabeessa, jabaataa fi itti-fayyadama garaagaraatiif ta'u.",
+      "season": "Wax - Ful",
+      "origin": "Naannolee Baddaa Qonnaan Bulaa",
+      "shelfLife": "Ji'oota 2-4 (Bakka qabbanaawaa fi gogaa)",
+      "packaging": "Koroojoo Keenshaa 50kg",
+      "brix": "Qabiyyee jajjaboo olaanaa"
+    },
+    "green-beans": {
+      "name": "Luubiyaa Magariisa",
+      "category": "Kuduraa",
+      "tag": "Waqtiidhaan, ergaa alaa",
+      "desc": "Luubiyaa lallaafaa harkaatiin haamamu fi gabaa addunyaatiif qabbaneeffamee qophaa'u.",
+      "season": "Onk - Ebl",
+      "origin": "Jallisii Maqii",
+      "shelfLife": "Guyyoota 10-14 (Kuusaa Qabbanaawaa 4°C)",
+      "packaging": "Kaartoonii Ergaa Alaa 4kg",
+      "brix": "Sadarkaa A Qulqulluu"
+    },
+    "cabbage": {
+      "name": "Raafuu Mataa Adii",
+      "category": "Kuduraa",
+      "tag": "Waqtiidhaan",
+      "desc": "Raafuu mataa guddaa fi jabaataa, biyyoo uumamaa eeguudhaan kan oomishamu.",
+      "season": "Waggaa Guutuu",
+      "origin": "Godina Shawaa Bahaa",
+      "shelfLife": "Ji'oota 1-2 (Kuusaa Qabbanaawaa)",
+      "packaging": "Koroojoo Qiyyaasaa 20kg",
+      "brix": "Haaraa & Qulqulluu"
+    },
+    "papaya": {
+      "name": "Paappaayyaa Haaraa",
+      "category": "Muduraa",
+      "tag": "Waqtiidhaan",
+      "desc": "Paappaayyaa mi'aawaa, sadarkaa daldala alaa qabu fi ulaagaa GlobalG.A.P jalatti misoomu.",
+      "season": "Waggaa Guutuu",
+      "origin": "Muka Fuduraa Sulula Qiinxamaa",
+      "shelfLife": "Guyyoota 10-14 (12°C)",
+      "packaging": "Kaartoonii Baqqaana Tokkoo 4.5kg",
+      "brix": "11° - 13° Brix"
+    },
+    "watermelon": {
+      "name": "Habhabii Sulula Qiinxamaa",
+      "category": "Muduraa",
+      "tag": "Waqtiidhaan",
+      "desc": "Habhabii dhangala'aa fi diimaa mi'aawaa, biyyoo gammoojjii keessatti sukkaara uumamaa olaanaadhaan bilchaatu.",
+      "season": "Sad - Bit",
+      "origin": "Gammoojjii Ziwaay",
+      "shelfLife": "Torbanoota 2-3",
+      "packaging": "Kuusaa Jumlaa / Kireetii",
+      "brix": "10° - 12° Brix"
+    },
+    "maize-seed": {
+      "name": "Sanyii Boqqoolloo Filatamaa",
+      "category": "Sanyii Filatamaa",
+      "tag": "Sanyii waraqaa ragaa qabu",
+      "desc": "Sanyii boqqoolloo bu'a-qabeessa, ongeen hin miidhamne fi waldaalee miseensaatiif baay'ifamee qophaa'u.",
+      "season": "Gura - Ebl",
+      "origin": "Wiirtuu Qophii Sanyii Yuniyeenii",
+      "shelfLife": "Ji'oota 24 (Kuusaa Qilleensa Hin Galchine)",
+      "packaging": "Koroojoo Jiidha Dhowwu 2kg / 10kg",
+      "brix": "Biqilummaa 98%+",
+      "varieties": ["BH-661", "BH-546", "Jibat", "Ambo", "Melkasa-2"]
+    },
+    "bean-seed": {
+      "name": "Sanyii Booloqee Filatamaa",
+      "category": "Sanyii Filatamaa",
+      "tag": "Sanyii waraqaa ragaa qabu",
+      "desc": "Sanyii booloqee biqilummaa olaanaa qabu fi haala qilleensa Sulula Qiinxamaatiif mijatu.",
+      "season": "Ama - Bit",
+      "origin": "Wiirtuu Baay'isa Sanyii Maqii",
+      "shelfLife": "Ji'oota 18-24",
+      "packaging": "Paakeettii Saamsame 2kg / 5kg",
+      "brix": "Biqilummaa 96%+",
+      "varieties": ["Awash-1", "Nasir-1", "Seeri-119", "Seeri-125"]
+    },
+    "onion-seed": {
+      "name": "Sanyii Shunkurtaa Filatamaa",
+      "category": "Sanyii Filatamaa",
+      "tag": "Sanyii waraqaa ragaa qabu",
+      "desc": "Sanyii shunkurtaa dhibee fi ho'a dandamatu, akkasumas oomisha wal-fakkaataa kennu.",
+      "season": "Ama - Bit",
+      "origin": "Wiirtuu Horsiisa Sanyii Maqii",
+      "shelfLife": "Ji'oota 18-24",
+      "packaging": "Koroojoo Fooyilii 100g / 250g",
+      "brix": "Biqilummaa 95%+",
+      "varieties": ["Nafis", "Bomb Red"]
+    },
+    "wheat-seed": {
+      "name": "Sanyii Qamadii Filatamaa",
+      "category": "Sanyii Filatamaa",
+      "tag": "Sanyii waraqaa ragaa qabu",
+      "desc": "Sanyii qamadii bu'a-qabeessa qoteebulaa naannoof akka ta'utti qophaa'e.",
+      "season": "Caa - Ado",
+      "origin": "Maasii Baay'isa Sanyii Yuniyeenii",
+      "shelfLife": "Ji'oota 18-24",
+      "packaging": "Koroojoo Ragaa Qabu 25kg / 50kg",
+      "brix": "Biqilummaa 97%+",
+      "varieties": ["Kekeba"]
+    },
+    "carrot": {
+      "name": "Kaarotii",
+      "category": "Kuduraa",
+      "tag": "Kaarotii jabaataa, haaraa",
+      "desc": "Kaarotii bifa gaarii fi mi'aawaa, gabaa biyya keessaa fi alaatiif kan oomishamu.",
+      "season": "Onk - Ama",
+      "origin": "Godina Shawaa Bahaa",
+      "shelfLife": "Torban 3-4 (Kuusaa Qabbanaawaa)",
+      "packaging": "Koroojoo Qiyyaasaa 20kg / Kaartoonii 10kg",
+      "brix": "Sadarkaa A Jabaataa"
+    },
+    "garlic": {
+      "name": "Qullubbii Adii",
+      "category": "Kuduraa",
+      "tag": "Qullubbii gogaa, jumlaa fi qinsharraa",
+      "desc": "Qullubbii adii urgooftuu qabu, qulqullinaan gogee daldala biyya keessaa fi alaatiif qophaa'u.",
+      "season": "Sad - Gura",
+      "origin": "Godina Shawaa Bahaa",
+      "shelfLife": "Ji'oota 4-6 (Kuusaa Qabbanaawaa fi Gogaa)",
+      "packaging": "Koroojoo Qiyyaasaa 10kg / 25kg",
+      "brix": "N/A (Qabiyyee alisiin olaanaa)"
+    }
+  },
   "calendar": {
     "tag": "Sagantaa Waqtii",
     "title": "Gabatee Haamaa & Dhiyeessii",
@@ -55,6 +216,32 @@
       "category": "Ramaddii",
       "harvestWindow": "Waqtii Haamaa",
       "exportAvailability": "Dhiyeessii Ergaa Alaa"
+    },
+    "rows": {
+      "tomato": {
+        "commodity": "Tamaatii Sulula Qiinxamaa",
+        "category": "Kuduraa",
+        "window": "Waggaa guutuu (Olaanaa: Onk-Gura)",
+        "availability": "Olaanaa"
+      },
+      "onion": {
+        "commodity": "Shunkurtaa Diimaa",
+        "category": "Kuduraa",
+        "window": "Fulbaana - Muddee",
+        "availability": "Olaanaa"
+      },
+      "papaya": {
+        "commodity": "Paappaayyaa Haaraa",
+        "category": "Muduraa",
+        "window": "Waggaa guutuu",
+        "availability": "Giddu-galeessa"
+      },
+      "seeds": {
+        "commodity": "Sanyii Filatamaa",
+        "category": "Sanyii",
+        "window": "Amajjii - Bitootessa (Qophii)",
+        "availability": "Waqtiidhaan"
+      }
     }
   },
   "cta": {

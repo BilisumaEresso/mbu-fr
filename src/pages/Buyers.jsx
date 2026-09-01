@@ -72,7 +72,11 @@ function Buyers() {
   useEffect(() => {
     const productParam = searchParams.get('product')
     if (productParam) {
-      setFields((prev) => ({ ...prev, product: productParam }))
+      const normalizedProduct =
+        productParam === 'green-beans' ? 'greenBeans' :
+        productParam.includes('seed') ? 'seeds' :
+        productParam
+      setFields((prev) => ({ ...prev, product: normalizedProduct }))
       const quoteElement = document.getElementById('quote')
       if (quoteElement) {
         quoteElement.scrollIntoView({ behavior: 'smooth' })
@@ -117,7 +121,7 @@ function Buyers() {
       setSubmitted(true)
       setSubmitting(false)
       showToast(
-        t('buyers:form.toasts.success', "Thanks — your request has been received. Our team will follow up shortly."),
+        t('buyers:form.toasts.success', "Thank you! Your request has been received. Our team will follow up shortly."),
         'success'
       )
       return
@@ -131,7 +135,7 @@ function Buyers() {
       })
       if (res.ok) {
         setSubmitted(true)
-        showToast(t('buyers:form.toasts.success', "Thanks — your request has been received."), 'success')
+        showToast(t('buyers:form.toasts.success', "Thank you! Your request has been received."), 'success')
       } else {
         showToast(t('buyers:form.toasts.fail', "Submission failed. Please try again later."), 'error')
       }
@@ -318,6 +322,8 @@ function Buyers() {
                       <option value="greenBeans">{t('buyers:form.fields.products.greenBeans')}</option>
                       <option value="papaya">{t('buyers:form.fields.products.papaya')}</option>
                       <option value="watermelon">{t('buyers:form.fields.products.watermelon')}</option>
+                      <option value="carrot">{t('buyers:form.fields.products.carrot')}</option>
+                      <option value="garlic">{t('buyers:form.fields.products.garlic')}</option>
                       <option value="seeds">{t('buyers:form.fields.products.seeds')}</option>
                     </select>
                     {errors.product && (

@@ -68,6 +68,26 @@ function Products() {
     Seeds: t('products:catalog.filters.seeds', 'Certified Seeds'),
   }
 
+  const getProductTrans = (item) => {
+    if (!item) return {}
+    const defaultCatKey = item.category ? item.category.toLowerCase() : ''
+    const fallbackCategory = t(`products:catalog.filters.${defaultCatKey}`, item.category)
+    const varietiesObj = t(`products:items.${item.id}.varieties`, { returnObjects: true })
+
+    return {
+      name: t(`products:items.${item.id}.name`, item.name),
+      category: t(`products:items.${item.id}.category`, fallbackCategory),
+      tag: t(`products:items.${item.id}.tag`, item.tag),
+      desc: t(`products:items.${item.id}.desc`, item.desc),
+      season: t(`products:items.${item.id}.season`, item.season),
+      origin: t(`products:items.${item.id}.origin`, item.origin),
+      shelfLife: t(`products:items.${item.id}.shelfLife`, item.shelfLife),
+      packaging: t(`products:items.${item.id}.packaging`, item.packaging),
+      brix: t(`products:items.${item.id}.brix`, item.brix),
+      varieties: Array.isArray(varietiesObj) ? varietiesObj : item.varieties,
+    }
+  }
+
   return (
     <>
       <Helmet>
@@ -141,49 +161,50 @@ function Products() {
           {/* Products Grid */}
           <div className="products-grid">
             {filtered.map((item, i) => {
+              const trans = getProductTrans(item)
               const cardContent = (
                 <>
                   <div className="product-item-card__media">
                     {item.img ? (
                       <img
                         src={item.img}
-                        alt={item.name}
+                        alt={trans.name}
                         className="product-item-card__img"
                         loading="lazy"
                       />
                     ) : (
-                      <div className="product-item-card__img img-placeholder" aria-label={`Photo pending — ${item.name}`}>
-                        REPLACE WITH REAL PHOTO<br />{item.name}
+                      <div className="product-item-card__img img-placeholder" aria-label={`Photo pending: ${trans.name}`}>
+                        {t('products:catalog.placeholderText', 'REPLACE WITH REAL PHOTO')}<br />{trans.name}
                       </div>
                     )}
                     <div className="product-item-card__media-overlay" />
                     <div className="product-item-card__badges">
-                      <span className="product-item-card__badge-cat">{item.category}</span>
-                      <span className="product-item-card__badge-tag">{item.tag}</span>
+                      <span className="product-item-card__badge-cat">{trans.category}</span>
+                      <span className="product-item-card__badge-tag">{trans.tag}</span>
                     </div>
                   </div>
 
                   <div className="product-item-card__body">
                     <div className="product-item-card__main">
-                      <h3 className="product-item-card__title">{item.name}</h3>
-                      <p className="product-item-card__desc">{item.desc}</p>
+                      <h3 className="product-item-card__title">{trans.name}</h3>
+                      <p className="product-item-card__desc">{trans.desc}</p>
                     </div>
 
-                    {Array.isArray(item.varieties) && item.varieties.length > 0 && (
+                    {Array.isArray(trans.varieties) && trans.varieties.length > 0 && (
                       <div className="product-item-card__varieties">
                         <span className="product-item-card__varieties-label">{t('products:catalog.labels.varieties')}</span>
-                        <span className="product-item-card__varieties-list">{item.varieties.join(', ')}</span>
+                        <span className="product-item-card__varieties-list">{trans.varieties.join(', ')}</span>
                       </div>
                     )}
 
                     <div className="product-item-card__meta">
                       <div className="product-item-card__meta-item">
                         <span className="material-symbols-outlined">location_on</span>
-                        <span>{item.origin}</span>
+                        <span>{trans.origin}</span>
                       </div>
                       <div className="product-item-card__meta-item">
                         <span className="material-symbols-outlined">calendar_today</span>
-                        <span>{item.season}</span>
+                        <span>{trans.season}</span>
                       </div>
                     </div>
 
@@ -214,7 +235,7 @@ function Products() {
                     onKeyDown={handleCardKeyDown}
                     tabIndex={0}
                     role="button"
-                    aria-label={t('products:catalog.ariaViewDetails', { name: item.name })}
+                    aria-label={t('products:catalog.ariaViewDetails', { name: trans.name })}
                   >
                     {cardContent}
                   </div>
@@ -231,7 +252,7 @@ function Products() {
                   onKeyDown={handleCardKeyDown}
                   tabIndex={0}
                   role="button"
-                  aria-label={t('products:catalog.ariaViewDetails', { name: item.name })}
+                  aria-label={t('products:catalog.ariaViewDetails', { name: trans.name })}
                   style={{ cursor: 'pointer' }}
                 >
                   {cardContent}
@@ -243,150 +264,153 @@ function Products() {
       </section>
 
       {/* ---- Enhanced Product Detail Modal ---- */}
-      {selectedProduct && (
-        <div
-          className="product-modal-backdrop"
-          onClick={() => setSelectedProduct(null)}
-          role="dialog"
-          aria-modal="true"
-          aria-label={selectedProduct.name}
-        >
-          <div className="product-modal-card" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="product-modal-close"
-              onClick={() => setSelectedProduct(null)}
-              aria-label={t('common:buttons.close')}
-            >
-              <span className="material-symbols-outlined">close</span>
-            </button>
+      {selectedProduct && (() => {
+        const selectedTrans = getProductTrans(selectedProduct)
+        return (
+          <div
+            className="product-modal-backdrop"
+            onClick={() => setSelectedProduct(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={selectedTrans.name}
+          >
+            <div className="product-modal-card" onClick={(e) => e.stopPropagation()}>
+              <button
+                className="product-modal-close"
+                onClick={() => setSelectedProduct(null)}
+                aria-label={t('common:buttons.close')}
+              >
+                <span className="material-symbols-outlined">close</span>
+              </button>
 
-            <div className="product-modal-grid">
-              <div className="product-modal-media">
-                {selectedProduct.img ? (
-                  <img
-                    src={selectedProduct.img}
-                    alt={selectedProduct.name}
-                    className="product-modal-img"
-                  />
-                ) : (
-                  <div className="product-modal-img img-placeholder" aria-label={`Photo pending — ${selectedProduct.name}`}>
-                    REPLACE WITH REAL PHOTO<br />{selectedProduct.name}
-                  </div>
-                )}
-                <div className="product-modal-media-overlay" />
-                <div className="product-modal-media-badge">
-                  <span className="material-symbols-outlined text-xs">verified</span>
-                  <span>{t('products:catalog.labels.globalGap')}</span>
-                </div>
-              </div>
-
-              <div className="product-modal-content">
-                <div className="product-modal-header">
-                  <div className="product-modal-tags">
-                    <span className="product-modal-category">{selectedProduct.category}</span>
-                    <span className="product-modal-tag">{selectedProduct.tag}</span>
-                  </div>
-                  <h2 className="product-modal-title">{selectedProduct.name}</h2>
-                  <p className="product-modal-desc">{selectedProduct.desc}</p>
-                </div>
-
-                <div className="product-specs-grid">
-                  <div className="product-spec-card">
-                    <div className="product-spec-card__icon">
-                      <span className="material-symbols-outlined">location_on</span>
-                    </div>
-                    <div className="product-spec-card__details">
-                      <span className="product-spec-card__label">{t('products:catalog.labels.origin')}</span>
-                      <span className="product-spec-card__value">{selectedProduct.origin}</span>
-                    </div>
-                  </div>
-
-                  <div className="product-spec-card">
-                    <div className="product-spec-card__icon">
-                      <span className="material-symbols-outlined">calendar_today</span>
-                    </div>
-                    <div className="product-spec-card__details">
-                      <span className="product-spec-card__label">{t('products:catalog.labels.season')}</span>
-                      <span className="product-spec-card__value">{selectedProduct.season}</span>
-                    </div>
-                  </div>
-
-                  <div className="product-spec-card">
-                    <div className="product-spec-card__icon">
-                      <span className="material-symbols-outlined">inventory_2</span>
-                    </div>
-                    <div className="product-spec-card__details">
-                      <span className="product-spec-card__label">{t('products:catalog.labels.packaging')}</span>
-                      <span className="product-spec-card__value">{selectedProduct.packaging}</span>
-                    </div>
-                  </div>
-
-                  <div className="product-spec-card">
-                    <div className="product-spec-card__icon">
-                      <span className="material-symbols-outlined">timelapse</span>
-                    </div>
-                    <div className="product-spec-card__details">
-                      <span className="product-spec-card__label">{t('products:catalog.labels.shelfLife')}</span>
-                      <span className="product-spec-card__value">{selectedProduct.shelfLife}</span>
-                    </div>
-                  </div>
-
-                  {Array.isArray(selectedProduct.varieties) && selectedProduct.varieties.length > 0 && (
-                    <div className="product-spec-card product-spec-card--full">
-                      <div className="product-spec-card__icon">
-                        <span className="material-symbols-outlined">spa</span>
-                      </div>
-                      <div className="product-spec-card__details">
-                        <span className="product-spec-card__label">{t('products:catalog.labels.producedVarieties')}</span>
-                        <span className="product-spec-card__value">{selectedProduct.varieties.join(', ')}</span>
-                      </div>
+              <div className="product-modal-grid">
+                <div className="product-modal-media">
+                  {selectedProduct.img ? (
+                    <img
+                      src={selectedProduct.img}
+                      alt={selectedTrans.name}
+                      className="product-modal-img"
+                    />
+                  ) : (
+                    <div className="product-modal-img img-placeholder" aria-label={`Photo pending: ${selectedTrans.name}`}>
+                      {t('products:catalog.placeholderText', 'REPLACE WITH REAL PHOTO')}<br />{selectedTrans.name}
                     </div>
                   )}
-
-                  <div className="product-spec-card product-spec-card--full">
-                    <div className="product-spec-card__icon">
-                      <span className="material-symbols-outlined">verified</span>
-                    </div>
-                    <div className="product-spec-card__details">
-                      <span className="product-spec-card__label">{t('products:catalog.labels.brix')}</span>
-                      <span className="product-spec-card__value">{selectedProduct.brix}</span>
-                    </div>
+                  <div className="product-modal-media-overlay" />
+                  <div className="product-modal-media-badge">
+                    <span className="material-symbols-outlined text-xs">verified</span>
+                    <span>{t('products:catalog.labels.globalGap')}</span>
                   </div>
                 </div>
 
-                <div className="product-modal-perks">
-                  <div className="product-modal-perk">
-                    <span className="material-symbols-outlined text-xs">check_circle</span>
-                    <span>{t('products:catalog.perks.traceable')}</span>
+                <div className="product-modal-content">
+                  <div className="product-modal-header">
+                    <div className="product-modal-tags">
+                      <span className="product-modal-category">{selectedTrans.category}</span>
+                      <span className="product-modal-tag">{selectedTrans.tag}</span>
+                    </div>
+                    <h2 className="product-modal-title">{selectedTrans.name}</h2>
+                    <p className="product-modal-desc">{selectedTrans.desc}</p>
                   </div>
-                  <div className="product-modal-perk">
-                    <span className="material-symbols-outlined text-xs">check_circle</span>
-                    <span>{t('products:catalog.perks.coldChain')}</span>
-                  </div>
-                </div>
 
-                <div className="product-modal-actions">
-                  <Link
-                    to={getLocalePath(`/buyers?product=${selectedProduct.id}`, currentLang)}
-                    className="btn btn--primary product-modal-cta"
-                    onClick={() => setSelectedProduct(null)}
-                  >
-                    {t('products:catalog.labels.requestQuote')}
-                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                  </Link>
-                  <button
-                    type="button"
-                    className="btn btn--outline product-modal-dismiss"
-                    onClick={() => setSelectedProduct(null)}
-                  >
-                    {t('common:buttons.close')}
-                  </button>
+                  <div className="product-specs-grid">
+                    <div className="product-spec-card">
+                      <div className="product-spec-card__icon">
+                        <span className="material-symbols-outlined">location_on</span>
+                      </div>
+                      <div className="product-spec-card__details">
+                        <span className="product-spec-card__label">{t('products:catalog.labels.origin')}</span>
+                        <span className="product-spec-card__value">{selectedTrans.origin}</span>
+                      </div>
+                    </div>
+
+                    <div className="product-spec-card">
+                      <div className="product-spec-card__icon">
+                        <span className="material-symbols-outlined">calendar_today</span>
+                      </div>
+                      <div className="product-spec-card__details">
+                        <span className="product-spec-card__label">{t('products:catalog.labels.season')}</span>
+                        <span className="product-spec-card__value">{selectedTrans.season}</span>
+                      </div>
+                    </div>
+
+                    <div className="product-spec-card">
+                      <div className="product-spec-card__icon">
+                        <span className="material-symbols-outlined">inventory_2</span>
+                      </div>
+                      <div className="product-spec-card__details">
+                        <span className="product-spec-card__label">{t('products:catalog.labels.packaging')}</span>
+                        <span className="product-spec-card__value">{selectedTrans.packaging}</span>
+                      </div>
+                    </div>
+
+                    <div className="product-spec-card">
+                      <div className="product-spec-card__icon">
+                        <span className="material-symbols-outlined">timelapse</span>
+                      </div>
+                      <div className="product-spec-card__details">
+                        <span className="product-spec-card__label">{t('products:catalog.labels.shelfLife')}</span>
+                        <span className="product-spec-card__value">{selectedTrans.shelfLife}</span>
+                      </div>
+                    </div>
+
+                    {Array.isArray(selectedTrans.varieties) && selectedTrans.varieties.length > 0 && (
+                      <div className="product-spec-card product-spec-card--full">
+                        <div className="product-spec-card__icon">
+                          <span className="material-symbols-outlined">spa</span>
+                        </div>
+                        <div className="product-spec-card__details">
+                          <span className="product-spec-card__label">{t('products:catalog.labels.producedVarieties')}</span>
+                          <span className="product-spec-card__value">{selectedTrans.varieties.join(', ')}</span>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="product-spec-card product-spec-card--full">
+                      <div className="product-spec-card__icon">
+                        <span className="material-symbols-outlined">verified</span>
+                      </div>
+                      <div className="product-spec-card__details">
+                        <span className="product-spec-card__label">{t('products:catalog.labels.brix')}</span>
+                        <span className="product-spec-card__value">{selectedTrans.brix}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="product-modal-perks">
+                    <div className="product-modal-perk">
+                      <span className="material-symbols-outlined text-xs">check_circle</span>
+                      <span>{t('products:catalog.perks.traceable')}</span>
+                    </div>
+                    <div className="product-modal-perk">
+                      <span className="material-symbols-outlined text-xs">check_circle</span>
+                      <span>{t('products:catalog.perks.coldChain')}</span>
+                    </div>
+                  </div>
+
+                  <div className="product-modal-actions">
+                    <Link
+                      to={getLocalePath(`/buyers?product=${selectedProduct.id}`, currentLang)}
+                      className="btn btn--primary product-modal-cta"
+                      onClick={() => setSelectedProduct(null)}
+                    >
+                      {t('products:catalog.labels.requestQuote')}
+                      <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    </Link>
+                    <button
+                      type="button"
+                      className="btn btn--outline product-modal-dismiss"
+                      onClick={() => setSelectedProduct(null)}
+                    >
+                      {t('common:buttons.close')}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )
+      })()}
 
       {/* ---- Harvest Calendar Table Section ---- */}
       <section className="products-calendar section" id="calendar">
@@ -413,16 +437,30 @@ function Products() {
                 </tr>
               </thead>
               <tbody>
-                {harvestCalendar.map((row) => (
-                  <tr key={row.commodity}>
-                    <td className="font-medium">{row.commodity}</td>
-                    <td className="text-muted">{row.category}</td>
-                    <td>{row.window}</td>
-                    <td>
-                      <span className="availability-dot" /> {row.availability}
-                    </td>
-                  </tr>
-                ))}
+                {harvestCalendar.map((row) => {
+                  const rowKey = row.id || (
+                    row.commodity.includes('Tomato') ? 'tomato' :
+                    row.commodity.includes('Onion') ? 'onion' :
+                    row.commodity.includes('Papaya') ? 'papaya' :
+                    row.commodity.includes('Seed') ? 'seeds' :
+                    row.commodity.toLowerCase().replace(/[^a-z]/g, '')
+                  )
+                  const commodity = t(`products:calendar.rows.${rowKey}.commodity`, row.commodity)
+                  const category = t(`products:calendar.rows.${rowKey}.category`, row.category)
+                  const window = t(`products:calendar.rows.${rowKey}.window`, row.window)
+                  const availability = t(`products:calendar.rows.${rowKey}.availability`, row.availability)
+
+                  return (
+                    <tr key={row.commodity}>
+                      <td className="font-medium">{commodity}</td>
+                      <td className="text-muted">{category}</td>
+                      <td>{window}</td>
+                      <td>
+                        <span className="availability-dot" /> {availability}
+                      </td>
+                    </tr>
+                  )
+                })}
               </tbody>
             </table>
           </div>

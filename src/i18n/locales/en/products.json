@@ -17,6 +17,7 @@
       "fruits": "Fruits",
       "seeds": "Certified Seeds"
     },
+    "placeholderText": "REPLACE WITH REAL PHOTO",
     "labels": {
       "season": "Season",
       "packaging": "Packaging",
@@ -45,6 +46,166 @@
       "coldChain": "Direct Cold-Chain Transit"
     }
   },
+  "items": {
+    "tomatoes": {
+      "name": "Rift Valley Tomatoes",
+      "category": "Vegetables",
+      "tag": "Fresh, export grade",
+      "desc": "High-yield, disease-resistant varieties suited for both local consumption and export markets. Known for robust flavor and long shelf life.",
+      "season": "All Year",
+      "origin": "Meki & Ziway Lowlands",
+      "shelfLife": "14-21 Days (Cold-chain 8-10°C)",
+      "packaging": "5kg / 10kg Corrugated Export Cartons",
+      "brix": "4.8° - 5.5° Brix"
+    },
+    "onions": {
+      "name": "Red Onion",
+      "category": "Vegetables",
+      "tag": "Bulk and retail",
+      "desc": "Pungent, dense bulbs with excellent storage capacity, cultivated in ideal dry conditions.",
+      "season": "Main: Sep - Dec",
+      "origin": "East Shewa Farms",
+      "shelfLife": "3-5 Months (Dry storage)",
+      "packaging": "25kg / 50kg Mesh Bags",
+      "brix": "N/A (Pungency index high)"
+    },
+    "peppers": {
+      "name": "Green Pepper",
+      "category": "Vegetables",
+      "tag": "Seasonal",
+      "desc": "Crisp, thick-walled bell peppers favored by domestic retailers and processing units.",
+      "season": "All Year",
+      "origin": "Batu Irrigation Schemes",
+      "shelfLife": "12-16 Days (Cold-chain 7°C)",
+      "packaging": "6kg Plastic Crates / Export Boxes",
+      "brix": "Crisp & Sweet Grade A"
+    },
+    "potato": {
+      "name": "Highland Potato",
+      "category": "Vegetables",
+      "tag": "Year-round",
+      "desc": "Nutrient-dense varieties grown in higher altitudes, ensuring firm texture and versatility.",
+      "season": "Jun - Sep",
+      "origin": "Highland Outgrower Zones",
+      "shelfLife": "2-4 Months (Cool dry environment)",
+      "packaging": "50kg Jute Sacks",
+      "brix": "High dry matter content"
+    },
+    "green-beans": {
+      "name": "Green Beans",
+      "category": "Vegetables",
+      "tag": "Seasonal, export",
+      "desc": "Tender fine beans harvested by hand and pre-cooled for premium international markets.",
+      "season": "Oct - Apr",
+      "origin": "Meki Irrigation Schemes",
+      "shelfLife": "10-14 Days (Cold-chain 4°C)",
+      "packaging": "4kg Export Cartons",
+      "brix": "Crisp Grade A"
+    },
+    "cabbage": {
+      "name": "White Head Cabbage",
+      "category": "Vegetables",
+      "tag": "Seasonal",
+      "desc": "Dense, tightly packed green heads grown under organic soil management practices.",
+      "season": "Year-round",
+      "origin": "East Shewa Zone",
+      "shelfLife": "1-2 Months (Cool storage)",
+      "packaging": "20kg Mesh Sacks",
+      "brix": "Fresh & Crisp"
+    },
+    "papaya": {
+      "name": "Fresh Papaya",
+      "category": "Fruits",
+      "tag": "Seasonal",
+      "desc": "Sweet, export-grade solo papayas cultivated under strict GlobalG.A.P standards.",
+      "season": "All Year",
+      "origin": "Rift Valley Orchards",
+      "shelfLife": "10-14 Days (12°C)",
+      "packaging": "4.5kg Single Layer Cartons",
+      "brix": "11° - 13° Brix"
+    },
+    "watermelon": {
+      "name": "Rift Valley Watermelon",
+      "category": "Fruits",
+      "tag": "Seasonal",
+      "desc": "Juicy, deep red flesh watermelons grown in dry lowland soils with high natural sugar content.",
+      "season": "Nov - Mar",
+      "origin": "Ziway Lowlands",
+      "shelfLife": "2-3 Weeks",
+      "packaging": "Bulk Bins / Crates",
+      "brix": "10° - 12° Brix"
+    },
+    "maize-seed": {
+      "name": "Hybrid Maize Seed",
+      "category": "Seeds",
+      "tag": "Certified seed",
+      "desc": "High-yield, drought-tolerant certified maize seed varieties multiplied and processed for member co-ops and regional distribution.",
+      "season": "Feb - Apr",
+      "origin": "Union Seed Processing Unit",
+      "shelfLife": "24 Months (Hermetic storage)",
+      "packaging": "2kg / 10kg Moisture-proof Bags",
+      "brix": "98%+ Germination Rate",
+      "varieties": ["BH-661", "BH-546", "Jibat", "Ambo", "Melkasa-2"]
+    },
+    "bean-seed": {
+      "name": "Certified Bean Seed",
+      "category": "Seeds",
+      "tag": "Certified seed",
+      "desc": "Certified high-germination haricot and common bean seed varieties adapted for Rift Valley growing conditions.",
+      "season": "Jan - Mar",
+      "origin": "Meki Seed Multiplication Center",
+      "shelfLife": "18-24 Months",
+      "packaging": "2kg / 5kg Sealed Packets",
+      "brix": "96%+ Germination Rate",
+      "varieties": ["Awash-1", "Nasir-1", "Seeri-119", "Seeri-125"]
+    },
+    "onion-seed": {
+      "name": "Certified Onion Seed",
+      "category": "Seeds",
+      "tag": "Certified seed",
+      "desc": "High-grade onion seed varieties selected for disease resistance, heat tolerance, and uniform bulb yield.",
+      "season": "Jan - Mar",
+      "origin": "Meki Seed Breeding Center",
+      "shelfLife": "18-24 Months",
+      "packaging": "100g / 250g Foil Bags",
+      "brix": "95%+ Germination Rate",
+      "varieties": ["Nafis", "Bomb Red"]
+    },
+    "wheat-seed": {
+      "name": "Certified Wheat Seed",
+      "category": "Seeds",
+      "tag": "Certified seed",
+      "desc": "Certified high-performing wheat seed variety cultivated and conditioned for regional smallholder farming.",
+      "season": "May - Jul",
+      "origin": "Union Seed Multiplication Farms",
+      "shelfLife": "18-24 Months",
+      "packaging": "25kg / 50kg Certified Sacks",
+      "brix": "97%+ Germination Rate",
+      "varieties": ["Kekeba"]
+    },
+    "carrot": {
+      "name": "Carrot",
+      "category": "Vegetables",
+      "tag": "Fresh, firm root vegetable",
+      "desc": "Fresh, firm-textured carrots with vibrant colour and natural sweetness, suited for domestic wholesale and export markets.",
+      "season": "Oct - Jan",
+      "origin": "East Shewa Zone",
+      "shelfLife": "3-4 Weeks (Cool storage)",
+      "packaging": "20kg Mesh Sacks / 10kg Export Cartons",
+      "brix": "High dry matter, firm Grade A"
+    },
+    "garlic": {
+      "name": "Garlic",
+      "category": "Vegetables",
+      "tag": "Dried bulb, bulk and retail",
+      "desc": "Pungent, tightly cloved garlic bulbs air-dried and cleaned for domestic distribution and export packing.",
+      "season": "Nov - Feb",
+      "origin": "East Shewa Zone",
+      "shelfLife": "4-6 Months (Dry cool storage)",
+      "packaging": "10kg / 25kg Mesh Bags",
+      "brix": "N/A (High allicin content)"
+    }
+  },
   "calendar": {
     "tag": "Seasonal Schedule",
     "title": "Harvest & Availability Calendar",
@@ -55,6 +216,32 @@
       "category": "Category",
       "harvestWindow": "Main Harvest Window",
       "exportAvailability": "Export Availability"
+    },
+    "rows": {
+      "tomato": {
+        "commodity": "Rift Valley Tomato",
+        "category": "Vegetable",
+        "window": "Year-round (Peak: Oct-Feb)",
+        "availability": "High"
+      },
+      "onion": {
+        "commodity": "Red Onion",
+        "category": "Vegetable",
+        "window": "September - December",
+        "availability": "High"
+      },
+      "papaya": {
+        "commodity": "Fresh Papaya",
+        "category": "Fruit",
+        "window": "Year-round",
+        "availability": "Medium"
+      },
+      "seeds": {
+        "commodity": "Certified Seed",
+        "category": "Seed",
+        "window": "January - March (Processing)",
+        "availability": "Seasonal"
+      }
     }
   },
   "cta": {

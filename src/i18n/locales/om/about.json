@@ -1,15 +1,15 @@
 {
   "hero": {
-    "eyebrow": "Odeeffannoo & Beeksisa",
-    "title": "Maasiirraa Kallattiin Isiniif.",
-    "desc": "Yuniyeeniin Maqii Baatuu dukaannoota shan Finfinneetti bulchuun, oomisha haaraa guyyaa guyyaan dhiyeessa.",
-    "badge": "Iddoowwan Finfinnee 5",
-    "imageAlt": "Agarsiisa oomisha haaraa dukaana ammayyaatti"
+    "eyebrow": "Bara 2002 irraa eegale • Muuxannoo Waggaa 20+",
+    "title": "Cimina Tokkummaa Waldaatiin Guddina Fiduu",
+    "desc": "Yuniyeeniin Maqii Baatuu agarsiistuu cimina qonna gamtaa Itoophiyaa ti. Waldaalee bu'uuraa 135 fi qoteebultoota 8,089 tokkoomsuun daldala haqa-qabeessa, hojimaata itti-fufiinsa qabuu fi oomisha qulqullina olaanaa gabaa biyya keessaa fi addunyaatiif dhiyeessina.",
+    "badge": "Maqii, Oromiyaa • Hundeeffama 2002",
+    "imageAlt": "Lafa qonnaa Itoophiyaa gabbataa barii"
   },
   "foundation": {
     "title": "Hundeeffama Keenya",
     "item1": {
-      "date": "Caamsaa 11, 1994",
+      "date": "Caamsaa 11, 2002",
       "heading": "Eegalama Maqii",
       "text": "Magaalaa Maqiitti waldaalee 12 fi miseensota 527n, kaappitaala qarshii 500,000 walitti buusuun hundeeffame."
     },
@@ -44,7 +44,7 @@
     "eyebrow": "Bulchiinsa Dimokraatawaa",
     "title": "Bulchiinsa & Caasaa Dhaabbataa",
     "desc": "Bulchiinsi dimokraatawaa iftoomina, to'annoo cimaa fi hooggansa ogummaa Yaa'ii Waliigalaarraa hanga waldaaleetti mirkaneessa.",
-    "subtitle": "Caasaa bulchiinsaa — ergama fi caasaa ilaaluuf sadarkaa ykn kutaa filadhu.",
+    "subtitle": "Caasaa bulchiinsaa: ergama fi caasaa ilaaluuf sadarkaa ykn kutaa filadhu.",
     "teamTag": "Garee Hooggansaa",
     "teamSubtitle": "Hooggansa Olaanaa",
     "teamDesc": "Daarektaroota yuniyeenii fi hooggantoota kutaa hojii gaggeessan.",
@@ -62,7 +62,7 @@
     "ariaLabel": "Qabeenya Hojii fi Bu'uuraalee Yuniyeenii",
     "badge": "Bu'uuraalee Misoomaa & Qabeenya",
     "title": "Qabeenya Hojii",
-    "desc": "Utubaa loojistiiksii waldaalee 135 humneessu — kuusaa qabbaneessaa toonii 2,000, geejjiba qabbanaawaa hanga wiirtuu sanyiitti.",
+    "desc": "Utubaa loojistiiksii waldaalee 135 humneessu, kuusaa qabbaneessaa toonii 2,000, geejjiba qabbanaawaa hanga wiirtuu sanyiitti.",
     "filterAriaLabel": "Qabeenya ramaddiin calali"
   },
   "resourceModal": {
@@ -78,16 +78,28 @@
   },
   "partners": {
     "eyebrow": "Hidhata Dhaabbilee",
-    "title": "Michoota Tarsiimawaa",
+    "title": "Michuuwwan Tarsiimawaa",
     "desc": "Qonna itti-fufaan guddisuuf ejensiiwwan mootummaa, dhaabbilee qorannoo fi misoomaa idil-addunyaa waliin hojjanna.",
+    "filterAriaLabel": "Ramaddiidhaan calali",
     "categories": {
-      "all": "Michoota Hunda",
+      "all": "Michuuwwan Hunda",
       "development": "Misooma & Itti-fufiinsa",
       "research": "Qorannoo & Kalaqa",
       "finance": "Faayinaansii & Bittoota",
       "government": "Mootummaa & Seera"
     },
-    "showAll": "Michoota Hunda Agarsiisi ({{count}})",
+    "tags": {
+      "development": "Michuu Misoomaa",
+      "environmental": "Michuu Naannoo",
+      "industry": "Michuu Industirii",
+      "research": "Michuu Qorannoo",
+      "offTaker": "Bittaa Daldalaa",
+      "financial": "Michuu Faayinaansii",
+      "market": "Michuu Gabaa",
+      "regulatory": "Qaama Seeraa & To'annoo",
+      "government": "Biiroo Mootummaa"
+    },
+    "showAll": "Michuuwwan Hunda Agarsiisi ({{count}})",
     "showLess": "Xiqqeessi Agarsiisi",
     "pillars": {
       "p1": {

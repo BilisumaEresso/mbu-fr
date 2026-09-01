@@ -219,8 +219,8 @@ export const products = [
 export const categories = ['All', 'Vegetables', 'Fruits', 'Seeds']
 
 export const harvestCalendar = [
-  { commodity: 'Rift Valley Tomato', category: 'Vegetable', window: 'Year-round (Peak: Oct-Feb)', availability: 'High' },
-  { commodity: 'Red Onion', category: 'Vegetable', window: 'September - December', availability: 'High' },
-  { commodity: 'Fresh Papaya', category: 'Fruit', window: 'Year-round', availability: 'Medium' },
-  { commodity: 'Certified Seed', category: 'Seed', window: 'January - March (Processing)', availability: 'Seasonal' },
+  { id: 'tomato', commodity: 'Rift Valley Tomato', category: 'Vegetable', window: 'Year-round (Peak: Oct-Feb)', availability: 'High' },
+  { id: 'onion', commodity: 'Red Onion', category: 'Vegetable', window: 'September - December', availability: 'High' },
+  { id: 'papaya', commodity: 'Fresh Papaya', category: 'Fruit', window: 'Year-round', availability: 'Medium' },
+  { id: 'seeds', commodity: 'Certified Seed', category: 'Seed', window: 'January - March (Processing)', availability: 'Seasonal' },
 ]

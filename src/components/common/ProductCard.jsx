@@ -10,9 +10,9 @@ function ProductCard({ name, imageAlt, size = 'small', gradeLabel, className = '
 
   return (
     <div className={`product-card product-card--${size} ${className}`.trim()}>
-      {/* Image placeholder — swap for real <img> when photography is ready */}
+      {/* Image placeholder: swap for real <img> when photography is ready */}
       <div className="product-card__image">
-        REPLACE WITH REAL PHOTO — {imageAlt || name}
+        REPLACE WITH REAL PHOTO: {imageAlt || name}
       </div>
       <div className={`product-card__overlay ${isLarge ? 'product-card__overlay--large' : ''}`.trim()} />
       <div className="product-card__content">

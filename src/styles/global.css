@@ -270,18 +270,23 @@ hr, .divider, .gradient-divider {
   color: var(--color-bg);
 }
 
-/* ---- Subtle scrollbar styling (WebKit: Chrome, Safari, Edge) ---- */
+/* ---- Modern, Thin & Professional Scrollbar ---- */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(23, 49, 36, 0.25) transparent;
+}
+
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-alt);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--outline-variant);
+  background: rgba(23, 49, 36, 0.25);
   border-radius: var(--radius-full);
 }
 

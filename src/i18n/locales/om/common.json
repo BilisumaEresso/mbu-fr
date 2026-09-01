@@ -1,5 +1,5 @@
 {
-  "skipLink": "Qabiyyee ijooti darbi",
+  "skipLink": "Gara qabiyyee ijoo darbi",
   "header": {
     "brand": "Yuniyeenii Maqii Baatuu",
     "brandLine1": "Yuniyeenii",
@@ -18,15 +18,15 @@
       "ourProductsDesc": "Kuduraa, muduraa fi sanyii",
       "retailOutlets": "Dukaannoota",
       "retailOutletsDesc": "Dukaannoota Finfinnee 5",
-      "farmers": "Qoteebultootaaf",
-      "buyers": "Bittootaaf",
+      "farmers": "Qotee Bulaaf",
+      "buyers": "Bitataaf",
       "news": "Oduu",
       "contact": "Quunnamtii"
     }
   },
   "footer": {
     "tagline": "Yuniyeenii kuduraa fi muduraa Itoophiyaa amanamaa muuxannoo waggaa 20+ qabu.",
-    "badge": "Ragaa GlobalG.A.P · Oomishtuu Sanyii Mirkanaa'e",
+    "badge": "Ragaa GlobalG.A.P · Oomishaa Sanyii Mirkanaa'e",
     "company": "Waa'ee Yuniyeenii",
     "stakeholders": "Qooda-fudhattoota",
     "contact": "Waajjira Quunnamtii",
@@ -94,16 +94,16 @@
   "certifications": {
     "globalgapTitle": "Ragaa GlobalG.A.P",
     "globalgapDesc": "Ulaagaa idil-addunyaa nageenya nyaataa fi hordoffii guutuu guuta. Maatiiwwan 400 ol ta'an sagantaa yuniyeenii jalatti ragaa GlobalG.A.P argataniiru.",
-    "globalgapCaption": "Ragaa GlobalG.A.P qonna nagaa fi hordofamuuf — maatiiwwan 400 ol ta'an ragaa kana argataniiru.",
+    "globalgapCaption": "Ragaa GlobalG.A.P qonna nagaa fi hordofamuuf, maatiiwwan 400 ol ta'an ragaa kana argataniiru.",
     "globalgapLearn": "Waa'ee GlobalG.A.P dubbisi",
     "globalgapAlt": "Asxaa Ragaa GlobalG.A.P",
     "globalgapAriaLabel": "Ragaa GlobalG.A.P guddaa ilaali",
     "globalgapLogoAlt": "Loogoo GlobalG.A.P",
-    "oromiaTitle": "Oomishtuu Sanyii Mirkanaa'e — Biiroo Qonnaa Oromiyaa",
+    "oromiaTitle": "Oomishaa Sanyii Mirkanaa'e: Biiroo Qonnaa Oromiyaa",
     "oromiaDesc": "Labsii Sanyii Lak. 782/2013 jalatti sanyii filatamaa oomishuuf eeyyamame. Lak. Eeyyamaa 72, WHG Maqii Baatuuf kenname.",
     "oromiaMeta": "Kan kenname 14/01/2019 · Biiroo Qonnaa Oromiyaa",
-    "oromiaCaption": "Eeyyama Oomishtuu Sanyii Lak. 72 Labsii Sanyii Lak. 782/2013 jalatti.",
-    "oromiaAlt": "Ragaa Ga'umsa Biiroo Qonnaa Oromiyaa, eeyyama oomishtuu sanyii",
+    "oromiaCaption": "Eeyyama Oomishaa Sanyii Lak. 72 Labsii Sanyii Lak. 782/2013 jalatti.",
+    "oromiaAlt": "Ragaa Ga'umsa Biiroo Qonnaa Oromiyaa, eeyyama oomishaa sanyii",
     "oromiaAriaLabel": "Sanada ragaa sanyii Oromiyaa guddaa ilaali",
     "expand": "Guddisi",
     "expandDoc": "Sanada Guddisi",
@@ -115,7 +115,7 @@
     "region": "Naannoo Keenya",
     "title": "Bakka Nutti Hojjennu",
     "desc": "Waldaaleen keenya aanoolee ja'a Godina Shawaa Bahaa fi Arsii keessatti oomishu: Dugdaa, Adaamii Tulluu, Booraa, Zeway Dugdaa, Adaamaa fi Doodota Siree. Haroo Dambalitti eegalee, amma qoteebultoota 8,089 deeggara.",
-    "mapTitle": "Bakka Yuniyeenii Maqii Baatuu — Maqii, Shawaa Bahaa, Oromiyaa",
+    "mapTitle": "Bakka Yuniyeenii Maqii Baatuu, Maqii, Shawaa Bahaa, Oromiyaa",
     "districts": {
       "dugda": "Aanaa Dugdaa",
       "adamiTulu": "Adaamii Tulluu Jiddo Kombolcha",
@@ -182,7 +182,7 @@
     }
   },
   "notFound": {
-    "title": "Hin Argamne ｜ Yuniyeenii Maqii Baatuu",
+    "title": "Hin Argamne | Yuniyeenii Maqii Baatuu",
     "desc": "Fuulli ati barbaaddan hin jiru.",
     "button": "Fuula duraatti deebi'i"
   },

@@ -94,12 +94,12 @@
   "certifications": {
     "globalgapTitle": "GlobalG.A.P Certified",
     "globalgapDesc": "Meeting international standards for food safety, traceability, and responsible farming practice. More than 400 member households are GlobalG.A.P certified under the union's certification scheme.",
-    "globalgapCaption": "Official GlobalG.A.P Certification for safe, traceable, and sustainable farming practice — with more than 400 member households certified under the union's certification scheme.",
+    "globalgapCaption": "Official GlobalG.A.P Certification for safe, traceable, and sustainable farming practice, with more than 400 member households certified under the union's certification scheme.",
     "globalgapLearn": "Learn about GlobalG.A.P",
     "globalgapAlt": "GlobalG.A.P Certification Logo and Badge",
     "globalgapAriaLabel": "View GlobalG.A.P certificate logo at full size",
     "globalgapLogoAlt": "GlobalG.A.P logo",
-    "oromiaTitle": "Certified Seed Producer — Oromia Bureau of Agriculture & Natural Resource",
+    "oromiaTitle": "Certified Seed Producer: Oromia Bureau of Agriculture & Natural Resource",
     "oromiaDesc": "Authorized under Ethiopia's Seed Proclamation No. 782/2013 to produce certified seeds of vegetables, fruit, cereal, and pulses. License Reg. No. 72, issued to Meki Batu Fruit & Vegetable Growers Cooperative Union.",
     "oromiaMeta": "Issued 14/01/2019 · Oromia Bureau of Agriculture & Natural Resource",
     "oromiaCaption": "Certified Seed Producer License Ltd Reg. No. 72 under Ethiopia's Seed Proclamation No. 782/2013.",
@@ -115,7 +115,7 @@
     "region": "Our Region",
     "title": "Where We Operate",
     "desc": "Our member cooperatives farm across six districts in East Shewa and Arsi zones: Dugda woreda, Adami Tulu Jido Kombolcha, Bora, Zuway Dugda, Adama, and Dodota Sire. Originally founded around Dembal Lake (Lake Ziway) across Dugda and Adami Tulu, the union has expanded to support 8,089 member farmers across all six woredas.",
-    "mapTitle": "Meki Batu Union location — Meki Town, East Shewa Zone, Oromia, Ethiopia",
+    "mapTitle": "Meki Batu Union location: Meki Town, East Shewa Zone, Oromia, Ethiopia",
     "districts": {
       "dugda": "Dugda Woreda",
       "adamiTulu": "Adami Tulu Jido Kombolcha",
