@@ -439,9 +439,10 @@
 }
 
 /* Dossier Card Container */
+/* Dossier Card Container */
 .org-inspector-panel {
   width: 100%;
-  padding: 24px 28px;
+  padding: clamp(14px, 3.5vw, 28px);
   background: var(--surface-container-lowest, #ffffff);
   border: none;
   border-radius: var(--radius-xl, 20px);
@@ -465,27 +466,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 18px;
-  padding-bottom: 14px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  gap: 12px;
+  gap: 10px;
 }
 
 .org-inspector-panel__meta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
 }
 
 .org-badge {
   font-family: var(--font-mono);
-  font-size: 11.5px;
-  padding: 4px 10px;
+  font-size: 11px;
+  padding: 3px 8px;
   border-radius: var(--radius-xs, 4px);
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -524,10 +525,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
   border-radius: 50%;
   transition: all var(--transition-fast);
 }
@@ -555,12 +556,12 @@
 .org-inspector-panel__header {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .org-inspector-panel__icon-box {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-md, 8px);
   display: flex;
   align-items: center;
@@ -585,32 +586,34 @@
 }
 
 .org-inspector-panel__icon {
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .org-inspector-panel__titles {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .org-inspector-panel__title {
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: clamp(16px, 4vw, 19px);
   font-weight: 700;
   color: var(--color-primary, #173124);
   margin: 0;
   line-height: 1.25;
+  overflow-wrap: break-word;
 }
 
 .org-inspector-panel__sub {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--color-text-muted, #727973);
   margin: 2px 0 0;
 }
 
 .org-inspector-panel__desc {
-  font-size: 14.5px;
-  line-height: 1.65;
+  font-size: clamp(13.5px, 2.4vw, 14.5px);
+  line-height: 1.6;
   color: var(--color-text, #1c1b1b);
   margin: 0;
 }
@@ -619,17 +622,17 @@
 .org-inspector-panel__leader {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   background: var(--surface-container-low, #f6f3f2);
   border: none;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   border-radius: var(--radius-md, 8px);
-  padding: 12px 14px;
+  padding: 10px 12px;
 }
 
 .org-inspector-panel__leader-photo-wrap {
-  width: 58px;
-  height: 58px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-sm, 6px);
   overflow: hidden;
   border: none;
@@ -663,7 +666,7 @@
 
 .org-inspector-panel__leader-name {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--color-primary, #173124);
   margin: 0;
@@ -671,15 +674,15 @@
 }
 
 .org-inspector-panel__leader-title {
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--color-text-muted, #727973);
-  margin: 1px 0 6px;
+  margin: 1px 0 4px;
 }
 
 .org-inspector-panel__leader-contacts {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 }
 
 .org-inspector-panel__leader-link {
@@ -709,19 +712,19 @@
   border: none;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   border-radius: var(--radius-md, 8px);
-  padding: 18px 20px;
+  padding: 14px 16px;
 }
 
 .org-inspector-panel__section-heading {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--color-primary, #173124);
   display: flex;
   align-items: center;
   gap: 6px;
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   font-weight: 700;
 }
 
@@ -731,21 +734,21 @@
   margin: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 8px;
 }
 
 .org-inspector-panel__list-item {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  font-size: 13px;
+  gap: 8px;
+  font-size: 12.5px;
   color: var(--color-text, #1c1b1b);
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 .org-inspector-panel__bullet {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--secondary, #9d4320);
   margin-top: 6px;
@@ -756,11 +759,9 @@
 @media (max-width: 899px) {
   .org-inspector-panel__content-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 16px;
   }
 }
-
-
 
 /* ==========================================================================
    6. Responsive Adaptations (< 900px) — Tiered Accordion Mode
@@ -783,13 +784,29 @@
   }
 
   .org-root {
-    padding: var(--space-4) var(--space-3);
+    padding: clamp(12px, 3vw, 18px) clamp(8px, 2.5vw, 16px);
   }
 
   .org-toolbar {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+    padding: 8px 12px;
+  }
+
+  .org-toolbar__actions {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .org-action-btn {
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 6px 10px;
+    min-height: 34px;
+    font-size: 11px;
   }
 
   /* Mobile Tiered Accordion Container */
@@ -797,8 +814,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin: 4px 0 16px;
+    gap: 10px;
+    margin: 4px 0 14px;
   }
 
   /* Tier Card */
@@ -826,12 +843,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 16px;
+    padding: 10px 12px;
     background: var(--surface-container-low, #f6f3f2);
     border: none;
     cursor: pointer;
     text-align: left;
-    gap: 12px;
+    gap: 8px;
     transition: background var(--transition-fast);
   }
 
@@ -842,14 +859,14 @@
   .org-tier-card__header-left {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     min-width: 0;
     flex: 1;
   }
 
   .org-tier-card__icon-box {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: var(--radius-md, 8px);
     display: flex;
     align-items: center;

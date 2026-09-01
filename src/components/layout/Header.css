@@ -86,10 +86,11 @@
 /* ---- Brand / Logo ---- */
 .header__brand {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
+  align-items: center;
+  gap: clamp(6px, 1.8vw, var(--space-3));
   text-decoration: none;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
   transition: opacity var(--transition-fast);
 }
 
@@ -98,7 +99,7 @@
 }
 
 .header__logo-img {
-  height: 40px;
+  height: clamp(34px, 8vw, 40px);
   width: auto;
   object-fit: contain;
   display: block;
@@ -114,16 +115,23 @@
   color: var(--color-bg);
   letter-spacing: -0.01em;
   line-height: 1.15;
+  min-width: 0;
 }
 
 .header__brand-line1 {
-  font-size: clamp(1.0rem, 1.15vw, 1.2rem);
+  font-size: clamp(0.92rem, 3.2vw, 1.2rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .header__brand-line2 {
-  font-size: clamp(0.9rem, 1.05vw, 1.08rem);
+  font-size: clamp(0.78rem, 2.7vw, 1.05rem);
   opacity: 0.85;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ---- Desktop Nav ---- */
@@ -663,14 +671,14 @@
 .header__mobile-lang-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: clamp(6px, 1.5vw, 8px);
 }
 
 .header__mobile-lang-card {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 10px;
+  gap: clamp(6px, 1.5vw, 8px);
+  padding: 6px 8px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
@@ -678,6 +686,13 @@
   text-align: left;
   transition: all var(--transition-fast);
   width: 100%;
+  min-width: 0;
+}
+
+@media (min-width: 480px) {
+  .header__mobile-lang-card {
+    padding: 8px 10px;
+  }
 }
 
 .header__mobile-lang-card:hover {
@@ -695,10 +710,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   border-radius: 4px;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   background: rgba(255, 255, 255, 0.1);
   color: rgba(252, 249, 248, 0.85);
@@ -715,10 +730,11 @@
   flex-direction: column;
   min-width: 0;
   line-height: 1.2;
+  flex: 1;
 }
 
 .header__mobile-lang-name {
-  font-size: 0.825rem;
+  font-size: clamp(0.75rem, 2.3vw, 0.825rem);
   font-weight: 600;
   color: var(--color-bg);
   white-space: nowrap;
@@ -727,13 +743,16 @@
 }
 
 .header__mobile-lang-sub {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: rgba(252, 249, 248, 0.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .header__mobile-lang-check {
   margin-left: auto;
-  font-size: 16px !important;
+  font-size: 15px !important;
   color: var(--color-accent);
   flex-shrink: 0;
 }
