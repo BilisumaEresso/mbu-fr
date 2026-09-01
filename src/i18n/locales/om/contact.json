@@ -3,10 +3,10 @@
     "eyebrow": "Waajjira Muummee fi Dameewwan",
     "title": "Yuniyeenii Maqii Baatuu Qunnamaa",
     "desc": "Waajjira muummee keenya kan Magaalaa Maqiitti argamu qunnamaa, yookiin dukaannoota keenya Finfinnee keessa jiran shananiitti daawwadhaa.",
-    "badge": "Waajjira Muummee Maqii & Wiirtuu Finfinnee"
+    "badge": "Waajjira Muummee Maqii fi Wiirtuu Finfinnee"
   },
   "info": {
-    "hqTitle": "Waajjira Muummee & Wiirtuu Saamsamaa",
+    "hqTitle": "Waajjira Muummee fi Wiirtuu Saamsamaa",
     "hqAddress": "Maqii, Dugdaa, Shawaa Bahaa, Oromiyaa (Finfinneerraa KM 138 gara kibbaatti)",
     "address": "Finfinneerraa KM 138 gara kibbaatti",
     "poBox": "L.S.P: 44, Maqii, Itoophiyaa",
@@ -17,7 +17,7 @@
     "fax": "Faaksii",
     "email": "Gaaffilee Waliigalaa",
     "emailTitle": "Gaaffilee Kallattii",
-    "phoneTitle": "Bilbila & Moobaayila",
+    "phoneTitle": "Bilbila fi Moobaayila",
     "hoursTitle": "Sa'aatii Hojii",
     "hoursValue": "Wiixata – Jimaata: 8:00 WB – 11:30 B | Sanbata: 8:00 WB – 6:30 B",
     "imageAlt": "Biyyoo qonnaa gabbataa oomisha waliin"
@@ -34,9 +34,9 @@
     "subjectPlaceholder": "fkn. Gaaffii Ergaa Alaa / Tumsa",
     "subjects": {
       "select": "Dhimma filadhu...",
-      "export": "Gaaffii Daldalaa & Ergaa Alaa",
-      "membership": "Miseensummaa WHG & Galtee",
-      "media": "Miidiyaa, Qorannoo & Tumsa",
+      "export": "Gaaffii Daldalaa fi Ergaa Alaa",
+      "membership": "Miseensummaa WHG fi Galtee",
+      "media": "Miidiyaa, Qorannoo fi Tumsa",
       "other": "Gaaffilee Biroo"
     },
     "message": "Ergaa Kee",

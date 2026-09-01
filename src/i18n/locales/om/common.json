@@ -11,7 +11,7 @@
     "nav": {
       "about": "Waa'ee Keenya",
       "aboutDesc": "Seenaa, ergama fi hooggansa",
-      "impact": "Bu'aa & Gabaasa",
+      "impact": "Bu'aa fi Gabaasa",
       "impactDesc": "Ragaa fi gabaasa waggaa",
       "products": "Oomishaalee",
       "ourProducts": "Oomishaalee Keenya",
@@ -152,19 +152,19 @@
       "geletaDiriba": {
         "name": "Galataa Dirribaa",
         "title": "Ogeessa Karooraa fi Baajataa",
-        "department": "Karoora & Madaallii",
+        "department": "Karoora fi Madaallii",
         "category": "Deeggarsa Olaanaa"
       },
       "megarsoEbso": {
         "name": "Magarsaa Eebsoo",
-        "title": "Hogganaa Qonnaa & Tajaajila Q/Bulaa",
-        "department": "Qonna & Galtee",
+        "title": "Hogganaa Qonnaa fi Tajaajila Q/Bulaa",
+        "department": "Qonna fi Galtee",
         "category": "Hogganaa Kutaa"
       },
       "lenchoHamde": {
         "name": "Leencoo Hamdee",
         "title": "Hogganaa Gabaa",
-        "department": "Gabaa & Daldala",
+        "department": "Gabaa fi Daldala",
         "category": "Hogganaa Kutaa"
       },
       "eresoAmbaso": {
@@ -176,7 +176,7 @@
       "sisayYadesa": {
         "name": "Sisaay Yaadasaa",
         "title": "Hogganaa Faayinaansii fi Bittaa",
-        "department": "Faayinaansii & Bittaa",
+        "department": "Faayinaansii fi Bittaa",
         "category": "Hogganaa Kutaa"
       }
     }
@@ -203,7 +203,7 @@
       "name": "Geejjiba Qabbanaawaa",
       "tag": "Loojistiiksii Qabbanaawaa",
       "stat": "Konkolaattota 18+",
-      "location": "Sulula Qiinxamaa & Finfinnee",
+      "location": "Sulula Qiinxamaa fi Finfinnee",
       "desc": "Konkolaattota qabbanaawaa oomisha maasiirraa hanga gabaatti haarummaan geessan.",
       "features": [
         "To'annoo Ho'aa",
@@ -213,7 +213,7 @@
     },
     "centralPackhouse": {
       "name": "Wiirtuu Saamsamaa Daldala Alaa",
-      "tag": "Sadarkeessuu & Saamsuu",
+      "tag": "Sadarkeessuu fi Saamsuu",
       "stat": "Toonii 50,000 / Waggaatti",
       "location": "Wiirtuu Maqii",
       "desc": "Sadarkeessuu, dhiquu, fi sarara saamsamaa ragaa GlobalG.A.P qabu.",
@@ -225,7 +225,7 @@
     },
     "irrigationSchemes": {
       "name": "Jallisii Haroo Dambal",
-      "tag": "Bishaan & Jallisii",
+      "tag": "Bishaan fi Jallisii",
       "stat": "Hektaara 5,910",
       "location": "Sulula Haroo Dambal",
       "desc": "Paampii elektiriikii fi jallisii cobxoo ammayyaa oomisha waggaa guutuu dandeessisu.",

@@ -113,9 +113,9 @@
       {
         "number": "04",
         "phase": "Saamsuu fi Erguu",
-        "location": "Finfinnee & Fe'umsa Qilleensaa",
+        "location": "Finfinnee fi Fe'umsa Qilleensaa",
         "icon": "local_shipping",
-        "title": "Loojistiiksii & Ergaa Alaa",
+        "title": "Loojistiiksii fi Ergaa Alaa",
         "tag": "Kallattiin Fudhachuu",
         "description": "Kaartoonii daldala alaatti saamsamee geejjiba qabbanaawaan suuqiiwwan Finfinnee 5 fi fe'umsa qilleensaatti ergama.",
         "highlights": [
@@ -130,7 +130,7 @@
     ]
   },
   "resources": {
-    "tag": "Bu'uuraalee & Qabeenya",
+    "tag": "Bu'uuraalee fi Qabeenya",
     "title": "Bu'uuraalee Qonnaa Ammayyaa",
     "desc": "Kuusaa qabbaneessaa, geejjibaa, fi jallisii ammayyaa oomisha guddisan fi qisaasama xiqqaachiisan.",
     "exploreAll": "Bu'uuraalee hunda ilaali",
@@ -138,28 +138,32 @@
       "coldStorage": {
         "name": "Kuusaa Qabbaneessaa",
         "stat": "Toonii 2,000",
-        "desc": "Kutaa qabbaneessaa to'annoo ho'aa qaban kan waldaalee 135 tajaajilan."
+        "location": "Wiirtuu Maqii",
+        "desc": "Kuusaa qabbaneessaa to'annoo ho'aa qaban kan waldaalee 135 tajaajilu."
       },
-      "fleet": {
+      "refrigeratedFleet": {
         "name": "Geejjiba Qabbanaawaa",
         "stat": "Konkolaattota 18+",
-        "desc": "Konkolaattota qabbanaawaa qulqullina oomishaa eegan."
+        "location": "Sulula Qiinxamaa",
+        "desc": "Konkolaattota qabbanaawaa oomisha maasiirraa hanga gabaatti haarummaan geessan."
       },
       "packhouse": {
-        "name": "Wiirtuu Saamsamaa Daldala Alaa",
+        "name": "Wiirtuu Saamsamaa",
         "stat": "Toonii 50,000 / Waggaatti",
-        "desc": "Sarara sadarkeessuu, dhiquu fi saamsuu ragaa GlobalG.A.P qabu."
+        "location": "Wiirtuu Maqii",
+        "desc": "Sadarkeessuu, dhiquu, fi sarara saamsamaa ragaa GlobalG.A.P qabu."
       },
       "irrigation": {
         "name": "Jallisii Haroo Dambal",
         "stat": "Hektaara 5,910",
-        "desc": "Paampii elektiriikii fi jallisii ammayyaa oomisha waggaa guutuu dandeessisu."
+        "location": "Sulula Haroo Dambal",
+        "desc": "Paampii elektiriikii fi jallisii cobxoo ammayyaa oomisha waggaa guutuu dandeessisu."
       }
     }
   },
   "documentation": {
     "tag": "Sanadoota",
-    "title": "Qabeenya & Buufachuuf",
+    "title": "Qabeenya fi Buufachuuf",
     "companyProfile": {
       "title": "Pirofaayilii Dhaabbataa",
       "desc": "Seenaa, bulchiinsa, fi dandeettii hojii.",
@@ -187,7 +191,7 @@
     }
   },
   "testimonials": {
-    "tag": "Hawaasa & Dhiibbaa",
+    "tag": "Hawaasa fi Dhiibbaa",
     "title": "Sagalee Waldaa Keenyaa",
     "desc": "Qoteebultoota, gaggeessitoota, fi michuuwwan daldalaa Itoophiyaa fi Awurooppaa dhaga'i.",
     "badge": "Yaada Kennaman",
@@ -243,10 +247,10 @@
   },
   "partners": {
     "certTag": "Ulaagaa Qulqullinaa",
-    "certTitle": "Qulqullina Mirkanaa'e & Ragaa",
+    "certTitle": "Qulqullina Mirkanaa'e fi Ragaa",
     "certDesc": "Hojiin keenya ulaagaa nageenya nyaataa, naannoo fi hordoffii idil-addunyaa guuta.",
     "partnersTag": "Hidhata Addunyaa",
-    "partnersTitle": "Michuuwwan Tarsiimoo & Misoomaa",
+    "partnersTitle": "Michuuwwan Tarsiimoo fi Misoomaa",
     "partnersDesc": "Qonna Itoophiyaa ceesisuuf dhaabbilee biyyaa, ejensiiwwan misoomaa idil-addunyaa, fi dursitoota gabaa waliin hojjechuu.",
     "viewAll": "Fuula Waa'ee Keenya irratti michuuwwan hunda ilaali",
     "logoAlt": "Looogoo {{name}}",
@@ -254,7 +258,7 @@
   },
   "leadership": {
     "tag": "Geggeessummaa Dimokraatawaa",
-    "title": "Hooggansa Olaanaa & Bulchiinsa",
+    "title": "Hooggansa Olaanaa fi Bulchiinsa",
     "desc": "Daarektarootni fi hooggantootni kutaalee waldaalee 135 fi qoteebultoota 8,089 gara milkaa'ina gabaatti fi dhiyeessii ergaa alaatti qajeelchan.",
     "viewGovernance": "Caasaa Bulchiinsaa Guutuu Ilaali",
     "emailAria": "Imeelii {{name}} gara ergi",

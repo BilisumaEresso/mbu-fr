@@ -9,7 +9,7 @@
   },
   "services": {
     "tag": "Deeggarsa Guutuu",
-    "title": "Tajaajila Waldaa & Deeggarsa Q/Bulaa",
+    "title": "Tajaajila Waldaa fi Deeggarsa Q/Bulaa",
     "desc": "Galtee qonnaarraa hanga oomisha walitti-qabuutti, yuniyeeniin keenya bu'aa qoteebulaa guddisuuf hojjeta.",
     "items": {
       "input": {
@@ -29,7 +29,7 @@
         "desc": "Tajaajila tiraaktaraa, suphaa paampii, fi sirna jallisii ammayyaa."
       },
       "storage": {
-        "title": "Kuusaa Qabbaneessaa & Loojistiiksii",
+        "title": "Kuusaa Qabbaneessaa fi Loojistiiksii",
         "desc": "Qisaasama hir'isuuf qulqulleessuu fi geejjiba to'annoo ho'aa qabu dhiyeessuu."
       },
       "training": {

@@ -20,16 +20,16 @@
     },
     "item3": {
       "date": "Bara Ammaa",
-      "heading": "Waldaalee 135 & Q/Bultoota 8,089",
+      "heading": "Waldaalee 135 fi Q/Bultoota 8,089",
       "text": "Har'a waldaalee 135 fi qoteebultoota 8,089 kaappitaala qarshii mil 154.2n tokkoomsuun, oomisha gabaaf dhiyeessa."
     }
   },
   "missionVision": {
     "visionTitle": "Mul'ata Keenya",
-    "visionHeading": "Badhaadhina & Dorgomtummaa",
+    "visionHeading": "Badhaadhina fi Dorgomtummaa",
     "visionText": "“Badhaadhina diinagdee miseensotaa mirkaneessuu fi gabaa addunyaatti dhaabbata dorgomaa ijaaruu.”",
     "missionTitle": "Ergama Keenya",
-    "missionHeading": "Oomishtummaa & Wal-hidhamiinsa",
+    "missionHeading": "Oomishtummaa fi Wal-hidhamiinsa",
     "missionText": "“Oomisha itti-fufaan, oomishtummaa lafaa fi oomisha waldaaleef kallattiin carraa gabaa uumuu.”",
     "objectivesTitle": "Kaayyoowwan Ijoo",
     "objectives": [
@@ -42,7 +42,7 @@
   },
   "governance": {
     "eyebrow": "Bulchiinsa Dimokraatawaa",
-    "title": "Bulchiinsa & Caasaa Dhaabbataa",
+    "title": "Bulchiinsa fi Caasaa Dhaabbataa",
     "desc": "Bulchiinsi dimokraatawaa iftoomina, to'annoo cimaa fi hooggansa ogummaa Yaa'ii Waliigalaarraa hanga waldaaleetti mirkaneessa.",
     "subtitle": "Caasaa bulchiinsaa: ergama fi caasaa ilaaluuf sadarkaa ykn kutaa filadhu.",
     "teamTag": "Garee Hooggansaa",
@@ -55,12 +55,12 @@
   },
   "facilities": {
     "tag": "Qabeenya Yuniyeenii",
-    "title": "Wiirtuuwwan Hojii & Bu'uuraalee",
+    "title": "Wiirtuuwwan Hojii fi Bu'uuraalee",
     "desc": "Bu'uurri ammayyaa keenya qabbanaawaa eeguu, filuu fi saamsuu ragaa qabu Shawaa Bahaa fi Arsiitti dandeessisa."
   },
   "infrastructure": {
     "ariaLabel": "Qabeenya Hojii fi Bu'uuraalee Yuniyeenii",
-    "badge": "Bu'uuraalee Misoomaa & Qabeenya",
+    "badge": "Bu'uuraalee Misoomaa fi Qabeenya",
     "title": "Qabeenya Hojii",
     "desc": "Utubaa loojistiiksii waldaalee 135 humneessu, kuusaa qabbaneessaa toonii 2,000, geejjiba qabbanaawaa hanga wiirtuu sanyiitti.",
     "filterAriaLabel": "Qabeenya ramaddiin calali"
@@ -69,7 +69,7 @@
     "closeAriaLabel": "Ibsa bal'aa cufi",
     "overview": "Ibsa Hojii Waliigalaa",
     "specs": "Bal'ina Teeknikaa",
-    "capabilities": "Dandeettii Hojii & Dhiibbaa",
+    "capabilities": "Dandeettii Hojii fi Dhiibbaa",
     "footerText": "Yuniyeenii Maqii Baatuu • Bu'uuraalee Mirkanaa'an",
     "closeBtn": "Bal'ina Cufi"
   },
@@ -83,10 +83,10 @@
     "filterAriaLabel": "Ramaddiidhaan calali",
     "categories": {
       "all": "Michuuwwan Hunda",
-      "development": "Misooma & Itti-fufiinsa",
-      "research": "Qorannoo & Kalaqa",
-      "finance": "Faayinaansii & Bittoota",
-      "government": "Mootummaa & Seera"
+      "development": "Misooma fi Itti-fufiinsa",
+      "research": "Qorannoo fi Kalaqa",
+      "finance": "Faayinaansii fi Bittoota",
+      "government": "Mootummaa fi Seera"
     },
     "tags": {
       "development": "Michuu Misoomaa",
@@ -96,7 +96,7 @@
       "offTaker": "Bittaa Daldalaa",
       "financial": "Michuu Faayinaansii",
       "market": "Michuu Gabaa",
-      "regulatory": "Qaama Seeraa & To'annoo",
+      "regulatory": "Qaama Seeraa fi To'annoo",
       "government": "Biiroo Mootummaa"
     },
     "showAll": "Michuuwwan Hunda Agarsiisi ({{count}})",
@@ -104,22 +104,22 @@
     "pillars": {
       "p1": {
         "step": "Utubaa 01",
-        "title": "Qorannoo & Yaalii Sanyii",
+        "title": "Qorannoo fi Yaalii Sanyii",
         "desc": "Sanyii filatamaa qoruu fi baay'isuuf EIAR fi OARI waliin hojjechuu."
       },
       "p2": {
         "step": "Utubaa 02",
-        "title": "Naannoo & Itti-fufiinsa",
+        "title": "Naannoo fi Itti-fufiinsa",
         "desc": "Eegumsa Sulula Qiinxamaa fi jallisii cobxoo irratti tumsuu."
       },
       "p3": {
         "step": "Utubaa 03",
-        "title": "Sanjata Qabbanaawaa & Loojistiiksii",
+        "title": "Sanjata Qabbanaawaa fi Loojistiiksii",
         "desc": "Qisaasama hir'isuuf geejjiba qabbanaawaa fi kuusaa qabbaneessaa qabaachuu."
       },
       "p4": {
         "step": "Utubaa 04",
-        "title": "Wal-hidhamiinsa Gabaa & Bittaa",
+        "title": "Wal-hidhamiinsa Gabaa fi Bittaa",
         "desc": "Tajaajila Nyaataa Xiyyaara Itoophiyaa, ergitoota Awurooppaa, fi suuqiiwwan Finfinneef dhiyeessuu."
       }
     },

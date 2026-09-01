@@ -10,7 +10,7 @@
   "locations": {
     "title": "Dukaana Argadhu",
     "desc": "Sa'aatii, oomisha, fi qajeelcha Google Maps argachuuf dukaannoota asii gadii daawwadhu.",
-    "viewDetailsMap": "Bal'ina & Kaartaa Ilaali",
+    "viewDetailsMap": "Bal'ina fi Kaartaa Ilaali",
     "openGoogleMaps": "Google Maps irratti bani",
     "operatingHours": "Sa'aatii Hojii",
     "directPhone": "Bilbila Kallattii",
@@ -22,7 +22,7 @@
       "phone": "Bilbila",
       "manager": "Gaggeessaa Dukaanaa",
       "specialties": "Oomisha Ijoo",
-      "viewDetails": "Bal'ina & Kaartaa Ilaali",
+      "viewDetails": "Bal'ina fi Kaartaa Ilaali",
       "openMaps": "Google Maps irratti bani",
       "storeSpecs": "Ulaagaa Dukaanaa",
       "address": "Teessoo",
@@ -30,7 +30,7 @@
       "openNow": "Amma Banaadha",
       "closeModal": "Bal'ina Cufi"
     },
-    "ariaViewDetails": "Bal'ina & kaartaa {{name}} ilaali",
+    "ariaViewDetails": "Bal'ina fi kaartaa {{name}} ilaali",
     "mapTitle": "Kaartaa {{name}}"
   },
   "network": {

@@ -9,7 +9,7 @@
   },
   "catalog": {
     "directory": "Kuusaa Oomishaa",
-    "title": "Kuduraa, Muduraa & Sanyii",
+    "title": "Kuduraa, Muduraa fi Sanyii",
     "desc": "Kuduraa, muduraa fi sanyii lafa hek 5,910 Sulula Qiinxamaa keessatti jallisiin misoomu ilaali.",
     "filters": {
       "all": "Oomisha Hunda",
@@ -53,7 +53,7 @@
       "tag": "Haaraa, sadarkaa ergaa alaa",
       "desc": "Akaakuu bu'a-qabeessa, dhibee dandamatu fi daldala biyya keessaa fi alaatiif ta'u. Dhandhama gaarii fi yeroo dheeraa turuun beekama.",
       "season": "Waggaa Guutuu",
-      "origin": "Gammoojjii Maqii & Ziwaay",
+      "origin": "Gammoojjii Maqii fi Ziwaay",
       "shelfLife": "Guyyoota 14-21 (Kuusaa Qabbanaawaa 8-10°C)",
       "packaging": "Saanduqa Kaartoonii Ergaa Alaa 5kg / 10kg",
       "brix": "4.8° - 5.5° Brix"
@@ -111,7 +111,7 @@
       "origin": "Godina Shawaa Bahaa",
       "shelfLife": "Ji'oota 1-2 (Kuusaa Qabbanaawaa)",
       "packaging": "Koroojoo Qiyyaasaa 20kg",
-      "brix": "Haaraa & Qulqulluu"
+      "brix": "Haaraa fi Qulqulluu"
     },
     "papaya": {
       "name": "Paappaayyaa Haaraa",
@@ -208,7 +208,7 @@
   },
   "calendar": {
     "tag": "Sagantaa Waqtii",
-    "title": "Gabatee Haamaa & Dhiyeessii",
+    "title": "Gabatee Haamaa fi Dhiyeessii",
     "desc": "Sulula Qiinxamaatti waqtii oomishaa irratti hundaa'uun bittaa karoorsaa.",
     "mobileHint": "Gabatee guutuu ilaaluuf oofi",
     "table": {

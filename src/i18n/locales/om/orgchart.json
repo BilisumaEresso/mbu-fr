@@ -68,7 +68,7 @@
     },
     "plan": {
       "title": "Ogeessa Karooraa fi Baajataa",
-      "sub": "Karoora & Madaallii",
+      "sub": "Karoora fi Madaallii",
       "reportsTo": "Hojii Raawwachiisaatti gabaasa",
       "desc": "Karoora waggaa, baajata, xiinxala pirojektii, safartuu madaallii, fi hordoffii dhiibbaa diinagdee hoggana.",
       "responsibilities": [
@@ -79,7 +79,7 @@
     },
     "auditor": {
       "title": "Oditara Keessoo",
-      "sub": "Oditii & Seera",
+      "sub": "Oditii fi Seera",
       "reportsTo": "Hojii Raawwachiisaatti gabaasa",
       "desc": "Oditii hojii fi maallaqaa, madaallii balaa, sakatta'iinsa kuusaa, fi sirna maallaqaa kutaalee hundaatti gaggeessa.",
       "responsibilities": [
@@ -90,7 +90,7 @@
     },
     "ict": {
       "title": "Ogeessa ICT",
-      "sub": "Sirna & Teeknooloojii",
+      "sub": "Sirna fi Teeknooloojii",
       "reportsTo": "Hojii Raawwachiisaatti gabaasa",
       "desc": "Pilaatifoomii dijitaalaa, hordoffii ERP loojistiiksii, bu'uura IT, nageenya neetworkii, fi deetaa miseensotaa bulcha.",
       "responsibilities": [
@@ -101,7 +101,7 @@
     },
     "dm": {
       "title": "Itti Aanaa Raawwachiisaa",
-      "sub": "Hojii & Hordoffii Kutaa",
+      "sub": "Hojii fi Hordoffii Kutaa",
       "reportsTo": "Hojii Raawwachiisaatti gabaasa",
       "desc": "Bulchiinsa guyyaa keessatti gargaara, qindoomina hojii kallattii kutaalee afran irratti gaggeessa.",
       "responsibilities": [
@@ -111,8 +111,8 @@
       ]
     },
     "agri": {
-      "title": "Kutaa Qonnaa & Tajaajila Q/Bulaa",
-      "sub": "Qonna & Galtee",
+      "title": "Kutaa Qonnaa fi Tajaajila Q/Bulaa",
+      "sub": "Qonna fi Galtee",
       "reportsTo": "Itti Aanaatti gabaasa",
       "desc": "Baay'isuu sanyii, tajaajila qonnaa, to'annoo ilbiisotaa, meeshaa jallisii, fi raabsa galtee hordofa.",
       "responsibilities": [
@@ -123,7 +123,7 @@
     },
     "marketing": {
       "title": "Kutaa Gabaa",
-      "sub": "Daldala & Raabsaa",
+      "sub": "Daldala fi Raabsaa",
       "reportsTo": "Itti Aanaatti gabaasa",
       "desc": "Bittaa jumlaa, raabsaa dukaannoota Finfinnee, saamsama ergaa alaa, dhiyeessii Xiyyaara Itoophiyaa, fi daldala addunyaa bulcha.",
       "responsibilities": [
@@ -133,8 +133,8 @@
       ]
     },
     "hr": {
-      "title": "Kutaa Q/Namaa & Tajaajilaa",
-      "sub": "Namoota, Geejjiba & Dhaabbii",
+      "title": "Kutaa Q/Namaa fi Tajaajilaa",
+      "sub": "Namoota, Geejjiba fi Dhaabbii",
       "reportsTo": "Itti Aanaatti gabaasa",
       "desc": "Dandeettii hojjettootaa, leenjii, loojistiiksii geejjibaa, ergii konkolaataa qabbanaawaa, suphaa dhaabbii, fi nageenya bulcha.",
       "responsibilities": [
@@ -144,8 +144,8 @@
       ]
     },
     "finance": {
-      "title": "Kutaa Faayinaansii & Bittaa",
-      "sub": "Faayinaansii & Dhiyeessii",
+      "title": "Kutaa Faayinaansii fi Bittaa",
+      "sub": "Faayinaansii fi Dhiyeessii",
       "reportsTo": "Itti Aanaatti gabaasa",
       "desc": "Gabaasa maallaqaa, qooda bu'aa, herrega qabeenyaa, saanduqa, bittaa galtee qonnaa, fi hariiroo baankii bulcha.",
       "responsibilities": [
@@ -158,18 +158,18 @@
   "tiers": {
     "tier1": {
       "number": "Sadarkaa 01",
-      "title": "Bulchiinsa & Hordoffii",
-      "sub": "Yaa'ii Waliigalaa, Koree To'annoo & Boordii Daarektarootaa"
+      "title": "Bulchiinsa fi Hordoffii",
+      "sub": "Yaa'ii Waliigalaa, Koree To'annoo fi Boordii Daarektarootaa"
     },
     "tier2": {
       "number": "Sadarkaa 02",
-      "title": "Hooggansa & Gorsa",
-      "sub": "Hojii Raawwachiisaa, Gorsitoota & Itti Aanaa"
+      "title": "Hooggansa fi Gorsa",
+      "sub": "Hojii Raawwachiisaa, Gorsitoota fi Itti Aanaa"
     },
     "tier3": {
       "number": "Sadarkaa 03",
       "title": "Kutaalee Hojii",
-      "sub": "Kutaalee Qonnaa, Gabaa, Q/Namaa & Faayinaansii"
+      "sub": "Kutaalee Qonnaa, Gabaa, Q/Namaa fi Faayinaansii"
     }
   },
   "ui": {
@@ -184,7 +184,7 @@
     "print": "Maxxansi",
     "tiersAriaLabel": "Sadarkaa Bulchiinsaa",
     "rolesCount": "Gahee {{count}}",
-    "roleProfile": "Ibsa Gahee & Aangoo",
+    "roleProfile": "Ibsa Gahee fi Aangoo",
     "dismissInspector": "Sakatta'iinsa cufi",
     "closeDossier": "Faayila cufi",
     "appointedLeadership": "Hooggansa Muudame",
