@@ -295,6 +295,7 @@ function About() {
                       </span>
                     </div>
                     <div className="about-governance__card-body">
+                      <span className="about-governance__dept-tag-inline">{member.department}</span>
                       <h3 className="about-governance__name">{member.name}</h3>
                       <p className="about-governance__dept-role">{member.title}</p>
 

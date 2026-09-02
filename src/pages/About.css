@@ -605,17 +605,19 @@
   line-height: 1.6;
 }
 
-/* Department Mosaic Grid (2-col mobile, 3-col desktop) */
+/* Department Mosaic Grid (Full width horizontal card on mobile, 2-col tablet, 3-col desktop) */
 .about-governance__dept-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 @media (min-width: 640px) {
   .about-governance__dept-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
   }
@@ -632,25 +634,32 @@
   display: flex;
   width: 100%;
   height: 100%;
+  min-width: 0;
 }
 
 .about-governance__card {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
   width: 100%;
+  min-width: 0;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 12px;
+  padding: 12px 14px;
   background: var(--surface-container-lowest);
-  border-radius: var(--radius-xl, 18px);
-  box-shadow: 0 3px 14px rgba(23, 49, 36, 0.04);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: 0 2px 12px rgba(23, 49, 36, 0.04);
   transition: transform var(--transition-base, 250ms ease),
               box-shadow var(--transition-base, 250ms ease),
               border-color var(--transition-base, 250ms ease);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .about-governance__card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
     padding: var(--space-4);
     border-radius: var(--radius-xl, 20px);
     box-shadow: 0 4px 18px rgba(23, 49, 36, 0.05);
@@ -666,17 +675,22 @@
 
 .about-governance__photo-wrap {
   position: relative;
-  aspect-ratio: 1 / 1.06;
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
   border-radius: var(--radius-md, 12px);
   overflow: hidden;
   border: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  margin-bottom: 12px;
   background: var(--surface-container-high);
+  flex-shrink: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .about-governance__photo-wrap {
+    width: 100%;
+    height: auto;
+    min-width: auto;
     aspect-ratio: 1 / 1.08;
     border-radius: var(--radius-lg, 14px);
     margin-bottom: var(--space-3);
@@ -699,27 +713,34 @@
   transform: scale(1.05);
 }
 
+/* Role badge floating on photo - only for tablet/desktop */
 .about-governance__role-badge {
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 8px;
-  background: rgba(23, 49, 36, 0.9);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: #ffffff;
-  border-radius: var(--radius-xs, 4px);
-  font-family: var(--font-mono);
-  font-size: 0.58rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  z-index: 2;
-  max-width: calc(100% - 16px);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .about-governance__role-badge {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    background: rgba(23, 49, 36, 0.9);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ffffff;
+    border-radius: var(--radius-xs, 4px);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    z-index: 2;
+    max-width: calc(100% - 16px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 @media (min-width: 768px) {
@@ -735,16 +756,50 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Inline department tag - visible only on mobile */
+.about-governance__dept-tag-inline {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 640px) {
+  .about-governance__dept-tag-inline {
+    display: none;
+  }
 }
 
 .about-governance__name {
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: var(--color-primary);
-  margin: 0 0 3px 0;
+  margin: 0 0 2px 0;
   line-height: 1.25;
   transition: color var(--transition-fast);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 640px) {
+  .about-governance__name {
+    font-size: 1.05rem;
+    white-space: normal;
+    margin: 0 0 3px 0;
+  }
 }
 
 @media (min-width: 768px) {
@@ -763,8 +818,17 @@
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--color-text-muted);
-  margin: 0 0 10px 0;
-  line-height: 1.35;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 640px) {
+  .about-governance__dept-role {
+    font-size: 0.82rem;
+    margin: 0 0 10px 0;
+    line-height: 1.35;
+  }
 }
 
 @media (min-width: 768px) {
@@ -778,11 +842,17 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding-top: 8px;
+  padding-top: 6px;
   margin-top: auto;
   border-top: 1px dashed var(--outline-variant);
   width: 100%;
   min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .about-governance__contacts {
+    padding-top: 8px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -801,6 +871,7 @@
   white-space: nowrap;
   width: 100%;
   min-width: 0;
+  max-width: 100%;
 }
 
 .about-governance__contact-link:hover {
