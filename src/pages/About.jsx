@@ -216,53 +216,106 @@ function About() {
             <OrgChart />
           </Reveal>
 
-          {/* Leadership & Staff Grid */}
+          {/* Leadership & Staff Tiers */}
           <div className="about-governance__subheader">
             <span className="label-caps label-caps--secondary mb-2 block">{t('about:governance.teamTag')}</span>
             <h3 className="about-governance__subtitle">{t('about:governance.teamSubtitle')}</h3>
             <p className="about-governance__subdesc">{t('about:governance.teamDesc')}</p>
           </div>
 
-          <div className="about-governance__grid">
-            {teamMembersList.map((member, i) => (
-              <Reveal
-                key={member.id}
-                delay={stagger(i)}
-                className="about-governance__card-wrapper"
-              >
-                <div className="about-governance__card">
-                  <div className="about-governance__photo-wrap">
-                    <img
-                      src={member.photo}
-                      alt={t('about:governance.memberAlt', { name: member.name, title: member.title })}
-                      className="about-governance__photo"
-                      loading="lazy"
-                    />
-                    <span className="about-governance__role-badge">
-                      {member.department}
-                    </span>
-                  </div>
-                  <div className="about-governance__card-body">
-                    <h3 className="about-governance__name">{member.name}</h3>
-                    <p className="label-caps label-caps--secondary text-xs mt-1">{member.title}</p>
+          {/* Tier 1: Executive Spotlight (GM & Deputy GM) */}
+          <div className="about-governance__tier about-governance__tier--exec">
+            <div className="about-governance__exec-grid">
+              {teamMembersList.slice(0, 2).map((member, i) => (
+                <Reveal
+                  key={member.id}
+                  delay={stagger(i)}
+                  className="about-governance__exec-card-wrapper"
+                >
+                  <div className="about-governance__exec-card">
+                    <div className="about-governance__exec-photo-wrap">
+                      <img
+                        src={member.photo}
+                        alt={t('about:governance.memberAlt', { name: member.name, title: member.title })}
+                        className="about-governance__exec-photo"
+                        loading="lazy"
+                      />
+                    </div>
 
-                    {member.email && (
-                      <div className="about-governance__contacts">
+                    <div className="about-governance__exec-body">
+                      <div className="about-governance__exec-meta">
+                        <span className="about-governance__exec-dept">{member.department}</span>
+                        <h3 className="about-governance__exec-name">{member.name}</h3>
+                        <p className="about-governance__exec-title">{member.title}</p>
+                      </div>
+
+                      {member.email && (
                         <a
                           href={`mailto:${member.email}`}
-                          className="about-governance__contact-link"
+                          className="about-governance__exec-action"
                           title={t('about:governance.emailTitle', { name: member.name, email: member.email })}
                           aria-label={t('about:governance.emailAria', { name: member.name, email: member.email })}
                         >
-                          <span className="material-symbols-outlined about-governance__contact-icon">mail</span>
-                          <span className="about-governance__contact-text">{member.email}</span>
+                          <span className="material-symbols-outlined about-governance__exec-action-icon">mail</span>
+                          <span className="about-governance__exec-action-text">{member.email}</span>
                         </a>
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              ))}
+            </div>
+          </div>
+
+          {/* Tier 2: Department Heads & Advisory Mosaic */}
+          <div className="about-governance__tier about-governance__tier--dept">
+            <div className="about-governance__dept-header">
+              <span className="label-caps label-caps--secondary mb-1 block">{t('about:governance.deptTag')}</span>
+              <h4 className="about-governance__dept-title">{t('about:governance.deptSubtitle')}</h4>
+              <p className="about-governance__dept-desc">{t('about:governance.deptDesc')}</p>
+            </div>
+
+            <div className="about-governance__dept-grid">
+              {teamMembersList.slice(2).map((member, i) => (
+                <Reveal
+                  key={member.id}
+                  delay={stagger(i)}
+                  className="about-governance__card-wrapper"
+                >
+                  <div className="about-governance__card">
+                    <div className="about-governance__photo-wrap">
+                      <img
+                        src={member.photo}
+                        alt={t('about:governance.memberAlt', { name: member.name, title: member.title })}
+                        className="about-governance__photo"
+                        loading="lazy"
+                      />
+                      <span className="about-governance__role-badge">
+                        {member.department}
+                      </span>
+                    </div>
+                    <div className="about-governance__card-body">
+                      <h3 className="about-governance__name">{member.name}</h3>
+                      <p className="about-governance__dept-role">{member.title}</p>
+
+                      {member.email && (
+                        <div className="about-governance__contacts">
+                          <a
+                            href={`mailto:${member.email}`}
+                            className="about-governance__contact-link"
+                            title={t('about:governance.emailTitle', { name: member.name, email: member.email })}
+                            aria-label={t('about:governance.emailAria', { name: member.name, email: member.email })}
+                          >
+                            <span className="material-symbols-outlined about-governance__contact-icon">mail</span>
+                            <span className="about-governance__contact-text">{member.email}</span>
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>

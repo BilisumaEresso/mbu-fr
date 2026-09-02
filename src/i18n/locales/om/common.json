@@ -138,13 +138,13 @@
         "category": "Olaanaa"
       },
       "ashenafiRoba": {
-        "name": "Ashannaafee Roobaa",
+        "name": "Ashannaafii Roobaa",
         "title": "Itti Aanaa Raawwachiisaa",
         "department": "Hooggansa Hojii",
         "category": "Olaanaa"
       },
       "biyoUke": {
-        "name": "Biyoo Ukee",
+        "name": "Biyyoo Ukee",
         "title": "Gorsaa Seeraa",
         "department": "Gorsa Seeraa",
         "category": "Deeggarsa Olaanaa"
@@ -168,7 +168,7 @@
         "category": "Hogganaa Kutaa"
       },
       "eresoAmbaso": {
-        "name": "Eresoo Ambasoo",
+        "name": "Irresoo Ambassoo",
         "title": "Hogganaa Qabeenya Namaa",
         "department": "Qabeenya Namaa",
         "category": "Hogganaa Kutaa"
@@ -183,7 +183,7 @@
   },
   "notFound": {
     "title": "Hin Argamne | Yuniyeenii Maqii Baatuu",
-    "desc": "Fuulli ati barbaaddan hin jiru.",
+    "desc": "Fuulli isin barbaaddan hin jiru.",
     "button": "Fuula duraatti deebi'i"
   },
   "facilities": {

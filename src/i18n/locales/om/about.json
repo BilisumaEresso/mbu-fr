@@ -1,15 +1,15 @@
 {
   "hero": {
-    "eyebrow": "Bara 2002 irraa eegale • Muuxannoo Waggaa 20+",
+    "eyebrow": "Bara 1994 irraa eegale • Muuxannoo Waggaa 20+",
     "title": "Cimina Tokkummaa Waldaatiin Guddina Fiduu",
     "desc": "Yuniyeeniin Maqii Baatuu agarsiistuu cimina qonna gamtaa Itoophiyaa ti. Waldaalee bu'uuraa 135 fi qoteebultoota 8,089 tokkoomsuun daldala haqa-qabeessa, hojimaata itti-fufiinsa qabuu fi oomisha qulqullina olaanaa gabaa biyya keessaa fi addunyaatiif dhiyeessina.",
-    "badge": "Maqii, Oromiyaa • Hundeeffama 2002",
+    "badge": "Maqii, Oromiyaa • Hundeeffama 1994",
     "imageAlt": "Lafa qonnaa Itoophiyaa gabbataa barii"
   },
   "foundation": {
     "title": "Hundeeffama Keenya",
     "item1": {
-      "date": "Caamsaa 11, 2002",
+      "date": "Caamsaa 11, 1994",
       "heading": "Eegalama Maqii",
       "text": "Magaalaa Maqiitti waldaalee 12 fi miseensota 527n, kaappitaala qarshii 500,000 walitti buusuun hundeeffame."
     },
@@ -46,8 +46,14 @@
     "desc": "Bulchiinsi dimokraatawaa iftoomina, to'annoo cimaa fi hooggansa ogummaa Yaa'ii Waliigalaarraa hanga waldaaleetti mirkaneessa.",
     "subtitle": "Caasaa bulchiinsaa: ergama fi caasaa ilaaluuf sadarkaa ykn kutaa filadhu.",
     "teamTag": "Garee Hooggansaa",
-    "teamSubtitle": "Hooggansa Olaanaa",
+    "teamSubtitle": "Hooggansa fi Hojiilee",
     "teamDesc": "Daarektaroota yuniyeenii fi hooggantoota kutaa hojii gaggeessan.",
+    "execTag": "Hooggansa Hojii Raawwachiiftuu",
+    "execBadge": "Boordii Hojii Raawwachiiftuu",
+    "deptTag": "Hooggansa Kutaa",
+    "deptSubtitle": "Daarektaroota Kutaa fi Gorsitoota",
+    "deptDesc": "Hooggantoota kutaalee qonnaa, daldalaa fi gabaa, faayinaansii, seeraa fi qabeenya namaa.",
+    "contactBtn": "Imeelii Ergi",
     "swipeHint": "Hooggansa daawwachuuf harka oofi ({{count}})",
     "memberAlt": "{{name}} - {{title}}",
     "emailTitle": "Imeelii {{name}}: {{email}}",

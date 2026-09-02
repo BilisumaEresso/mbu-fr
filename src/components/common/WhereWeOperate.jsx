@@ -40,18 +40,24 @@ export default function WhereWeOperate() {
           </Reveal>
 
           {/* Right — embedded Google Map */}
-          <Reveal className="where-operate__map-panel" delay={90}>
-            <iframe
-              className="where-operate__iframe"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15780!2d38.812974!3d8.143274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2set"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title={t('whereWeOperate.mapTitle', 'Meki Batu Union location, Meki Town, East Shewa Zone, Oromia, Ethiopia')}
-            />
+          <Reveal className="where-operate__map-wrap" delay={90}>
+            <div className="where-operate__map-panel">
+              <div className="where-operate__map-badge">
+                <span className="material-symbols-outlined">location_on</span>
+                <span>Meki &amp; Rift Valley Basin</span>
+              </div>
+              <iframe
+                className="where-operate__iframe"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15780!2d38.812974!3d8.143274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2set"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={t('whereWeOperate.mapTitle', 'Meki Batu Union location, Meki Town, East Shewa Zone, Oromia, Ethiopia')}
+              />
+            </div>
           </Reveal>
         </div>
       </div>
