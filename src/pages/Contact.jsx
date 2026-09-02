@@ -7,6 +7,7 @@ import SectionDivider from '../components/common/SectionDivider.jsx'
 import Toast from '../components/common/Toast.jsx'
 import { useToast } from '../hooks/useToast.js'
 import { validateFields } from '../utils/validateForm.js'
+import { socialLinks } from '../data/socials.js'
 import impactHeroImg from '../assets/images/heroes/impactHero.webp'
 import './InnerPage.css'
 import './Contact.css'
@@ -165,6 +166,41 @@ function Contact() {
                 <div>
                   <p className="font-medium">{t('contact:info.email')}</p>
                   <a href="mailto:info@mekibatuunion.org" className="text-muted">info@mekibatuunion.org</a>
+                </div>
+              </div>
+              <div className="contact-info-item">
+                <span className="material-symbols-outlined contact-info-item__icon">share</span>
+                <div>
+                  <p className="font-medium">{t('common:footer.followUs', 'Follow Us')}</p>
+                  <div className="contact-social-links" style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginTop: '4px', fontSize: 'var(--fs-body-sm, 14px)' }}>
+                    <a
+                      href={socialLinks.facebook.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted"
+                      title={`Facebook: ${socialLinks.facebook.handle}`}
+                    >
+                      Facebook: @{socialLinks.facebook.handle}
+                    </a>
+                    <a
+                      href={socialLinks.telegram.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted"
+                      title={`Telegram: ${socialLinks.telegram.handle}`}
+                    >
+                      Telegram: {socialLinks.telegram.handle}
+                    </a>
+                    <a
+                      href={socialLinks.linkedin.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted"
+                      title={`LinkedIn: ${socialLinks.linkedin.handle}`}
+                    >
+                      LinkedIn: {socialLinks.linkedin.handle}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

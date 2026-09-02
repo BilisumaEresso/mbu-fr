@@ -48,7 +48,7 @@
   },
   "items": {
     "tomatoes": {
-      "name": "Tamaatima Sulula Qiinxamaa",
+      "name": "Timaatima",
       "category": "Kuduraa",
       "tag": "Haaraa, sadarkaa ergaa alaa",
       "desc": "Akaakuu bu'a-qabeessa, dhibee dandamatu fi daldala biyya keessaa fi alaatiif ta'u. Dhandhama gaarii fi yeroo dheeraa turuun beekama.",
@@ -59,7 +59,7 @@
       "brix": "4.8° - 5.5° Brix"
     },
     "onions": {
-      "name": "Shunkurtaa Diimaa",
+      "name": "Qullubbii Diimaa",
       "category": "Kuduraa",
       "tag": "Jumlaa fi qinsharraa",
       "desc": "Qullubbii diimaa urgooftuu qabu, baay'ee jabaatu fi tursiisuuf mijatu, haala qilleensa gogaa irratti kan oomishamu.",
@@ -81,7 +81,7 @@
       "brix": "Sadarkaa A Mi'aawaa fi Qulqulluu"
     },
     "potato": {
-      "name": "Dinicha Baddaa",
+      "name": "Dinnichaa",
       "category": "Kuduraa",
       "tag": "Waggaa guutuu",
       "desc": "Akaakuu dinichaa baddaa irratti biqilu, soorata qabeessa, jabaataa fi itti-fayyadama garaagaraatiif ta'u.",
@@ -92,7 +92,7 @@
       "brix": "Qabiyyee jajjaboo olaanaa"
     },
     "green-beans": {
-      "name": "Luubiyaa Magariisa",
+      "name": "Foosoliyaa",
       "category": "Kuduraa",
       "tag": "Waqtiidhaan, ergaa alaa",
       "desc": "Luubiyaa lallaafaa harkaatiin haamamu fi gabaa addunyaatiif qabbaneeffamee qophaa'u.",
@@ -145,7 +145,7 @@
       "shelfLife": "Ji'oota 24 (Kuusaa Qilleensa Hin Galchine)",
       "packaging": "Koroojoo Jiidha Dhowwu 2kg / 10kg",
       "brix": "Biqilummaa 98%+",
-      "varieties": ["BH-661", "BH-546", "Jibat", "Ambo", "Melkasa-2"]
+      "varieties": ["BH-661", "BH-546", "Jibaat", "Malkaasaa-2", "Malkaasaa-4", "Malkaasaa-6"]
     },
     "bean-seed": {
       "name": "Sanyii Booloqee Filatamaa",
@@ -157,7 +157,7 @@
       "shelfLife": "Ji'oota 18-24",
       "packaging": "Paakeettii Saamsame 2kg / 5kg",
       "brix": "Biqilummaa 96%+",
-      "varieties": ["Awash-1", "Nasir-1", "Seeri-119", "Seeri-125"]
+      "varieties": ["Seeri 125", "Seeri 119", "Awash 1"]
     },
     "onion-seed": {
       "name": "Sanyii Shunkurtaa Filatamaa",
@@ -169,7 +169,7 @@
       "shelfLife": "Ji'oota 18-24",
       "packaging": "Koroojoo Fooyilii 100g / 250g",
       "brix": "Biqilummaa 95%+",
-      "varieties": ["Nafis", "Bomb Red"]
+      "varieties": ["Naafis", "Reed Boombee"]
     },
     "wheat-seed": {
       "name": "Sanyii Qamadii Filatamaa",
@@ -181,7 +181,7 @@
       "shelfLife": "Ji'oota 18-24",
       "packaging": "Koroojoo Ragaa Qabu 25kg / 50kg",
       "brix": "Biqilummaa 97%+",
-      "varieties": ["Kekeba"]
+      "varieties": ["Qaqqabaa"]
     },
     "carrot": {
       "name": "Kaarotii",

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import logoImg from '../../assets/images/brand/MBU_logo_new.webp'
 import { getLocalePath } from '../../utils/locale.js'
+import { socialLinks } from '../../data/socials.js'
 import './Footer.css'
 
 function Footer() {
@@ -88,12 +89,12 @@ function Footer() {
           <div className="footer__socials">
             {/* Facebook */}
             <a
-              href="https://facebook.com"
+              href={socialLinks.facebook.url}
               target="_blank"
               rel="noopener noreferrer"
               className="footer__social-btn"
               aria-label={t('footer.facebook')}
-              title={t('footer.facebook')}
+              title={`Facebook: ${socialLinks.facebook.handle}`}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.21.19 2.21.19v2.43h-1.25c-1.23 0-1.61.77-1.61 1.56V12h2.74l-.44 3h-2.3v6.8c4.56-.93 8-4.96 8-9.8z"/>
@@ -102,12 +103,12 @@ function Footer() {
 
             {/* Telegram */}
             <a
-              href="https://t.me"
+              href={socialLinks.telegram.url}
               target="_blank"
               rel="noopener noreferrer"
               className="footer__social-btn"
               aria-label={t('footer.telegram')}
-              title={t('footer.telegram')}
+              title={`Telegram: ${socialLinks.telegram.handle}`}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .54-1.43.53-.47-.01-1.37-.27-2.04-.49-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.89 8.01-3.45 3.82-1.6 4.61-1.88 5.13-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.26-.04.44z"/>
@@ -116,12 +117,12 @@ function Footer() {
 
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com"
+              href={socialLinks.linkedin.url}
               target="_blank"
               rel="noopener noreferrer"
               className="footer__social-btn"
               aria-label={t('footer.linkedin')}
-              title={t('footer.linkedin')}
+              title={`LinkedIn: ${socialLinks.linkedin.handle}`}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>

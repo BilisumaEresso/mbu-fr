@@ -44,7 +44,7 @@ content = content.replace("<span>Print</span>", "<span>{t('ui.print')}</span>");
 
 content = content.replace('<span className="org-box__title">General Assembly</span>', '<span className="org-box__title">{ORG_DATA.ga.title}</span>');
 content = content.replace('<span className="org-box__title">Control Committee</span>', '<span className="org-box__title">{ORG_DATA.cc.title}</span>');
-content = content.replace('<span className="org-box__title">Board of Directors</span>', '<span className="org-box__title">{ORG_DATA.bod.title}</span>');
+content = content.replace('<span className="org-box__title">Executive Committee</span>', '<span className="org-box__title">{ORG_DATA.bod.title}</span>');
 content = content.replace('<span className="org-box__title org-box__title--lg">General Manager</span>', '<span className="org-box__title org-box__title--lg">{ORG_DATA.gm.title}</span>');
 content = content.replace('<span className="org-box__title">Lawyer</span>', '<span className="org-box__title">{ORG_DATA.lawyer.title}</span>');
 content = content.replace('<span className="org-box__title">Executive Secretary</span>', '<span className="org-box__title">{ORG_DATA.sec.title}</span>');

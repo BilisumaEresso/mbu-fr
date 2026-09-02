@@ -138,7 +138,7 @@ export const products = [
     shelfLife: '24 Months (Hermetic storage)',
     packaging: '2kg / 10kg Moisture-proof Bags',
     brix: '98%+ Germination Rate',
-    varieties: ['BH-661', 'BH-546', 'Jibat', 'Ambo', 'Melkasa-2'],
+    varieties: ['BH-661', 'BH-546', 'Jibaat', 'Malkaasaa-2', 'Malkaasaa-4', 'Malkaasaa-6'],
     img: bentoMaizeImg,
   },
   {
@@ -153,7 +153,7 @@ export const products = [
     shelfLife: '18-24 Months',
     packaging: '2kg / 5kg Sealed Packets',
     brix: '96%+ Germination Rate',
-    varieties: ['Awash-1', 'Nasir-1', 'Seeri-119', 'Seeri-125'],
+    varieties: ['Seeri 125', 'Seeri 119', 'Awash 1'],
     img: redBeanSeedsImg,
   },
   {
@@ -168,7 +168,7 @@ export const products = [
     shelfLife: '18-24 Months',
     packaging: '100g / 250g Foil Bags',
     brix: '95%+ Germination Rate',
-    varieties: ['Nafis', 'Bomb Red'],
+    varieties: ['Naafis', 'Reed Boombee'],
     img: bentoOnionSeedsImg,
   },
   {
@@ -183,7 +183,7 @@ export const products = [
     shelfLife: '18-24 Months',
     packaging: '25kg / 50kg Certified Sacks',
     brix: '97%+ Germination Rate',
-    varieties: ['Kekeba'],
+    varieties: ['Qaqqabaa'],
     img: bentoHybridSeedsImg,
   },
   {

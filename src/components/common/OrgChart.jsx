@@ -323,7 +323,7 @@ export default function OrgChart() {
       // Draw Boxes (ordered by vertical position, matching source diagram stagger)
       drawBox(410, 100, 280, 48, 'General Assembly', '#173124', '#ffffff', '#173124')
       drawBox(720, 160, 240, 48, 'Control Committee', '#173124', '#ffffff', '#173124')
-      drawBox(140, 180, 240, 48, 'Board of Directors', '#173124', '#ffffff', '#173124')
+      drawBox(140, 180, 240, 48, 'Executive Committee', '#173124', '#ffffff', '#173124')
 
       drawBox(250, 275, 600, 48, 'General Manager', '#9d4320', '#ffffff', '#9d4320')
 
@@ -425,7 +425,7 @@ export default function OrgChart() {
           </button>
         </div>
 
-        {/* 2. Control Committee (Right, higher) then Board of Directors (Left, lower) — per source diagram */}
+        {/* 2. Control Committee (Right, higher) then Executive Committee (Left, lower) — per source diagram */}
         <div className="org-spine-row org-spine-row--staggered">
           <div className="org-spine-side org-spine-side--left org-spine-side--empty" />
           <div className="org-spine-side org-spine-side--right">

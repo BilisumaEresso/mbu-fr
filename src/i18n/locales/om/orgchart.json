@@ -7,19 +7,19 @@
       "desc": "Aangoo murteessuu olaanaa yuniyeenii yoo ta'u, bakka bu'oota waldaalee 135 Shawaa Bahaa fi Arsii irraa filataman of keessaa qaba.",
       "responsibilities": [
         "Aangoo seeraa fi imaammata yuniyeenii irratti olaanaa",
-        "Boordii Daarektarootaa fi Koree To'annoo filata",
+        "Koree Hojii Raawwachiiftuu fi Koree To'annoo filata",
         "Gabaasa oditii fi qooda bu'aa miseensotaa mirkaneessa"
       ]
     },
     "bod": {
-      "title": "Boordii Daarektarootaa",
+      "title": "Koree Hojii Raawwachiiftuu",
       "sub": "Hooggansa Filatame",
       "reportsTo": "Yaa'ii Waliigalaatti gabaasa",
-      "desc": "Hooggantoota filataman kan tarsiimoo bulchiinsaa, imaammata, invastimantii, fi qaxara hojii raawwachiisaaf itti gaafataman.",
+      "desc": "Koree filatame kan qajeelfama hojii, imaammata, murtee invastimantii, fi to'annoo hojii yuniyeeniif itti gaafatamu.",
       "responsibilities": [
-        "Bulchiinsa tarsiimoo, karoora fi murtee invastimantii",
+        "Hooggansa raawwachiiftuu, hojiirra oolmaa imaammataa, fi murtee invastimantii",
         "Muudama, madaallii, fi hordoffii Hojii Raawwachiisaa",
-        "Qabeenya, haqa miseensaa, fi maqaa dhaabbataa eeguu"
+        "Qabeenya, haqa miseensaa, fi maqaa yuniyeenii eeguu"
       ]
     },
     "cc": {
@@ -36,11 +36,11 @@
     "gm": {
       "title": "Hojii Raawwachiisaa",
       "sub": "Hoogganaa Olaanaa",
-      "reportsTo": "Boordiitti gabaasa",
+      "reportsTo": "Koree Hojii Raawwachiiftuutti gabaasa",
       "desc": "Hoogganaa olaanaa bulchiinsa hojii, raawwii sagantaa, hariiroo michuuwwanii, fi guddina daldala yuniyeeniif itti gaafatamau.",
       "responsibilities": [
         "Hooggansa hojii, guddina daldalaa, fi dhiibbaa miseensa 8,089+",
-        "Hariiroo dhaabbilee mootummaa, UNIDO, LVIA, fi bittootaa",
+        "Hariiroo dhaabbilee mootummaa, FAO, SNV, Xiyyaara Itoophiyaa, fi bittootaa",
         "To'annoo ogeeyyii deeggarsaa fi Itti Aanaa Hojii Raawwachiisaa"
       ]
     },
@@ -59,10 +59,10 @@
       "title": "Barreessaa Olaanaa",
       "sub": "Waajjira Olaanaa",
       "reportsTo": "Hojii Raawwachiisaatti gabaasa",
-      "desc": "Hojii waajjiraa, quunnamtii boordii, galmee, walgahii bakka bu'ootaa, fi adeemsa bulchiinsaa qindeessa.",
+      "desc": "Hojii waajjiraa, quunnamtii koree raawwachiiftuu, galmee, walgahii bakka bu'ootaa, fi adeemsa bulchiinsaa qindeessa.",
       "responsibilities": [
-        "Galmee ofiisaa, qaboo yaa'ii, murtii boordii, fi galmee eega",
-        "Sagantaa, pirotokoola michuuwwanii, fi yaa'ii boordii qindeessa",
+        "Galmee ofiisaa, qaboo yaa'ii, murtii koree, fi galmee eega",
+        "Sagantaa, pirotokoola michuuwwanii, fi walgahii koree qindeessa",
         "Xalayaa Hojii Raawwachiisaa fi hooggantoota gidduu haala mijeessa"
       ]
     },
@@ -116,7 +116,7 @@
       "reportsTo": "Itti Aanaatti gabaasa",
       "desc": "Baay'isuu sanyii, tajaajila qonnaa, to'annoo ilbiisotaa, meeshaa jallisii, fi raabsa galtee hordofa.",
       "responsibilities": [
-        "Sanyii mirkanaa'e (Boqqolloo, Baaqelaa, Shunkurtaa, Qamadii) baay'isa",
+        "Sanyii mirkanaa'e (Boqqolloo BH-661, Booloqee Awaash 1, Shunkurtaa Naafis, Qamadii Qaqqabaa) baay'isa",
         "Leenjii qonnaa ammayyaa, hordoffii ilbiisotaa, fi deeggarsa GlobalG.A.P kenna",
         "Xaa'oo, keemikaala qonnaa, fi haardweerii jallisii bitaa raabsa"
       ]
@@ -159,7 +159,7 @@
     "tier1": {
       "number": "Sadarkaa 01",
       "title": "Bulchiinsa fi Hordoffii",
-      "sub": "Yaa'ii Waliigalaa, Koree To'annoo fi Boordii Daarektarootaa"
+      "sub": "Yaa'ii Waliigalaa, Koree To'annoo fi Koree Hojii Raawwachiiftuu"
     },
     "tier2": {
       "number": "Sadarkaa 02",
