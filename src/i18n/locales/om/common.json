@@ -16,16 +16,16 @@
       "products": "Oomishaalee",
       "ourProducts": "Oomishaalee Keenya",
       "ourProductsDesc": "Kuduraa, muduraa fi sanyii",
-      "retailOutlets": "Dukaannoota",
-      "retailOutletsDesc": "Dukaannoota Finfinnee 5",
-      "farmers": "Qotee Bulaaf",
+      "retailOutlets": "Dukkaanoota",
+      "retailOutletsDesc": "Dukkaanoota Finfinnee 5",
+      "farmers": "Qoteebulaaf",
       "buyers": "Bitataaf",
       "news": "Oduu",
       "contact": "Quunnamtii"
     }
   },
   "footer": {
-    "tagline": "Yuniyeenii kuduraa fi muduraa Itoophiyaa amanamaa muuxannoo waggaa 20+ qabu.",
+    "tagline": "Yuniyeenii kuduraa fi muduraa Itoophiyaa amanamaa muuxannoo waggaa 20 ol qabu.",
     "badge": "Ragaa GlobalG.A.P · Oomishaa Sanyii Mirkanaa'e",
     "company": "Waa'ee Yuniyeenii",
     "stakeholders": "Qooda-fudhattoota",
@@ -47,7 +47,7 @@
     "products": "Oomishaalee Keenya",
     "farmers": "Qoteebultootaaf",
     "buyers": "Bittootaaf",
-    "retailOutlets": "Dukaannoota",
+    "retailOutlets": "Dukkaanoota",
     "news": "Oduu",
     "impact": "Bu'aa",
     "contact": "Quunnamtii",
@@ -113,14 +113,14 @@
   },
   "whereWeOperate": {
     "region": "Naannoo Keenya",
-    "title": "Bakka Nutti Hojjennu",
+    "title": "Bakka Nuti Itti Hojjannu",
     "desc": "Waldaaleen keenya aanoolee ja'a Godina Shawaa Bahaa fi Arsii keessatti oomishu: Dugdaa, Adaamii Tulluu, Booraa, Zeway Dugdaa, Adaamaa fi Doodota Siree. Haroo Dambalitti eegalee, amma qoteebultoota 8,089 deeggara.",
     "mapTitle": "Bakka Yuniyeenii Maqii Baatuu, Maqii, Shawaa Bahaa, Oromiyaa",
     "districts": {
       "dugda": "Aanaa Dugdaa",
       "adamiTulu": "Adaamii Tulluu Jiddo Kombolcha",
       "bora": "Booraa",
-      "zuwayDugda": "Zeway Dugdaa",
+      "zuwayDugda": "Zawaay Dugdaa",
       "adama": "Adaamaa",
       "dodotaSire": "Doodota Siree"
     }

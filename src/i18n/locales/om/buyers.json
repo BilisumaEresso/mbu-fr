@@ -1,8 +1,8 @@
 {
   "hero": {
-    "title": "Oomishaalee Sadarkaa Daldala Alaa. Sanjata Dhiyeessaa Amanamaa.",
+    "title": "Oomishaalee Sadarkaa Daldala Alaa. Dhiyeessaa Amanamaa.",
     "desc": "Yuniyeenii Maqii Baatuu dhiyeessaa guddaa kuduraalee, muduraalee fi sanyiilee filatamoo waraqaa ragaa GlobalG.A.P qaban kan ergitoota alaa, dhaabbilee nyaata qopheessanii fi dukaannoota addunyaati.",
-    "badge": "Dhiyeessaa Kallattii Daldala Alaa",
+    "badge": "Dhiyeessaa Kallattii Ekisportii",
     "requestQuote": "Gatii Gaafadhu",
     "downloadPdf": "Piroofayilii Dhaabbataa Buufadhu",
     "imageAlt": "Oomisha sadarkaa daldala alaa qulqullina olaanaa qabu wiirtuu ammayyaa keessatti filatamaa fi saamsamaa jiru",
@@ -36,14 +36,14 @@
       "product": "Oomisha Barbaadame",
       "productSelect": "Oomisha filadhu...",
       "products": {
-        "tomatoes": "Tamaatii Sulula Qiinxamaa",
-        "onions": "Shunkurtaa Diimaa",
+        "tomatoes": "Tamaatimii Sulula Qiinxamaa",
+        "onions": "Shunkurtaa",
         "peppers": "Qaaraa Magariisa",
-        "potato": "Dinicha Baddaa",
-        "cabbage": "Raafuu Mataa Adii",
-        "greenBeans": "Luubiyaa",
-        "papaya": "Paappaayyaa Haaraa",
-        "watermelon": "Habhabii Mi'aawaa",
+        "potato": "Dinicha",
+        "cabbage": "Raafuu Mataa",
+        "greenBeans": "Faasoliyaa",
+        "papaya": "Paappaayyaa",
+        "watermelon": "Habhabii",
         "carrot": "Kaarotii",
         "garlic": "Qullubbii Adii",
         "seeds": "Sanyii Filatamaa"

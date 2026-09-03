@@ -51,18 +51,14 @@
   pointer-events: none;
 }
 
-/* Once scrolled: fade in the gold hairline instead of a plain white border */
+/* Once scrolled: fade in the gold hairline and subtle elevation without layout shift */
 .header--scrolled {
   border-bottom-color: transparent;
+  box-shadow: 0 4px 20px rgba(11, 26, 16, 0.25);
 }
 
 .header--scrolled::after {
   opacity: 1;
-}
-
-.header--scrolled .header__container {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .header__container {
@@ -73,13 +69,13 @@
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--space-3) var(--margin-mobile);
-  transition: padding var(--transition-base);
+  padding: 12px var(--margin-mobile);
+  min-height: 64px;
 }
 
 @media (min-width: 1080px) {
   .header__container {
-    padding: var(--space-3) 32px;
+    padding: 12px 32px;
   }
 }
 

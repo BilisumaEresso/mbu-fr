@@ -94,12 +94,12 @@ function About() {
             <h2 className="about-foundation__title">{t('about:foundation.title')}</h2>
           </div>
 
-          {/* Wrap the content paragraphs together as one Reveal unit */}
-          <Reveal className="about-timeline">
+          {/* Timeline Items revealed individually as user scrolls */}
+          <div className="about-timeline">
             <div className="about-timeline__line desktop-only" />
 
             {/* Timeline Item 1 */}
-            <div className="about-timeline__item">
+            <Reveal className="about-timeline__item">
               <div className="about-timeline__node desktop-only about-timeline__node--secondary" />
               <div className="about-timeline__left">
                 <span className="label-caps label-caps--secondary block mb-1">{t('about:foundation.item1.date')}</span>
@@ -110,10 +110,10 @@ function About() {
                   {t('about:foundation.item1.text')}
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             {/* Timeline Item 2 */}
-            <div className="about-timeline__item about-timeline__item--reverse">
+            <Reveal className="about-timeline__item about-timeline__item--reverse" delay={80}>
               <div className="about-timeline__node desktop-only about-timeline__node--tint" />
               <div className="about-timeline__left">
                 <span className="label-caps label-caps--tint block mb-1">{t('about:foundation.item2.date')}</span>
@@ -124,10 +124,10 @@ function About() {
                   {t('about:foundation.item2.text')}
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             {/* Timeline Item 3 */}
-            <div className="about-timeline__item">
+            <Reveal className="about-timeline__item" delay={160}>
               <div className="about-timeline__node desktop-only about-timeline__node--primary" />
               <div className="about-timeline__left">
                 <span className="label-caps label-caps--primary block mb-1">{t('about:foundation.item3.date')}</span>
@@ -138,8 +138,8 @@ function About() {
                   {t('about:foundation.item3.text')}
                 </p>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 {
   "hero": {
-    "eyebrow": "Bara 1994 irraa eegale • Muuxannoo Waggaa 20+",
+    "eyebrow": "Bara 1994 irraa eegalee • Muuxannoo Waggaa 20 ol",
     "title": "Cimina Tokkummaa Waldaatiin Guddina Fiduu",
     "desc": "Yuniyeeniin Maqii Baatuu agarsiistuu cimina qonna gamtaa Itoophiyaa ti. Waldaalee bu'uuraa 135 fi qoteebultoota 8,089 tokkoomsuun daldala haqa-qabeessa, hojimaata itti-fufiinsa qabuu fi oomisha qulqullina olaanaa gabaa biyya keessaa fi addunyaatiif dhiyeessina.",
     "badge": "Maqii, Oromiyaa • Hundeeffama 1994",
@@ -9,19 +9,19 @@
   "foundation": {
     "title": "Hundeeffama Keenya",
     "item1": {
-      "date": "Caamsaa 11, 1994",
+      "date": "Caamsaa 3, 1994",
       "heading": "Eegalama Maqii",
       "text": "Magaalaa Maqiitti waldaalee 12 fi miseensota 527n, kaappitaala qarshii 500,000 walitti buusuun hundeeffame."
     },
     "item2": {
       "date": "Marsaa Guddinaa",
       "heading": "Babal'ina Naannoo",
-      "text": "Godinaalee Shawaa Bahaa fi Arsiitti aanoolee ja'a keessatti babal'atee, lafa hek 5,910 irratti jallisii diriirse."
+      "text": "Godinaalee Shawaa Bahaa fi Arsiitti aanoolee ja'a keessatti babal'atee, lafa hektaara 5,910 irratti jallisii diriirse."
     },
     "item3": {
       "date": "Bara Ammaa",
       "heading": "Waldaalee 135 fi Q/Bultoota 8,089",
-      "text": "Har'a waldaalee 135 fi qoteebultoota 8,089 kaappitaala qarshii mil 154.2n tokkoomsuun, oomisha gabaaf dhiyeessa."
+      "text": "Har'a waldaalee 135 fi qoteebultoota 8,089 kaappitaala qarshii mil 154.2n socho'a, oomisha gabaaf dhiyeessa."
     }
   },
   "missionVision": {
@@ -50,9 +50,9 @@
     "teamDesc": "Daarektaroota yuniyeenii fi hooggantoota kutaa hojii gaggeessan.",
     "execTag": "Hooggansa Hojii Raawwachiiftuu",
     "execBadge": "Boordii Hojii Raawwachiiftuu",
-    "deptTag": "Hooggansa Kutaa",
-    "deptSubtitle": "Daarektaroota Kutaa fi Gorsitoota",
-    "deptDesc": "Hooggantoota kutaalee qonnaa, daldalaa fi gabaa, faayinaansii, seeraa fi qabeenya namaa.",
+    "deptTag": "Hooggansa Dipartimantii",
+    "deptSubtitle": "Daarektaroota Dipartimantii fi Gorsitoota",
+    "deptDesc": "Hooggantoota Dipartimantii qonnaa, daldalaa fi gabaa, faayinaansii, seeraa fi qabeenya namaa.",
     "contactBtn": "Imeelii Ergi",
     "swipeHint": "Hooggansa daawwachuuf harka oofi ({{count}})",
     "memberAlt": "{{name}} - {{title}}",
@@ -80,7 +80,7 @@
     "closeBtn": "Bal'ina Cufi"
   },
   "resourceCard": {
-    "viewDetailsFor": "Bal'ina {{name}} ilaali"
+    "viewDetailsFor": "Bal'inaan {{name}} ilaali"
   },
   "partners": {
     "eyebrow": "Hidhata Dhaabbilee",
@@ -116,16 +116,16 @@
       "p2": {
         "step": "Utubaa 02",
         "title": "Naannoo fi Itti-fufiinsa",
-        "desc": "Eegumsa Sulula Qiinxamaa fi jallisii cobxoo irratti tumsuu."
+        "desc": "Eegumsa Sulula Qiinxamaa fi jallisii ujummoo irratti tumsuu."
       },
       "p3": {
         "step": "Utubaa 03",
-        "title": "Sanjata Qabbanaawaa fi Loojistiiksii",
+        "title": "Walqabannaa Qabbanaawaa fi Loojistiiksii",
         "desc": "Qisaasama hir'isuuf geejjiba qabbanaawaa fi kuusaa qabbaneessaa qabaachuu."
       },
       "p4": {
         "step": "Utubaa 04",
-        "title": "Wal-hidhamiinsa Gabaa fi Bittaa",
+        "title": "Walitti Hidhamiinsa Gabaa fi Bittaa",
         "desc": "Tajaajila Nyaataa Xiyyaara Itoophiyaa, ergitoota Awurooppaa, fi suuqiiwwan Finfinneef dhiyeessuu."
       }
     },

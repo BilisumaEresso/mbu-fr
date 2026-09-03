@@ -8,6 +8,7 @@ import Header from './components/layout/Header.jsx'
 import Footer from './components/layout/Footer.jsx'
 import WhatsAppButton from './components/common/WhatsAppButton.jsx'
 import ScrollToHashElement from './components/common/ScrollToHashElement.jsx'
+import SmoothScroll from './components/common/SmoothScroll.jsx'
 
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
@@ -70,24 +71,26 @@ function LegacyRedirect() {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to={`/${DEFAULT_LOCALE}`} replace />} />
-      <Route path="/:lang" element={<LanguageLayout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="products" element={<Products />} />
-        <Route path="farmers" element={<Farmers />} />
-        <Route path="buyers" element={<Buyers />} />
-        <Route path="retail-outlets" element={<RetailOutlets />} />
-        <Route path="news" element={<News />} />
-        <Route path="impact" element={<Impact />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="terms-of-service" element={<TermsOfService />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-      <Route path="*" element={<LegacyRedirect />} />
-    </Routes>
+    <SmoothScroll>
+      <Routes>
+        <Route path="/" element={<Navigate to={`/${DEFAULT_LOCALE}`} replace />} />
+        <Route path="/:lang" element={<LanguageLayout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="products" element={<Products />} />
+          <Route path="farmers" element={<Farmers />} />
+          <Route path="buyers" element={<Buyers />} />
+          <Route path="retail-outlets" element={<RetailOutlets />} />
+          <Route path="news" element={<News />} />
+          <Route path="impact" element={<Impact />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="terms-of-service" element={<TermsOfService />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+        <Route path="*" element={<LegacyRedirect />} />
+      </Routes>
+    </SmoothScroll>
   )
 }
 

@@ -481,9 +481,9 @@ function Home() {
       </section>
 
       {/* 11. Testimonials */}
-      <div id="testimonials">
+      {/* <div id="testimonials">
         <Testimonials items={getTestimonials(t)} />
-      </div>
+      </div> */}
 
       {/* 12. Resources quick-links */}
       <section id="resources" className="home-resources">

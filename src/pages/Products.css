@@ -266,7 +266,7 @@
   overflow: hidden;
   border: none;
   box-shadow: var(--shadow-sm);
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: var(--transition-card);
   display: flex;
   flex-direction: column;
   cursor: pointer;

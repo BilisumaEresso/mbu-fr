@@ -45,7 +45,7 @@
     "submitting": "Ergamaa jira...",
     "success": {
       "title": "Ergaan Keessan Nu Ga'eera",
-      "desc": "Nu qunnamuu keessaniif galatoomaa. Bakka bu'aan keenya guyyoota hojii 1–2 keessatti deebii isiniif kenna."
+      "desc": "Nu qunnamuu keessaniif galatoomaa. Bakka bu'aan keenya guyyoota hojii 1–5 keessatti deebii isiniif kenna."
     },
     "toasts": {
       "success": "Galatoomaa! Dhihootti deebii isiniif kennina.",

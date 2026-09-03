@@ -7,11 +7,11 @@ import { useEffect, useRef, useState } from 'react'
  * isVisible is set to true immediately with no delay or animation.
  *
  * @param {object} [options]
- * @param {number} [options.threshold=0.15]  - IntersectionObserver threshold
- * @param {string} [options.rootMargin='-40px'] - rootMargin to fire slightly early
+ * @param {number} [options.threshold=0.05]  - IntersectionObserver threshold
+ * @param {string} [options.rootMargin='0px 0px -20px 0px'] - rootMargin to fire smoothly on approach
  * @returns {{ ref: React.RefObject, isVisible: boolean }}
  */
-function useScrollReveal({ threshold = 0.15, rootMargin = '-40px' } = {}) {
+function useScrollReveal({ threshold = 0.05, rootMargin = '0px 0px -20px 0px' } = {}) {
   const ref = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
 

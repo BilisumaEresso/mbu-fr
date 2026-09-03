@@ -21,15 +21,26 @@ export default function ScrollToHashElement() {
       const timer = setTimeout(() => {
         const element = document.getElementById(targetId)
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          if (window.__lenis) {
+            window.__lenis.scrollTo(element, {
+              offset: -76,
+              duration: 1.15,
+            })
+          } else {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
         }
         lastHash.current = ''
-      }, 80)
+      }, 100)
 
       return () => clearTimeout(timer)
     } else if (!location.hash) {
       // Scroll to top on standard route changes without a hash
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0, { immediate: true })
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+      }
     }
   }, [location])
 
