@@ -1,17 +1,20 @@
-﻿export const socialLinks = {
+export const socialLinks = {
   facebook: {
     name: 'Facebook',
     handle: 'mekibatucoopunion',
-    url: 'https://facebook.com/mekibatucoopunion',
+    url: null,
+    pending: true,
   },
   telegram: {
     name: 'Telegram',
     handle: '@mekibatucooperativeunion',
-    url: 'https://t.me/mekibatucooperativeunion',
+    url: null,
+    pending: true,
   },
   linkedin: {
     name: 'LinkedIn',
     handle: 'meki-batu-cooperative-union',
-    url: 'https://linkedin.com/company/meki-batu-cooperative-union',
+    url: null,
+    pending: true,
   },
 }

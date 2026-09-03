@@ -261,7 +261,13 @@
   transition: all var(--transition-fast);
 }
 
-.footer__social-btn:hover {
+.footer__social-btn--disabled {
+  opacity: 0.32;
+  cursor: default;
+  pointer-events: none;
+}
+
+.footer__social-btn:not(.footer__social-btn--disabled):hover {
   background-color: var(--color-accent);
   border-color: var(--color-accent);
   color: var(--on-secondary);

@@ -23,14 +23,14 @@ function ResourceCard({ resource, onSelect }) {
   function handleKeyDown(e) {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
-      onSelect && onSelect(resource)
+      if (onSelect) onSelect(resource)
     }
   }
 
   return (
     <article
       className="resource-photo-card"
-      onClick={() => onSelect && onSelect(resource)}
+      onClick={() => { if (onSelect) onSelect(resource) }}
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="button"

@@ -101,3 +101,33 @@ When the MERN backend is ready:
   in `Header.jsx` and the "coming soon" card on `Farmers.jsx` are the two
   stub points to wire up).
 - Add an `.env` file for the API base URL, e.g. `VITE_API_URL=https://api.mekibatuunion.org`.
+
+## Deploying to cPanel
+
+This is a static React Single Page Application (SPA). On traditional shared hosting (such as cPanel running Apache), the application must be built locally or via CI, and only the compiled assets are uploaded.
+
+### Step 1: Set Production Environment Variables
+Vite bakes variables prefixed with `VITE_` directly into the bundled JavaScript at build time. Before building, create or update `.env.production` (or `.env`) with the live endpoints:
+
+```env
+VITE_BUYERS_FORM_ENDPOINT=https://formspree.io/f/YOUR_BUYERS_FORM_ID
+VITE_CONTACT_FORM_ENDPOINT=https://formspree.io/f/YOUR_CONTACT_FORM_ID
+```
+
+### Step 2: Build the Production Bundle
+```bash
+npm run build
+```
+This generates the optimized production bundle inside the `dist/` folder.
+
+### Step 3: Upload Contents to `public_html`
+1. Open cPanel **File Manager** (or connect via FTP / SFTP).
+2. Navigate into the document root for your domain (typically `public_html/`).
+3. Upload **all files and folders from inside `dist/`** directly into `public_html/` (do **not** upload the `dist/` folder itself).
+4. **Ensure `.htaccess` is uploaded**: In cPanel File Manager, click **Settings** (top right) and check **"Show Hidden Files (dotfiles)"**. Confirm that `.htaccess` is present in `public_html/`.
+
+> **What `.htaccess` does:**  
+> - **SPA Routing (`mod_rewrite`)**: Rewrites all non-file/non-directory requests (e.g. `/en/products`, `/om/about`) to `/index.html`, allowing React Router to handle page navigation without 404 errors on browser reload.  
+> - **Asset Caching (`mod_expires`)**: Caches versioned images, scripts, and stylesheets for 1 month to 1 year, while ensuring `index.html` is never cached (`0 seconds`) so users always receive instant site updates.  
+> - **Gzip Compression (`mod_deflate`)**: Automatically compresses HTML, CSS, JS, JSON, and SVG for fast page loads.
+

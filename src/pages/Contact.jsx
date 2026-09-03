@@ -168,41 +168,49 @@ function Contact() {
                   <a href="mailto:info@mekibatuunion.org" className="text-muted">info@mekibatuunion.org</a>
                 </div>
               </div>
-              <div className="contact-info-item">
-                <span className="material-symbols-outlined contact-info-item__icon">share</span>
-                <div>
-                  <p className="font-medium">{t('common:footer.followUs', 'Follow Us')}</p>
-                  <div className="contact-social-links" style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginTop: '4px', fontSize: 'var(--fs-body-sm, 14px)' }}>
-                    <a
-                      href={socialLinks.facebook.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted"
-                      title={`Facebook: ${socialLinks.facebook.handle}`}
-                    >
-                      Facebook: @{socialLinks.facebook.handle}
-                    </a>
-                    <a
-                      href={socialLinks.telegram.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted"
-                      title={`Telegram: ${socialLinks.telegram.handle}`}
-                    >
-                      Telegram: {socialLinks.telegram.handle}
-                    </a>
-                    <a
-                      href={socialLinks.linkedin.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted"
-                      title={`LinkedIn: ${socialLinks.linkedin.handle}`}
-                    >
-                      LinkedIn: {socialLinks.linkedin.handle}
-                    </a>
+              {Object.values(socialLinks).some((s) => s.url && !s.pending) && (
+                <div className="contact-info-item">
+                  <span className="material-symbols-outlined contact-info-item__icon">share</span>
+                  <div>
+                    <p className="font-medium">{t('common:footer.followUs', 'Follow Us')}</p>
+                    <div className="contact-social-links" style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginTop: '4px', fontSize: 'var(--fs-body-sm, 14px)' }}>
+                      {socialLinks.facebook.url && !socialLinks.facebook.pending && (
+                        <a
+                          href={socialLinks.facebook.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted"
+                          title={`Facebook: ${socialLinks.facebook.handle}`}
+                        >
+                          Facebook: @{socialLinks.facebook.handle}
+                        </a>
+                      )}
+                      {socialLinks.telegram.url && !socialLinks.telegram.pending && (
+                        <a
+                          href={socialLinks.telegram.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted"
+                          title={`Telegram: ${socialLinks.telegram.handle}`}
+                        >
+                          Telegram: {socialLinks.telegram.handle}
+                        </a>
+                      )}
+                      {socialLinks.linkedin.url && !socialLinks.linkedin.pending && (
+                        <a
+                          href={socialLinks.linkedin.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted"
+                          title={`LinkedIn: ${socialLinks.linkedin.handle}`}
+                        >
+                          LinkedIn: {socialLinks.linkedin.handle}
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
 
             <div className="contact-info-media desktop-only">
