@@ -1,9 +1,25 @@
 import newsHeroImg from '../assets/images/heroes/newsHero.webp'
+import newsHero480 from '../assets/images/heroes/newsHero-480w.webp'
+import newsHero800 from '../assets/images/heroes/newsHero-800w.webp'
+
 import farmerMembershipImg from '../assets/images/community/FarmerMembership.webp'
+import farmerMembership480 from '../assets/images/community/FarmerMembership-480w.webp'
+import farmerMembership800 from '../assets/images/community/FarmerMembership-800w.webp'
+
 import buyerHeroImg from '../assets/images/heroes/buyerHero_thumb.webp'
+import buyerHero480 from '../assets/images/heroes/buyerHero-480w.webp'
+import buyerHero800 from '../assets/images/heroes/buyerHero-800w.webp'
+
 import farmerHeroImg from '../assets/images/heroes/farmerHero.webp'
+import farmerHero480 from '../assets/images/heroes/farmerHero-480w.webp'
+import farmerHero800 from '../assets/images/heroes/farmerHero-800w.webp'
+
 import womenFarmerImg from '../assets/images/community/womenFarmer.webp'
+import womenFarmer480 from '../assets/images/community/womenFarmer-480w.webp'
+import womenFarmer800 from '../assets/images/community/womenFarmer-800w.webp'
+
 import aboutHeroFarmImg from '../assets/images/heroes/about_hero_farm.webp'
+import aboutHeroFarm480 from '../assets/images/heroes/about_hero_farm-480w.webp'
 
 export const news = [
   {
@@ -29,6 +45,7 @@ export const news = [
       'Expanded cold-chain logistics operational for peak season export'
     ],
     img: newsHeroImg,
+    imgSrcSet: `${newsHero480} 480w, ${newsHero800} 800w, ${newsHeroImg} 1280w`,
     featuredLarge: true,
   },
   {
@@ -53,6 +70,7 @@ export const news = [
       'Unanimous agreement on dividend distribution framework'
     ],
     img: farmerMembershipImg,
+    imgSrcSet: `${farmerMembership480} 480w, ${farmerMembership800} 800w, ${farmerMembershipImg} 1280w`,
     featuredSmall: true,
   },
   {
@@ -77,6 +95,7 @@ export const news = [
       '100% compliant with international food safety certifications'
     ],
     img: buyerHeroImg,
+    imgSrcSet: `${buyerHero480} 480w, ${buyerHero800} 800w, ${buyerHeroImg} 1280w`,
   },
   {
     id: 4,
@@ -100,6 +119,7 @@ export const news = [
       'Integrated cold storage chambers ensuring continuous freshness'
     ],
     img: farmerHeroImg,
+    imgSrcSet: `${farmerHero480} 480w, ${farmerHero800} 800w, ${farmerHeroImg} 1280w`,
   },
   {
     id: 5,
@@ -123,6 +143,7 @@ export const news = [
       'Promotes female leadership across local primary co-op boards'
     ],
     img: womenFarmerImg,
+    imgSrcSet: `${womenFarmer480} 480w, ${womenFarmer800} 800w, ${womenFarmerImg} 1280w`,
   },
   {
     id: 6,
@@ -146,6 +167,7 @@ export const news = [
       'Opens premium international supermarket supply channels'
     ],
     img: aboutHeroFarmImg,
+    imgSrcSet: `${aboutHeroFarm480} 480w, ${aboutHeroFarmImg} 1280w`,
   },
   {
     id: 7,
@@ -167,5 +189,6 @@ export const news = [
       'Direct contract farming agreements established with 80 smallholders'
     ],
     img: farmerHeroImg,
+    imgSrcSet: `${farmerHero480} 480w, ${farmerHero800} 800w, ${farmerHeroImg} 1280w`,
   },
 ]

@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async'
+import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
@@ -7,7 +7,11 @@ import Toast from '../components/common/Toast.jsx'
 import FAQ from '../components/common/FAQ.jsx'
 import { useToast } from '../hooks/useToast.js'
 import farmerHeroImg from '../assets/images/heroes/farmerHero.webp'
+import farmerHero480 from '../assets/images/heroes/farmerHero-480w.webp'
+import farmerHero800 from '../assets/images/heroes/farmerHero-800w.webp'
 import newsHeroImg from '../assets/images/heroes/newsHero.webp'
+import newsHero480 from '../assets/images/heroes/newsHero-480w.webp'
+import newsHero800 from '../assets/images/heroes/newsHero-800w.webp'
 import './InnerPage.css'
 import './Farmers.css'
 
@@ -85,13 +89,10 @@ function Farmers() {
 
   return (
     <>
-      <Helmet>
-        <title>{t('meta:farmers.title')}</title>
-        <meta
-          name="description"
-          content={t('meta:farmers.description')}
-        />
-      </Helmet>
+      <SEO
+        title={t('meta:farmers.title')}
+        description={t('meta:farmers.description')}
+      />
       {/* ---- Hero Section ---- */}
       <PageHero
         breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.farmers') }]}
@@ -108,6 +109,7 @@ function Farmers() {
           </>
         }
         image={farmerHeroImg}
+        imageSrcSet={`${farmerHero480} 480w, ${farmerHero800} 800w, ${farmerHeroImg} 1536w`}
         imageAlt={t('farmers:hero.imageAlt')}
         badge={t('farmers:hero.badge')}
       />
@@ -157,8 +159,12 @@ function Farmers() {
           <div className="farmers-membership__media">
             <img
               src={newsHeroImg}
+              srcSet={`${newsHero480} 480w, ${newsHero800} 800w, ${newsHeroImg} 1600w`}
+              sizes="(max-width: 768px) 100vw, 500px"
               alt={t('farmers:steps.imageAlt')}
               className="farmers-membership__img"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

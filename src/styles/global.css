@@ -285,28 +285,13 @@ hr, .divider, .gradient-divider {
   color: var(--color-bg);
 }
 
-/* ---- Modern, Thin & Professional Scrollbar ---- */
+/* ---- Hidden Scrollbar (scroll still works via wheel/trackpad/touch/keyboard) ---- */
 html {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(23, 49, 36, 0.25) transparent;
+  scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(23, 49, 36, 0.25);
-  border-radius: var(--radius-full);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary);
+  display: none;
 }
 
 /* ---- Accessibility Skip Link ---- */

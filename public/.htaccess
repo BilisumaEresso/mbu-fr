@@ -1,24 +1,42 @@
+# 1. Disable MultiViews to prevent cPanel from guessing wrong file paths
+Options -MultiViews
+
+# 2. Manual HTTPS Enforcement Loop
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+
+  # Force all HTTP requests over to secure HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Force non-www (canonical domain)
+  RewriteCond %{HTTP_HOST} ^www\.mekibatuunion\.org$ [NC]
+  RewriteRule ^ https://mekibatuunion.org%{REQUEST_URI} [L,R=301]
+
+  # 3. SPA Frontend Router Fallback
+  # If the file or directory exists physically, serve it directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Fallback all other URLs to index.html so React/Vue Router can parse them
+  RewriteRule ^ index.html [L]
 </IfModule>
 
-# Cache static assets aggressively, but not index.html
+# 4. Cache static assets aggressively, but not index.html
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
   ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
 
-# Gzip compression
+# 5. Gzip compression for Yegara Apache server
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
 </IfModule>

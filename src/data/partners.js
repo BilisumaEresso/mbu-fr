@@ -15,7 +15,7 @@ import cbeLogo from '../assets/images/partners/cbe.webp'
 import atiLogo from '../assets/images/partners/ati.webp'
 import ehpeaLogo from '../assets/images/partners/ehpea.webp'
 import ocaLogo from '../assets/images/partners/oca.webp'
-import arsiUniLogo from '../assets/images/partners/arsi_unversity.png'
+import arsiUniLogo from '../assets/images/partners/arsi_university.webp'
 
 export const PARTNER_CATEGORIES = {
   ALL: 'All Partners',

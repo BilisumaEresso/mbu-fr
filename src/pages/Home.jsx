@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
+import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import Button from '../components/common/Button.jsx'
 import Reveal from '../components/common/Reveal.jsx'
@@ -14,17 +14,36 @@ import { getLocalePath } from '../utils/locale.js'
 
 /* ── hero assets ── */
 import homeHeroImg from '../assets/images/heroes/homeHero.webp'
+import homeHero480 from '../assets/images/heroes/homeHero-480w.webp'
+import homeHero800 from '../assets/images/heroes/homeHero-800w.webp'
+
 import aboutHeroImg from '../assets/images/heroes/aboutHero.webp'
+import aboutHero480 from '../assets/images/heroes/aboutHero-480w.webp'
+import aboutHero800 from '../assets/images/heroes/aboutHero-800w.webp'
+
 import farmerHeroImg from '../assets/images/heroes/farmerHero.webp'
+import farmerHero480 from '../assets/images/heroes/farmerHero-480w.webp'
+import farmerHero800 from '../assets/images/heroes/farmerHero-800w.webp'
+
 import womenFarmerImg from '../assets/images/community/womenFarmer.webp'
+import womenFarmer480 from '../assets/images/community/womenFarmer-480w.webp'
+import womenFarmer800 from '../assets/images/community/womenFarmer-800w.webp'
+
 import buyerHeroImg from '../assets/images/heroes/buyerHero.webp'
+import buyerHero480 from '../assets/images/heroes/buyerHero-480w.webp'
+import buyerHero800 from '../assets/images/heroes/buyerHero-800w.webp'
 
 /* ── bento assets ── */
 import bentoTomatoImg from '../assets/images/products/bentoTomato.webp'
+import bentoTomato400 from '../assets/images/products/bentoTomato-400w.webp'
 import bentoOnionImg from '../assets/images/products/bentoOnion.webp'
+import bentoOnion400 from '../assets/images/products/bentoOnion-400w.webp'
 import bentoGreenPepperImg from '../assets/images/products/bentoGreenPepper.webp'
+import bentoGreenPepper400 from '../assets/images/products/bentoGreenPepper-400w.webp'
 import bentoGreenBeansImg from '../assets/images/products/bentoGreenBeans.webp'
+import bentoGreenBeans400 from '../assets/images/products/bentoGreenBeans-400w.webp'
 import bentoPapayaImg from '../assets/images/products/bentoPapaya.webp'
+import bentoPapaya400 from '../assets/images/products/bentoPapaya-400w.webp'
 
 /* ── testimonial avatar assets ── */
 import teamMember1 from '../assets/images/team/team_member_1.webp'
@@ -42,11 +61,31 @@ import ResourceCard from '../components/common/ResourceCard.jsx'
 import './Home.css'
 
 const getHeroImages = (t) => [
-  { src: homeHeroImg, alt: t('home:hero.images.aerial', 'Aerial view of irrigated farmland near Lake Ziway') },
-  { src: aboutHeroImg, alt: t('home:hero.images.fertile', 'Fertile Ethiopian agricultural land during golden hour') },
-  { src: farmerHeroImg, alt: t('home:hero.images.farmer', 'Cooperative farmer harvesting fresh produce') },
-  { src: womenFarmerImg, alt: t('home:hero.images.women', 'Women farmers working in cooperative fields') },
-  { src: buyerHeroImg, alt: t('home:hero.images.buyer', 'Export quality produce being sorted and packed') },
+  {
+    src: homeHeroImg,
+    srcSet: `${homeHero480} 480w, ${homeHero800} 800w, ${homeHeroImg} 1600w`,
+    alt: t('home:hero.images.aerial', 'Aerial view of irrigated farmland near Lake Ziway'),
+  },
+  {
+    src: aboutHeroImg,
+    srcSet: `${aboutHero480} 480w, ${aboutHero800} 800w, ${aboutHeroImg} 1448w`,
+    alt: t('home:hero.images.fertile', 'Fertile Ethiopian agricultural land during golden hour'),
+  },
+  {
+    src: farmerHeroImg,
+    srcSet: `${farmerHero480} 480w, ${farmerHero800} 800w, ${farmerHeroImg} 1536w`,
+    alt: t('home:hero.images.farmer', 'Cooperative farmer harvesting fresh produce'),
+  },
+  {
+    src: womenFarmerImg,
+    srcSet: `${womenFarmer480} 480w, ${womenFarmer800} 800w, ${womenFarmerImg} 1000w`,
+    alt: t('home:hero.images.women', 'Women farmers working in cooperative fields'),
+  },
+  {
+    src: buyerHeroImg,
+    srcSet: `${buyerHero480} 480w, ${buyerHero800} 800w, ${buyerHeroImg} 1537w`,
+    alt: t('home:hero.images.buyer', 'Export quality produce being sorted and packed'),
+  },
 ]
 
 // PLACEHOLDER CONTENT — replace with real buyer/member testimonials and remove the "Example" badge before launch.
@@ -145,13 +184,10 @@ function Home() {
 
   return (
     <>
-      <Helmet>
-        <title>{t('meta:home.title')}</title>
-        <meta
-          name="description"
-          content={t('meta:home.description')}
-        />
-      </Helmet>
+      <SEO
+        title={t('meta:home.title')}
+        description={t('meta:home.description')}
+      />
 
       {/* 1. Hero Section (enhanced — multi-photo crossfade, video-ready) */}
       <section id="hero" className="home-hero">
@@ -250,7 +286,15 @@ function Home() {
 
           <div className="home-bento__grid">
             <Reveal className="home-bento__item home-bento__item--large" delay={0}>
-              <img src={bentoTomatoImg} alt={t('home:bento.items.tomatoes.name')} className="home-bento__img" />
+              <img
+                src={bentoTomatoImg}
+                srcSet={`${bentoTomato400} 400w, ${bentoTomatoImg} 1280w`}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                alt={t('home:bento.items.tomatoes.name')}
+                className="home-bento__img"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="home-bento__overlay" />
               <div className="home-bento__content">
                 <span className="label-caps label-caps--white mb-2">{t('home:bento.items.tomatoes.tag')}</span>
@@ -259,7 +303,15 @@ function Home() {
             </Reveal>
 
             <Reveal className="home-bento__item home-bento__item--small" delay={90}>
-              <img src={bentoOnionImg} alt={t('home:bento.items.onions.name')} className="home-bento__img" />
+              <img
+                src={bentoOnionImg}
+                srcSet={`${bentoOnion400} 400w, ${bentoOnionImg} 1000w`}
+                sizes="(max-width: 768px) 100vw, 300px"
+                alt={t('home:bento.items.onions.name')}
+                className="home-bento__img"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="home-bento__overlay" />
               <div className="home-bento__content">
                 <h3 className="home-bento__item-title">{t('home:bento.items.onions.name')}</h3>
@@ -267,7 +319,15 @@ function Home() {
             </Reveal>
 
             <Reveal className="home-bento__item home-bento__item--small" delay={180}>
-              <img src={bentoGreenPepperImg} alt={t('home:bento.items.peppers.name')} className="home-bento__img" />
+              <img
+                src={bentoGreenPepperImg}
+                srcSet={`${bentoGreenPepper400} 400w, ${bentoGreenPepperImg} 1000w`}
+                sizes="(max-width: 768px) 100vw, 300px"
+                alt={t('home:bento.items.peppers.name')}
+                className="home-bento__img"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="home-bento__overlay" />
               <div className="home-bento__content">
                 <h3 className="home-bento__item-title">{t('home:bento.items.peppers.name')}</h3>
@@ -275,7 +335,15 @@ function Home() {
             </Reveal>
 
             <Reveal className="home-bento__item home-bento__item--wide" delay={270}>
-              <img src={bentoGreenBeansImg} alt={t('buyers:form.fields.products.greenBeans', 'Green Beans')} className="home-bento__img" />
+              <img
+                src={bentoGreenBeansImg}
+                srcSet={`${bentoGreenBeans400} 400w, ${bentoGreenBeansImg} 1000w`}
+                sizes="(max-width: 768px) 100vw, 500px"
+                alt={t('buyers:form.fields.products.greenBeans', 'Green Beans')}
+                className="home-bento__img"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="home-bento__overlay" />
               <div className="home-bento__content">
                 <h3 className="home-bento__item-title">{t('buyers:form.fields.products.greenBeans', 'Green Beans')}</h3>
@@ -283,7 +351,15 @@ function Home() {
             </Reveal>
 
             <Reveal className="home-bento__item home-bento__item--wide" delay={360}>
-              <img src={bentoPapayaImg} alt={t('home:bento.items.papaya.name')} className="home-bento__img" />
+              <img
+                src={bentoPapayaImg}
+                srcSet={`${bentoPapaya400} 400w, ${bentoPapayaImg} 1000w`}
+                sizes="(max-width: 768px) 100vw, 500px"
+                alt={t('home:bento.items.papaya.name')}
+                className="home-bento__img"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="home-bento__overlay" />
               <div className="home-bento__content">
                 <h3 className="home-bento__item-title">{t('home:bento.items.papaya.name')}</h3>

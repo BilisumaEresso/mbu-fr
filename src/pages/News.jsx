@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef, useEffect } from 'react'
-import { Helmet } from 'react-helmet-async'
+import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
@@ -16,7 +16,6 @@ function News() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedArticle, setSelectedArticle] = useState(null)
   const [copiedLink, setCopiedLink] = useState(false)
-  const [activePage, setActivePage] = useState(1)
   const hasInteractedRef = useRef(false)
 
   // Filter articles based on search
@@ -34,14 +33,6 @@ function News() {
   function handleSearchChange(e) {
     hasInteractedRef.current = true
     setSearchTerm(e.target.value)
-    setActivePage(1)
-  }
-
-  function handlePageChange(p) {
-    hasInteractedRef.current = true
-    setActivePage(p)
-    const el = document.getElementById('articles')
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
   function handleCopyLink() {
@@ -69,13 +60,10 @@ function News() {
 
   return (
     <div className="news-page-container">
-      <Helmet>
-        <title>{t('meta:news.title')}</title>
-        <meta
-          name="description"
-          content={t('meta:news.description')}
-        />
-      </Helmet>
+      <SEO
+        title={t('meta:news.title')}
+        description={t('meta:news.description')}
+      />
       <PageHero
         breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.news') }]}
         eyebrow={t('news:hero.eyebrow')}
@@ -119,6 +107,8 @@ function News() {
                 <div className="news-article-card__media">
                   <img
                     src={featuredLarge.img}
+                    srcSet={featuredLarge.imgSrcSet}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
                     alt={featuredLarge.title}
                     className="news-article-card__img"
                   />
@@ -156,6 +146,8 @@ function News() {
                 <div className="news-article-card__media">
                   <img
                     src={featuredLarge.img}
+                    srcSet={featuredLarge.imgSrcSet}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
                     alt={featuredLarge.title}
                     className="news-article-card__img"
                   />
@@ -194,6 +186,8 @@ function News() {
                 <div className="news-article-card__media">
                   <img
                     src={featuredSmall.img}
+                    srcSet={featuredSmall.imgSrcSet}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                     alt={featuredSmall.title}
                     className="news-article-card__img"
                   />
@@ -231,6 +225,8 @@ function News() {
                 <div className="news-article-card__media">
                   <img
                     src={featuredSmall.img}
+                    srcSet={featuredSmall.imgSrcSet}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                     alt={featuredSmall.title}
                     className="news-article-card__img"
                   />
@@ -261,6 +257,8 @@ function News() {
                 <div className="news-article-card__media">
                   <img
                     src={article.img}
+                    srcSet={article.imgSrcSet}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                     alt={article.title}
                     className="news-article-card__img"
                   />
@@ -325,34 +323,6 @@ function News() {
             )
           })}
         </section>
-
-        {/* Pagination */}
-        <nav className="news-pagination">
-          <button className="news-pagination__btn" disabled>
-            <span className="material-symbols-outlined text-sm">chevron_left</span>
-          </button>
-          {[1, 2, 3].map((page) => (
-            <button
-              key={page}
-              type="button"
-              className={`news-pagination__page ${activePage === page ? 'news-pagination__page--active' : ''}`}
-              onClick={() => handlePageChange(page)}
-            >
-              {page}
-            </button>
-          ))}
-          <span className="news-pagination__ellipsis">...</span>
-          <button
-            type="button"
-            className={`news-pagination__page ${activePage === 8 ? 'news-pagination__page--active' : ''}`}
-            onClick={() => handlePageChange(8)}
-          >
-            8
-          </button>
-          <button className="news-pagination__btn">
-            <span className="material-symbols-outlined text-sm">chevron_right</span>
-          </button>
-        </nav>
       </div>
 
       {/* ---- Wide Open Article Reader Modal ---- */}
@@ -385,6 +355,8 @@ function News() {
             <div className="news-modal-media-banner">
               <img
                 src={selectedArticle.img}
+                srcSet={selectedArticle.imgSrcSet}
+                sizes="(max-width: 768px) 100vw, 900px"
                 alt={selectedArticle.title}
                 className="news-modal-banner-img"
               />

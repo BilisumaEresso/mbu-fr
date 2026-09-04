@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Helmet } from 'react-helmet-async'
+import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
@@ -10,6 +10,8 @@ import { partners, PARTNER_CATEGORIES } from '../data/partners.js'
 import { resources } from '../data/resources.js'
 import FacilityCard from '../components/common/FacilityCard.jsx'
 import aboutHeroImg from '../assets/images/heroes/aboutHero.webp'
+import aboutHero480 from '../assets/images/heroes/aboutHero-480w.webp'
+import aboutHero800 from '../assets/images/heroes/aboutHero-800w.webp'
 import { getTeamMembers } from '../data/team.js'
 import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
 import './About.css'
@@ -66,13 +68,10 @@ function About() {
 
   return (
     <>
-      <Helmet>
-        <title>{t('meta:about.title')}</title>
-        <meta
-          name="description"
-          content={t('meta:about.description')}
-        />
-      </Helmet>
+      <SEO
+        title={t('meta:about.title')}
+        description={t('meta:about.description')}
+      />
       {/* ---- Hero Section ---- */}
       <PageHero
         breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.about') }]}
@@ -80,6 +79,7 @@ function About() {
         title={t('about:hero.title')}
         description={t('about:hero.desc')}
         image={aboutHeroImg}
+        imageSrcSet={`${aboutHero480} 480w, ${aboutHero800} 800w, ${aboutHeroImg} 1448w`}
         imageAlt={t('about:hero.imageAlt')}
         badge={t('about:hero.badge')}
       />

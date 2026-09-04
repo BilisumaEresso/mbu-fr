@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
+import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import ourProductHeroImg from '../assets/images/heroes/ourProductHero.webp'
+import ourProductHero480 from '../assets/images/heroes/ourProductHero-480w.webp'
+import ourProductHero800 from '../assets/images/heroes/ourProductHero-800w.webp'
 import { products, categories, harvestCalendar } from '../data/products.js'
 import { getLocalePath } from '../utils/locale.js'
 import './InnerPage.css'
@@ -90,13 +92,10 @@ function Products() {
 
   return (
     <>
-      <Helmet>
-        <title>{t('meta:products.title')}</title>
-        <meta
-          name="description"
-          content={t('meta:products.description')}
-        />
-      </Helmet>
+      <SEO
+        title={t('meta:products.title')}
+        description={t('meta:products.description')}
+      />
       {/* ---- Hero Section ---- */}
       <PageHero
         breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.products') }]}
@@ -113,6 +112,7 @@ function Products() {
           </>
         }
         image={ourProductHeroImg}
+        imageSrcSet={`${ourProductHero480} 480w, ${ourProductHero800} 800w, ${ourProductHeroImg} 1537w`}
         imageAlt={t('products:hero.imageAlt')}
         badge={t('products:hero.badge')}
       />

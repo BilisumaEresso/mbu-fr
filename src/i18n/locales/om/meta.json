@@ -1,50 +1,50 @@
 {
   "home": {
     "title": "Yuniyeenii Maqii Baatuu | WHG Kuduraa fi Muduraa Itoophiyaa",
-    "description": "Yuniyeeniin Maqii Baatuu waldaalee 135 fi qoteebultoota 8,089 Sulula Qiinxamaatti deeggaruun, oomisha ergaa alaa addunyaatti dhiyeessa."
+    "description": "Qoteebultoota Sulula Qiinxamaa deeggaruun, kuduraa, muduraa fi sanyii filatamaa qulqullina olaanaa qabu gabaa addunyaatiif dhiyeessina."
   },
   "about": {
-    "title": "Waa'ee Keenya | Yuniyeenii Maqii Baatuu",
-    "description": "Seenaa bara 1994 irraa, waldaalee 135, qoteebultoota 8,089, ragaa GlobalG.A.P fi hooggansa qonna itti-fufaan dubbisi."
+    "title": "Seenaa fi Hooggansa Waldaa Keenyaa | Yuniyeenii Maqii Baatuu",
+    "description": "Bara 1994 irraa eegalee, Yuniyeeniin Maqii Baatuu waldaalee bu'uuraa fi qoteebultoota deeggaruun qonna ammayyaa fi itti-fufiinsa qabu mirkaneessa."
   },
   "products": {
-    "title": "Oomishaalee | Yuniyeenii Maqii Baatuu",
-    "description": "Kuusaa ergaa alaa tamaatii, shunkurtaa, qaaraa, dinicha, paappaayyaa, fi sanyii filatamaa daawwadhu."
+    "title": "Oomishaalee Qonnaa fi Sanyii Filatamaa | Yuniyeenii Maqii Baatuu",
+    "description": "Oomishaalee haaraa tamaatii, shunkurtaa booraddaa, qaaraa, dinicha, paappaayyaa fi sanyiiwwan qorannoon mirkanaa'an daawwadhaa."
   },
   "farmers": {
-    "title": "Qoteebultootaaf | Yuniyeenii Maqii Baatuu",
-    "description": "Faayidaa waldaa, tiraaktara, sanyii, fi leenjii qoteebultoota 8,089f kennamu argadhu."
+    "title": "Tajaajila Qoteebulaa fi Miseensummaa | Yuniyeenii Maqii Baatuu",
+    "description": "Faayidaa miseensummaa, tajaajila tiraaktaraa, dhiyeessii sanyii gatii madaalawaan, fi leenjii ogeessota qonnaa argadhaa."
   },
   "buyers": {
-    "title": "Bittootaaf | Yuniyeenii Maqii Baatuu",
-    "description": "Kuduraa, muduraa fi sanyii ragaa GlobalG.A.P qaban bitti. Loojistiiksii amanamaa fi dhiyeessii gahaa."
+    "title": "Daldala Ergaa Alaa fi Dhiyeessii Gurguddaa | Yuniyeenii Maqii Baatuu",
+    "description": "Kuduraalee fi muduraalee ragaa GlobalG.A.P qaban, loojistiksii amanamaa fi kuusaa qabbaneessituun gabaa biyya keessaa fi alaatiif bittaadhaa."
   },
   "retailOutlets": {
-    "title": "Dukkaanoota | Yuniyeenii Maqii Baatuu",
-    "description": "Dukaannoota yuniyeenii shan Finfinneetti argaman kan oomisha haaraa dhiyeessan ilaali."
+    "title": "Dukkaanoota Oomisha Haaraa Finfinnee | Yuniyeenii Maqii Baatuu",
+    "description": "Bakkeewwan dukaannoota yuniyeenii shanan Finfinneetti argaman kan oomisha qonnaan bultootaa kallattiin uummataaf dhiyeessan ilaalaa."
   },
   "news": {
-    "title": "Oduu | Yuniyeenii Maqii Baatuu",
-    "description": "Oduu haamaa, daldalaa, tattaaffii hawaasaa, fi bu'uura misoomaa yuniyeeniirraa dubbisi."
+    "title": "Oduu Haamaa, Daldalaa fi Ijaarsa Misoomaa | Yuniyeenii Maqii Baatuu",
+    "description": "Gabaasa walga'ii yuniyeenii, tilmaama haamaa yeroo, misooma kuusaa oomishaa, fi tumsa daldalaa haaraa dubbisaa."
   },
   "impact": {
-    "title": "Bu'aa Keenya | Yuniyeenii Maqii Baatuu",
-    "description": "Akkamitti yuniyeeniin qonna itti-fufaan, cimina diinagdee, fi guddina hawaasaa akka fidu ilaali."
+    "title": "Misooma Hawaasummaa fi Itti-Fufiinsa | Yuniyeenii Maqii Baatuu",
+    "description": "Akkamitti carraaqqiin keenya dubartoota qonnaan bultootaa jajjabeessu, ijaarsa manneen barnootaa, fi bishaan qulqulluu hawaasaaf dhiyeessu ilaalaa."
   },
   "contact": {
-    "title": "Nu Quunnami | Yuniyeenii Maqii Baatuu",
-    "description": "Waajjira muummee Maqii quunnami. Gaaffii ergaa alaa, miseensummaa ykn gurgurtaaf bilbili."
+    "title": "Waajjira Muummee fi Dameelee Quunnamaa | Yuniyeenii Maqii Baatuu",
+    "description": "Waajjira keenya magaalaa Maqii ykn bakka bu'oota gurgurtaa Finfinnee quunnamuun oomisha bitachuu fi tumsa hojii uumaa."
   },
   "privacyPolicy": {
-    "title": "Imaammata Iccitii | Yuniyeenii Maqii Baatuu",
-    "description": "Akkamitti WHG Maqii Baatuu odeeffannoo dhuunfaa kee akka eegu."
+    "title": "Imaammata Eegumsa Ragaalee Dhuunfaa | Yuniyeenii Maqii Baatuu",
+    "description": "Akkamitti Yuniyeeniin Maqii Baatuu ragaalee dhuunfaa marsariitii kanaan nuuf ergaman eegumsa cimaa akka taasisu baruuf dubbisaa."
   },
   "termsOfService": {
-    "title": "Haala Tajaajilaa | Yuniyeenii Maqii Baatuu",
-    "description": "Ulaagaa yeroo marsariitii WHG Maqii Baatuu fayyadamtan hojiirra oolu."
+    "title": "Waliigaltee fi Haala Fayyadama Marsariitii | Yuniyeenii Maqii Baatuu",
+    "description": "Ulaagaalee fi seerota marsariitii Yuniyeenii Maqii Baatuu, qabiyyee oomishaalee fi sanadoota buufachuuf taa'an ilaalaa."
   },
   "notFound": {
     "title": "Fuulli Hin Argamne | Yuniyeenii Maqii Baatuu",
-    "description": "Fuulli ati barbaaddan marsariitii kanarratti hin jiru."
+    "description": "Fuulli ati barbaaddan hin jiru. Oomishaalee fi tajaajiloota qonnaa keenya ilaaluuf gara fuula duraatti deebi'aa."
   }
 }

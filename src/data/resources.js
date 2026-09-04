@@ -1,7 +1,18 @@
 import storeImg from '../assets/images/resources/store.webp'
+import store480 from '../assets/images/resources/store-480w.webp'
+import store800 from '../assets/images/resources/store-800w.webp'
+
 import fleetImg from '../assets/images/resources/fleet.webp'
+import fleet480 from '../assets/images/resources/fleet-480w.webp'
+import fleet800 from '../assets/images/resources/fleet-800w.webp'
+
 import packhouseImg from '../assets/images/resources/packhouse.webp'
+import packhouse480 from '../assets/images/resources/packhouse-480w.webp'
+import packhouse800 from '../assets/images/resources/packhouse-800w.webp'
+
 import irrigationImg from '../assets/images/resources/irrigation.webp'
+import irrigation480 from '../assets/images/resources/irrigation-480w.webp'
+import irrigation800 from '../assets/images/resources/irrigation-800w.webp'
 
 export const resources = [
   {
@@ -12,6 +23,7 @@ export const resources = [
     location: 'Meki Hub',
     desc: 'Multi-chamber temperature-controlled cold rooms and warehouses serving 135 cooperatives.',
     image: storeImg,
+    imageSrcSet: `${store480} 480w, ${store800} 800w, ${storeImg} 1535w`,
     icon: 'warehouse',
     features: ['Multi-Chamber Cold Rooms', 'Backup Power Supply', 'Direct Coop Intake'],
   },
@@ -23,6 +35,7 @@ export const resources = [
     location: 'Rift Valley & Addis Ababa',
     desc: 'Insulated cold-chain trucks and farm tractors ensuring farm-gate freshness to final market.',
     image: fleetImg,
+    imageSrcSet: `${fleet480} 480w, ${fleet800} 800w, ${fleetImg} 1537w`,
     icon: 'local_shipping',
     features: ['Active Temperature Control', 'Farm-to-Market Transit', 'Express Logistics Routes'],
   },
@@ -34,6 +47,7 @@ export const resources = [
     location: 'Meki Pack House',
     desc: 'Standardized grading, sanitary washing, and GlobalG.A.P certified export packaging lines.',
     image: packhouseImg,
+    imageSrcSet: `${packhouse480} 480w, ${packhouse800} 800w, ${packhouseImg} 1537w`,
     icon: 'factory',
     features: ['Multi-Tier Optical Grading', 'Sanitary Washing Lines', 'GlobalG.A.P Export Cartons'],
   },
@@ -45,6 +59,7 @@ export const resources = [
     location: 'Dembal Lake Basin',
     desc: 'River-fed electric pumping stations and modern drip systems powering year-round cultivation.',
     image: irrigationImg,
+    imageSrcSet: `${irrigation480} 480w, ${irrigation800} 800w, ${irrigationImg} 1537w`,
     icon: 'water_drop',
     features: ['Electric River Pumping', 'Modern Drip Infrastructure', 'Year-Round Cultivation'],
   },

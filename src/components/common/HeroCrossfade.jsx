@@ -26,6 +26,8 @@ export default function HeroCrossfade({ images = [], interval = 7000, onPlayClic
           key={i}
           className={`hero-crossfade__img${i === current ? ' hero-crossfade__img--active' : ''}`}
           src={img.src}
+          srcSet={img.srcSet}
+          sizes={img.sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px'}
           alt={img.alt}
           loading={i === 0 ? 'eager' : 'lazy'}
           decoding="async"

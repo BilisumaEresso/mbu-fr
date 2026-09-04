@@ -31,9 +31,12 @@ function FacilityCard({ resource }) {
       <div className="facility-card__media">
         <img
           src={resource.image}
+          srcSet={resource.imageSrcSet}
+          sizes={resource.imageSrcSet ? '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px' : undefined}
           alt={name}
           className="facility-card__img"
           loading="lazy"
+          decoding="async"
         />
         <div className="facility-card__overlay" />
 

@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
+import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import retailHeroImg from '../assets/images/heroes/retailHero.webp'
+import retailHero480 from '../assets/images/heroes/RetailHero-480w.webp'
+import retailHero800 from '../assets/images/heroes/RetailHero-800w.webp'
 import { outlets } from '../data/outlets.js'
 import { getLocalePath } from '../utils/locale.js'
 import './InnerPage.css'
@@ -24,13 +26,10 @@ function RetailOutlets() {
 
   return (
     <>
-      <Helmet>
-        <title>{t('meta:retailOutlets.title')}</title>
-        <meta
-          name="description"
-          content={t('meta:retailOutlets.description')}
-        />
-      </Helmet>
+      <SEO
+        title={t('meta:retailOutlets.title')}
+        description={t('meta:retailOutlets.description')}
+      />
 
       {/* ---- Hero Section ---- */}
       <PageHero
@@ -48,6 +47,7 @@ function RetailOutlets() {
           </>
         }
         image={retailHeroImg}
+        imageSrcSet={`${retailHero480} 480w, ${retailHero800} 800w, ${retailHeroImg} 1537w`}
         imageAlt={t('retailOutlets:hero.imageAlt')}
         badge={t('retailOutlets:hero.badge')}
       />
@@ -276,8 +276,12 @@ function RetailOutlets() {
             <Reveal className="outlets-experience__media" delay={90}>
               <img
                 src={retailHeroImg}
+                srcSet={`${retailHero480} 480w, ${retailHero800} 800w, ${retailHeroImg} 1537w`}
+                sizes="(max-width: 768px) 100vw, 500px"
                 alt={t('retailOutlets:freshProduce.imageAlt')}
                 className="outlets-experience__img"
+                loading="lazy"
+                decoding="async"
               />
               <div className="outlets-experience__badge">
                 <span className="material-symbols-outlined">local_shipping</span>

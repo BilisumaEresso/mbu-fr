@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async'
+import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import './About.css'
@@ -8,13 +8,10 @@ function TermsOfService() {
 
   return (
     <>
-      <Helmet>
-        <title>{t('meta:termsOfService.title')}</title>
-        <meta
-          name="description"
-          content={t('meta:termsOfService.description')}
-        />
-      </Helmet>
+      <SEO
+        title={t('meta:termsOfService.title')}
+        description={t('meta:termsOfService.description')}
+      />
 
       <PageHero
         breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.termsOfService') }]}

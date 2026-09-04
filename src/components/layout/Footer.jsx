@@ -179,6 +179,20 @@ function Footer() {
             <Link to={getLocalePath('/terms-of-service', currentLang)} className="footer__bottom-link">{t('footer.termsOfService')}</Link>
           </div>
         </div>
+
+        <div className="footer__dev-credit">
+          <span className="footer__dev-text">
+            Developed with <span className="footer__dev-heart" aria-label="love">❤️</span> by{' '}
+            <a
+              href="https://bilisumaeresso.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__dev-link"
+            >
+              Bilisuma Eresso
+            </a>
+          </span>
+        </div>
       </div>
     </footer>
   )

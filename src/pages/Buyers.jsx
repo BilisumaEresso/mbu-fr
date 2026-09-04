@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
+import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
@@ -11,6 +11,8 @@ import ProcessTimeline from '../components/common/ProcessTimeline.jsx'
 import { useToast } from '../hooks/useToast.js'
 import { validateFields } from '../utils/validateForm.js'
 import buyerHeroImg from '../assets/images/heroes/buyerHero.webp'
+import buyerHero480 from '../assets/images/heroes/buyerHero-480w.webp'
+import buyerHero800 from '../assets/images/heroes/buyerHero-800w.webp'
 import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
 import './InnerPage.css'
 import './Buyers.css'
@@ -148,13 +150,10 @@ function Buyers() {
 
   return (
     <>
-      <Helmet>
-        <title>{t('meta:buyers.title')}</title>
-        <meta
-          name="description"
-          content={t('meta:buyers.description')}
-        />
-      </Helmet>
+      <SEO
+        title={t('meta:buyers.title')}
+        description={t('meta:buyers.description')}
+      />
 
       {/* ---- Hero Section ---- */}
       <PageHero
@@ -177,6 +176,7 @@ function Buyers() {
           </>
         }
         image={buyerHeroImg}
+        imageSrcSet={`${buyerHero480} 480w, ${buyerHero800} 800w, ${buyerHeroImg} 1537w`}
         imageAlt={t('buyers:hero.imageAlt')}
         badge={t('buyers:hero.badge')}
       />

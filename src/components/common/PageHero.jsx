@@ -11,6 +11,8 @@ function PageHero({
   description,
   actions,
   image,
+  imageSrcSet,
+  imageSizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px',
   imageAlt,
   badge,
   rightContent,
@@ -40,6 +42,8 @@ function PageHero({
                 <div className="page-hero__media">
                   <img
                     src={image}
+                    srcSet={imageSrcSet}
+                    sizes={imageSrcSet ? imageSizes : undefined}
                     alt={imageAlt || title}
                     className="page-hero__img"
                     loading="eager"

@@ -1,11 +1,15 @@
-import { Helmet } from 'react-helmet-async'
+import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import StatCard from '../components/common/StatCard.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import impactHeroImg from '../assets/images/heroes/impactHero.webp'
+import impactHero480 from '../assets/images/heroes/impactHero-480w.webp'
+import impactHero800 from '../assets/images/heroes/impactHero-800w.webp'
 import womenFarmerImg from '../assets/images/community/womenFarmer.webp'
+import womenFarmer480 from '../assets/images/community/womenFarmer-480w.webp'
+import womenFarmer800 from '../assets/images/community/womenFarmer-800w.webp'
 import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
 import './InnerPage.css'
 import './Impact.css'
@@ -51,13 +55,10 @@ function Impact() {
 
   return (
     <>
-      <Helmet>
-        <title>{t('meta:impact.title')}</title>
-        <meta
-          name="description"
-          content={t('meta:impact.description')}
-        />
-      </Helmet>
+      <SEO
+        title={t('meta:impact.title')}
+        description={t('meta:impact.description')}
+      />
       {/* ---- Hero Section ---- */}
       <PageHero
         breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.impact') }]}
@@ -74,6 +75,8 @@ function Impact() {
           </>
         }
         image={impactHeroImg}
+        imageSrcSet={`${impactHero480} 480w, ${impactHero800} 800w, ${impactHeroImg} 1280w`}
+        imageSizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
         imageAlt={t('impact:hero.imageAlt')}
         badge={t('impact:hero.badge')}
       />
@@ -102,6 +105,8 @@ function Impact() {
           <Reveal className="impact-metrics__photo" delay={stagger(stats.length)}>
             <img
               src={womenFarmerImg}
+              srcSet={`${womenFarmer480} 480w, ${womenFarmer800} 800w, ${womenFarmerImg} 1280w`}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
               alt={t('impact:metrics.imageAlt')}
               className="impact-metrics__photo-img"
             />

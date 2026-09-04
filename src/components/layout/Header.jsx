@@ -228,10 +228,10 @@ function Header() {
           })}
         </nav>
 
-        <div className="header__actions">
-          {/* Compact Dropdown Language Switcher */}
+        <div className="header__right">
+          {/* Compact Dropdown Language Switcher — visible on all screens */}
           <div
-            className="header__lang-dropdown-wrap desktop-only"
+            className="header__lang-dropdown-wrap"
             onMouseEnter={() => {
               clearTimeout(dropdownTimer.current)
               setActiveDropdown('lang')
@@ -286,60 +286,27 @@ function Header() {
             )}
           </div>
 
-          <button className="header__login-btn" type="button" onClick={handleLoginClick}>
+          <button className="header__login-btn desktop-only" type="button" onClick={handleLoginClick}>
             <span className="material-symbols-outlined header__login-icon">lock</span>
             <span>{t('header.memberLogin')}</span>
           </button>
-        </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="header__mobile-toggle"
-          type="button"
-          aria-label={t('header.toggleNav')}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          <span className="material-symbols-outlined">{menuOpen ? 'close' : 'menu'}</span>
-        </button>
+          {/* Mobile Menu Button */}
+          <button
+            className="header__mobile-toggle"
+            type="button"
+            aria-label={t('header.toggleNav')}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span className="material-symbols-outlined">{menuOpen ? 'close' : 'menu'}</span>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav Drawer */}
       {menuOpen && (
         <nav className="header__mobile-nav">
-          {/* Enhanced Mobile Language Selector Card */}
-          <div className="header__mobile-lang-box">
-            <div className="header__mobile-lang-header">
-              <span className="material-symbols-outlined header__mobile-lang-icon">language</span>
-              <span className="header__mobile-lang-title">{t('langSwitcher.mobileTitle', 'Language / Afaan')}</span>
-            </div>
-            <div className="header__mobile-lang-grid">
-              {LANGUAGES.map((lang) => {
-                const isActive = currentLang === lang.code
-                const FlagComp = lang.Flag
-                return (
-                  <button
-                    key={lang.code}
-                    type="button"
-                    className={`header__mobile-lang-card ${isActive ? 'header__mobile-lang-card--active' : ''}`}
-                    onClick={() => handleLanguageSwitch(lang.code)}
-                    aria-pressed={isActive}
-                  >
-                    <FlagComp width={22} height={15} />
-                    <div className="header__mobile-lang-labels">
-                      <strong className="header__mobile-lang-name">{lang.nativeName}</strong>
-                      <span className="header__mobile-lang-sub">{lang.name} ({lang.label})</span>
-                    </div>
-                    {isActive && (
-                      <span className="material-symbols-outlined header__mobile-lang-check">
-                        check_circle
-                      </span>
-                    )}
-                  </button>
-                )
-              })}
-            </div>
-          </div>
 
           {navGroups.map((group) => {
             if (group.to) {
