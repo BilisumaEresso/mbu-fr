@@ -14,6 +14,8 @@ import irrigationImg from '../assets/images/resources/irrigation.webp'
 import irrigation480 from '../assets/images/resources/irrigation-480w.webp'
 import irrigation800 from '../assets/images/resources/irrigation-800w.webp'
 
+import { Warehouse, Truck, Factory, Droplet } from 'lucide-react'
+
 export const resources = [
   {
     id: 'central-cold-hub',
@@ -24,7 +26,7 @@ export const resources = [
     desc: 'Multi-chamber temperature-controlled cold rooms and warehouses serving 135 cooperatives.',
     image: storeImg,
     imageSrcSet: `${store480} 480w, ${store800} 800w, ${storeImg} 1535w`,
-    icon: 'warehouse',
+    icon: Warehouse,
     features: ['Multi-Chamber Cold Rooms', 'Backup Power Supply', 'Direct Coop Intake'],
   },
   {
@@ -36,7 +38,7 @@ export const resources = [
     desc: 'Insulated cold-chain trucks and farm tractors ensuring farm-gate freshness to final market.',
     image: fleetImg,
     imageSrcSet: `${fleet480} 480w, ${fleet800} 800w, ${fleetImg} 1537w`,
-    icon: 'local_shipping',
+    icon: Truck,
     features: ['Active Temperature Control', 'Farm-to-Market Transit', 'Express Logistics Routes'],
   },
   {
@@ -48,7 +50,7 @@ export const resources = [
     desc: 'Standardized grading, sanitary washing, and GlobalG.A.P certified export packaging lines.',
     image: packhouseImg,
     imageSrcSet: `${packhouse480} 480w, ${packhouse800} 800w, ${packhouseImg} 1537w`,
-    icon: 'factory',
+    icon: Factory,
     features: ['Multi-Tier Optical Grading', 'Sanitary Washing Lines', 'GlobalG.A.P Export Cartons'],
   },
   {
@@ -60,7 +62,7 @@ export const resources = [
     desc: 'River-fed electric pumping stations and modern drip systems powering year-round cultivation.',
     image: irrigationImg,
     imageSrcSet: `${irrigation480} 480w, ${irrigation800} 800w, ${irrigationImg} 1537w`,
-    icon: 'water_drop',
+    icon: Droplet,
     features: ['Electric River Pumping', 'Modern Drip Infrastructure', 'Year-Round Cultivation'],
   },
 ]

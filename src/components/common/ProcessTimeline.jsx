@@ -1,6 +1,20 @@
 import { useTranslation } from 'react-i18next'
+import { RefreshCw, Move, MapPin, CheckCircle, BadgeCheck, Package, Sparkles, Truck } from 'lucide-react'
 import Reveal from './Reveal.jsx'
 import './ProcessTimeline.css'
+
+const STEP_ICON_MAP = {
+  verified: BadgeCheck,
+  inventory_2: Package,
+  inventory: Package,
+  sanitizer: Sparkles,
+  local_shipping: Truck,
+}
+
+function ProcessStepIcon({ name, size = 20, className = '' }) {
+  const Comp = STEP_ICON_MAP[name] || BadgeCheck
+  return <Comp size={size} className={className} />
+}
 
 const getDefaultSteps = (t) => t('process.steps', { returnObjects: true })
 
@@ -39,7 +53,7 @@ function ProcessTimeline({
                 <span className="process-timeline__badge-text">{t('process.badge', 'End-to-End Supply Chain')}</span>
                 <span className="process-timeline__badge-sep" aria-hidden="true" />
                 <span className="process-timeline__badge-flow">
-                  <span className="material-symbols-outlined process-timeline__badge-icon">sync_alt</span>
+                  <RefreshCw size={16} className="process-timeline__badge-icon" />
                   <span>{t('process.badgeFlow', 'Farm to Market Flow')}</span>
                 </span>
               </div>
@@ -51,7 +65,7 @@ function ProcessTimeline({
 
         {/* Mobile Swipe Hint */}
         <div className="process-timeline__swipe-hint mobile-only">
-          <span className="material-symbols-outlined text-xs">swipe</span>
+          <Move size={14} />
           <span>{t('process.swipeHint', 'Swipe to explore 4-stage pipeline')}</span>
         </div>
 
@@ -79,9 +93,7 @@ function ProcessTimeline({
                       <span className="process-timeline__step-num">{stepNumber}</span>
                     </div>
                     <div className="process-timeline__icon-box">
-                      <span className="material-symbols-outlined process-timeline__icon">
-                        {step.icon || 'verified'}
-                      </span>
+                      <ProcessStepIcon name={step.icon} size={20} className="process-timeline__icon" />
                     </div>
                   </div>
 
@@ -90,7 +102,7 @@ function ProcessTimeline({
                     <span className="process-timeline__phase-tag">{step.phase}</span>
                     {step.location && (
                       <span className="process-timeline__location-tag">
-                        <span className="material-symbols-outlined text-xs">location_on</span>
+                        <MapPin size={14} />
                         {step.location}
                       </span>
                     )}
@@ -105,9 +117,7 @@ function ProcessTimeline({
                     <ul className="process-timeline__highlights">
                       {step.highlights.map((highlight, hIdx) => (
                         <li key={hIdx} className="process-timeline__highlight-item">
-                          <span className="material-symbols-outlined process-timeline__check-icon">
-                            check_circle
-                          </span>
+                          <CheckCircle size={16} className="process-timeline__check-icon" />
                           <span>{highlight}</span>
                         </li>
                       ))}

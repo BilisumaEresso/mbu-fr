@@ -11,6 +11,7 @@ import { socialLinks } from '../data/socials.js'
 import impactHeroImg from '../assets/images/heroes/impactHero.webp'
 import impactHero480 from '../assets/images/heroes/impactHero-480w.webp'
 import impactHero800 from '../assets/images/heroes/impactHero-800w.webp'
+import { MapPin, Map, Phone, Smartphone, Printer, Mail, ArrowUpRight, CheckCircle } from 'lucide-react'
 import './InnerPage.css'
 import './Contact.css'
 
@@ -122,7 +123,7 @@ function Contact() {
             <div className="contact-info-card">
               <span className="label-caps label-caps--secondary block mb-3">{t('contact:info.hqTitle')}</span>
               <div className="contact-info-item">
-                <span className="material-symbols-outlined contact-info-item__icon">location_on</span>
+                <MapPin size={20} className="contact-info-item__icon" />
                 <div>
                   <p className="font-medium">Meki Town</p>
                   <p className="text-muted">{t('contact:info.address')}</p>
@@ -133,35 +134,35 @@ function Contact() {
                     rel="noopener noreferrer"
                     className="btn btn--outline btn--sm mt-2 inline-flex items-center gap-1"
                   >
-                    <span className="material-symbols-outlined text-xs">map</span> {t('contact:info.viewMaps')}
+                    <Map size={14} className="text-xs" /> {t('contact:info.viewMaps')}
                   </a>
                 </div>
               </div>
 
               <span className="label-caps label-caps--secondary block mb-3 mt-6">{t('contact:info.directLines')}</span>
               <div className="contact-info-item">
-                <span className="material-symbols-outlined contact-info-item__icon">call</span>
+                <Phone size={20} className="contact-info-item__icon" />
                 <div>
                   <p className="font-medium">{t('contact:info.phone')}</p>
                   <a href="tel:+251221181114" className="text-muted">022-118-11-14 / 02</a>
                 </div>
               </div>
               <div className="contact-info-item">
-                <span className="material-symbols-outlined contact-info-item__icon">phone_iphone</span>
+                <Smartphone size={20} className="contact-info-item__icon" />
                 <div>
                   <p className="font-medium">{t('contact:info.mobile')}</p>
                   <a href="tel:+251904686868" className="text-muted">09-04-68-68-68 / 09-09-34-34-34</a>
                 </div>
               </div>
               <div className="contact-info-item">
-                <span className="material-symbols-outlined contact-info-item__icon">fax</span>
+                <Printer size={20} className="contact-info-item__icon" />
                 <div>
                   <p className="font-medium">{t('contact:info.fax')}</p>
                   <p className="text-muted">022-118-04-08</p>
                 </div>
               </div>
               <div className="contact-info-item">
-                <span className="material-symbols-outlined contact-info-item__icon">mail</span>
+                <Mail size={20} className="contact-info-item__icon" />
                 <div>
                   <p className="font-medium">{t('contact:info.email')}</p>
                   <a href="mailto:info@mekibatuunion.org" className="text-muted">info@mekibatuunion.org</a>
@@ -190,7 +191,7 @@ function Contact() {
                         <span className="contact-social-card__name">Facebook</span>
                         <span className="contact-social-card__handle">@{socialLinks.facebook.handle}</span>
                       </div>
-                      <span className="material-symbols-outlined contact-social-card__arrow">arrow_outward</span>
+                      <ArrowUpRight size={16} className="contact-social-card__arrow" />
                     </a>
                   )}
 
@@ -211,7 +212,7 @@ function Contact() {
                         <span className="contact-social-card__name">Telegram</span>
                         <span className="contact-social-card__handle">{socialLinks.telegram.handle}</span>
                       </div>
-                      <span className="material-symbols-outlined contact-social-card__arrow">arrow_outward</span>
+                      <ArrowUpRight size={16} className="contact-social-card__arrow" />
                     </a>
                   )}
 
@@ -232,7 +233,7 @@ function Contact() {
                         <span className="contact-social-card__name">LinkedIn</span>
                         <span className="contact-social-card__handle">{socialLinks.linkedin.handle}</span>
                       </div>
-                      <span className="material-symbols-outlined contact-social-card__arrow">arrow_outward</span>
+                      <ArrowUpRight size={16} className="contact-social-card__arrow" />
                     </a>
                   )}
                 </div>
@@ -255,7 +256,7 @@ function Contact() {
             <div className="contact-form-card">
               {submitted ? (
                 <div className="contact-success">
-                  <span className="material-symbols-outlined contact-success__icon">check_circle</span>
+                  <CheckCircle size={48} className="contact-success__icon" />
                   <h2>{t('contact:form.success.title')}</h2>
                   <p>{t('contact:form.success.desc')}</p>
                 </div>

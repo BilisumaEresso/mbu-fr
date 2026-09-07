@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Play } from 'lucide-react'
 import './HeroCrossfade.css'
 
 export default function HeroCrossfade({ images = [], interval = 7000, onPlayClick }) {
@@ -39,7 +40,7 @@ export default function HeroCrossfade({ images = [], interval = 7000, onPlayClic
           onClick={onPlayClick}
           aria-label={t('heroCrossfade.watchStory', 'Watch our story')}
         >
-          <span className="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+          <Play size={20} aria-hidden="true" />
           <span className="hero-crossfade__play-label">{t('heroCrossfade.watchStory', 'Watch our story')}</span>
         </button>
       )}

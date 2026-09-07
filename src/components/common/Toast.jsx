@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { CheckCircle, AlertCircle, Info } from 'lucide-react'
 import './Toast.css'
 
 const AUTO_DISMISS_MS = 5000
@@ -26,10 +27,7 @@ function Toast({ toast, onDismiss }) {
   const isError = toast.type === 'error'
   const isInfo = toast.type === 'info'
 
-  let icon = 'check_circle'
-  if (isError) icon = 'error'
-  if (isInfo) icon = 'info'
-
+  const IconComp = isError ? AlertCircle : isInfo ? Info : CheckCircle
   const ariaRole = isError ? 'alert' : 'status'
 
   return (
@@ -39,9 +37,7 @@ function Toast({ toast, onDismiss }) {
       aria-live={isSuccess ? 'polite' : 'assertive'}
       aria-atomic="true"
     >
-      <span className="material-symbols-outlined toast__icon" aria-hidden="true">
-        {icon}
-      </span>
+      <IconComp size={20} className="toast__icon" aria-hidden="true" />
 
       <div className="toast__body">
         <p className="toast__message">{toast.message}</p>

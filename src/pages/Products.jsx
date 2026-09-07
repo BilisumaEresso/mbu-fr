@@ -10,6 +10,7 @@ import ourProductHero480 from '../assets/images/heroes/ourProductHero-480w.webp'
 import ourProductHero800 from '../assets/images/heroes/ourProductHero-800w.webp'
 import { products, categories, harvestCalendar } from '../data/products.js'
 import { getLocalePath } from '../utils/locale.js'
+import { ArrowRight, FileText, MapPin, Calendar, X, BadgeCheck, Package, Clock, Leaf, CheckCircle, ArrowLeftCircle } from 'lucide-react'
 import './InnerPage.css'
 import './Products.css'
 
@@ -104,10 +105,10 @@ function Products() {
         actions={
           <>
             <a href="#catalog" className="btn btn--primary">
-              {t('products:hero.viewCatalog')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              {t('products:hero.viewCatalog')} <ArrowRight size={16} className="text-sm" />
             </a>
             <Link to={getLocalePath('/buyers', currentLang)} className="btn btn--outline">
-              {t('products:hero.requestQuote')} <span className="material-symbols-outlined text-sm">description</span>
+              {t('products:hero.requestQuote')} <FileText size={16} className="text-sm" />
             </Link>
           </>
         }
@@ -199,11 +200,11 @@ function Products() {
 
                     <div className="product-item-card__meta">
                       <div className="product-item-card__meta-item">
-                        <span className="material-symbols-outlined">location_on</span>
+                        <MapPin size={16} />
                         <span>{trans.origin}</span>
                       </div>
                       <div className="product-item-card__meta-item">
-                        <span className="material-symbols-outlined">calendar_today</span>
+                        <Calendar size={16} />
                         <span>{trans.season}</span>
                       </div>
                     </div>
@@ -211,7 +212,7 @@ function Products() {
                     <div className="product-item-card__footer">
                       <span className="product-item-card__action-label">{t('products:catalog.labels.viewDetails')}</span>
                       <div className="product-item-card__arrow-wrap">
-                        <span className="material-symbols-outlined">arrow_forward</span>
+                        <ArrowRight size={16} />
                       </div>
                     </div>
                   </div>
@@ -280,7 +281,7 @@ function Products() {
                 onClick={() => setSelectedProduct(null)}
                 aria-label={t('common:buttons.close')}
               >
-                <span className="material-symbols-outlined">close</span>
+                <X size={20} />
               </button>
 
               <div className="product-modal-grid">
@@ -298,7 +299,7 @@ function Products() {
                   )}
                   <div className="product-modal-media-overlay" />
                   <div className="product-modal-media-badge">
-                    <span className="material-symbols-outlined text-xs">verified</span>
+                    <BadgeCheck size={14} className="text-xs" />
                     <span>{t('products:catalog.labels.globalGap')}</span>
                   </div>
                 </div>
@@ -316,7 +317,7 @@ function Products() {
                   <div className="product-specs-grid">
                     <div className="product-spec-card">
                       <div className="product-spec-card__icon">
-                        <span className="material-symbols-outlined">location_on</span>
+                        <MapPin size={20} />
                       </div>
                       <div className="product-spec-card__details">
                         <span className="product-spec-card__label">{t('products:catalog.labels.origin')}</span>
@@ -326,7 +327,7 @@ function Products() {
 
                     <div className="product-spec-card">
                       <div className="product-spec-card__icon">
-                        <span className="material-symbols-outlined">calendar_today</span>
+                        <Calendar size={20} />
                       </div>
                       <div className="product-spec-card__details">
                         <span className="product-spec-card__label">{t('products:catalog.labels.season')}</span>
@@ -336,7 +337,7 @@ function Products() {
 
                     <div className="product-spec-card">
                       <div className="product-spec-card__icon">
-                        <span className="material-symbols-outlined">inventory_2</span>
+                        <Package size={20} />
                       </div>
                       <div className="product-spec-card__details">
                         <span className="product-spec-card__label">{t('products:catalog.labels.packaging')}</span>
@@ -346,7 +347,7 @@ function Products() {
 
                     <div className="product-spec-card">
                       <div className="product-spec-card__icon">
-                        <span className="material-symbols-outlined">timelapse</span>
+                        <Clock size={20} />
                       </div>
                       <div className="product-spec-card__details">
                         <span className="product-spec-card__label">{t('products:catalog.labels.shelfLife')}</span>
@@ -357,7 +358,7 @@ function Products() {
                     {Array.isArray(selectedTrans.varieties) && selectedTrans.varieties.length > 0 && (
                       <div className="product-spec-card product-spec-card--full">
                         <div className="product-spec-card__icon">
-                          <span className="material-symbols-outlined">spa</span>
+                          <Leaf size={20} />
                         </div>
                         <div className="product-spec-card__details">
                           <span className="product-spec-card__label">{t('products:catalog.labels.producedVarieties')}</span>
@@ -368,7 +369,7 @@ function Products() {
 
                     <div className="product-spec-card product-spec-card--full">
                       <div className="product-spec-card__icon">
-                        <span className="material-symbols-outlined">verified</span>
+                        <BadgeCheck size={20} />
                       </div>
                       <div className="product-spec-card__details">
                         <span className="product-spec-card__label">{t('products:catalog.labels.brix')}</span>
@@ -379,11 +380,11 @@ function Products() {
 
                   <div className="product-modal-perks">
                     <div className="product-modal-perk">
-                      <span className="material-symbols-outlined text-xs">check_circle</span>
+                      <CheckCircle size={14} className="text-xs" />
                       <span>{t('products:catalog.perks.traceable')}</span>
                     </div>
                     <div className="product-modal-perk">
-                      <span className="material-symbols-outlined text-xs">check_circle</span>
+                      <CheckCircle size={14} className="text-xs" />
                       <span>{t('products:catalog.perks.coldChain')}</span>
                     </div>
                   </div>
@@ -395,7 +396,7 @@ function Products() {
                       onClick={() => setSelectedProduct(null)}
                     >
                       {t('products:catalog.labels.requestQuote')}
-                      <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                      <ArrowRight size={16} className="text-sm" />
                     </Link>
                     <button
                       type="button"
@@ -424,7 +425,7 @@ function Products() {
 
           <div className="table-responsive">
             <div className="table-mobile-hint">
-              <span className="material-symbols-outlined text-sm">swipe_left</span>
+              <ArrowLeftCircle size={16} className="text-sm" />
               <span>{t('products:calendar.mobileHint')}</span>
             </div>
             <table className="products-table">

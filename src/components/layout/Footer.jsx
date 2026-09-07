@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import logoImg from '../../assets/images/brand/MBU_logo_new.webp'
 import { getLocalePath } from '../../utils/locale.js'
 import { socialLinks } from '../../data/socials.js'
+import { Mail, Phone, MapPin } from 'lucide-react'
 import './Footer.css'
 
 function Footer() {
@@ -55,19 +56,19 @@ function Footer() {
           <ul className="footer__contact-list">
             <li>
               <a className="footer__contact-item" href="mailto:info@mekibatuunion.org">
-                <span className="material-symbols-outlined footer__contact-icon">mail</span>
+                <Mail size={18} className="footer__contact-icon" />
                 <span>info@mekibatuunion.org</span>
               </a>
             </li>
             <li>
               <a className="footer__contact-item" href="tel:+251221181114">
-                <span className="material-symbols-outlined footer__contact-icon">phone</span>
+                <Phone size={18} className="footer__contact-icon" />
                 <span>+251 (0) 22 118 1114 / 02</span>
               </a>
             </li>
             <li>
               <a className="footer__contact-item" href="tel:+251904686868">
-                <span className="material-symbols-outlined footer__contact-icon">phone</span>
+                <Phone size={18} className="footer__contact-icon" />
                 <span>+251 (0) 904 686868 / 909 343434</span>
               </a>
             </li>
@@ -79,7 +80,7 @@ function Footer() {
                 rel="noopener noreferrer"
                 title={t('footer.openMaps')}
               >
-                <span className="material-symbols-outlined footer__contact-icon">location_on</span>
+                <MapPin size={18} className="footer__contact-icon" />
                 <span>{t('footer.address')}</span>
               </a>
             </li>

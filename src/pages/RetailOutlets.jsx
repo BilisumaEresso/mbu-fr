@@ -10,6 +10,7 @@ import retailHero480 from '../assets/images/heroes/RetailHero-480w.webp'
 import retailHero800 from '../assets/images/heroes/RetailHero-800w.webp'
 import { outlets } from '../data/outlets.js'
 import { getLocalePath } from '../utils/locale.js'
+import { ArrowDown, Mail, Store, MapPin, Clock, ArrowRight, Map, ExternalLink, X, Phone, Navigation, CheckCircle, Truck } from 'lucide-react'
 import './InnerPage.css'
 import './RetailOutlets.css'
 
@@ -39,10 +40,10 @@ function RetailOutlets() {
         actions={
           <>
             <a href="#locations" className="btn btn--primary">
-              {t('retailOutlets:hero.viewLocations')} <span className="material-symbols-outlined text-sm">arrow_downward</span>
+              {t('retailOutlets:hero.viewLocations')} <ArrowDown size={16} className="text-sm" />
             </a>
             <Link to={getLocalePath('/contact', currentLang)} className="btn btn--outline">
-              {t('retailOutlets:hero.contactSales')} <span className="material-symbols-outlined text-sm">mail</span>
+              {t('retailOutlets:hero.contactSales')} <Mail size={16} className="text-sm" />
             </Link>
           </>
         }
@@ -89,21 +90,21 @@ function RetailOutlets() {
                 >
                   <div className="outlet-item-card__header">
                     <h3 className="outlet-item-card__title">{outlet.name}</h3>
-                    <span className="material-symbols-outlined outlet-item-card__icon">storefront</span>
+                    <Store size={20} className="outlet-item-card__icon" />
                   </div>
                   <div className="outlet-item-card__info">
                     <p className="outlet-item-card__address">
-                      <span className="material-symbols-outlined text-sm">location_on</span>
+                      <MapPin size={14} className="text-sm" />
                       {outlet.address}
                     </p>
                     <p className="outlet-item-card__hours">
-                      <span className="material-symbols-outlined text-sm">schedule</span>
+                      <Clock size={14} className="text-sm" />
                       {outlet.hours}
                     </p>
                   </div>
                   <div className="outlet-item-card__actions">
                     <span className="outlet-action-btn">
-                      {t('retailOutlets:locations.viewDetailsMap')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                      {t('retailOutlets:locations.viewDetailsMap')} <ArrowRight size={14} className="text-sm" />
                     </span>
                   </div>
                 </Reveal>
@@ -124,7 +125,7 @@ function RetailOutlets() {
                         setActiveModalOutlet(outlet)
                       }}
                     >
-                      <span className="material-symbols-outlined text-sm">pin_drop</span>
+                      <MapPin size={14} className="text-sm" />
                       {outlet.name.replace(' Outlet', '').replace(' Branch', '').replace(' Store', '').replace(' Market', '')}
                     </button>
                   ))}
@@ -149,9 +150,9 @@ function RetailOutlets() {
                     rel="noopener noreferrer"
                     className="gmaps-cool-btn"
                   >
-                    <span className="material-symbols-outlined text-sm">map</span>
+                    <Map size={14} className="text-sm" />
                     {t('retailOutlets:locations.openGoogleMaps')}
-                    <span className="material-symbols-outlined text-sm">open_in_new</span>
+                    <ExternalLink size={14} className="text-sm" />
                   </a>
                 </div>
               </div>
@@ -169,7 +170,7 @@ function RetailOutlets() {
               onClick={() => setActiveModalOutlet(null)}
               aria-label={t('common:buttons.close')}
             >
-              <span className="material-symbols-outlined">close</span>
+              <X size={20} />
             </button>
             <div className="outlet-modal-header">
               <span className="outlet-modal-subcity">{activeModalOutlet.subcity}</span>
@@ -179,14 +180,14 @@ function RetailOutlets() {
             <div className="outlet-modal-body">
               <div className="outlet-modal-info-row">
                 <div className="outlet-modal-info-item">
-                  <span className="material-symbols-outlined text-sm">schedule</span>
+                  <Clock size={14} className="text-sm" />
                   <div>
                     <strong>{t('retailOutlets:locations.operatingHours')}</strong>
                     <p>{activeModalOutlet.hours}</p>
                   </div>
                 </div>
                 <div className="outlet-modal-info-item">
-                  <span className="material-symbols-outlined text-sm">phone</span>
+                  <Phone size={14} className="text-sm" />
                   <div>
                     <strong>{t('retailOutlets:locations.directPhone')}</strong>
                     <p>{activeModalOutlet.phone}</p>
@@ -222,14 +223,14 @@ function RetailOutlets() {
                   rel="noopener noreferrer"
                   className="btn btn--primary"
                 >
-                  <span className="material-symbols-outlined text-sm">directions</span>
+                  <Navigation size={14} className="text-sm" />
                   {t('retailOutlets:locations.getDirections')}
                 </a>
                 <a
                   href={`tel:${activeModalOutlet.phone.replace(/[^0-9+]/g, '')}`}
                   className="btn btn--outline"
                 >
-                  <span className="material-symbols-outlined text-sm">call</span>
+                  <Phone size={14} className="text-sm" />
                   {t('retailOutlets:locations.callBranch')}
                 </a>
               </div>
@@ -250,21 +251,21 @@ function RetailOutlets() {
               </p>
               <ul className="outlets-perks-list">
                 <li className="outlets-perk-item">
-                  <span className="material-symbols-outlined outlets-perk-icon">check_circle</span>
+                  <CheckCircle size={20} className="outlets-perk-icon" />
                   <div>
                     <strong>{t('retailOutlets:freshProduce.perk1Title')}</strong>
                     <p>{t('retailOutlets:freshProduce.perk1Desc')}</p>
                   </div>
                 </li>
                 <li className="outlets-perk-item">
-                  <span className="material-symbols-outlined outlets-perk-icon">check_circle</span>
+                  <CheckCircle size={20} className="outlets-perk-icon" />
                   <div>
                     <strong>{t('retailOutlets:freshProduce.perk2Title')}</strong>
                     <p>{t('retailOutlets:freshProduce.perk2Desc')}</p>
                   </div>
                 </li>
                 <li className="outlets-perk-item">
-                  <span className="material-symbols-outlined outlets-perk-icon">check_circle</span>
+                  <CheckCircle size={20} className="outlets-perk-icon" />
                   <div>
                     <strong>{t('retailOutlets:freshProduce.perk3Title')}</strong>
                     <p>{t('retailOutlets:freshProduce.perk3Desc')}</p>
@@ -284,7 +285,7 @@ function RetailOutlets() {
                 decoding="async"
               />
               <div className="outlets-experience__badge">
-                <span className="material-symbols-outlined">local_shipping</span>
+                <Truck size={24} />
                 <span>{t('retailOutlets:freshProduce.dailyDispatchBadge')}</span>
               </div>
             </Reveal>

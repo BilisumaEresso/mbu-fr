@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { ChevronDown } from 'lucide-react'
 import Reveal from './Reveal.jsx'
 import './FAQ.css'
 
@@ -55,9 +56,7 @@ function FAQ({
                     onClick={() => toggleItem(index)}
                   >
                     <span className="faq-item__question">{item.question}</span>
-                    <span className="material-symbols-outlined faq-item__icon" aria-hidden="true">
-                      expand_more
-                    </span>
+                    <ChevronDown size={20} className="faq-item__icon" aria-hidden="true" />
                   </button>
 
                   {isOpen && (

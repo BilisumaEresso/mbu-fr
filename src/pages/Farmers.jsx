@@ -12,6 +12,7 @@ import farmerHero800 from '../assets/images/heroes/farmerHero-800w.webp'
 import newsHeroImg from '../assets/images/heroes/newsHero.webp'
 import newsHero480 from '../assets/images/heroes/newsHero-480w.webp'
 import newsHero800 from '../assets/images/heroes/newsHero-800w.webp'
+import { ArrowRight, Info, Truck, Landmark, Store, Factory, Warehouse, GraduationCap, Terminal, Lock } from 'lucide-react'
 import './InnerPage.css'
 import './Farmers.css'
 
@@ -31,32 +32,32 @@ function Farmers() {
 
   const services = [
     {
-      icon: 'local_shipping',
+      icon: Truck,
       title: t('farmers:services.items.input.title'),
       desc: t('farmers:services.items.input.desc'),
     },
     {
-      icon: 'account_balance',
+      icon: Landmark,
       title: t('farmers:services.items.credit.title'),
       desc: t('farmers:services.items.credit.desc'),
     },
     {
-      icon: 'storefront',
+      icon: Store,
       title: t('farmers:services.items.market.title'),
       desc: t('farmers:services.items.market.desc'),
     },
     {
-      icon: 'precision_manufacturing',
+      icon: Factory,
       title: t('farmers:services.items.mechanization.title'),
       desc: t('farmers:services.items.mechanization.desc'),
     },
     {
-      icon: 'warehouse',
+      icon: Warehouse,
       title: t('farmers:services.items.storage.title'),
       desc: t('farmers:services.items.storage.desc'),
     },
     {
-      icon: 'school',
+      icon: GraduationCap,
       title: t('farmers:services.items.training.title'),
       desc: t('farmers:services.items.training.desc'),
     },
@@ -101,10 +102,10 @@ function Farmers() {
         actions={
           <>
             <a href="#services" className="btn btn--primary">
-              {t('farmers:hero.viewBenefits')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              {t('farmers:hero.viewBenefits')} <ArrowRight size={16} className="text-sm" />
             </a>
             <a href="#membership" className="btn btn--outline">
-              {t('farmers:hero.joinCoop')} <span className="material-symbols-outlined text-sm">info</span>
+              {t('farmers:hero.joinCoop')} <Info size={16} className="text-sm" />
             </a>
           </>
         }
@@ -125,15 +126,16 @@ function Farmers() {
             <p className="farmers-services__desc max-w-2xl mx-auto">{t('farmers:services.desc')}</p>
           </div>
           <div className="farmers-services__grid">
-            {services.map((s, i) => (
-              <Reveal key={s.title} delay={stagger(i)} className="farmers-service-card">
-                <span className="material-symbols-outlined farmers-service-card__icon">
-                  {s.icon}
-                </span>
-                <h3 className="farmers-service-card__title">{s.title}</h3>
-                <p className="farmers-service-card__desc">{s.desc}</p>
-              </Reveal>
-            ))}
+            {services.map((s, i) => {
+              const ServiceIcon = s.icon
+              return (
+                <Reveal key={s.title} delay={stagger(i)} className="farmers-service-card">
+                  <ServiceIcon size={28} className="farmers-service-card__icon" />
+                  <h3 className="farmers-service-card__title">{s.title}</h3>
+                  <p className="farmers-service-card__desc">{s.desc}</p>
+                </Reveal>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -174,7 +176,7 @@ function Farmers() {
       <section className="farmers-portal section section--alt" id="portal">
         <div className="container">
           <Reveal className="farmers-portal__card">
-            <span className="material-symbols-outlined farmers-portal__icon">terminal</span>
+            <Terminal size={36} className="farmers-portal__icon" />
             <h2 className="farmers-portal__title">{t('farmers:portal.title')}</h2>
             <span className="label-caps label-caps--secondary mb-4 block">
               {t('farmers:portal.badge')}
@@ -188,7 +190,7 @@ function Farmers() {
               onClick={handleLoginClick}
             >
               {t('farmers:portal.button')}
-              <span className="material-symbols-outlined text-sm">lock</span>
+              <Lock size={16} className="text-sm" />
             </button>
           </Reveal>
         </div>

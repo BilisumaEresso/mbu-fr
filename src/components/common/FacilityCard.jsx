@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { BadgeCheck, MapPin, Check } from 'lucide-react'
 import './FacilityCard.css'
 
 const KEY_MAP = {
@@ -25,6 +26,8 @@ function FacilityCard({ resource }) {
         : resource.features)
     : resource.features
 
+  const ResourceIcon = resource.icon
+
   return (
     <article className="facility-card">
       {/* Visual Media Header */}
@@ -43,9 +46,9 @@ function FacilityCard({ resource }) {
         {/* Top Badges: Category Tag & Icon */}
         <div className="facility-card__top-bar">
           <span className="facility-card__tag">{tag}</span>
-          {resource.icon && (
+          {ResourceIcon && (
             <div className="facility-card__icon-badge" aria-hidden="true">
-              <span className="material-symbols-outlined">{resource.icon}</span>
+              <ResourceIcon size={20} />
             </div>
           )}
         </div>
@@ -53,7 +56,7 @@ function FacilityCard({ resource }) {
         {/* Bottom Stat Highlight Badge */}
         {stat && (
           <div className="facility-card__stat-badge">
-            <span className="material-symbols-outlined text-xs">verified</span>
+            <BadgeCheck size={14} />
             <span className="facility-card__stat-val">{stat}</span>
           </div>
         )}
@@ -63,7 +66,7 @@ function FacilityCard({ resource }) {
       <div className="facility-card__body">
         {/* Location Row */}
         <div className="facility-card__location">
-          <span className="material-symbols-outlined facility-card__loc-icon">location_on</span>
+          <MapPin size={16} className="facility-card__loc-icon" />
           <span>{location}</span>
         </div>
 
@@ -76,7 +79,7 @@ function FacilityCard({ resource }) {
           <div className="facility-card__features">
             {features.map((feature, idx) => (
               <span key={idx} className="facility-card__feature-pill">
-                <span className="material-symbols-outlined text-xs">check</span>
+                <Check size={14} />
                 {feature}
               </span>
             ))}

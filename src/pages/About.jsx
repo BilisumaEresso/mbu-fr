@@ -14,6 +14,7 @@ import aboutHero480 from '../assets/images/heroes/aboutHero-480w.webp'
 import aboutHero800 from '../assets/images/heroes/aboutHero-800w.webp'
 import { getTeamMembers } from '../data/team.js'
 import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
+import { History, CheckCircle, Download, Mail, FlaskConical, Droplet, Truck, PlaneTakeoff, BadgeCheck, ExternalLink, ChevronUp, ChevronDown } from 'lucide-react'
 import './About.css'
 
 // Cap stagger at 450ms for card grids
@@ -90,7 +91,7 @@ function About() {
       <section id="foundation" className="about-foundation section section--alt">
         <div className="container">
           <div className="about-foundation__header">
-            <span className="material-symbols-outlined about-foundation__icon">history</span>
+            <History size={24} className="about-foundation__icon" />
             <h2 className="about-foundation__title">{t('about:foundation.title')}</h2>
           </div>
 
@@ -174,7 +175,7 @@ function About() {
                 <ul className="about-mission__list">
                   {Array.isArray(objectives) && objectives.map((obj, i) => (
                     <li key={i} className="about-mission__item">
-                      <span className="material-symbols-outlined about-mission__check">check_circle</span>
+                      <CheckCircle size={18} className="about-mission__check" />
                       <span className="about-mission__text">{obj}</span>
                     </li>
                   ))}
@@ -192,7 +193,7 @@ function About() {
                   className="btn btn--outline btn--sm"
                   title={t('about:missionVision.downloadPdfTitle')}
                 >
-                  {t('common:buttons.downloadPdf')} <span className="material-symbols-outlined text-sm">download</span>
+                  {t('common:buttons.downloadPdf')} <Download size={14} className="text-sm" />
                 </a>
               </div>
             </Reveal>
@@ -256,7 +257,7 @@ function About() {
                           title={t('about:governance.emailTitle', { name: member.name, email: member.email })}
                           aria-label={t('about:governance.emailAria', { name: member.name, email: member.email })}
                         >
-                          <span className="material-symbols-outlined about-governance__exec-action-icon">mail</span>
+                          <Mail size={16} className="about-governance__exec-action-icon" />
                           <span className="about-governance__exec-action-text">{member.email}</span>
                         </a>
                       )}
@@ -307,7 +308,7 @@ function About() {
                             title={t('about:governance.emailTitle', { name: member.name, email: member.email })}
                             aria-label={t('about:governance.emailAria', { name: member.name, email: member.email })}
                           >
-                            <span className="material-symbols-outlined about-governance__contact-icon">mail</span>
+                            <Mail size={16} className="about-governance__contact-icon" />
                             <span className="about-governance__contact-text">{member.email}</span>
                           </a>
                         </div>
@@ -359,7 +360,7 @@ function About() {
             <Reveal delay={0} className="about-model__card">
               <div className="about-model__card-top">
                 <div className="about-model__icon-wrap">
-                  <span className="material-symbols-outlined about-model__icon">science</span>
+                  <FlaskConical size={24} className="about-model__icon" />
                 </div>
                 <span className="about-model__step">{t('about:partners.pillars.p1.step')}</span>
               </div>
@@ -370,7 +371,7 @@ function About() {
             <Reveal delay={100} className="about-model__card">
               <div className="about-model__card-top">
                 <div className="about-model__icon-wrap">
-                  <span className="material-symbols-outlined about-model__icon">water_drop</span>
+                  <Droplet size={24} className="about-model__icon" />
                 </div>
                 <span className="about-model__step">{t('about:partners.pillars.p2.step')}</span>
               </div>
@@ -381,7 +382,7 @@ function About() {
             <Reveal delay={200} className="about-model__card">
               <div className="about-model__card-top">
                 <div className="about-model__icon-wrap">
-                  <span className="material-symbols-outlined about-model__icon">local_shipping</span>
+                  <Truck size={24} className="about-model__icon" />
                 </div>
                 <span className="about-model__step">{t('about:partners.pillars.p3.step')}</span>
               </div>
@@ -392,7 +393,7 @@ function About() {
             <Reveal delay={300} className="about-model__card">
               <div className="about-model__card-top">
                 <div className="about-model__icon-wrap">
-                  <span className="material-symbols-outlined about-model__icon">flight_takeoff</span>
+                  <PlaneTakeoff size={24} className="about-model__icon" />
                 </div>
                 <span className="about-model__step">{t('about:partners.pillars.p4.step')}</span>
               </div>
@@ -424,66 +425,69 @@ function About() {
 
           {/* Filtered Partner Cards Grid (Two-Tone Logo Stage Cards) */}
           <div className="about-partners__cards-grid">
-            {filteredPartners.map((partner, index) => (
-              <Reveal
-                key={partner.id}
-                delay={Math.min(index * 50, 300)}
-                className={`about-partner-card-wrapper ${index >= 6 && !showAllPartners ? 'about-partner-card-wrapper--hidden' : ''}`}
-              >
-                <div className="about-partner-card">
-                  {/* Two-Tone Top Logo Stage */}
-                  <div className="about-partner-card__stage">
-                    <div className="about-partner-card__logo-wrap">
-                      {partner.logo ? (
-                        <img
-                          src={partner.logo}
-                          alt={t('about:partners.logoAlt', { name: partner.name })}
-                          className="about-partner-card__logo"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="about-partner-card__fallback-icon">
-                          <span className="material-symbols-outlined">{partner.icon}</span>
+            {filteredPartners.map((partner, index) => {
+              const PartnerIconComponent = partner.icon
+              return (
+                <Reveal
+                  key={partner.id}
+                  delay={Math.min(index * 50, 300)}
+                  className={`about-partner-card-wrapper ${index >= 6 && !showAllPartners ? 'about-partner-card-wrapper--hidden' : ''}`}
+                >
+                  <div className="about-partner-card">
+                    {/* Two-Tone Top Logo Stage */}
+                    <div className="about-partner-card__stage">
+                      <div className="about-partner-card__logo-wrap">
+                        {partner.logo ? (
+                          <img
+                            src={partner.logo}
+                            alt={t('about:partners.logoAlt', { name: partner.name })}
+                            className="about-partner-card__logo"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="about-partner-card__fallback-icon">
+                            {PartnerIconComponent && <PartnerIconComponent size={24} />}
+                          </div>
+                        )}
+                      </div>
+                      <span className="about-partner-card__tag">{getTagLabel(partner.tag)}</span>
+                    </div>
+
+                    {/* Card Content Body */}
+                    <div className="about-partner-card__body">
+                      <div className="about-partner-card__meta">
+                        <span className="about-partner-card__acronym">{partner.acronym}</span>
+                        <span className="about-partner-card__category">{getCategoryLabel(partner.category)}</span>
+                      </div>
+                      <h3 className="about-partner-card__name">{partner.name}</h3>
+                      <p className="about-partner-card__role">{partner.role}</p>
+                    </div>
+
+                    {/* Card Footer */}
+                    <div className="about-partner-card__footer">
+                      {partner.impactHighlight && (
+                        <div className="about-partner-card__highlight">
+                          <BadgeCheck size={14} className="text-xs" />
+                          <span>{partner.impactHighlight}</span>
                         </div>
                       )}
+                      {partner.url && (
+                        <a
+                          href={partner.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="about-partner-card__link"
+                          title={t('about:partners.visitTitle', { name: partner.name })}
+                        >
+                          <span>{t('about:partners.officialWebsite')}</span>
+                          <ExternalLink size={14} className="text-xs" />
+                        </a>
+                      )}
                     </div>
-                    <span className="about-partner-card__tag">{getTagLabel(partner.tag)}</span>
                   </div>
-
-                  {/* Card Content Body */}
-                  <div className="about-partner-card__body">
-                    <div className="about-partner-card__meta">
-                      <span className="about-partner-card__acronym">{partner.acronym}</span>
-                      <span className="about-partner-card__category">{getCategoryLabel(partner.category)}</span>
-                    </div>
-                    <h3 className="about-partner-card__name">{partner.name}</h3>
-                    <p className="about-partner-card__role">{partner.role}</p>
-                  </div>
-
-                  {/* Card Footer */}
-                  <div className="about-partner-card__footer">
-                    {partner.impactHighlight && (
-                      <div className="about-partner-card__highlight">
-                        <span className="material-symbols-outlined text-xs">verified</span>
-                        <span>{partner.impactHighlight}</span>
-                      </div>
-                    )}
-                    {partner.url && (
-                      <a
-                        href={partner.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="about-partner-card__link"
-                        title={t('about:partners.visitTitle', { name: partner.name })}
-                      >
-                        <span>{t('about:partners.officialWebsite')}</span>
-                        <span className="material-symbols-outlined text-xs">open_in_new</span>
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              )
+            })}
           </div>
 
           {/* Show All / Show Less Toggle Button (Desktop + Mobile) */}
@@ -498,12 +502,12 @@ function About() {
                 {showAllPartners ? (
                   <>
                     <span>{t('about:partners.showLess')}</span>
-                    <span className="material-symbols-outlined text-sm">expand_less</span>
+                    <ChevronUp size={16} className="text-sm" />
                   </>
                 ) : (
                   <>
                     <span>{t('about:partners.showAll', { count: filteredPartners.length })}</span>
-                    <span className="material-symbols-outlined text-sm">expand_more</span>
+                    <ChevronDown size={16} className="text-sm" />
                   </>
                 )}
               </button>

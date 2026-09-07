@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { ExternalLink, MapPin } from 'lucide-react'
 import Reveal from './Reveal.jsx'
 import './WhereWeOperate.css'
 
@@ -35,7 +36,7 @@ export default function WhereWeOperate() {
               className="btn btn--outline btn--sm where-operate__cta"
             >
               {t('buttons.openGoogleMaps')}
-              <span className="material-symbols-outlined text-sm">open_in_new</span>
+              <ExternalLink size={16} />
             </a>
           </Reveal>
 
@@ -43,7 +44,7 @@ export default function WhereWeOperate() {
           <Reveal className="where-operate__map-wrap" delay={90}>
             <div className="where-operate__map-panel">
               <div className="where-operate__map-badge">
-                <span className="material-symbols-outlined">location_on</span>
+                <MapPin size={20} />
                 <span>Meki &amp; Rift Valley Basin</span>
               </div>
               <iframe

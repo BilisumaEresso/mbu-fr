@@ -5,6 +5,7 @@ import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import { news } from '../data/news.js'
+import { Search, ArrowRight, X, Calendar, Clock, Share2 } from 'lucide-react'
 import './InnerPage.css'
 import './News.css'
 
@@ -78,7 +79,7 @@ function News() {
               value={searchTerm}
               onChange={handleSearchChange}
             />
-            <span className="material-symbols-outlined news-search-icon">search</span>
+            <Search size={20} className="news-search-icon" />
           </div>
         }
       />
@@ -123,7 +124,7 @@ function News() {
                   </h2>
                   <p className="news-article-card__desc">{featuredLarge.desc}</p>
                   <div className="news-article-card__cta">
-                    {t('news:labels.readReport')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
                   </div>
                 </div>
               </article>
@@ -162,7 +163,7 @@ function News() {
                   </h2>
                   <p className="news-article-card__desc">{featuredLarge.desc}</p>
                   <div className="news-article-card__cta">
-                    {t('news:labels.readReport')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
                   </div>
                 </div>
               </Reveal>
@@ -202,7 +203,7 @@ function News() {
                   <h2 className="news-article-card__title">{featuredSmall.title}</h2>
                   <p className="news-article-card__desc">{featuredSmall.desc}</p>
                   <div className="news-article-card__cta">
-                    {t('news:labels.readReport')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
                   </div>
                 </div>
               </article>
@@ -241,7 +242,7 @@ function News() {
                   <h2 className="news-article-card__title">{featuredSmall.title}</h2>
                   <p className="news-article-card__desc">{featuredSmall.desc}</p>
                   <div className="news-article-card__cta">
-                    {t('news:labels.readReport')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
                   </div>
                 </div>
               </Reveal>
@@ -277,7 +278,7 @@ function News() {
                   <h3 className="news-article-card__title">{article.title}</h3>
                   <p className="news-article-card__desc">{article.desc}</p>
                   <div className="news-article-card__cta">
-                    {t('news:labels.readReport')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
                   </div>
                 </div>
               </>
@@ -335,17 +336,17 @@ function News() {
               onClick={() => setSelectedArticle(null)}
               aria-label={t('common:buttons.close')}
             >
-              <span className="material-symbols-outlined">close</span>
+              <X size={20} />
             </button>
 
             <div className="news-modal-meta-bar">
               <span className="news-badge-pill">{selectedArticle.category}</span>
               <span className="news-modal-meta-item">
-                <span className="material-symbols-outlined text-xs">calendar_today</span>
+                <Calendar size={14} className="text-xs" />
                 {selectedArticle.date}
               </span>
               <span className="news-modal-meta-item">
-                <span className="material-symbols-outlined text-xs">schedule</span>
+                <Clock size={14} className="text-xs" />
                 {t('news:labels.readTime')}
               </span>
             </div>
@@ -378,7 +379,7 @@ function News() {
                 className="btn btn--outline btn--sm inline-flex items-center gap-1"
                 onClick={handleCopyLink}
               >
-                <span className="material-symbols-outlined text-xs">share</span>
+                <Share2 size={14} className="text-xs" />
                 {copiedLink ? t('news:labels.copied') : t('news:labels.share')}
               </button>
             </div>

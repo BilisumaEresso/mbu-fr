@@ -6,13 +6,10 @@ Options -MultiViews
   RewriteEngine On
   RewriteBase /
 
-  # Force all HTTP requests over to secure HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-  # Force non-www (canonical domain)
-  RewriteCond %{HTTP_HOST} ^www\.mekibatuunion\.org$ [NC]
-  RewriteRule ^ https://mekibatuunion.org%{REQUEST_URI} [L,R=301]
+  # Force HTTPS and non-www canonical domain in a single 301 redirect hop
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://mekibatuunion.org%{REQUEST_URI} [R=301,L]
 
   # 3. SPA Frontend Router Fallback
   # If the file or directory exists physically, serve it directly

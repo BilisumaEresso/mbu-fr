@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { ChevronDown, Check, Lock, Menu, X } from 'lucide-react'
 import logoImg from '../../assets/images/brand/MBU_logo_new.webp'
 import Toast from '../common/Toast.jsx'
 import { useToast } from '../../hooks/useToast.js'
@@ -199,9 +200,7 @@ function Header() {
                   onClick={() => handleDropdownToggle(group.key)}
                 >
                   {group.label}
-                  <span className="material-symbols-outlined header__dropdown-icon">
-                    expand_more
-                  </span>
+                  <ChevronDown size={18} className="header__dropdown-icon" />
                 </button>
 
                 {activeDropdown === group.key && (
@@ -251,9 +250,7 @@ function Header() {
             >
               {currentLang === 'om' ? <FlagET width={16} height={11} /> : <FlagUK width={16} height={11} />}
               <span className="header__lang-code-current">{currentLang.toUpperCase()}</span>
-              <span className="material-symbols-outlined header__lang-chevron">
-                expand_more
-              </span>
+              <ChevronDown size={16} className="header__lang-chevron" />
             </button>
 
             {activeDropdown === 'lang' && (
@@ -275,9 +272,7 @@ function Header() {
                         <span className="header__lang-menu-sub">{lang.name} ({lang.label})</span>
                       </div>
                       {isActive && (
-                        <span className="material-symbols-outlined header__lang-menu-check">
-                          check
-                        </span>
+                        <Check size={15} className="header__lang-menu-check" />
                       )}
                     </button>
                   )
@@ -287,7 +282,7 @@ function Header() {
           </div>
 
           <button className="header__login-btn desktop-only" type="button" onClick={handleLoginClick}>
-            <span className="material-symbols-outlined header__login-icon">lock</span>
+            <Lock size={16} className="header__login-icon" />
             <span>{t('header.memberLogin')}</span>
           </button>
 
@@ -299,7 +294,7 @@ function Header() {
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            <span className="material-symbols-outlined">{menuOpen ? 'close' : 'menu'}</span>
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
@@ -307,7 +302,6 @@ function Header() {
       {/* Mobile Nav Drawer */}
       {menuOpen && (
         <nav className="header__mobile-nav">
-
           {navGroups.map((group) => {
             if (group.to) {
               return (

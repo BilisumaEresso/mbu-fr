@@ -1,7 +1,39 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import SEO from '../components/common/SEO.jsx'
+import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import {
+  ArrowRight,
+  FileText,
+  X,
+  Users,
+  Truck,
+  Handshake,
+  Download,
+  BadgeCheck,
+  LayoutGrid,
+  Sparkles,
+  Package,
+  Sprout,
+  FlaskConical,
+  PackageCheck,
+} from 'lucide-react'
+
+const HOME_STEP_ICON_MAP = {
+  verified: BadgeCheck,
+  inventory_2: Package,
+  inventory: Package,
+  sanitizer: Sparkles,
+  local_shipping: Truck,
+  agriculture: Sprout,
+  science: FlaskConical,
+  package: PackageCheck,
+}
+
+function HomeStepIcon({ name, size = 20, className = '' }) {
+  const Comp = HOME_STEP_ICON_MAP[name] || BadgeCheck
+  return <Comp size={size} className={className} />
+}
+import SEO from '../components/common/SEO.jsx'
 import Button from '../components/common/Button.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import StatCard from '../components/common/StatCard.jsx'
@@ -201,10 +233,10 @@ function Home() {
             </p>
             <div className="home-hero__actions">
               <Button to="/products" variant="primary">
-                {t('home:hero.ctaProducts')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                {t('home:hero.ctaProducts')} <ArrowRight size={16} />
               </Button>
               <Button to="/buyers" variant="outline">
-                {t('common:buttons.requestQuote')} <span className="material-symbols-outlined text-sm">description</span>
+                {t('common:buttons.requestQuote')} <FileText size={16} />
               </Button>
             </div>
           </Reveal>
@@ -232,7 +264,7 @@ function Home() {
                 onClick={() => setShowStoryModal(false)}
                 aria-label={t('common:buttons.close')}
               >
-                <span className="material-symbols-outlined">close</span>
+                <X size={20} />
               </button>
             </div>
             <div className="hero-crossfade__video-wrap">
@@ -280,7 +312,7 @@ function Home() {
               </p>
             </div>
             <Link to={getLocalePath('/products', currentLang)} className="home-bento__link desktop-only">
-              {t('home:bento.viewCatalog')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              {t('home:bento.viewCatalog')} <ArrowRight size={16} />
             </Link>
           </div>
 
@@ -368,7 +400,7 @@ function Home() {
           </div>
 
           <Link to={getLocalePath('/products', currentLang)} className="home-bento__link mobile-only mt-6">
-            {t('home:bento.viewCatalog')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            {t('home:bento.viewCatalog')} <ArrowRight size={16} />
           </Link>
         </div>
       </section>
@@ -386,7 +418,7 @@ function Home() {
                 </p>
               </div>
               <Link to={getLocalePath('/buyers', currentLang)} className="home-process__link">
-                {t('home:process.buyersLink')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                {t('home:process.buyersLink')} <ArrowRight size={16} />
               </Link>
             </div>
           </Reveal>
@@ -400,7 +432,7 @@ function Home() {
                 <article className="home-process__card">
                   <div className="home-process__card-top">
                     <div className="home-process__icon-box">
-                      <span className="material-symbols-outlined">{step.icon || 'verified'}</span>
+                      <HomeStepIcon name={step.icon} size={20} />
                     </div>
                     <span className="home-process__step-num">{step.number || `0${i + 1}`}</span>
                   </div>
@@ -429,7 +461,7 @@ function Home() {
                 </p>
               </div>
               <Link to={getLocalePath('/about#infrastructure', currentLang)} className="btn btn--outline btn--sm home-resources-infra__cta">
-                {t('home:resources.exploreAll')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                {t('home:resources.exploreAll')} <ArrowRight size={16} />
               </Link>
             </div>
           </Reveal>
@@ -449,24 +481,24 @@ function Home() {
         <div className="container">
           <div className="home-audience__grid">
             <Reveal className="home-audience__card" delay={0}>
-              <span className="material-symbols-outlined home-audience__icon">group</span>
+              <Users size={24} className="home-audience__icon" />
               <h2 className="home-audience__card-title">{t('home:audience.farmers.title')}</h2>
               <p className="home-audience__card-desc">
                 {t('home:audience.farmers.desc')}
               </p>
               <Link to={getLocalePath('/farmers', currentLang)} className="home-audience__link">
-                {t('home:audience.farmers.link')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                {t('home:audience.farmers.link')} <ArrowRight size={16} />
               </Link>
             </Reveal>
 
             <Reveal className="home-audience__card" delay={90}>
-              <span className="material-symbols-outlined home-audience__icon">local_shipping</span>
+              <Truck size={24} className="home-audience__icon" />
               <h2 className="home-audience__card-title">{t('home:audience.buyers.title')}</h2>
               <p className="home-audience__card-desc">
                 {t('home:audience.buyers.desc')}
               </p>
               <Link to={getLocalePath('/buyers', currentLang)} className="home-audience__link">
-                {t('home:audience.buyers.link')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                {t('home:audience.buyers.link')} <ArrowRight size={16} />
               </Link>
             </Reveal>
           </div>
@@ -494,7 +526,7 @@ function Home() {
         <div className="container">
           <Reveal className="home-partners__header text-center">
             <span className="home-partners__eyebrow">
-              <span className="material-symbols-outlined home-partners__eyebrow-icon">handshake</span>
+              <Handshake size={18} className="home-partners__eyebrow-icon" />
               <span className="home-partners__eyebrow-text">{t('home:partners.partnersTitle')}</span>
             </span>
             <h2 className="home-partners__title">{t('home:partners.partnersTitle')}</h2>
@@ -550,7 +582,7 @@ function Home() {
         <div className="container text-center home-partners__footer-action">
           <Reveal delay={150}>
             <Link to={getLocalePath('/about#partners', currentLang)} className="btn btn--outline home-partners__full-cta">
-              {t('home:partners.viewAll')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              {t('home:partners.viewAll')} <ArrowRight size={16} />
             </Link>
           </Reveal>
         </div>
@@ -577,33 +609,33 @@ function Home() {
                 className="home-resources__card"
                 title={t('home:documentation.companyProfile.download')}
               >
-                <span className="material-symbols-outlined home-resources__icon">description</span>
+                <FileText size={24} className="home-resources__icon" />
                 <h3 className="home-resources__card-title">{t('home:documentation.companyProfile.title')}</h3>
                 <p className="home-resources__card-desc">{t('home:documentation.companyProfile.desc')}</p>
                 <span className="home-resources__action">
-                  {t('common:buttons.downloadPdf')} <span className="material-symbols-outlined text-sm">download</span>
+                  {t('common:buttons.downloadPdf')} <Download size={16} />
                 </span>
               </a>
             </Reveal>
 
             <Reveal delay={90}>
               <Link to={getLocalePath('/impact#reports', currentLang)} className="home-resources__card">
-                <span className="material-symbols-outlined home-resources__icon">verified</span>
+                <BadgeCheck size={24} className="home-resources__icon" />
                 <h3 className="home-resources__card-title">{t('common:breadcrumbs.impact')}</h3>
                 <p className="home-resources__card-desc">{t('home:documentation.impactReports.desc')}</p>
                 <span className="home-resources__action">
-                  {t('common:buttons.impactReports')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  {t('common:buttons.impactReports')} <ArrowRight size={16} />
                 </span>
               </Link>
             </Reveal>
 
             <Reveal delay={180}>
               <Link to={getLocalePath('/products', currentLang)} className="home-resources__card">
-                <span className="material-symbols-outlined home-resources__icon">grid_view</span>
+                <LayoutGrid size={24} className="home-resources__icon" />
                 <h3 className="home-resources__card-title">{t('common:breadcrumbs.products')}</h3>
                 <p className="home-resources__card-desc">{t('home:documentation.products.desc')}</p>
                 <span className="home-resources__action">
-                  {t('common:buttons.viewCatalog')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  {t('common:buttons.viewCatalog')} <ArrowRight size={16} />
                 </span>
               </Link>
             </Reveal>
@@ -620,7 +652,7 @@ function Home() {
               <h2 className="home-news__title">{t('news:hero.title')}</h2>
             </div>
             <Link to={getLocalePath('/news', currentLang)} className="home-bento__link">
-              {t('news:labels.backToAll')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              {t('news:labels.backToAll')} <ArrowRight size={16} />
             </Link>
           </Reveal>
 

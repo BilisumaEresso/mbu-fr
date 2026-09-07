@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
+import { ArrowLeft, ArrowRight, Star, BadgeCheck, MapPin } from 'lucide-react'
 import Reveal from './Reveal.jsx'
 import './Testimonial.css'
 
@@ -106,7 +107,7 @@ function Testimonials({
               aria-label={t('testimonials.ariaLabelPrev', 'Previous testimonials')}
               title={t('testimonials.ariaLabelPrev', 'Previous testimonials')}
             >
-              <span className="material-symbols-outlined">arrow_back</span>
+              <ArrowLeft size={20} />
             </button>
             <button
               type="button"
@@ -115,7 +116,7 @@ function Testimonials({
               aria-label={t('testimonials.ariaLabelNext', 'Next testimonials')}
               title={t('testimonials.ariaLabelNext', 'Next testimonials')}
             >
-              <span className="material-symbols-outlined">arrow_forward</span>
+              <ArrowRight size={20} />
             </button>
           </div>
         </div>
@@ -148,9 +149,7 @@ function Testimonials({
                   {/* 5-Star Rating */}
                   <div className="testimonial-card__rating" aria-label={t('testimonials.ratingAriaLabel', '5 out of 5 stars')}>
                     {Array.from({ length: item.rating || 5 }).map((_, i) => (
-                      <span key={i} className="material-symbols-outlined testimonial-card__star">
-                        star
-                      </span>
+                      <Star key={i} size={16} fill="currentColor" className="testimonial-card__star" />
                     ))}
                   </div>
 
@@ -169,12 +168,11 @@ function Testimonials({
                           {item.name ? item.name.charAt(0) : 'M'}
                         </div>
                       )}
-                      <span
-                        className="material-symbols-outlined testimonial-card__verified"
+                      <BadgeCheck
+                        size={16}
+                        className="testimonial-card__verified"
                         title={t('testimonials.verifiedPartner', 'Verified Cooperative Partner')}
-                      >
-                        verified
-                      </span>
+                      />
                     </div>
 
                     <div className="testimonial-card__info">
@@ -185,7 +183,7 @@ function Testimonials({
                       </p>
                       {item.location && (
                         <p className="testimonial-card__location">
-                          <span className="material-symbols-outlined text-xs">location_on</span>
+                          <MapPin size={14} />
                           {item.location}
                         </p>
                       )}

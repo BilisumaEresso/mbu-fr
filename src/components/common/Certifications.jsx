@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+import { ZoomIn, Maximize2, ExternalLink, Eye, X } from 'lucide-react'
 import globalgapLogo from '../../assets/certifications/globalgap_logo.webp'
 import oromiaCert from '../../assets/certifications/oromia_seed_certificate.webp'
 import './Certifications.css'
@@ -87,7 +88,7 @@ function Certifications() {
                   className="certifications__thumb-img certifications__thumb-img--logo"
                 />
                 <span className="certifications__zoom">
-                  <span className="material-symbols-outlined">zoom_in</span>
+                  <ZoomIn size={20} />
                   {t('certifications.expand')}
                 </span>
               </button>
@@ -104,9 +105,7 @@ function Certifications() {
                 className="certifications__view-btn"
                 onClick={() => openLightbox('globalgap')}
               >
-                <span className="material-symbols-outlined text-sm">
-                  fullscreen
-                </span>
+                <Maximize2 size={16} />
                 {t('buttons.viewCredential')}
               </button>
               <a
@@ -116,9 +115,7 @@ function Certifications() {
                 className="certifications__ext-link"
               >
                 <span>globalgap.org</span>
-                <span className="material-symbols-outlined text-sm">
-                  open_in_new
-                </span>
+                <ExternalLink size={16} />
               </a>
             </div>
           </div>
@@ -138,7 +135,7 @@ function Certifications() {
                   className="certifications__thumb-img certifications__thumb-img--doc"
                 />
                 <span className="certifications__zoom">
-                  <span className="material-symbols-outlined">zoom_in</span>
+                  <ZoomIn size={20} />
                   {t('certifications.expandDoc')}
                 </span>
               </button>
@@ -158,9 +155,7 @@ function Certifications() {
                 className="certifications__view-btn"
                 onClick={() => openLightbox('oromia')}
               >
-                <span className="material-symbols-outlined text-sm">
-                  visibility
-                </span>
+                <Eye size={16} />
                 {t('buttons.viewCertificateDoc')}
               </button>
             </div>
@@ -195,7 +190,7 @@ function Certifications() {
                 ref={closeBtnRef}
                 aria-label={t('certifications.closeViewer')}
               >
-                <span className="material-symbols-outlined">close</span>
+                <X size={20} />
               </button>
             </div>
 
@@ -220,9 +215,7 @@ function Certifications() {
                     {t('certifications.visit')}{' '}
                     {activeCert.url.replace('https://', '').replace('/', '')}
                   </span>
-                  <span className="material-symbols-outlined text-sm">
-                    open_in_new
-                  </span>
+                  <ExternalLink size={16} />
                 </a>
               )}
             </div>

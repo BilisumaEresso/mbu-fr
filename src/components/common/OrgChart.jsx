@@ -1,7 +1,57 @@
 import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { teamMembers } from '../../data/team.js'
+import {
+  Users,
+  Gavel,
+  ShieldCheck,
+  User,
+  BadgeCheck,
+  LineChart,
+  ClipboardCheck,
+  Terminal,
+  UserCog,
+  Sprout,
+  Store,
+  Building,
+  Wallet,
+  Network,
+  X,
+  Download,
+  Printer,
+  ChevronDown,
+  ChevronUp,
+  ArrowRight,
+  SearchCheck,
+  Mail,
+  ListChecks,
+  Info,
+} from 'lucide-react'
 import './OrgChart.css'
+
+const ICON_MAP = {
+  groups: Users,
+  gavel: Gavel,
+  verified_user: ShieldCheck,
+  person: User,
+  policy: ShieldCheck,
+  badge: BadgeCheck,
+  query_stats: LineChart,
+  fact_check: ClipboardCheck,
+  terminal: Terminal,
+  manage_accounts: UserCog,
+  psychiatry: Sprout,
+  storefront: Store,
+  corporate_fare: Building,
+  account_balance_wallet: Wallet,
+}
+
+function DynamicOrgIcon({ icon, size = 20, className = '' }) {
+  if (!icon) return null
+  const Comp = typeof icon === 'function' ? icon : ICON_MAP[icon]
+  if (!Comp) return null
+  return <Comp size={size} className={className} />
+}
 
 const getOrgData = (t) => ({
 
@@ -10,7 +60,7 @@ const getOrgData = (t) => ({
     title: t('roles.ga.title'),
     sub: t('roles.ga.sub'),
     reportsTo: t('roles.ga.reportsTo'),
-    icon: 'groups',
+    icon: Users,
     theme: 'green',
     ancestors: [],
     desc: t('roles.ga.desc'),
@@ -21,7 +71,7 @@ const getOrgData = (t) => ({
     title: t('roles.bod.title'),
     sub: t('roles.bod.sub'),
     reportsTo: t('roles.bod.reportsTo'),
-    icon: 'gavel',
+    icon: Gavel,
     theme: 'green',
     ancestors: ['ga'],
     desc: t('roles.bod.desc'),
@@ -32,7 +82,7 @@ const getOrgData = (t) => ({
     title: t('roles.cc.title'),
     sub: t('roles.cc.sub'),
     reportsTo: t('roles.cc.reportsTo'),
-    icon: 'verified_user',
+    icon: ShieldCheck,
     theme: 'green',
     ancestors: ['ga'],
     desc: t('roles.cc.desc'),
@@ -43,7 +93,7 @@ const getOrgData = (t) => ({
     title: t('roles.gm.title'),
     sub: t('roles.gm.sub'),
     reportsTo: t('roles.gm.reportsTo'),
-    icon: 'person',
+    icon: User,
     theme: 'terracotta',
     ancestors: ['ga', 'bod'],
     desc: t('roles.gm.desc'),
@@ -54,7 +104,7 @@ const getOrgData = (t) => ({
     title: t('roles.lawyer.title'),
     sub: t('roles.lawyer.sub'),
     reportsTo: t('roles.lawyer.reportsTo'),
-    icon: 'policy',
+    icon: ShieldCheck,
     theme: 'green',
     ancestors: ['ga', 'bod', 'gm'],
     desc: t('roles.lawyer.desc'),
@@ -65,7 +115,7 @@ const getOrgData = (t) => ({
     title: t('roles.sec.title'),
     sub: t('roles.sec.sub'),
     reportsTo: t('roles.sec.reportsTo'),
-    icon: 'badge',
+    icon: BadgeCheck,
     theme: 'green',
     ancestors: ['ga', 'bod', 'gm'],
     desc: t('roles.sec.desc'),
@@ -76,7 +126,7 @@ const getOrgData = (t) => ({
     title: t('roles.plan.title'),
     sub: t('roles.plan.sub'),
     reportsTo: t('roles.plan.reportsTo'),
-    icon: 'query_stats',
+    icon: LineChart,
     theme: 'green',
     ancestors: ['ga', 'bod', 'gm'],
     desc: t('roles.plan.desc'),
@@ -87,7 +137,7 @@ const getOrgData = (t) => ({
     title: t('roles.auditor.title'),
     sub: t('roles.auditor.sub'),
     reportsTo: t('roles.auditor.reportsTo'),
-    icon: 'fact_check',
+    icon: ClipboardCheck,
     theme: 'green',
     ancestors: ['ga', 'bod', 'gm'],
     desc: t('roles.auditor.desc'),
@@ -98,7 +148,7 @@ const getOrgData = (t) => ({
     title: t('roles.ict.title'),
     sub: t('roles.ict.sub'),
     reportsTo: t('roles.ict.reportsTo'),
-    icon: 'terminal',
+    icon: Terminal,
     theme: 'green',
     ancestors: ['ga', 'bod', 'gm'],
     desc: t('roles.ict.desc'),
@@ -109,7 +159,7 @@ const getOrgData = (t) => ({
     title: t('roles.dm.title'),
     sub: t('roles.dm.sub'),
     reportsTo: t('roles.dm.reportsTo'),
-    icon: 'manage_accounts',
+    icon: UserCog,
     theme: 'terracotta',
     ancestors: ['ga', 'bod', 'gm'],
     desc: t('roles.dm.desc'),
@@ -120,7 +170,7 @@ const getOrgData = (t) => ({
     title: t('roles.agri.title'),
     sub: t('roles.agri.sub'),
     reportsTo: t('roles.agri.reportsTo'),
-    icon: 'psychiatry',
+    icon: Sprout,
     theme: 'dept',
     ancestors: ['ga', 'bod', 'gm', 'dm'],
     desc: t('roles.agri.desc'),
@@ -131,7 +181,7 @@ const getOrgData = (t) => ({
     title: t('roles.marketing.title'),
     sub: t('roles.marketing.sub'),
     reportsTo: t('roles.marketing.reportsTo'),
-    icon: 'storefront',
+    icon: Store,
     theme: 'dept',
     ancestors: ['ga', 'bod', 'gm', 'dm'],
     desc: t('roles.marketing.desc'),
@@ -142,7 +192,7 @@ const getOrgData = (t) => ({
     title: t('roles.hr.title'),
     sub: t('roles.hr.sub'),
     reportsTo: t('roles.hr.reportsTo'),
-    icon: 'corporate_fare',
+    icon: Building,
     theme: 'dept',
     ancestors: ['ga', 'bod', 'gm', 'dm'],
     desc: t('roles.hr.desc'),
@@ -153,7 +203,7 @@ const getOrgData = (t) => ({
     title: t('roles.finance.title'),
     sub: t('roles.finance.sub'),
     reportsTo: t('roles.finance.reportsTo'),
-    icon: 'account_balance_wallet',
+    icon: Wallet,
     theme: 'dept',
     ancestors: ['ga', 'bod', 'gm', 'dm'],
     desc: t('roles.finance.desc'),
@@ -167,7 +217,7 @@ const getTiers = (t) => ([
     number: t('tiers.tier1.number'),
     title: t('tiers.tier1.title'),
     sub: t('tiers.tier1.sub'),
-    icon: 'gavel',
+    icon: Gavel,
     theme: 'green',
     nodeIds: ['ga', 'cc', 'bod'],
   },
@@ -176,7 +226,7 @@ const getTiers = (t) => ([
     number: t('tiers.tier2.number'),
     title: t('tiers.tier2.title'),
     sub: t('tiers.tier2.sub'),
-    icon: 'manage_accounts',
+    icon: UserCog,
     theme: 'terracotta',
     nodeIds: ['gm', 'lawyer', 'sec', 'plan', 'auditor', 'ict', 'dm'],
   },
@@ -185,7 +235,7 @@ const getTiers = (t) => ([
     number: t('tiers.tier3.number'),
     title: t('tiers.tier3.title'),
     sub: t('tiers.tier3.sub'),
-    icon: 'psychiatry',
+    icon: Sprout,
     theme: 'dept',
     nodeIds: ['agri', 'marketing', 'hr', 'finance'],
   },
@@ -357,7 +407,7 @@ export default function OrgChart() {
       {/* Modern Control Toolbar */}
       <div className="org-toolbar">
         <div className="org-toolbar__status">
-          <span className="material-symbols-outlined org-toolbar__status-icon">account_tree</span>
+          <Network size={18} className="org-toolbar__status-icon" />
           <span className="org-toolbar__text">
             {currentFocusId
               ? `${t('ui.selectedPrefix')} ${ORG_DATA[currentFocusId].title}`
@@ -373,7 +423,7 @@ export default function OrgChart() {
               onClick={() => setActiveId(null)}
             >
               <span>{t('ui.clearFocus')}</span>
-              <span className="material-symbols-outlined text-xs">close</span>
+              <X size={14} />
             </button>
           )}
 
@@ -384,7 +434,7 @@ export default function OrgChart() {
             disabled={isExporting}
             title={t('ui.downloadTitle')}
           >
-            <span className="material-symbols-outlined text-sm">download</span>
+            <Download size={16} />
             <span>{isExporting ? t('ui.generating') : t('ui.saveImage')}</span>
           </button>
 
@@ -394,7 +444,7 @@ export default function OrgChart() {
             onClick={() => window.print()}
             title={t('ui.printTitle')}
           >
-            <span className="material-symbols-outlined text-sm">print</span>
+            <Printer size={16} />
             <span>{t('ui.print')}</span>
           </button>
         </div>
@@ -417,10 +467,10 @@ export default function OrgChart() {
             onMouseLeave={() => setHoveredId(null)}
             aria-expanded={activeId === 'ga'}
           >
-            <span className="material-symbols-outlined org-box__icon">groups</span>
+            <DynamicOrgIcon icon={ORG_DATA.ga.icon} size={20} className="org-box__icon" />
             <span className="org-box__title">{ORG_DATA.ga.title}</span>
-            <span className="material-symbols-outlined org-box__info">
-              {activeId === 'ga' ? 'expand_less' : 'info'}
+            <span className="org-box__info">
+              {activeId === 'ga' ? <ChevronUp size={16} /> : <Info size={16} />}
             </span>
           </button>
         </div>
@@ -438,10 +488,10 @@ export default function OrgChart() {
               onMouseLeave={() => setHoveredId(null)}
               aria-expanded={activeId === 'cc'}
             >
-              <span className="material-symbols-outlined org-box__icon">verified_user</span>
+              <DynamicOrgIcon icon={ORG_DATA.cc.icon} size={20} className="org-box__icon" />
               <span className="org-box__title">{ORG_DATA.cc.title}</span>
-              <span className="material-symbols-outlined org-box__info">
-                {activeId === 'cc' ? 'expand_less' : 'info'}
+              <span className="org-box__info">
+                {activeId === 'cc' ? <ChevronUp size={16} /> : <Info size={16} />}
               </span>
             </button>
           </div>
@@ -457,10 +507,10 @@ export default function OrgChart() {
               onMouseLeave={() => setHoveredId(null)}
               aria-expanded={activeId === 'bod'}
             >
-              <span className="material-symbols-outlined org-box__icon">gavel</span>
+              <DynamicOrgIcon icon={ORG_DATA.bod.icon} size={20} className="org-box__icon" />
               <span className="org-box__title">{ORG_DATA.bod.title}</span>
-              <span className="material-symbols-outlined org-box__info">
-                {activeId === 'bod' ? 'expand_less' : 'info'}
+              <span className="org-box__info">
+                {activeId === 'bod' ? <ChevronUp size={16} /> : <Info size={16} />}
               </span>
             </button>
             <div className={`org-branch-line org-branch-line--to-center ${activeAncestors.includes('bod') ? 'org-branch-line--active' : ''}`} />
@@ -478,10 +528,10 @@ export default function OrgChart() {
             onMouseLeave={() => setHoveredId(null)}
             aria-expanded={activeId === 'gm'}
           >
-            <span className="material-symbols-outlined org-box__icon">person</span>
+            <DynamicOrgIcon icon={ORG_DATA.gm.icon} size={20} className="org-box__icon" />
             <span className="org-box__title org-box__title--lg">{ORG_DATA.gm.title}</span>
-            <span className="material-symbols-outlined org-box__info">
-              {activeId === 'gm' ? 'expand_less' : 'info'}
+            <span className="org-box__info">
+              {activeId === 'gm' ? <ChevronUp size={16} /> : <Info size={16} />}
             </span>
           </button>
         </div>
@@ -498,10 +548,10 @@ export default function OrgChart() {
               onMouseLeave={() => setHoveredId(null)}
               aria-expanded={activeId === 'lawyer'}
             >
-              <span className="material-symbols-outlined org-box__icon">policy</span>
+              <DynamicOrgIcon icon={ORG_DATA.lawyer.icon} size={20} className="org-box__icon" />
               <span className="org-box__title">{ORG_DATA.lawyer.title}</span>
-              <span className="material-symbols-outlined org-box__info">
-                {activeId === 'lawyer' ? 'expand_less' : 'info'}
+              <span className="org-box__info">
+                {activeId === 'lawyer' ? <ChevronUp size={16} /> : <Info size={16} />}
               </span>
             </button>
             <div className={`org-branch-line org-branch-line--to-center ${activeAncestors.includes('lawyer') ? 'org-branch-line--active' : ''}`} />
@@ -522,10 +572,10 @@ export default function OrgChart() {
               onMouseLeave={() => setHoveredId(null)}
               aria-expanded={activeId === 'sec'}
             >
-              <span className="material-symbols-outlined org-box__icon">badge</span>
+              <DynamicOrgIcon icon={ORG_DATA.sec.icon} size={20} className="org-box__icon" />
               <span className="org-box__title">{ORG_DATA.sec.title}</span>
-              <span className="material-symbols-outlined org-box__info">
-                {activeId === 'sec' ? 'expand_less' : 'info'}
+              <span className="org-box__info">
+                {activeId === 'sec' ? <ChevronUp size={16} /> : <Info size={16} />}
               </span>
             </button>
           </div>
@@ -542,10 +592,10 @@ export default function OrgChart() {
               onMouseLeave={() => setHoveredId(null)}
               aria-expanded={activeId === 'plan'}
             >
-              <span className="material-symbols-outlined org-box__icon">query_stats</span>
+              <DynamicOrgIcon icon={ORG_DATA.plan.icon} size={20} className="org-box__icon" />
               <span className="org-box__title">{ORG_DATA.plan.title}</span>
-              <span className="material-symbols-outlined org-box__info">
-                {activeId === 'plan' ? 'expand_less' : 'info'}
+              <span className="org-box__info">
+                {activeId === 'plan' ? <ChevronUp size={16} /> : <Info size={16} />}
               </span>
             </button>
             <div className={`org-branch-line org-branch-line--to-center ${activeAncestors.includes('plan') ? 'org-branch-line--active' : ''}`} />
@@ -566,10 +616,10 @@ export default function OrgChart() {
               onMouseLeave={() => setHoveredId(null)}
               aria-expanded={activeId === 'auditor'}
             >
-              <span className="material-symbols-outlined org-box__icon">fact_check</span>
+              <DynamicOrgIcon icon={ORG_DATA.auditor.icon} size={20} className="org-box__icon" />
               <span className="org-box__title">{ORG_DATA.auditor.title}</span>
-              <span className="material-symbols-outlined org-box__info">
-                {activeId === 'auditor' ? 'expand_less' : 'info'}
+              <span className="org-box__info">
+                {activeId === 'auditor' ? <ChevronUp size={16} /> : <Info size={16} />}
               </span>
             </button>
           </div>
@@ -588,10 +638,10 @@ export default function OrgChart() {
               onMouseLeave={() => setHoveredId(null)}
               aria-expanded={activeId === 'ict'}
             >
-              <span className="material-symbols-outlined org-box__icon">terminal</span>
+              <DynamicOrgIcon icon={ORG_DATA.ict.icon} size={20} className="org-box__icon" />
               <span className="org-box__title">{ORG_DATA.ict.title}</span>
-              <span className="material-symbols-outlined org-box__info">
-                {activeId === 'ict' ? 'expand_less' : 'info'}
+              <span className="org-box__info">
+                {activeId === 'ict' ? <ChevronUp size={16} /> : <Info size={16} />}
               </span>
             </button>
           </div>
@@ -607,10 +657,10 @@ export default function OrgChart() {
             onMouseLeave={() => setHoveredId(null)}
             aria-expanded={activeId === 'dm'}
           >
-            <span className="material-symbols-outlined org-box__icon">manage_accounts</span>
+            <DynamicOrgIcon icon={ORG_DATA.dm.icon} size={20} className="org-box__icon" />
             <span className="org-box__title org-box__title--lg">{ORG_DATA.dm.title}</span>
-            <span className="material-symbols-outlined org-box__info">
-              {activeId === 'dm' ? 'expand_less' : 'info'}
+            <span className="org-box__info">
+              {activeId === 'dm' ? <ChevronUp size={16} /> : <Info size={16} />}
             </span>
           </button>
         </div>
@@ -640,12 +690,12 @@ export default function OrgChart() {
                   onMouseLeave={() => setHoveredId(null)}
                   aria-expanded={activeId === id}
                 >
-                  <span className="material-symbols-outlined org-box__icon">{dept.icon}</span>
+                  <DynamicOrgIcon icon={dept.icon} size={20} className="org-box__icon" />
                   <div className="org-box__label-wrap">
                     <span className="org-box__title">{dept.title}</span>
                   </div>
-                  <span className="material-symbols-outlined org-box__info">
-                    {activeId === id ? 'expand_less' : 'info'}
+                  <span className="org-box__info">
+                    {activeId === id ? <ChevronUp size={16} /> : <Info size={16} />}
                   </span>
                 </button>
               )
@@ -674,7 +724,7 @@ export default function OrgChart() {
               >
                 <div className="org-tier-card__header-left">
                   <div className={`org-tier-card__icon-box org-tier-card__icon-box--${tier.theme}`}>
-                    <span className="material-symbols-outlined">{tier.icon}</span>
+                    <DynamicOrgIcon icon={tier.icon} size={20} />
                   </div>
                   <div className="org-tier-card__titles">
                     <div className="org-tier-card__badge-row">
@@ -685,8 +735,8 @@ export default function OrgChart() {
                     <p className="org-tier-card__sub">{tier.sub}</p>
                   </div>
                 </div>
-                <span className="material-symbols-outlined org-tier-card__chevron">
-                  {isOpen ? 'expand_less' : 'expand_more'}
+                <span className="org-tier-card__chevron">
+                  {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                 </span>
               </button>
 
@@ -704,13 +754,13 @@ export default function OrgChart() {
                           onClick={() => handleNodeClick(id)}
                           aria-expanded={isSelected}
                         >
-                          <span className="material-symbols-outlined org-mobile-role-btn__icon">{node.icon}</span>
+                          <DynamicOrgIcon icon={node.icon} size={20} className="org-mobile-role-btn__icon" />
                           <div className="org-mobile-role-btn__info">
                             <span className="org-mobile-role-btn__title">{node.title}</span>
                             <span className="org-mobile-role-btn__sub">{node.sub}</span>
                           </div>
-                          <span className="material-symbols-outlined org-mobile-role-btn__arrow">
-                            {isSelected ? 'expand_less' : 'info'}
+                          <span className="org-mobile-role-btn__arrow">
+                            {isSelected ? <ChevronUp size={16} /> : <Info size={16} />}
                           </span>
                         </button>
                       )
@@ -730,7 +780,7 @@ export default function OrgChart() {
           <div className="org-inspector-bridge">
             <div className="org-inspector-bridge__line" />
             <div className="org-inspector-bridge__badge">
-              <span className="material-symbols-outlined text-xs">manage_search</span>
+              <SearchCheck size={14} />
               <span>{t('ui.roleProfile')}</span>
             </div>
             <div className="org-inspector-bridge__line" />
@@ -744,11 +794,11 @@ export default function OrgChart() {
             <div className="org-inspector-panel__top">
               <div className="org-inspector-panel__meta">
                 <span className={`org-badge org-badge--${activeNode.theme}`}>
-                  <span className="material-symbols-outlined text-xs">verified</span>
+                  <BadgeCheck size={14} />
                   {activeNode.sub}
                 </span>
                 <span className="org-badge org-badge--line">
-                  <span className="material-symbols-outlined text-xs">account_tree</span>
+                  <Network size={14} />
                   {activeNode.reportsTo}
                 </span>
               </div>
@@ -759,7 +809,7 @@ export default function OrgChart() {
                 aria-label={t('ui.dismissInspector')}
                 title={t('ui.closeDossier')}
               >
-                <span className="material-symbols-outlined">close</span>
+                <X size={18} />
               </button>
             </div>
 
@@ -768,7 +818,7 @@ export default function OrgChart() {
               <div className="org-inspector-panel__left">
                 <div className="org-inspector-panel__header">
                   <div className={`org-inspector-panel__icon-box org-inspector-panel__icon-box--${activeNode.theme}`}>
-                    <span className="material-symbols-outlined org-inspector-panel__icon">{activeNode.icon}</span>
+                    <DynamicOrgIcon icon={activeNode.icon} size={24} className="org-inspector-panel__icon" />
                   </div>
                   <div className="org-inspector-panel__titles">
                     <h4 className="org-inspector-panel__title">{activeNode.title}</h4>
@@ -796,7 +846,7 @@ export default function OrgChart() {
                             className="org-inspector-panel__leader-link"
                             title={t('ui.emailTitle', { name: appointedLeader.name })}
                           >
-                            <span className="material-symbols-outlined text-xs">mail</span>
+                            <Mail size={14} />
                             <span>{appointedLeader.email}</span>
                           </a>
                         </div>
@@ -813,7 +863,7 @@ export default function OrgChart() {
                 <div className="org-inspector-panel__right">
                   <div className="org-inspector-panel__responsibilities-card">
                     <h5 className="org-inspector-panel__section-heading">
-                      <span className="material-symbols-outlined text-xs">checklist</span>
+                      <ListChecks size={14} />
                       {t('ui.keyMandates')}
                     </h5>
                     <ul className="org-inspector-panel__list">

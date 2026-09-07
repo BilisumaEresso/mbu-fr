@@ -14,6 +14,7 @@ import buyerHeroImg from '../assets/images/heroes/buyerHero.webp'
 import buyerHero480 from '../assets/images/heroes/buyerHero-480w.webp'
 import buyerHero800 from '../assets/images/heroes/buyerHero-800w.webp'
 import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
+import { ArrowRight, Download, BadgeCheck, Package, Globe, CheckCircle } from 'lucide-react'
 import './InnerPage.css'
 import './Buyers.css'
 
@@ -49,20 +50,20 @@ function Buyers() {
 
   const valueProps = [
     {
-      icon: 'verified',
+      icon: BadgeCheck,
       title: t('buyers:valueProps.prop1.title'),
       desc: t('buyers:valueProps.prop1.desc'),
       tags: ['GAP', 'ORG'],
       iconColor: 'primary',
     },
     {
-      icon: 'inventory_2',
+      icon: Package,
       title: t('buyers:valueProps.prop2.title'),
       desc: t('buyers:valueProps.prop2.desc'),
       iconColor: 'secondary',
     },
     {
-      icon: 'language',
+      icon: Globe,
       title: t('buyers:valueProps.prop3.title'),
       desc: t('buyers:valueProps.prop3.desc'),
       iconColor: 'primary',
@@ -163,7 +164,7 @@ function Buyers() {
         actions={
           <>
             <a href="#quote" className="btn btn--primary">
-              {t('buyers:hero.requestQuote')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              {t('buyers:hero.requestQuote')} <ArrowRight size={16} className="text-sm" />
             </a>
             <a
               href={companyProfilePdf}
@@ -171,7 +172,7 @@ function Buyers() {
               className="btn btn--outline"
               title={t('buyers:hero.downloadPdfTitle')}
             >
-              {t('common:buttons.downloadPdf')} <span className="material-symbols-outlined text-sm">download</span>
+              {t('common:buttons.downloadPdf')} <Download size={16} className="text-sm" />
             </a>
           </>
         }
@@ -188,22 +189,23 @@ function Buyers() {
         <div className="container">
           <h2 className="buyers-props__heading">{t('home:audience.buyers.tag', 'Why Source From Us')}</h2>
           <div className="buyers-props__grid">
-            {valueProps.map((p, i) => (
-              <Reveal key={p.title} delay={stagger(i)} className="buyers-prop-card">
-                <span className={`material-symbols-outlined buyers-prop-card__icon buyers-prop-card__icon--${p.iconColor}`}>
-                  {p.icon}
-                </span>
-                <h3 className="buyers-prop-card__title">{p.title}</h3>
-                <p className="buyers-prop-card__desc">{p.desc}</p>
-                {p.tags && (
-                  <div className="buyers-prop-card__tags">
-                    {p.tags.map((tag) => (
-                      <span key={tag} className="buyers-tag">{tag}</span>
-                    ))}
-                  </div>
-                )}
-              </Reveal>
-            ))}
+            {valueProps.map((p, i) => {
+              const PropIcon = p.icon
+              return (
+                <Reveal key={p.title} delay={stagger(i)} className="buyers-prop-card">
+                  <PropIcon size={28} className={`buyers-prop-card__icon buyers-prop-card__icon--${p.iconColor}`} />
+                  <h3 className="buyers-prop-card__title">{p.title}</h3>
+                  <p className="buyers-prop-card__desc">{p.desc}</p>
+                  {p.tags && (
+                    <div className="buyers-prop-card__tags">
+                      {p.tags.map((tag) => (
+                        <span key={tag} className="buyers-tag">{tag}</span>
+                      ))}
+                    </div>
+                  )}
+                </Reveal>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -225,7 +227,7 @@ function Buyers() {
 
             {submitted ? (
               <div className="buyers-quote__success">
-                <span className="material-symbols-outlined buyers-quote__success-icon">check_circle</span>
+                <CheckCircle size={48} className="buyers-quote__success-icon" />
                 <h3>{t('buyers:form.success.title')}</h3>
                 <p>{t('buyers:form.success.desc')}</p>
                 <button

@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { BadgeCheck, MapPin } from 'lucide-react'
 import './ResourceCard.css'
 
 const KEY_MAP = {
@@ -47,7 +48,7 @@ function ResourceCard({ resource, onSelect }) {
         <span className="resource-photo-card__tag">{tag}</span>
         {stat && (
           <span className="resource-photo-card__stat-badge">
-            <span className="material-symbols-outlined text-xs">verified</span>
+            <BadgeCheck size={14} />
             {stat}
           </span>
         )}
@@ -55,7 +56,7 @@ function ResourceCard({ resource, onSelect }) {
 
       <div className="resource-photo-card__body">
         <div className="resource-photo-card__loc">
-          <span className="material-symbols-outlined text-xs">location_on</span>
+          <MapPin size={14} />
           <span>{location}</span>
         </div>
         <h3 className="resource-photo-card__title">{name}</h3>

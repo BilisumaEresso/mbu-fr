@@ -11,6 +11,7 @@ import womenFarmerImg from '../assets/images/community/womenFarmer.webp'
 import womenFarmer480 from '../assets/images/community/womenFarmer-480w.webp'
 import womenFarmer800 from '../assets/images/community/womenFarmer-800w.webp'
 import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
+import { TrendingUp, Download } from 'lucide-react'
 import './InnerPage.css'
 import './Impact.css'
 
@@ -67,10 +68,10 @@ function Impact() {
         actions={
           <>
             <a href="#metrics" className="btn btn--primary">
-              {t('impact:hero.viewMetrics')} <span className="material-symbols-outlined text-sm">trending_up</span>
+              {t('impact:hero.viewMetrics')} <TrendingUp size={16} className="text-sm" />
             </a>
             <a href="#reports" className="btn btn--outline">
-              {t('impact:hero.impactReports')} <span className="material-symbols-outlined text-sm">download</span>
+              {t('impact:hero.impactReports')} <Download size={16} className="text-sm" />
             </a>
           </>
         }
@@ -138,7 +139,7 @@ function Impact() {
                   className="impact-report-item__download"
                 >
                   <span className="label-caps label-caps--secondary">{t('common:buttons.downloadPdf')}</span>
-                  <span className="material-symbols-outlined text-sm">download</span>
+                  <Download size={16} className="text-sm" />
                 </a>
               </div>
             ))}

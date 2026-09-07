@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
+import { X, MapPin, CheckCircle } from 'lucide-react'
 import './ResourceModal.css'
 
 const KEY_MAP = {
@@ -41,15 +42,19 @@ function ResourceModal({ resource, onClose }) {
   const location = key ? t(`common:facilities.${key}.location`, resource.location) : resource.location
   const tag = key ? t(`common:facilities.${key}.tag`, resource.tag || resource.category) : (resource.tag || resource.category)
 
+  const ResourceIcon = resource.icon
+
   return (
     <div className="resource-modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-label={name}>
       <div className="resource-modal-card" onClick={(e) => e.stopPropagation()}>
         {/* Modal Header */}
         <div className="resource-modal__header">
           <div className="resource-modal__header-left">
-            <div className="resource-modal__icon-wrap">
-              <span className="material-symbols-outlined">{resource.icon}</span>
-            </div>
+            {ResourceIcon && (
+              <div className="resource-modal__icon-wrap">
+                <ResourceIcon size={24} />
+              </div>
+            )}
             <div>
               <span className="resource-modal__category">{tag}</span>
               <h2 className="resource-modal__title">{name}</h2>
@@ -63,7 +68,7 @@ function ResourceModal({ resource, onClose }) {
             ref={closeBtnRef}
             aria-label={t('about:resourceModal.closeAriaLabel', 'Close specifications dialog')}
           >
-            <span className="material-symbols-outlined">close</span>
+            <X size={20} />
           </button>
         </div>
 
@@ -72,11 +77,11 @@ function ResourceModal({ resource, onClose }) {
           {/* Visual Banner Placeholder */}
           <div className={`resource-modal__banner resource-modal__banner--${resource.imageType || 'default'}`}>
             <div className="resource-modal__banner-overlay">
-              <span className="material-symbols-outlined resource-modal__banner-icon">{resource.icon}</span>
+              {ResourceIcon && <ResourceIcon size={48} className="resource-modal__banner-icon" />}
               <div className="resource-modal__banner-meta">
                 <span className="resource-modal__banner-cap">{resource.capacity || resource.stat}</span>
                 <span className="resource-modal__banner-loc">
-                  <span className="material-symbols-outlined text-xs">location_on</span>
+                  <MapPin size={14} />
                   {location}
                 </span>
               </div>
@@ -111,7 +116,7 @@ function ResourceModal({ resource, onClose }) {
               <ul className="resource-modal__highlights-list">
                 {resource.highlights.map((h, i) => (
                   <li key={i} className="resource-modal__highlight-item">
-                    <span className="material-symbols-outlined resource-modal__check-icon">check_circle</span>
+                    <CheckCircle size={16} className="resource-modal__check-icon" />
                     <span>{h}</span>
                   </li>
                 ))}
