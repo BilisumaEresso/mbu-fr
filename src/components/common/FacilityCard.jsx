@@ -7,6 +7,7 @@ const KEY_MAP = {
   'refrigerated-fleet': 'refrigeratedFleet',
   'central-packhouse': 'centralPackhouse',
   'irrigation-schemes': 'irrigationSchemes',
+  'agricultural-mechanization': 'agriculturalMechanization',
 }
 
 function FacilityCard({ resource }) {

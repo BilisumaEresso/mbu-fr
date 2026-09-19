@@ -234,6 +234,18 @@
         "Modern Drip Infrastructure",
         "Year-Round Cultivation"
       ]
+    },
+    "agriculturalMechanization": {
+      "name": "Agricultural Mechanization & Tractor Fleet",
+      "tag": "Farm Mechanization",
+      "stat": "12+ Heavy Tractors",
+      "location": "Meki, Batu & Farm Clusters",
+      "desc": "Modern John Deere tractor fleets equipped with heavy-duty disk plows and implements, providing subsidized land preparation, tilling, and ridging for smallholder farmers.",
+      "features": [
+        "Heavy-Duty Disk Plowing",
+        "Subsidized Member Rates",
+        "Precision Seedbed Preparation"
+      ]
     }
   }
 }

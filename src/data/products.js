@@ -12,6 +12,7 @@ import bentoMaizeImg from '../assets/images/products/bentoMaize.webp'
 import redBeanSeedsImg from '../assets/images/products/redBeanSeeds.webp'
 import bentoCarrotImg from '../assets/images/products/bentoCarrot.webp'
 import bentoGarlicImg from '../assets/images/products/bentoGarlic.webp'
+import bentoEggplantImg from '../assets/images/products/bentoEggplant.webp'
 
 export const products = [
   {
@@ -213,6 +214,20 @@ export const products = [
     packaging: '10kg / 25kg Mesh Bags',
     brix: 'N/A (High allicin content)',
     img: bentoGarlicImg,
+  },
+  {
+    id: 'eggplant',
+    name: 'Fresh Eggplant',
+    category: 'Vegetables',
+    tag: 'Glossy, premium grade',
+    desc: 'Deep-purple, firm and glossy eggplants cultivated in nutrient-rich Rift Valley soils, offering tender flesh and superior culinary quality for local and export markets.',
+    season: 'Oct - Apr',
+    featured: false,
+    origin: 'East Shewa & Rift Valley',
+    shelfLife: '14-21 Days (Cold-chain 10-12°C)',
+    packaging: '5kg / 10kg Corrugated Export Cartons',
+    brix: 'Grade A, firm texture',
+    img: bentoEggplantImg,
   },
 ]
 

@@ -13,10 +13,12 @@ import SmoothScroll from './components/common/SmoothScroll.jsx'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Products from './pages/Products.jsx'
+import ProductDetail from './pages/ProductDetail.jsx'
 import Farmers from './pages/Farmers.jsx'
 import Buyers from './pages/Buyers.jsx'
 import RetailOutlets from './pages/RetailOutlets.jsx'
 import News from './pages/News.jsx'
+import NewsDetail from './pages/NewsDetail.jsx'
 import Impact from './pages/Impact.jsx'
 import Contact from './pages/Contact.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
@@ -78,10 +80,12 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="products" element={<Products />} />
+          <Route path="products/:id" element={<ProductDetail />} />
           <Route path="farmers" element={<Farmers />} />
           <Route path="buyers" element={<Buyers />} />
           <Route path="retail-outlets" element={<RetailOutlets />} />
           <Route path="news" element={<News />} />
+          <Route path="news/:id" element={<NewsDetail />} />
           <Route path="impact" element={<Impact />} />
           <Route path="contact" element={<Contact />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />

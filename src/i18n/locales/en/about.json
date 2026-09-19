@@ -135,5 +135,32 @@
     "civicEyebrow": "Local Governance & Host Towns",
     "civicTitle": "Local Town Administrations",
     "civicDesc": "Strategic municipal government partners fostering agro-infrastructure, municipal processing centers, watershed protection, and community welfare across the Dembal Lake basin."
+  },
+  "community": {
+    "eyebrow": "Social Responsibility & Care",
+    "title": "Empowering Future Generations: Education & Orphan Support",
+    "desc": "Beyond agricultural excellence, Meki Batu Union is guided by the 7th international cooperative principle: Concern for Community. Each academic year, our union society mobilizes dedicated welfare initiatives to provide school supplies, notebooks, stationery, and vital care to financially disadvantaged children and orphans across our farming communities.",
+    "principleBadge": "Cooperative Principle #7 • Concern for Community",
+    "cards": {
+      "supplies": {
+        "tag": "Educational Sponsorship",
+        "title": "Direct Learning Materials & Books",
+        "desc": "Supplying comprehensive packages of exercise books, pens, and study essentials directly to students, lifting the financial burden of schooling off struggling families."
+      },
+      "logistics": {
+        "tag": "Rural Outreach",
+        "title": "Delivering Hope to Rural Villages",
+        "desc": "Utilizing union logistics and cooperative hubs to distribute educational materials directly to rural farmsteads, ensuring no vulnerable child is left behind."
+      },
+      "orphans": {
+        "tag": "Orphan & Vulnerable Care",
+        "title": "Dignity & Academic Continuity",
+        "desc": "Providing compassionate support and academic safety nets for orphaned and disadvantaged youth, nurturing their confidence and unlocking a brighter future."
+      }
+    },
+    "banner": {
+      "heading": "100% Cooperative & Society Funded Initiative",
+      "text": "Every crop harvested by our 8,471 member farmers directly enriches our communities — fostering literacy, human dignity, and generational empowerment across the Central Rift Valley."
+    }
   }
 }

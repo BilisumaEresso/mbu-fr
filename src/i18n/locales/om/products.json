@@ -103,7 +103,7 @@
       "brix": "Sadarkaa A Qulqulluu"
     },
     "cabbage": {
-      "name": "Raafuu Mataa Adii",
+      "name": "Raafuu Maraa",
       "category": "Kuduraa",
       "tag": "Waqtiidhaan",
       "desc": "Raafuu mataa guddaa fi jabaataa, biyyoo uumamaa eeguudhaan kan oomishamu.",
@@ -204,6 +204,17 @@
       "shelfLife": "Ji'oota 4-6 (Kuusaa Qabbanaawaa fi Gogaa)",
       "packaging": "Koroojoo Qiyyaasaa 10kg / 25kg",
       "brix": "N/A (Qabiyyee alisiin olaanaa)"
+    },
+    "eggplant": {
+      "name": "Dabarjaana",
+      "category": "Kuduraa",
+      "tag": "Qulqullina olaanaa, oomisha haaraa",
+      "desc": "Dabarjaana halluu dhiiga-gurraacha qabu, lafa gabbataa Sulula Qiinxamaa keessatti kan oomishamu, foon lallaafaa fi qulqullina olaanaa qaba.",
+      "season": "Onk - Ebl",
+      "origin": "Godina Shawaa Bahaa fi Sulula Dambal",
+      "shelfLife": "Torban 2-3 (Kuusaa Qabbanaawaa 10-12°C)",
+      "packaging": "Kaartoonii Ergaa Alaa 5kg / 10kg",
+      "brix": "Sadarkaa A Jabaataa"
     }
   },
   "calendar": {

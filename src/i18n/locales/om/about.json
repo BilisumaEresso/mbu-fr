@@ -135,5 +135,32 @@
     "civicEyebrow": "Bulchiinsa Naannoo fi Magaalota Hundeeffamaa",
     "civicTitle": "Bulchiinsa Magaalota Naannoo",
     "civicDesc": "Michuuwwan mootummaa naannoo kanneen bu'uuraalee qonnaa, wiirtuuwwan oomishaa, eegumsa bishaanii Haroo Dambal fi badhaadhina hawaasaarratti qindoominaan hojjetan."
+  },
+  "community": {
+    "eyebrow": "Itti Gaafatamummaa Hawaasummaa fi Kunuunsa",
+    "title": "Dhaloota Fuulduraa Humneessuu: Deggersa Barnootaa fi Daa'imman Hirkattootaa",
+    "desc": "Guddina qonnaarra darbee, Yuniyeeniin Maqii Baatuu qajeeltoo waldaa gamtaa addunyaawaa 7ffaa 'Kunuunsa Hawaasaa' irratti cimee hojjeta. Waggaa barnootaa hundaa, hawaasni yuniyeenii keenyaa inisheetiivii arjoomaa qopheessuun daa'imman harka-qalleeyyii, daa'imman abbaa fi haadha hin qabne (hirkattoota) fi maatiiwwan rakkatan naannoo qonnaa keenyaa keessatti meeshaalee barnootaa, dabtara fi deggersa jireenyaa dhiyeessa.",
+    "principleBadge": "Qajeeltoo Waldaa Gamtaa #7 • Kunuunsa Hawaasaa",
+    "cards": {
+      "supplies": {
+        "tag": "Deggersa Barnootaa",
+        "title": "Meeshaalee Barnootaa fi Dabtara Dhiyeessuu",
+        "desc": "Daa'imman gufuu maallaqaatiin barnoota isaaniirraa akka hin gufanneef dabtara, qalama, kitaabaa fi meeshaalee barumsaa guutuu harka isaaniitti kennuu."
+      },
+      "logistics": {
+        "tag": "Tajaajila Baadiyyaa",
+        "title": "Abdii Gara Gandoota Baadiyyaatti Geessuu",
+        "desc": "Konkolaattota geejjibaa yuniyeenichaa fi waldaalee bu'uuraatti fayyadamuun daa'imman qoteebultootaa gandoota fagootti argaman hunda biraan gahuu."
+      },
+      "orphans": {
+        "tag": "Daa'imman Hirkattootaa Kunuunsuu",
+        "title": "Kabajaa fi Wabii Barnoota Waaraa",
+        "desc": "Daa'imman maatii hin qabneef deggersa maallaqaa fi hawaasummaa itti-fufiinsa qabu kennuun, fuuldura ifaa akka qabaatan gochuu."
+      }
+    },
+    "banner": {
+      "heading": "Inisheetiivii Guutummaatti Waldaalee fi Hawaasaan Deeggaramu",
+      "text": "Oomishni kuduraa fi fuduraa qoteebultoota 8,471n oomishamu hundi misooma hawaasaa, barnoota daa'immanii fi kabaja dhala namaatiif utubaa cimaadha."
+    }
   }
 }

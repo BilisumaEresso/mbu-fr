@@ -204,6 +204,17 @@
       "shelfLife": "4-6 Months (Dry cool storage)",
       "packaging": "10kg / 25kg Mesh Bags",
       "brix": "N/A (High allicin content)"
+    },
+    "eggplant": {
+      "name": "Fresh Eggplant",
+      "category": "Vegetables",
+      "tag": "Glossy, premium grade",
+      "desc": "Deep-purple, firm and glossy eggplants cultivated in nutrient-rich Rift Valley soils, offering tender flesh and superior culinary quality for local and export markets.",
+      "season": "Oct - Apr",
+      "origin": "East Shewa & Rift Valley",
+      "shelfLife": "14-21 Days (Cold-chain 10-12°C)",
+      "packaging": "5kg / 10kg Corrugated Export Cartons",
+      "brix": "Grade A, firm texture"
     }
   },
   "calendar": {

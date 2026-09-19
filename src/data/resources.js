@@ -14,7 +14,11 @@ import irrigationImg from '../assets/images/resources/irrigation.webp'
 import irrigation480 from '../assets/images/resources/irrigation-480w.webp'
 import irrigation800 from '../assets/images/resources/irrigation-800w.webp'
 
-import { Warehouse, Truck, Factory, Droplet } from 'lucide-react'
+import mechanisationImg from '../assets/images/resources/mechanisation_resource.webp'
+import mechanisation480 from '../assets/images/resources/mechanisation_resource-480w.webp'
+import mechanisation800 from '../assets/images/resources/mechanisation_resource-800w.webp'
+
+import { Warehouse, Truck, Factory, Droplet, Tractor } from 'lucide-react'
 
 export const resources = [
   {
@@ -33,9 +37,9 @@ export const resources = [
     id: 'refrigerated-fleet',
     name: 'Refrigerated Transport Fleet',
     tag: 'Cold-Chain Logistics',
-    stat: '18+ Fleet & Tractors',
+    stat: '18+ Logistics Fleet',
     location: 'Rift Valley & Addis Ababa',
-    desc: 'Insulated cold-chain trucks and farm tractors ensuring farm-gate freshness to final market.',
+    desc: 'Insulated cold-chain trucks and express logistics ensuring farm-gate freshness to final market.',
     image: fleetImg,
     imageSrcSet: `${fleet480} 480w, ${fleet800} 800w, ${fleetImg} 1537w`,
     icon: Truck,
@@ -64,5 +68,17 @@ export const resources = [
     imageSrcSet: `${irrigation480} 480w, ${irrigation800} 800w, ${irrigationImg} 1537w`,
     icon: Droplet,
     features: ['Electric River Pumping', 'Modern Drip Infrastructure', 'Year-Round Cultivation'],
+  },
+  {
+    id: 'agricultural-mechanization',
+    name: 'Agricultural Mechanization & Tractor Fleet',
+    tag: 'Farm Mechanization',
+    stat: '12+ Heavy Tractors',
+    location: 'Meki, Batu & Farm Clusters',
+    desc: 'Modern John Deere tractor fleets equipped with heavy-duty disk plows and implements, providing subsidized land preparation, tilling, and ridging for smallholder farmers.',
+    image: mechanisationImg,
+    imageSrcSet: `${mechanisation480} 480w, ${mechanisation800} 800w, ${mechanisationImg} 1536w`,
+    icon: Tractor,
+    features: ['Heavy-Duty Disk Plowing', 'Subsidized Member Rates', 'Precision Seedbed Preparation'],
   },
 ]

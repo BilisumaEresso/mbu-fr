@@ -1,11 +1,13 @@
-import { useState, useMemo, useRef, useEffect } from 'react'
+import { useState, useMemo, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
 import { news } from '../data/news.js'
-import { Search, ArrowRight, X, Calendar, Clock, Share2 } from 'lucide-react'
+import { getLocalePath } from '../utils/locale.js'
+import { Search, ArrowRight } from 'lucide-react'
 import './InnerPage.css'
 import './News.css'
 
@@ -13,10 +15,10 @@ import './News.css'
 const stagger = (i) => Math.min(i * 90, 450)
 
 function News() {
-  const { t } = useTranslation(['news', 'meta', 'common'])
+  const { t, i18n } = useTranslation(['news', 'meta', 'common'])
+  const currentLang = i18n.language || 'en'
+  const navigate = useNavigate()
   const [searchTerm, setSearchTerm] = useState('')
-  const [selectedArticle, setSelectedArticle] = useState(null)
-  const [copiedLink, setCopiedLink] = useState(false)
   const hasInteractedRef = useRef(false)
 
   // Filter articles based on search
@@ -30,29 +32,6 @@ function News() {
         item.category.toLowerCase().includes(term)
     )
   }, [searchTerm])
-
-  function handleSearchChange(e) {
-    hasInteractedRef.current = true
-    setSearchTerm(e.target.value)
-  }
-
-  function handleCopyLink() {
-    navigator.clipboard.writeText(window.location.href)
-    setCopiedLink(true)
-    setTimeout(() => setCopiedLink(false), 2000)
-  }
-
-  // Lock body scroll when modal is open
-  useEffect(() => {
-    if (selectedArticle) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [selectedArticle])
 
   // Divide into Featured (first 2) and Grid (remaining)
   const featuredLarge = filteredNews[0]
@@ -94,11 +73,11 @@ function News() {
             {hasInteractedRef.current ? (
               <article
                 className="news-article-card news-article-card--large"
-                onClick={() => setSelectedArticle(featuredLarge)}
+                onClick={() => navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault()
-                    setSelectedArticle(featuredLarge)
+                    navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))
                   }
                 }}
                 tabIndex={0}
@@ -133,11 +112,11 @@ function News() {
                 as="article"
                 delay={0}
                 className="news-article-card news-article-card--large"
-                onClick={() => setSelectedArticle(featuredLarge)}
+                onClick={() => navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault()
-                    setSelectedArticle(featuredLarge)
+                    navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))
                   }
                 }}
                 tabIndex={0}
@@ -173,11 +152,11 @@ function News() {
             {hasInteractedRef.current ? (
               <article
                 className="news-article-card news-article-card--small"
-                onClick={() => setSelectedArticle(featuredSmall)}
+                onClick={() => navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault()
-                    setSelectedArticle(featuredSmall)
+                    navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))
                   }
                 }}
                 tabIndex={0}
@@ -212,11 +191,11 @@ function News() {
                 as="article"
                 delay={90}
                 className="news-article-card news-article-card--small"
-                onClick={() => setSelectedArticle(featuredSmall)}
+                onClick={() => navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault()
-                    setSelectedArticle(featuredSmall)
+                    navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))
                   }
                 }}
                 tabIndex={0}
@@ -284,10 +263,14 @@ function News() {
               </>
             )
 
+            const handleArticleClick = () => {
+              navigate(getLocalePath(`/news/${article.id}`, currentLang))
+            }
+
             const handleArticleKeyDown = (e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault()
-                setSelectedArticle(article)
+                handleArticleClick()
               }
             }
 
@@ -296,7 +279,7 @@ function News() {
                 <article
                   key={article.id}
                   className="news-article-card news-article-card--grid"
-                  onClick={() => setSelectedArticle(article)}
+                  onClick={handleArticleClick}
                   onKeyDown={handleArticleKeyDown}
                   tabIndex={0}
                   role="button"
@@ -313,7 +296,7 @@ function News() {
                 as="article"
                 delay={stagger(i + 2)}
                 className="news-article-card news-article-card--grid"
-                onClick={() => setSelectedArticle(article)}
+                onClick={handleArticleClick}
                 onKeyDown={handleArticleKeyDown}
                 tabIndex={0}
                 role="button"
@@ -325,67 +308,6 @@ function News() {
           })}
         </section>
       </div>
-
-      {/* ---- Wide Open Article Reader Modal ---- */}
-      {selectedArticle && (
-        <div className="news-modal-backdrop" onClick={() => setSelectedArticle(null)}>
-          <div className="news-modal-card" onClick={(e) => e.stopPropagation()}>
-            <button
-              type="button"
-              className="news-modal-close"
-              onClick={() => setSelectedArticle(null)}
-              aria-label={t('common:buttons.close')}
-            >
-              <X size={20} />
-            </button>
-
-            <div className="news-modal-meta-bar">
-              <span className="news-badge-pill">{selectedArticle.category}</span>
-              <span className="news-modal-meta-item">
-                <Calendar size={14} className="text-xs" />
-                {selectedArticle.date}
-              </span>
-              <span className="news-modal-meta-item">
-                <Clock size={14} className="text-xs" />
-                {t('news:labels.readTime')}
-              </span>
-            </div>
-
-            <h1 className="news-modal-title">{selectedArticle.title}</h1>
-
-            <div className="news-modal-media-banner">
-              <img
-                src={selectedArticle.img}
-                srcSet={selectedArticle.imgSrcSet}
-                sizes="(max-width: 768px) 100vw, 900px"
-                alt={selectedArticle.title}
-                className="news-modal-banner-img"
-              />
-            </div>
-
-            <div className="news-modal-body-content">
-              <p className="news-modal-lead">{selectedArticle.desc}</p>
-              <p>
-                {t('news:article.paragraph1')}
-              </p>
-              <p>
-                {t('news:article.paragraph2')}
-              </p>
-            </div>
-
-            <div className="news-modal-footer-actions">
-              <button
-                type="button"
-                className="btn btn--outline btn--sm inline-flex items-center gap-1"
-                onClick={handleCopyLink}
-              >
-                <Share2 size={14} className="text-xs" />
-                {copiedLink ? t('news:labels.copied') : t('news:labels.share')}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useRef } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
@@ -10,7 +10,7 @@ import ourProductHero480 from '../assets/images/heroes/ourProductHero-480w.webp'
 import ourProductHero800 from '../assets/images/heroes/ourProductHero-800w.webp'
 import { products, categories, harvestCalendar } from '../data/products.js'
 import { getLocalePath } from '../utils/locale.js'
-import { ArrowRight, FileText, MapPin, Calendar, X, BadgeCheck, Package, Clock, Leaf, CheckCircle, ArrowLeftCircle } from 'lucide-react'
+import { ArrowRight, FileText, MapPin, Calendar, ArrowLeftCircle } from 'lucide-react'
 import './InnerPage.css'
 import './Products.css'
 
@@ -20,27 +20,8 @@ const stagger = (i) => Math.min(i * 90, 450)
 function Products() {
   const { t, i18n } = useTranslation(['products', 'meta', 'common'])
   const currentLang = i18n.language || 'en'
+  const navigate = useNavigate()
   const [activeCategory, setActiveCategory] = useState('All')
-  const [selectedProduct, setSelectedProduct] = useState(null)
-
-  // Lock body scroll and handle Escape key for modal
-  useEffect(() => {
-    function handleKeyDown(e) {
-      if (e.key === 'Escape') {
-        setSelectedProduct(null)
-      }
-    }
-    if (selectedProduct) {
-      document.body.style.overflow = 'hidden'
-      window.addEventListener('keydown', handleKeyDown)
-    } else {
-      document.body.style.overflow = ''
-    }
-    return () => {
-      document.body.style.overflow = ''
-      window.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [selectedProduct])
 
   const hasFilteredRef = useRef(false)
 
@@ -219,10 +200,14 @@ function Products() {
                 </>
               )
 
+              const handleCardClick = () => {
+                navigate(getLocalePath(`/products/${item.id}`, currentLang))
+              }
+
               const handleCardKeyDown = (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault()
-                  setSelectedProduct(item)
+                  handleCardClick()
                 }
               }
 
@@ -232,7 +217,7 @@ function Products() {
                   <div
                     key={item.id}
                     className="product-item-card"
-                    onClick={() => setSelectedProduct(item)}
+                    onClick={handleCardClick}
                     onKeyDown={handleCardKeyDown}
                     tabIndex={0}
                     role="button"
@@ -249,7 +234,7 @@ function Products() {
                   key={item.id}
                   delay={stagger(i)}
                   className="product-item-card"
-                  onClick={() => setSelectedProduct(item)}
+                  onClick={handleCardClick}
                   onKeyDown={handleCardKeyDown}
                   tabIndex={0}
                   role="button"
@@ -263,155 +248,6 @@ function Products() {
           </div>
         </div>
       </section>
-
-      {/* ---- Enhanced Product Detail Modal ---- */}
-      {selectedProduct && (() => {
-        const selectedTrans = getProductTrans(selectedProduct)
-        return (
-          <div
-            className="product-modal-backdrop"
-            onClick={() => setSelectedProduct(null)}
-            role="dialog"
-            aria-modal="true"
-            aria-label={selectedTrans.name}
-          >
-            <div className="product-modal-card" onClick={(e) => e.stopPropagation()}>
-              <button
-                className="product-modal-close"
-                onClick={() => setSelectedProduct(null)}
-                aria-label={t('common:buttons.close')}
-              >
-                <X size={20} />
-              </button>
-
-              <div className="product-modal-grid">
-                <div className="product-modal-media">
-                  {selectedProduct.img ? (
-                    <img
-                      src={selectedProduct.img}
-                      alt={selectedTrans.name}
-                      className="product-modal-img"
-                    />
-                  ) : (
-                    <div className="product-modal-img img-placeholder" aria-label={`Photo pending: ${selectedTrans.name}`}>
-                      {t('products:catalog.placeholderText', 'REPLACE WITH REAL PHOTO')}<br />{selectedTrans.name}
-                    </div>
-                  )}
-                  <div className="product-modal-media-overlay" />
-                  <div className="product-modal-media-badge">
-                    <BadgeCheck size={14} className="text-xs" />
-                    <span>{t('products:catalog.labels.globalGap')}</span>
-                  </div>
-                </div>
-
-                <div className="product-modal-content">
-                  <div className="product-modal-header">
-                    <div className="product-modal-tags">
-                      <span className="product-modal-category">{selectedTrans.category}</span>
-                      <span className="product-modal-tag">{selectedTrans.tag}</span>
-                    </div>
-                    <h2 className="product-modal-title">{selectedTrans.name}</h2>
-                    <p className="product-modal-desc">{selectedTrans.desc}</p>
-                  </div>
-
-                  <div className="product-specs-grid">
-                    <div className="product-spec-card">
-                      <div className="product-spec-card__icon">
-                        <MapPin size={20} />
-                      </div>
-                      <div className="product-spec-card__details">
-                        <span className="product-spec-card__label">{t('products:catalog.labels.origin')}</span>
-                        <span className="product-spec-card__value">{selectedTrans.origin}</span>
-                      </div>
-                    </div>
-
-                    <div className="product-spec-card">
-                      <div className="product-spec-card__icon">
-                        <Calendar size={20} />
-                      </div>
-                      <div className="product-spec-card__details">
-                        <span className="product-spec-card__label">{t('products:catalog.labels.season')}</span>
-                        <span className="product-spec-card__value">{selectedTrans.season}</span>
-                      </div>
-                    </div>
-
-                    <div className="product-spec-card">
-                      <div className="product-spec-card__icon">
-                        <Package size={20} />
-                      </div>
-                      <div className="product-spec-card__details">
-                        <span className="product-spec-card__label">{t('products:catalog.labels.packaging')}</span>
-                        <span className="product-spec-card__value">{selectedTrans.packaging}</span>
-                      </div>
-                    </div>
-
-                    <div className="product-spec-card">
-                      <div className="product-spec-card__icon">
-                        <Clock size={20} />
-                      </div>
-                      <div className="product-spec-card__details">
-                        <span className="product-spec-card__label">{t('products:catalog.labels.shelfLife')}</span>
-                        <span className="product-spec-card__value">{selectedTrans.shelfLife}</span>
-                      </div>
-                    </div>
-
-                    {Array.isArray(selectedTrans.varieties) && selectedTrans.varieties.length > 0 && (
-                      <div className="product-spec-card product-spec-card--full">
-                        <div className="product-spec-card__icon">
-                          <Leaf size={20} />
-                        </div>
-                        <div className="product-spec-card__details">
-                          <span className="product-spec-card__label">{t('products:catalog.labels.producedVarieties')}</span>
-                          <span className="product-spec-card__value">{selectedTrans.varieties.join(', ')}</span>
-                        </div>
-                      </div>
-                    )}
-
-                    <div className="product-spec-card product-spec-card--full">
-                      <div className="product-spec-card__icon">
-                        <BadgeCheck size={20} />
-                      </div>
-                      <div className="product-spec-card__details">
-                        <span className="product-spec-card__label">{t('products:catalog.labels.brix')}</span>
-                        <span className="product-spec-card__value">{selectedTrans.brix}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="product-modal-perks">
-                    <div className="product-modal-perk">
-                      <CheckCircle size={14} className="text-xs" />
-                      <span>{t('products:catalog.perks.traceable')}</span>
-                    </div>
-                    <div className="product-modal-perk">
-                      <CheckCircle size={14} className="text-xs" />
-                      <span>{t('products:catalog.perks.coldChain')}</span>
-                    </div>
-                  </div>
-
-                  <div className="product-modal-actions">
-                    <Link
-                      to={getLocalePath(`/buyers?product=${selectedProduct.id}`, currentLang)}
-                      className="btn btn--primary product-modal-cta"
-                      onClick={() => setSelectedProduct(null)}
-                    >
-                      {t('products:catalog.labels.requestQuote')}
-                      <ArrowRight size={16} className="text-sm" />
-                    </Link>
-                    <button
-                      type="button"
-                      className="btn btn--outline product-modal-dismiss"
-                      onClick={() => setSelectedProduct(null)}
-                    >
-                      {t('common:buttons.close')}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-      })()}
 
       {/* ---- Harvest Calendar Table Section ---- */}
       <section className="products-calendar section" id="calendar">

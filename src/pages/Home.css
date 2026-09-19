@@ -1334,11 +1334,23 @@
   .home-resources-infra__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .home-resources-infra__grid > :nth-child(5) {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (min-width: 1100px) {
   .home-resources-infra__grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .home-resources-infra__grid > :nth-child(-n+3) {
+    grid-column: span 2;
+  }
+
+  .home-resources-infra__grid > :nth-child(n+4) {
+    grid-column: span 3;
   }
 }
 

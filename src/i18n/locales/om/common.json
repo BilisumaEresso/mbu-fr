@@ -234,6 +234,18 @@
         "Bu'uura Jallisii Cobxoo",
         "Oomisha Waggaa Guutuu"
       ]
+    },
+    "agriculturalMechanization": {
+      "name": "Makaanayizeeshinii Qonnaa fi Tiraaktaroota",
+      "tag": "Makaanayizeeshinii Qonnaa",
+      "stat": "Tiraaktaroota 12+",
+      "location": "Maqii, Baatuu fi Wiirtuulee Qonnaa",
+      "desc": "Tiraaktaroota ammayyaa fi meeshaalee qonnaa humna olaanaa qaban kan qoteebultoota miseensaatiif tajaajila qotinsaa fi qophii lafaa gatii madaalawaan dhiyeessan.",
+      "features": [
+        "Tajaajila Qotinsa Ammayyaa",
+        "Gatii Madaalawaa Miseensotaaf",
+        "Qophii Lafa Saffisaa"
+      ]
     }
   }
 }

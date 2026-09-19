@@ -12,9 +12,18 @@ import FacilityCard from '../components/common/FacilityCard.jsx'
 import aboutHeroImg from '../assets/images/heroes/aboutHero.webp'
 import aboutHero480 from '../assets/images/heroes/aboutHero-480w.webp'
 import aboutHero800 from '../assets/images/heroes/aboutHero-800w.webp'
+import charity1Img from '../assets/images/community/charity_1.webp'
+import charity1_480 from '../assets/images/community/charity_1-480w.webp'
+import charity1_800 from '../assets/images/community/charity_1-800w.webp'
+import charity2Img from '../assets/images/community/charity_2.webp'
+import charity2_480 from '../assets/images/community/charity_2-480w.webp'
+import charity2_800 from '../assets/images/community/charity_2-800w.webp'
+import charity3Img from '../assets/images/community/charity_3.webp'
+import charity3_480 from '../assets/images/community/charity_3-480w.webp'
+import charity3_800 from '../assets/images/community/charity_3-800w.webp'
 import { getTeamMembers } from '../data/team.js'
 import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
-import { History, CheckCircle, Download, Mail, FlaskConical, Droplet, Truck, PlaneTakeoff, BadgeCheck, ExternalLink, ChevronUp, ChevronDown, MapPin, Landmark } from 'lucide-react'
+import { History, CheckCircle, Download, Mail, FlaskConical, Droplet, Truck, PlaneTakeoff, BadgeCheck, ExternalLink, ChevronUp, ChevronDown, MapPin, Landmark, HeartHandshake, BookOpen, GraduationCap, Sparkles } from 'lucide-react'
 import './About.css'
 
 // Cap stagger at 450ms for card grids
@@ -335,7 +344,31 @@ function About() {
             </p>
           </div>
 
-          {/* Facilities 2x2 Showcase Grid */}
+          {/* Quick Infrastructure Scale Metrics Strip */}
+          <Reveal className="about-infrastructure__metrics">
+            <div className="about-infra-metric">
+              <span className="about-infra-metric__val">12+</span>
+              <span className="about-infra-metric__label">{isOm ? 'Tiraaktaroota Qonnaa' : 'Modern Farm Tractors'}</span>
+            </div>
+            <div className="about-infra-metric">
+              <span className="about-infra-metric__val">2,000 t</span>
+              <span className="about-infra-metric__label">{isOm ? 'Kuusaa Qabbanaawaa' : 'Cold Storage Capacity'}</span>
+            </div>
+            <div className="about-infra-metric">
+              <span className="about-infra-metric__val">50,000 t</span>
+              <span className="about-infra-metric__label">{isOm ? 'Saamsama Daldala Alaa' : 'Export Packhouse / Yr'}</span>
+            </div>
+            <div className="about-infra-metric">
+              <span className="about-infra-metric__val">18+</span>
+              <span className="about-infra-metric__label">{isOm ? 'Konkolaattota Geejjibaa' : 'Cold-Chain Transport'}</span>
+            </div>
+            <div className="about-infra-metric">
+              <span className="about-infra-metric__val">6,065 ha</span>
+              <span className="about-infra-metric__label">{isOm ? 'Lafa Jallisii Haroo' : 'Rift Valley Irrigation'}</span>
+            </div>
+          </Reveal>
+
+          {/* Facilities 5-Asset Showcase Grid */}
           <div className="about-infrastructure__grid">
             {resources.map((res, i) => (
               <Reveal key={res.id} delay={Math.min(i * 100, 300)} className="about-infra-card-wrap">
@@ -346,8 +379,119 @@ function About() {
         </div>
       </section>
 
+      {/* ---- Social Responsibility & Community Welfare ---- */}
+      <section className="about-community section section--alt" id="community">
+        <div className="container">
+          <div className="about-community__header text-center">
+            <span className="about-community__eyebrow-badge">
+              <HeartHandshake size={15} className="about-community__eyebrow-icon" />
+              <span>{t('about:community.eyebrow')}</span>
+            </span>
+            <h2 className="about-community__title">{t('about:community.title')}</h2>
+            <p className="about-community__subtitle">
+              {t('about:community.desc')}
+            </p>
+          </div>
+
+          {/* 3-Photo Interactive Impact Grid */}
+          <div className="about-community__grid">
+            {/* Card 1: Educational Sponsorship */}
+            <Reveal delay={0} className="about-community__card-wrap">
+              <div className="about-community__card">
+                <div className="about-community__img-wrap">
+                  <img
+                    src={charity1Img}
+                    srcSet={`${charity1_480} 480w, ${charity1_800} 800w, ${charity1Img} 1536w`}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    alt={t('about:community.cards.supplies.title')}
+                    className="about-community__img"
+                    loading="lazy"
+                  />
+                  <span className="about-community__card-badge">
+                    <BookOpen size={13} />
+                    <span>{t('about:community.cards.supplies.tag')}</span>
+                  </span>
+                </div>
+                <div className="about-community__card-body">
+                  <h3 className="about-community__card-title">{t('about:community.cards.supplies.title')}</h3>
+                  <p className="about-community__card-desc">{t('about:community.cards.supplies.desc')}</p>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Card 2: Rural Logistics Outreach */}
+            <Reveal delay={120} className="about-community__card-wrap">
+              <div className="about-community__card">
+                <div className="about-community__img-wrap">
+                  <img
+                    src={charity2Img}
+                    srcSet={`${charity2_480} 480w, ${charity2_800} 800w, ${charity2Img} 1536w`}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    alt={t('about:community.cards.logistics.title')}
+                    className="about-community__img"
+                    loading="lazy"
+                  />
+                  <span className="about-community__card-badge">
+                    <Sparkles size={13} />
+                    <span>{t('about:community.cards.logistics.tag')}</span>
+                  </span>
+                </div>
+                <div className="about-community__card-body">
+                  <h3 className="about-community__card-title">{t('about:community.cards.logistics.title')}</h3>
+                  <p className="about-community__card-desc">{t('about:community.cards.logistics.desc')}</p>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Card 3: Orphan & Vulnerable Children Care */}
+            <Reveal delay={240} className="about-community__card-wrap">
+              <div className="about-community__card">
+                <div className="about-community__img-wrap">
+                  <img
+                    src={charity3Img}
+                    srcSet={`${charity3_480} 480w, ${charity3_800} 800w, ${charity3Img} 1536w`}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    alt={t('about:community.cards.orphans.title')}
+                    className="about-community__img"
+                    loading="lazy"
+                  />
+                  <span className="about-community__card-badge">
+                    <GraduationCap size={13} />
+                    <span>{t('about:community.cards.orphans.tag')}</span>
+                  </span>
+                </div>
+                <div className="about-community__card-body">
+                  <h3 className="about-community__card-title">{t('about:community.cards.orphans.title')}</h3>
+                  <p className="about-community__card-desc">{t('about:community.cards.orphans.desc')}</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Cooperative Solidarity Callout Ribbon */}
+          <Reveal delay={150} className="about-community__banner-wrap">
+            <div className="about-community__banner">
+              <div className="about-community__banner-icon-box">
+                <HeartHandshake size={28} />
+              </div>
+              <div className="about-community__banner-content">
+                <span className="about-community__banner-badge">
+                  {t('about:community.principleBadge')}
+                </span>
+                <h4 className="about-community__banner-title">
+                  {t('about:community.banner.heading')}
+                </h4>
+                <p className="about-community__banner-text">
+                  {t('about:community.banner.text')}
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ---- Multi-Stakeholder Collaboration Ecosystem ---- */}
-      <section className="about-partners section section--alt" id="partners">
+      <section className="about-partners section" id="partners">
         <div className="container">
           <div className="about-partners__header text-center">
             <span className="label-caps label-caps--secondary mb-2 block">{t('about:partners.eyebrow')}</span>
