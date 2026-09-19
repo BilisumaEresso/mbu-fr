@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Waldaa kuduraa fi muduraa Itoophiyaa amanamaa bara 1994 irraa eegale.",
-    "desc": "Yuniyeeniin Maqii Baatuu waldaalee bu'uuraa 135 fi qonnaan bultoota miseensa 8,089 Oromiyaa, Itoophiyaa keessatti tokkoomsa. Oomishaalee qulqullina olaanaa qaban, kan waraqaa ragaa GlobalG.A.P qabanii fi sanyiilee eeyyamaman addunyaa guutuutti dhiyeessina.",
+    "desc": "Yuniyeeniin Maqii Baatuu waldaalee bu'uuraa 136 fi qonnaan bultoota miseensa 8,471 Oromiyaa, Itoophiyaa keessatti tokkoomsa. Oomishaalee qulqullina olaanaa qaban, kan waraqaa ragaa GlobalG.A.P qabanii fi sanyiilee eeyyamaman addunyaa guutuutti dhiyeessina.",
     "ctaProducts": "Oomishaalee Keenya Ilaali",
     "ctaAbout": "Moodeela WHG Keenya",
     "stats": {
@@ -57,7 +57,7 @@
     "badge": "Walqabannoo Dhiyeessii Guutuu",
     "badgeFlow": "Tamsaasa Maasiirraa Gabaatti",
     "title": "Qonna Sulula Qiinxamaarraa Hanga Addunyaatti",
-    "desc": "Tamsaasa qabbaneessaa sadarkaa 4 kan waldaalee 135 fayyadamtoota biyyaa fi addunyaatti quunnamsiisu.",
+    "desc": "Tamsaasa qabbaneessaa sadarkaa 4 kan waldaalee 136 fayyadamtoota biyyaa fi addunyaatti quunnamsiisu.",
     "buyersLink": "Akka bittaatti oomisha keenya akkamitti akka argattu bari",
     "ariaLabel": "Adeemsa Sinsilata Dhiyeessii",
     "swipeHint": "Tamsaasa sadarkaa 4 daawwachuuf harka oofi",
@@ -68,11 +68,11 @@
         "location": "Waldaalee Bu'uuraa",
         "icon": "verified",
         "title": "Oomisha Sassaabuu fi Sadarkeessuu",
-        "tag": "Waldaalee 135",
+        "tag": "Waldaalee 136",
         "description": "Oomishni waldaalee irraa dhufee yeruma sana sakatta'amee, filatamee gabaa biyyaa fi ergaa alaaf sadarkeessama.",
-        "highlights": ["Qoteebultoota 8,089", "Sadarkeessuu marsaa adda addaa"],
+        "highlights": ["Qoteebultoota 8,471", "Sadarkeessuu marsaa adda addaa"],
         "stat": {
-          "value": "135",
+          "value": "136",
           "label": "Waldaalee Bu'uuraa"
         }
       },
@@ -89,7 +89,7 @@
           "Hordoffii oomishaa maasiirraa"
         ],
         "stat": {
-          "value": "5,910 ha",
+          "value": "6,065 ha",
           "label": "Lafa Jallisii"
         }
       },
@@ -139,7 +139,7 @@
         "name": "Kuusaa Qabbaneessaa",
         "stat": "Toonii 2,000",
         "location": "Wiirtuu Maqii",
-        "desc": "Kuusaa qabbaneessaa to'annoo ho'aa qaban kan waldaalee 135 tajaajilu."
+        "desc": "Kuusaa qabbaneessaa to'annoo ho'aa qaban kan waldaalee 136 tajaajilu."
       },
       "refrigeratedFleet": {
         "name": "Geejjiba Qabbanaawaa",
@@ -155,7 +155,7 @@
       },
       "irrigation": {
         "name": "Jallisii Haroo Dambal",
-        "stat": "Hektaara 5,910",
+        "stat": "Hektaara 6,065",
         "location": "Sulula Haroo Dambal",
         "desc": "Paampii elektiriikii fi jallisii cobxoo ammayyaa oomisha waggaa guutuu dandeessisu."
       }
@@ -180,7 +180,7 @@
     "farmers": {
       "tag": "Oomishtootaaf",
       "title": "Qoteebulaa ykn waldaa bu'uuraati?",
-      "desc": "Sanyii filatamaa, tiraaktara, aango daldalaa, fi gabaa amanamaa argachuuf waldaalee 135tti makami.",
+      "desc": "Sanyii filatamaa, tiraaktara, aango daldalaa, fi gabaa amanamaa argachuuf waldaalee 136tti makami.",
       "link": "Waa'ee miseensummaa fi faayidaa bari"
     },
     "buyers": {
@@ -259,7 +259,7 @@
   "leadership": {
     "tag": "Geggeessummaa Dimokraatawaa",
     "title": "Hooggansa Olaanaa fi Bulchiinsa",
-    "desc": "Daarektarootni fi hooggantootni kutaalee waldaalee 135 fi qoteebultoota 8,089 gara milkaa'ina gabaatti fi dhiyeessii ergaa alaatti qajeelchan.",
+    "desc": "Daarektarootni fi hooggantootni kutaalee waldaalee 136 fi qoteebultoota 8,471 gara milkaa'ina gabaatti fi dhiyeessii ergaa alaatti qajeelchan.",
     "viewGovernance": "Caasaa Bulchiinsaa Guutuu Ilaali",
     "emailAria": "Imeelii {{name}} gara ergi",
     "emailTitle": "Imeelii {{name}}: {{email}}",

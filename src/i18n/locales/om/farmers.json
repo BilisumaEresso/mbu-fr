@@ -1,8 +1,8 @@
 {
   "hero": {
     "title": "Tokkummaan nu cimsa. Egeree qonna Itoophiyaa guddisuuf.",
-    "desc": "Yuniyeenii Maqii Baatuu waldaalee bu'uuraa 135 keessatti qonnaan bultoota miseensa 8,089 sanyii filatamaa, tajaajila tiraaktaraa ammayyaa, liqii haqa-qabeessaa, fi gabaa oomishaa mirkanaa'e dhiyeessa.",
-    "badge": "Waldaalee Bu'uuraa 135",
+    "desc": "Yuniyeenii Maqii Baatuu waldaalee bu'uuraa 136 keessatti qonnaan bultoota miseensa 8,471 sanyii filatamaa, tajaajila tiraaktaraa ammayyaa, liqii haqa-qabeessaa, fi gabaa oomishaa mirkanaa'e dhiyeessa.",
+    "badge": "Waldaalee Bu'uuraa 136",
     "viewBenefits": "Tajaajila Miseensaa Ilaali",
     "joinCoop": "Adeemsa Makamuu",
     "imageAlt": "Qonnaan bultoota Itoophiyaa mana kuusaa oomishaa qonnaa ogummaa keessatti"
@@ -41,7 +41,7 @@
   "steps": {
     "tag": "Tarkaanfiiwwan",
     "title": "Akkaataa Yuniyeenii Maqii Baatuutti Galmaa'an",
-    "desc": "Shawaa Bahaa fi Arsiitti hidhata waldaalee 135 keenyatti makamaa.",
+    "desc": "Shawaa Bahaa fi Arsiitti hidhata waldaalee 136 keenyatti makamaa.",
     "step1": {
       "number": "01",
       "title": "Waldaa Bu'uuraa Galmeessi",
@@ -78,7 +78,7 @@
       },
       {
         "question": "Yuuniyeenicha keessa waldaaleen fi qonnaan bultoonni meeqa jiru?",
-        "answer": "Yuniyeenii Maqii Baatuu lafa hektaara 5,910 irratti waldaalee bu'uuraa 135 fi maatiiwwan qonnaan bulaa miseensa 8,089 tokkoomsa."
+        "answer": "Yuniyeenii Maqii Baatuu lafa hektaara 6,065.25 irratti waldaalee bu'uuraa 136 fi maatiiwwan qonnaan bulaa miseensa 8,471 tokkoomsa."
       },
       {
         "question": "Ulaagaaleen seensa miseensummaa maali?",

@@ -17,6 +17,27 @@ import ehpeaLogo from '../assets/images/partners/ehpea.webp'
 import ocaLogo from '../assets/images/partners/oca.webp'
 import arsiUniLogo from '../assets/images/partners/arsi_university.webp'
 
+// New Partner Logo Imports
+import oacfLogo from '../assets/images/partners/OACF.jpg'
+import osuLogo from '../assets/images/partners/OSU.jpg'
+import amboUniLogo from '../assets/images/partners/ambo_univerity.jpg'
+import astuLogo from '../assets/images/partners/ASTU.png'
+import edbcLogo from '../assets/images/partners/EDBC.jpg'
+import opcLogo from '../assets/images/partners/OPC.jpg'
+import skylightLogo from '../assets/images/partners/skylight.jpg'
+import siinqeeLogo from '../assets/images/partners/siinqee_bank.jpg'
+import oromiaBankLogo from '../assets/images/partners/oromia_bank.jpg'
+import oromiaInsuranceLogo from '../assets/images/partners/oromia_insurance_bank.jpg'
+import oromiaIaipLogo from '../assets/images/partners/oromia_industrial_park.jpg'
+import awashLogo from '../assets/images/partners/awash.png'
+import gedaLogo from '../assets/images/partners/geda_bank.png'
+import wegagenLogo from '../assets/images/partners/wegagen_bank.png'
+import biirooDaldalaaLogo from '../assets/images/partners/biiroo_daldalaa_oromiyaa.jpg'
+import bopIncLogo from '../assets/images/partners/bob_inc.png'
+import twoScaleLogo from '../assets/images/partners/2-scale.jpg'
+import cimmytLogo from '../assets/images/partners/CIMMYT.jpg'
+import cfcLogo from '../assets/images/partners/CFC.avif'
+
 import {
   HeartHandshake,
   Building2,
@@ -37,6 +58,11 @@ import {
   CreditCard,
   Store,
   Gavel,
+  Hotel,
+  Shield,
+  Briefcase,
+  TrendingUp,
+  Award,
 } from 'lucide-react'
 
 export const PARTNER_CATEGORIES = {
@@ -170,6 +196,61 @@ export const partners = [
     logo: ehpeaLogo,
     featuredHome: false,
   },
+  {
+    id: 'oacf',
+    name: 'Oromia Agricultural Cooperative Federation',
+    acronym: 'OACF',
+    category: PARTNER_CATEGORIES.DEVELOPMENT,
+    tag: 'Development Partner',
+    role: 'Apex regional cooperative federation advancing agricultural union capacity, market advocacy, and member farmer empowerment.',
+    icon: Award,
+    logo: oacfLogo,
+    featuredHome: true,
+  },
+  {
+    id: 'two-scale',
+    name: '2SCALE Agribusiness Program',
+    acronym: '2SCALE',
+    category: PARTNER_CATEGORIES.DEVELOPMENT,
+    tag: 'Development Partner',
+    role: 'Major incubator program fostering inclusive agribusiness clusters, farmer business school linkages, and commercial contracts.',
+    icon: TrendingUp,
+    logo: twoScaleLogo,
+    featuredHome: false,
+  },
+  {
+    id: 'bop-inc',
+    name: 'BoP Innovation Center (Bopinc)',
+    acronym: 'Bopinc',
+    category: PARTNER_CATEGORIES.DEVELOPMENT,
+    tag: 'Development Partner',
+    role: 'International accelerator creating inclusive business models and sustainable value chain distribution for smallholder farmers.',
+    icon: Leaf,
+    logo: bopIncLogo,
+    featuredHome: false,
+  },
+  {
+    id: 'cfc',
+    name: 'Common Fund for Commodities',
+    acronym: 'CFC',
+    category: PARTNER_CATEGORIES.DEVELOPMENT,
+    tag: 'Development Partner',
+    role: 'Intergovernmental financial institution funding commodity value chain development and smallholder socio-economic resilience.',
+    icon: Landmark,
+    logo: cfcLogo,
+    featuredHome: false,
+  },
+  {
+    id: 'oromia-iaip',
+    name: 'Oromia Integrated Agro-Industrial Parks (Bulbul IAIP)',
+    acronym: 'Oromia IAIP',
+    category: PARTNER_CATEGORIES.DEVELOPMENT,
+    tag: 'Industry Partner',
+    role: 'Regional agro-industrial processing transformation center connecting cooperative harvests with large-scale processing facilities.',
+    icon: Factory,
+    logo: oromiaIaipLogo,
+    featuredHome: true,
+  },
 
   /* ── 2. Research & Innovation Centers ── */
   {
@@ -194,6 +275,50 @@ export const partners = [
     logo: atarcLogo,
     featuredHome: false,
   },
+  {
+    id: 'astu',
+    name: 'Adama Science and Technology University',
+    acronym: 'ASTU',
+    category: PARTNER_CATEGORIES.RESEARCH,
+    tag: 'Research Partner',
+    role: 'Center of excellence collaborating on agro-processing technologies, mechanization innovation, and digital agriculture.',
+    icon: GraduationCap,
+    logo: astuLogo,
+    featuredHome: true,
+  },
+  {
+    id: 'ambo-university',
+    name: 'Ambo University',
+    acronym: 'AU',
+    category: PARTNER_CATEGORIES.RESEARCH,
+    tag: 'Research Partner',
+    role: 'Pioneering agricultural academy collaborating on agronomic research, seed multiplication trials, and institutional fresh food off-taking.',
+    icon: GraduationCap,
+    logo: amboUniLogo,
+    featuredHome: false,
+  },
+  {
+    id: 'oromia-state-university',
+    name: 'Oromia State University',
+    acronym: 'OSU',
+    category: PARTNER_CATEGORIES.RESEARCH,
+    tag: 'Research Partner',
+    role: 'Higher educational institution partnering in cooperative leadership capacity development, governance studies, and public policy research.',
+    icon: GraduationCap,
+    logo: osuLogo,
+    featuredHome: false,
+  },
+  {
+    id: 'cimmyt',
+    name: 'International Maize and Wheat Improvement Center',
+    acronym: 'CIMMYT',
+    category: PARTNER_CATEGORIES.RESEARCH,
+    tag: 'Research Partner',
+    role: 'Global agricultural science organization advancing climate-resilient cropping systems, sustainable intensification, and seed development.',
+    icon: Sprout,
+    logo: cimmytLogo,
+    featuredHome: true,
+  },
 
   /* ── 3. Commercial, Financial & Off-Takers ── */
   {
@@ -208,14 +333,47 @@ export const partners = [
     featuredHome: true,
   },
   {
+    id: 'skylight-hotel',
+    name: 'Ethiopian Skylight Hotel',
+    acronym: 'Skylight Hotel',
+    category: PARTNER_CATEGORIES.FINANCE_MARKETS,
+    tag: 'Off-Taker',
+    role: "Africa's leading 5-star hotel and commercial off-taker sourcing premium GlobalG.A.P certified fresh table produce.",
+    icon: Hotel,
+    logo: skylightLogo,
+    featuredHome: true,
+  },
+  {
     id: 'arsi-university',
     name: 'Arsi University',
-    acronym: 'AU',
+    acronym: 'Arsi Uni',
     category: PARTNER_CATEGORIES.FINANCE_MARKETS,
     tag: 'Off-Taker',
     role: 'Regional university and institutional off-taker for fresh produce supply.',
     icon: GraduationCap,
     logo: arsiUniLogo,
+    featuredHome: false,
+  },
+  {
+    id: 'edbc',
+    name: 'Ethiopian Defence Business College',
+    acronym: 'EDBC',
+    category: PARTNER_CATEGORIES.FINANCE_MARKETS,
+    tag: 'Off-Taker',
+    role: 'Federal defense academic institution serving as a major institutional off-taker for fresh food and cooperative supplies.',
+    icon: Shield,
+    logo: edbcLogo,
+    featuredHome: false,
+  },
+  {
+    id: 'opc',
+    name: 'Oromia Police College',
+    acronym: 'OPC',
+    category: PARTNER_CATEGORIES.FINANCE_MARKETS,
+    tag: 'Off-Taker',
+    role: 'Regional police academy and high-volume institutional food services off-taker for fresh vegetables and staple grains.',
+    icon: ShieldCheck,
+    logo: opcLogo,
     featuredHome: false,
   },
   {
@@ -227,7 +385,7 @@ export const partners = [
     role: 'Commercial banking partner providing cooperative financial services.',
     icon: Landmark,
     logo: coopbankLogo,
-    featuredHome: false,
+    featuredHome: true,
   },
   {
     id: 'cbe',
@@ -238,6 +396,72 @@ export const partners = [
     role: 'Commercial banking and financial services partner.',
     icon: CreditCard,
     logo: cbeLogo,
+    featuredHome: true,
+  },
+  {
+    id: 'awash-bank',
+    name: 'Awash Bank',
+    acronym: 'Awash Bank',
+    category: PARTNER_CATEGORIES.FINANCE_MARKETS,
+    tag: 'Financial Partner',
+    role: "Ethiopia's premier private commercial bank providing trade finance, export financing, and agricultural working capital.",
+    icon: Landmark,
+    logo: awashLogo,
+    featuredHome: true,
+  },
+  {
+    id: 'siinqee-bank',
+    name: 'Siinqee Bank',
+    acronym: 'Siinqee Bank',
+    category: PARTNER_CATEGORIES.FINANCE_MARKETS,
+    tag: 'Financial Partner',
+    role: 'Major inclusive commercial bank delivering seasonal input credit, micro-loans, and dedicated cooperative financing.',
+    icon: Landmark,
+    logo: siinqeeLogo,
+    featuredHome: true,
+  },
+  {
+    id: 'oromia-bank',
+    name: 'Oromia Bank',
+    acronym: 'Oromia Bank',
+    category: PARTNER_CATEGORIES.FINANCE_MARKETS,
+    tag: 'Financial Partner',
+    role: 'Leading commercial bank facilitating export credit letters, merchant payments, and agribusiness development loans.',
+    icon: Landmark,
+    logo: oromiaBankLogo,
+    featuredHome: false,
+  },
+  {
+    id: 'oromia-insurance',
+    name: 'Oromia Insurance Company',
+    acronym: 'OIC',
+    category: PARTNER_CATEGORIES.FINANCE_MARKETS,
+    tag: 'Financial Partner',
+    role: 'Pioneering insurer providing index-based weather crop insurance, asset protection, and farm risk management packages.',
+    icon: Briefcase,
+    logo: oromiaInsuranceLogo,
+    featuredHome: false,
+  },
+  {
+    id: 'geda-bank',
+    name: 'Gadaa Bank',
+    acronym: 'Gadaa Bank',
+    category: PARTNER_CATEGORIES.FINANCE_MARKETS,
+    tag: 'Financial Partner',
+    role: 'Community-oriented commercial bank offering tailored agribusiness loans, rural savings solutions, and trade financing.',
+    icon: Landmark,
+    logo: gedaLogo,
+    featuredHome: false,
+  },
+  {
+    id: 'wegagen-bank',
+    name: 'Wegagen Bank',
+    acronym: 'Wegagen Bank',
+    category: PARTNER_CATEGORIES.FINANCE_MARKETS,
+    tag: 'Financial Partner',
+    role: 'Experienced commercial bank providing structured trade finance, working capital loans, and wholesale cooperative banking.',
+    icon: CreditCard,
+    logo: wegagenLogo,
     featuredHome: false,
   },
   {
@@ -265,6 +489,17 @@ export const partners = [
     featuredHome: false,
   },
   {
+    id: 'oromia-biiroo-daldalaa',
+    name: 'Oromia Bureau of Trade & Market Development',
+    acronym: 'Biiroo Daldalaa',
+    category: PARTNER_CATEGORIES.GOVERNMENT,
+    tag: 'Government Bureau',
+    role: 'Regional government bureau overseeing agricultural marketing frameworks, fair market regulation, and commodity distribution.',
+    icon: ShieldCheck,
+    logo: biirooDaldalaaLogo,
+    featuredHome: false,
+  },
+  {
     id: 'oromia-agri-bureau',
     name: 'Oromia Bureau of Agriculture & Natural Resource',
     acronym: 'OBANR',
@@ -274,5 +509,35 @@ export const partners = [
     icon: ShieldCheck,
     logo: null,
     featuredHome: false,
+  },
+]
+
+/* ── 5. Local Civic Administrations (Featured Separately at Bottom) ── */
+export const localAdministrations = [
+  {
+    id: 'meki-town-administration',
+    name: 'Meki Town Administration',
+    nameOm: 'Bulchiinsa Magaalaa Maqii',
+    acronym: 'Meki Town',
+    role: 'Founding municipal host partner collaborating on urban agro-logistics, union operational headquarters, land stewardship, and local community development.',
+    roleOm: "Bulchiinsa magaalaa hundeeffama yuniyeenichaa kan loojistiiksii oomishaa, waajjira muummichaa, fi misooma hawaasummaa irratti qindoominaan hojjetu.",
+    location: 'East Shewa Zone, Oromia',
+    locationOm: 'Godina Shawaa Bahaa, Oromiyaa',
+    icon: Landmark,
+    badge: 'Municipal Host',
+    badgeOm: 'Magaalaa Hundeeffamaa',
+  },
+  {
+    id: 'batu-town-administration',
+    name: 'Batu Town Administration (Ziway)',
+    nameOm: 'Bulchiinsa Magaalaa Baatuu (Zeway)',
+    acronym: 'Batu Town',
+    role: 'Strategic municipal partner across the Dembal Lake basin collaborating on watershed preservation, local market hubs, cold transit routes, and civic partnerships.',
+    roleOm: 'Bulchiinsa magaalaa naannoo Haroo Dambal kan eegumsa bishaanii, wiirtuuwwan gabaa, sarara geejjiba qabbanaawaa fi tumsa hawaasaarratti hojjetu.',
+    location: 'East Shewa Zone, Oromia',
+    locationOm: 'Godina Shawaa Bahaa, Oromiyaa',
+    icon: Building2,
+    badge: 'Basin Partner',
+    badgeOm: 'Michuu Haroo Dambal',
   },
 ]

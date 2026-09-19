@@ -114,7 +114,7 @@
   "whereWeOperate": {
     "region": "Naannoo Keenya",
     "title": "Bakka Nuti Itti Hojjannu",
-    "desc": "Waldaaleen keenya aanoolee ja'a Godina Shawaa Bahaa fi Arsii keessatti oomishu: Dugdaa, Adaamii Tulluu, Booraa, Zeway Dugdaa, Adaamaa fi Doodota Siree. Haroo Dambalitti eegalee, amma qoteebultoota 8,089 deeggara.",
+    "desc": "Waldaaleen keenya aanoolee ja'a Godina Shawaa Bahaa fi Arsii keessatti oomishu: Dugdaa, Adaamii Tulluu, Booraa, Zeway Dugdaa, Adaamaa fi Doodota Siree. Haroo Dambalitti eegalee, amma qoteebultoota 8,471 deeggara.",
     "mapTitle": "Bakka Yuniyeenii Maqii Baatuu, Maqii, Shawaa Bahaa, Oromiyaa",
     "districts": {
       "dugda": "Aanaa Dugdaa",
@@ -192,7 +192,7 @@
       "tag": "Wiirtuu Kuusaa",
       "stat": "Toonii 2,000",
       "location": "Wiirtuu Maqii",
-      "desc": "Kuusaa qabbaneessaa to'annoo ho'aa qaban kan waldaalee 135 tajaajilu.",
+      "desc": "Kuusaa qabbaneessaa to'annoo ho'aa qaban kan waldaalee 136 tajaajilu.",
       "features": [
         "Kutaa Qabbanaawaa",
         "Humna Elektiriikii Dabalataa",
@@ -226,7 +226,7 @@
     "irrigationSchemes": {
       "name": "Jallisii Haroo Dambal",
       "tag": "Bishaan fi Jallisii",
-      "stat": "Hektaara 5,910",
+      "stat": "Hektaara 6,065",
       "location": "Sulula Haroo Dambal",
       "desc": "Paampii elektiriikii fi jallisii cobxoo ammayyaa oomisha waggaa guutuu dandeessisu.",
       "features": [

@@ -199,8 +199,8 @@ function Home() {
   const [showStoryModal, setShowStoryModal] = useState(false)
 
   const stats = [
-    { value: '135', label: t('home:hero.stats.coops', 'Primary Co-ops') },
-    { value: '8,089', label: t('home:hero.stats.farmers', 'Member Farmers') },
+    { value: '136', label: t('home:hero.stats.coops', 'Primary Co-ops') },
+    { value: '8,471', label: t('home:hero.stats.farmers', 'Member Farmers') },
     { value: '50k+', label: t('impact:metrics.stats.volume', 'Annual Produce Volume') },
     { value: '5', label: t('common:header.nav.retailOutlets', 'Retail Outlets') },
   ]

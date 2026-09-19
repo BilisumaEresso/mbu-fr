@@ -2,7 +2,7 @@
   "hero": {
     "eyebrow": "Bara 1994 irraa eegalee • Muuxannoo Waggaa 20 ol",
     "title": "Cimina Tokkummaa Waldaatiin Guddina Fiduu",
-    "desc": "Yuniyeeniin Maqii Baatuu agarsiistuu cimina qonna gamtaa Itoophiyaa ti. Waldaalee bu'uuraa 135 fi qoteebultoota 8,089 tokkoomsuun daldala haqa-qabeessa, hojimaata itti-fufiinsa qabuu fi oomisha qulqullina olaanaa gabaa biyya keessaa fi addunyaatiif dhiyeessina.",
+    "desc": "Yuniyeeniin Maqii Baatuu agarsiistuu cimina qonna gamtaa Itoophiyaa ti. Waldaalee bu'uuraa 136 fi qoteebultoota 8,471 tokkoomsuun daldala haqa-qabeessa, hojimaata itti-fufiinsa qabuu fi oomisha qulqullina olaanaa gabaa biyya keessaa fi addunyaatiif dhiyeessina.",
     "badge": "Maqii, Oromiyaa • Hundeeffama 1994",
     "imageAlt": "Lafa qonnaa Itoophiyaa gabbataa barii"
   },
@@ -16,12 +16,12 @@
     "item2": {
       "date": "Marsaa Guddinaa",
       "heading": "Babal'ina Naannoo",
-      "text": "Godinaalee Shawaa Bahaa fi Arsiitti aanoolee ja'a keessatti babal'atee, lafa hektaara 5,910 irratti jallisii diriirse."
+      "text": "Godinaalee Shawaa Bahaa fi Arsiitti aanoolee ja'a keessatti babal'atee, lafa hektaara 6,065.25 irratti jallisii diriirse."
     },
     "item3": {
       "date": "Bara Ammaa",
-      "heading": "Waldaalee 135 fi Q/Bultoota 8,089",
-      "text": "Har'a waldaalee 135 fi qoteebultoota 8,089 kaappitaala qarshii mil 154.2n socho'a, oomisha gabaaf dhiyeessa."
+      "heading": "Waldaalee 136 fi Q/Bultoota 8,471",
+      "text": "Har'a waldaalee 136 fi qoteebultoota 8,471 kaappitaala qarshii mil 154.2n socho'a, oomisha gabaaf dhiyeessa."
     }
   },
   "missionVision": {
@@ -68,7 +68,7 @@
     "ariaLabel": "Qabeenya Hojii fi Bu'uuraalee Yuniyeenii",
     "badge": "Bu'uuraalee Misoomaa fi Qabeenya",
     "title": "Qabeenya Hojii",
-    "desc": "Utubaa loojistiiksii waldaalee 135 humneessu, kuusaa qabbaneessaa toonii 2,000, geejjiba qabbanaawaa hanga wiirtuu sanyiitti.",
+    "desc": "Utubaa loojistiiksii waldaalee 136 humneessu, kuusaa qabbaneessaa toonii 2,000, geejjiba qabbanaawaa hanga wiirtuu sanyiitti.",
     "filterAriaLabel": "Qabeenya ramaddiin calali"
   },
   "resourceModal": {
@@ -131,6 +131,9 @@
     },
     "logoAlt": "Loogoo {{name}}",
     "visitTitle": "Marsariitii {{name}} daawwadhu",
-    "officialWebsite": "Marsariitii Ofiisaa"
+    "officialWebsite": "Marsariitii Ofiisaa",
+    "civicEyebrow": "Bulchiinsa Naannoo fi Magaalota Hundeeffamaa",
+    "civicTitle": "Bulchiinsa Magaalota Naannoo",
+    "civicDesc": "Michuuwwan mootummaa naannoo kanneen bu'uuraalee qonnaa, wiirtuuwwan oomishaa, eegumsa bishaanii Haroo Dambal fi badhaadhina hawaasaarratti qindoominaan hojjetan."
   }
 }

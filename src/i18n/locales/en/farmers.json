@@ -1,8 +1,8 @@
 {
   "hero": {
     "title": "Stronger together. Growing the future of Ethiopian farming.",
-    "desc": "Meki Batu Union provides 8,089 member farmers across 135 primary cooperatives with certified seeds, modern tractor mechanization, fair credit access, and guaranteed market off-take.",
-    "badge": "135 Primary Cooperatives",
+    "desc": "Meki Batu Union provides 8,471 member farmers across 136 primary cooperatives with certified seeds, modern tractor mechanization, fair credit access, and guaranteed market off-take.",
+    "badge": "136 Primary Cooperatives",
     "viewBenefits": "Explore Member Services",
     "joinCoop": "Affiliation Process",
     "imageAlt": "Ethiopian farmers in a professional agricultural packhouse"
@@ -41,7 +41,7 @@
   "steps": {
     "tag": "Step-by-Step Pathway",
     "title": "How to Affiliate with Meki Batu Union",
-    "desc": "Join our expanding network of 135 primary cooperatives in East Shewa and Arsi zones.",
+    "desc": "Join our expanding network of 136 primary cooperatives in East Shewa and Arsi zones.",
     "step1": {
       "number": "01",
       "title": "Register Primary Cooperative",
@@ -78,7 +78,7 @@
       },
       {
         "question": "How many cooperatives and farmers are in the union?",
-        "answer": "Meki Batu Union unites 135 primary cooperatives representing 8,089 member farming households across 5,910 hectares."
+        "answer": "Meki Batu Union unites 136 primary cooperatives representing 8,471 member farming households across 6,065.25 hectares."
       },
       {
         "question": "What are the membership affiliation terms?",

@@ -114,7 +114,7 @@
   "whereWeOperate": {
     "region": "Our Region",
     "title": "Where We Operate",
-    "desc": "Our member cooperatives farm across six districts in East Shewa and Arsi zones: Dugda woreda, Adami Tulu Jido Kombolcha, Bora, Zuway Dugda, Adama, and Dodota Sire. Originally founded around Dembal Lake (Lake Ziway) across Dugda and Adami Tulu, the union has expanded to support 8,089 member farmers across all six woredas.",
+    "desc": "Our member cooperatives farm across six districts in East Shewa and Arsi zones: Dugda woreda, Adami Tulu Jido Kombolcha, Bora, Zuway Dugda, Adama, and Dodota Sire. Originally founded around Dembal Lake (Lake Ziway) across Dugda and Adami Tulu, the union has expanded to support 8,471 member farmers across all six woredas.",
     "mapTitle": "Meki Batu Union location: Meki Town, East Shewa Zone, Oromia, Ethiopia",
     "districts": {
       "dugda": "Dugda Woreda",
@@ -192,7 +192,7 @@
       "tag": "Storage Hub",
       "stat": "2,000 Tonnes",
       "location": "Meki Hub",
-      "desc": "Multi-chamber temperature-controlled cold rooms and warehouses serving 135 cooperatives.",
+      "desc": "Multi-chamber temperature-controlled cold rooms and warehouses serving 136 cooperatives.",
       "features": [
         "Multi-Chamber Cold Rooms",
         "Backup Power Supply",
@@ -226,7 +226,7 @@
     "irrigationSchemes": {
       "name": "Lake Ziway Irrigation Schemes",
       "tag": "Water & Irrigation",
-      "stat": "5,910 Hectares",
+      "stat": "6,065 Hectares",
       "location": "Dembal Lake Basin",
       "desc": "River-fed electric pumping stations and modern drip systems powering year-round cultivation.",
       "features": [

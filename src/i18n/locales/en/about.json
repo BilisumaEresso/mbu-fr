@@ -2,7 +2,7 @@
   "hero": {
     "eyebrow": "Since 2002 • 20+ Years of Experience",
     "title": "Cultivating Progress Through Cooperative Strength",
-    "desc": "Meki Batu Union stands as a testament to the power of collective farming in Ethiopia. We unite 135 primary cooperatives and 8,089 member farmers to ensure fair trade, sustainable practices, and premium quality produce for domestic and global markets.",
+    "desc": "Meki Batu Union stands as a testament to the power of collective farming in Ethiopia. We unite 136 primary cooperatives and 8,471 member farmers to ensure fair trade, sustainable practices, and premium quality produce for domestic and global markets.",
     "badge": "Meki, Oromia • Est. 2002",
     "imageAlt": "Fertile Ethiopian agricultural land during golden hour"
   },
@@ -16,12 +16,12 @@
     "item2": {
       "date": "Growth Phase",
       "heading": "Regional Expansion",
-      "text": "Expanded across six Rift Valley districts in East Shewa and Arsi zones, scaling modern irrigation infrastructure across 5,910 hectares of fertile farmland."
+      "text": "Expanded across six Rift Valley districts in East Shewa and Arsi zones, scaling modern irrigation infrastructure across 6,065.25 hectares of fertile farmland."
     },
     "item3": {
       "date": "Present Day",
-      "heading": "135 Co-ops & 8,089 Farmers",
-      "text": "Today uniting 135 cooperatives and 8,089 farmers with 154.2 million ETB in union capital, delivering reliable, certified produce across domestic and global markets."
+      "heading": "136 Co-ops & 8,471 Farmers",
+      "text": "Today uniting 136 cooperatives and 8,471 farmers with 154.2 million ETB in union capital, delivering reliable, certified produce across domestic and global markets."
     }
   },
   "missionVision": {
@@ -68,7 +68,7 @@
     "ariaLabel": "Union Operational Resources and Infrastructure",
     "badge": "Physical Infrastructure & Assets",
     "title": "Operational Resources",
-    "desc": "The logistical and technical backbone powering our 135 member cooperatives, from 2,000-tonne cold storage and refrigerated transport fleets to seed conditioning plants and lake pumping stations.",
+    "desc": "The logistical and technical backbone powering our 136 member cooperatives, from 2,000-tonne cold storage and refrigerated transport fleets to seed conditioning plants and lake pumping stations.",
     "filterAriaLabel": "Filter resources by category"
   },
   "resourceModal": {
@@ -131,6 +131,9 @@
     },
     "logoAlt": "{{name}} logo",
     "visitTitle": "Visit {{name}} website",
-    "officialWebsite": "Official Website"
+    "officialWebsite": "Official Website",
+    "civicEyebrow": "Local Governance & Host Towns",
+    "civicTitle": "Local Town Administrations",
+    "civicDesc": "Strategic municipal government partners fostering agro-infrastructure, municipal processing centers, watershed protection, and community welfare across the Dembal Lake basin."
   }
 }

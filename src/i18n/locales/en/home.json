@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Trusted Ethiopian fruit & vegetable cooperative since 2002.",
-    "desc": "Meki Batu Union unites 135 primary cooperatives and 8,089 member farmers in Oromia, Ethiopia. We cultivate and distribute premium, GlobalG.A.P certified fresh produce and licensed seeds worldwide.",
+    "desc": "Meki Batu Union unites 136 primary cooperatives and 8,471 member farmers in Oromia, Ethiopia. We cultivate and distribute premium, GlobalG.A.P certified fresh produce and licensed seeds worldwide.",
     "ctaProducts": "Explore Our Products",
     "ctaAbout": "Our Cooperative Model",
     "stats": {
@@ -39,7 +39,7 @@
     "badge": "End-to-End Supply Chain",
     "badgeFlow": "Farm to Market Flow",
     "title": "From Rift Valley Farms to Global Tables",
-    "desc": "A fully traceable 4-stage cold chain connecting 135 primary cooperatives to domestic consumers and international buyers.",
+    "desc": "A fully traceable 4-stage cold chain connecting 136 primary cooperatives to domestic consumers and international buyers.",
     "buyersLink": "Learn how to source our produce as a buyer",
     "ariaLabel": "Supply Chain Process",
     "swipeHint": "Swipe to explore 4-stage pipeline",
@@ -50,13 +50,13 @@
         "location": "Primary Co-ops",
         "icon": "verified",
         "title": "Intake & Calibration",
-        "tag": "135 Primary Co-ops",
-        "description": "Harvested produce arrives from 135 member cooperatives and is immediately inspected, sorted, and calibrated into export and domestic grades.",
+        "tag": "136 Primary Co-ops",
+        "description": "Harvested produce arrives from 136 member cooperatives and is immediately inspected, sorted, and calibrated into export and domestic grades.",
         "highlights": [
-          "8,089 Member Farmers",
+          "8,471 Member Farmers",
           "Multi-tier size & grade calibration"
         ],
-        "stat": { "value": "135", "label": "Primary Co-ops" }
+        "stat": { "value": "136", "label": "Primary Co-ops" }
       },
       {
         "number": "02",
@@ -70,7 +70,7 @@
           "Field-heat rapid removal",
           "Farm-gate batch traceability"
         ],
-        "stat": { "value": "5,910 ha", "label": "Irrigated Land" }
+        "stat": { "value": "6,065 ha", "label": "Irrigated Land" }
       },
       {
         "number": "03",
@@ -111,7 +111,7 @@
       "coldStorage": {
         "name": "Cold Storage & Warehousing",
         "stat": "2,000 Tonnes",
-        "desc": "Multi-chamber temperature-controlled cold rooms and warehouses serving 135 cooperatives."
+        "desc": "Multi-chamber temperature-controlled cold rooms and warehouses serving 136 cooperatives."
       },
       "fleet": {
         "name": "Refrigerated Transport Fleet",
@@ -125,7 +125,7 @@
       },
       "irrigation": {
         "name": "Lake Ziway Irrigation Schemes",
-        "stat": "5,910 Hectares",
+        "stat": "6,065 Hectares",
         "desc": "River-fed electric pumping stations and modern drip systems powering year-round cultivation."
       }
     }
@@ -149,7 +149,7 @@
     "farmers": {
       "tag": "For Producers",
       "title": "Are you a farmer or primary cooperative?",
-      "desc": "Join 135 member cooperatives to access certified seeds, modern tractor mechanization, collective bargaining power, and reliable market off-take.",
+      "desc": "Join 136 member cooperatives to access certified seeds, modern tractor mechanization, collective bargaining power, and reliable market off-take.",
       "link": "Learn about membership & benefits"
     },
     "buyers": {
@@ -228,7 +228,7 @@
   "leadership": {
     "tag": "Democratic Leadership",
     "title": "Executive Leadership & Management",
-    "desc": "Experienced directors and department heads steering 135 primary member cooperatives and 8,089 farmers towards market excellence, sustainable agronomy, and reliable export supply.",
+    "desc": "Experienced directors and department heads steering 136 primary member cooperatives and 8,471 farmers towards market excellence, sustainable agronomy, and reliable export supply.",
     "viewGovernance": "View Full Governance & Org Chart",
     "emailAria": "Send email to {{name}}",
     "emailTitle": "Email {{name}}: {{email}}",

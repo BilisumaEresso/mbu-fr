@@ -21,10 +21,10 @@ function Impact() {
   const { t } = useTranslation(['impact', 'meta', 'common'])
 
   const stats = [
-    { value: '8,089', label: t('impact:metrics.stats.farmers') },
-    { value: '135', label: t('impact:metrics.stats.coops') },
+    { value: '8,471', label: t('impact:metrics.stats.farmers') },
+    { value: '136', label: t('impact:metrics.stats.coops') },
     { value: '154.2M', label: t('impact:metrics.stats.capital') },
-    { value: '5,910 ha', label: t('impact:metrics.stats.ha') },
+    { value: '6,065 ha', label: t('impact:metrics.stats.ha') },
     { value: '6', label: t('impact:metrics.stats.districts') },
     { value: '50k+ t', label: t('impact:metrics.stats.volume') },
   ]
