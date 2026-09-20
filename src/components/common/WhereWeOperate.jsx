@@ -28,6 +28,8 @@ export default function WhereWeOperate() {
               <span className="where-operate__tag">{t('whereWeOperate.districts.zuwayDugda')}</span>
               <span className="where-operate__tag">{t('whereWeOperate.districts.adama')}</span>
               <span className="where-operate__tag">{t('whereWeOperate.districts.dodotaSire')}</span>
+              <span className="where-operate__tag">{t('whereWeOperate.districts.mekiTown')}</span>
+              <span className="where-operate__tag">{t('whereWeOperate.districts.batuTown')}</span>
             </div>
             <a
               href="https://maps.app.goo.gl/HBFW3h7pe7W5tkMm8"

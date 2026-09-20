@@ -114,7 +114,7 @@
   "whereWeOperate": {
     "region": "Naannoo Keenya",
     "title": "Bakka Nuti Itti Hojjannu",
-    "desc": "Waldaaleen keenya aanoolee ja'a Godina Shawaa Bahaa fi Arsii keessatti oomishu: Dugdaa, Adaamii Tulluu, Booraa, Zeway Dugdaa, Adaamaa fi Doodota Siree. Haroo Dambalitti eegalee, amma qoteebultoota 8,471 deeggara.",
+    "desc": "Waldaaleen keenya aanoolee fi magaalota saddeet Godina Shawaa Bahaa fi Arsii keessatti oomishu: Dugdaa, Adaamii Tulluu, Booraa, Zeway Dugdaa, Adaamaa, Doodota Siree, Magaalaa Maqii fi Magaalaa Baatuu. Haroo Dambalitti eegalee, amma qoteebultoota 8,471 deeggara.",
     "mapTitle": "Bakka Yuniyeenii Maqii Baatuu, Maqii, Shawaa Bahaa, Oromiyaa",
     "districts": {
       "dugda": "Aanaa Dugdaa",
@@ -122,7 +122,9 @@
       "bora": "Booraa",
       "zuwayDugda": "Zawaay Dugdaa",
       "adama": "Adaamaa",
-      "dodotaSire": "Doodota Siree"
+      "dodotaSire": "Doodota Siree",
+      "mekiTown": "Magaalaa Maqii",
+      "batuTown": "Magaalaa Baatuu"
     }
   },
   "validation": {
