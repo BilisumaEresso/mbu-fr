@@ -385,7 +385,7 @@ function Home() {
             <Reveal className="home-bento__item home-bento__item--wide" delay={360}>
               <img
                 src={bentoPapayaImg}
-                srcSet={`${bentoPapaya400} 400w, ${bentoPapayaImg} 1000w`}
+                srcSet={`${bentoPapaya400} 400w, ${bentoPapayaImg} 1200w`}
                 sizes="(max-width: 768px) 100vw, 500px"
                 alt={t('home:bento.items.papaya.name')}
                 className="home-bento__img"

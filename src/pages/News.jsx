@@ -21,17 +21,37 @@ function News() {
   const [searchTerm, setSearchTerm] = useState('')
   const hasInteractedRef = useRef(false)
 
-  // Filter articles based on search
+  // Helper to get translated article properties
+  const getNewsTrans = (item) => {
+    if (!item) return {}
+    const itemId = String(item.id)
+    return {
+      title: t(`news:items.${itemId}.title`, item.title),
+      category: t(`news:items.${itemId}.category`, item.category),
+      desc: t(`news:items.${itemId}.desc`, item.desc),
+    }
+  }
+
+  // Filter articles based on search query matching localized or base content
   const filteredNews = useMemo(() => {
     if (!searchTerm.trim()) return news
     const term = searchTerm.toLowerCase()
-    return news.filter(
-      (item) =>
+    return news.filter((item) => {
+      const trans = getNewsTrans(item)
+      return (
+        trans.title.toLowerCase().includes(term) ||
+        trans.desc.toLowerCase().includes(term) ||
+        trans.category.toLowerCase().includes(term) ||
         item.title.toLowerCase().includes(term) ||
-        item.desc.toLowerCase().includes(term) ||
-        item.category.toLowerCase().includes(term)
-    )
-  }, [searchTerm])
+        item.desc.toLowerCase().includes(term)
+      )
+    })
+  }, [searchTerm, i18n.language])
+
+  function handleSearchChange(e) {
+    hasInteractedRef.current = true
+    setSearchTerm(e.target.value)
+  }
 
   // Divide into Featured (first 2) and Grid (remaining)
   const featuredLarge = filteredNews[0]
@@ -70,168 +90,183 @@ function News() {
         {featuredLarge && featuredSmall && (
           <section className="news-featured-row">
             {/* Featured Large */}
-            {hasInteractedRef.current ? (
-              <article
-                className="news-article-card news-article-card--large"
-                onClick={() => navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))
-                  }
-                }}
-                tabIndex={0}
-                role="button"
-                aria-label={t('news:labels.readReportAria', { title: featuredLarge.title })}
-              >
-                <div className="news-article-card__media">
-                  <img
-                    src={featuredLarge.img}
-                    srcSet={featuredLarge.imgSrcSet}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
-                    alt={featuredLarge.title}
-                    className="news-article-card__img"
-                  />
-                </div>
-                <div className="news-article-card__body">
-                  <div className="news-article-card__meta">
-                    <span className="news-badge-pill">{featuredLarge.category}</span>
-                    <time className="news-date-text">{featuredLarge.date}</time>
+            {(() => {
+              const transLarge = getNewsTrans(featuredLarge)
+              if (hasInteractedRef.current) {
+                return (
+                  <article
+                    className="news-article-card news-article-card--large"
+                    onClick={() => navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))
+                      }
+                    }}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={t('news:labels.readReportAria', { title: transLarge.title })}
+                  >
+                    <div className="news-article-card__media">
+                      <img
+                        src={featuredLarge.img}
+                        srcSet={featuredLarge.imgSrcSet}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
+                        alt={transLarge.title}
+                        className="news-article-card__img"
+                      />
+                    </div>
+                    <div className="news-article-card__body">
+                      <div className="news-article-card__meta">
+                        <span className="news-badge-pill">{transLarge.category}</span>
+                        <time className="news-date-text">{featuredLarge.date}</time>
+                      </div>
+                      <h2 className="news-article-card__title news-article-card__title--large">
+                        {transLarge.title}
+                      </h2>
+                      <p className="news-article-card__desc">{transLarge.desc}</p>
+                      <div className="news-article-card__cta">
+                        {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
+                      </div>
+                    </div>
+                  </article>
+                )
+              }
+
+              return (
+                <Reveal
+                  as="article"
+                  delay={0}
+                  className="news-article-card news-article-card--large"
+                  onClick={() => navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))
+                    }
+                  }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={t('news:labels.readReportAria', { title: transLarge.title })}
+                >
+                  <div className="news-article-card__media">
+                    <img
+                      src={featuredLarge.img}
+                      srcSet={featuredLarge.imgSrcSet}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
+                      alt={transLarge.title}
+                      className="news-article-card__img"
+                    />
                   </div>
-                  <h2 className="news-article-card__title news-article-card__title--large">
-                    {featuredLarge.title}
-                  </h2>
-                  <p className="news-article-card__desc">{featuredLarge.desc}</p>
-                  <div className="news-article-card__cta">
-                    {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
+                  <div className="news-article-card__body">
+                    <div className="news-article-card__meta">
+                      <span className="news-badge-pill">{transLarge.category}</span>
+                      <time className="news-date-text">{featuredLarge.date}</time>
+                    </div>
+                    <h2 className="news-article-card__title news-article-card__title--large">
+                      {transLarge.title}
+                    </h2>
+                    <p className="news-article-card__desc">{transLarge.desc}</p>
+                    <div className="news-article-card__cta">
+                      {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
+                    </div>
                   </div>
-                </div>
-              </article>
-            ) : (
-              <Reveal
-                as="article"
-                delay={0}
-                className="news-article-card news-article-card--large"
-                onClick={() => navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))
-                  }
-                }}
-                tabIndex={0}
-                role="button"
-                aria-label={t('news:labels.readReportAria', { title: featuredLarge.title })}
-              >
-                <div className="news-article-card__media">
-                  <img
-                    src={featuredLarge.img}
-                    srcSet={featuredLarge.imgSrcSet}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
-                    alt={featuredLarge.title}
-                    className="news-article-card__img"
-                  />
-                </div>
-                <div className="news-article-card__body">
-                  <div className="news-article-card__meta">
-                    <span className="news-badge-pill">{featuredLarge.category}</span>
-                    <time className="news-date-text">{featuredLarge.date}</time>
-                  </div>
-                  <h2 className="news-article-card__title news-article-card__title--large">
-                    {featuredLarge.title}
-                  </h2>
-                  <p className="news-article-card__desc">{featuredLarge.desc}</p>
-                  <div className="news-article-card__cta">
-                    {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
-                  </div>
-                </div>
-              </Reveal>
-            )}
+                </Reveal>
+              )
+            })()}
 
             {/* Featured Small */}
-            {hasInteractedRef.current ? (
-              <article
-                className="news-article-card news-article-card--small"
-                onClick={() => navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))
-                  }
-                }}
-                tabIndex={0}
-                role="button"
-                aria-label={t('news:labels.readArticleAria', { title: featuredSmall.title })}
-              >
-                <div className="news-article-card__media">
-                  <img
-                    src={featuredSmall.img}
-                    srcSet={featuredSmall.imgSrcSet}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-                    alt={featuredSmall.title}
-                    className="news-article-card__img"
-                  />
-                </div>
-                <div className="news-article-card__body">
-                  <div className="news-article-card__meta">
-                    <span className="news-badge-pill news-badge-pill--secondary">
-                      {featuredSmall.category}
-                    </span>
-                    <time className="news-date-text">{featuredSmall.date}</time>
+            {(() => {
+              const transSmall = getNewsTrans(featuredSmall)
+              if (hasInteractedRef.current) {
+                return (
+                  <article
+                    className="news-article-card news-article-card--small"
+                    onClick={() => navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))
+                      }
+                    }}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={t('news:labels.readArticleAria', { title: transSmall.title })}
+                  >
+                    <div className="news-article-card__media">
+                      <img
+                        src={featuredSmall.img}
+                        srcSet={featuredSmall.imgSrcSet}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                        alt={transSmall.title}
+                        className="news-article-card__img"
+                      />
+                    </div>
+                    <div className="news-article-card__body">
+                      <div className="news-article-card__meta">
+                        <span className="news-badge-pill news-badge-pill--secondary">
+                          {transSmall.category}
+                        </span>
+                        <time className="news-date-text">{featuredSmall.date}</time>
+                      </div>
+                      <h2 className="news-article-card__title">{transSmall.title}</h2>
+                      <p className="news-article-card__desc">{transSmall.desc}</p>
+                      <div className="news-article-card__cta">
+                        {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
+                      </div>
+                    </div>
+                  </article>
+                )
+              }
+
+              return (
+                <Reveal
+                  as="article"
+                  delay={90}
+                  className="news-article-card news-article-card--small"
+                  onClick={() => navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))
+                    }
+                  }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={t('news:labels.readArticleAria', { title: transSmall.title })}
+                >
+                  <div className="news-article-card__media">
+                    <img
+                      src={featuredSmall.img}
+                      srcSet={featuredSmall.imgSrcSet}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                      alt={transSmall.title}
+                      className="news-article-card__img"
+                    />
                   </div>
-                  <h2 className="news-article-card__title">{featuredSmall.title}</h2>
-                  <p className="news-article-card__desc">{featuredSmall.desc}</p>
-                  <div className="news-article-card__cta">
-                    {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
+                  <div className="news-article-card__body">
+                    <div className="news-article-card__meta">
+                      <span className="news-badge-pill news-badge-pill--secondary">
+                        {transSmall.category}
+                      </span>
+                      <time className="news-date-text">{featuredSmall.date}</time>
+                    </div>
+                    <h2 className="news-article-card__title">{transSmall.title}</h2>
+                    <p className="news-article-card__desc">{transSmall.desc}</p>
+                    <div className="news-article-card__cta">
+                      {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
+                    </div>
                   </div>
-                </div>
-              </article>
-            ) : (
-              <Reveal
-                as="article"
-                delay={90}
-                className="news-article-card news-article-card--small"
-                onClick={() => navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))
-                  }
-                }}
-                tabIndex={0}
-                role="button"
-                aria-label={t('news:labels.readArticleAria', { title: featuredSmall.title })}
-              >
-                <div className="news-article-card__media">
-                  <img
-                    src={featuredSmall.img}
-                    srcSet={featuredSmall.imgSrcSet}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-                    alt={featuredSmall.title}
-                    className="news-article-card__img"
-                  />
-                </div>
-                <div className="news-article-card__body">
-                  <div className="news-article-card__meta">
-                    <span className="news-badge-pill news-badge-pill--secondary">
-                      {featuredSmall.category}
-                    </span>
-                    <time className="news-date-text">{featuredSmall.date}</time>
-                  </div>
-                  <h2 className="news-article-card__title">{featuredSmall.title}</h2>
-                  <p className="news-article-card__desc">{featuredSmall.desc}</p>
-                  <div className="news-article-card__cta">
-                    {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
-                  </div>
-                </div>
-              </Reveal>
-            )}
+                </Reveal>
+              )
+            })()}
           </section>
         )}
 
         {/* Standard Grid Row */}
         <section className="news-standard-grid">
           {gridArticles.map((article, i) => {
+            const transArticle = getNewsTrans(article)
             const cardContent = (
               <>
                 <div className="news-article-card__media">
@@ -239,7 +274,7 @@ function News() {
                     src={article.img}
                     srcSet={article.imgSrcSet}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                    alt={article.title}
+                    alt={transArticle.title}
                     className="news-article-card__img"
                   />
                 </div>
@@ -250,12 +285,12 @@ function News() {
                         article.categoryType === 'secondary' ? 'news-badge-pill--secondary' : ''
                       }`}
                     >
-                      {article.category}
+                      {transArticle.category}
                     </span>
                     <time className="news-date-text">{article.date}</time>
                   </div>
-                  <h3 className="news-article-card__title">{article.title}</h3>
-                  <p className="news-article-card__desc">{article.desc}</p>
+                  <h3 className="news-article-card__title">{transArticle.title}</h3>
+                  <p className="news-article-card__desc">{transArticle.desc}</p>
                   <div className="news-article-card__cta">
                     {t('news:labels.readReport')} <ArrowRight size={16} className="text-sm" />
                   </div>
@@ -283,7 +318,7 @@ function News() {
                   onKeyDown={handleArticleKeyDown}
                   tabIndex={0}
                   role="button"
-                  aria-label={t('news:labels.readArticleAria', { title: article.title })}
+                  aria-label={t('news:labels.readArticleAria', { title: transArticle.title })}
                 >
                   {cardContent}
                 </article>
@@ -300,7 +335,7 @@ function News() {
                 onKeyDown={handleArticleKeyDown}
                 tabIndex={0}
                 role="button"
-                aria-label={t('news:labels.readArticleAria', { title: article.title })}
+                aria-label={t('news:labels.readArticleAria', { title: transArticle.title })}
               >
                 {cardContent}
               </Reveal>

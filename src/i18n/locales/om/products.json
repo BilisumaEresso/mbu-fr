@@ -44,6 +44,21 @@
     "perks": {
       "traceable": "100% Waldaaleetti Hordofama",
       "coldChain": "Geejjiba Qabbanaawaa"
+    },
+    "detail": {
+      "backToProducts": "Gara Oomishaatti Deebi'i",
+      "specifications": "Ulaagaa Teeknikaa fi Sadarkaa Qulqullinaa",
+      "traceableTitle": "Hordoffii Guutuu",
+      "traceableDesc": "100% waldaalee bu'uuraa qoteebulaatti hordofama",
+      "coldChainTitle": "Geejjiba Qabbanaawaa Mirkanaa'aa",
+      "coldChainDesc": "Qabbaneeffamee geejjiba qabbanaawaan kan dhiyaatu",
+      "requestQuote": "Gaaffii Gatii Daldalaa Dhiyeessaa",
+      "shareProduct": "Oomisha Qoodi",
+      "copiedLink": "Geessituu Garagalfameera!",
+      "relatedTitle": "Oomishaalee Biroo Daawwadhaa",
+      "relatedDesc": "Kuduraa, muduraa fi sanyiilee filatamoo Yuniyeenii Maqii Baatuu irraa daawwadhaa.",
+      "notFoundTitle": "Oomishni Hin Argamne",
+      "notFoundDesc": "Oomishni barbaaddan hin jiru yookiin haqameera."
     }
   },
   "items": {
@@ -95,7 +110,7 @@
       "name": "Foosoliyaa",
       "category": "Kuduraa",
       "tag": "Waqtiidhaan, ergaa alaa",
-      "desc": "Luubiyaa lallaafaa harkaatiin haamamu fi gabaa addunyaatiif qabbaneeffamee qophaa'u.",
+      "desc": "Foosoliyaa lallaafaa harkaatiin haamamu fi gabaa addunyaatiif qabbaneeffamee qophaa'u.",
       "season": "Onk - Ebl",
       "origin": "Jallisii Maqii",
       "shelfLife": "Guyyoota 10-14 (Kuusaa Qabbanaawaa 4°C)",
@@ -106,7 +121,7 @@
       "name": "Raafuu Maraa",
       "category": "Kuduraa",
       "tag": "Waqtiidhaan",
-      "desc": "Raafuu mataa guddaa fi jabaataa, biyyoo uumamaa eeguudhaan kan oomishamu.",
+      "desc": "Raafuu mraa guddaa fi jabaataa, biyyoo uumamaa eeguudhaan kan oomishamu.",
       "season": "Waggaa Guutuu",
       "origin": "Godina Shawaa Bahaa",
       "shelfLife": "Ji'oota 1-2 (Kuusaa Qabbanaawaa)",
@@ -114,7 +129,7 @@
       "brix": "Haaraa fi Qulqulluu"
     },
     "papaya": {
-      "name": "Paappaayyaa Haaraa",
+      "name": "Paappaayyaa Ho'aa",
       "category": "Muduraa",
       "tag": "Waqtiidhaan",
       "desc": "Paappaayyaa mi'aawaa, sadarkaa daldala alaa qabu fi ulaagaa GlobalG.A.P jalatti misoomu.",

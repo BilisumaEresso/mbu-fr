@@ -44,6 +44,21 @@
     "perks": {
       "traceable": "100% Traceable to Member Co-ops",
       "coldChain": "Direct Cold-Chain Transit"
+    },
+    "detail": {
+      "backToProducts": "Back to Products",
+      "specifications": "Technical Specifications & Quality Grade",
+      "traceableTitle": "Full Traceability",
+      "traceableDesc": "100% traceable to smallholder primary co-ops",
+      "coldChainTitle": "Cold-Chain Guaranteed",
+      "coldChainDesc": "Pre-cooled & transported under refrigerated logistics",
+      "requestQuote": "Request Commercial Quote",
+      "shareProduct": "Share Product",
+      "copiedLink": "Copied Link!",
+      "relatedTitle": "Explore Other Produce & Crops",
+      "relatedDesc": "Discover more fresh horticultural produce and certified seeds from Meki Batu Union.",
+      "notFoundTitle": "Product Not Found",
+      "notFoundDesc": "The product you are looking for does not exist or has been removed."
     }
   },
   "items": {

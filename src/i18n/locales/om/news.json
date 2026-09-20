@@ -20,8 +20,151 @@
     "readArticleAria": "Barruu dubbisi: {{title}}",
     "readTime": "Daqiiqaa 5"
   },
+  "detail": {
+    "backToNews": "Gara Oduu fi Odeeffannootti Deebi'i",
+    "authorDefault": "Koree Qonnaa Maqii Baatuu",
+    "locationDefault": "Maqii, Naannoo Oromiyaa, Itoophiyaa",
+    "highlightsTitle": "Qabxiilee Ijoo Gabaasaa",
+    "quoteText": "Qoteebultoota xixiqqoo humna waloo, teeknooloojii ammayyaa, fi gabaa kallattiin cimsuun ergama ijoo yuniyeenii keenyaati.",
+    "quoteAuthor": "Garee Hooggansaa, Yuniyeenii Maqii Baatuu",
+    "shareThis": "Odeeffannoo kana qoodaa:",
+    "backToAll": "Gara Oduu Hundatti Deebi'i",
+    "relatedTitle": "Oduu fi Gabaasaalee Biroo",
+    "relatedDesc": "Gabaasaalee fi sochiiwwan Yuniyeenii Maqii Baatuu haaraa hordofaa.",
+    "notFoundTitle": "Barruun Hin Argamne",
+    "notFoundDesc": "Oduun barbaaddan hin jiru yookiin haqameera.",
+    "captionSuffix": "Gabaasa Dirree Yuniyeenii Waldaalee Qoteebultoota Maqii Baatuu",
+    "shareAria": "Barruu qoodi"
+  },
   "article": {
-    "paragraph1": "Yuniyeeniin Maqii Baatuu waldaalee 136 fi qoteebultoota 8,471 keessatti kalaqa qonnaa jajjabeessa. Invastimantii bu'uuraa, teeknooloojii, fi qonna itti-fufaan, qoteebultoota Sulula Qiinxamaa oomisha ergaa alaaf dandeessisna.",
+    "paragraph1": "Yuniyeeniin Maqii Baatuu waldaalee bu'uuraa 136 fi qoteebultoota 8,471 keessatti kalaqa qonnaa jajjabeessa. Invastimantii bu'uuraa, teeknooloojii, fi qonna itti-fufaan, qoteebultoota Sulula Qiinxamaa oomisha ergaa alaaf dandeessisna.",
     "paragraph2": "Sochiin kun ergama keenya diinagdee, eegumsa naannoo, fi daldala haqaqabeessaa waliin walsima. Hawaasa qonnaa gabaa addunyaatti hidhuun, oomisha qulqulluu michuuwwan keenyaaf mirkaneessina."
+  },
+  "items": {
+    "1": {
+      "title": "Waqtii Haamaa Sulula Qiinxamaa Bara 2024 Irratti Oomishni Olaanaan Ni Eegama",
+      "category": "Gabaasa Haamaa",
+      "author": "Koree Qonnaa Maqii Baatuu",
+      "location": "Maqii, Naannoo Oromiyaa",
+      "readTime": "Daqiiqaa 4",
+      "desc": "Gabaasni jalqabaa waldaalee miseensa keenya irraa dhiyaate akka agarsiisutti, haala qilleensaa mijataa fi shaakala qonna ammayyaatiin oomishni olaanaa fi qulqullinni addaa bara kana ni galmaa'a.",
+      "fullContent": [
+        "Waqtiin haamaa bara 2024 seenaa Yuniyeenii Maqii Baatuu keessatti isa oomisha guddaa galmeessu ta'uuf qophii irra jira. Qorannoon dirree waldaalee bu'uuraa 136 keessatti gaggeeffame akka agarsiisutti oomishni waliigalaa bara darbe irra dhibbeentaa 28% dabaleera.",
+        "Roobni gahaan Sulula Qiinxamaa keessatti roobe, sirna jallisii ammayyaa sagantaa meekaanaayizeeshinii keenyaan diriirfame waliin ta'uun kuduraa fi muduraadhaaf haala biqiluu mijataa uumeera.",
+        "Dabalataanis, qoteebultoonni miseensaa 12,000 ol ta'an leenjii bulchiinsa biyyoo GlobalG.A.P fi kompoostii uumamaa fudhataniiru. Xiyyeeffannoon kun baay'ina oomishaa qofa odoo hin taane sadarkaa qulqullina oomisha ergaa alaa hunda dabaleera.",
+        "Kuusaan giddugaleessaa Maqii keessatti argamu yeroo ammaa oomisha haamame simachuun, filuu fi saamsuun gabaa biyya keessaa fi daldaltoota Awurooppaatiif dhiyeessaa jira."
+      ],
+      "highlights": [
+        "Waldaalee miseensaa keessatti daballii oomishaa 28% mirkanaa'e",
+        "Qoteebultoonni 12,000 ol bulchiinsa biyyoo ammayyaa irratti leenji'an",
+        "Geejjibni qabbanaawaa oomisha ergaa alaatiif babal'ate"
+      ]
+    },
+    "2": {
+      "title": "Yaa'iin Waliigalaa Miseensota Waldaa Qoteebultootaa Xumurame",
+      "category": "Hawaasa",
+      "author": "Boordii Bulchiinsa Waldaa",
+      "location": "Finfinnee, Itoophiyaa",
+      "readTime": "Daqiiqaa 3",
+      "desc": "Hoggantoonni waldaa 500 ol karoora tarsiimawaa, qabeenya raabsuu fi tilmaama gabaa bara dhufu irratti mari'achuuf walga'aniiru.",
+      "fullContent": [
+        "Yaa'iin Waliigalaa Yuniyeenii Maqii Baatuu bara 2024 bakka bu'oota waldaalee bu'uuraa 136 Godina Shawaa Bahaa fi Arsii keessaa walitti fideera.",
+        "Mata-dureewwan ijoo marii guyyoota sadii keessatti bu'aa qooduu, sagantaa bittaa sanyii heddumminnaan fi teeknooloojii qonna ammayyaa hojiirra oolchuu turan.",
+        "Bakka bu'oonni sagantaa invastimantii haaraa galii qulqulluu irraa dhibbeentaa 15% kuusaa oomishaa fi liqii qoteebulaatiif oolchu sagalee guutuun raggaasisaan."
+      ],
+      "highlights": [
+        "Hoggantoonni waldaalee bu'uuraa 500 ol irratti hirmaataniiru",
+        "Sagantaan invastimantii 15% kuusaa fi bu'uuraalee misoomaatiif ragga'e",
+        "Waliigaltee guutuu sirna bu'aa qoodiinsa irratti reached"
+      ]
+    },
+    "3": {
+      "title": "Waliigalteen Daldala Haaraa Biyyoottan Awurooppaa Waliin Mallattaa'e",
+      "category": "Ergaa Alaa",
+      "author": "Koree Daldala Ergaa Alaa",
+      "location": "Firaankfert fi Maqii",
+      "readTime": "Daqiiqaa 5",
+      "desc": "Yuniyeeniin Maqii Baatuu daldala ergaa alaa sadarkaa olaanaa gara gabaa biyyoota Iskaandinaaviyaatti babal'isuuf hidhata yeroo dheeraa beeksiseera.",
+      "fullContent": [
+        "Yuniyeeniin Maqii Baatuu dhiyeessitoota oomisha haaraa Awurooppaa gurguddoo waliin waliigaltee waggoota hedduu mallatteessee, qoteebultoota keenyaaf carraa gabaa kallattii uumeera.",
+        "Waliigaltichi timaatima diimaa, baaqelaa magariisaa fi paappaayaa ulaagaa GlobalG.A.P guutan erguu of keessatti qabata.",
+        "Hidhiin kun gatii daldala haqaqabeessa mirkaneessuun, qoteebultoota jijjiirama gatii gabaa irraa eega."
+      ],
+      "highlights": [
+        "Waliigalteen ergaa alaa yeroo dheeraa Awurooppaa waliin mallattaa'e",
+        "Galii qoteebultoota xixiqqoo eeguuf gatiin murtaa'e mirkanaa'e",
+        "Ulaagaalee nageenya nyaataa addunyaa 100% guute"
+      ]
+    },
+    "4": {
+      "title": "Babal'ifamni Wiirtuu Qulqulleessuu fi Saamsuu Xumurame",
+      "category": "Bu'uuraalee Misoomaa",
+      "author": "Injinariingii fi Loojistiksii",
+      "location": "Wiirtuu Saamsaa Maqii",
+      "readTime": "Daqiiqaa 4",
+      "desc": "Wiirtuun haaraa haaromfame dandeettii oomisha qopheessuu keenya 30%n kan dabalu yoo ta'u, qulqullina mirkaneessuuf gargaara.",
+      "fullContent": [
+        "Ijaarsi fi sirreessi wiirtuu qulqulleessuu fi saamsuu bal'ina kaaree meetira 3,500 Magaalaa Maqii keessatti milkiin xumurameera.",
+        "Sarara filannoo ammayyaa fi kuusaa qabbaneessaa of keessaa qabuun, guyyaatti oomisha toonii 150 qopheessuu danda'a.",
+        "Haaromfamni kun oomisha qisaasa'u 18%n hir'isuun haarummaa oomishaa dirree irraa hanga dooniitti eega."
+      ],
+      "highlights": [
+        "Dandeettiin guyyaatti oomisha filuu fi dhiquu 30%n dabale",
+        "Oomishni erga haamamee booda qisaasa'u 18%n hir'ate",
+        "Kuusaan qabbanaawaa walitti hidhame haarummaa itti fufaa mirkaneessa"
+      ]
+    },
+    "5": {
+      "title": "Sagantaan Dubartoota Qonna Keessatti Jajjabeessuu Eegalame",
+      "category": "Misooma Itti-fufiinsa",
+      "author": "Koree Dhiibbaa Hawaasummaa",
+      "location": "Naannoo Oromiyaa",
+      "readTime": "Daqiiqaa 3",
+      "desc": "Dubartoota miseensa waldaa ta'an liqii xixiqqoo fi leenjii qonna ammayyaatiin deeggaruuf sagantaan maallaqaa haaraan eegalame.",
+      "fullContent": [
+        "Yuniyeeniin Maqii Baatuu qixxummaa koorniyaa fi walabummaa dinagdee dubartoota qonnaan bultootaa gabbisuuf Sagantaa Dubartoota Qonnaa ifa godheera.",
+        "Sagantichi qonna manneen pilaastikii, sanyiiwwan filatamoo, fi meeshaalee jallisii ammayyaatiif liqii mijaawaa dhiyeessa.",
+        "Deeggarsa maallaqaa cinatti, hirmaattonni leenjii qonnaa fi hogganummaa boordii waldaalee bu'uuraa keessatti hirmaachisu argatu."
+      ],
+      "highlights": [
+        "Dubartoota qonnaan bultootaa 250f liqiin mijaawaan kenname",
+        "Leenjii ogummaa qonnaa fi bulchiinsa daldalaa addaa",
+        "Hogganummaa dubartootaa boordii waldaalee keessatti jajjabeessa"
+      ]
+    },
+    "6": {
+      "title": "Waldaalee 14 Keessatti Haaromsi Waraqaa Ragaa GlobalG.A.P Galmaa'e",
+      "category": "Mirkaneessa Qulqullinaa",
+      "author": "Daayirektoreettii Mirkaneessa Qulqullinaa",
+      "location": "Wiirtuu Qorannoo, Maqii",
+      "readTime": "Daqiiqaa 4",
+      "desc": "Kutannoon keenya qonna nageenya qabuu fi itti-fufiinsa qabuuf qabnu haaromsa waraqaa ragaa addunyaatiin beekamtii argateera.",
+      "fullContent": [
+        "Qorannoo walabaa qaama sadaffaan gaggeeffameen booda, Yuniyeeniin Maqii Baatuu waraqaa ragaa GlobalG.A.P bara 2024-2025 haaromfateera.",
+        "Waraqaan ragaan kun nageenya nyaataa, eegumsa naannoo, fi nageenya hojjettootaa ulaagaa addunyaa guutuu mirkaneessa.",
+        "Ulaagaan kun oomishni keenya suupparmaarkeetota Awurooppaa, Baha Giddugaleessaa fi Eeshiyaa keessatti fudhatama akka argatu godha."
+      ],
+      "highlights": [
+        "Ulaagaalee nageenya addunyaa 100% guutuu galmeesse",
+        "Qorannoo qaama sadaffaan qotisaa hanga buufata dooniitti mirkanaa'e",
+        "Suupparmaarkeetota addunyaa olaanoo waliin hidhata bana"
+      ]
+    },
+    "7": {
+      "title": "Daldalli Ergaa Alaa Baaqelaa Magariisaa Geejjiba Qabbanaawaan Babal'ate",
+      "category": "Ergaa Alaa",
+      "author": "Koree Qonnaa",
+      "location": "Aanaa Dugdaa",
+      "readTime": "Daqiiqaa 3",
+      "desc": "Yuniyeeniin Maqii Baatuu geejjiba qabbanaawaa diriirsuun baaqelaa magariisaa sadarkaa ergaa alaa heddumminnaan dhiyeessaa jira.",
+      "fullContent": [
+        "Babal'ifannaa dirree gammoojjii Aanaa Dugdaa keessatti milkaa'een booda, Yuniyeeniin Maqii Baatuu baaqelaa magariisaa ergaa alaa guddisera.",
+        "Jallisii dhangala'aan kan misoomu oomishni kun, ulaagaalee Awurooppaa haarummaa, guddina walfakkaatu fi nageenya nyaataa guutuu qaba."
+      ],
+      "highlights": [
+        "Baaqelaan magariisaa sadarkaa olaanaa ergaa alaaf dabale",
+        "Qoteebultoota 80 waliin waliigalteen qonnaa kallattii taasifame"
+      ]
+    }
   }
 }

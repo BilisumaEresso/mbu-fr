@@ -59,13 +59,16 @@ export default function ProductDetail() {
   if (!product) {
     return (
       <div className="product-detail-page section">
-        <SEO title="Product Not Found - Meki Batu Union" description="The requested product could not be found." />
-        <div className="container text-center py-12">
-          <h1 className="text-2xl font-bold mb-4">{t('products:notFound.title', 'Product Not Found')}</h1>
-          <p className="mb-6 text-muted">{t('products:notFound.desc', 'The product you are looking for does not exist or has been removed.')}</p>
+        <SEO
+          title={`${t('products:catalog.detail.notFoundTitle', 'Product Not Found')} - Meki Batu Union`}
+          description={t('products:catalog.detail.notFoundDesc', 'The product you are looking for does not exist or has been removed.')}
+        />
+        <div className="container text-center py-16">
+          <h1 className="text-2xl font-bold mb-4">{t('products:catalog.detail.notFoundTitle', 'Product Not Found')}</h1>
+          <p className="mb-6 text-muted">{t('products:catalog.detail.notFoundDesc', 'The product you are looking for does not exist or has been removed.')}</p>
           <Link to={getLocalePath('/products', currentLang)} className="btn btn--primary inline-flex items-center gap-2">
             <ArrowLeft size={18} />
-            {t('products:catalog.backToProducts', 'Back to Products')}
+            {t('products:catalog.detail.backToProducts', 'Back to Products')}
           </Link>
         </div>
       </div>
@@ -99,10 +102,10 @@ export default function ProductDetail() {
             <button
               onClick={() => navigate(getLocalePath('/products', currentLang))}
               className="product-back-btn"
-              aria-label={t('products:catalog.backToProducts', 'Back to Products')}
+              aria-label={t('products:catalog.detail.backToProducts', 'Back to Products')}
             >
               <ArrowLeft size={18} />
-              <span>{t('products:catalog.backToProducts', 'Back to Products')}</span>
+              <span>{t('products:catalog.detail.backToProducts', 'Back to Products')}</span>
             </button>
             <nav className="product-breadcrumbs" aria-label="Breadcrumb">
               <Link to={getLocalePath('/', currentLang)}>{t('common:nav.home', 'Home')}</Link>
@@ -139,17 +142,21 @@ export default function ProductDetail() {
               {/* Quality Perks Badges */}
               <div className="product-detail-perks-box">
                 <div className="product-detail-perk">
-                  <CheckCircle size={18} className="text-success" />
+                  <div className="product-detail-perk-icon">
+                    <CheckCircle size={20} />
+                  </div>
                   <div>
-                    <strong>{t('products:catalog.perks.traceableTitle', 'Full Traceability')}</strong>
-                    <p>{t('products:catalog.perks.traceable', '100% traceable to smallholder primary co-ops')}</p>
+                    <strong>{t('products:catalog.detail.traceableTitle', 'Full Traceability')}</strong>
+                    <p>{t('products:catalog.detail.traceableDesc', '100% traceable to smallholder primary co-ops')}</p>
                   </div>
                 </div>
                 <div className="product-detail-perk">
-                  <ShieldCheck size={18} className="text-success" />
+                  <div className="product-detail-perk-icon">
+                    <ShieldCheck size={20} />
+                  </div>
                   <div>
-                    <strong>{t('products:catalog.perks.coldChainTitle', 'Cold-Chain Guaranteed')}</strong>
-                    <p>{t('products:catalog.perks.coldChain', 'Pre-cooled & transported under refrigerated logistics')}</p>
+                    <strong>{t('products:catalog.detail.coldChainTitle', 'Cold-Chain Guaranteed')}</strong>
+                    <p>{t('products:catalog.detail.coldChainDesc', 'Pre-cooled & transported under refrigerated logistics')}</p>
                   </div>
                 </div>
               </div>
@@ -160,7 +167,7 @@ export default function ProductDetail() {
               <div className="product-detail-header">
                 <div className="product-detail-tags">
                   <span className="product-badge-pill">{trans.category}</span>
-                  <span className="product-badge-pill product-badge-pill--outline">{trans.tag}</span>
+                  <span className="product-badge-pill product-badge-pill--soft">{trans.tag}</span>
                 </div>
                 <h1 className="product-detail-title">{trans.name}</h1>
                 <p className="product-detail-desc">{trans.desc}</p>
@@ -168,10 +175,10 @@ export default function ProductDetail() {
 
               {/* Specifications Grid */}
               <div className="product-specs-section">
-                <h3 className="product-specs-heading">
+                <h2 className="product-specs-heading">
                   <Sparkles size={18} />
-                  {t('products:catalog.labels.specifications', 'Technical Specifications & Quality Grade')}
-                </h3>
+                  <span>{t('products:catalog.detail.specifications', 'Technical Specifications & Quality Grade')}</span>
+                </h2>
                 <div className="product-specs-grid">
                   <div className="product-spec-card">
                     <div className="product-spec-card__icon">
@@ -244,17 +251,17 @@ export default function ProductDetail() {
                   className="btn btn--primary btn--lg product-cta-btn"
                 >
                   <ShoppingBag size={20} />
-                  <span>{t('products:catalog.labels.requestQuote', 'Request Commercial Quote')}</span>
+                  <span>{t('products:catalog.detail.requestQuote', 'Request Commercial Quote')}</span>
                   <ArrowRight size={18} />
                 </Link>
 
                 <button
                   type="button"
-                  className="btn btn--outline btn--lg product-share-btn"
+                  className="btn product-share-btn"
                   onClick={handleShare}
                 >
                   {copied ? <Check size={18} className="text-success" /> : <Share2 size={18} />}
-                  <span>{copied ? t('news:labels.copied', 'Copied Link!') : t('news:labels.share', 'Share Product')}</span>
+                  <span>{copied ? t('products:catalog.detail.copiedLink', 'Copied Link!') : t('products:catalog.detail.shareProduct', 'Share Product')}</span>
                 </button>
               </div>
             </Reveal>
@@ -268,9 +275,9 @@ export default function ProductDetail() {
       {relatedProducts.length > 0 && (
         <section className="section related-products-section">
           <div className="container">
-            <div className="section-header text-center mb-8">
-              <h2 className="section-title">{t('products:catalog.relatedTitle', 'Explore Other Produce & Crops')}</h2>
-              <p className="section-desc">{t('products:catalog.relatedDesc', 'Discover more fresh horticultural produce and certified seeds from Meki Batu Union.')}</p>
+            <div className="section-header text-center mb-10">
+              <h2 className="section-title">{t('products:catalog.detail.relatedTitle', 'Explore Other Produce & Crops')}</h2>
+              <p className="section-desc">{t('products:catalog.detail.relatedDesc', 'Discover more fresh horticultural produce and certified seeds from Meki Batu Union.')}</p>
             </div>
 
             <div className="products-grid">
@@ -293,7 +300,7 @@ export default function ProductDetail() {
                         <h3 className="product-item-card__title">{relTrans.name}</h3>
                         <p className="product-item-card__desc">{relTrans.desc}</p>
                         <div className="product-item-card__link">
-                          <span>{t('products:catalog.viewDetails', 'View Specifications')}</span>
+                          <span>{t('products:catalog.labels.viewDetails', 'View Full Specifications')}</span>
                           <ArrowRight size={16} />
                         </div>
                       </div>
