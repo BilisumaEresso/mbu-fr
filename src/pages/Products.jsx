@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
@@ -78,6 +79,43 @@ function Products() {
         title={t('meta:products.title')}
         description={t('meta:products.description')}
       />
+
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Meki Batu Union Export Horticultural Produce & Certified Seeds",
+            "description": "GlobalG.A.P certified fresh vegetables, fruits, and licensed seeds produced by 8,089 cooperative farmers in Ethiopia's Rift Valley.",
+            "url": `https://mekibatuunion.org/${currentLang}/products`,
+            "numberOfItems": products.length,
+            "itemListElement": products.map((item, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Product",
+                "name": item.name,
+                "description": item.desc,
+                "category": item.category,
+                "image": item.img ? `https://mekibatuunion.org${item.img}` : undefined,
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Meki Batu Union"
+                },
+                "countryOfOrigin": {
+                  "@type": "Country",
+                  "name": "Ethiopia"
+                },
+                "offers": {
+                  "@type": "AggregateOffer",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock"
+                }
+              }
+            }))
+          })}
+        </script>
+      </Helmet>
       {/* ---- Hero Section ---- */}
       <PageHero
         breadcrumbs={[{ label: t('common:breadcrumbs.home'), to: '/' }, { label: t('common:breadcrumbs.products') }]}

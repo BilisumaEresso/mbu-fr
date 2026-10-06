@@ -659,7 +659,7 @@ function Home() {
           <div className="home-news__grid">
             {recentNews.map((article, i) => (
               <Reveal key={article.id} delay={stagger(i)}>
-                <Link to={getLocalePath('/news', currentLang)} className="home-news__card">
+                <Link to={getLocalePath(`/news/${article.slug || article.id}`, currentLang)} className="home-news__card">
                   <img src={article.img} alt={article.title} className="home-news__img" />
                   <div className="home-news__card-body">
                     <div className="home-news__meta">

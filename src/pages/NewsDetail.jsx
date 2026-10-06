@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 import SEO from '../components/common/SEO.jsx'
 import Reveal from '../components/common/Reveal.jsx'
 import SectionDivider from '../components/common/SectionDivider.jsx'
@@ -29,7 +30,7 @@ export default function NewsDetail() {
 
   const currentLang = isSupportedLocale(lang) ? lang : DEFAULT_LOCALE
 
-  const article = news.find((n) => String(n.id) === String(id))
+  const article = news.find((n) => String(n.id) === String(id) || n.slug === id)
 
   // Helper function to resolve translated fields for an article
   const getNewsTrans = (item) => {
@@ -74,6 +75,7 @@ export default function NewsDetail() {
 
   const trans = getNewsTrans(article)
   const relatedNews = news.filter((n) => String(n.id) !== String(article.id)).slice(0, 3)
+  const articleSlug = article.slug || article.id
 
   const handleShare = () => {
     if (navigator.clipboard) {
@@ -83,14 +85,44 @@ export default function NewsDetail() {
     }
   }
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": trans.title,
+    "description": trans.desc,
+    "image": article.img ? `https://mekibatuunion.org${article.img}` : "https://mekibatuunion.org/og-image.webp",
+    "datePublished": article.isoDate || "2024-10-15",
+    "dateModified": article.isoDate || "2024-10-15",
+    "author": {
+      "@type": "Organization",
+      "name": trans.author || "Meki Batu Agronomy Desk",
+      "url": "https://mekibatuunion.org"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Meki Batu Union",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mekibatuunion.org/icon-512.png"
+      }
+    },
+    "mainEntityOfPage": `https://mekibatuunion.org/${currentLang}/news/${articleSlug}`
+  }
+
   return (
     <div className="news-detail-page">
       <SEO
-        title={`${trans.title} | Meki Batu News`}
+        title={`${trans.title} | Meki Batu Union`}
         description={trans.desc}
         image={article.img}
-        path={`/news/${article.id}`}
+        path={`/news/${articleSlug}`}
       />
+
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(articleJsonLd)}
+        </script>
+      </Helmet>
 
       {/* Hero / Navigation Bar */}
       <section className="news-detail-hero">
@@ -263,7 +295,7 @@ export default function NewsDetail() {
                 return (
                   <Reveal key={relArticle.id} delay={i * 100}>
                     <Link
-                      to={getLocalePath(`/news/${relArticle.id}`, currentLang)}
+                      to={getLocalePath(`/news/${relArticle.slug || relArticle.id}`, currentLang)}
                       className="news-article-card news-article-card--grid text-decoration-none"
                     >
                       <div className="news-article-card__media">

@@ -1,4 +1,5 @@
 ﻿import { useState, useEffect, useRef, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import {
   ShieldCheck,
@@ -16,7 +17,10 @@ import {
   Lock,
   Search,
   Check,
-  Copy
+  Copy,
+  ZoomIn,
+  ZoomOut,
+  RotateCcw
 } from 'lucide-react'
 import globalgapDoc from '../../assets/certifications/globalgap_certificate_doc.webp'
 import globalgapLogo from '../../assets/certifications/globalgap_logo.webp'
@@ -28,12 +32,14 @@ function Certifications({ layout = 'auto' }) {
   const [activeCert, setActiveCert] = useState(null)
   const [activeTab, setActiveTab] = useState('all') // 'all' | 'globalgap' | 'oromia'
   const [copiedGgn, setCopiedGgn] = useState(false)
+  const [zoomLevel, setZoomLevel] = useState(1) // 1, 1.25, 1.5, 1.75, 2
   const closeBtnRef = useRef(null)
   const triggerRef = useRef(null)
 
   const certData = {
     globalgap: {
       id: 'globalgap',
+      fileName: 'GLOBALG.A.P_IFA_v6.0_Certificate_2026.pdf',
       standard: 'GLOBALG.A.P. IFA v6.0 SMART',
       title: 'GLOBALG.A.P. Certified',
       subtitle: 'Integrated Farm Assurance (IFA) SMART Plants — Fruit & Vegetables',
@@ -71,6 +77,7 @@ function Certifications({ layout = 'auto' }) {
     },
     oromia: {
       id: 'oromia',
+      fileName: 'Oromia_Bureau_Seed_Producer_License_No72.pdf',
       standard: 'Seed Proclamation No. 782/2013',
       title: 'Certified Seed Producer License',
       subtitle: 'Competence Assurance Certificate — Oromia Bureau of Agriculture',
@@ -117,11 +124,25 @@ function Certifications({ layout = 'auto' }) {
   const openLightbox = (certKey) => {
     triggerRef.current = document.activeElement
     setActiveCert(certData[certKey] || certData.globalgap)
+    setZoomLevel(1)
   }
 
   const closeLightbox = useCallback(() => {
     setActiveCert(null)
+    setZoomLevel(1)
   }, [])
+
+  const handleZoomIn = () => {
+    setZoomLevel((prev) => Math.min(prev + 0.25, 2.25))
+  }
+
+  const handleZoomOut = () => {
+    setZoomLevel((prev) => Math.max(prev - 0.25, 0.75))
+  }
+
+  const handleResetZoom = () => {
+    setZoomLevel(1)
+  }
 
   /* Lightbox accessibility: Esc key, Tab trap, body scroll lock */
   useEffect(() => {
@@ -138,8 +159,24 @@ function Certifications({ layout = 'auto' }) {
       if (e.key === 'Escape') {
         closeLightbox()
       } else if (e.key === 'Tab') {
-        e.preventDefault()
-        closeBtnRef.current?.focus()
+        // Tab trap inside modal
+        const modalEl = document.querySelector('.pdf-viewer-modal')
+        if (modalEl) {
+          const focusable = modalEl.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          )
+          if (focusable.length > 0) {
+            const first = focusable[0]
+            const last = focusable[focusable.length - 1]
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault()
+              last.focus()
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault()
+              first.focus()
+            }
+          }
+        }
       }
     }
 
@@ -151,455 +188,524 @@ function Certifications({ layout = 'auto' }) {
   }, [activeCert, closeLightbox])
 
   return (
-    <section className={`cert-pavilion cert-pavilion--layout-${layout}`} aria-label="Official Certifications and Compliance">
-      {/* ── 1. Top Trust & Verification Command Bar ── */}
-      <div className="cert-pavilion__deck">
-        <div className="cert-pavilion__deck-left">
-          <div className="cert-pavilion__shield-badge">
-            <ShieldCheck size={20} className="cert-pavilion__shield-icon" />
-            <span className="cert-pavilion__shield-text">Official Audited Accreditations</span>
-          </div>
-          <div className="cert-pavilion__deck-summary">
-            <span className="cert-pavilion__ggn-pill" onClick={handleCopyGgn} title="Click to copy GGN">
-              <span className="cert-pavilion__ggn-label">GLOBALG.A.P. GGN:</span>
-              <strong className="cert-pavilion__ggn-code">4056186928382</strong>
-              {copiedGgn ? (
-                <span className="cert-pavilion__copy-state cert-pavilion__copy-state--done">
-                  <Check size={12} /> Copied
-                </span>
-              ) : (
-                <span className="cert-pavilion__copy-state">
-                  <Copy size={12} />
-                </span>
-              )}
-            </span>
-            <span className="cert-pavilion__status-pulse">
-              <span className="cert-pavilion__pulse-dot" />
-              Active · Valid 2026–2027
-            </span>
-          </div>
-        </div>
-
-        {/* Category Switcher Tabs */}
-        <div className="cert-pavilion__tabs" role="tablist" aria-label="Filter Certifications">
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeTab === 'all'}
-            className={`cert-pavilion__tab-btn ${activeTab === 'all' ? 'cert-pavilion__tab-btn--active' : ''}`}
-            onClick={() => setActiveTab('all')}
-          >
-            All Credentials (2)
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeTab === 'globalgap'}
-            className={`cert-pavilion__tab-btn ${activeTab === 'globalgap' ? 'cert-pavilion__tab-btn--active' : ''}`}
-            onClick={() => setActiveTab('globalgap')}
-          >
-            GLOBALG.A.P. (Export)
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeTab === 'oromia'}
-            className={`cert-pavilion__tab-btn ${activeTab === 'oromia' ? 'cert-pavilion__tab-btn--active' : ''}`}
-            onClick={() => setActiveTab('oromia')}
-          >
-            Seed Producer (State)
-          </button>
-        </div>
-      </div>
-
-      {/* ── 2. Primary Showcase Stage: Dual Credential Cards ── */}
-      <div className="cert-pavilion__stage">
-        {/* ─── CARD 1: GLOBALG.A.P. INTERNATIONAL PASSPORT ─── */}
-        {(activeTab === 'all' || activeTab === 'globalgap') && (
-          <article className="cert-card cert-card--globalgap" aria-labelledby="cert-card-title-globalgap">
-            {/* Visual Document Showcase Box (Left/Top) */}
-            <div className="cert-card__media-box">
-              <button
-                type="button"
-                className="cert-card__doc-stage"
-                onClick={() => openLightbox('globalgap')}
-                aria-label="Inspect official GLOBALG.A.P. certificate in high resolution"
-              >
-                <div className="cert-card__doc-halo" />
-                <img
-                  src={globalgapDoc}
-                  alt="Official GLOBALG.A.P. Certificate issued to Meki Batu Fruits and Vegetables Producers Cooperatives Union"
-                  className="cert-card__doc-img"
-                  loading="lazy"
-                />
-                
-                {/* Floating Status Pill */}
-                <div className="cert-card__badge-floating cert-card__badge-floating--active">
-                  <span className="cert-card__live-indicator" />
-                  <span>Valid &amp; Audited · 2026–2027</span>
-                </div>
-
-                {/* Inspect Overlay Trigger */}
-                <div className="cert-card__inspect-glass">
-                  <div className="cert-card__inspect-pill">
-                    <Maximize2 size={16} />
-                    <span>Click to Inspect High-Res</span>
-                  </div>
-                </div>
-              </button>
-
-              {/* Bottom Quick-Verify Strip */}
-              <div className="cert-card__quick-bar">
-                <a
-                  href={certData.globalgap.verifyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cert-card__verify-link"
-                  title="Verify GGN 4056186928382 on the official GLOBALG.A.P. database"
-                >
-                  <Search size={14} />
-                  <span>Verify on globalgap.org database</span>
-                  <ExternalLink size={12} />
-                </a>
-              </div>
+    <>
+      <section className={`cert-pavilion cert-pavilion--layout-${layout}`} aria-label="Official Certifications and Compliance">
+        {/* ── 1. Top Trust & Verification Command Bar ── */}
+        <div className="cert-pavilion__deck">
+          <div className="cert-pavilion__deck-left">
+            <div className="cert-pavilion__shield-badge">
+              <ShieldCheck size={20} className="cert-pavilion__shield-icon" />
+              <span className="cert-pavilion__shield-text">Official Audited Accreditations</span>
             </div>
-
-            {/* Credential Content & Assurances (Right/Bottom) */}
-            <div className="cert-card__content">
-              <div className="cert-card__meta-header">
-                <div className="cert-card__identity-row">
-                  <span className="cert-card__tier-pill cert-card__tier-pill--emerald">
-                    {certData.globalgap.scopeCategory}
+            <div className="cert-pavilion__deck-summary">
+              <span className="cert-pavilion__ggn-pill" onClick={handleCopyGgn} title="Click to copy GGN">
+                <span className="cert-pavilion__ggn-label">GLOBALG.A.P. GGN:</span>
+                <strong className="cert-pavilion__ggn-code">4056186928382</strong>
+                {copiedGgn ? (
+                  <span className="cert-pavilion__copy-state cert-pavilion__copy-state--done">
+                    <Check size={12} /> Copied
                   </span>
-                  <span className="cert-card__code-chip">
-                    GGN: {certData.globalgap.ggn}
+                ) : (
+                  <span className="cert-pavilion__copy-state">
+                    <Copy size={12} />
                   </span>
-                </div>
-                {certData.globalgap.logo && (
-                  <img
-                    src={certData.globalgap.logo}
-                    alt="GLOBALG.A.P. Logo"
-                    className="cert-card__brand-logo"
-                  />
                 )}
-              </div>
+              </span>
+              <span className="cert-pavilion__status-pulse">
+                <span className="cert-pavilion__pulse-dot" />
+                Active · Valid 2026–2027
+              </span>
+            </div>
+          </div>
 
-              <h3 id="cert-card-title-globalgap" className="cert-card__title">
-                {certData.globalgap.title}
-              </h3>
-              <p className="cert-card__standard-name">
-                {certData.globalgap.subtitle}
-              </p>
-              <p className="cert-card__narrative">
-                {certData.globalgap.desc}
-              </p>
+          {/* Category Switcher Tabs */}
+          <div className="cert-pavilion__tabs" role="tablist" aria-label="Filter Certifications">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'all'}
+              className={`cert-pavilion__tab-btn ${activeTab === 'all' ? 'cert-pavilion__tab-btn--active' : ''}`}
+              onClick={() => setActiveTab('all')}
+            >
+              All Credentials (2)
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'globalgap'}
+              className={`cert-pavilion__tab-btn ${activeTab === 'globalgap' ? 'cert-pavilion__tab-btn--active' : ''}`}
+              onClick={() => setActiveTab('globalgap')}
+            >
+              GLOBALG.A.P. (Export)
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'oromia'}
+              className={`cert-pavilion__tab-btn ${activeTab === 'oromia' ? 'cert-pavilion__tab-btn--active' : ''}`}
+              onClick={() => setActiveTab('oromia')}
+            >
+              Seed Producer (State)
+            </button>
+          </div>
+        </div>
 
-              {/* Audit Specs Grid */}
-              <div className="cert-card__spec-matrix">
-                <div className="cert-card__spec-cell">
-                  <span className="cert-card__spec-label">
-                    <Building2 size={13} />
-                    <span>Audit Body</span>
-                  </span>
-                  <strong className="cert-card__spec-val">
-                    Control Union (RvA C 412)
-                  </strong>
-                </div>
-                <div className="cert-card__spec-cell">
-                  <span className="cert-card__spec-label">
-                    <FileText size={13} />
-                    <span>Certificate No.</span>
-                  </span>
-                  <strong className="cert-card__spec-val">
-                    {certData.globalgap.certificateNumber}
-                  </strong>
-                </div>
-                <div className="cert-card__spec-cell">
-                  <span className="cert-card__spec-label">
-                    <Calendar size={13} />
-                    <span>Validity Period</span>
-                  </span>
-                  <strong className="cert-card__spec-val cert-card__spec-val--highlight">
-                    {certData.globalgap.validityPeriod}
-                  </strong>
-                </div>
-              </div>
-
-              {/* Assurances Matrix */}
-              <div className="cert-card__assurances">
-                <span className="cert-card__assurances-eyebrow">Export Buyer Guarantees:</span>
-                <div className="cert-card__assurance-pills">
-                  {certData.globalgap.highlights.map((item, idx) => {
-                    const IconComp = item.icon
-                    return (
-                      <div key={idx} className="cert-card__assurance-item">
-                        <div className="cert-card__assurance-icon">
-                          <IconComp size={16} />
-                        </div>
-                        <div className="cert-card__assurance-text">
-                          <strong>{item.title}</strong>
-                          <p>{item.text}</p>
-                        </div>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-
-              {/* Card Footer Actions */}
-              <div className="cert-card__actions">
+        {/* ── 2. Primary Showcase Stage: Dual Credential Cards ── */}
+        <div className="cert-pavilion__stage">
+          {/* ─── CARD 1: GLOBALG.A.P. INTERNATIONAL PASSPORT ─── */}
+          {(activeTab === 'all' || activeTab === 'globalgap') && (
+            <article className="cert-card cert-card--globalgap" aria-labelledby="cert-card-title-globalgap">
+              {/* Visual Document Showcase Box (Left/Top) */}
+              <div className="cert-card__media-box">
                 <button
                   type="button"
-                  className="btn btn--primary btn--sm cert-card__action-btn"
+                  className="cert-card__doc-stage"
                   onClick={() => openLightbox('globalgap')}
+                  aria-label="Open official GLOBALG.A.P. certificate in document viewer"
                 >
-                  <Eye size={16} />
-                  <span>Inspect Full Document</span>
+                  <div className="cert-card__doc-halo" />
+                  <img
+                    src={globalgapDoc}
+                    alt="Official GLOBALG.A.P. Certificate issued to Meki Batu Fruits and Vegetables Producers Cooperatives Union"
+                    className="cert-card__doc-img"
+                    loading="lazy"
+                  />
+                  
+                  {/* Floating Status Pill */}
+                  <div className="cert-card__badge-floating cert-card__badge-floating--active">
+                    <span className="cert-card__live-indicator" />
+                    <span>Valid &amp; Audited · 2026–2027</span>
+                  </div>
+
+                  {/* Document View Trigger */}
+                  <div className="cert-card__inspect-glass">
+                    <div className="cert-card__inspect-pill">
+                      <FileText size={16} />
+                      <span>Open Document Viewer</span>
+                    </div>
+                  </div>
                 </button>
-                <a
-                  href={certData.globalgap.verifyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn--outline btn--sm cert-card__action-btn"
-                >
-                  <span>Validate Online</span>
-                  <ExternalLink size={14} />
-                </a>
+
+                {/* Bottom Quick-Verify Strip */}
+                <div className="cert-card__quick-bar">
+                  <a
+                    href={certData.globalgap.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cert-card__verify-link"
+                    title="Verify GGN 4056186928382 on the official GLOBALG.A.P. database"
+                  >
+                    <Search size={14} />
+                    <span>Verify on globalgap.org database</span>
+                    <ExternalLink size={12} />
+                  </a>
+                </div>
               </div>
-            </div>
-          </article>
-        )}
 
-        {/* ─── CARD 2: OROMIA SEED PRODUCER MANDATE ─── */}
-        {(activeTab === 'all' || activeTab === 'oromia') && (
-          <article className="cert-card cert-card--oromia" aria-labelledby="cert-card-title-oromia">
-            {/* Visual Document Showcase Box (Left/Top) */}
-            <div className="cert-card__media-box">
-              <button
-                type="button"
-                className="cert-card__doc-stage"
-                onClick={() => openLightbox('oromia')}
-                aria-label="Inspect official Oromia Bureau of Agriculture seed producer license in high resolution"
-              >
-                <div className="cert-card__doc-halo cert-card__doc-halo--gold" />
-                <img
-                  src={oromiaCert}
-                  alt="Oromia Bureau of Agriculture Competence Assurance Certificate for Meki Batu Union, certified seed producer license"
-                  className="cert-card__doc-img"
-                  loading="lazy"
-                />
-
-                {/* Floating Status Pill */}
-                <div className="cert-card__badge-floating cert-card__badge-floating--licensed">
-                  <Award size={13} className="inline mr-1" />
-                  <span>State Licensed Seed Producer</span>
+              {/* Credential Content & Assurances (Right/Bottom) */}
+              <div className="cert-card__content">
+                <div className="cert-card__meta-header">
+                  <div className="cert-card__identity-row">
+                    <span className="cert-card__tier-pill cert-card__tier-pill--emerald">
+                      {certData.globalgap.scopeCategory}
+                    </span>
+                    <span className="cert-card__code-chip">
+                      GGN: {certData.globalgap.ggn}
+                    </span>
+                  </div>
+                  {certData.globalgap.logo && (
+                    <img
+                      src={certData.globalgap.logo}
+                      alt="GLOBALG.A.P. Logo"
+                      className="cert-card__brand-logo"
+                    />
+                  )}
                 </div>
 
-                {/* Inspect Overlay Trigger */}
-                <div className="cert-card__inspect-glass">
-                  <div className="cert-card__inspect-pill">
-                    <Maximize2 size={16} />
-                    <span>Click to Inspect High-Res</span>
+                <h3 id="cert-card-title-globalgap" className="cert-card__title">
+                  {certData.globalgap.title}
+                </h3>
+                <p className="cert-card__standard-name">
+                  {certData.globalgap.subtitle}
+                </p>
+                <p className="cert-card__narrative">
+                  {certData.globalgap.desc}
+                </p>
+
+                {/* Audit Specs Grid */}
+                <div className="cert-card__spec-matrix">
+                  <div className="cert-card__spec-cell">
+                    <span className="cert-card__spec-label">
+                      <Building2 size={13} />
+                      <span>Audit Body</span>
+                    </span>
+                    <strong className="cert-card__spec-val">
+                      Control Union (RvA C 412)
+                    </strong>
+                  </div>
+                  <div className="cert-card__spec-cell">
+                    <span className="cert-card__spec-label">
+                      <FileText size={13} />
+                      <span>Certificate No.</span>
+                    </span>
+                    <strong className="cert-card__spec-val">
+                      {certData.globalgap.certificateNumber}
+                    </strong>
+                  </div>
+                  <div className="cert-card__spec-cell">
+                    <span className="cert-card__spec-label">
+                      <Calendar size={13} />
+                      <span>Validity Period</span>
+                    </span>
+                    <strong className="cert-card__spec-val cert-card__spec-val--highlight">
+                      {certData.globalgap.validityPeriod}
+                    </strong>
                   </div>
                 </div>
-              </button>
 
-              {/* Bottom Authority Seal Strip */}
-              <div className="cert-card__quick-bar cert-card__quick-bar--state">
-                <span className="cert-card__authority-stamp">
-                  <Building2 size={14} />
-                  <span>Oromia Bureau of Agriculture &amp; Natural Resource</span>
-                </span>
-              </div>
-            </div>
-
-            {/* Credential Content & Assurances (Right/Bottom) */}
-            <div className="cert-card__content">
-              <div className="cert-card__meta-header">
-                <div className="cert-card__identity-row">
-                  <span className="cert-card__tier-pill cert-card__tier-pill--gold">
-                    {certData.oromia.scopeCategory}
-                  </span>
-                  <span className="cert-card__code-chip">
-                    {certData.oromia.certificateNumber}
-                  </span>
-                </div>
-                <div className="cert-card__gov-seal">
-                  <Award size={20} className="text-amber-600" />
-                  <span>State Certified</span>
-                </div>
-              </div>
-
-              <h3 id="cert-card-title-oromia" className="cert-card__title">
-                {certData.oromia.title}
-              </h3>
-              <p className="cert-card__standard-name">
-                {certData.oromia.subtitle}
-              </p>
-              <p className="cert-card__narrative">
-                {certData.oromia.desc}
-              </p>
-
-              {/* Audit Specs Grid */}
-              <div className="cert-card__spec-matrix">
-                <div className="cert-card__spec-cell">
-                  <span className="cert-card__spec-label">
-                    <Building2 size={13} />
-                    <span>Issuing Authority</span>
-                  </span>
-                  <strong className="cert-card__spec-val">
-                    OBANR (Regional State of Oromia)
-                  </strong>
-                </div>
-                <div className="cert-card__spec-cell">
-                  <span className="cert-card__spec-label">
-                    <FileText size={13} />
-                    <span>Legal Statute</span>
-                  </span>
-                  <strong className="cert-card__spec-val">
-                    Seed Proclamation No. 782/2013
-                  </strong>
-                </div>
-                <div className="cert-card__spec-cell">
-                  <span className="cert-card__spec-label">
-                    <Calendar size={13} />
-                    <span>Issuance Date</span>
-                  </span>
-                  <strong className="cert-card__spec-val cert-card__spec-val--highlight">
-                    14/01/2019 (Official Mandate)
-                  </strong>
-                </div>
-              </div>
-
-              {/* Assurances Matrix */}
-              <div className="cert-card__assurances">
-                <span className="cert-card__assurances-eyebrow">National Agronomic Capabilities:</span>
-                <div className="cert-card__assurance-pills">
-                  {certData.oromia.highlights.map((item, idx) => {
-                    const IconComp = item.icon
-                    return (
-                      <div key={idx} className="cert-card__assurance-item cert-card__assurance-item--gold">
-                        <div className="cert-card__assurance-icon">
-                          <IconComp size={16} />
+                {/* Assurances Matrix */}
+                <div className="cert-card__assurances">
+                  <span className="cert-card__assurances-eyebrow">Export Buyer Guarantees:</span>
+                  <div className="cert-card__assurance-pills">
+                    {certData.globalgap.highlights.map((item, idx) => {
+                      const IconComp = item.icon
+                      return (
+                        <div key={idx} className="cert-card__assurance-item">
+                          <div className="cert-card__assurance-icon">
+                            <IconComp size={16} />
+                          </div>
+                          <div className="cert-card__assurance-text">
+                            <strong>{item.title}</strong>
+                            <p>{item.text}</p>
+                          </div>
                         </div>
-                        <div className="cert-card__assurance-text">
-                          <strong>{item.title}</strong>
-                          <p>{item.text}</p>
-                        </div>
-                      </div>
-                    )
-                  })}
+                      )
+                    })}
+                  </div>
+                </div>
+
+                {/* Card Footer Actions */}
+                <div className="cert-card__actions">
+                  <button
+                    type="button"
+                    className="btn btn--primary btn--sm cert-card__action-btn"
+                    onClick={() => openLightbox('globalgap')}
+                  >
+                    <Eye size={16} />
+                    <span>Open Certificate (PDF)</span>
+                  </button>
+                  <a
+                    href={certData.globalgap.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn--outline btn--sm cert-card__action-btn"
+                  >
+                    <span>Validate Online</span>
+                    <ExternalLink size={14} />
+                  </a>
                 </div>
               </div>
+            </article>
+          )}
 
-              {/* Card Footer Actions */}
-              <div className="cert-card__actions">
+          {/* ─── CARD 2: OROMIA SEED PRODUCER MANDATE ─── */}
+          {(activeTab === 'all' || activeTab === 'oromia') && (
+            <article className="cert-card cert-card--oromia" aria-labelledby="cert-card-title-oromia">
+              {/* Visual Document Showcase Box (Left/Top) */}
+              <div className="cert-card__media-box">
                 <button
                   type="button"
-                  className="btn btn--primary btn--sm cert-card__action-btn"
+                  className="cert-card__doc-stage"
                   onClick={() => openLightbox('oromia')}
+                  aria-label="Open official Oromia Bureau of Agriculture seed producer license in document viewer"
                 >
-                  <Eye size={16} />
-                  <span>Inspect Full Document</span>
+                  <div className="cert-card__doc-halo cert-card__doc-halo--gold" />
+                  <img
+                    src={oromiaCert}
+                    alt="Oromia Bureau of Agriculture Competence Assurance Certificate for Meki Batu Union, certified seed producer license"
+                    className="cert-card__doc-img"
+                    loading="lazy"
+                  />
+
+                  {/* Floating Status Pill */}
+                  <div className="cert-card__badge-floating cert-card__badge-floating--licensed">
+                    <Award size={13} className="inline mr-1" />
+                    <span>State Licensed Seed Producer</span>
+                  </div>
+
+                  {/* Document View Trigger */}
+                  <div className="cert-card__inspect-glass">
+                    <div className="cert-card__inspect-pill">
+                      <FileText size={16} />
+                      <span>Open Document Viewer</span>
+                    </div>
+                  </div>
                 </button>
-                <div className="cert-card__legal-footnote">
-                  <Lock size={13} />
-                  <span>Authorized under Seed Proclamation No. 782/2013</span>
+
+                {/* Bottom Authority Seal Strip */}
+                <div className="cert-card__quick-bar cert-card__quick-bar--state">
+                  <span className="cert-card__authority-stamp">
+                    <Building2 size={14} />
+                    <span>Oromia Bureau of Agriculture &amp; Natural Resource</span>
+                  </span>
                 </div>
               </div>
-            </div>
-          </article>
-        )}
-      </div>
 
-      {/* ── 3. High-Fidelity Lightbox Document Modal ── */}
-      {activeCert && (
+              {/* Credential Content & Assurances (Right/Bottom) */}
+              <div className="cert-card__content">
+                <div className="cert-card__meta-header">
+                  <div className="cert-card__identity-row">
+                    <span className="cert-card__tier-pill cert-card__tier-pill--gold">
+                      {certData.oromia.scopeCategory}
+                    </span>
+                    <span className="cert-card__code-chip">
+                      {certData.oromia.certificateNumber}
+                    </span>
+                  </div>
+                  <div className="cert-card__gov-seal">
+                    <Award size={20} className="text-amber-600" />
+                    <span>State Certified</span>
+                  </div>
+                </div>
+
+                <h3 id="cert-card-title-oromia" className="cert-card__title">
+                  {certData.oromia.title}
+                </h3>
+                <p className="cert-card__standard-name">
+                  {certData.oromia.subtitle}
+                </p>
+                <p className="cert-card__narrative">
+                  {certData.oromia.desc}
+                </p>
+
+                {/* Audit Specs Grid */}
+                <div className="cert-card__spec-matrix">
+                  <div className="cert-card__spec-cell">
+                    <span className="cert-card__spec-label">
+                      <Building2 size={13} />
+                      <span>Issuing Authority</span>
+                    </span>
+                    <strong className="cert-card__spec-val">
+                      OBANR (Regional State of Oromia)
+                    </strong>
+                  </div>
+                  <div className="cert-card__spec-cell">
+                    <span className="cert-card__spec-label">
+                      <FileText size={13} />
+                      <span>Legal Statute</span>
+                    </span>
+                    <strong className="cert-card__spec-val">
+                      Seed Proclamation No. 782/2013
+                    </strong>
+                  </div>
+                  <div className="cert-card__spec-cell">
+                    <span className="cert-card__spec-label">
+                      <Calendar size={13} />
+                      <span>Issuance Date</span>
+                    </span>
+                    <strong className="cert-card__spec-val cert-card__spec-val--highlight">
+                      14/01/2019 (Official Mandate)
+                    </strong>
+                  </div>
+                </div>
+
+                {/* Assurances Matrix */}
+                <div className="cert-card__assurances">
+                  <span className="cert-card__assurances-eyebrow">National Agronomic Capabilities:</span>
+                  <div className="cert-card__assurance-pills">
+                    {certData.oromia.highlights.map((item, idx) => {
+                      const IconComp = item.icon
+                      return (
+                        <div key={idx} className="cert-card__assurance-item cert-card__assurance-item--gold">
+                          <div className="cert-card__assurance-icon">
+                            <IconComp size={16} />
+                          </div>
+                          <div className="cert-card__assurance-text">
+                            <strong>{item.title}</strong>
+                            <p>{item.text}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                {/* Card Footer Actions */}
+                <div className="cert-card__actions">
+                  <button
+                    type="button"
+                    className="btn btn--primary btn--sm cert-card__action-btn"
+                    onClick={() => openLightbox('oromia')}
+                  >
+                    <Eye size={16} />
+                    <span>Open Certificate (PDF)</span>
+                  </button>
+                  <div className="cert-card__legal-footnote">
+                    <Lock size={13} />
+                    <span>Authorized under Seed Proclamation No. 782/2013</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          )}
+        </div>
+      </section>
+
+      {/* ── 3. High-End Native Document / PDF Viewer (React Portal to document.body) ── */}
+      {activeCert && createPortal(
         <div
-          className="cert-modal-backdrop"
+          className="pdf-viewer-backdrop"
           onClick={closeLightbox}
           role="dialog"
           aria-modal="true"
           aria-label={activeCert.title}
         >
           <div
-            className="cert-modal-window"
+            className="pdf-viewer-window"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header */}
-            <header className="cert-modal-header">
-              <div className="cert-modal-header__info">
-                <div className="cert-modal-header__tag-row">
-                  <span className="cert-modal-tag cert-modal-tag--emerald">
-                    {activeCert.scopeCategory}
-                  </span>
-                  <span className="cert-modal-tag cert-modal-tag--code">
-                    {activeCert.certificateNumber}
+            {/* ── Document Viewer Top Application Bar ── */}
+            <header className="pdf-viewer-appbar">
+              {/* Document Identity */}
+              <div className="pdf-viewer-appbar__doc-info">
+                <div className="pdf-viewer-appbar__icon-badge">
+                  <FileText size={18} />
+                </div>
+                <div className="pdf-viewer-appbar__titles">
+                  <div className="pdf-viewer-appbar__row">
+                    <h3 className="pdf-viewer-appbar__file-name">{activeCert.fileName}</h3>
+                    <span className="pdf-viewer-appbar__type-pill">Official Document</span>
+                  </div>
+                  <span className="pdf-viewer-appbar__meta">
+                    {activeCert.title} &bull; {activeCert.certificateNumber}
                   </span>
                 </div>
-                <h3 className="cert-modal-title">{activeCert.title}</h3>
-                <p className="cert-modal-subtitle">
-                  {activeCert.auditor} &bull; {activeCert.validityPeriod}
-                </p>
               </div>
 
-              <button
-                type="button"
-                className="cert-modal-close"
-                onClick={closeLightbox}
-                ref={closeBtnRef}
-                aria-label="Close document inspector"
-              >
-                <X size={20} />
-              </button>
-            </header>
+              {/* Document Zoom & Page Controls (Centered like Adobe/Drive) */}
+              <div className="pdf-viewer-controls" role="toolbar" aria-label="Document viewer controls">
+                <button
+                  type="button"
+                  className="pdf-viewer-ctrl-btn"
+                  onClick={handleZoomOut}
+                  title="Zoom Out"
+                  aria-label="Zoom out document"
+                  disabled={zoomLevel <= 0.75}
+                >
+                  <ZoomOut size={16} />
+                </button>
 
-            {/* Modal Document Frame */}
-            <div className="cert-modal-viewport">
-              <div className="cert-modal-scroll">
-                <img
-                  src={activeCert.src}
-                  alt={activeCert.title}
-                  className="cert-modal-document"
-                />
+                <button
+                  type="button"
+                  className="pdf-viewer-zoom-val"
+                  onClick={handleResetZoom}
+                  title="Reset to 100%"
+                  aria-label="Reset zoom to 100 percent"
+                >
+                  {Math.round(zoomLevel * 100)}%
+                </button>
+
+                <button
+                  type="button"
+                  className="pdf-viewer-ctrl-btn"
+                  onClick={handleZoomIn}
+                  title="Zoom In"
+                  aria-label="Zoom in document"
+                  disabled={zoomLevel >= 2.25}
+                >
+                  <ZoomIn size={16} />
+                </button>
+
+                <div className="pdf-viewer-divider" />
+
+                <button
+                  type="button"
+                  className="pdf-viewer-ctrl-btn"
+                  onClick={handleResetZoom}
+                  title="Fit to Page Width"
+                  aria-label="Fit document to page"
+                >
+                  <RotateCcw size={15} />
+                </button>
               </div>
-            </div>
 
-            {/* Modal Footer Controls */}
-            <footer className="cert-modal-footer">
-              <div className="cert-modal-footer__text">
-                <span className="cert-modal-footer__issued">
-                  <strong>Issued to:</strong> {activeCert.producerName}
-                </span>
-                <span className="cert-modal-footer__date">
-                  <strong>Standard:</strong> {activeCert.standard}
-                </span>
-              </div>
-
-              <div className="cert-modal-footer__buttons">
+              {/* Primary Actions & Exit */}
+              <div className="pdf-viewer-appbar__actions">
                 {activeCert.verifyUrl && (
                   <a
                     href={activeCert.verifyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn--primary btn--sm cert-modal-btn"
+                    className="btn btn--primary btn--sm pdf-viewer-action-btn"
                   >
-                    <span>Verify Live on globalgap.org</span>
-                    <ExternalLink size={14} />
+                    <span>Verify Database</span>
+                    <ExternalLink size={13} />
                   </a>
                 )}
+
                 <button
                   type="button"
-                  className="btn btn--outline btn--sm cert-modal-btn"
+                  className="pdf-viewer-close-btn"
                   onClick={closeLightbox}
+                  ref={closeBtnRef}
+                  title="Close Document (Esc)"
+                  aria-label="Close document viewer"
                 >
-                  Close Document
+                  <X size={18} />
+                  <span className="pdf-viewer-close-text">Esc</span>
                 </button>
+              </div>
+            </header>
+
+            {/* ── Document Viewport Workspace (Slate Canvas with Scroll) ── */}
+            <main className="pdf-viewer-workspace" tabIndex={0}>
+              <div className="pdf-viewer-canvas">
+                <div
+                  className="pdf-viewer-page"
+                  style={{
+                    transform: `scale(${zoomLevel})`,
+                    transformOrigin: 'top center'
+                  }}
+                >
+                  <img
+                    src={activeCert.src}
+                    alt={activeCert.title}
+                    className="pdf-viewer-sheet"
+                    loading="eager"
+                  />
+                </div>
+              </div>
+            </main>
+
+            {/* ── Bottom PDF Status & Verification Footer ── */}
+            <footer className="pdf-viewer-statusbar">
+              <div className="pdf-viewer-statusbar__left">
+                <span className="pdf-viewer-page-count">Page 1 of 1</span>
+                <span className="pdf-viewer-dot">&bull;</span>
+                <span className="pdf-viewer-entity">
+                  <strong>Issued To:</strong> {activeCert.producerName}
+                </span>
+                <span className="pdf-viewer-dot">&bull;</span>
+                <span className="pdf-viewer-stat">
+                  <strong>Standard:</strong> {activeCert.standard}
+                </span>
+              </div>
+
+              <div className="pdf-viewer-statusbar__right">
+                <span className="pdf-viewer-live-status">
+                  <span className="pdf-viewer-status-dot" />
+                  {activeCert.status}
+                </span>
+                <span className="pdf-viewer-validity-text">
+                  {activeCert.validityPeriod}
+                </span>
               </div>
             </footer>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
-    </section>
+    </>
   )
 }
 

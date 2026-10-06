@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { Helmet } from 'react-helmet-async'
 import SEO from '../components/common/SEO.jsx'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/common/PageHero.jsx'
@@ -105,6 +106,50 @@ function Contact() {
         title={t('meta:contact.title')}
         description={t('meta:contact.description')}
       />
+
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["LocalBusiness", "Organization"],
+            "@id": "https://mekibatuunion.org/#organization",
+            "name": "Meki Batu Fruits and Vegetables Growers' Cooperative Union Ltd",
+            "alternateName": "Meki Batu Union",
+            "url": "https://mekibatuunion.org",
+            "logo": "https://mekibatuunion.org/icon-512.png",
+            "image": "https://mekibatuunion.org/og-image.webp",
+            "telephone": "+251-22-118-1114",
+            "faxNumber": "+251-22-118-0022",
+            "email": "mekibatuunion@gmail.com",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "138km on the road to Hawassa, 60km south of Mojo town, P.O. Box 006",
+              "addressLocality": "Meki Town",
+              "addressRegion": "East Shoa Zone, Dugda Woreda, Oromia",
+              "addressCountry": "ET"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 8.1504,
+              "longitude": 38.8160
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "17:00"
+              }
+            ],
+            "sameAs": [
+              "https://www.facebook.com/MekiBatuUnion",
+              "https://www.linkedin.com/company/meki-batu-union",
+              "https://www.youtube.com/@MekiBatuUnion"
+            ]
+          })}
+        </script>
+      </Helmet>
 
       {/* ---- Hero Section ---- */}
       <PageHero

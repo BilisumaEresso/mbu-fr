@@ -96,11 +96,11 @@ function News() {
                 return (
                   <article
                     className="news-article-card news-article-card--large"
-                    onClick={() => navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))}
+                    onClick={() => navigate(getLocalePath(`/news/${featuredLarge.slug || featuredLarge.id}`, currentLang))}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault()
-                        navigate(getLocalePath(`/news/${featuredLarge.id}`, currentLang))
+                        navigate(getLocalePath(`/news/${featuredLarge.slug || featuredLarge.id}`, currentLang))
                       }
                     }}
                     tabIndex={0}
@@ -182,11 +182,11 @@ function News() {
                 return (
                   <article
                     className="news-article-card news-article-card--small"
-                    onClick={() => navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))}
+                    onClick={() => navigate(getLocalePath(`/news/${featuredSmall.slug || featuredSmall.id}`, currentLang))}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault()
-                        navigate(getLocalePath(`/news/${featuredSmall.id}`, currentLang))
+                        navigate(getLocalePath(`/news/${featuredSmall.slug || featuredSmall.id}`, currentLang))
                       }
                     }}
                     tabIndex={0}
@@ -299,7 +299,7 @@ function News() {
             )
 
             const handleArticleClick = () => {
-              navigate(getLocalePath(`/news/${article.id}`, currentLang))
+              navigate(getLocalePath(`/news/${article.slug || article.id}`, currentLang))
             }
 
             const handleArticleKeyDown = (e) => {
