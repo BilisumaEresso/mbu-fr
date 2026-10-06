@@ -234,79 +234,34 @@
   letter-spacing: 0.08em;
 }
 
-/*
-   Certifications & Compliance Section
-   ───────────────────────────────────────────────────────── */
-.home-cert {
-  padding: var(--space-16) 0;
-  background-color: var(--color-bg);
-}
-
-/* Green gradient band wrapper */
-.home-cert__band {
+/* ─────────────────────────────────────────────────────────────
+   Certifications & Compliance Showcase Section
+   ───────────────────────────────────────────────────────────── */
+.home-cert-band {
+  padding: clamp(72px, 8vw, 112px) 0;
+  background-color: var(--surface-container-low, #f6f3f2);
   position: relative;
-  background:
-    linear-gradient(135deg, var(--color-primary) 0%, hsl(153, 38%, 18%) 100%);
-  border-radius: var(--radius-xl, 20px);
-  padding: var(--space-10, 40px) var(--space-8);
-  overflow: hidden;
 }
 
-/* Decorative dot pattern overlay */
-.home-cert__dots {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(252, 249, 248, 0.06) 1px, transparent 1px);
-  background-size: 20px 20px;
-  pointer-events: none;
+.home-cert-band__header {
+  max-width: 680px;
+  margin: 0 auto clamp(36px, 5vw, 56px);
 }
 
-/* Decorative gradient glow at top-right */
-.home-cert__band::after {
-  content: '';
-  position: absolute;
-  top: -80px;
-  right: -80px;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(184, 74, 34, 0.18) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-/* Header inside the green band */
-.home-cert__header {
-  position: relative;
-  z-index: 1;
-  margin-bottom: var(--space-8);
-}
-
-.home-cert__eyebrow {
-  color: rgba(252, 249, 248, 0.55);
-  display: block;
-  margin-bottom: var(--space-1);
-}
-
-.home-cert__title {
-  font-family: var(--font-display);
+.home-cert-band__title {
+  font-family: var(--font-display, var(--font-sans));
   font-size: var(--fs-h2);
-  font-weight: 600;
-  color: var(--color-bg);
-  margin: 0 0 var(--space-2);
-  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-primary, #173124);
+  margin: 0 0 var(--space-3);
+  line-height: 1.25;
 }
 
-.home-cert__desc {
-  margin: 0;
+.home-cert-band__desc {
   font-size: var(--fs-body-lg);
-  color: rgba(252, 249, 248, 0.75);
-  line-height: 1.6;
-  max-width: 560px;
-}
-
-/* Certifications component overrides inside the green band */
-.home-cert__band .certifications {
-  position: relative;
-  z-index: 1;
+  color: var(--color-text-muted, #556057);
+  line-height: 1.65;
+  margin: 0;
 }
 
 /* Bento Grid Produce Showcase */

@@ -319,8 +319,16 @@
   gap: var(--space-6);
 }
 
-.about-cert-wrap .certifications__grid {
+.about-cert-wrap .cert-pavilion {
+  gap: var(--space-4);
+}
+
+.about-cert-wrap .cert-pavilion__stage {
   grid-template-columns: 1fr;
+}
+
+.about-cert-wrap .cert-card {
+  box-shadow: 0 4px 20px rgba(23, 49, 36, 0.06);
 }
 
 .about-cert-wrap__footer {

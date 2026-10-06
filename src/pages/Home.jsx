@@ -110,7 +110,7 @@ const getHeroImages = (t) => [
   },
   {
     src: womenFarmerImg,
-    srcSet: `${womenFarmer480} 480w, ${womenFarmer800} 800w, ${womenFarmerImg} 1000w`,
+    srcSet: `${womenFarmer480} 480w, ${womenFarmer800} 800w, ${womenFarmerImg} 1280w`,
     alt: t('home:hero.images.women', 'Women farmers working in cooperative fields'),
   },
   {
