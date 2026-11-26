@@ -3,7 +3,7 @@
 Static frontend for the Meki Batu Fruits and Vegetables Growers' Cooperative
 Union Ltd. Built with **React + Vite** and **plain CSS** (no framework, no
 CSS-in-JS). Backend (member portal, RFQ system, CMS) is a Phase 2 addition —
-see notes at the bottom.
+see notes at the bottom. 
 
 ## Getting started
 
