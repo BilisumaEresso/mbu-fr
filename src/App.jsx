@@ -24,6 +24,7 @@ import Contact from './pages/Contact.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
 import TermsOfService from './pages/TermsOfService.jsx'
 import NotFound from './pages/NotFound.jsx'
+import CompanyProfile from './pages/CompanyProfile.jsx'
 
 function LanguageLayout() {
   const { lang } = useParams()
@@ -37,6 +38,20 @@ function LanguageLayout() {
       i18n.changeLanguage(validLocale)
     }
     document.documentElement.lang = validLocale
+
+    // ── Favicon swap based on language ──
+    // For Afan Oromo we show a locale-branded favicon; default (en) uses standard
+    const isOm = validLocale === 'om'
+    const updateFavicon = (selector, value) => {
+      const el = document.querySelector(selector)
+      if (el) el.setAttribute('href', value)
+    }
+
+    updateFavicon('link[rel="icon"][type="image/x-icon"]', isOm ? '/favicon-om.ico' : '/favicon.ico')
+    updateFavicon('link[rel="icon"][type="image/svg+xml"]', isOm ? '/favicon-om.svg' : '/favicon.svg')
+    updateFavicon('link[rel="icon"][sizes="48x48"]', isOm ? '/favicon-om.svg' : '/favicon-48x48.png')
+    updateFavicon('link[rel="icon"][sizes="192x192"]', isOm ? '/favicon-om.svg' : '/icon-192.png')
+    updateFavicon('link[rel="apple-touch-icon"]', isOm ? '/favicon-om.svg' : '/apple-touch-icon.png')
   }, [validLocale, i18n])
 
   if (!isSupportedLocale(lang)) {
@@ -90,6 +105,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-of-service" element={<TermsOfService />} />
+          <Route path="company-profile" element={<CompanyProfile />} />
           <Route path="*" element={<NotFound />} />
         </Route>
         <Route path="*" element={<LegacyRedirect />} />

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  <image href="/favicon-512.png" width="512" height="512"/>
+  <!-- OM language badge in bottom-right corner -->
+  <rect x="318" y="318" width="176" height="176" rx="32" fill="#173124"/>
+  <text x="406" y="430" font-family="Arial,sans-serif" font-size="96" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="auto">OM</text>
+</svg>

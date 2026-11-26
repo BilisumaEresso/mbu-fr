@@ -34,6 +34,7 @@ function Footer() {
             <h4 className="footer__heading">{t('footer.company')}</h4>
             <ul className="footer__list">
               <li><Link className="footer__link" to={getLocalePath('/about', currentLang)}>{t('breadcrumbs.about')}</Link></li>
+              <li><Link className="footer__link" to={getLocalePath('/company-profile', currentLang)}>{t('breadcrumbs.companyProfile')}</Link></li>
               <li><Link className="footer__link" to={getLocalePath('/products', currentLang)}>{t('breadcrumbs.products')}</Link></li>
               <li><Link className="footer__link" to={getLocalePath('/impact', currentLang)}>{t('breadcrumbs.impact')}</Link></li>
               <li><Link className="footer__link" to={getLocalePath('/news', currentLang)}>{t('breadcrumbs.news')}</Link></li>

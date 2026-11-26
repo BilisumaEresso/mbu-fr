@@ -1,0 +1,190 @@
+/* ─── Company Profile Page ─── */
+
+/* Hero */
+.cp-hero {
+  padding-block: var(--space-10, 4rem) var(--space-8, 3rem);
+}
+
+.cp-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5, 1.5rem);
+  align-items: flex-start;
+  max-width: 760px;
+}
+
+.cp-hero__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg, 12px);
+  background: var(--color-primary-50, #f0fdf4);
+  color: var(--color-primary-700, #15803d);
+  flex-shrink: 0;
+}
+
+.cp-hero__title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: var(--color-gray-900, #111827);
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+
+.cp-hero__desc {
+  font-size: 1.0625rem;
+  color: var(--color-gray-600, #4b5563);
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 0;
+}
+
+.cp-hero__actions {
+  display: flex;
+  gap: var(--space-3, 0.75rem);
+  flex-wrap: wrap;
+}
+
+/* Viewer */
+.cp-viewer {
+  padding-block: var(--space-4, 1.5rem) var(--space-12, 5rem);
+}
+
+.cp-viewer__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 1rem;
+  background: var(--color-gray-100, #f3f4f6);
+  border: 1px solid var(--color-gray-200, #e5e7eb);
+  border-bottom: none;
+  border-radius: var(--radius-md, 8px) var(--radius-md, 8px) 0 0;
+  gap: 1rem;
+}
+
+.cp-viewer__label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-gray-700, #374151);
+  letter-spacing: 0.01em;
+}
+
+.cp-viewer__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.cp-viewer__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-sm, 6px);
+  color: var(--color-gray-600, #4b5563);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cp-viewer__btn:hover,
+.cp-viewer__btn:focus-visible {
+  background: var(--color-gray-200, #e5e7eb);
+  color: var(--color-gray-900, #111827);
+  outline: 2px solid var(--color-primary-500, #22c55e);
+  outline-offset: 1px;
+}
+
+/* Frame container */
+.cp-viewer__frame-wrap {
+  position: relative;
+  border: 1px solid var(--color-gray-200, #e5e7eb);
+  border-radius: 0 0 var(--radius-md, 8px) var(--radius-md, 8px);
+  overflow: hidden;
+  background: var(--color-gray-50, #f9fafb);
+  /* Responsive height: tall enough to show 2–3 PDF pages */
+  height: 82vh;
+  min-height: 520px;
+  max-height: 1080px;
+}
+
+.cp-viewer__iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Fullscreen overlay */
+.cp-viewer__frame-wrap--fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  height: 100dvh;
+  max-height: none;
+  min-height: unset;
+  border-radius: 0;
+  border: none;
+}
+
+.cp-viewer__close-fs {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cp-viewer__close-fs:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* Fallback text */
+.cp-viewer__fallback {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--color-gray-500, #6b7280);
+  text-align: center;
+}
+
+.cp-viewer__fallback .link {
+  color: var(--color-primary-700, #15803d);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .cp-hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cp-hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cp-viewer__frame-wrap {
+    height: 70vh;
+    min-height: 400px;
+  }
+}

@@ -14,7 +14,6 @@ import { validateFields } from '../utils/validateForm.js'
 import buyerHeroImg from '../assets/images/heroes/buyerHero.webp'
 import buyerHero480 from '../assets/images/heroes/buyerHero-480w.webp'
 import buyerHero800 from '../assets/images/heroes/buyerHero-800w.webp'
-import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
 import { ArrowRight, Download, BadgeCheck, Package, Globe, CheckCircle } from 'lucide-react'
 import './InnerPage.css'
 import './Buyers.css'
@@ -187,8 +186,8 @@ function Buyers() {
               {t('buyers:hero.requestQuote')} <ArrowRight size={16} className="text-sm" />
             </a>
             <a
-              href={companyProfilePdf}
-              download="MekiBatuUnion_CompanyProfile.pdf"
+              href={i18n.language === 'om' ? '/downloads/MekiBatuUnion_CompanyProfile_OM.pdf' : '/downloads/MekiBatuUnion_CompanyProfile.pdf'}
+              download={i18n.language === 'om' ? 'MekiBatuUnion_CompanyProfile_OM.pdf' : 'MekiBatuUnion_CompanyProfile.pdf'}
               className="btn btn--outline"
               title={t('buyers:hero.downloadPdfTitle')}
             >

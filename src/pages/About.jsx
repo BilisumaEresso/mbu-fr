@@ -22,8 +22,9 @@ import charity3Img from '../assets/images/community/charity_3.webp'
 import charity3_480 from '../assets/images/community/charity_3-480w.webp'
 import charity3_800 from '../assets/images/community/charity_3-800w.webp'
 import { getTeamMembers } from '../data/team.js'
-import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
 import { History, CheckCircle, Download, Mail, FlaskConical, Droplet, Truck, PlaneTakeoff, BadgeCheck, ExternalLink, ChevronUp, ChevronDown, MapPin, Landmark, HeartHandshake, BookOpen, GraduationCap, Sparkles } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { getLocalePath } from '../utils/locale.js'
 import './About.css'
 
 // Cap stagger at 450ms for card grids
@@ -198,9 +199,15 @@ function About() {
             <Reveal className="about-cert-wrap" delay={90}>
               <Certifications />
               <div className="about-cert-wrap__footer">
+                <Link
+                  to={getLocalePath('/company-profile', currentLang)}
+                  className="btn btn--primary btn--sm"
+                >
+                  {t('common:buttons.viewProfile')} <ExternalLink size={14} className="text-sm" />
+                </Link>
                 <a
-                  href={companyProfilePdf}
-                  download="MekiBatuUnion_CompanyProfile.pdf"
+                  href={isOm ? '/downloads/MekiBatuUnion_CompanyProfile_OM.pdf' : '/downloads/MekiBatuUnion_CompanyProfile.pdf'}
+                  download={isOm ? 'MekiBatuUnion_CompanyProfile_OM.pdf' : 'MekiBatuUnion_CompanyProfile.pdf'}
                   className="btn btn--outline btn--sm"
                   title={t('about:missionVision.downloadPdfTitle')}
                 >

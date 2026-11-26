@@ -15,6 +15,7 @@ import contactEn from './locales/en/contact.json'
 import legalEn from './locales/en/legal.json'
 import metaEn from './locales/en/meta.json'
 import orgchartEn from './locales/en/orgchart.json'
+import companyProfileEn from './locales/en/companyProfile.json'
 
 import commonOm from './locales/om/common.json'
 import homeOm from './locales/om/home.json'
@@ -29,6 +30,7 @@ import contactOm from './locales/om/contact.json'
 import legalOm from './locales/om/legal.json'
 import metaOm from './locales/om/meta.json'
 import orgchartOm from './locales/om/orgchart.json'
+import companyProfileOm from './locales/om/companyProfile.json'
 
 const resources = {
   en: {
@@ -45,6 +47,7 @@ const resources = {
     legal: legalEn,
     meta: metaEn,
     orgchart: orgchartEn,
+    companyProfile: companyProfileEn,
   },
   om: {
     common: commonOm,
@@ -60,6 +63,7 @@ const resources = {
     legal: legalOm,
     meta: metaOm,
     orgchart: orgchartOm,
+    companyProfile: companyProfileOm,
   },
 }
 

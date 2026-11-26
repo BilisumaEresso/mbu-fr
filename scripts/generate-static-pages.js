@@ -231,6 +231,7 @@ const standardRoutes = [
   { key: 'contact', path: '/contact' },
   { key: 'privacyPolicy', path: '/privacy-policy' },
   { key: 'termsOfService', path: '/terms-of-service' },
+  { key: 'companyProfile', path: '/company-profile' },
 ]
 
 function renderStaticBody(pageKey, lang, extraData = null) {
@@ -347,6 +348,14 @@ function generateStaticHtml(templateHtml, config) {
 
   // 1. Set html lang attribute
   html = html.replace(/<html[^>]*>/i, `<html lang="${lang}">`)
+
+  // 1b. Swap favicons for Afan Oromo static pages
+  if (lang === 'om') {
+    html = html.replace(/href="\/favicon\.ico"/g, 'href="/favicon-om.ico"')
+    html = html.replace(/href="\/favicon\.svg"/g, 'href="/favicon-om.svg"')
+    html = html.replace(/href="\/favicon-48x48\.png"/g, 'href="/favicon-om.svg"')
+    html = html.replace(/href="\/icon-192\.png"/g, 'href="/favicon-om.svg"')
+  }
 
   // 2. Set title tag
   if (title) {

@@ -34,6 +34,7 @@
     "copyright": "© {{year}} Meki Batu Fruits and Vegetables Growers' Cooperative Union Ltd.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
+    "companyProfile": "Company Profile",
     "address": "Meki Town, Dugda Woreda, East Shoa Zone, Oromia, Ethiopia",
     "openMaps": "Open location on Google Maps",
     "facebook": "Facebook",
@@ -52,7 +53,8 @@
     "impact": "Impact",
     "contact": "Contact",
     "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service"
+    "termsOfService": "Terms of Service",
+    "companyProfile": "Company Profile"
   },
   "buttons": {
     "learnMore": "Learn More",
@@ -63,6 +65,7 @@
     "viewImpactMetrics": "View Impact Metrics",
     "impactReports": "Impact Reports",
     "downloadPdf": "Download Company Profile",
+    "viewProfile": "View Company Profile",
     "viewCredential": "View credential",
     "viewCertificateDoc": "View certificate document",
     "openGoogleMaps": "Open in Google Maps",

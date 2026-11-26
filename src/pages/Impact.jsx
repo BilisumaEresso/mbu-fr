@@ -10,7 +10,6 @@ import impactHero800 from '../assets/images/heroes/impactHero-800w.webp'
 import womenFarmerImg from '../assets/images/community/womenFarmer.webp'
 import womenFarmer480 from '../assets/images/community/womenFarmer-480w.webp'
 import womenFarmer800 from '../assets/images/community/womenFarmer-800w.webp'
-import { COMPANY_PROFILE_BASE64 as companyProfilePdf } from '../data/companyProfilePdfBase64.js'
 import { TrendingUp, Download } from 'lucide-react'
 import './InnerPage.css'
 import './Impact.css'
@@ -18,7 +17,10 @@ import './Impact.css'
 const stagger = (i) => Math.min(i * 90, 450)
 
 function Impact() {
-  const { t } = useTranslation(['impact', 'meta', 'common'])
+  const { t, i18n } = useTranslation(['impact', 'meta', 'common'])
+  const companyProfilePdf = i18n.language === 'om'
+    ? '/downloads/MekiBatuUnion_CompanyProfile_OM.pdf'
+    : '/downloads/MekiBatuUnion_CompanyProfile.pdf'
 
   const stats = [
     { value: '8,471', label: t('impact:metrics.stats.farmers') },

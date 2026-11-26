@@ -85,7 +85,6 @@ import teamMember4 from '../assets/images/team/team_member_4.webp'
 import teamMember5 from '../assets/images/team/team_member_5.webp'
 
 /* ── downloads & data ── */
-import companyProfilePdf from '../assets/downloads/MekiBatuUnion_CompanyProfile.pdf'
 import { news } from '../data/news.js'
 import { partners } from '../data/partners.js'
 import { resources } from '../data/resources.js'
@@ -603,9 +602,8 @@ function Home() {
 
           <div className="home-resources__grid">
             <Reveal delay={0}>
-              <a
-                href={companyProfilePdf}
-                download="MekiBatuUnion_CompanyProfile.pdf"
+              <Link
+                to={getLocalePath('/company-profile', currentLang)}
                 className="home-resources__card"
                 title={t('home:documentation.companyProfile.download')}
               >
@@ -613,9 +611,9 @@ function Home() {
                 <h3 className="home-resources__card-title">{t('home:documentation.companyProfile.title')}</h3>
                 <p className="home-resources__card-desc">{t('home:documentation.companyProfile.desc')}</p>
                 <span className="home-resources__action">
-                  {t('common:buttons.downloadPdf')} <Download size={16} />
+                  {t('common:buttons.viewProfile')} <ArrowRight size={16} />
                 </span>
-              </a>
+              </Link>
             </Reveal>
 
             <Reveal delay={90}>

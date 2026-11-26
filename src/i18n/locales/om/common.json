@@ -34,6 +34,7 @@
     "copyright": "© {{year}} WHG Oomishtoota Kuduraa fi Muduraa Maqii Baatuu Ltd.",
     "privacyPolicy": "Imaammata Iccitii",
     "termsOfService": "Haala Tajaajilaa",
+    "companyProfile": "Pirofaayilii Dhaabbataa",
     "address": "Maqii, Aanaa Dugdaa, Shawaa Bahaa, Oromiyaa, Itoophiyaa",
     "openMaps": "Google Maps irratti bani",
     "facebook": "Facebook",
@@ -52,7 +53,8 @@
     "impact": "Bu'aa",
     "contact": "Quunnamtii",
     "privacyPolicy": "Imaammata Iccitii",
-    "termsOfService": "Haala Tajaajilaa"
+    "termsOfService": "Haala Tajaajilaa",
+    "companyProfile": "Pirofaayilii Dhaabbataa"
   },
   "buttons": {
     "learnMore": "Dabalata Dubbisi",
@@ -63,6 +65,7 @@
     "viewImpactMetrics": "Safartuu Bu'aa Ilaali",
     "impactReports": "Gabaasa Bu'aa",
     "downloadPdf": "Piroofayilii Buufadhu",
+    "viewProfile": "Pirofaayilii Dhaabbataa Ilaali",
     "viewCredential": "Ragaa ilaali",
     "viewCertificateDoc": "Sanada ragaa ilaali",
     "openGoogleMaps": "Google Maps irratti bani",
