@@ -31,7 +31,7 @@ const EMPTY_FIELDS = { name: '', company: '', country: '', product: '', volume: 
 const stagger = (i) => Math.min(i * 90, 450)
 
 function Buyers() {
-  const { t } = useTranslation(['buyers', 'meta', 'common'])
+  const { t, i18n } = useTranslation(['buyers', 'meta', 'common'])
   const [searchParams] = useSearchParams()
   const [fields, setFields] = useState(EMPTY_FIELDS)
   const [submitted, setSubmitted] = useState(false)
